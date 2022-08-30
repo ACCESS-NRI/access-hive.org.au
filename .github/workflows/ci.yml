@@ -3,6 +3,11 @@ on:
   push:
     branches: 
       - 2-skeleton-site
+
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
