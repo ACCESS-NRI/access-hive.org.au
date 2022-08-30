@@ -1,1 +1,1 @@
-Just an example
+Just an example for another model.
