@@ -1,0 +1,42 @@
+site_name: ACCESSHub Demo
+
+# Theme
+theme:
+  name: material
+  palette:
+    - scheme: "blue grey"
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+  logo: assets/ACCESSLogoJustPlanet.png
+
+# Extensions
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+
+# Navigation
+nav:
+  - Home: index.md
+  - ACCESS-OM: 
+    - NRI documentation: 
+      - User guide: ACCESS-OM.md
+    - Community documentation: 
+      - Generate bathymetry: Bathymetry.md
+  - ACCESS-CM: ACCESS-CM.md
+  - ACCESS-ESM: ACCESS-ESM.md
