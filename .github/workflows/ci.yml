@@ -6,8 +6,16 @@ on:
 
 permissions:
   actions: write
-  contents: read
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
   pull-requests: write
+  pages: write
+  repository-projects: write
+  security-events: write
+  statuses: write
 
 jobs:
   deploy:
@@ -19,5 +27,4 @@ jobs:
           python-version: 3.x
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
