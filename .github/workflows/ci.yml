@@ -5,6 +5,7 @@ on:
       - 2-skeleton-site
 
 permissions:
+  actions: write
   contents: read
   pull-requests: write
 
