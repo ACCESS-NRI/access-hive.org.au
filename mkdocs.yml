@@ -28,11 +28,17 @@ theme:
 # Extensions
 markdown_extensions: 
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
   
 # Navigation
 nav:
-  - Home: index.md
+  - Welcome: index.md
   - ACCESS NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
