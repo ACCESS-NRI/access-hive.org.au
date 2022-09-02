@@ -46,6 +46,6 @@ jobs:
           mkdocs build 
 
       - name: Deploy preview
-        uses: rossjrw/pr-preview-action@021a6d047c02bdabe99c5c897889968372b7ad01 #@v1
+        uses: rossjrw/pr-preview-action@98706dff8eaffcef39fbd5c5cadd2c6339bbd60b #@v1
         with:
           source-dir: site
