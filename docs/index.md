@@ -11,5 +11,3 @@ The site contains:
 - pages for each major category of community documentation
 - an ACCESS NRI tab for the documentation supported by ACCESS NRI
 - an How to contribute tab to learn how to use the portal and add links to your documentation.
-
-A change that I will get rid of once I confirm it works ok
