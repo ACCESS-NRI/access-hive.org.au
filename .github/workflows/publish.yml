@@ -2,7 +2,7 @@ name: publish
 on:
   push:
     branches: 
-      - 6-skeleton-site
+      - main
 
 permissions:
   actions: write
