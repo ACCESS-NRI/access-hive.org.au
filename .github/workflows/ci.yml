@@ -1,0 +1,30 @@
+name: publish
+on:
+  push:
+    branches: 
+      - 6-skeleton-site
+
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
+  pull-requests: write
+  pages: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
+
