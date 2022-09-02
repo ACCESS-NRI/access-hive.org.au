@@ -1,8 +1,16 @@
-name: publish
+name: Deploy PR preview
+
 on:
-  push:
-    branches: 
-      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: 
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   actions: write
@@ -18,13 +26,12 @@ permissions:
   statuses: write
 
 jobs:
-  deploy:
-    concurrency: ci-${{ github.ref }}
+  deploy-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
@@ -34,12 +41,11 @@ jobs:
           pip install mkdocs-material 
 
       - name: Build
+        # builds to "site" directory by default
         run: |
-          mkdocs build
+          mkdocs build 
 
-      - name: Deploy
-          uses: amesIves/github-pages-deploy-action@13046b614c663b56cba4dda3f30b9736a748b80d #@v4
-          with:
-            folder: site
-            branch: gh-pages # default
-            clean-exclude: pr-preview/ # don't overwrite previews
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@021a6d047c02bdabe99c5c897889968372b7ad01 #@v1
+        with:
+          source-dir: site
