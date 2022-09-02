@@ -1,14 +1,10 @@
 
 ACCESSHub is a portal to all documentation pertinent to the Australian Earth System Simulator, ACCESS, and its model components.
 
-The site contains a different tab for each model and model component.
-Each page is then divided between:
+This portal goal is primarily to link to documentations hosted on other sites. It is not intended to host the documentation itself.
 
-- ACCESS NRI produced documentation:
+The site contains:
 
-    This documentation is kept up to date by the ACCESS NRI.
-
-- Community produced documentation
-
-    This documentation is provided by the community. The ACCESS NRI does not provide any maintenance.
-
+- pages for each major category of community documentation
+- an ACCESS NRI tab for the documentation supported by ACCESS NRI
+- an How to contribute tab to learn how to use the portal and add links to your documentation.
