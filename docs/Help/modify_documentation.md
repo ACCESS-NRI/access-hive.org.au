@@ -1,0 +1,65 @@
+# Modify the documentation
+
+There are two ways to modify the documentation:
+ - direct edit on GitHub. This method is adequate for small modifications to a single file.
+ - local edit on your local computer. This method is recommended for large modifications.
+
+## Open an issue
+
+For all additions or modifications to the ACCESSHub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESSHub/issues) in the ACCESSHub GitHub repository. After creation, please assign the Issue to yourself in the right-hand side panel if you intend on working on the issue.
+
+## Direct edit
+
+For a very simple change, the easiest is to go to the ACCESSHub site and navigate to the page you want to modify.
+
+At the right of the title, you will see a pen icon :material-pencil:. When you click on this icon, your browser will open the file in GitHub allowing you to edit the file. Enter your modification in the main pane. Then add a commit message in the Commit changes box.
+<figure markdown>
+  ![CommitBox](../assets/commit-box.png)
+  <figcaption>Where to write your commit message</figcaption>
+</figure>
+???+ important
+    You then need to choose to create a new branch and start a pull request. The `main` branch of the repository is protected and nobody can write to it directly.
+    ![BranchAndPR](../assets/branch-and-pr.png)
+
+When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. Then ask for a review using the Reviewer menu on the right-hand side panel.
+
+You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
+
+## Local edit
+
+If you prefer to work locally on your computer (e.g. to preview the result of your modification locally before submitting it to the documentation), you will need to follow a series of steps.
+???+ Note
+    Some editors can connect to GitHub and enable you to perform some of these steps directly from the editor. Feel free to do so instead of following the indications below.
+
+### Create a branch from your issue
+
+On GitHub navigate to your issue page. In the right-hand side panel, choose to create a branch for your issue. Feel free to edit the branch name to your liking but it is recommended to keep the issue number in the branch name.
+
+### Create a local branch to follow the remote branch
+
+On your local computer, in the clone repository for ACCESSHub, make sure your local copy is up to date with GitHub:
+```
+   git pull
+```
+Then, create a local branch that follows the remote branch and checkout the new branch:
+```
+   git checkout <branch_name>
+```
+
+You can then start modifying the documentation files. 
+
+???+ tip
+    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESSHub site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
+
+### Previewing your changes
+
+???+ note
+    If you have installed mkdocs-material via conda, make sure you activate the correct environment first
+
+MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving.
+
+To start the server, open a terminal and navigate to your ACCESSHub local repository. Now type:
+```
+    mkdocs serve
+```
+Your documentation will be built on  http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.

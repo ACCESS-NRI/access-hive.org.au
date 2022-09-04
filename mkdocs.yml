@@ -1,5 +1,11 @@
 site_name: ACCESSHub Demo
 
+# Git repository
+repo_url: https://github.com/ACCESS-NRI-Community/ACCESSHub
+repo_name: ACCESSHub
+# Material default to a "master" branch, need to change to "main"
+edit_uri: edit/main/docs/
+
 # Theme
 theme:
   name: material
@@ -42,4 +48,8 @@ nav:
   - ACCESS NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
-  - How to contribute: How_to_contribute.md
+  - How to contribute: 
+    - How to contribute: Help/How_to_contribute.md
+    - Setup: Help/contribution_setup.md
+    - Modify the documentation: Help/modify_documentation.md
+    - Change the navigation: Help/change_navigation.md
