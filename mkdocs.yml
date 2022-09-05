@@ -53,5 +53,4 @@ nav:
     - Setup: Help/contribution_setup.md
     - Modify the documentation: Help/modify_documentation.md
     - Change the navigation: Help/change_navigation.md
-  - Technical Guides: 
-    - Signing your commits: Help/code_signing.md
+    - Signing your commits: Help/commit_signing.md

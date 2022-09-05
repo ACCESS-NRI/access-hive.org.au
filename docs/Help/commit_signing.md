@@ -1,4 +1,4 @@
-# Code signing
+# Commit signing
 
 It is [trivially easy to impersonate another user](https://betterprogramming.pub/why-and-how-you-should-sign-all-your-git-commits-94435516edae) when committing to git. This does not lead to elevated privileges, but could be exploited in a social hack, causing commits to be accepted based on an assumption of identity.
 
