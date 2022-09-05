@@ -2,16 +2,19 @@
 ## Get the documentation source
 You need to clone the ACCESSHub Community repository to your local machine:
 ```
-   git clone git@github.com:ACCESS-NRI-Community/ACCESSHub.git
+git clone git@github.com:ACCESS-NRI-Community/ACCESSHub.git
 ```
 
-## Install Material for Mkdocs (recommended)
-MkDocs allows you to build the documentation locally so you can check your modifications before committing them to the site. As such, we recommend you install Material for Mkdocs on your local machine:
+## Install Material for Mkdocs (not required)
+If you would like to preview the documentation locally to check your modifications before submitting them to the ACCESSHub site and you are comfortable with installing Python packages, you will need to install Material for Mkdocs. However, this is not required as there is [a preview available as part of the submission process](../modify_documentation/#preview-of-the-documentation).
+
+You can install Material for Mkdocs on your local machine with `pip` or `conda`:
+
  - using pip
  ```
-    pip install mkdocs-material
+ pip install mkdocs-material
  ```
  - using conda
  ```
-    conda create -n doc -c conda-forge mkdocs-material
+ conda create -n doc -c conda-forge mkdocs-material
  ```

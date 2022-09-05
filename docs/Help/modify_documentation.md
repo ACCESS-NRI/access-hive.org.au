@@ -7,7 +7,7 @@ There are two ways to modify the documentation:
 
 ## Open an issue
 
-For all additions or modifications to the ACCESSHub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESSHub/issues) in the ACCESSHub GitHub repository. After creation, please assign the Issue to yourself in the right-hand side panel if you intend on working on the issue.
+For all additions or modifications to the ACCESSHub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESSHub/issues) in the ACCESSHub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users) if you intend on working on the issue.
 
 ## Edit directly on GitHub
 
@@ -25,15 +25,6 @@ At the right of the title, you will see a pen icon :material-pencil:. When you c
 When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. Then ask for a review using the Reviewer menu on the right-hand side panel.
 
 You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
-
-### Preview of the documentation
-
-When a pull request is opened or updated, GitHub will automatically build a preview of the documentation that includes the proposed changes. In the pull request, you will see the link to the preview appear in this fashion:
-
-![PRpreview](../assets/site-preview-PR.png)
-
-???+ info
-    If you open the preview and it looks completely broken, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
 
 ## Edit locally on your computer
 
@@ -76,19 +67,23 @@ Your documentation will be built on  http://127.0.0.1:8000. Open this URL in you
 
 ### Submit your changes
 
-Once you are satisfy with your modifications, you will need to:
+Once you are satisfied with your modifications, you will need to:
 
  - commit your changes locally on your branch
  - push your branch to GitHub
  - on GitHub, open a pull request between the `main` branch and your branch.
 
-In the pull request description, make sure to add the text `Closes #X` where X is the Issue number associated with your modifications so that the Issue and the pull request are linked, cross-reference each other and are closed at the same time. Then ask for a review using the Reviewer menu on the right-hand side panel.
+In the pull request description, make sure to add the text `Closes #X` where X is the Issue number associated with your modifications. This creates cross-references between the Issue and pull request, and links them so that the Issue is automatically closed when the pull request is accepted. Then ask for [a review using the Reviewer menu on the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users).
 
 You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
 
-Once you open you pull request, GitHub will automatically build a preview of the documentation with your changes. In the pull request, you will see the link to the preview appear in this fashion:
+## Preview of the documentation
+
+When a pull request is opened or updated, GitHub will automatically build a preview of the documentation that includes the proposed changes. In the pull request, you will see the link to the preview appear in this fashion:
 
 ![PRpreview](../assets/site-preview-PR.png)
 
 ???+ info
-    If you open the preview and it looks completely broken, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
+    It can take a while for the preview to build.
+
+    If you open the preview and it looks completely broken or if it hasn't updated from additional modifications in the pull request, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
