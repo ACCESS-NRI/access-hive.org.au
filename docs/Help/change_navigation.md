@@ -2,6 +2,8 @@
 
 The navigation for the site is defined in `mkdocs.yml`.
 
+## A simple example
+
 The easiest way to explain how it works is to look at an example. Let's say `mkdocs.yml` contains:
 
 ```yaml
@@ -26,6 +28,8 @@ The second level of categories indicate the name of each page under that section
 The filenames indicate the path to the file with the text for each page. It is recommended to use the title of each file (i.e. the Header 1) as the name of the page and the filename.
 
 ![PageExample](../assets/pages_example.png)
+
+## Add sections to a tab
 
 It is possible to define several sections per tab. For example:
 

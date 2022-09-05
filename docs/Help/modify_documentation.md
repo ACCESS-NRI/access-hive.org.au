@@ -1,6 +1,7 @@
 # Modify the documentation
 
 There are two ways to modify the documentation:
+
  - direct edit on GitHub. This method is adequate for small modifications to a single file.
  - local edit on your local computer. This method is recommended for large modifications.
 
@@ -8,7 +9,7 @@ There are two ways to modify the documentation:
 
 For all additions or modifications to the ACCESSHub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESSHub/issues) in the ACCESSHub GitHub repository. After creation, please assign the Issue to yourself in the right-hand side panel if you intend on working on the issue.
 
-## Direct edit
+## Edit directly on GitHub
 
 For a very simple change, the easiest is to go to the ACCESSHub site and navigate to the page you want to modify.
 
@@ -25,7 +26,16 @@ When creating the pull request, make sure to add the text: `Closes #X` to the de
 
 You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
 
-## Local edit
+### Preview of the documentation
+
+When a pull request is opened or updated, GitHub will automatically build a preview of the documentation that includes the proposed changes. In the pull request, you will see the link to the preview appear in this fashion:
+
+![PRpreview](../assets/site-preview-PR.png)
+
+???+ info
+    If you open the preview and it looks completely broken, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
+
+## Edit locally on your computer
 
 If you prefer to work locally on your computer (e.g. to preview the result of your modification locally before submitting it to the documentation), you will need to follow a series of steps.
 ???+ Note
@@ -51,7 +61,7 @@ You can then start modifying the documentation files.
 ???+ tip
     If you have problems finding the page you need to edit, the easiest way is to head to the ACCESSHub site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
 
-### Previewing your changes
+### Previewing your changes locally
 
 ???+ note
     If you have installed mkdocs-material via conda, make sure you activate the correct environment first
@@ -63,3 +73,22 @@ To start the server, open a terminal and navigate to your ACCESSHub local reposi
     mkdocs serve
 ```
 Your documentation will be built on  http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
+
+### Submit your changes
+
+Once you are satisfy with your modifications, you will need to:
+
+ - commit your changes locally on your branch
+ - push your branch to GitHub
+ - on GitHub, open a pull request between the `main` branch and your branch.
+
+In the pull request description, make sure to add the text `Closes #X` where X is the Issue number associated with your modifications so that the Issue and the pull request are linked, cross-reference each other and are closed at the same time. Then ask for a review using the Reviewer menu on the right-hand side panel.
+
+You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
+
+Once you open you pull request, GitHub will automatically build a preview of the documentation with your changes. In the pull request, you will see the link to the preview appear in this fashion:
+
+![PRpreview](../assets/site-preview-PR.png)
+
+???+ info
+    If you open the preview and it looks completely broken, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
