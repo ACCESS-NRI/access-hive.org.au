@@ -38,8 +38,8 @@ jobs:
           mkdocs build
 
       - name: Deploy
-          uses: JamesIves/github-pages-deploy-action@v4
-          with:
-            folder: site
-            branch: gh-pages # default
-            clean-exclude: pr-preview/ # don't overwrite previews
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
+          branch: gh-pages # default
+          clean-exclude: pr-preview/ # don't overwrite previews
