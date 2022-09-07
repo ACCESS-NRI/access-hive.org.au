@@ -2,7 +2,7 @@
 ## Get the documentation source
 You need to clone the ACCESSHub Community repository to your local machine:
 ```
-git clone git@github.com:ACCESS-NRI-Community/ACCESSHub.git
+git clone git@github.com:ACCESS-Hub/ACCESSHub.git
 ```
 
 ## Install Material for Mkdocs (not required)
