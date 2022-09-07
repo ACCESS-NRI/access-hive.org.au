@@ -45,7 +45,7 @@ markdown_extensions:
 # Navigation
 nav:
   - Welcome: index.md
-  - ACCESS-NRI: ACCESS-NRI/ACCESS-NRI.md
+  - ACCESS-NRI: 
     - Policies : ACCESS-NRI/policies.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
