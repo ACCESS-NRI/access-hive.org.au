@@ -1,8 +1,8 @@
-site_name: ACCESSHub Demo
+site_name: ACCESS-Hub
 
 # Git repository
-repo_url: https://github.com/ACCESS-NRI-Community/ACCESSHub
-repo_name: ACCESSHub
+repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
+repo_name: ACCESS-Hub
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs/
 
@@ -45,7 +45,7 @@ markdown_extensions:
 # Navigation
 nav:
   - Welcome: index.md
-  - ACCESS NRI: ACCESS-NRI/ACCESS-NRI.md
+  - ACCESS-NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
   - How to contribute: 

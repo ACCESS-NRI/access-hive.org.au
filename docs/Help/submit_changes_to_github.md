@@ -46,4 +46,4 @@ Once you are satisfied with your modifications, you will need to:
 
 In the pull request description, make sure to add the text `Closes #X` where X is the Issue number associated with your modifications. This creates cross-references between the Issue and pull request, and links them so that the Issue is automatically closed when the pull request is accepted. Then ask for [a review using the Reviewer menu on the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users).
 
-You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
+You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS-Hub site. 
