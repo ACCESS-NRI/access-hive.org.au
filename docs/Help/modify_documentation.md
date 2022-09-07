@@ -7,7 +7,7 @@ There are two ways to modify the documentation:
 
 ## Open an issue
 
-For all additions or modifications to the ACCESS-Hub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESS-Hub/issues) in the ACCESS-Hub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users) if you intend on working on the issue.
+For all additions or modifications to the ACCESS-Hub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-Hub/ACCESS-Hub/issues) in the ACCESS-Hub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users) if you intend on working on the issue.
 
 ## Edit directly on GitHub
 

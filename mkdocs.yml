@@ -1,7 +1,7 @@
 site_name: ACCESS-Hub
 
 # Git repository
-repo_url: https://github.com/ACCESS-NRI-Community/ACCESS-Hub
+repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
 repo_name: ACCESS-Hub
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs/
