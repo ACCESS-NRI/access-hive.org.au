@@ -7,11 +7,11 @@ There are two ways to modify the documentation:
 
 ## Open an issue
 
-For all additions or modifications to the ACCESSHub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESSHub/issues) in the ACCESSHub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users) if you intend on working on the issue.
+For all additions or modifications to the ACCESS-Hub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-NRI-Community/ACCESS-Hub/issues) in the ACCESS-Hub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users) if you intend on working on the issue.
 
 ## Edit directly on GitHub
 
-For a very simple change, the easiest is to go to the ACCESSHub site and navigate to the page you want to modify.
+For a very simple change, the easiest is to go to the ACCESS-Hub site and navigate to the page you want to modify.
 
 At the right of the title, you will see a pen icon :material-pencil:. When you click on this icon, your browser will open the file in GitHub allowing you to edit the file. Enter your modification in the main pane. Then add a commit message in the Commit changes box.
 <figure markdown>
@@ -26,7 +26,7 @@ When creating the pull request, make sure to add the text: `Closes #X` to the de
 
 Then ask for a review using the Reviewer menu on the right-hand side panel.
 
-You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESSHub site. 
+You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS-Hub site. 
 
 ## Edit locally on your computer
 
@@ -42,7 +42,7 @@ If you prefer to work locally on your computer (e.g. to preview the result of yo
 If you don't know how to do these steps, please refer to the [Collaborating on GitHub section](submit_changes_to_github.md).
 
 ???+ tip
-    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESSHub site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
+    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESS-Hub site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
 
 ### Previewing your changes locally
 
@@ -53,7 +53,7 @@ If you don't know how to do these steps, please refer to the [Collaborating on G
 
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving.
 
-To start the server, open a terminal and navigate to your ACCESSHub local repository. Now type:
+To start the server, open a terminal and navigate to your ACCESS-Hub local repository. Now type:
 ```
 mkdocs serve
 ```
