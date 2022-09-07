@@ -17,7 +17,7 @@ The easiest way to explain how the navigation is defined is to look at an exampl
 ```yaml
 nav:
   - Welcome: index.md
-  - ACCESS NRI: ACCESS-NRI/ACCESS-NRI.md
+  - ACCESS-NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
   - How to contribute: 
@@ -27,11 +27,11 @@ nav:
     - Change the navigation: Help/change_navigation.md
 ```
 
-The top level category names define the tabs in the header bar. So here we have the tabs: "Welcome", "ACCESS NRI", "Community" and "How to contribute". It also defines the name of the top section under each tab.
+The top level category names define the tabs in the header bar. So here we have the tabs: "Welcome", "ACCESS-NRI", "Community" and "How to contribute". It also defines the name of the top section under each tab.
 
 ![TabExample](../assets/tabs_example.png)
 
-The second level of categories indicate the name of each page under that section. So the "ACCESS NRI" tab has the text directly under the section "ACCESS NRI". The "Community" tab has a section called "Community" that contains one page: "Generate Bathymetry". Finally, the "How to contribute" tab has 1 section "How to contribute" with 4 pages.
+The second level of categories indicate the name of each page under that section. So the "ACCESS-NRI" tab has the text directly under the section "ACCESS-NRI". The "Community" tab has a section called "Community" that contains one page: "Generate Bathymetry". Finally, the "How to contribute" tab has 1 section "How to contribute" with 4 pages.
 
 The filenames indicate the path to the file relative to the `docs/` folder containing the text for each page. It is recommended to use the title of each file (i.e. the Header 1) as the name of the page and the filename.
 
@@ -44,7 +44,7 @@ It is possible to define several sections per tab by using more levels of indent
 ```yaml
 nav:
   - Welcome: index.md
-  - ACCESS NRI: ACCESS-NRI/ACCESS-NRI.md
+  - ACCESS-NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
   - How to contribute: 
