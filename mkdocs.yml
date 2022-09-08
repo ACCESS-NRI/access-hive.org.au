@@ -46,9 +46,53 @@ markdown_extensions:
 nav:
   - Welcome: index.md
   - ACCESS-NRI: 
-    - Policies : ACCESS-NRI/policies.md
+    - Releases:
+      - ACCESS-OM
+      - ACCESS-AM
+      - ACCESS-ESM
+      - ACCESS-CM
+    - Model Components:
+        - Land
+        - Ocean
+        - Ice
+        - Atmosphere
+        - Coupler
+    - Documentation and Training:
+        - Technical
+        - Analysis
+        - Data
+        - Policies : ACCESS-NRI/policies.md
+    - Model Evaluation:
+        - Tools
+        - Tutorials
+        - Background information
+    - Working Groups:
+        - Ocean-Sea Ice (COSIMA)
+        - Atmosphere
+        - Coupled Models
+        - Land
+        - Technical
+        - Next Generation Methods
   - Community: 
-    - Generate Bathymetry: Community/Bathymetry.md
+    - Modelling:
+      - Ocean/Sea-Ice
+      - ACCESS Coupled
+      - ACCESS Seasonal
+      - Land
+      - Regional Atmosphere
+      - Regional Ocean
+      - Biogeochemistry
+    - Evaluation and Analysis:
+      - CMIP
+      - Land
+      - Ocean Sea-ice
+      - Atmosphere
+      - Machine Learning
+      - General
+    - Training resources:
+      - General technical
+      - Modelling
+      - Analysis
   - How to contribute: 
     - How to contribute: Help/How_to_contribute.md
     - Setup: Help/contribution_setup.md
