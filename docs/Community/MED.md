@@ -39,7 +39,7 @@ The framework is suited to analysing any MOM5/MOM6 output, as well as output fro
 
 The cookbook is structured as follows:
 
-- The cosima-cookbook repository includes boiler-plate code and scripts that underpin the cookbook.
+- The cosima-cookbook repository includes boiler-plate code and scripts that underpin the cookbook, including a database for exploring and loading available data.
 - The cosima-recipes repository includes example notebooks on which you can base your analyses.
 
 
@@ -68,7 +68,7 @@ Links to the code repository and documentation for each METplus component are pr
 
 ## [PCMDI Metrics Package (PMP)][pmp-doc]
 
-[**Documentation**][pmp-doc] |  
+[**Documentation**][pmp-doc] | 
 [**Sources**][pmp-source]
 
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation. 
@@ -78,7 +78,7 @@ The PMP is used to provide “quick-look” objective comparisons of Earth Syste
 
 ## Kerchunk
 
-[**Documentation**][kerchunk-doc] |  
+[**Documentation**][kerchunk-doc] | 
 [**Sources**][kerchunk-source]
 
 Kerchunk is a library that provides a unified way to represent a variety of chunked, compressed data formats (e.g. NetCDF/HDF5, GRIB2, TIFF, …), allowing efficient access to the data from traditional file systems or cloud object storage. It also provides a flexible way to create virtual datasets from multiple files.
