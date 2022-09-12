@@ -47,6 +47,7 @@ nav:
   - Welcome: index.md
   - ACCESS-NRI: 
     - Policies : ACCESS-NRI/policies.md
+    - Training: ACCESS-NRI/training.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
     - Model Evaluation: Community/MED.md
