@@ -45,7 +45,7 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - /ACCESS-Hub/ACCESS-NRI/index.md
+  - ACCESS-NRI/index.md
   - Community: /ACCESS-Hub/Community/missing.md
   - Releases:
     - ACCESS-OM: ACCESS-NRI/missing.md
