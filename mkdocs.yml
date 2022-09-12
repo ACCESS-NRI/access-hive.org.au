@@ -49,6 +49,7 @@ nav:
     - Policies : ACCESS-NRI/policies.md
   - Community: 
     - Generate Bathymetry: Community/Bathymetry.md
+    - Model Evaluation: Community/MED.md
   - How to contribute: 
     - How to contribute: Help/How_to_contribute.md
     - Setup: Help/contribution_setup.md
