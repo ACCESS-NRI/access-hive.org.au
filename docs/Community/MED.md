@@ -74,6 +74,27 @@ Links to the code repository and documentation for each METplus component are pr
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation. 
 
 
+# Data Processing Tools
+
+## Kerchunk
+
+[**Documentation**][kerchunk-doc] |  
+[**Sources**][kerchunk-source]
+
+Kerchunk is a library that provides a unified way to represent a variety of chunked, compressed data formats (e.g. NetCDF/HDF5, GRIB2, TIFF, …), allowing efficient access to the data from traditional file systems or cloud object storage. It also provides a flexible way to create virtual datasets from multiple files.
+
+# Data Processing / Analysis blogposts and tutorials
+
+[Accessing NetCDF and GRIB file collections as cloud-native virtual datasets using Kerchunk, Peter March, Sep 2022](https://medium.com/pangeo/accessing-netcdf-and-grib-file-collections-as-cloud-native-virtual-datasets-using-kerchunk-625a2d0a9191)
+
+# Data Catalogs
+
+## Synda
+
+synda is a command line tool to search and download files from the Earth System Grid Federation (ESGF) archive.
+
+
+
 [esmvaltool-web]: https://www.esmvaltool.org/
 [esmvaltool-doc]: https://docs.esmvaltool.org/en/latest
 [esmvaltool-tutorial]: https://esmvalgroup.github.io/ESMValTool_Tutorial/index.html
@@ -112,3 +133,6 @@ The PMP is used to provide “quick-look” objective comparisons of Earth Syste
 [pmp-source]: https://github.com/PCMDI/pcmdi_metrics
 
 [mev-web]: https://modelevaluation.org/
+
+[kerchunk-doc]: https://fsspec.github.io/kerchunk/
+[kerchunk-source]:  https://github.com/fsspec/kerchunk
