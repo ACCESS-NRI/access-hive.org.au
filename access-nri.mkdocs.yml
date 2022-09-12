@@ -48,31 +48,31 @@ nav:
   - ACCESS-NRI/index.md
   - Community: /ACCESS-Hub/Community/missing.md
   - Releases:
-    - ACCESS-OM: ACCESS-NRI/missing.md
-    - ACCESS-AM: ACCESS-NRI/missing.md
-    - ACCESS-ESM: ACCESS-NRI/missing.md
-    - ACCESS-CM: ACCESS-NRI/missing.md
+    - ACCESS-OM: ACCESS-NRI/Releases/missing.md
+    - ACCESS-AM: ACCESS-NRI/Releases/missing.md
+    - ACCESS-ESM: ACCESS-NRI/Releases/missing.md
+    - ACCESS-CM: ACCESS-NRI/Releases/missing.md
   - Model Components:
-    - Land: ACCESS-NRI/missing.md
-    - Ocean: ACCESS-NRI/missing.md
-    - Ice: ACCESS-NRI/missing.md
-    - Atmosphere: ACCESS-NRI/missing.md
-    - Coupler: ACCESS-NRI/missing.md
+    - Land: ACCESS-NRI/model_components/missing.md
+    - Ocean: ACCESS-NRI/model_components/missing.md
+    - Ice: ACCESS-NRI/model_components/missing.md
+    - Atmosphere: ACCESS-NRI/model_components/missing.md
+    - Coupler: ACCESS-NRI/model_components/missing.md
   - Documentation and Training:
     - Technical: 
-      - Linux: ACCESS-NRI/missing.md
-      - GitHub: ACCESS-NRI/missing.md
-    - Analysis: ACCESS-NRI/missing.md
-    - Data: ACCESS-NRI/missing.md
-    - Policies : ACCESS-NRI/policies.md
+      - Linux: ACCESS-NRI/docs_and_training/technical/missing.md
+      - GitHub: ACCESS-NRI/docs_and_training/technical/missing.md
+    - Analysis: ACCESS-NRI/docs_and_training/missing.md
+    - Data: ACCESS-NRI/docs_and_training/missing.md
+    - Policies : ACCESS-NRI/docs_and_training/policies.md
   - Model Evaluation:
-    - Tools: ACCESS-NRI/missing.md
-    - Tutorials: ACCESS-NRI/missing.md
-    - Background information: ACCESS-NRI/missing.md
+    - Tools: ACCESS-NRI/model_evaluation/missing.md
+    - Tutorials: ACCESS-NRI/model_evaluation/missing.md
+    - Background information: ACCESS-NRI/model_evaluation/missing.md
   - Working Groups:
-    - Ocean-Sea Ice (COSIMA): ACCESS-NRI/missing.md
-    - Atmosphere: ACCESS-NRI/missing.md
-    - Coupled Models: ACCESS-NRI/missing.md
-    - Land: ACCESS-NRI/missing.md
-    - Technical: ACCESS-NRI/missing.md
-    - Next Generation Methods: ACCESS-NRI/missing.md
+    - Ocean-Sea Ice (COSIMA): ACCESS-NRI/working_groups/missing.md
+    - Atmosphere: ACCESS-NRI/working_groups/missing.md
+    - Coupled Models: ACCESS-NRI/working_groups/missing.md
+    - Land: ACCESS-NRI/working_groups/missing.md
+    - Technical: ACCESS-NRI/working_groups/missing.md
+    - Next Generation Methods: ACCESS-NRI/working_groups/missing.md
