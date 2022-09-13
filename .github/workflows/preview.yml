@@ -43,7 +43,7 @@ jobs:
       - name: Build
         # builds to "site" directory by default
         run: |
-          (cd community && mkdocs build -f mkdocs.yml -d ../site/Community)
+          mkdocs build -f mkdocs.yml -d site
           (cd access-nri && mkdocs build -f mkdocs.yml -d ../site/ACCESS-NRI)
 
       - name: Deploy preview
