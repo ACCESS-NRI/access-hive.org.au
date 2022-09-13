@@ -1,0 +1,83 @@
+site_name: ACCESS-Hub - ACCESS-NRI
+
+# Git repository
+repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
+repo_name: ACCESS-Hub
+# Material default to a "master" branch, need to change to "main"
+edit_uri: edit/main/docs_access-nri/
+docs_dir: docs_access-nri
+
+# Theme
+theme:
+  name: material
+  palette:
+    - scheme: light
+      primary: indgo
+      accent: lime
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: lime
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+  logo: assets/ACCESSLogoJustPlanet.png
+
+# Extensions
+markdown_extensions: 
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+  
+# Navigation
+nav:
+  - /ACCESS-Hub/ACCESS-NRI/index.md
+  - Community: /ACCESS-Hub/Community/missing.md
+  - Releases:
+    - ACCESS-OM: ACCESS-NRI/missing.md
+    - ACCESS-AM: ACCESS-NRI/missing.md
+    - ACCESS-ESM: ACCESS-NRI/missing.md
+    - ACCESS-CM: ACCESS-NRI/missing.md
+  - Model Components:
+    - Land: ACCESS-NRI/missing.md
+    - Ocean: ACCESS-NRI/missing.md
+    - Ice: ACCESS-NRI/missing.md
+    - Atmosphere: ACCESS-NRI/missing.md
+    - Coupler: ACCESS-NRI/missing.md
+  - Documentation and Training:
+    - Technical: 
+      - Linux: ACCESS-NRI/missing.md
+      - GitHub: ACCESS-NRI/missing.md
+    - Analysis: ACCESS-NRI/missing.md
+    - Data: ACCESS-NRI/missing.md
+    - Policies : ACCESS-NRI/policies.md
+  - Model Evaluation:
+    - Tools: ACCESS-NRI/missing.md
+    - Tutorials: ACCESS-NRI/missing.md
+    - Background information: ACCESS-NRI/missing.md
+  - Working Groups:
+    - Ocean-Sea Ice (COSIMA): ACCESS-NRI/missing.md
+    - Atmosphere: ACCESS-NRI/missing.md
+    - Coupled Models: ACCESS-NRI/missing.md
+    - Land: ACCESS-NRI/missing.md
+    - Technical: ACCESS-NRI/missing.md
+    - Next Generation Methods: ACCESS-NRI/missing.md
+  - How to contribute: 
+    - How to contribute: Help/How_to_contribute.md
+    - Setup: Help/contribution_setup.md
+    - Modify the documentation: Help/modify_documentation.md
+    - Change the navigation: Help/change_navigation.md
