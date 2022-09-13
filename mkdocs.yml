@@ -49,8 +49,26 @@ nav:
     - Policies : ACCESS-NRI/policies.md
     - Training: ACCESS-NRI/training.md
   - Community: 
-    - Generate Bathymetry: Community/Bathymetry.md
-    - Model Evaluation: Community/MED.md
+    - Modelling:
+      - Ocean/Sea-Ice
+      - ACCESS Coupled
+      - ACCESS Seasonal
+      - Land
+      - Regional Atmosphere
+      - Regional Ocean
+      - Biogeochemistry
+    - Evaluation and Analysis:
+      - MED.md
+      - CMIP
+      - Land
+      - Ocean Sea-ice
+      - Atmosphere
+      - Machine Learning
+      - General
+    - Training resources:
+      - General technical
+      - Modelling
+      - Analysis
   - How to contribute: 
     - How to contribute: Help/How_to_contribute.md
     - Setup: Help/contribution_setup.md
