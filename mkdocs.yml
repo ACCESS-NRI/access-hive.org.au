@@ -44,31 +44,69 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - Welcome: index.md
+  - index.md
   - ACCESS-NRI: 
+<<<<<<< HEAD
     - Policies : ACCESS-NRI/policies.md
     - Training: ACCESS-NRI/training.md
   - Community: 
+=======
+    - ACCESS-NRI/index.md
+    - Releases:
+      - ACCESS-OM: ACCESS-NRI/missing.md
+      - ACCESS-AM: ACCESS-NRI/missing.md
+      - ACCESS-ESM: ACCESS-NRI/missing.md
+      - ACCESS-CM: ACCESS-NRI/missing.md
+    - Model Components:
+      - Land: ACCESS-NRI/missing.md
+      - Ocean: ACCESS-NRI/missing.md
+      - Ice: ACCESS-NRI/missing.md
+      - Atmosphere: ACCESS-NRI/missing.md
+      - Coupler: ACCESS-NRI/missing.md
+    - Documentation and Training:
+      - Technical: 
+        - Linux: ACCESS-NRI/missing.md
+        - GitHub: ACCESS-NRI/missing.md
+      - Analysis: ACCESS-NRI/missing.md
+      - Data: ACCESS-NRI/missing.md
+      - Policies : ACCESS-NRI/policies.md
+    - Model Evaluation:
+      - Tools: ACCESS-NRI/missing.md
+      - Tutorials: ACCESS-NRI/missing.md
+      - Background information: ACCESS-NRI/missing.md
+    - Working Groups:
+      - Ocean-Sea Ice (COSIMA): ACCESS-NRI/missing.md
+      - Atmosphere: ACCESS-NRI/missing.md
+      - Coupled Models: ACCESS-NRI/missing.md
+      - Land: ACCESS-NRI/missing.md
+      - Technical: ACCESS-NRI/missing.md
+      - Next Generation Methods: ACCESS-NRI/missing.md
+  - Community:
+>>>>>>> e70a6df (Incorporate MED changes again)
     - Modelling:
-      - Ocean/Sea-Ice
-      - ACCESS Coupled
-      - ACCESS Seasonal
-      - Land
-      - Regional Atmosphere
-      - Regional Ocean
-      - Biogeochemistry
+      - Ocean/Sea-Ice: Community/missing.md
+      - ACCESS Coupled: Community/missing.md
+      - ACCESS Seasonal: Community/missing.md
+      - Land: Community/missing.md
+      - Regional Atmosphere: Community/missing.md
+      - Regional Ocean: Community/missing.md
+      - Biogeochemistry: Community/missing.md
     - Evaluation and Analysis:
       - MED.md
-      - CMIP
-      - Land
-      - Ocean Sea-ice
-      - Atmosphere
-      - Machine Learning
-      - General
+      - CMIP: 
+        - CMIP6:
+          - Sublevel 1: Community/missing.md
+          - Sublevel 2: Community/missing.md
+        - CMIP5: Community/missing.md
+      - Land: Community/missing.md
+      - Ocean Sea-ice: Community/missing.md
+      - Atmosphere: Community/missing.md
+      - Machine Learning: Community/missing.md
+      - General: Community/missing.md
     - Training resources:
-      - General technical
-      - Modelling
-      - Analysis
+      - General technical: Community/missing.md
+      - Modelling: Community/missing.md
+      - Analysis: Community/missing.md
   - How to contribute: 
     - How to contribute: Help/How_to_contribute.md
     - Setup: Help/contribution_setup.md
