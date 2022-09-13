@@ -46,11 +46,6 @@ markdown_extensions:
 nav:
   - index.md
   - ACCESS-NRI: 
-<<<<<<< HEAD
-    - Policies : ACCESS-NRI/policies.md
-    - Training: ACCESS-NRI/training.md
-  - Community: 
-=======
     - ACCESS-NRI/index.md
     - Releases:
       - ACCESS-OM: ACCESS-NRI/missing.md
@@ -82,7 +77,6 @@ nav:
       - Technical: ACCESS-NRI/missing.md
       - Next Generation Methods: ACCESS-NRI/missing.md
   - Community:
->>>>>>> e70a6df (Incorporate MED changes again)
     - Modelling:
       - Ocean/Sea-Ice: Community/missing.md
       - ACCESS Coupled: Community/missing.md
