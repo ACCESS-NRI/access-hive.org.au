@@ -45,7 +45,6 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - ACCESS-NRI: ACCESS-NRI/index.html
   - Modelling:
     - Ocean/Sea-Ice: Community/missing.md
     - ACCESS Coupled: Community/missing.md
@@ -74,3 +73,4 @@ nav:
     - Setup: Help/contribution_setup.md
     - Modify the documentation: Help/modify_documentation.md
     - Change the navigation: Help/change_navigation.md
+  - ACCESS-NRI: ACCESS-NRI/index.html
