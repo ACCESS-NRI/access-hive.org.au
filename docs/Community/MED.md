@@ -83,16 +83,23 @@ The PMP is used to provide “quick-look” objective comparisons of Earth Syste
 
 Kerchunk is a library that provides a unified way to represent a variety of chunked, compressed data formats (e.g. NetCDF/HDF5, GRIB2, TIFF, …), allowing efficient access to the data from traditional file systems or cloud object storage. It also provides a flexible way to create virtual datasets from multiple files.
 
-# Data Processing / Analysis blogposts and tutorials
-
-[Accessing NetCDF and GRIB file collections as cloud-native virtual datasets using Kerchunk, Peter March, Sep 2022](https://medium.com/pangeo/accessing-netcdf-and-grib-file-collections-as-cloud-native-virtual-datasets-using-kerchunk-625a2d0a9191)
-
-# Data Catalogs
-
 ## Synda
 
 synda is a command line tool to search and download files from the Earth System Grid Federation (ESGF) archive.
 
+# Data Processing / Analysis blogposts and tutorials
+
+[Accessing NetCDF and GRIB file collections as cloud-native virtual datasets using Kerchunk, Peter March, Sep 2022](https://medium.com/pangeo/accessing-netcdf-and-grib-file-collections-as-cloud-native-virtual-datasets-using-kerchunk-625a2d0a9191)
+
+# Data Communities / Catalogs
+
+## [FLUXNET][FLUXNET-web]
+
+FLUXNET is an international “network of networks,” tying together regional networks of earth system scientists. FLUXNET scientists use the eddy covariance technique to measure the cycling of carbon, water, and energy between the biosphere and atmosphere. Scientists use these data to better understand ecosystem functioning, and to detect trends in climate, greenhouse gases, and air pollution.
+
+### [OZFlux][OZFlux-web]
+
+OzFlux is an ecosystem research network set up to provide Australian, New Zealand and global ecosystem modelling communities with consistent observations of energy, carbon and water exchange between the atmosphere and key Australian and New Zealand ecosystems.
 
 
 [esmvaltool-web]: https://www.esmvaltool.org/
@@ -136,3 +143,6 @@ synda is a command line tool to search and download files from the Earth System 
 
 [kerchunk-doc]: https://fsspec.github.io/kerchunk/
 [kerchunk-source]:  https://github.com/fsspec/kerchunk
+
+[OZFlux-web]: https://www.ozflux.org.au
+[FLUXNET-web]: https://fluxnet.org/
