@@ -45,32 +45,32 @@ markdown_extensions:
 nav:
   - index.md
   - Experiments:
-    - ACCESS-OM: experiments/missing.md
-    - ACCESS-AM: experiments/missing.md
-    - ACCESS-ESM: experiments/missing.md
-    - ACCESS-CM: experiments/missing.md
+    - ACCESS-OM: experiments/access-om.md
+    - ACCESS-AM: experiments/access-am.md
+    - ACCESS-ESM: experiments/access-esm.md
+    - ACCESS-CM: experiments/access-cm.md
   - Model Components:
-    - Land: model_components/missing.md
-    - Ocean: model_components/missing.md
-    - Ice: model_components/missing.md
-    - Atmosphere: model_components/missing.md
-    - Coupler: model_components/missing.md
+    - Land: model_components/land.md
+    - Ocean: model_components/ocean.md
+    - Sea Ice: model_components/sea-ice.md
+    - Atmosphere: model_components/atmosphere.md
+    - Coupler: model_components/coupler.md
   - Documentation and Training:
     - Technical: 
-      - Linux: docs_and_training/technical/missing.md
-      - GitHub: docs_and_training/technical/missing.md
-    - Analysis: docs_and_training/missing.md
-    - Data: docs_and_training/missing.md
+      - Linux: docs_and_training/technical/linux.md
+      - GitHub: docs_and_training/technical/github.md
+    - Analysis: docs_and_training/analysis.md
+    - Data: docs_and_training/data.md
     - Policies : docs_and_training/policies.md
   - Model Evaluation:
-    - Tools: model_evaluation/missing.md
-    - Tutorials: model_evaluation/missing.md
-    - Background information: model_evaluation/missing.md
+    - Tools: model_evaluation/tools.md
+    - Tutorials: model_evaluation/tutorials.md
+    - Background information: model_evaluation/background.md
   - Working Groups:
-    - Ocean-Sea Ice (COSIMA): working_groups/missing.md
-    - Atmosphere: working_groups/missing.md
-    - Coupled Models: working_groups/missing.md
-    - Land: working_groups/missing.md
-    - Technical: working_groups/missing.md
-    - Next Generation Methods: working_groups/missing.md
+    - Ocean-Sea Ice (COSIMA): working_groups/ocean_seaice.md
+    - Atmosphere: working_groups/atmosphere.md
+    - Coupled Models: working_groups/coupled.md
+    - Land: working_groups/land.md
+    - Technical: working_groups/technical.md
+    - Next Generation Methods: working_groups/ngms.md
   - Community: /ACCESS-Hub/index.html
