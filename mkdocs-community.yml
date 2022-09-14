@@ -1,0 +1,76 @@
+site_name: ACCESS-Hub - Community
+
+# Git repository
+repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
+repo_name: ACCESS-Hub
+# Material default to a "master" branch, need to change to "main"
+edit_uri: edit/main/docs
+docs_dir: docs
+
+# Theme
+theme:
+  name: material
+  palette:
+    - scheme: light
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+  logo: assets/ACCESSLogoJustPlanet.png
+
+# Extensions
+markdown_extensions: 
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+  
+# Navigation
+nav:
+  - Modelling:
+    - Ocean/Sea-Ice: modelling/ocean_seaice/missing.md
+    - ACCESS Coupled: modelling/access_coupled/missing.md
+    - ACCESS Seasonal: modelling/access_seasonal/missing.md
+    - Land: modelling/land/missing.md
+    - Regional Atmosphere: modelling/regional_atmosphere/missing.md
+    - Regional Ocean: modelling/regional_ocean/missing.md
+    - Biogeochemistry: modelling/biogeochemistry/missing.md
+  - Evaluation and Analysis:
+    - CMIP: 
+      - CMIP6:
+        - Sublevel 1: evaluation_and_analysis/CMIP/CMIP6/missing.md
+        - Sublevel 2: evaluation_and_analysis/CMIP/CMIP6/missing.md
+      - CMIP5: evaluation_and_analysis/CMIP/CMIP5/missing.md
+    - Land: evaluation_and_analysis/land/missing.md
+    - Ocean Sea-ice: evaluation_and_analysis/ocean_seaice/missing.md
+    - Atmosphere: evaluation_and_analysis/atmosphere/missing.md
+    - Machine Learning: evaluation_and_analysis/machine_learning/missing.md
+    - General: 
+      - Model Evaluation and Diagnostic Tools: evaluation_and_analysis/general/MED.md
+  - Training resources:
+    - General technical: training/general_technical/missing.md
+    - Modelling: training/modelling/missing.md
+    - Analysis: training/analysis/missing.md
+  - How to contribute: 
+    - How to contribute: help/how_to_contribute.md
+    - Setup: help/contribution_setup.md
+    - Modify the documentation: help/modify_documentation.md
+    - Change the navigation: help/change_navigation.md
+  - ACCESS-NRI: ACCESS-NRI/index.html
