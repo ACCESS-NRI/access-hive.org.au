@@ -35,8 +35,9 @@ jobs:
 
       - name: Build
         run: |
-          mkdocs build
-
+          mkdocs build -f mkdocs-community.yml -d site
+          (cd access-nri && mkdocs build -f mkdocs-nri.yml -d ../site/ACCESS-NRI)
+          
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
