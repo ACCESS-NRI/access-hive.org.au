@@ -4,7 +4,7 @@ site_name: ACCESS-Hub - Community
 repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
 repo_name: ACCESS-Hub
 # Material default to a "master" branch, need to change to "main"
-edit_uri: edit/main/community/docs
+edit_uri: edit/main/docs
 docs_dir: docs
 
 # Theme
@@ -46,28 +46,28 @@ markdown_extensions:
 # Navigation
 nav:
   - Modelling:
-    - Ocean/Sea-Ice: Community/missing.md
-    - ACCESS Coupled: Community/missing.md
-    - ACCESS Seasonal: Community/missing.md
-    - Land: Community/missing.md
-    - Regional Atmosphere: Community/missing.md
-    - Regional Ocean: Community/missing.md
-    - Biogeochemistry: Community/missing.md
+    - Ocean/Sea-Ice: Community/modelling/ocean_seaice/missing.md
+    - ACCESS Coupled: Community/modelling/access_coupled/missing.md
+    - ACCESS Seasonal: Community/modelling/access_seasonal/missing.md
+    - Land: Community/modelling/land/missing.md
+    - Regional Atmosphere: Community/modelling/regional_atmosphere/missing.md
+    - Regional Ocean: Community/modelling/regional_ocean/missing.md
+    - Biogeochemistry: Community/modelling/biogeochemistry/missing.md
   - Evaluation and Analysis:
     - CMIP: 
       - CMIP6:
-        - Sublevel 1: Community/missing.md
-        - Sublevel 2: Community/missing.md
-      - CMIP5: Community/missing.md
-    - Land: Community/missing.md
-    - Ocean Sea-ice: Community/missing.md
-    - Atmosphere: Community/missing.md
-    - Machine Learning: Community/missing.md
-    - General: Community/missing.md
+        - Sublevel 1: Community/evaluation_and_analysis/CMIP/CMIP6/missing.md
+        - Sublevel 2: Community/evaluation_and_analysis/CMIP/CMIP6/missing.md
+      - CMIP5: Community/evaluation_and_analysis/CMIP/CMIP5/missing.md
+    - Land: Community/evaluation_and_analysis/land/missing.md
+    - Ocean Sea-ice: Community/evaluation_and_analysis/ocean_seaice/missing.md
+    - Atmosphere: Community/evaluation_and_analysis/atmosphere/missing.md
+    - Machine Learning: Community/evaluation_and_analysis/machine_learning/missing.md
+    - General: Community/evaluation_and_analysis/general/missing.md
   - Training resources:
-    - General technical: Community/missing.md
-    - Modelling: Community/missing.md
-    - Analysis: Community/missing.md
+    - General technical: Community/training/general_technical/missing.md
+    - Modelling: Community/training/modelling/missing.md
+    - Analysis: Community/training/analysis/missing.md
   - How to contribute: 
     - How to contribute: Help/How_to_contribute.md
     - Setup: Help/contribution_setup.md
