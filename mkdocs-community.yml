@@ -1,0 +1,84 @@
+site_name: ACCESS-Hub - Community
+
+# Git repository
+repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
+repo_name: ACCESS-Hub
+# Material default to a "master" branch, need to change to "main"
+edit_uri: edit/main/docs
+docs_dir: docs
+
+# Theme
+theme:
+  name: material
+  palette:
+    - scheme: light
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+  logo: assets/ACCESSLogoJustPlanet.png
+
+# Extensions
+markdown_extensions: 
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+  
+# Navigation
+nav:
+  - index.md
+  - Modelling:
+    - Ocean/Sea-Ice: modelling/ocean_seaice.md
+    - ACCESS Coupled: modelling/access_coupled.md
+    - ACCESS Seasonal: modelling/access_seasonal.md
+    - Land: modelling/land.md
+    - Regional Atmosphere: modelling/regional_atmosphere.md
+    - Regional Ocean: modelling/regional_ocean.md
+    - Biogeochemistry: modelling/biogeochemistry.md
+  - Evaluation and Analysis:
+    - General: 
+      - Model Evaluation and Diagnostic Tools: evaluation_and_analysis/general/MED.md
+    - CMIP: 
+      - CMIP6:
+        - Sublevel 1: evaluation_and_analysis/CMIP/CMIP6/sublevel1.md
+        - Sublevel 2: evaluation_and_analysis/CMIP/CMIP6/sublevel2.md
+      - CMIP5: evaluation_and_analysis/CMIP/CMIP5.md
+    - Land: evaluation_and_analysis/land.md
+    - Ocean Sea-ice: evaluation_and_analysis/ocean_seaice.md
+    - Atmosphere: evaluation_and_analysis/atmosphere.md
+    - Machine Learning: evaluation_and_analysis/machine_learning.md
+  - Working Groups:
+    - Ocean-Sea Ice (COSIMA): working_groups/ocean_seaice.md
+    - Atmosphere: working_groups/atmosphere.md
+    - Coupled Models: working_groups/coupled.md
+    - Land: working_groups/land.md
+    - Technical: working_groups/technical.md
+    - Next Generation Methods: working_groups/ngms.md
+  - Training resources:
+    - General technical: training/general_technical.md
+    - Modelling: training/modelling.md
+    - Analysis: training/analysis.md
+  - How to contribute: 
+    - How to contribute: help/how_to_contribute.md
+    - Setup: help/contribution_setup.md
+    - Modify the documentation: help/modify_documentation.md
+    - Change the navigation: help/change_navigation.md
+  - ACCESS-NRI: ACCESS-NRI/index.html
