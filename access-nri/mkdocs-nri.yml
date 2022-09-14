@@ -56,9 +56,7 @@ nav:
     - Atmosphere: model_components/atmosphere.md
     - Coupler: model_components/coupler.md
   - Documentation and Training:
-    - Technical: 
-      - Linux: docs_and_training/technical/linux.md
-      - GitHub: docs_and_training/technical/github.md
+    - Technical: docs_and_training/technical.md
     - Analysis: docs_and_training/analysis.md
     - Data: docs_and_training/data.md
     - Policies : docs_and_training/policies.md
