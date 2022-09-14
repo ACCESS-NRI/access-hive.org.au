@@ -28,7 +28,6 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
   logo: assets/ACCESSLogoJustPlanet.png
 
 # Extensions
@@ -44,34 +43,34 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - ACCESS-NRI/index.md
-  - Releases:
-    - ACCESS-OM: ACCESS-NRI/Releases/missing.md
-    - ACCESS-AM: ACCESS-NRI/Releases/missing.md
-    - ACCESS-ESM: ACCESS-NRI/Releases/missing.md
-    - ACCESS-CM: ACCESS-NRI/Releases/missing.md
+  - index.md
+  - Experiments:
+    - ACCESS-OM: experiments/missing.md
+    - ACCESS-AM: experiments/missing.md
+    - ACCESS-ESM: experiments/missing.md
+    - ACCESS-CM: experiments/missing.md
   - Model Components:
-    - Land: ACCESS-NRI/model_components/missing.md
-    - Ocean: ACCESS-NRI/model_components/missing.md
-    - Ice: ACCESS-NRI/model_components/missing.md
-    - Atmosphere: ACCESS-NRI/model_components/missing.md
-    - Coupler: ACCESS-NRI/model_components/missing.md
+    - Land: model_components/missing.md
+    - Ocean: model_components/missing.md
+    - Ice: model_components/missing.md
+    - Atmosphere: model_components/missing.md
+    - Coupler: model_components/missing.md
   - Documentation and Training:
     - Technical: 
-      - Linux: ACCESS-NRI/docs_and_training/technical/missing.md
-      - GitHub: ACCESS-NRI/docs_and_training/technical/missing.md
-    - Analysis: ACCESS-NRI/docs_and_training/missing.md
-    - Data: ACCESS-NRI/docs_and_training/missing.md
-    - Policies : ACCESS-NRI/docs_and_training/policies.md
+      - Linux: docs_and_training/technical/missing.md
+      - GitHub: docs_and_training/technical/missing.md
+    - Analysis: docs_and_training/missing.md
+    - Data: docs_and_training/missing.md
+    - Policies : docs_and_training/policies.md
   - Model Evaluation:
-    - Tools: ACCESS-NRI/model_evaluation/missing.md
-    - Tutorials: ACCESS-NRI/model_evaluation/missing.md
-    - Background information: ACCESS-NRI/model_evaluation/missing.md
+    - Tools: model_evaluation/missing.md
+    - Tutorials: model_evaluation/missing.md
+    - Background information: model_evaluation/missing.md
   - Working Groups:
-    - Ocean-Sea Ice (COSIMA): ACCESS-NRI/working_groups/missing.md
-    - Atmosphere: ACCESS-NRI/working_groups/missing.md
-    - Coupled Models: ACCESS-NRI/working_groups/missing.md
-    - Land: ACCESS-NRI/working_groups/missing.md
-    - Technical: ACCESS-NRI/working_groups/missing.md
-    - Next Generation Methods: ACCESS-NRI/working_groups/missing.md
-  - Community: /ACCESS-Hub/Community/index.html
+    - Ocean-Sea Ice (COSIMA): working_groups/missing.md
+    - Atmosphere: working_groups/missing.md
+    - Coupled Models: working_groups/missing.md
+    - Land: working_groups/missing.md
+    - Technical: working_groups/missing.md
+    - Next Generation Methods: working_groups/missing.md
+  - Community: /ACCESS-Hub/index.html
