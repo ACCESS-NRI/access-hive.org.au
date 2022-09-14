@@ -43,7 +43,8 @@ jobs:
       - name: Build
         # builds to "site" directory by default
         run: |
-          mkdocs build 
+          mkdocs build -f mkdocs.yml -d site
+          (cd access-nri && mkdocs build -f mkdocs.yml -d ../site/ACCESS-NRI)
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1

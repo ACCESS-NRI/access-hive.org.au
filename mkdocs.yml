@@ -1,10 +1,11 @@
-site_name: ACCESS-Hub
+site_name: ACCESS-Hub - Community
 
 # Git repository
 repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
 repo_name: ACCESS-Hub
 # Material default to a "master" branch, need to change to "main"
-edit_uri: edit/main/docs/
+edit_uri: edit/main/community/docs
+docs_dir: docs
 
 # Theme
 theme:
@@ -44,15 +45,32 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - Welcome: index.md
-  - ACCESS-NRI: 
-    - Policies : ACCESS-NRI/policies.md
-    - Training: ACCESS-NRI/training.md
-  - Community: 
-    - Generate Bathymetry: Community/Bathymetry.md
-    - Model Evaluation: Community/MED.md
+  - Modelling:
+    - Ocean/Sea-Ice: Community/missing.md
+    - ACCESS Coupled: Community/missing.md
+    - ACCESS Seasonal: Community/missing.md
+    - Land: Community/missing.md
+    - Regional Atmosphere: Community/missing.md
+    - Regional Ocean: Community/missing.md
+    - Biogeochemistry: Community/missing.md
+  - Evaluation and Analysis:
+    - CMIP: 
+      - CMIP6:
+        - Sublevel 1: Community/missing.md
+        - Sublevel 2: Community/missing.md
+      - CMIP5: Community/missing.md
+    - Land: Community/missing.md
+    - Ocean Sea-ice: Community/missing.md
+    - Atmosphere: Community/missing.md
+    - Machine Learning: Community/missing.md
+    - General: Community/missing.md
+  - Training resources:
+    - General technical: Community/missing.md
+    - Modelling: Community/missing.md
+    - Analysis: Community/missing.md
   - How to contribute: 
     - How to contribute: Help/How_to_contribute.md
     - Setup: Help/contribution_setup.md
     - Modify the documentation: Help/modify_documentation.md
     - Change the navigation: Help/change_navigation.md
+  - ACCESS-NRI: ACCESS-NRI/index.html
