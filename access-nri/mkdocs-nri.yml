@@ -1,5 +1,5 @@
-site_name: ACCESS-Hub - ACCESS-NRI
-
+site_name: ACCESS-NRI Hub
+ 
 # Git repository
 repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
 repo_name: ACCESS-Hub
@@ -46,6 +46,7 @@ markdown_extensions:
 nav:
   - ACCESS-NRI Hub: 
     - index.md
+    - License: LICENSE.md
   - Experiments:
     - ACCESS-OM: experiments/access-om.md
     - ACCESS-AM: experiments/access-am.md
