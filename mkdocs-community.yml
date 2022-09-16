@@ -85,6 +85,8 @@ nav:
     - Analysis: training/analysis.md
   - Events: 
     - events/index.md
+    - Conferences: events/conferences.md
+    - Workshops: events/workshops.md
   - How to contribute: 
     - How to contribute: help/how_to_contribute.md
     - Setup: help/contribution_setup.md
