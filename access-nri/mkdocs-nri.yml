@@ -32,6 +32,11 @@ theme:
     
   logo: assets/ACCESSLogoJustPlanet.png
 
+plugins:
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+
 # Extensions
 markdown_extensions: 
   - attr_list
@@ -41,7 +46,6 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
-
   
 # Navigation
 nav:

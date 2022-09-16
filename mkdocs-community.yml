@@ -32,6 +32,11 @@ theme:
     - navigation.indexes
   logo: assets/ACCESSLogoJustPlanet.png
 
+plugins:
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+
 # Extensions
 markdown_extensions: 
   - attr_list
