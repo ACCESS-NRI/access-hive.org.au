@@ -28,6 +28,7 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.indexes
   logo: assets/ACCESSLogoJustPlanet.png
 
 # Extensions
@@ -43,7 +44,8 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - index.md
+  - ACCESS-NRI Hub: 
+    - index.md
   - Experiments:
     - ACCESS-OM: experiments/access-om.md
     - ACCESS-AM: experiments/access-am.md
