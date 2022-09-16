@@ -29,6 +29,7 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.indexes
   logo: assets/ACCESSLogoJustPlanet.png
 
 # Extensions
@@ -44,7 +45,8 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - index.md
+  - Community Hub:
+    - index.md
   - Modelling:
     - Ocean/Sea-Ice: modelling/ocean_seaice.md
     - ACCESS Coupled: modelling/access_coupled.md
