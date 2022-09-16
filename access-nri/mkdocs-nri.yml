@@ -47,6 +47,7 @@ markdown_extensions:
 nav:
   - ACCESS-NRI Hub: 
     - index.md
+    - License: LICENSE.md
   - Experiments:
     - ACCESS-OM: experiments/access-om.md
     - ACCESS-AM: experiments/access-am.md
