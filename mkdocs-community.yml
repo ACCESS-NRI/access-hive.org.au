@@ -103,3 +103,6 @@ extra:
       name: Join ACCESS-NRI Slack Channel
 
 copyright: CC-BY-4.0
+
+extra_css:
+  - css/fontello.css
