@@ -101,8 +101,3 @@ extra:
     - icon: fontawesome/brands/slack
       link: https://access-nri.slack.com/
       name: Join ACCESS-NRI Slack Channel
-
-copyright: CC-BY-4.0
-
-extra_css:
-  - css/fontello.css
