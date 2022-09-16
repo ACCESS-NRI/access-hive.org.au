@@ -10,6 +10,7 @@ docs_dir: docs
 # Theme
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - scheme: light
       primary: indgo
@@ -68,3 +69,23 @@ nav:
     - Tutorials: model_evaluation/tutorials.md
     - Background information: model_evaluation/background.md
   - Community: /ACCESS-Hub/index.html
+
+# Footer
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/ACCESS_NRI
+      name: ACCESS-NRI on Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/access-nri
+      name: ACCESS-NRI on Linkedin
+    - icon: fontawesome/brands/slack
+      link: https://access-nri.slack.com/
+      name: Join ACCESS-NRI Slack Channel
+
+copyright: Copyright &copy; 2022 - ACCESS-NRI
+
+extra_css:
+  - css/fontello.css

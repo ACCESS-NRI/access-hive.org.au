@@ -1,0 +1,39 @@
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      {% include "partials/copyright.html" %}
+      <div class="partners-logo">
+        <div style="align-items:center">
+          <a href="https://www.education.gov.au/ncris" target="_blank" rel="noopener" title="NCRIS">
+            <img src="{{ base_url }}/assets/ncris_logo.png" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="https://www.anu.edu.au" target="_blank" rel="noopener" title="The Australian National University">
+            <img src="{{ base_url }}/assets/anu_logo.svg" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="http://www.bom.gov.au/" target="_blank" rel="noopener" title="Australian Bureau of Meteorology">
+            <img src="{{ base_url }}/assets/bom_logo.svg" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="https://www.csiro.au/" target="_blank" rel="noopener" title="CSIRO">
+            <img src="{{ base_url }}/assets/csiro_logo.svg" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="https://www.monash.edu" target="_blank" rel="noopener" title="Monash University">
+            <img src="{{ base_url }}/assets/monash-university_logo.svg" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="https://www.unimelb.edu.au" target="_blank" rel="noopener" title="The University of Melbourne">
+            <img src="{{ base_url }}/assets/university-of-melbourne_logo.png" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="https://www.unsw.edu.au" target="_blank" rel="noopener" title="The University of New South Wales">
+            <img src="{{ base_url }}/assets/university-of-nsw_logo.png" alt="logo" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+            <a href="https://www.utas.edu.au" target="_blank" rel="noopener" title="The University of Tasmania">
+            <img src="{{ base_url }}/assets/university-of-tasmania_logo.svg" alt="logos" style="width: auto; height: 2.1rem; padding: 0.3rem;">
+            </a>
+        </div>
+      </div>
+      {% if config.extra.social %}
+        {% include "partials/social.html" %}
+      {% endif %}    
+    </div>
+  </div>
+</footer>
