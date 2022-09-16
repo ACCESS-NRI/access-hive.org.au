@@ -25,10 +25,11 @@ theme:
         name: Switch to light mode
 
   features:
+    - navigation.indexes
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.indexes
+    
   logo: assets/ACCESSLogoJustPlanet.png
 
 # Extensions
