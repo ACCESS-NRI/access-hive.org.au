@@ -1,7 +1,5 @@
 
-???+ Warning
-    #:construction_site: Work in Progress, not ready for general use.
-## ACCESS-Hub
+# ACCESS-Hub
 
 ACCESS-Hub is a portal to all documentation pertinent to the Australian Community Climate & Earth System Simulator, ACCESS, and its model components.
 
@@ -9,7 +7,7 @@ This portal goal is primarily to link to documentations hosted on other sites. I
 
 The site is divided in two major components:
 
-- **ACCESS-Hub Community** (the current site): This site is to group documentation resources from various sources contributed by the ACCESS Community.
+- **ACCESS Community Hub** (the current site): This site is to group documentation resources from various sources contributed by the ACCESS Community.
 - **ACCESS-NRI Hub**: This site is to group the documentation supported by the ACCESS-NRI.
 
 You can switch between the two sites at any time from the last tab in each site header or using the button below.
@@ -18,9 +16,9 @@ You can switch between the two sites at any time from the last tab in each site 
 
 ## Contributions
 
-Contributions to the ACCESS-Hub Community site are encouraged by any member of the community. Please refer to the [How to contribute guide][HCG] to learn how you can help the ACCESS community build a documentation database useful to all its members.
+Contributions to the ACCESS Community Hub site are encouraged by any member of the community. Please refer to the [How to contribute guide][HCG] to learn how you can help the ACCESS community build a documentation database useful to all its members.
 
-You can also leave some comments and feedback about the ACCESS-Hub Community or ACCESS-NRI Hub's content in the form of issues on [the ACCESS-Hub repository][IssueHub] or via email. 
+You can also leave some comments and feedback about the ACCESS Community Hub or ACCESS-NRI Hub's content in the form of issues on [the ACCESS-Hub repository][IssueHub] or via email. 
 
 ## Waiver
 ![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png){ align=left }
