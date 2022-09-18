@@ -27,7 +27,7 @@ When you click on this icon, your browser will open the file in GitHub allowing 
     You then need to choose to create a new branch and start a pull request. The `main` branch of the repository is protected and nobody can write to it directly.
     ![BranchAndPR](../assets/branch-and-pr.png)
 
-When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. This will also automatically build [a preview of the documentation with your proposed changes](#preview-of-the-documentation).
+When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. This will also automatically build [a preview of the documentation with your proposed changes][preview].
 
 Then ask for a review using the Reviewer menu on the right-hand side panel.
 
@@ -61,7 +61,7 @@ If you don't know how to do these steps, please refer to our [Git and GitHub tra
 ### Previewing your changes locally
 
 ???+ note
-    You can only preview your local changes if you have [installed mkdocs-material](contribution_setup.md/#install-material-for-mkdocs-not-required) on your computer.
+    You can only preview your local changes if you have [installed mkdocs-material][install] on your computer.
     
     If you have installed mkdocs-material via conda, make sure you activate the correct environment first
 
@@ -90,3 +90,5 @@ In the pull request, you will see the link to the preview appear in this fashion
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
 [Issues]: https://github.com/ACCESS-Hub/ACCESS-Hub/issues
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users
+[preview]: #preview-of-the-documentation
+[install]: ../contribution_setup/#install-material-for-mkdocs-not-required

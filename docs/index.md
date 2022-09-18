@@ -24,5 +24,5 @@ You can also leave some comments and feedback about the ACCESS Community Hub or 
 ![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png){ align=left }
 To the extent possible under law, ACCESS-NRI has waived all copyright and related or neighboring rights to ACCESS-Hub. This work is published from: Australia.
 
-[HCG]: help/how_to_contribute.md
+[HCG]: help/index.md
 [IssueHub]: https://github.com/ACCESS-Hub/ACCESS-Hub/issues
