@@ -7,13 +7,18 @@ There are two ways to modify the documentation:
 
 ## Open an issue
 
-For all additions or modifications to the ACCESS-Hub site, it is recommended to start by opening an [Issue](https://github.com/ACCESS-Hub/ACCESS-Hub/issues) in the ACCESS-Hub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users) if you intend on working on the issue.
+For all additions or modifications to the ACCESS-Hub site, it is recommended to start by opening an [Issue][Issues] in the ACCESS-Hub GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel][Assign] if you intend on working on the issue.
 
 ## Edit directly on GitHub
 
-For a very simple change, the easiest is to go to the ACCESS-Hub site and navigate to the page you want to modify.
+For a very simple change, the easiest is to go to the page you want to modify on the ACCESS-Hub documentation site. At the right of the title, you will see a pen icon :material-pencil:. 
+<figure markdown>
+  ![EditPen](../assets/edit_pen.png)
+  <figcaption>Pen icon circled in red</figcaption>
+</figure>
 
-At the right of the title, you will see a pen icon :material-pencil:. When you click on this icon, your browser will open the file in GitHub allowing you to edit the file. Enter your modification in the main pane. Then add a commit message in the Commit changes box.
+
+When you click on this icon, your browser will open the file in GitHub allowing you to edit the file. Enter your modification in the main pane. Then add a commit message in the Commit changes box.
 <figure markdown>
   ![CommitBox](../assets/commit-box.png)
   <figcaption>Where to write your commit message</figcaption>
@@ -28,6 +33,10 @@ Then ask for a review using the Reviewer menu on the right-hand side panel.
 
 You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS-Hub site. 
 
+???+ note
+    
+    The level 1 headers are reserved for the title of the page and are ignored from the pages' table of contents. Only use level 2 headers and higher to organise pages.
+
 ## Edit locally on your computer
 
 If you prefer to work locally on your computer (e.g. to preview the result of your modification locally before submitting it to the documentation), you will need to follow the usual series of steps when contributing to Open Source developments:
@@ -39,10 +48,15 @@ If you prefer to work locally on your computer (e.g. to preview the result of yo
  - open a pull request between the `main` branch and your branch
  - ask for reviews and reply to requests for changes
 
-If you don't know how to do these steps, please refer to the [Collaborating on GitHub section](submit_changes_to_github.md).
+If you don't know how to do these steps, please refer to our [Git and GitHub training][GitHowTo].
 
 ???+ tip
     If you have problems finding the page you need to edit, the easiest way is to head to the ACCESS-Hub site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
+
+???+ note
+    
+    The level 1 headers are reserved for the title of the page and are ignored from the pages' table of contents. Only use level 2 headers and higher to organise pages.
+
 
 ### Previewing your changes locally
 
@@ -55,14 +69,16 @@ MkDocs includes a live preview server, so you can preview your changes as you wr
 
 To start the server, open a terminal and navigate to your ACCESS-Hub local repository. Now type:
 ```
-mkdocs serve
+mkdocs serve -f mkdocs-community.yml
 ```
 Your documentation will be built on  http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
 
 
 ## Preview of the documentation
 
-When a pull request is opened or updated, GitHub will automatically build a preview of the documentation that includes the proposed changes. In the pull request, you will see the link to the preview appear in this fashion:
+When a pull request is opened or updated, GitHub will automatically build a preview of the documentation that includes the proposed changes. This can be used instead of local updates by setting your pull request as a draft for example.
+
+In the pull request, you will see the link to the preview appear in this fashion:
 
 ![PRpreview](../assets/site-preview-PR.png)
 
@@ -70,3 +86,7 @@ When a pull request is opened or updated, GitHub will automatically build a prev
     It can take a while for the preview to build.
 
     If you open the preview and it looks completely broken or if it hasn't updated from additional modifications in the pull request, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
+
+[GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
+[Issues]: https://github.com/ACCESS-Hub/ACCESS-Hub/issues
+[Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users
