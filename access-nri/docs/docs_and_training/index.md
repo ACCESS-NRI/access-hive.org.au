@@ -2,7 +2,7 @@
 
 The Documentation and Training section is still in development:
 
-**What is coming in the next few months?**
+**What to expect in the next few months?**
 
 - The ACCESS-NRI Training Team will developed and release training materials for supported Models, Model Components and Configurations.
 - The Model Evaluation and Diagnostics Team (MED) will recommend tools and workflows for processing and evaluating model outputs.
