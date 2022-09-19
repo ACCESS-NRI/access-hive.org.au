@@ -12,9 +12,13 @@ We encourage the members of the community to [contact us](mailto:access.nri@anu.
 
 ## Training resources from partners
 
-![NCI Logo](../assets/nci_logo_color.svg){ align=right }
+<div class="result" markdown>
+
+![NCI Logo](../assets/nci_logo_color.svg){align=right width=300}
 
 The National Computational Infrastructure ([NCI][nci-web]) provides [training resources][nci-training] and in-person training courses throughout the year to help develop the skills of the NCI user community.  
+
+</div>
 
 A full calendar of upcoming training opportunities can be found on their [Opus page][opus-web].
 
