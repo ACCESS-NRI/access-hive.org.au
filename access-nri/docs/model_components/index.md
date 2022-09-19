@@ -15,8 +15,8 @@ ACCESS components represent different chemical, physical or biological parts of 
    </tr> 
    <tr>
       <td><a href="land" title="Land"><img src="../assets/component-logos/ACCESS-icon-LAND-SURFACE-300x300.png" alt="Land"></td></a>
-      <td><a href="bgc_land" title="Biogeochemistry-Land"><img src="../assets/component-logos/ACCESS-icon-bgc-LAND-300x300.png" alt="Biogeochemistry-Land"></td></a>
-      <td><a href="bgc_ocean" title="Biogeochemistry-Ocean"><img src="../assets/component-logos/ACCESS-icon-bgc-OCEAN-300x300.png" alt="Biogeochemistry-Ocean"></td></a>
+      <td><a href="bgc_land" title="Biogeochemistry-Land"><img src="../assets/component-logos/ACCESS-icon-BGC-LAND-300x300.png" alt="Biogeochemistry-Land"></td></a>
+      <td><a href="bgc_ocean" title="Biogeochemistry-Ocean"><img src="../assets/component-logos/ACCESS-icon-BGC-OCEAN-300x300.png" alt="Biogeochemistry-Ocean"></td></a>
    </tr>
    <tr>
       <td style="text-align:center"><a href="land" title="Land">Land</td></a>
