@@ -34,7 +34,7 @@ This coupled model uses a different set of model components than the other ACCES
 [ACCESS-OM2-01]: http://cosima.org.au/index.php/models/access-om2-01-2/
 [ACCESS-S]: http://www.bom.gov.au/research/projects/ACCESS-S/
 [UM]: https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model
-[JULES]: https://www.metoffice.gov.uk/research/approach/collaboration/jwcrp/jules
-[NEMO]: https://www.nemo-ocean.eu/#:~:text=About%20NEMO,way%20by%20a%20European%20consortium.
+[JULES]: https://jules.jchmr.org/
+[NEMO]: https://www.nemo-ocean.eu/
 [CICE]: https://github.com/CICE-Consortium
 [OASIS3-MCT]: https://oasis.cerfacs.fr/en/
