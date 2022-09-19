@@ -1,4 +1,4 @@
-# Atmospheric Model Component (Unified Model (UM))
+# Atmospheric Model Component (Unified Model)
 
 ![Atmosphere Component Logo](../assets/component-logos/ACCESS-icon-ATMOSPHERE-300x300.png){align=right width=300}
 
