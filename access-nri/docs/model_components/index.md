@@ -2,17 +2,24 @@
 
 ACCESS components represent different chemical, physical or biological parts of the Earth System.
 
-<table>
+<table style="width:90%;margin-left:auto;margin-right:auto;">
   <tr>
-    <td> <img src="../assets/components-logos/ACCESS-icon-OCEAN-300x300.png"  alt="1" width = 300px height = 300px ></td>
-    <td><img src="../assets/components-logos/ACCESS-icon-SEA-ICE-300x300.png" alt="2" width = 300px height = 300px></td>
+     <td> <img src="../assets/component-logos/ACCESS-icon-OCEAN-300x300.png"  alt="Ocean"></td>
+     <td><img src="../assets/component-logos/ACCESS-icon-SEA-ICE-300x300.png" alt="Sea Ice"></td>
+     <td><img src="../assets/component-logos/ACCESS-icon-ATMOSPHERE-300x300.png" alt="Atmosphere"></td>
    </tr> 
    <tr>
-      <td><img src="../assets/components-logos/ACCESS-icon-ATMOSPHERE-300x300.png" alt="3" width = 300px height = 300px></td>
-      <td><img src="../assets/components-logos/ACCESS-icon-LAND-SURFACE-300x300.png" alt="4" width = 300px height = 300px>
-  </td>
-  </tr>
+      <td><img src="../assets/component-logos/ACCESS-icon-LAND-SURFACE-300x300.png" alt="Land"></td>
+      <td><img src="../assets/component-logos/ACCESS-icon-BCG-LAND-300x300.png" alt="Biochemistry-Land"></td>
+      <td><img src="../assets/component-logos/ACCESS-icon-BCG-OCEAN-300x300.png" alt="Biochemistry-Ocean"></td>
+    </tr>
+   <tr>
+      <td><img src="../assets/component-logos/ACCESS-icon-AEROSOLS-300x300.png" alt="Aerosols"></td>
+      <td><img src="../assets/component-logos/ACCESS-icon-ATMOSPHERIC-CHEMISTRY-300x300.png" alt="Atmospheric-chemistry"></td>
+      <td><img src="../assets/component-logos/ACCESS-icon-COUPLER-300x300.png" alt="Coupler"></td>
+    </tr>
 </table>
+
 
 Most model components have originated from collaborations with international research groups. These include:
 
