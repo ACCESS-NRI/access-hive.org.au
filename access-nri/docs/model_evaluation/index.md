@@ -5,7 +5,7 @@ We will promote a systematic approach to model evaluation, using curated data se
 The team will work on enabling the community with existing tools on NCI Gadi and will develop new tools to facilitate model
 evaluation across the diverse ACCESS modeling community.
 
-ACCESS-NRI is seeking support from the community to identify and prioritise the needs of the community.
+ACCESS-NRI is seeking support from the users to identify and prioritise the needs of the community.
 Our ambition is to facilitate the interactions between model components experts, observations and statistics to help constraining
 numerical models with observations, and allow for routine data-model comparisons.
 
