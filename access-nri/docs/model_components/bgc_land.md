@@ -1,7 +1,7 @@
 
 ## Biogeochemistry Model Component – Land (CASA-CNP)
 
-![BGC Component Logo](../assets/component-logos/ACCESS-icon-BCG-LAND-300x300.png){align=right width=300}
+![BGC Component Logo](../assets/component-logos/ACCESS-icon-BGC-LAND-300x300.png){align=right width=300}
 
 [CASA (Carnegie-Ames-Stanford Approach)-CNP (Carbon-Nitrogen-Phosphorous)][casa-web] is the CABLE land surface model coupled with biogeochemistry (Terrestrial biogeochemistry).
 
