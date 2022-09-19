@@ -14,8 +14,8 @@ ACCESS components represent different chemical, physical or biological parts of 
       <td><a href="bcg_ocean" title="Biogeochemical-Ocean"><img src="../assets/component-logos/ACCESS-icon-BCG-OCEAN-300x300.png" alt="Biogeochemical-Ocean"></td></a>
     </tr>
    <tr>
-      <td><a href="aerosols" title="Aerosols"><img src="../assets/component-logos/ACCESS-icon-AEROSOLS-300x300.png" alt="Aerosols"></td></a>
-      <td><a href="atmospheric_chemistry" title="Atmospheric Chemistry"><img src="../assets/component-logos/ACCESS-icon-ATMOSPHERIC-CHEMISTRY-300x300.png" alt="Atmospheric-chemistry"></td></a>
+      <td><a href="aerosols_atmospheric_chemistry" title="Aerosols"><img src="../assets/component-logos/ACCESS-icon-AEROSOLS-300x300.png" alt="Aerosols"></td></a>
+      <td><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry"><img src="../assets/component-logos/ACCESS-icon-ATMOSPHERIC-CHEMISTRY-300x300.png" alt="Atmospheric-chemistry"></td></a>
       <td><a href="coupler" title="Coupler"><img src="../assets/component-logos/ACCESS-icon-COUPLER-300x300.png" alt="Coupler"></td></a>
     </tr>
 </table>

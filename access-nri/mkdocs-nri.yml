@@ -66,10 +66,9 @@ nav:
     - Sea Ice: model_components/sea-ice.md
     - Atmosphere: model_components/atmosphere.md
     - Land: model_components/land.md
-    - Biogeochemical Land: model_components/bcg_land.md
-    - Biogeochemical Ocean: model_components/bcg_ocean.md
-    - Aerosols: model_components/aerosols.md
-    - Atmospheric Chemistry: model_components/atmospheric_chemistry.md
+    - Biogeochemistry Land: model_components/bcg_land.md
+    - Biogeochemistry Ocean: model_components/bcg_ocean.md
+    - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
     - Coupler: model_components/coupler.md
   - Model Evaluation: 
     - model_evaluation/index.md
