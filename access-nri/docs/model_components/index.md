@@ -38,10 +38,10 @@ ACCESS components represent different chemical, physical or biological parts of 
 
 Most model components have originated from collaborations with international research groups. These include:
 
-- [Met Office][met-office-web] (UM atmospheric model)
+- [UK Met Office][met-office-web] (UM atmospheric model)
 - [NOAA/ Geophysical Fluid Dynamics Laboratory (GFDL)][noaa-gfdl-web] (for the modular ocean model component MOM)
 - [Los Alamos National Laboratory (LANL)][lanl-web] (for the CICE sea ice model component)
-- Europe’s [Centre Européen de Recherche et de Formation Avancée en Calcul Scientifique (CERFACS)][cerfacs-web] (for the atmosphere-ocean-ice OASIS3-MCT coupler)
+- [Centre Européen de Recherche et de Formation Avancée en Calcul Scientifique (CERFACS)][cerfacs-web] (for the atmosphere-ocean-ice OASIS3-MCT coupler)
 - [United Kingdom Chemistry and Aerosols (UKCA)][ukca-web] (for the atmospheric composition components)
 - [CSIRO][csiro-web] [CLEX][clex-web], [COSIMA][cosima-web] (for CABLE, CASA and WOMBAT models, which are developed in Australia)
 
