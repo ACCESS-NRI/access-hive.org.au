@@ -54,13 +54,15 @@ nav:
   - Community Hub:
     - index.md
   - Modelling:
-    - Ocean/Sea-Ice: modelling/ocean_seaice.md
-    - ACCESS Coupled: modelling/access_coupled.md
-    - ACCESS Seasonal: modelling/access_seasonal.md
-    - Land: modelling/land.md
-    - Regional Atmosphere: modelling/regional_atmosphere.md
-    - Regional Ocean: modelling/regional_ocean.md
-    - Biogeochemistry: modelling/biogeochemistry.md
+    - modelling/index.md
+    - Coupled models:
+      - Global models: modelling/global_coupled.md
+      - Regional models: modelling/regional_coupled.md
+    - Model components:
+      - Atmosphere: modelling/atmosphere.md
+      - Land: modelling/land.md
+      - Ocean/Sea-Ice: modelling/ocean_seaice.md
+      - Biogeochemistry: modelling/biogeochemistry.md
   - Evaluation and Analysis:
     - General: 
       - Model Evaluation and Diagnostic Tools: evaluation_and_analysis/general/MED.md
