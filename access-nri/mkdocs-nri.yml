@@ -32,6 +32,7 @@ theme:
     - navigation.tabs.sticky
     
   logo: assets/ACCESSLogoJustPlanet.png
+  favicon: assets/ACCESSLogoJustPlanet.png
 
 plugins:
   - git-revision-date-localized:
