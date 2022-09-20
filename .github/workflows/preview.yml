@@ -13,7 +13,17 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
   pull-requests: write
+  pages: write
+  repository-projects: write
+  security-events: write
+  statuses: write
 
 jobs:
   deploy-preview:
