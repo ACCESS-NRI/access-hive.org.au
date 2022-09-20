@@ -12,5 +12,3 @@ Please make sure to include:
 
 Past events will need to be archived. 
 Feel free to submit a pull request.
-
-
