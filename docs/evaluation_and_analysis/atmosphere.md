@@ -37,15 +37,6 @@ Links to the code repository and documentation for each METplus component are pr
 
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
 
-# Data Communities / Catalogs
-
-## [FLUXNET][FLUXNET-web]
-
-FLUXNET is an international “network of networks,” tying together regional networks of earth system scientists. FLUXNET scientists use the eddy covariance technique to measure the cycling of carbon, water, and energy between the biosphere and atmosphere. Scientists use these data to better understand ecosystem functioning, and to detect trends in climate, greenhouse gases, and air pollution.
-
-### [OZFlux][OZFlux-web]
-
-OzFlux is an ecosystem research network set up to provide Australian, New Zealand and global ecosystem modelling communities with consistent observations of energy, carbon and water exchange between the atmosphere and key Australian and New Zealand ecosystems.
 
 
 [esmvaltool-web]: https://www.esmvaltool.org/
@@ -72,6 +63,3 @@ OzFlux is an ecosystem research network set up to provide Australian, New Zealan
 
 [pmp-doc]: http://pcmdi.github.io/pcmdi_metrics/index.html#
 [pmp-source]: https://github.com/PCMDI/pcmdi_metrics
-
-[OZFlux-web]: https://www.ozflux.org.au
-[FLUXNET-web]: https://fluxnet.org/

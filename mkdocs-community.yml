@@ -69,6 +69,8 @@ nav:
     - Land: evaluation_and_analysis/land.md
     - Ocean Sea-ice: evaluation_and_analysis/ocean_seaice.md
     - Atmosphere: evaluation_and_analysis/atmosphere.md
+    - Data processing: evaluation_and_analysis/data_processing.md
+    - Data catalogs: evaluation_and_analysis/data_catalogs.md
   - Working Groups:
     - Ocean-Sea Ice (COSIMA): working_groups/ocean_seaice.md
     - Atmosphere: working_groups/atmosphere.md
