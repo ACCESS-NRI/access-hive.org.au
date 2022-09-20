@@ -37,6 +37,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
+  - search
 
 # Extensions
 markdown_extensions: 
@@ -52,6 +53,7 @@ markdown_extensions:
 nav:
   - ACCESS-NRI Hub: 
     - index.md
+    - License: LICENSE.md
   - Models: 
     - models/index.md
     - ACCESS-OM: models/access-om.md

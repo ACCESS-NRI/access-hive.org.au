@@ -37,6 +37,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
+  - search
 
 # Extensions
 markdown_extensions: 
@@ -91,11 +92,11 @@ nav:
     - Conferences: events/conferences.md
     - Workshops: events/workshops.md
   - How to contribute: 
-    - How to contribute: help/how_to_contribute.md
+    - help/index.md
     - Setup: help/contribution_setup.md
     - Modify the documentation: help/modify_documentation.md
     - Change the navigation: help/change_navigation.md
-  - ACCESS-NRI: ACCESS-NRI/index.html
+  - Go to ACCESS-NRI Hub: ACCESS-NRI/index.html
 
 
 # Footer

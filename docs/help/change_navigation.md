@@ -5,10 +5,10 @@
 The important elements of the repository to know about before modifying the navigation are:
 
  - `docs/` folder: this folder contains all the documentation pages. There is an `index.md` file for the Welcome page, one folder per tab on the site and an `assets/` folder to store images used in the documentation.
- - [`mkdocs.yml`](../../mkdocs.yml): it is a YAML formatted file, hence the `.yml` extension. The site navigation is defined in this file as well as options for the styling of the site. 
+ - [`mkdocs.yml`][mkdocsYML]: it is a YAML formatted file, hence the `.yml` extension. The site navigation is defined in this file as well as options for the styling of the site. 
 
 ???+ info
-    YAML is a popular choice for configuration files, as it is a simple way of encoding data structures in a text file. See this [short tutorial](https://kopi.dev/yaml-tutorial-beginner/).
+    YAML is a popular choice for configuration files, as it is a simple way of encoding data structures in a text file. See this [short tutorial][YAMLtutorial].
 
 ## A simple example
 
@@ -19,12 +19,12 @@ nav:
   - Welcome: index.md
   - ACCESS-NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
-    - Generate Bathymetry: Community/Bathymetry.md
+    - Generate Bathymetry: community/bathymetry.md
   - How to contribute: 
-    - How to contribute: Help/How_to_contribute.md
-    - Setup: Help/contribution_setup.md
-    - Modify the documentation: Help/modify_documentation.md
-    - Change the navigation: Help/change_navigation.md
+    - How to contribute: help/how_to_contribute.md
+    - Setup: help/contribution_setup.md
+    - Modify the documentation: help/modify_documentation.md
+    - Change the navigation: help/change_navigation.md
 ```
 
 The top level category names define the tabs in the header bar. So here we have the tabs: "Welcome", "ACCESS-NRI", "Community" and "How to contribute". It also defines the name of the top section under each tab.
@@ -46,14 +46,17 @@ nav:
   - Welcome: index.md
   - ACCESS-NRI: ACCESS-NRI/ACCESS-NRI.md
   - Community: 
-    - Generate Bathymetry: Community/Bathymetry.md
+    - Generate Bathymetry: community/bathymetry.md
   - How to contribute: 
-    - How to contribute: Help/How_to_contribute.md
-    - Setup: Help/contribution_setup.md
-    - Modify the documentation: Help/modify_documentation.md
-    - Change the navigation: Help/change_navigation.md
+    - How to contribute: help/how_to_contribute.md
+    - Setup: help/contribution_setup.md
+    - Modify the documentation: help/modify_documentation.md
+    - Change the navigation: help/change_navigation.md
     - My example:
-        - Beautiful example: Help/beautiful_example.md
+        - Beautiful example: help/beautiful_example.md
 ```
 will create this navigation:
 ![Nav2Sections](../assets/sections_example.png)
+
+[mkdocsYML]: https://github.com/ACCESS-Hub/ACCESS-Hub/blob/main/mkdocs-community.yml
+[YAMLtutorial]: https://kopi.dev/yaml-tutorial-beginner/
