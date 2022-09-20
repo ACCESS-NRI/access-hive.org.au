@@ -23,7 +23,7 @@ Please delete options that are not relevant.
 - [ ] I have followed the style guidelines of this project
 - [ ] The new content is accessible and located in the appropriate section.
 - [ ] My changes do not break navigation and do not generate no new warnings
-- [ ] I have checked that the links are valids and point to the intented content.
+- [ ] I have checked that the links are valid and point to the intended content.
 - [ ] I have checked my code/text and corrected any misspellings
 
 Please tag one or more reviewer in a comment below.
