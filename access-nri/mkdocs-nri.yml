@@ -98,4 +98,5 @@ extra:
 copyright: Copyright &copy; 2022 - ACCESS-NRI
 
 extra_css:
+  - css/access-nri.css
   - css/fontello.css
