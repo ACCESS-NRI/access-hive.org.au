@@ -65,17 +65,10 @@ nav:
       - Ocean/Sea-Ice: modelling/ocean_seaice.md
       - Biogeochemistry: modelling/biogeochemistry.md
   - Evaluation and Analysis:
-    - General: 
-      - Model Evaluation and Diagnostic Tools: evaluation_and_analysis/general/MED.md
-    - CMIP: 
-      - CMIP6:
-        - Sublevel 1: evaluation_and_analysis/CMIP/CMIP6/sublevel1.md
-        - Sublevel 2: evaluation_and_analysis/CMIP/CMIP6/sublevel2.md
-      - CMIP5: evaluation_and_analysis/CMIP/CMIP5.md
+    - evaluation_and_analysis/index.md
     - Land: evaluation_and_analysis/land.md
     - Ocean Sea-ice: evaluation_and_analysis/ocean_seaice.md
     - Atmosphere: evaluation_and_analysis/atmosphere.md
-    - Machine Learning: evaluation_and_analysis/machine_learning.md
   - Working Groups:
     - Ocean-Sea Ice (COSIMA): working_groups/ocean_seaice.md
     - Atmosphere: working_groups/atmosphere.md
