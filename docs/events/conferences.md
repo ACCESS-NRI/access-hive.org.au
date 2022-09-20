@@ -25,8 +25,3 @@ Session's submissions including short talks and posters, panel discussions and/o
 *9-10 February 2023, Rydges World Square Hotel, Sydney.*
 
 [Read more](https://ardc.edu.au/events/ardc-digital-research-skills-summit-2022)
-
-
-
-
-
