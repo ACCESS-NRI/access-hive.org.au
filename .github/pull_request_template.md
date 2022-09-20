@@ -27,5 +27,6 @@ Please delete options that are not relevant.
 - [ ] I have checked my code/text and corrected any misspellings
 
 Please tag one or more reviewer in a comment below.
+You can find a list of reviewers <a href="https://github.com/orgs/ACCESS-Hub/teams/reviewers/members?query=membership%3Achild-team" target="_blank">here</a>
 
 @ (reviewer)
