@@ -62,10 +62,13 @@ nav:
     - ACCESS-CM: models/access-cm.md
   - Model Components: 
     - model_components/index.md
-    - Land: model_components/land.md
     - Ocean: model_components/ocean.md
     - Sea Ice: model_components/sea-ice.md
     - Atmosphere: model_components/atmosphere.md
+    - Land: model_components/land.md
+    - Biogeochemistry Land: model_components/bgc_land.md
+    - Biogeochemistry Ocean: model_components/bgc_ocean.md
+    - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
     - Coupler: model_components/coupler.md
   - Model Evaluation: 
     - model_evaluation/index.md
@@ -95,4 +98,5 @@ extra:
 copyright: Copyright &copy; 2022 - ACCESS-NRI
 
 extra_css:
+  - css/access-nri.css
   - css/fontello.css
