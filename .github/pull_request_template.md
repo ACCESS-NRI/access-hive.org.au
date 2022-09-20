@@ -26,4 +26,4 @@ Please delete options that are not relevant.
 - [ ] I have checked that the links are valid and point to the intended content.
 - [ ] I have checked my code/text and corrected any misspellings
 
-Please tag the **reviewers team** in a comment below by appending an `@` in front of `ACCESS-Hub/reviewers` when ready.
+Please tag the **reviewers team** in a comment below by prepending an `@` in front of `ACCESS-Hub/reviewers` when ready.
