@@ -60,10 +60,12 @@ If you don't know how to do these steps, please refer to our [Git and GitHub tra
 
 ### Previewing your changes locally
 
+<!-- markdown-link-check-disable -->
 ???+ note
     You can only preview your local changes if you have [installed mkdocs-material][install] on your computer.
     
     If you have installed mkdocs-material via conda, make sure you activate the correct environment first
+<!-- markdown-link-check-enable-->
 
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving.
 
@@ -71,7 +73,7 @@ To start the server, open a terminal and navigate to your ACCESS-Hub local repos
 ```
 mkdocs serve -f mkdocs-community.yml
 ```
-Your documentation will be built on  http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
+Your documentation will be built on http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
 
 
 ## Preview of the documentation

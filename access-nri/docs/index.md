@@ -18,7 +18,9 @@ You can switch between the two sites at any time from the last tab in each site 
 Since the ACCESS-NRI Hub regroups documentation supported by the ACCESS-NRI, we would prefer for the community to interact via [issues on the ACCESS-Hub site][IssueHub] rather than contributing directly to the ACCESS-NRI Hub.
 
 ## License
-The ACCESS-NRI Hub content is distributed under a [CC-BY 4.0 license](License).
+
+<!-- markdown-link-check-disable-next-line -->
+The ACCESS-NRI Hub content is distributed under a [CC-BY 4.0 license](LICENSE).
 
 
 [IssueHub]: https://github.com/ACCESS-Hub/ACCESS-Hub/issues
