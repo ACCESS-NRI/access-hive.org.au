@@ -2,37 +2,37 @@
 
 ACCESS components represent different chemical, physical or biological parts of the Earth System.
 
-<table style="margin-left:auto;margin-right:auto;">
+<table class="center">
   <tr>
-     <td class="logo_cell"><a href="ocean" title="Ocean"><img class="logo_component" src="../assets/component-logos/ACCESS-icon-OCEAN-300x300.png"  alt="Ocean"></td></a>
-     <td class="logo_cell"><a href="sea-ice" title="Sea Ice"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-SEA-ICE-300x300.png" alt="Sea Ice"></td></a>
-     <td class="logo_cell"><a href="atmosphere" title="Atmosphere"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-ATMOSPHERE-300x300.png" alt="Atmosphere"></td></a>
+     <td class="logo_cell"><a href="ocean" title="Ocean"><img class="logo_component" src="../assets/component-logos/ACCESS-icon-OCEAN-300x300.png"  alt="Ocean"></a></td>
+     <td class="logo_cell"><a href="sea-ice" title="Sea Ice"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-SEA-ICE-300x300.png" alt="Sea Ice"></a></td>
+     <td class="logo_cell"><a href="atmosphere" title="Atmosphere"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-ATMOSPHERE-300x300.png" alt="Atmosphere"></a></td>
    </tr> 
   <tr>
-     <td class="logo_cell"><a href="ocean" title="Ocean">Ocean</td></a>
-     <td class="logo_cell"><a href="sea-ice" title="Sea Ice">Sea-Ice</td></a>
-     <td class="logo_cell"><a href="atmosphere" title="Atmosphere">Atmosphere</td></a>
+     <td class="logo_cell"><a href="ocean" title="Ocean">Ocean</a></td>
+     <td class="logo_cell"><a href="sea-ice" title="Sea Ice">Sea-Ice</a></td>
+     <td class="logo_cell"><a href="atmosphere" title="Atmosphere">Atmosphere</a></td>
    </tr> 
    <tr>
       <td class="logo_cell"><a href="land" title="Land"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-LAND-SURFACE-300x300.png" alt="Land"
-      ></td></a>
-      <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-BGC-LAND-300x300.png" alt="Biogeochemistry-Land" ></td></a>
-      <td class="logo_cell"><a href="bgc_ocean" title="Biogeochemistry-Ocean"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-BGC-OCEAN-300x300.png" alt="Biogeochemistry-Ocean" ></td></a>
+      ></a></td>
+      <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-BGC-LAND-300x300.png" alt="Biogeochemistry-Land" ></a></td>
+      <td class="logo_cell"><a href="bgc_ocean" title="Biogeochemistry-Ocean"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-BGC-OCEAN-300x300.png" alt="Biogeochemistry-Ocean" ></a></td>
    </tr>
    <tr>
-      <td class="logo_cell"><a href="land" title="Land">Land</td></a>
-      <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land">Biogeochemistry Land</td></a>
-      <td class="logo_cell"><a href="bgc_ocean" title="Biogeochemistry-Ocean">Biogeochemistry Ocean</td></a>
+      <td class="logo_cell"><a href="land" title="Land">Land</a></td>
+      <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land">Biogeochemistry Land</a></td>
+      <td class="logo_cell"><a href="bgc_ocean" title="Biogeochemistry-Ocean">Biogeochemistry Ocean</a></td>
    </tr>
    <tr>
-      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-AEROSOLS-300x300.png" alt="Aerosols" ></td></a>
-      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-ATMOSPHERIC-CHEMISTRY-300x300.png" alt="Chemistry-Atmosphere" ></td></a>
-      <td class="logo_cell"><a href="coupler" title="Coupler"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-COUPLER-300x300.png" alt="Coupler" ></td></a>
+      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-AEROSOLS-300x300.png" alt="Aerosols" ></a></td>
+      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-ATMOSPHERIC-CHEMISTRY-300x300.png" alt="Chemistry-Atmosphere" ></a></td>
+      <td class="logo_cell"><a href="coupler" title="Coupler"><img class="logo_component"src="../assets/component-logos/ACCESS-icon-COUPLER-300x300.png" alt="Coupler" ></a></td>
     </tr>
    <tr>
-      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols">Aerosols</td></a>
-      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry">Atmospheric Chemistry</td></a>
-      <td class="logo_cell"><a href="coupler" title="Coupler">Coupler</td></a>
+      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols">Aerosols</a></td>
+      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry">Atmospheric Chemistry</a></td>
+      <td class="logo_cell"><a href="coupler" title="Coupler">Coupler</a></td>
     </tr>
 </table>
 
