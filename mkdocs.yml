@@ -56,12 +56,12 @@ markdown_extensions:
 nav:
   - ACCESS Hub:
     - index.md
-  - Models: 
-    - models/index.md
-    - ACCESS-OM: models/access-om.md
-    - ACCESS-AM: models/access-am.md
-    - ACCESS-ESM: models/access-esm.md
-    - ACCESS-CM: models/access-cm.md
+  - Configurations: 
+    - configs/index.md
+    - ACCESS-OM: configs/access-om.md
+    - ACCESS-AM: configs/access-am.md
+    - ACCESS-ESM: configs/access-esm.md
+    - ACCESS-CM: configs/access-cm.md
   - Model Components: 
     - model_components/index.md
     - Ocean: model_components/ocean.md
