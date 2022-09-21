@@ -1,6 +1,7 @@
 
 # ACCESS-Hub
 
+![Network Logo](assets/network_logo.png){align=right width=300}
 ACCESS-Hub is a portal to all documentation pertinent to the Australian Community Climate & Earth System Simulator, ACCESS, and its model components.
 
 This portal goal is primarily to link to documentations hosted on other sites. It is not intended to host the documentation itself.
