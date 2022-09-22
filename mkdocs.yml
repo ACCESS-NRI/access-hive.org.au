@@ -1,4 +1,4 @@
-site_name: ACCESS Hub
+site_name: ACCESS Hive
 
 # Git repository
 repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
@@ -54,7 +54,7 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - ACCESS Hub:
+  - ACCESS Hive:
     - index.md
   - Configurations: 
     - configs/index.md
