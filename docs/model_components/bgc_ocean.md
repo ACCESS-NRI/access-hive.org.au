@@ -9,4 +9,6 @@ WOMBAT is a Nutrient, Phytoplankton, Zooplankton and Detritus (NPZD) model, with
 
 ### How is WOMBAT used?
 
-WOMBAT is coupled to the MOM5 ocean model in the ACCESS-ESM1.5 model.
+WOMBAT is [coupled to the MOM5 ocean model][MOM5-WOMBAT-code] in the ACCESS-ESM1.5 model.
+
+[MOM5-WOMBAT-code]: https://github.com/COSIMA/ACCESS-ESM1.5-MOM5

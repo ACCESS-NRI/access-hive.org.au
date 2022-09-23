@@ -44,7 +44,7 @@ Most model components have originated from collaborations with international res
 - [Los Alamos National Laboratory (LANL)][lanl-web] (for the CICE sea ice model component)
 - [Centre Européen de Recherche et de Formation Avancée en Calcul Scientifique (CERFACS)][cerfacs-web] (for the atmosphere-ocean-ice OASIS3-MCT coupler)
 - [United Kingdom Chemistry and Aerosols (UKCA)][ukca-web] (for the atmospheric composition components)
-- [CSIRO][csiro-web] [CLEX][clex-web], [COSIMA][cosima-web] (for CABLE, CASA and WOMBAT models, which are developed in Australia)
+- [CSIRO][csiro-web], [CLEX][clex-web] and [COSIMA][cosima-web] (for CABLE, CASA and WOMBAT models, which are developed in Australia)
 
 [met-office-web]: https://www.metoffice.gov.uk/
 [noaa-gfdl-web]: https://www.gfdl.noaa.gov/
