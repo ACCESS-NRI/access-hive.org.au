@@ -10,4 +10,4 @@ The model configurations and experiments will be documented in this section as t
 
 Currently, the documentation is still supported by the community and can be found on the [ACCESS Hive][community-modelling].
 
-[community-modelling]: https://access-hub.github.io/ACCESS Hive/modelling/
+[community-modelling]: https://access-hub.github.io/ACCESS-Hub/modelling/
