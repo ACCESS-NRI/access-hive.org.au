@@ -1,7 +1,7 @@
 
 # MED: Ocean and Sea-Ice
 
-## [ESMValTool][esmvaltool-web] [<i class="icon-recommended"></i>][esmvaltool-web]
+## [ESMValTool][esmvaltool-web] {{ recom }}
 
 [**Documentation**][esmvaltool-doc] |
 [**Tutorial**][esmvaltool-tutorial] | 
@@ -9,7 +9,7 @@
 
 ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. ESMValTool is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. For a comprehensive introduction to ESMValTool please visit our documentation page.
 
-## [COSIMA Cookbook / Recipes][cosimacb-web] <i class="icon-recommended"></i>
+## [COSIMA Cookbook / Recipes][cosimacb-web] {{ recom }}
 
 [**Documentation**][cosimacb-doc] |
 [**Tutorial**][cosimacb-tutorial] | 

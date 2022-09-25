@@ -40,6 +40,7 @@ plugins:
       type: date
       enable_creation_date: true
   - search
+  - macros
 
 # Extensions
 markdown_extensions: 
@@ -114,6 +115,10 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
+  supp: '<i class="icon-supported"></i>'
+  recom: '<i class="icon-recommended"></i>'
+  comm: <i class="icon-community"></i>
+
 
 extra_css:
   - css/access-nri.css
