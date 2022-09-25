@@ -115,9 +115,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supp: '<i class="icon-supported"></i>'
-  recom: '<i class="icon-recommended"></i>'
-  comm: <i class="icon-community"></i>
+  supp: '<i class="icon-supported" title="Supported by ACCESS-NRI"></i>'
+  recom: '<i class="icon-recommended" title="Recommended by ACCESS-NRI"></i>'
+  comm: <i class="icon-community" title="Community Contributed"></i>
 
 
 extra_css:
