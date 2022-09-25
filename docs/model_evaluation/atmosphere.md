@@ -1,7 +1,7 @@
 
 # MED: Atmosphere
 
-## [ESMValTool][esmvaltool-web]
+## [ESMValTool][esmvaltool-web]  <i class="icon-recommended"></i>
 
 [**Documentation**][esmvaltool-doc] |
 [**Tutorial**][esmvaltool-tutorial] | 
@@ -9,7 +9,7 @@
 
 ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. ESMValTool is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. For a comprehensive introduction to ESMValTool please visit our documentation page.
 
-## [METPLUS][metplus-web]
+## [METPLUS][metplus-web]  <i class="icon-recommended"></i>
 
 [**Tutorial**][metplus-tutorial]
 
@@ -17,7 +17,7 @@ METplus is a verification framework that spans a wide range of temporal (warn-on
 
 METplus is being actively developed by NCAR/Research Applications Laboratory (RAL), NOAA/Earth Systems Research Laboratories (ESRL), NOAA/Environmental Modeling Center (EMC), and is open to community contributions.
 
-### METplus Components
+### METplus Components  <i class="icon-recommended"></i>
 
 Links to the code repository and documentation for each METplus component are provided below:
 
@@ -30,7 +30,7 @@ Links to the code repository and documentation for each METplus component are pr
 - METdatadb: [sources][METdatadb-doc] | [docs][METdatadb-source]
 
 
-## [PCMDI Metrics Package (PMP)][pmp-doc]
+## [PCMDI Metrics Package (PMP)][pmp-doc]  <i class="icon-recommended"></i>
 
 [**Documentation**][pmp-doc] | 
 [**Sources**][pmp-source]
