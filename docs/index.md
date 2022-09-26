@@ -20,4 +20,4 @@ You can also leave some comments and feedback about the ACCESS Hive content in t
 To the extent possible under law, ACCESS-NRI has waived all copyright and related or neighboring rights to ACCESS Hive. This work is published from: Australia.
 
 [HCG]: help/index.md
-[IssueHive]: https://github.com/ACCESS Hive/ACCESS Hive/issues
+[IssueHive]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
