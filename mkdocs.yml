@@ -86,12 +86,8 @@ nav:
     - Policies : docs_and_training/policies.md
     - Technical: docs_and_training/technical.md
   - Working Groups:
-    - Ocean-Sea Ice (COSIMA): working_groups/ocean_seaice.md
-    - Atmosphere: working_groups/atmosphere.md
-    - Coupled Models: working_groups/coupled.md
-    - Land: working_groups/land.md
-    - Technical: working_groups/technical.md
-    - Next Generation Methods: working_groups/ngms.md
+    - working_groups/index.md
+
   - Events: 
     - events/index.md
     - Conferences: events/conferences.md
