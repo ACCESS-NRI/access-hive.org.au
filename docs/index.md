@@ -22,5 +22,5 @@ Although the pages on the ACCESS-Hive are in the public domain, they link to mat
 ![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png){ align=left }
 To the extent possible under law, ACCESS-NRI has waived all copyright and related or neighboring rights to ACCESS Hive. This work is published from: Australia.
 
-[HCG]: help/index.md
+[HCG]: about/contribute.md
 [IssueHive]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
