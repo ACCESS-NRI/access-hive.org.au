@@ -1,6 +1,8 @@
 
 # MED: Atmosphere
 
+{% include "call_contribute.md" %}
+
 ## [ESMValTool][esmvaltool-web]  {{ recom }}
 
 [**Documentation**][esmvaltool-doc] |

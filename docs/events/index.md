@@ -1,5 +1,7 @@
 # Events
 
+{% include "call_contribute.md" %}
+
 We encourage members of the community to list any workshops, tutorials, conferences that might be of interest to the community.
 
 Please make sure to include:

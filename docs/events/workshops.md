@@ -1,5 +1,7 @@
 # Upcoming Workshops / Tutorials
 
+{% include "call_contribute.md" %}
+
 ## COSIMA Workhop
 
 *3 - 4 November 2022, Hobart, TAS*

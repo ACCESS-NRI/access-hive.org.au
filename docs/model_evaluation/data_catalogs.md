@@ -1,5 +1,7 @@
 # Data Communities / Catalogs
 
+{% include "call_contribute.md" %}
+
 ## [NCI datasets][NCI-geonetwork] {{ recom }}
 
 NCI has an extensive catalog of datasets of interest to the weather and climate community. These datasets are directly available on the NCI supercomputer and the [Australian Research Environment][ARE-opus]

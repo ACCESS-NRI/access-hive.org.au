@@ -1,6 +1,8 @@
 
 # MED: Ocean and Sea-Ice
 
+{% include "call_contribute.md" %}
+
 ## [ESMValTool][esmvaltool-web] {{ recom }}
 
 [**Documentation**][esmvaltool-doc] |

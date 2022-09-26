@@ -1,5 +1,7 @@
 # Ocean Model Component
 
+{% include "call_contribute.md" %}
+
 ![Ocean Component Logo](../assets/component-logos/ACCESS-icon-OCEAN-300x300.png){align=right width=300}
 
 ## [The Modular Ocean Model (MOM)][mom-wiki]  {{ supp }}

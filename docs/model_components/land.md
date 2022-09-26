@@ -1,5 +1,7 @@
 # Land Model Components
 
+{% include "call_contribute.md" %}
+
 ![Land Component Logo](../assets/component-logos/ACCESS-icon-LAND-SURFACE-300x300.png){align=right width=300}
 
 ## [CABLE][cable-wiki] {{ supp }}
