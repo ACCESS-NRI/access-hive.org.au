@@ -15,7 +15,7 @@
 
 <div class="result" markdown>
 
-![NCI Logo](../assets/nci_logo_color.svg){align=right width=300}
+![NCI Logo](../assets/nci_logo_color.svg){align=right width=40%}
 
 The National Computational Infrastructure ([NCI][nci-web]) provides [training resources][nci-training] and in-person training courses throughout the year to help develop the skills of the NCI user community.  
 

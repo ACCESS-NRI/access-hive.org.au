@@ -3,7 +3,7 @@
 
 {% include "call_contribute.md" %}
 
-![BGC Component Logo](../assets/component-logos/ACCESS-icon-BGC-LAND-300x300.png){align=right width=300}
+![BGC Component Logo](../assets/component-logos/ACCESS-icon-BGC-LAND-300x300.png){align=right width=40%}
 
 ## [CASA-CNP][casa-web] {{ supp }}
 
