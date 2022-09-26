@@ -1,7 +1,6 @@
 # Documentation and Training
 
-???+ warning
-    The Documentation and Training section is still in development:
+{% include "call_contribute.md" %}
 
 ???+ info
     **What to expect in the next few months?**

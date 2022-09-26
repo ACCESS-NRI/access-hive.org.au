@@ -1,6 +1,8 @@
 
 # ACCESS-OM {{ supp }}
 
+{% include "call_contribute.md" %}
+
 ## [ACCESS-OM2][COSIMA-models]
 
 ACCESS-OM2 is a suite of coupled models between ocean and sea-ice. All models use the [MOM5.1][MOM5.1] ocean model coupled to the [CICE5.1.2][CICE5.1.2] sea ice model via OASIS3-MCT.

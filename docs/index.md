@@ -13,7 +13,15 @@ This portal goal is primarily to link to documentations hosted on other sites. I
 
 Contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Please refer to the [How to contribute guide][HCG] to learn how you can help the ACCESS community build a documentation database useful to all its members.
 
-You can also leave some comments and feedback about the ACCESS-Hive content in the form of issues on [the ACCESS-Hive repository][IssueHive] or via email. 
+You can also leave some comments and feedback about the ACCESS-Hive content in the form of issues on [the ACCESS-Hive repository][IssueHive] or via email.
+
+???+ tip
+    We use a system of tags to identify the level of support you can expect from ACCESS-NRI:
+
+    - {{ supp }}: Supported by ACCESS-NRI
+    - {{ recom }}: Recommended by ACCESS-NRI (Tool supported on NCI)
+    - {{ comm }}: Community contributed (Limited Support)
+
 
 ## Acknowledgement
 
