@@ -9,7 +9,7 @@ evaluation across the diverse ACCESS modeling community.
     ACCESS-NRI is seeking support from the users to **identify and prioritise the needs of the community**.
     Our ambition is to facilitate the interactions between model components experts, observations and statistics to help constraining numerical models with observations, and allow for routine data-model comparisons.
 
-    The MED Team will offer:
+    ACCESS-NRI will offer:
 
     - Access to model evaluation tools on NCI.
     - Access to observational data sets used to evaluate ESM on NCI.
