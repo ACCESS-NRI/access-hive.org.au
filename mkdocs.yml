@@ -63,6 +63,7 @@ nav:
     - ACCESS-CM: configurations/access-cm.md
     - ACCESS-AM: configurations/access-am.md
     - ACCESS-OM: configurations/access-om.md
+    - ACCESS-S: configurations/access-s.md
   - Model Components: 
     - model_components/index.md
     - Atmosphere: model_components/atmosphere.md
