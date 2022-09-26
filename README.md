@@ -1,7 +1,7 @@
 # :construction: Work in progress. It is likely to undergo major modifications without warning.
 
-# ACCESS-Hub
-[![ACCESS Hub Badge](docs/assets/badge.svg)](https://access-hub.github.io/ACCESS-Hub/)
+# ACCESS-Hive
+[![ACCESS Hive Badge](docs/assets/badge.svg)](https://access-hive.github.io/ACCESS-Hive/)
 
 Documentation hub for the Earth System models, ACCESS, and their community
 
