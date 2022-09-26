@@ -1,15 +1,17 @@
 
 # How to contribute guide
 
+Although we encourage everyone to get involved and contribute to the ACCESS-Hive in order to adequately represent the needs of the entire ACCESS community, we recognise not everyone will have the time to do so. In case you do not have a lot of time, please consider sharing your ideas via [Issues on the ACCESS-Hive GitHub repository][Issues] so someone might be able to add them to the ACCESS-Hive site for you.
+
 ???+ abstract
     The aim of this How to is to enable you to:
 
      - add or modify a link to a new documentation in an existing page
      - add a new page or tab with new documentation
 
-This documentation is based on the [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/) theme. Please see the documentation for the theme or for [Mkdocs](https://www.mkdocs.org/) for a full explanation of all the capabilities.
+This documentation is based on the [Material for Mkdocs][MatforMkdocs] theme. Please see the documentation for the theme or for [Mkdocs][Mkdocs] for a full explanation of all the capabilities.
 
-The documentation is written in Markdown format. Please see this [cheat sheet](https://www.markdownguide.org/cheat-sheet/) for a quick reference to the base syntax. Please note that Material for Mkdocs extends that syntax.
+The documentation is written in Markdown format. Please see this [cheat sheet][MarkdownSheet] for a quick reference to the base syntax. Please note that Material for Mkdocs extends that syntax.
 
 ## Setup
 
@@ -45,8 +47,8 @@ The following plugins will also need to be installed if you want to preview the 
 
 There are two ways to modify the documentation:
 
- - direct edit on GitHub. This method is adequate for small modifications to a single file.
- - local edit on your local computer. This method is recommended for large modifications.
+ - [direct edit on GitHub][directedit]. This method is adequate for small modifications to a single file.
+ - [local edit on your local computer][localedit]. This method is recommended for large modifications.
 
 ### Open an issue
 
@@ -191,7 +193,9 @@ will create this navigation:
 ![Nav2Sections](../assets/sections_example.png)
 
 
-
+[MatforMkdocs]: https://squidfunk.github.io/mkdocs-material/
+[Mkdocs]: https://www.mkdocs.org/
+[MarkdownSheet]: https://www.markdownguide.org/cheat-sheet/
 [mkdocsYML]: https://github.com/ACCESS-Hive/ACCESS-Hive/blob/main/mkdocs-community.yml
 [YAMLtutorial]: https://kopi.dev/yaml-tutorial-beginner/
 [preview]: ../modify_documentation/#preview-of-the-documentation
@@ -200,3 +204,5 @@ will create this navigation:
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users
 [preview]: #preview-of-the-documentation
 [install]: ../contribution_setup/#install-material-for-mkdocs-not-required
+[directedit]: #edit-directly-on-github
+[localedit]: #edit-locally-on-your-computer
