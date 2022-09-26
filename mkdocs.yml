@@ -57,6 +57,7 @@ markdown_extensions:
 nav:
   - ACCESS Hive:
     - index.md
+    - About: about/index.md
   - Configurations: 
     - configurations/index.md
     - ACCESS-ESM: configurations/access-esm.md
