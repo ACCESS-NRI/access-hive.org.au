@@ -6,7 +6,7 @@ The team will work on enabling the community with existing tools on NCI Gadi and
 evaluation across the diverse ACCESS modeling community.
 
 ???+ info
-    ACCESS-NRI is seeking support from the users to identify and prioritise the needs of the community.
+    ACCESS-NRI is seeking support from the users to **identify and prioritise the needs of the community**.
     Our ambition is to facilitate the interactions between model components experts, observations and statistics to help constraining numerical models with observations, and allow for routine data-model comparisons.
 
     The MED Team will offer:
