@@ -7,15 +7,16 @@
   margin-right: auto;
   border-collapse: disabled;
   border-spacing: 17px;
+  width: 100%;
 }
 
 .logo_component {
-    width: 85px;
-    height: 85px;
+    width: 80%;
     margin: 0 auto;
 }
 
 .logo_cell {
     margin: 0 auto;
     text-align: center;
+    width: 25%;
 }
