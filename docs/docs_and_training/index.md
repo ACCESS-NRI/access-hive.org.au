@@ -1,16 +1,17 @@
 # Documentation and Training
 
-The Documentation and Training section is still in development:
+{% include "call_contribute.md" %}
 
-**What to expect in the next few months?**
+???+ info
+    **What to expect in the next few months?**
 
-- The ACCESS-NRI Training Team will developed and release training materials for supported Models, Model Components and Configurations.
-- The Model Evaluation and Diagnostics Team (MED) will recommend tools and workflows for processing and evaluating model outputs.
+    - The ACCESS-NRI Training Team will developed and release training materials for supported Models, Model Components and Configurations.
+    - The Model Evaluation and Diagnostics Team (MED) will recommend tools and workflows for processing and evaluating model outputs.
 
-ACCESS-NRI will organise regular workshops around the ACCESS suite of supported products. We will also support community workshops to address specific needs. 
-We encourage the members of the community to [contact us](mailto:access.nri@anu.edu.au) and welcome their suggestions. 
+    ACCESS-NRI will organise regular workshops around the ACCESS suite of supported products. We will also support community workshops to address specific needs. 
+    We encourage the members of the community to [contact us](mailto:access.nri@anu.edu.au) and welcome their suggestions. 
 
-## Training resources from partners
+## Training resources from partners {{ recom }}
 
 <div class="result" markdown>
 

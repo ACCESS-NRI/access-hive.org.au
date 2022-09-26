@@ -1,4 +1,7 @@
-# [ACCESS-S][ACCESS-S]
+# [ACCESS-S][ACCESS-S] {{ comm }}
+
+{% include "call_contribute.md" %}
+
 ACCESS-S is the Bureau of Meteorology's climate modelling system used for seasonal forecasting.
 
 This coupled model uses a different set of model components than the other ACCESS models:

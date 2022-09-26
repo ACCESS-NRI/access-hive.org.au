@@ -1,5 +1,7 @@
 # Sea-Ice Model Component
 
+{% include "call_contribute.md" %}
+
 ![Sea-Ice Component Logo](../assets/component-logos/ACCESS-icon-SEA-ICE-300x300.png){align=right width=300}
 
 ## CICE {{ supp }}

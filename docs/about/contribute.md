@@ -37,7 +37,8 @@ You can install Material for Mkdocs on your local machine with `pip` or `conda`:
 #### Additional plugins
 The following plugins will also need to be installed if you want to preview the documentation locally, using the same method as for mkdocs-material:
 
- - mkdocs-git-revision-date-localized-plugin
+ - `mkdocs-git-revision-date-localized-plugin`
+ - `mkdocs-macros-plugin`
 
 
 ## Modify the documentation
@@ -112,7 +113,7 @@ MkDocs includes a live preview server, so you can preview your changes as you wr
 
 To start the server, open a terminal and navigate to your ACCESS Hive local repository. Now type:
 ```
-mkdocs serve -f mkdocs-community.yml
+mkdocs serve
 ```
 Your documentation will be built on http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
 
@@ -136,7 +137,7 @@ In the pull request, you will see the link to the preview appear in this fashion
 The important elements of the repository to know about before modifying the navigation are:
 
  - `docs/` folder: this folder contains all the documentation pages. There is an `index.md` file for the Welcome page, one folder per tab on the site and an `assets/` folder to store images used in the documentation.
- - [`mkdocs-community.yml`][mkdocsYML]: it is a YAML formatted file, hence the `.yml` extension. The site navigation is defined in this file as well as options for the styling of the site. 
+ - [`mkdocs.yml`][mkdocsYML]: it is a YAML formatted file, hence the `.yml` extension. The site navigation is defined in this file as well as options for the styling of the site. 
 
 ???+ info
     YAML is a popular choice for configuration files, as it is a simple way of encoding data structures in a text file. See this [short tutorial][YAMLtutorial].
@@ -191,11 +192,11 @@ will create this navigation:
 
 
 
-[mkdocsYML]: https://github.com/ACCESS Hive/ACCESS Hive/blob/main/mkdocs-community.yml
+[mkdocsYML]: https://github.com/ACCESS-Hive/ACCESS-Hive/blob/main/mkdocs-community.yml
 [YAMLtutorial]: https://kopi.dev/yaml-tutorial-beginner/
 [preview]: ../modify_documentation/#preview-of-the-documentation
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
-[Issues]: https://github.com/ACCESS Hive/ACCESS Hive/issues
+[Issues]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users
 [preview]: #preview-of-the-documentation
 [install]: ../contribution_setup/#install-material-for-mkdocs-not-required

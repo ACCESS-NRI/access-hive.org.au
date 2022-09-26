@@ -1,5 +1,7 @@
 # Aerosol and Chemistry Components
 
+{% include "call_contribute.md" %}
+
 ![Atmospheric Component Logo](../assets/component-logos/ACCESS-icon-AEROSOLS-300x300.png){align=right width=300}
 
 ## [UKCA][ukca-wiki] {{ supp }}

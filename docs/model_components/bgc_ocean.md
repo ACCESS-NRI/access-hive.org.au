@@ -1,5 +1,7 @@
 # Biogeochemistry Ocean
 
+{% include "call_contribute.md" %}
+
 ![BGC Ocean Component Logo](../assets/component-logos/ACCESS-icon-BGC-OCEAN-300x300.png){align=right width=300}
 
 ## WOMBAT {{ supp }}

@@ -1,6 +1,8 @@
 
 # MED: Land
 
+{% include "call_contribute.md" %}
+
 ## [iLAMB][ilamb-web] {{ recom }}
 
 **Domain**: Land

@@ -1,5 +1,7 @@
 # Upcoming Conferences
 
+{% include "call_contribute.md" %}
+
 ## e-research Australasia 2022 Conference
 
 *17 - 21 October 2022, Brisbane Convention and Exhibition Centre and Online, QLD*

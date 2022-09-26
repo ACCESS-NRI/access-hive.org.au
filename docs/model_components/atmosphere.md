@@ -1,4 +1,6 @@
-# Atmospheric Model Component 
+# Atmospheric Model Component
+
+{% include "call_contribute.md" %}
 
 ![Atmosphere Component Logo](../assets/component-logos/ACCESS-icon-ATMOSPHERE-300x300.png){align=right width=300}
 
