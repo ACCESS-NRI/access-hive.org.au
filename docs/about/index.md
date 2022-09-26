@@ -1,4 +1,4 @@
-# About ACCESS Hive
+# About ACCESS-Hive
 
 ???+ about ""
     The ACCESS Hive is a **documentation Hub** where the ACCESS Community can contribute documentation and other related material. 
