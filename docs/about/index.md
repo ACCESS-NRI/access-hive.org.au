@@ -1,6 +1,6 @@
 # About ACCESS Hive
 
-???+ about
+???+ about ""
     The ACCESS Hive is a **documentation Hub** where the ACCESS Community can contribute documentation and other related material. 
     It is a shared space to enable, coordinate and foster collaboration.
 
