@@ -11,7 +11,7 @@
     ACCESS-NRI will organise regular workshops around the ACCESS suite of supported products. We will also support community workshops to address specific needs. 
     We encourage the members of the community to [contact us](mailto:access.nri@anu.edu.au) and welcome their suggestions. 
 
-## Training resources from partners
+## Training resources from partners {{ recom }}
 
 <div class="result" markdown>
 
