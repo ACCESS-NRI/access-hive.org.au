@@ -1,4 +1,4 @@
 # Working Groups
 
 ???+ info
-    ACCESS-NRI wil soon establish core working groups to assess the needs of the ACCESS Community.
+    The ACCESS Community and the ACCESS-NRI will soon establish working groups to assess and prioritise the needs of the ACCESS Community
