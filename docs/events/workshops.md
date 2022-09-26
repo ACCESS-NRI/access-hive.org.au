@@ -2,13 +2,11 @@
 
 {% include "call_contribute.md" %}
 
-## COSIMA Workhop
+## [COSIMA Workhop](http://cosima.org.au/index.php/meetings/cosima2022/)
 
 *3 - 4 November 2022, Hobart, TAS*
 
 Registration closes COB 16 September 2022
-
-[Read more](http://cosima.org.au/index.php/meetings/cosima2022/)
 
 ## 2023 Unified Model Users Tutorial
 
