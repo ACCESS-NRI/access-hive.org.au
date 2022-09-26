@@ -59,25 +59,25 @@ nav:
     - index.md
   - Configurations: 
     - configurations/index.md
-    - ACCESS-OM: configurations/access-om.md
-    - ACCESS-AM: configurations/access-am.md
     - ACCESS-ESM: configurations/access-esm.md
     - ACCESS-CM: configurations/access-cm.md
+    - ACCESS-AM: configurations/access-am.md
+    - ACCESS-OM: configurations/access-om.md
   - Model Components: 
     - model_components/index.md
-    - Ocean: model_components/ocean.md
-    - Sea Ice: model_components/sea-ice.md
     - Atmosphere: model_components/atmosphere.md
     - Land: model_components/land.md
+    - Ocean: model_components/ocean.md
+    - Sea Ice: model_components/sea-ice.md
+    - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
     - Biogeochemistry Land: model_components/bgc_land.md
     - Biogeochemistry Ocean: model_components/bgc_ocean.md
-    - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
     - Coupler: model_components/coupler.md
   - Model Evaluation & Data: 
     - model_evaluation/index.md
+    - Atmosphere: model_evaluation/atmosphere.md
     - Land: model_evaluation/land.md
     - Ocean Sea-ice: model_evaluation/ocean_seaice.md
-    - Atmosphere: model_evaluation/atmosphere.md
     - Data processing: model_evaluation/data_processing.md
     - Data catalogs: model_evaluation/data_catalogs.md
   - Documentation and Training: 
