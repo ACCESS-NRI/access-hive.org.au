@@ -1,8 +1,8 @@
 site_name: ACCESS Hive
 
 # Git repository
-repo_url: https://github.com/ACCESS-Hub/ACCESS-Hub
-repo_name: ACCESS-Hub
+repo_url: https://github.com/ACCESS-Hive/ACCESS-Hive
+repo_name: ACCESS-Hive
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs
 docs_dir: docs
