@@ -23,12 +23,15 @@ You can also leave some comments and feedback about the ACCESS-Hive content in t
     - {{ comm }}: Community contributed (Limited Support)
 
 
-## Acknowledgement
+## License
 
-Although the pages on the ACCESS-Hive are in the public domain, they link to material covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities. 
-## Waiver
-![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png){ align=left }
-To the extent possible under law, ACCESS-NRI has waived all copyright and related or neighboring rights to ACCESS Hive. This work is published from: Australia.
+![CC-BY][CC-BY]{ align=left }
+The ACCESS-Hive site is covered by the [CC-BY 4.0 license][human-license].
+
+However, the material linked to from ACCESS-Hive is covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities. 
+
 
 [HCG]: about/contribute.md
 [IssueHive]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
+[CC-BY]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[human-license]: License.md

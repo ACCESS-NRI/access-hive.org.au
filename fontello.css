@@ -44,26 +44,16 @@
   margin-left: .2em;
 
   /* you can be more comfortable with increased icons size */
-  font-size: 40%;
+  /* font-size: 120%; */
 
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscales;
+  -moz-osx-font-smoothing: grayscale;
 
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-cc:before { color: white; content: '\e800'; font-size: 120%;} /* '' */
-.icon-cc-by:before { color: white; content: '\e801'; font-size: 120%;} /* '' */
-.icon-supported{color: #a5cd39; padding-left:6px; padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-supported:hover{color: #596e1f; cursor: pointer}
-.icon-supported:before{ content: '\e802'; vertical-align: middle;} /* '' */
-
-.icon-recommended{color: #00adee; padding-left:6px;  padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-recommended:hover{color: #015d7f}
-.icon-recommended:before { content: '\e802'; vertical-align: middle;} /* '' */
-
-.icon-community{color: gray; padding-left:6px;  padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-community:hover{color: #515151}
-.icon-community:before { content: '\e802'; vertical-align: middle;} /* '' */
+.icon-cc:before { content: '\e800'; } /* '' */
+.icon-cc-by:before { content: '\e801'; } /* '' */
+.icon-honey_comb:before { content: '\e802'; } /* '' */
