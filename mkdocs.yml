@@ -58,6 +58,7 @@ nav:
   - ACCESS Hive:
     - index.md
     - About: about/index.md
+    - License: License.md
   - Configurations: 
     - configurations/index.md
     - ACCESS-ESM: configurations/access-esm.md
