@@ -57,13 +57,13 @@
 .icon-cc:before { color: white; content: '\e800'; font-size: 120%;} /* '' */
 .icon-cc-by:before { color: white; content: '\e801'; font-size: 120%;} /* '' */
 .icon-supported{color: #a5cd39; padding-left:6px; padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-supported:hover{color: gray; cursor: pointer}
+.icon-supported:hover{color: #596e1f; cursor: pointer}
 .icon-supported:before{ content: '\e802'; vertical-align: middle;} /* '' */
 
 .icon-recommended{color: #00adee; padding-left:6px;  padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-recommended:hover{color: gray}
+.icon-recommended:hover{color: #015d7f}
 .icon-recommended:before { content: '\e802'; vertical-align: middle;} /* '' */
 
 .icon-community{color: gray; padding-left:6px;  padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-community:hover{color: gray}
+.icon-community:hover{color: #515151}
 .icon-community:before { content: '\e802'; vertical-align: middle;} /* '' */
