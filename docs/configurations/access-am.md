@@ -1,5 +1,8 @@
 # ACCESS-AM {{ supp }}
 
+![Atmosphere Component Logo](../assets/component-logos/ACCESS-icon-ATMOSPHERE-300x300.png){align=right width=40%}
+![Land Component Logo](../assets/component-logos/ACCESS-icon-LAND-SURFACE-300x300.png){align=right width=40%}
+
 {% include "call_contribute.md" %}
 
 The ACCESS-AM model is a coupled model between the atmosphere and the land. The atmospheric model component is the [UM model][UM-hive]. The UM model comes by default coupled to the [JULES][JULES-hive] land model. That is why the first configurations and experiments released of ACCESS-AM will be UM-JULES configurations. But the ACCESS-NRI is working to ensure subsequent releases of ACCESS-AM use the [CABLE][CABLE-hive] land model instead.
