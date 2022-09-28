@@ -5,7 +5,9 @@
 
 Documentation hub for the Earth System models, ACCESS, and their community
 
-## Waiver
-![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)
+# License
+The ACCESS-Hive site is covered by [the CC-BY 4.0 license][License].
 
-To the extent possible under law, ACCESS-NRI has waived all copyright and related or neighboring rights to ACCESS-Hub. This work is published from: Australia.
+However, the material linked to from ACCESS-Hive is covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.
+
+[License]: License.md
