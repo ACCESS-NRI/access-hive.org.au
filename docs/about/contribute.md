@@ -19,16 +19,18 @@ If you want to contribute to the ACCESS-Hive, it is recommended to become a memb
 
 - specify your GitHub username
 - tag the tech account with `@tech account`. 
+
 ### Get the documentation source
-You need to clone the ACCESS Hive Community repository to your local machine:
+
+You need to clone the ACCESS-Hive repository to your local machine:
 ```
-git clone git@github.com:ACCESS Hive/ACCESS Hive.git
+git clone git@github.com:ACCESS-Hive/ACCESS-Hive.git
 ```
 
 ### Install Material for Mkdocs (not required)
 
 <!-- markdown-link-check-disable-next-line -->
-If you would like to preview the documentation locally to check your modifications before submitting them to the ACCESS Hive site and you are comfortable with installing Python packages, you will need to install Material for Mkdocs. However, this is not required as there is [a preview available as part of the submission process][preview].
+If you would like to preview the documentation locally to check your modifications before submitting them to the ACCESS-Hive site and you are comfortable with installing Python packages, you will need to install Material for Mkdocs. However, this is not required as there is [a preview available as part of the submission process][preview].
 
 You can install Material for Mkdocs on your local machine with `pip` or `conda`:
 
@@ -56,11 +58,11 @@ There are two ways to modify the documentation:
 
 ### Open an issue
 
-For all additions or modifications to the ACCESS Hive site, it is recommended to start by opening an [Issue][Issues] in the ACCESS Hive GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel][Assign] if you intend on working on the issue.
+For all additions or modifications to the ACCESS-Hive site, it is recommended to start by opening an [Issue][Issues] in the ACCESS-Hive GitHub repository. After creation, please [assign the Issue to yourself in the right-hand side panel][Assign] if you intend on working on the issue.
 
 ### Edit directly on GitHub
 
-For a very simple change, the easiest is to go to the page you want to modify on the ACCESS Hive documentation site. At the right of the title, you will see a pen icon :material-pencil:. 
+For a very simple change, the easiest is to go to the page you want to modify on the ACCESS-Hive documentation site. At the right of the title, you will see a pen icon :material-pencil:. 
 <figure markdown>
   ![EditPen](../assets/edit_pen.png)
   <figcaption>Pen icon circled in red</figcaption>
@@ -78,11 +80,11 @@ When you click on this icon, your browser will open the file in GitHub allowing 
 
 When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. The pull request will also automatically build [a preview of the documentation with your proposed changes][preview].
 
-Then ask for a review by tagging the `@Reviewers` team in a comment.
+Then ask for a review by tagging the `@ACCESS-Hive/reviewers` team in a comment.
 
-You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS Hive site. 
+You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS-Hive site. 
 
-???+ note
+???+ note "Headers and table of content"
     
     The level 1 headers are reserved for the title of the page and are ignored from the pages' table of contents. Only use level 2 headers and higher to organise pages.
 
@@ -92,24 +94,24 @@ If you prefer to work locally on your computer (e.g. to preview the result of yo
 
  - open an Issue
  - clone the repository locally 
- - start a branch to work on linked to the Issue
+ - start a branch to work on, linked to the Issue
  - commit your modifications to that branch and push to GitHub
  - open a pull request between the `main` branch and your branch
  - ask for reviews and reply to requests for changes
 
 If you don't know how to do these steps, please refer to our [Git and GitHub training][GitHowTo].
 
-???+ tip
-    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESS Hive site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
+???+ tip "What page to edit"
+    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESS-Hive site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
 
-???+ note
+???+ note "Headers and table of content"
     
     The level 1 headers are reserved for the title of the page and are ignored from the pages' table of contents. Only use level 2 headers and higher to organise pages.
 
 #### Previewing your changes locally
 
 <!-- markdown-link-check-disable -->
-???+ note
+???+ attention "Requires software installation"
     You can only preview your local changes if you have [installed mkdocs-material][install] on your computer.
     
     If you have installed mkdocs-material via conda, make sure you activate the correct environment first
@@ -117,7 +119,7 @@ If you don't know how to do these steps, please refer to our [Git and GitHub tra
 
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving.
 
-To start the server, open a terminal and navigate to your ACCESS Hive local repository. Now type:
+To start the server, open a terminal and navigate to your ACCESS-Hive local repository. Now type:
 ```
 mkdocs serve
 ```
@@ -131,7 +133,7 @@ In the pull request, you will see the link to the preview appear in this fashion
 
 ![PRpreview](../assets/site-preview-PR.png)
 
-???+ info
+???+ info "Build delay"
     It can take a while for the preview to build.
 
     If you open the preview and it looks completely broken or if it hasn't updated from additional modifications in the pull request, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
@@ -145,7 +147,7 @@ The important elements of the repository to know about before modifying the navi
  - `docs/` folder: this folder contains all the documentation pages. There is an `index.md` file for the Welcome page, one folder per tab on the site and an `assets/` folder to store images used in the documentation.
  - [`mkdocs.yml`][mkdocsYML]: it is a YAML formatted file, hence the `.yml` extension. The site navigation is defined in this file as well as options for the styling of the site. 
 
-???+ info
+???+ info "YAML"
     YAML is a popular choice for configuration files, as it is a simple way of encoding data structures in a text file. See this [short tutorial][YAMLtutorial].
 
 ### A simple example
