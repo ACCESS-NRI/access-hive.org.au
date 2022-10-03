@@ -15,6 +15,10 @@ The documentation is written in Markdown format. Please see this [cheat sheet][M
 
 ## Setup
 
+If you want to contribute to the ACCESS-Hive, it is recommended to become a member of the ACCESS-Hive organisation. Unfortunately, GitHub does not provide a system to request membership, please send a request [on the General channel of ACCESS-NRI's Slack workspace][NRISlack]:
+
+- specify your GitHub username
+- tag the tech account with `@tech account`. 
 ### Get the documentation source
 You need to clone the ACCESS Hive Community repository to your local machine:
 ```
@@ -69,12 +73,12 @@ When you click on this icon, your browser will open the file in GitHub allowing 
   <figcaption>Where to write your commit message</figcaption>
 </figure>
 ???+ important
-    You then need to choose to create a new branch and start a pull request. The `main` branch of the repository is protected and nobody can write to it directly.
+    The `main` branch of the repository is protected and nobody can write to it directly. You will need to choose either to create a new branch and open a pull request if you are a member of ACCESS-Hive organisation, or to create a fork on your personal account and open a pull request if you are not a member of ACCESS-Hive organisation.
     ![BranchAndPR](../assets/branch-and-pr.png)
 
-When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. This will also automatically build [a preview of the documentation with your proposed changes][preview].
+When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. The pull request will also automatically build [a preview of the documentation with your proposed changes][preview].
 
-Then ask for a review using the Reviewer menu on the right-hand side panel.
+Then ask for a review by tagging the `@Reviewers` team in a comment.
 
 You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS Hive site. 
 
@@ -196,7 +200,8 @@ will create this navigation:
 [MatforMkdocs]: https://squidfunk.github.io/mkdocs-material/
 [Mkdocs]: https://www.mkdocs.org/
 [MarkdownSheet]: https://www.markdownguide.org/cheat-sheet/
-[mkdocsYML]: https://github.com/ACCESS-Hive/ACCESS-Hive/blob/main/mkdocs-community.yml
+[NRIslack]:https://access-nri.slack.com
+[mkdocsYML]: https://github.com/ACCESS-Hive/ACCESS-Hive/blob/main/mkdocs.yml
 [YAMLtutorial]: https://kopi.dev/yaml-tutorial-beginner/
 [preview]: ../modify_documentation/#preview-of-the-documentation
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
