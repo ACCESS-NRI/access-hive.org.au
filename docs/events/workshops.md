@@ -2,11 +2,29 @@
 
 {% include "call_contribute.md" %}
 
-## [COSIMA Workhop][cosima2022]
+## [COSIMA Workshop][cosima2022]
 
 *3 - 4 November 2022, Hobart, TAS*
 
 Registration closes COB 16 September 2022
+
+## GC5 Assessment Workshop
+
+*8-10th November 2022 0830-1300 UTC.*
+
+The UM Partnership Team and GC Programme Team are running a GC5 assessment workshop, to assess the latest configuration of the Global Coupled model.
+
+The workshop will be a hybrid event with an option to attend online or in-person at Met Office Collaboration Building, Exeter. We will discuss the assessment of the latest GC5 configuration in a range of model simulations in a seamless context and sessions will broadly consist of:
+-	Summary of GC5 physics changes
+- General model assessment
+- Summary from Priority Evaluation Groups (PEGs)
+- Summary from Collaboration Groups (CoGs)
+- Upcoming changes in GC science and tools
+- Discussions
+
+Please fill in the [registration form](https://forms.office.com/r/XyRvLKjNtH) to confirm attendance by 21st October
+
+For any further questions please contact Luke Roberts, Prince Xavier or Charline Marzin at the Met Office.
 
 ## [Ground truthing future climate change][amos2022]
 
@@ -54,7 +72,7 @@ This workshop is relevant for those performing regional climate simulations or d
 
 The Met Office UM Partnership team are starting to plan the Unified Model training course to be held at the Bureau of Meteorology in 2023. The provisional dates for this course are either the week of 6th or 13th February 2023 at the Bureau of Meteorology, Melbourne.
 
-Expression of Interest closes: 1 October, 2022, [fill form](https://forms.office.com/r/dgtNtNfZWX) 
+Expression of Interest closes: 1 October, 2022, [fill form](https://forms.office.com/r/dgtNtNfZWX)
 
 [cosima2022]: http://cosima.org.au/index.php/meetings/cosima2022/
 [amos2022]: https://www.amos2022.org.au/
