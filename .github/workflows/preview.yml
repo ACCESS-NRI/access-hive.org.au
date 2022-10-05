@@ -27,7 +27,7 @@ permissions:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'safe to test')
+    if: contains(github.event.pull_request.labels.*.name, 'safe')
     steps:
       - name: Checkout
         uses: actions/checkout@v3
