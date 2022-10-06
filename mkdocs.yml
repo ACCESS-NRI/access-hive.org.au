@@ -88,6 +88,8 @@ nav:
     - docs_and_training/index.md
     - Policies : docs_and_training/policies.md
     - Technical: docs_and_training/technical.md
+    - Unified Model:
+      - FCM: docs_and_training/FCM.md
   - Working Groups:
     - working_groups/index.md
 
