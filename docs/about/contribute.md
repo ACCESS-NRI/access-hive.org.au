@@ -78,9 +78,9 @@ When you click on this icon, your browser will open the file in GitHub allowing 
     The `main` branch of the repository is protected and nobody can write to it directly. You will need to choose either to create a new branch and open a pull request if you are a member of ACCESS-Hive organisation, or to create a fork on your personal account and open a pull request if you are not a member of ACCESS-Hive organisation.
     ![BranchAndPR](../assets/branch-and-pr.png)
 
-When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. 
+When creating the pull request, make sure to add the text: `Closes #X` to the description, where X is the issue number related to this change. This will link the pull request and the issue together and the issue will be automatically closed once the pull request is accepted. The pull request will also automatically build [a preview of the documentation with your proposed changes][preview].
 
-Then ask for a review by tagging the `@ACCESS-Hive/reviewers` team in a comment. Once the pull request is being reviewed, the reviewer will trigger [a preview of the documentation with your proposed changes][preview].
+Then ask for a review by tagging the `@ACCESS-Hive/reviewers` team in a comment. 
 
 You will be notified by email of any subsequent comment, request or action from the reviewer on this pull request. Please make sure you take any action required by the reviewer or your modification will not be accepted into the ACCESS-Hive site. 
 
@@ -127,14 +127,14 @@ Your documentation will be built on http://127.0.0.1:8000. Open this URL in your
 
 ### Preview of the documentation
 
-When a pull request is labeled during the review process, GitHub will automatically build a preview of the documentation that includes the proposed changes. The preview will not build until a reviewer has labeled the pull request as safe to test.
+When a pull request is created or updated, GitHub will automatically build a preview of the documentation that includes the proposed changes. 
 
 In the pull request, you will see the link to the preview appear in this fashion:
 
 ![PRpreview](../assets/site-preview-PR.png)
 
 ???+ info "Build delay"
-    It can take a while for the preview to build.
+    It can take a while for the preview to build, even after the CI check is indicated as finished. Please wait for the comment with the link to appear and allow for some time after that for the preview to be properly deployed.
 
     If you open the preview and it looks completely broken or if it hasn't updated from additional modifications in the pull request, it probably means the site hasn't finished building yet. If you wait a little bit and refresh the page, it should fix it.
 
