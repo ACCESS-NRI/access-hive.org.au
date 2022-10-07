@@ -1,33 +1,19 @@
-name: Deploy PR preview
+name: Build PR preview
 
 on:
   pull_request:
     types:
-      - labeled
+      - opened
+      - reopened
       - synchronize
-      - closed
 
 concurrency: 
   group: preview-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  actions: write
-  checks: write
-  contents: write
-  deployments: write
-  issues: write
-  packages: write
-  pull-requests: write
-  pages: write
-  repository-projects: write
-  security-events: write
-  statuses: write
-
 jobs:
-  deploy-preview:
+  build-preview:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'safe to test')
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -45,7 +31,20 @@ jobs:
         run: |
           mkdocs build -f mkdocs.yml -d site
 
-      - name: Deploy preview
-        uses: access-nri/pr-preview-action@v1.1
+      - name: Save PR number
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./pr/NB
+      - uses: actions/upload-artifact@v2
         with:
-          source-dir: site
+          name: pr
+          path: pr/
+
+      - name: Save built site
+        run: |
+          mkdir -p ./pr_site
+          mv site ./pr_site/.
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pr_site
+          path: pr_site/
