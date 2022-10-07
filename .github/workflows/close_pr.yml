@@ -1,0 +1,20 @@
+name: Close PR
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  send-number:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Save PR number
+        run: |
+          mkdir -p ./prnumber
+          echo ${{ github.event.number }} > ./prnumber/prnumber.txt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: prnumber
+          path: prnumber/
+          
