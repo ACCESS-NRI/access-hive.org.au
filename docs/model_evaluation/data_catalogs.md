@@ -32,3 +32,4 @@ OzFlux is an ecosystem research network set up to provide Australian, New Zealan
 [CLEX-web]: https://climateextremes.org.au/
 [Intake-CLEX]: https://github.com/coecms/nci-intake-catalogue
 [ILAMB-web]: https://www.ilamb.org/
+[Intake-Ilamb]: https://github.com/nocollier/intake-ilamb
