@@ -8,7 +8,7 @@ A new build system called [FAB](https://github.com/metomi/fab) is currently in d
 
 ## Using FCM
 
-FCM can be used on OOD or Gadi by loading its module:
+FCM can be used on [OOD](https://ood.nci.org.au), [ARE](https://are.nci.org.au) or [Gadi](https://opus.nci.org.au/display/Help/Gadi+User+Guide) by loading its module:
 ```
 module use /g/data/access/modules
 module load fcm
