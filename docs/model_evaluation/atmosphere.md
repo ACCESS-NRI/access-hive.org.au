@@ -42,8 +42,8 @@ The PMP is used to provide “quick-look” objective comparisons of Earth Syste
 
 ## [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ recom }}
 
-[**Documentation**][teca-doc]
-[**Tutorials**][teca-tutorials]
+[**Documentation**][teca-doc] |
+[**Tutorials**][teca-tutorials] |
 [**Sources**][teca-source]
 
 
