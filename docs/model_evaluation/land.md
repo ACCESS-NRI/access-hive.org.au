@@ -5,8 +5,6 @@
 
 ## [iLAMB][ilamb-web] {{ recom }}
 
-**Domain**: Land
-
 [**Documentation**][ilamb-doc] |
 [**Tutorials**][ilamb-tutorial] | 
 [**Source Code**][ilamb-source]
