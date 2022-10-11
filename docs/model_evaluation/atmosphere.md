@@ -40,6 +40,15 @@ Links to the code repository and documentation for each METplus component are pr
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
 
 
+## [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ recom }}
+
+[**Documentation**][teca-doc]
+[**Tutorials**][teca-tutorials]
+[**Sources**][teca-source]
+
+
+TECA is a general purpose tool for detecting discrete events in climate model output. It leverages a map-reduce framework for efficient parallelization at large scales (order 10K+ cores). Currently, TECA contains detection algorithms for tropical cyclones, atmospheric rivers, and extratropical cyclones; and plans are underway to implement algorithms for mesoscale convective complexes, African Easterly waves, atmospheric blocks, and fronts.
+
 
 [esmvaltool-web]: https://www.esmvaltool.org/
 [esmvaltool-doc]: https://docs.esmvaltool.org/en/latest
@@ -65,3 +74,7 @@ The PMP is used to provide “quick-look” objective comparisons of Earth Syste
 
 [pmp-doc]: http://pcmdi.github.io/pcmdi_metrics/index.html#
 [pmp-source]: https://github.com/PCMDI/pcmdi_metrics
+[teca-web]: https://cmec.llnl.gov/teca.html
+[teca-doc]: https://teca.readthedocs.io/en/latest
+[teca-source]: https://github.com/LBL-EESA/TECA
+[teca-tutorials]: https://sourceforge.net/p/teca/TECA_tutorials/HEAD/tree
