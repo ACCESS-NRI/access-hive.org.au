@@ -85,10 +85,11 @@ nav:
     - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
     - Data processing: model_evaluation/data_processing.md
     - Data catalogs: model_evaluation/data_catalogs.md
-  - Documentation & Training: 
-    - docs_and_training/index.md
-    - Policies : docs_and_training/policies.md
-    - Technical: docs_and_training/technical.md
+  - Training & Policies: 
+    - training_and_policies/index.md
+    - ACCESS training: training_and_policies/ACCESS_training.md
+    - Additional training: training_and_policies/additional_training.md
+    - Policies: training_and_policies/policies.md
   - Working Groups:
     - working_groups/index.md
 
