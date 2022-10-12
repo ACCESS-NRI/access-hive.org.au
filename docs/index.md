@@ -4,7 +4,7 @@
 ![Network Logo](assets/ACCESSLogo(RGB).png){align=right width=40%}
 ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive provides links to documentation hosted on other sites. It is not intended to host the documentation itself.
 
-The ACCESS community has indicated a need for high quality documentation. ACCESS-Hive is the first step in the process by improving accessibility to existing documentation. There is immense value to the broader community to have a single location to find high quality, relevant documentation. There is also value to ACCESS-NRI, as a source of information from the community, who are the domain specialists.
+The ACCESS community has indicated a need for high quality documentation. ACCESS-Hive is the first step in this process by improving accessibility to existing documentation. There is immense value to the broader community to have a single location to find high quality, relevant documentation. There is also value to ACCESS-NRI, as a source of information from the community, who are the domain specialists.
 
 ACCESS-Hive is curated to ensure it is relevant and of reasonable quality, and all links have an annotated summary to help you find what you need. Annotations also makes the in-built live search function extremely effective.
 

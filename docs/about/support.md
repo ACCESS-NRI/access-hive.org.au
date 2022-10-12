@@ -2,21 +2,21 @@
 
 We use a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
 
-    - {{ supp }}: Supported by ACCESS-NRI
-    - {{ recom }}: Recommended by ACCESS-NRI
-    - {{ comm }}: Community contributed
+    - {{supp}} Supported by ACCESS-NRI
+    - {{recom}} Recommended by ACCESS-NRI
+    - {{comm}} Community contributed
 
 ## Supported by ACCESS-NRI {{supp}}
 
-Documentation or software that is either created by ACCESS-NRI, or existing documentation or software for which ACCESS-NRI has taken over responsibility. Either way it is being actively updated and supported by ACCESS-NRI. Support queries should 
+Documentation that is actively updated and supported by ACCESS-NRI. This is documentation was either created by ACCESS-NRI, or it is existing documentation for which ACCESS-NRI has taken over responsibility.
 
 ## Recommended by ACCESS-NRI {{recom}}
 
-Documentation for third-party software that ACCESS-NRI recommends and facilitates use by the community at NCI. This means ACCESS-NRI supports the infrastructure required to run the software, but not necessarily the software itself. 
+Documentation for third-party software that ACCESS-NRI recommends and facilitates the use of at NCI as a service to the community. This means ACCESS-NRI supports the infrastructure required to run the software, but not necessarily the software itself. 
 
 ## Community contributed {{comm}}
 
-Documentation or software that is of use to the community, but is not explicitly endorsed or supported by ACCESS-NRI. 
+Documentation that is of use to the community, but is not explicitly endorsed or supported by ACCESS-NRI. 
 
 # How to get help
 
