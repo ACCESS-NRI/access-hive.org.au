@@ -56,10 +56,12 @@ markdown_extensions:
   
 # Navigation
 nav:
-  - ACCESS Hive:
+  - About:
     - index.md
-    - About: about/index.md
-    - License: License.md
+    - How to contribute: about/contribute.md
+    - How to get help: about/support.md
+    - Contact: about/contact.md
+    - License: license.md
   - Configurations: 
     - configurations/index.md
     - ACCESS-ESM: configurations/access-esm.md
@@ -97,7 +99,6 @@ nav:
     - Workshops: events/workshops.md
   - About:
     - about/index.md
-    - How to Contribute: about/contribute.md
 
 # Footer
 
