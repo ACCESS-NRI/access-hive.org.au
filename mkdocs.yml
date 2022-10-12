@@ -61,7 +61,7 @@ nav:
     - How to contribute: about/contribute.md
     - How to get help: about/support.md
     - Contact: about/contact.md
-    - License: license.md
+    - License: License.md
   - Configurations: 
     - configurations/index.md
     - ACCESS-ESM: configurations/access-esm.md
