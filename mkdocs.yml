@@ -92,13 +92,10 @@ nav:
     - Technical: docs_and_training/technical.md
   - Working Groups:
     - working_groups/index.md
-
   - Events: 
     - events/index.md
     - Conferences: events/conferences.md
     - Workshops: events/workshops.md
-  - About:
-    - about/index.md
 
 # Footer
 
