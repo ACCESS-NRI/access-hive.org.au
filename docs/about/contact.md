@@ -2,7 +2,7 @@
 
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
-ACCESS-Hive is an open community supported effort. The underpinning support is provided by ACCESS-NRI but much of the content is provided by the ACCESS Community.
+ACCESS-Hive is an open community supported effort. The underpinning infrastructure is provided by ACCESS-NRI but much of the content is provided by the ACCESS Community.
 
 If there are problems or queries about the content of ACCESS-Hive check if there is already a relevant [open issue on the ACCESS-Hive GitHub repository][issues], and open one if not.
 
