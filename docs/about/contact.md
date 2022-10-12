@@ -6,9 +6,13 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 
 If there are problems or queries about the content of ACCESS-Hive check if there is already a relevant [open issue on the ACCESS-Hive GitHub repository][issues], and open one if not.
 
+Check the [support page][support] for information on what is supported and by whom.
+
 Otherwise contact ACCESS-NRI directly. Full contact details for ACCESS-NRI are available on the [ACCESS-NRI website contact page][access-contact]
 
 **Some other places where you can find us:**
+
+:fontawesome-brands-twitter:{ .github }: [ACCESS-NRI](https://github.com/ACCESS-NRI)
 
 :fontawesome-brands-twitter:{ .twitter }: [@ACCESS_NRI](https://twitter.com/ACCESS_NRI)
 
@@ -19,3 +23,4 @@ Otherwise contact ACCESS-NRI directly. Full contact details for ACCESS-NRI are a
 [access-about]: https://www.access-nri.org.au/about/what-is-access-nri/
 [access-contact]: https://www.access-nri.org.au/contact/
 [issues]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
+[support]: support.md
