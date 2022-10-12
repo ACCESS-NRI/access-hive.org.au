@@ -33,4 +33,4 @@ However, the material linked to from ACCESS-Hive is covered by various licensing
 
 [HCG]: about/contribute.md
 [CC-BY]: https://i.creativecommons.org/l/by/4.0/88x31.png
-[human-license]: license.md
+[human-license]: License.md
