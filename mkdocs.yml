@@ -96,8 +96,9 @@ nav:
     - working_groups/index.md
   - Events: 
     - events/index.md
-    - Conferences: events/conferences.md
-    - Workshops: events/workshops.md
+  - About:
+    - about/index.md
+    - How to Contribute: about/contribute.md
 
 # Footer
 
