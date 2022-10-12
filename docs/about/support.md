@@ -22,4 +22,4 @@ Documentation or software that is of use to the community, but is not explicitly
 
 Each entry on ACCESS-Hive links to another web site. There should be information on how to get help on the linked site. In the case of ACCESS-NRI supported documentation and software, marked {{supp}}, if there is not information on how to get help, or your query is not appropriate for the support channels provided, please [contact ACCESS-NRI directly][contact].
 
-[contact]: about/contact.md
+[contact]: contact.md
