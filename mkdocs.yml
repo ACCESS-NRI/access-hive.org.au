@@ -59,7 +59,7 @@ nav:
   - About:
     - index.md
     - How to contribute: about/contribute.md
-    - How to get help: about/support.md
+    - Support: about/support.md
     - Contact: about/contact.md
     - License: License.md
   - Configurations: 
