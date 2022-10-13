@@ -12,9 +12,11 @@ ACCESS-Hive is curated to ensure it is relevant and of reasonable quality, and a
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
 
-    - {{supp}} Supported by ACCESS-NRI
-    - {{recom}} Recommended by ACCESS-NRI
-    - {{comm}} Community contributed
+{{supp}} Supported by ACCESS-NRI
+
+{{recom}} Recommended by ACCESS-NRI
+
+{{comm}} Community contributed
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
