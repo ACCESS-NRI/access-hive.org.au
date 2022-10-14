@@ -52,8 +52,8 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - def_list
 
-  
 # Navigation
 nav:
   - About:
