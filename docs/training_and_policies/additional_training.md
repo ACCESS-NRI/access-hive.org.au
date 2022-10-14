@@ -1,18 +1,11 @@
-# Documentation and Training
+# Additional training material
 
-{% include "call_contribute.md" %}
+## [Git and GitHub][GitAndGitHub] {{ supp }}
 
-???+ info
-    **What to expect in the next few months?**
+To learn the basics of Git and GitHub. It also includes ACCESS-NRI's recommendations to setup GitHub. 
 
-    - The ACCESS-NRI Training Team will developed and release training materials for supported Models, Model Components and Configurations.
-    - The Model Evaluation and Diagnostics Team (MED) will recommend tools and workflows for processing and evaluating model outputs.
 
-    ACCESS-NRI will organise regular workshops around the ACCESS suite of supported products. We will also support community workshops to address specific needs. 
-    We encourage the members of the community to [contact us](mailto:access.nri@anu.edu.au) and welcome their suggestions. 
-
-## Training resources from partners {{ recom }}
-
+## [NCI training][nci-training] {{ recom }}
 <div class="result" markdown>
 
 ![NCI Logo](../assets/nci_logo_color.svg){align=right width=40%}
@@ -25,6 +18,7 @@ A full calendar of upcoming training opportunities can be found on their [Opus p
 
 Users can find important information and resources about using NCI systems and services in the [NCI User Guides][nci-user-guides].
 
+[GitAndGitHub]: https://access-nri.github.io/Training/HowTos/GitAndGitHub/basics/
 [nci-web]: https://www.nci.org.au
 [nci-training]: https://www.nci.org.au/users/user-training
 [opus-web]: https://opus.nci.org.au/display/Help/NCI+Training+and+Educational+Events
