@@ -52,13 +52,15 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - def_list
 
-  
 # Navigation
 nav:
-  - ACCESS Hive:
+  - About:
     - index.md
-    - About: about/index.md
+    - How to contribute: about/contribute.md
+    - Support: about/support.md
+    - Contact: about/contact.md
     - License: License.md
   - Configurations: 
     - configurations/index.md
@@ -91,14 +93,10 @@ nav:
     - Technical: docs_and_training/technical.md
   - Working Groups:
     - working_groups/index.md
-
   - Events: 
     - events/index.md
     - Conferences: events/conferences.md
     - Workshops: events/workshops.md
-  - About:
-    - about/index.md
-    - How to Contribute: about/contribute.md
 
 # Footer
 

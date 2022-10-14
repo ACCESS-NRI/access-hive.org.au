@@ -7,6 +7,9 @@
             "pattern": "^http://127.0.0.1:8000"
         },
         {
+            "pattern": "linkedin.com"
+        },
+        {
             "pattern": "^http://www.bom.gov.au"
         }
 
