@@ -98,6 +98,7 @@ nav:
     - working_groups/index.md
   - Events: 
     - events/index.md
+    - Add Event: events/add_event.md
   - About:
     - about/index.md
     - How to Contribute: about/contribute.md
