@@ -42,6 +42,8 @@ plugins:
       enable_creation_date: true
   - search
   - macros
+  - events:
+      events_dir: events/events
 
 # Extensions
 markdown_extensions: 
