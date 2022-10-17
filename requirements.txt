@@ -1,0 +1,4 @@
+mkdocs-material>=7.2.6
+mkdocs-git-revision-date-localized-plugin
+mkdocs-macros-plugin
+git+https://github.com/rbeucher/mkdocs_events_plugin.git

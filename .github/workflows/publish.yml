@@ -30,9 +30,7 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: | 
-          pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-macros-plugin
-
+        run:  pip install -r requirements.txt
       - name: Build
         run: |
           mkdocs build -f mkdocs.yml -d site
