@@ -42,6 +42,8 @@ plugins:
       enable_creation_date: true
   - search
   - macros
+  - events:
+      events_dir: events/events
 
 # Extensions
 markdown_extensions: 
@@ -96,8 +98,10 @@ nav:
     - working_groups/index.md
   - Events: 
     - events/index.md
-    - Conferences: events/conferences.md
-    - Workshops: events/workshops.md
+    - Add Event: events/add_event.md
+  - About:
+    - about/index.md
+    - How to Contribute: about/contribute.md
 
 # Footer
 
