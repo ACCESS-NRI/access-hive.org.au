@@ -24,7 +24,7 @@ If you want to contribute to the ACCESS-Hive, it is recommended to become a memb
 
 You need to clone the ACCESS-Hive repository to your local machine:
 ```
-git clone git@github.com:ACCESS-Hive/ACCESS-Hive.git
+git clone git@github.com:ACCESS-Hive/website.git
 ```
 
 ### Install Material for Mkdocs (not required)
@@ -203,11 +203,11 @@ will create this navigation:
 [Mkdocs]: https://www.mkdocs.org/
 [MarkdownSheet]: https://www.markdownguide.org/cheat-sheet/
 [NRIslack]:https://access-nri.slack.com
-[mkdocsYML]: https://github.com/ACCESS-Hive/ACCESS-Hive/blob/main/mkdocs.yml
+[mkdocsYML]: https://github.com/ACCESS-Hive/website/blob/main/mkdocs.yml
 [YAMLtutorial]: https://kopi.dev/yaml-tutorial-beginner/
 [preview]: ../modify_documentation/#preview-of-the-documentation
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
-[Issues]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
+[Issues]: https://github.com/ACCESS-Hive/website/issues
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users
 [preview]: #preview-of-the-documentation
 [install]: ../contribution_setup/#install-material-for-mkdocs-not-required

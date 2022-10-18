@@ -1,7 +1,7 @@
 site_name: ACCESS Hive
 
 # Git repository
-repo_url: https://github.com/ACCESS-Hive/ACCESS-Hive
+repo_url: https://github.com/ACCESS-Hive/website
 repo_name: ACCESS-Hive
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs
@@ -120,9 +120,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supp: '<a href="https://access-hive.github.io/ACCESS-Hive/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recom: '<a href="https://access-hive.github.io/ACCESS-Hive/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  comm: '<a href="https://access-hive.github.io/ACCESS-Hive/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
+  supp: '<a href="https://access-hive.github.io/website/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  recom: '<a href="https://access-hive.github.io/website/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  comm: '<a href="https://access-hive.github.io/website/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
 
 extra_css:
   - css/access-nri.css
