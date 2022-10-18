@@ -120,9 +120,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supp: '<a href="https://access-hive.github.io/ACCESS-Hive/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recom: '<a href="https://access-hive.github.io/ACCESS-Hive/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  comm: '<a href="https://access-hive.github.io/ACCESS-Hive/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
+  supp: '<a href="https://access-hive.github.io/website/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  recom: '<a href="https://access-hive.github.io/website/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  comm: '<a href="https://access-hive.github.io/website/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
 
 extra_css:
   - css/access-nri.css
