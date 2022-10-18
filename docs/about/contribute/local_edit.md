@@ -24,14 +24,10 @@ The documentation is written in Markdown format. Please see this [cheat sheet][M
 
 ### Software installation
 
-To build the site locally, you need to install [Material for Mkdocs][MatforMkdocs] and other plugins. You can find a full list in the `requirements.txt` file in the root of the ACCESS-Hive repository. You can use either `pip` or `conda` for the installation:
+To build the site locally, you need to install [Material for Mkdocs][MatforMkdocs] and other plugins. You can find a full list in the `requirements.txt` file in the root of the ACCESS-Hive repository. Please use `pip` for the installation as some of the `conda` packages are not kept up-to-date:
 
 ```
 pip install -r requirements.txt
-```
-or
-```
-conda install -c conda-forge --file requirements.txt
 ```
 
 ## Edit to ACCESS-Hive
@@ -71,12 +67,8 @@ In the pull request, you will see the link to the preview appear in this fashion
 
 ### Local preview (if editing on your own computer)
 
-<!-- markdown-link-check-disable -->
 ???+ attention "Requires software installation"
     You can only preview your local changes if you have [installed mkdocs-material][install] on your computer.
-    
-    If you have installed mkdocs-material via conda, make sure you activate the correct environment first
-<!-- markdown-link-check-enable-->
 
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving.
 
