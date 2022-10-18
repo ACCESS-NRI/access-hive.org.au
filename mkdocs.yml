@@ -63,7 +63,13 @@ markdown_extensions:
 nav:
   - About:
     - index.md
-    - How to contribute: about/contribute.md
+    - How to contribute: 
+      - about/contribute/index.md
+      - Edit on GitHub: about/contribute/direct_edit.md
+      - Edit locally: about/contribute/local_edit.md
+      - Stand-alone documentation: about/contribute/standalone_doc.md
+      - Change the navigation: about/contribute/navigation_changes.md
+      - about/contribute/contribute.md
     - Support: about/support.md
     - Contact: about/contact.md
     - License: License.md
