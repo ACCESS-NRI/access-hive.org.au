@@ -5,7 +5,7 @@
 
 ACCESS-OM stands for ACCESS **O**cean **M**odel. There is more than just an ocean model, but it indicates that this is not a fully-coupled model, i.e. not coupled with a model atmosphere, the atmospheric fields that drive the model are provided by a data product. Usually the data product is derived from reanalysis, e.g. [JRA55-do](#jra55-do) and [ERA5](#era5).
 
-ACCESS-NRI will release an ACCESS-OM model configuration. The first release of ACCESS-OM will be derived from the COSIMA ACCESS-OM2 suite.
+ACCESS-NRI will release an ACCESS-OM model configuration. The first release of ACCESS-OM will be derived from the COSIMA ACCESS-OM2 suite and will include [ocean] and [sea ice] components.
 
 ## [ACCESS-OM2][COSIMA-models]
 
@@ -36,6 +36,8 @@ Quality-assured monthly updates of ERA5 (1959 to present) are published within 3
 
 ERA5 combines vast amounts of historical observations into global estimates using advanced modelling and data assimilation systems.
 
+[ocean]: https://access-hive.github.io/website/pr-preview/pr-157/model_components/ocean/
+[sea ice]: https://access-hive.github.io/website/pr-preview/pr-157/model_components/sea-ice/
 
 [COSIMA]: http://cosima.org.au/
 [COSIMA-models]: http://cosima.org.au/index.php/models/
