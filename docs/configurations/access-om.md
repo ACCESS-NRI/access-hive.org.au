@@ -36,8 +36,8 @@ Quality-assured monthly updates of ERA5 (1959 to present) are published within 3
 
 ERA5 combines vast amounts of historical observations into global estimates using advanced modelling and data assimilation systems.
 
-[ocean]: https://access-hive.github.io/website/pr-preview/pr-157/model_components/ocean/
-[sea ice]: https://access-hive.github.io/website/pr-preview/pr-157/model_components/sea-ice/
+[ocean]: https://access-hive.github.io/website/model_components/ocean/
+[sea ice]: https://access-hive.github.io/website/model_components/sea-ice/
 
 [COSIMA]: http://cosima.org.au/
 [COSIMA-models]: http://cosima.org.au/index.php/models/
