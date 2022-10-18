@@ -110,7 +110,6 @@ nav:
     - Add Event: events/add_event.md
 
 # Footer
-
 extra:
   generator: false
   social:
