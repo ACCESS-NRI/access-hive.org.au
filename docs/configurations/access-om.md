@@ -7,7 +7,7 @@ ACCESS-OM stands for ACCESS **O**cean **M**odel. There is more than just an ocea
 
 ACCESS-NRI will release an ACCESS-OM model configuration. The first release of ACCESS-OM will be derived from the COSIMA ACCESS-OM2 suite and will include [ocean] and [sea ice] components.
 
-## [ACCESS-OM2][COSIMA-models]
+## [ACCESS-OM2][COSIMA-models] {{ recom }}
 
 ACCESS-OM2 is a suite of coupled ocean-sea ice models developed by the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)][COSIMA]. All models use the [MOM5.1][MOM5.1] ocean model coupled to the [CICE5.1.2][CICE5.1.2] sea ice model via OASIS3-MCT.
 
