@@ -1,5 +1,8 @@
 site_name: ACCESS Hive
 
+# Needed to generate the canonical_url for each pages that are 
+# then used to create the sitemap for search engine indexing
+site_url: https://access-hive.github.io/website/
 # Git repository
 repo_url: https://github.com/ACCESS-Hive/website
 repo_name: ACCESS-Hive
