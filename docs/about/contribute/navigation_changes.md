@@ -58,5 +58,5 @@ nav:
 will create this navigation:
 ![Nav2Sections](../../assets/sections_example.png)
 
-[mkdocsYML]: https://github.com/ACCESS-Hive/ACCESS-Hive/blob/main/mkdocs.yml
+[mkdocsYML]: https://github.com/ACCESS-Hive/website/blob/main/mkdocs.yml
 [YAMLtutorial]: https://kopi.dev/yaml-tutorial-beginner/

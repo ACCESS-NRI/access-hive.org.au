@@ -22,7 +22,7 @@ There are two main ways to contribute to the site:
  - you can modify an existing page [directly from GitHub][directedit]. This is a simple way suitable to light modifications.
  - you can work [on your local computer][localedit] and use Git to manage your modifications. This is recommended for more involved modifications. It is the only possible way to add new pages or modify the navigation of the site.
 
-[Issues]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
+[Issues]: https://github.com/ACCESS-Hive/website/issues
 [ACCESSforum]:https://access.discourse.group/
 [directedit]: direct_edit.md
 [localedit]: local_edit.md

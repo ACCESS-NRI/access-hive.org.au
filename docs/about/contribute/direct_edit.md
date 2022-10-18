@@ -24,9 +24,7 @@ Then add a commit message in the Commit changes box.
     The `main` branch of the repository is protected and nobody can write to it directly. You will need to choose either to create a new branch (for ACCESS-Hive organisation members only) or to create a fork on your GitHub personal account (for non-members of ACCESS-Hive organisation) and then open a pull request in all cases.
     ![BranchAndPR](../../assets/branch-and-pr.png)
 
-<!-- markdown-link-check-disable -->
 When creating the pull request, make sure to follow the instructions given to you in the pull request template. The pull request will automatically build [a preview of the documentation with your proposed changes][preview].
-<!-- markdown-link-check-enable-->
 
 
 Then ask for a review by tagging the `@ACCESS-Hive/reviewers` team in a comment. 
@@ -48,4 +46,4 @@ Once you click on this link, navigate to and open the file you need to modify, t
 </figure>
 Then commit your changes once again to the same branch. This will update the pull request and the preview of the site.
 
-[preview]: ../local_edit/#preview-from-a-pull-request
+[preview]: local_edit.md#preview-from-a-pull-request

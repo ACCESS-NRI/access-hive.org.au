@@ -86,9 +86,9 @@ mkdocs serve
 ```
 Your documentation will be built on http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
 
-[install]: ../local_edit/#software-installation
+[install]: local_edit.md#software-installation
 [ACCESSforum]: https://access.discourse.group/
-[Issues]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
+[Issues]: https://github.com/ACCESS-Hive/website/issues
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/
 [MatforMkdocs]: https://squidfunk.github.io/mkdocs-material/
 [Mkdocs]: https://www.mkdocs.org/
