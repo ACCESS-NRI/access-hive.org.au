@@ -22,5 +22,5 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 
 [access-about]: https://www.access-nri.org.au/about/what-is-access-nri/
 [access-contact]: https://www.access-nri.org.au/contact/
-[issues]: https://github.com/ACCESS-Hive/ACCESS-Hive/issues
+[issues]: https://github.com/ACCESS-Hive/website/issues
 [support]: support.md
