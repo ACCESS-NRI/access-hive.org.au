@@ -1,4 +1,4 @@
-site_name: ACCESS Hive
+site_name: ACCESS-Hive
 
 # Git repository
 repo_url: https://github.com/ACCESS-Hive/website
@@ -100,9 +100,6 @@ nav:
   - Events: 
     - events/index.md
     - Add Event: events/add_event.md
-  - About:
-    - about/index.md
-    - How to Contribute: about/contribute.md
 
 # Footer
 
