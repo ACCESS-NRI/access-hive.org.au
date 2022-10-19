@@ -17,11 +17,11 @@ The models in the ACCESS-OM2 differ by their grid spatial resolution:
  - [ACCESS-OM2-025][ACCESS-OM2-025] at 0.25° with 50 vertical levels
  - [ACCESS-OM2-01][ACCESS-OM2-01] at 0.1° with 75 vertical levels
 
-[ocean]: /model_components/ocean/
-[sea ice]: /model_components/sea-ice/
+[ocean]: ../model_components/ocean/
+[sea ice]: ../model_components/sea-ice/
 
-[JRA55-do]: /model_evaluation/datasets.md#jra55
-[ERA5]: /model_evaluation/datasets.md#era5
+[JRA55-do]: ../model_evaluation/datasets.md#jra55
+[ERA5]: ../model_evaluation/datasets.md#era5
 
 [COSIMA]: http://cosima.org.au/
 [COSIMA-models]: http://cosima.org.au/index.php/models/
