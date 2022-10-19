@@ -20,8 +20,8 @@ The models in the ACCESS-OM2 differ by their grid spatial resolution:
 [ocean]: model_components/ocean/
 [sea ice]: model_components/sea-ice/
 
-[JRA55-do]: model_evaluation/datasets/#jra55
-[ERA5]: model_evaluation/datasets/#era5
+[JRA55-do]: model_evaluation/datasets.md#jra55
+[ERA5]: model_evaluation/datasets.md#era5
 
 [COSIMA]: http://cosima.org.au/
 [COSIMA-models]: http://cosima.org.au/index.php/models/
