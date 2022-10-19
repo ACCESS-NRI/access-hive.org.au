@@ -7,7 +7,7 @@ This repository uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-ma
 
 https://access-hive.github.io/website/
 
-If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.github.io/website/pr-preview/pr-157/about/contribute/) for instructions.
+If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.github.io/website/about/contribute/) for instructions.
 
 # License
 The ACCESS-Hive site is covered by [the CC-BY 4.0 license][License].
