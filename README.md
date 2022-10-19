@@ -1,5 +1,3 @@
-# :construction: Work in progress. It is likely to undergo major modifications without warning.
-
 # ACCESS-Hive
 [![ACCESS-Hive Badge](docs/assets/badge.svg)](https://access-hive.github.io/website/)
 
