@@ -1,4 +1,4 @@
-site_name: ACCESS Hive
+site_name: ACCESS-Hive
 
 # Needed to generate the canonical_url for each pages that are 
 # then used to create the sitemap for search engine indexing
@@ -92,6 +92,7 @@ nav:
     - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
     - Data processing: model_evaluation/data_processing.md
     - Data catalogs: model_evaluation/data_catalogs.md
+    - Datasets: model_evaluation/datasets.md
   - Training & Policies: 
     - training_and_policies/index.md
     - ACCESS training: training_and_policies/ACCESS_training.md
@@ -102,9 +103,6 @@ nav:
   - Events: 
     - events/index.md
     - Add Event: events/add_event.md
-  - About:
-    - about/index.md
-    - How to Contribute: about/contribute.md
 
 # Footer
 
