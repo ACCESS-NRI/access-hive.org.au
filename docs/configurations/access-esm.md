@@ -14,7 +14,7 @@ ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of 
 
 ACCESS-ESM1.5 is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 has mainly been developed to enable Australia to participate in the Coupled Model Intercomparison Project Phase 6 (CMIP6) with an ESM version. An assessment of the climate response to CO2 forcing indicates that ACCESS-ESM1.5 has an equilibrium climate sensitivity of 3.87°C.
 
-[atmosphere]: #model_components/atmosphere.md
+[atmosphere]: ../model_components/atmosphere.md
 [land]: ../model_components/land.md
 [land biogeochemistry]: ../model_components/bgc_land.md
 [ocean]: ../model_components/ocean.md
