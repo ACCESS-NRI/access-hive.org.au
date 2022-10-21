@@ -1,13 +1,13 @@
 # ACCESS-Hive
-[![ACCESS-Hive Badge](docs/assets/badge.svg)](https://access-hive.github.io/website/)
+[![ACCESS-Hive Badge](docs/assets/badge.svg)](https://access-hive.github.io/)
 
 Documentation hub for the Earth System models, ACCESS, and their community.
 
 This repository uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) to build the website which accessible at this URL:
 
-https://access-hive.github.io/website/
+https://access-hive.github.io/
 
-If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.github.io/website/about/contribute/) for instructions.
+If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.github.io/about/contribute/) for instructions.
 
 # License
 The ACCESS-Hive site is covered by [the CC-BY 4.0 license][License].

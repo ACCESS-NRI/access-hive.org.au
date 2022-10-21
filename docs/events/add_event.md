@@ -5,7 +5,7 @@
 We encourage members of the community to list any workshops, tutorials, conferences that might be of interest to the community.
 
 
-To add your event to the list, please add a markdown text file to the `events` folder of the [ACCESS-Hive repository](https://github.com/ACCESS-Hive/website/tree/main/docs/events/events).
+To add your event to the list, please add a markdown text file to the `events` folder of the [ACCESS-Hive repository](https://github.com/ACCESS-Hive/access-hive.github.io/tree/main/docs/events/events).
 
 The file must contain a header with the metadata as in the example below:
 
