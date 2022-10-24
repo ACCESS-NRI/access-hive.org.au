@@ -24,7 +24,7 @@ If you want to contribute to the ACCESS-Hive, it is recommended to become a memb
 
 You need to clone the ACCESS-Hive repository to your local machine:
 ```
-git clone git@github.com/ACCESS-Hive/access-hive.github.io.git
+git clone git@github.com:ACCESS-Hive/access-hive.github.io.git
 ```
 
 ### Install Material for Mkdocs (not required)
