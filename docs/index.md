@@ -1,5 +1,5 @@
 
-![Network Logo](assets/ACCESSLogo(RGB).png){align=right width=40%}
+[![Network Logo](assets/ACCESSLogo(RGB).png){align=right width=40%}][access-nri]
 # ACCESS-Hive
 
 ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development.
@@ -37,3 +37,4 @@ ACCESS-Hive contains links to other material which is covered by various licensi
 [HCG]: about/contribute.md
 [CC-BY]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [human-license]: License.md
+[access-nri]: https://access-nri.org.au
