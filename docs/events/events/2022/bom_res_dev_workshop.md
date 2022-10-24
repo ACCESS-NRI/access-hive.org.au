@@ -1,5 +1,5 @@
 ---
-title: 2022 Bureau of Meteorology Annual Research and Development Workshop: "Water in the Earth System"
+title: '2022 Bureau of Meteorology Annual Research and Development Workshop: "Water in the Earth System"'
 start_date: 7/11/2022
 end_date: 10/11/2022
 location: Karstens Melbourne, 123 Queen Street, Melbourne Victoria
