@@ -45,7 +45,7 @@ jobs:
           python-version: 3.x
 
       - name: Clean preview
-        uses: access-nri/pr-preview-action@v2
+        uses: rossjrw/pr-preview-action
         with:
           action: remove
           pr-number: ${{ env.pr-number }}
