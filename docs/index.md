@@ -34,6 +34,7 @@ The ACCESS-Hive site is covered by the [CC-BY 4.0 license][human-license].
 
 ACCESS-Hive contains links to other material which is covered by various licensing agreements. Users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities. 
 
+
 [HCG]: about/contribute.md
 [CC-BY]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [human-license]: License.md
