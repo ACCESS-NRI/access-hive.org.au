@@ -14,6 +14,9 @@
         },
         {
             "pattern": "^http://www.bom.gov.au"
+        },
+        {
+            "pattern": "^https://docs.github.com"
         }
 
     ]
