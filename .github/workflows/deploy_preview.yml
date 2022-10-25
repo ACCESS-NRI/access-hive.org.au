@@ -68,7 +68,7 @@ jobs:
       - run: unzip pr_site.zip
 
       - name: Deploy preview
-        uses: access-nri/pr-preview-action@v2.1
+        uses: access-nri/pr-preview-action@v2.1.1
         with:
           source-dir: site
           action: deploy
