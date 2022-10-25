@@ -2,7 +2,7 @@
 
 {% include "call_contribute.md" %}
 
-![Land Component Logo](../assets/component-logos/ACCESS-icon-LAND-SURFACE-300x300.png){align=right width=40%}
+![Land Component Logo](../assets/component-logos/Land Surface.png){align=right width=40%}
 
 ## [CABLE][cable-wiki] {{ supp }}
 
