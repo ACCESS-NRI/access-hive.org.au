@@ -9,10 +9,10 @@ ACCESS-NRI will release an ACCESS-CM model configuration. The first release of A
 
 ## [ACCESS-CM2] {{ recom }}
 
-[**Citation**][ACCESS-CM2-cite] |
+[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
 [**Tutorial**][ACCESS-CM2-tute]
 
-ACCESS-CM2 is one of Australia’s contributions to the World Climate Research Programme’s Coupled Model Intercomparison Project Phase 6 (CMIP6). The component models are: UM10.6 GA7.1 for the atmosphere, CABLE2.5 for the land surface, MOM5 for the ocean, and CICE5.1.2 for the sea ice. Compared to previous model versions ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean but a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. This energy imbalance reflects a noticeable warming trend of the global ocean over the spin-up period.
+ACCESS-CM2 [@Bi2020-vj] is one of Australia’s contributions to the World Climate Research Programme’s Coupled Model Intercomparison Project Phase 6 (CMIP6). The component models are: UM10.6 GA7.1 for the atmosphere, CABLE2.5 for the land surface, MOM5 for the ocean, and CICE5.1.2 for the sea ice. Compared to previous model versions ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean but a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. This energy imbalance reflects a noticeable warming trend of the global ocean over the spin-up period.
 
 [atmosphere]: ../model_components/atmosphere.md
 [land]: ../model_components/land.md
