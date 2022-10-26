@@ -2,7 +2,7 @@ site_name: ACCESS-Hive
 
 # Needed to generate the canonical_url for each pages that are 
 # then used to create the sitemap for search engine indexing
-site_url: https://access-hive.github.io/access-hive.github.io/
+site_url: https://access-hive.org.au
 # Git repository
 repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
 repo_name: ACCESS-Hive
@@ -125,9 +125,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supp: '<a href="https://access-hive.github.io/access-hive.github.io/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recom: '<a href="https://access-hive.github.io/access-hive.github.io/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  comm: '<a href="https://access-hive.github.io/access-hive.github.io/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
+  supp: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  recom: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  comm: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
 
 extra_css:
   - css/access-nri.css
