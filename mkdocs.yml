@@ -45,6 +45,8 @@ plugins:
       enable_creation_date: true
   - search
   - macros
+  - bibtex:
+      bib_file: "references.bib"
   - events:
       events_dir: events/events
 
@@ -58,6 +60,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - def_list
+  - footnotes
 
 # Navigation
 nav:

@@ -9,10 +9,10 @@ ACCESS-NRI will release an ACCESS-OM model configuration. The first release of A
 
 ## [ACCESS-OM2][COSIMA-models] {{ recom }}
 
-[**Citation**][ACCESS-OM2-cite] |
+[**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
 [**Documentation**][ACCESS-OM2-docs]
 
-ACCESS-OM2 is a suite of coupled ocean-sea ice models developed by the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)][COSIMA]. All models use the [MOM5] ocean model coupled to the [CICE5] sea ice model via OASIS3-MCT.
+ACCESS-OM2 [@Kiss2020-gmd] is a suite of coupled ocean-sea ice models developed by the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)][COSIMA]. All models use the [MOM5] ocean model coupled to the [CICE5] sea ice model via OASIS3-MCT.
 
 The models in the ACCESS-OM2 suite differ by their grid spatial resolution:
 
