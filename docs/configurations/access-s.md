@@ -1,4 +1,4 @@
-# [ACCESS-S][ACCESS-S] {{ comm }}
+# [ACCESS-S][ACCESS-S] {{ community }}
 
 {% include "call_contribute.md" %}
 

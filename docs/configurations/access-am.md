@@ -1,4 +1,4 @@
-# ACCESS-AM {{ supp }}
+# ACCESS-AM {{ supported }}
 
 {% include "call_contribute.md" %}
 

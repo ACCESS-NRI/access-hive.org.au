@@ -3,7 +3,7 @@
 
 {% include "call_contribute.md" %}
 
-## [The International Ocean Model Benchmarking (IOMB)][IOMB-web]  {{ comm }}
+## [The International Ocean Model Benchmarking (IOMB)][IOMB-web]  {{ community }}
 
 [**Documentation**][ilamb-doc] |
 [**Tutorials**][ilamb-tutorial] | 

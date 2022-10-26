@@ -4,7 +4,7 @@
 
 ## Reanalyses
 
-### [JRA55-do]  {{ recom }}
+### [JRA55-do]  {{ recommended }}
 
 [**Documentation**][JRA55-do-doc] |
 [**data@NCI**][JRA55-do-NCI]
@@ -12,7 +12,7 @@
 JRA55-do is a surface dataset for driving ocean-sea ice models and used in phase 2 of OMIP (OMIP-2). JRA55-do corrects the atmospheric reanalysis product JRA-55 using satellite and other atmospheric reanalysis products. The merits of JRA55-do are the high horizontal resolution (~55 km) and temporal interval (3 h).
 
 
-### [ERA5]  {{ recom }}
+### [ERA5]  {{ recommended }}
 
 [**Documentation**][ERA5-doc] |
 [**data@NCI**][ERA5-NCI]
