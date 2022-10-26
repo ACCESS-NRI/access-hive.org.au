@@ -27,7 +27,7 @@ Reviewers should:
 
 We encourage reviewers to provide feedback from within the PR discussion.
 
-You can include in your review links to any new issues that you the reviewer believe to be impeding the acceptance of the repository.
+You can include in your review links to any new issues that you the reviewer believe to be impeding the acceptance of the pull request.
 
 [access-hive-github]: https://github.com/ACCESS-Hive
 [access-hive-maintainers]: https://github.com/orgs/ACCESS-Hive/teams/maintainers
