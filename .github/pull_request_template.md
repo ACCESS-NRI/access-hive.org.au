@@ -24,5 +24,6 @@ Please delete options that are not relevant.
 - [ ] My changes do not break navigation and do not generate new warnings
 - [ ] I have checked that the links are valid and point to the intended content.
 - [ ] I have checked my code/text and corrected any misspellings
+- [ ] I have chosen the correct tag for the level of [support provided](https://access-hive.org.au/#support).
 
 Please tag the **reviewers team** in a comment below by prepending an `@` in front of `ACCESS-Hive/reviewers` when ready.
