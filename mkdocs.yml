@@ -69,7 +69,6 @@ nav:
       - Edit locally: about/contribute/local_edit.md
       - Stand-alone documentation: about/contribute/standalone_doc.md
       - Change the navigation: about/contribute/navigation_changes.md
-      - Reviewers: about/contribute/reviewers_guidelines.md
     - Support: about/support.md
     - Contact: about/contact.md
     - License: License.md
@@ -127,9 +126,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supp: '<a href="https://access-hive.org.au/#support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recom: '<a href="https://access-hive.org.au/#support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  comm: '<a href="https://access-hive.org.au/#support"><i class="icon-community" title="Community Contributed"></i></a>'
+  supp: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  recom: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  comm: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
 
 extra_css:
   - css/access-nri.css
