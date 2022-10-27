@@ -39,6 +39,17 @@ Links to the code repository and documentation for each METplus component are pr
 
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
 
+## [Free Evaluation System Framework (FREVA)][freva-doc] {{ community }}
+
+[**Documentation**][freva-doc] | 
+[**Sources**][freva-source]
+
+Freva, the free evaluation system framework, is a data search and analysis platform developed by the atmospheric science community for the atmospheric science community. With help of Freva researchers can:
+
+- quickly and intuitively search for data stored at typical data centers that host many datasets.
+- create a common interface for user defined data analysis tools.
+- apply data analysis tools in a reproducible manner.
+
 
 ## [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ community }}
 
@@ -78,3 +89,5 @@ TECA is a general purpose tool for detecting discrete events in climate model ou
 [teca-doc]: https://teca.readthedocs.io/en/latest
 [teca-source]: https://github.com/LBL-EESA/TECA
 [teca-tutorials]: https://sourceforge.net/p/teca/TECA_tutorials/HEAD/tree
+[freva-doc]: https://freva.gitlab-pages.dkrz.de/evaluation_system/sphinx_docs/index.html
+[freva-source]: https://gitlab.dkrz.de/freva/evaluation_system
