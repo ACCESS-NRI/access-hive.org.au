@@ -7,12 +7,12 @@
 ## [The Modular Ocean Model (MOM)][mom-wiki]  {{ supp }}
 The Modular Ocean Model (MOM) is one of the ocean components of the ACCESS climate model system. MOM is a tool for studying the global ocean climate system, as well as capabilities for regional and coastal applications. 
 
-### MOM5 {{ supp }}
+### MOM5 {{ supported }}
 [**Source Code**][mom5-github]
 
 The current version of MOM used within ACCESS is MOM5.
 
-### MOM6 {{ recom }}
+### MOM6 {{ recommended }}
 
 [**Source Code**][mom6-github] |
 [**Tutorials**][mom6-tutes]
