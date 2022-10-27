@@ -1,4 +1,4 @@
-# ACCESS-CM {{ supp }}
+# ACCESS-CM {{ supported }}
 
 {% include "call_contribute.md" %}
 
@@ -7,7 +7,7 @@ ACCESS-CM stands for ACCESS **C**oupled **M**odel. This means it is a fully-coup
 
 ACCESS-NRI will release an ACCESS-CM model configuration. The first release of ACCESS-CM will be derived from the [CSIRO ACCESS-CM2 configuration](#access-cm2) and will include [atmosphere], [land], [ocean] and [sea ice] components.
 
-## [ACCESS-CM2] {{ recom }}
+## [ACCESS-CM2] {{ recommended }}
 
 [**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
 [**Tutorial**][ACCESS-CM2-tute]

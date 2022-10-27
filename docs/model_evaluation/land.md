@@ -3,7 +3,7 @@
 
 {% include "call_contribute.md" %}
 
-## [iLAMB][ilamb-web] {{ recom }}
+## [iLAMB][ilamb-web] {{ recommended }}
 
 [**Documentation**][ilamb-doc] |
 [**Tutorials**][ilamb-tutorial] | 
@@ -11,7 +11,7 @@
 
 The International Land Model Benchmarking (ILAMB) project is a model-data intercomparison and integration project designed to improve the performance of land models and, in parallel, improve the design of new measurement campaigns to reduce uncertainties associated with key land surface processes.
 
-[**iLAMB-Data**][ilambdata-source] {{ recom }}:
+[**iLAMB-Data**][ilambdata-source] {{ recommended }}:
 A collection of scripts used to format ILAMB data and community portal to make contributions
 
 
