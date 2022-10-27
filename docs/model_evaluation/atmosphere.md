@@ -39,7 +39,7 @@ Links to the code repository and documentation for each METplus component are pr
 
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
 
-## [Free Evaluation System Framework (FREVA)][freva] {{ community }}
+## [Free Evaluation System Framework (FREVA)][freva-doc] {{ community }}
 
 [**Documentation**][freva-doc] | 
 [**Sources**][freva-source]
