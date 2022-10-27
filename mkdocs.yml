@@ -129,9 +129,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supp: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recom: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  comm: '<a href="https://access-hive.org.au/about#tagging"><i class="icon-community" title="Community Contributed"></i></a>'
+  supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
 
 extra_css:
   - css/access-nri.css

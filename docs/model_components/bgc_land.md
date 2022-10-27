@@ -5,7 +5,7 @@
 
 ![BGC Component Logo](../assets/component-logos/BioGeoChem Land.png){align=right width=40%}
 
-## [CASA-CNP][casa-web] {{ supp }}
+## [CASA-CNP][casa-web] {{ supported }}
 
 CASA (Carnegie-Ames-Stanford Approach)-CNP (Carbon-Nitrogen-Phosphorous) is the land biogeochemistry model developed in CABLE.
 

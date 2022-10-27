@@ -3,7 +3,7 @@
 
 {% include "call_contribute.md" %}
 
-## [ESMValTool][esmvaltool-web]  {{ recom }}
+## [ESMValTool][esmvaltool-web]  {{ recommended }}
 
 [**Documentation**][esmvaltool-doc] |
 [**Tutorial**][esmvaltool-tutorial] | 
@@ -11,7 +11,7 @@
 
 ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. ESMValTool is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. For a comprehensive introduction to ESMValTool please visit our documentation page.
 
-## [METPLUS][metplus-web]  {{ recom }}
+## [METPLUS][metplus-web]  {{ recommended }}
 
 [**Tutorial**][metplus-tutorial]
 
@@ -19,7 +19,7 @@ METplus is a verification framework that spans a wide range of temporal (warn-on
 
 METplus is being actively developed by NCAR/Research Applications Laboratory (RAL), NOAA/Earth Systems Research Laboratories (ESRL), NOAA/Environmental Modeling Center (EMC), and is open to community contributions.
 
-### METplus Components  {{ recom }}
+### METplus Components  {{ recommended }}
 
 Links to the code repository and documentation for each METplus component are provided below:
 
@@ -32,7 +32,7 @@ Links to the code repository and documentation for each METplus component are pr
 - METdatadb: [sources][METdatadb-doc] | [docs][METdatadb-source]
 
 
-## [PCMDI Metrics Package (PMP)][pmp-doc]  {{ recom }}
+## [PCMDI Metrics Package (PMP)][pmp-doc]  {{ recommended }}
 
 [**Documentation**][pmp-doc] | 
 [**Sources**][pmp-source]
@@ -40,7 +40,7 @@ Links to the code repository and documentation for each METplus component are pr
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
 
 
-## [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ comm }}
+## [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ community }}
 
 [**Documentation**][teca-doc] |
 [**Tutorials**][teca-tutorials] |

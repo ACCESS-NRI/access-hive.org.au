@@ -4,7 +4,7 @@
 
 ![Atmospheric Component Logo](../assets/component-logos/Aerosols.png){align=right width=40%}
 
-## [UKCA][ukca-wiki] {{ supp }}
+## [UKCA][ukca-wiki] {{ supported }}
 
 [The UK Chemistry-Aerosol model (UKCA)][ukca-wiki] is a community atmospheric chemistry-aerosol global model suitable for a range of topics in climate and environmental change research developed in the United Kingdom.
 
@@ -14,7 +14,7 @@ UKCA chemistry model is turned on in ACCESS-CM2-Chem.
 
 ![Atmospheric Component Logo](../assets/component-logos/Atmospheric Chemistry.png){align=right width=40%}
 
-## [GLOMAP][glomap-wiki] {{ supp }}
+## [GLOMAP][glomap-wiki] {{ supported }}
 
 UKCA contains an aerosol scheme that can be used independently, the GLObal Model of Aerosol Processes [(GLOMAP)][glomap-wiki]. The multi-component multi-modal GLOMAP model allows simulation of aerosol number, size, and concentrations of individual components such as sulphate, different types of carbon, and sea salt.
 

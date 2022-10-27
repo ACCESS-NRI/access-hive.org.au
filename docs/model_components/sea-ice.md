@@ -4,7 +4,7 @@
 
 ![Sea-Ice Component Logo](../assets/component-logos/Sea Ice.png){align=right width=40%}
 
-## CICE {{ supp }}
+## CICE {{ supported }}
 CICE is a software package developed by researchers at [Los Alamos National Laboratory team][lanl-web] with funding from the US Department of Energy. CICE models the dynamics and thermodynamics of ice. 
 
 The software program is managed by the [CICE Consortium][cice-web], an international group of institutions formed to maintain and develop CICE in the public domain.
