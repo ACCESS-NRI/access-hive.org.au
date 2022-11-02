@@ -65,7 +65,7 @@ markdown_extensions:
 # Navigation
 nav:
   - About:
-    - index.md
+    - Home: index.md
     - How to contribute: 
       - about/contribute/index.md
       - Edit on GitHub: about/contribute/direct_edit.md
