@@ -11,7 +11,7 @@ Although we encourage everyone to get involved and contribute to the ACCESS-Hive
 
 ## Become a member of the ACCESS-Hive organisation
 
-The ACCESS-Hive organisation is open to any member of the ACCESS community. Furthermore, organisation members have write access to the ACCESS-Hive repository which means they can create branches to contain their modifications instead of creating their own forks. As such, we encourage you to become a member of the organisation by asking one of the [maintainers][access-hive-maintainers] to invite you to join the organisation.
+The ACCESS-Hive organisation is open to any member of the ACCESS community. Furthermore, organisation members have write access to the ACCESS-Hive repository which means they can create branches to contain their modifications instead of creating their own forks. As such, we encourage you to become a member of the organisation by replying to [this issue][issue-179] and ask to be invited to join the organisation.
 
 ## Process to contribute
 
@@ -27,3 +27,5 @@ There are two main ways to contribute to the site:
 [localedit]: local_edit.md
 [standalone_doc]: standalone_doc.md
 [access-hive-maintainers]: https://github.com/orgs/ACCESS-Hive/teams/maintainers
+[issue-179]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/179
+
