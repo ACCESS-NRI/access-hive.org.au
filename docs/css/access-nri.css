@@ -44,17 +44,11 @@
   border-color: black;
 }
 
-.md-tabs__list {
-  margin: 1;
-  margin-inline-start: px2rem(4px);
-  padding: 0;
-  white-space: nowrap;
-  list-style: none;
-  contain: content;
+.md-tabs__item {
+  text-transform: uppercase;
 }
 
-.md-tabs__item {
-  display: inline-block;
-  height: px2rem(48px);
-  padding-inline: px2rem(12px);
+.md-tabs__item--active {
+  background-image: linear-gradient(var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+  border-bottom: 4px solid white;
 }
