@@ -2,6 +2,10 @@
    ACCESS-Hive CSS
 */
 
+
+/* Import medium-weight Roboto font for tabs */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -44,11 +48,47 @@
   border-color: black;
 }
 
-.md-tabs__item {
-  text-transform: uppercase;
+/* Header */
+.md-header {
+  padding-top: 1em;
+  box-shadow: none;
+  border-bottom: 5px solid var(--md-primary-fg-color--light);
 }
 
+.md-tabs {
+  padding-top: 0.5em;
+}
+
+/* Unselected tab */
+.md-tabs__link {
+  opacity: 0.95;
+
+  text-transform: uppercase;
+  font-weight: 500;
+
+  /* Make entire tab clickable (instead of only link text) */
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Selected tab */
 .md-tabs__item--active {
   background-image: linear-gradient(var(--md-primary-fg-color), var(--md-primary-fg-color--light));
-  border-bottom: 4px solid white;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  opacity: 1;
+}
+
+/* Tab hover state */
+.md-tabs__item:hover {
+  background-image: linear-gradient(var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+}
+
+.md-tabs__item:hover .md-tabs__link {
+  opacity: 1;
 }
