@@ -12,6 +12,10 @@ ACCESS-Hive is part of an effort to design higher quality and more accessible do
 
 ACCESS-Hive is curated to ensure it is relevant and of reasonable quality, and all links have an annotated summary to help you find what you need. Annotations also makes the in-built live search function extremely effective.
 
+## Navigating ACCESS-Hive
+
+ACCESS-Hive is divided into major categories. For the desktop site categories are accessible from the tabs along the top of the header, in the mobile site from the [hamburger button] at the top left of the screen.
+
 ## Support
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
@@ -43,3 +47,4 @@ ACCESS-Hive contains links to other material which is covered by various licensi
 [access-nri]: https://access-nri.org.au
 [github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io.git
 [forum]: https://forum.access-hive.org.au
+[hamburger button]: https://en.wikipedia.org/wiki/Hamburger_button
