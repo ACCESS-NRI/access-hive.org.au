@@ -12,9 +12,11 @@ ACCESS-Hive is part of an effort to design higher quality and more accessible do
 
 ACCESS-Hive is curated to ensure it is relevant and of reasonable quality, and all links have an annotated summary to help you find what you need. Annotations also makes the in-built live search function extremely effective.
 
-
 We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
 
+## Navigating ACCESS-Hive
+
+ACCESS-Hive is divided into major categories. For the desktop site categories are accessible from the tabs along the top of the header, in the mobile site from the [hamburger button] at the top left of the screen.
 
 ## Support
 
@@ -47,3 +49,4 @@ ACCESS-Hive contains links to other material which is covered by various licensi
 [access-nri]: https://access-nri.org.au
 [github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io.git
 [forum]: https://forum.access-hive.org.au
+[hamburger button]: https://en.wikipedia.org/wiki/Hamburger_button
