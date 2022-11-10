@@ -14,7 +14,7 @@ For all additions or modifications to the ACCESS-Hive site, it is recommended to
 
 You first should clone the ACCESS-Hive repository to your local machine:
 ```
-git clone git@github.com:ACCESS-Hive/website.git
+git clone git@github.com:ACCESS-Hive/access-hive.github.io.git
 ```
 
 ### Markdown
