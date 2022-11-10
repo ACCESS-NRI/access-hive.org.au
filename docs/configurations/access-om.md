@@ -3,7 +3,7 @@
 
 {% include "call_contribute.md" %}
 
-ACCESS-OM stands for ACCESS **O**cean **M**odel. There is more than just an ocean model, but it indicates that this is not a fully-coupled model, i.e. not coupled with a model atmosphere, the atmospheric fields that drive the model are provided by a data product. Usually the data product is derived from reanalysis, e.g. [JRA55-do] and [ERA5].
+ACCESS-OM stands for ACCESS **O**cean **M**odel. There is more than just an ocean model, but it indicates that this is not a fully-coupled model, i.e. not coupled with a model atmosphere, the atmospheric fields that drive the model are provided by a data product, usually derived from reanalysis.
 
 ACCESS-NRI will release an ACCESS-OM model configuration. The first release of ACCESS-OM will be derived from the COSIMA ACCESS-OM2 suite and will include [ocean] and [sea ice] components.
 
@@ -22,9 +22,6 @@ The models in the ACCESS-OM2 suite differ by their grid spatial resolution:
 
 [ocean]: ../model_components/ocean.md
 [sea ice]: ../model_components/sea-ice.md
-
-[JRA55-do]: ../model_evaluation/datasets.md#jra55
-[ERA5]: ../model_evaluation/datasets.md#era5
 
 [COSIMA]: http://cosima.org.au/
 [COSIMA-models]: http://cosima.org.au/index.php/models/
