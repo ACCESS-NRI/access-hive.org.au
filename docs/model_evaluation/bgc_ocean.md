@@ -3,6 +3,7 @@
 
 {% include "call_contribute.md" %}
 
+
 ## [The International Ocean Model Benchmarking (IOMB)][IOMB-web]  {{ community }}
 
 [**Documentation**][ilamb-doc] |
@@ -13,7 +14,25 @@ The International Ocean Model Benchmarking (IOMB) Package is used to evaluate ma
 
 IOMB uses the same code base as the International Land Model Benchmarking (ILAMB) Package, so some of the links above refer to ILAMB instead of IOMB.
 
+
+## [climpred][climpred-doc]  {{ community }}
+
+[**Documentation**][climpred-doc] |
+[**Tutorial**][climpred-tutorial] |
+[**Source Code**][climpred-source] |
+[**Paper**][climpred-paper]
+
+climpred aims to offer a comprehensive set of analysis tools for assessing the quality of
+dynamical forecasts relative to verification products (e.g., observations, reanalysis products,
+control simulations). climpred supports a broad temporal scales of prediction, supporting the weather, subseasonal-to-seasonal (S2S), and seasonal-to-decadal (S2D) communities.
+
+
 [IOMB-web]: https://cmec.llnl.gov/iomb.html
 [ilamb-doc]: https://www.ilamb.org/doc/index.html
 [ilamb-tutorial]: https://www.ilamb.org/doc/tutorial.html
 [ilamb-source]: https://github.com/rubisco-sfa/ILAMB
+
+[climpred-doc]: https://climpred.readthedocs.io/en/stable/index.html
+[climpred-tutorial]: https://climpred.readthedocs.io/en/stable/setting-up-data.html
+[climpred-source]: https://github.com/pangeo-data/climpred
+[climpred-paper]: https://joss.theoj.org/papers/10.21105/joss.02781
