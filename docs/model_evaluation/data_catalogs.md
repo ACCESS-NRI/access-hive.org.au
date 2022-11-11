@@ -13,6 +13,13 @@ Only datasets from the NCI Catalog are referenced.
 The catalogue is available in intake's default catalogue list in the CLEX Conda environment.
 Two notebooks are provided in the docs folder showing how to access the ERA5 and CIP6 datasets.
 
+## [Australia Climate Data Guide Catalogue][ACDG-Catalog] {{ recommended }}
+
+*A one-stop catalogue to discover Climate Data in Australia*
+
+The ACDG portal is a metadata portal listing climate research resources available in Australia from multiple data repositories.
+This is a community based project managed by the ACDG Single Access working group. This is a group of Australian climate community self-nominated representatives. Anyone is welcome to join the group or to contribute independently to the metadata portal the group is developing.
+
 ## [Intake-Ilamb Catalog][Intake-Ilamb] {{ supported }}
 
 The Intake-Ilamb catalog provides an yaml-style intake catalog of the reference data used for ESM model benchmarking in the International Land Model Benchmarking [(ILAMB)][ILAMB-web] effort.
@@ -33,3 +40,4 @@ OzFlux is an ecosystem research network set up to provide Australian, New Zealan
 [Intake-CLEX]: https://github.com/coecms/nci-intake-catalogue
 [ILAMB-web]: https://www.ilamb.org/
 [Intake-Ilamb]: https://github.com/nocollier/intake-ilamb
+[ACDG-Catalog]:  https://oneclimate.dmponline.cloud.edu.au/
