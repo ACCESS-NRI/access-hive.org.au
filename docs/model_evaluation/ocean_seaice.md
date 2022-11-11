@@ -3,6 +3,7 @@
 
 {% include "call_contribute.md" %}
 
+
 ## [ESMValTool][esmvaltool-web] {{ recommended }}
 
 [**Documentation**][esmvaltool-doc] |
@@ -10,6 +11,7 @@
 [**Source Code**][esmvaltool-source]
 
 ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. ESMValTool is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. For a comprehensive introduction to ESMValTool please visit our documentation page.
+
 
 ## [COSIMA Cookbook / Recipes][cosimacb-web] {{ recommended }}
 
@@ -27,6 +29,19 @@ The cookbook is structured as follows:
 - The cosima-cookbook repository includes boiler-plate code and scripts that underpin the cookbook, including a database for exploring and loading available data.
 - The cosima-recipes repository includes example notebooks on which you can base your analyses.
 
+
+## [climpred][climpred-doc]  {{ community }}
+
+[**Documentation**][climpred-doc] |
+[**Tutorial**][climpred-tutorial] |
+[**Source Code**][climpred-source] |
+[**Paper** [@Brady2021-joss]][climpred-paper]
+
+climpred aims to offer a comprehensive set of analysis tools for assessing the quality of
+dynamical forecasts relative to verification products (e.g., observations, reanalysis products,
+control simulations). climpred supports a broad temporal scales of prediction, supporting the weather, subseasonal-to-seasonal (S2S), and seasonal-to-decadal (S2D) communities.
+
+
 [esmvaltool-web]: https://www.esmvaltool.org/
 [esmvaltool-doc]: https://docs.esmvaltool.org/en/latest
 [esmvaltool-tutorial]: https://esmvalgroup.github.io/ESMValTool_Tutorial/index.html
@@ -37,4 +52,9 @@ The cookbook is structured as follows:
 [cosimacb-tutorial]: https://cosima-recipes.readthedocs.io/en/latest/tutorials/index.html
 [cosimacb-source]: https://github.com/COSIMA/cosima-cookbook
 [cosimacb-recipes]: https://github.com/COSIMA/cosima-recipes
+
+[climpred-doc]: https://climpred.readthedocs.io/en/stable/index.html
+[climpred-tutorial]: https://climpred.readthedocs.io/en/stable/setting-up-data.html
+[climpred-source]: https://github.com/pangeo-data/climpred
+[climpred-paper]: https://joss.theoj.org/papers/10.21105/joss.02781
 
