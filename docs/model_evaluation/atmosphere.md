@@ -16,7 +16,7 @@ ESMValTool is a community-developed climate model diagnostics and evaluation sof
 ## [METPLUS][metplus-web]  {{ recommended }}
 
 [**Tutorial**][metplus-tutorial] |
-[**Paper**][MET-paper]
+[**Paper** [@Brown2021-bams]][MET-paper]
 
 METplus is a verification framework that spans a wide range of temporal (warn-on-forecast to climate) and spatial (storm to global) scales.  It is intended to be extensible through additional capability developed by the community. The core components of the framework include MET, the associated database and display systems called METviewer and METexpress, and a suite of Python wrappers to provide low-level automation and examples, also called use-cases.  METplus will be a component of NOAA's Unified Forecast System (UFS) cross-cutting infrastructure as well as NCAR's System for Integrated Modeling of the Atmosphere (SIMA).
 
@@ -69,7 +69,7 @@ TECA is a general purpose tool for detecting discrete events in climate model ou
 [**Documentation**][monet-doc] |
 [**Tutorial**][monet-tutorial] |
 [**Source Code**][monet-source] |
-[**Paper**][monet-paper]
+[**Paper** [@Baker2017-atmos]][monet-paper]
 
 MONET is an open source project and Python package that aims to create a common platform for atmospheric composition data analysis for weather and air quality models.
 
@@ -81,7 +81,7 @@ MONET was developed to evaluate the Community Multiscale Air Quality Model (CMAQ
 [**Documentation**][climpred-doc] |
 [**Tutorial**][climpred-tutorial] |
 [**Source Code**][climpred-source] |
-[**Paper**][climpred-paper]
+[**Paper** [@Brady2021-joss]][climpred-paper]
 
 climpred aims to offer a comprehensive set of analysis tools for assessing the quality of
 dynamical forecasts relative to verification products (e.g., observations, reanalysis products,

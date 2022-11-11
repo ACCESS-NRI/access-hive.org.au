@@ -20,7 +20,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 [**Documentation**][climpred-doc] |
 [**Tutorial**][climpred-tutorial] |
 [**Source Code**][climpred-source] |
-[**Paper**][climpred-paper]
+[**Paper** [@Brady2021-joss]][climpred-paper]
 
 climpred aims to offer a comprehensive set of analysis tools for assessing the quality of
 dynamical forecasts relative to verification products (e.g., observations, reanalysis products,
