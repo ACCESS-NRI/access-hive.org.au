@@ -11,7 +11,7 @@ If this pull request addresses an already open issue, then you can link that iss
 
 Fixes #(issue number)
 
-(Delete the instructions after you wrote the description. 🙃)
+(Delete the instructions after you write your description. 🙃)
 
 
 Now, if you really wanna make the ACCESS-Hive developers life easier, then consider filling up what follows.
