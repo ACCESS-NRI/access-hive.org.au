@@ -32,7 +32,7 @@ The cookbook is structured as follows:
 
   New users are urged to go throught the [tutorials][cosimacb-tutorial] in the cosima recipes and then browse through the [documented examples][cosimacb-documentedexamples].
   
-  As a rule of thumb, users who are not interested in data management and, e.g., are only interested in using/analysing model output should never be bothered looking into the `cosima-cookbook` repository. `cosima-cookbook` is developed and maintained for them and will just *simply work out of the box*. `:)`
+  As a rule of thumb, users who are not interested in data management and, e.g., are only interested in using/analysing model output should never be bothered looking into the `cosima-cookbook` repository. `cosima-cookbook` is developed and maintained and will just *simply work out of the box*. `:)`
 
 
 ## [climpred][climpred-doc]  {{ community }}
