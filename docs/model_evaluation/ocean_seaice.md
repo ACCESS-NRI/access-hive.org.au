@@ -26,9 +26,9 @@ The framework is suited for analysing any MOM5/MOM6 output, as well as output fr
 
 The cookbook is structured as follows:
 
-- `cosima-cookbook` repository: includes boiler-plate code and scripts that underpin the cookbook, including a database for exploring and loading available data.
+- [cosima-cookbook][cosimacb-source]: includes boiler-plate code and scripts that underpin the cookbook, including a database for exploring and loading available data.
 
-- `cosima-recipes` repository: includes example notebooks that illustrate how users can use the cookbook to read output from particular experiments and, further, they showcase simple and elaborate analyses of model output.
+- [cosima-recipes][cosimacb-recipes]: includes example notebooks that illustrate how users can use the cookbook to read output from particular experiments and, further, they showcase simple and elaborate analyses of model output.
 
   New users are urged to go throught the [tutorials][cosimacb-tutorial] in the cosima recipes and then browse through the [documented examples][cosimacb-documentedexamples].
   
