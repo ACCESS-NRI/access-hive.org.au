@@ -14,8 +14,8 @@ Fixes #(issue number)
 (Delete the instructions after you write your description. 🙃)
 
 
-Now, if you really wanna make the ACCESS-Hive developers life easier, then consider filling up what follows.
-If you find that intimidating or you don't really know what some of those bullet points mean, then just delete everything from here onwars.
+Now, if you really wanna make the ACCESS-Hive developers life easier, then consider filling up what follows. 😍
+If you find this intimidating or you don't really know what some of those bullet points mean, then just delete everything from here onwards. 🫣
 
 ## Type of change
 
