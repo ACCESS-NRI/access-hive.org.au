@@ -83,9 +83,7 @@ MONET was developed to evaluate the Community Multiscale Air Quality Model (CMAQ
 [**Source Code**][climpred-source] |
 [**Paper** [@Brady2021-joss]][climpred-paper]
 
-climpred aims to offer a comprehensive set of analysis tools for assessing the quality of
-dynamical forecasts relative to verification products (e.g., observations, reanalysis products,
-control simulations). climpred supports a broad temporal scales of prediction, supporting the weather, subseasonal-to-seasonal (S2S), and seasonal-to-decadal (S2D) communities.
+Climpred aims to offer a comprehensive set of analysis tools for assessing the quality of dynamical forecasts relative to verification products (e.g., observations, reanalysis products, control simulations). Climpred supports a broad range of temporal scales of prediction, spanning the weather, subseasonal-to-seasonal (S2S), and seasonal-to-decadal (S2D) communities.
 
 
 [esmvaltool-web]: https://www.esmvaltool.org/

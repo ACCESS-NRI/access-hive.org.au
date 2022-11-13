@@ -21,7 +21,7 @@ synda is a command line tool to search and download files from the Earth System 
 [**Documentation**][xskillscore-doc] |
 [**Sources**][xskillscore-source]
 
-xskillscore is a Python library for computing a wide variety of skill metrics. It's typical application is in the verification of deterministic and probabilistic forecasts relative to observations.
+xskillscore is a Python library for computing a wide variety of skill metrics. Its typical application is to verify deterministic and probabilistic forecasts relative to observations.
 
 
 ## Analysis blogposts and tutorials  {{ community }}
