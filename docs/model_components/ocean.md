@@ -10,7 +10,7 @@ The Modular Ocean Model (MOM) is one of the ocean components of the ACCESS clima
 ### MOM5 {{ supported }}
 [**Source Code**][mom5-github]
 
-MOM5 is open source and is the current version of MOM used within ACCESS is MOM5.
+MOM5 is open source and is the current version of MOM used within ACCESS.
 
 ### MOM6 {{ recommended }}
 
