@@ -17,17 +17,22 @@ ESMValTool is a community-developed climate model diagnostics and evaluation sof
 
 [**Documentation**][cosimacb-doc] |
 [**Tutorial**][cosimacb-tutorial] | 
-[**Cookbook Source Code**][cosimacb-source]
+[**Cookbook Source Code**][cosimacb-source] |
 [**Cookbook Recipes**][cosimacb-recipes]
 
 The COSIMA (Consortium for Ocean-Sea Ice Modelling in Australia) Cookbook / Recipes is a framework for analysing output from ocean-sea ice models. The focus is on the ACCESS-OM2 suite of models being developed and run by members of COSIMA: Consortium for Ocean-Sea Ice Modelling in Australia.
 
-The framework is suited to analysing any MOM5/MOM6 output, as well as output from other models.
+The framework is suited for analysing any MOM5/MOM6 output, as well as output from other models.
 
 The cookbook is structured as follows:
 
-- The cosima-cookbook repository includes boiler-plate code and scripts that underpin the cookbook, including a database for exploring and loading available data.
-- The cosima-recipes repository includes example notebooks on which you can base your analyses.
+- `cosima-cookbook` repository: includes boiler-plate code and scripts that underpin the cookbook, including a database for exploring and loading available data.
+
+- `cosima-recipes` repository: includes example notebooks that illustrate how users can use the cookbook to read output from particular experiments and, further, they showcase simple and elaborate analyses of model output.
+
+  New users are urged to go throught the [tutorials][cosimacb-tutorial] in the cosima recipes and then browse through the [documented examples][cosimacb-documentedexamples].
+  
+  As a rule of thumb, users who are not interested in data management and, e.g., are only interested in using/analysing model output should never be bothered looking into the `cosima-cookbook` repository. `cosima-cookbook` is developed and maintained for them and should just *simply work out of the box*. `:)`
 
 
 ## [climpred][climpred-doc]  {{ community }}
@@ -50,6 +55,7 @@ control simulations). climpred supports a broad temporal scales of prediction, s
 [cosimacb-web]: http://cosima.org.au/
 [cosimacb-doc]: https://cosima-recipes.readthedocs.io/en/latest/
 [cosimacb-tutorial]: https://cosima-recipes.readthedocs.io/en/latest/tutorials/index.html
+[cosimacb-documentedexamples]: https://cosima-recipes.readthedocs.io/en/latest/documented_examples/index.html
 [cosimacb-source]: https://github.com/COSIMA/cosima-cookbook
 [cosimacb-recipes]: https://github.com/COSIMA/cosima-recipes
 
