@@ -1,15 +1,21 @@
 # ACCESS Community Hive 
 
-Thank you for submitting a pull request to the ACCESS Hive Project. 
+Thank you for submitting a pull request to the ACCESS Hive Project. 🎉
 
 ## Description
 
-Please include a brief summary of the change and list the issues that are fixed.
-Please also include relevant motivation and context.
+Just write here a brief summary of what this pull request does. This can be as simple as "Fixes a typo" or 
+"Adds paragraph about running atmospheric model on gadi". 
 
-You can link issues by using a supported keyword in the pull request's description or in a commit message:
+If this pull request addresses an already open issue, then you can link that issue using a supported keyword in the pull request's description or in a commit message:
 
-Fixes # (issue)
+Fixes #(issue number)
+
+(Delete the instructions after you write your description. 🙃)
+
+
+Now, if you really wanna make the ACCESS-Hive developers life easier, then consider filling up what follows. 😍
+If you find this intimidating or you don't really know what some of those bullet points mean, then just delete everything from here onwards. 🫣
 
 ## Type of change
 
