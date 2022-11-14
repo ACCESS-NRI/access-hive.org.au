@@ -1,5 +1,5 @@
 
-![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%}]
+![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%}
 # ACCESS-Hive
 
 [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo]
