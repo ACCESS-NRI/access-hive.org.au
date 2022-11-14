@@ -35,8 +35,8 @@ theme:
     - navigation.tabs.sticky
     - navigation.indexes
 
-  logo: assets/ACCESSLogoJustPlanet.png
-  favicon: assets/ACCESSLogoJustPlanet.png
+  logo: assets/ACCESS_icon_HIVE.png
+  favicon: assets/ACCESS_icon_HIVE.png
 copyright: Copyright &copy; 2022 ACCESS-NRI
 
 plugins:
