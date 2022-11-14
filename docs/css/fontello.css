@@ -64,6 +64,6 @@
 .icon-recommended:hover{color: #015d7f}
 .icon-recommended:before { content: '\e802'; vertical-align: middle;} /* '' */
 
-.icon-community{color: gray; padding-left:6px;  padding-right: 6px; stroke: black; stroke-width: 10;}
-.icon-community:hover{color: #515151}
+.icon-community{color: #105d98; padding-left:6px;  padding-right: 6px; stroke: black; stroke-width: 10;}
+.icon-community:hover{color: #09385c}
 .icon-community:before { content: '\e802'; vertical-align: middle;} /* '' */
