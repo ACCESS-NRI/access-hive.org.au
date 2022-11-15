@@ -2,7 +2,7 @@
 
 {% include "call_contribute.md" %}
 
-![Atmosphere Component Logo](../assets/component-logos/Atmosphere.png){align=right width=40%}
+![Atmosphere Component Logo](../assets/component-logos/ACCESS icon Atmosphere (Title).png){align=right width=40%}
 
 ## The Unified Model (UM) {{ supported }}
 
