@@ -74,6 +74,7 @@ nav:
       - Change the navigation: about/contribute/navigation_changes.md
       - Reviewers: about/contribute/reviewers_guidelines.md
     - Support: about/support.md
+    - Code of conduct: about/code_of_conduct.md
     - Contact: about/contact.md
     - License: License.md
   - Configurations: 
