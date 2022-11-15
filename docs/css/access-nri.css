@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
-  --md-primary-fg-color:        #f8cb42;
+  --md-primary-fg-color:        black;
   --md-primary-fg-color--light: #f5edd5;
   --md-primary-fg-color--dark:  #faa61a;
   --md-accent-fg-color: #f5c533;
