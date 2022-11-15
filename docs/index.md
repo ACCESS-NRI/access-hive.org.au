@@ -32,7 +32,7 @@ See the [support page](about/support.md) for details about the support levels: w
 
 ## Contributions
 
-[How to Contribute][HCG]{ .md-button}
+[How to Contribute][HCG]{ .md-button .md-button--primary }
 
 ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone.
 
