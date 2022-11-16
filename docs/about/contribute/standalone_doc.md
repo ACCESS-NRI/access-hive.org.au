@@ -7,5 +7,8 @@ To contribute these resources to ACCESS-Hive, you will first need to make them a
 1. Check if your organisation has a documentation or information site suitable for your resource.
 1. Check if ACCESS-NRI has a documentation site suitable for your resource. Note in this case, you will be asked about ownership and license associated with your resource.
 1. Publish your documentation via [Zenodo][zenodo]. This will clarify the licensing and reuse conditions.
- 
+
+If none of the previous options seem suitable to you, please consult [the forum][hive-forum].
+
 [zenodo]: https://zenodo.org/
+[hive-forum]: https://forum.access-hive.org.au
