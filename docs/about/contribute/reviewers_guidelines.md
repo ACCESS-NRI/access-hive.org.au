@@ -1,7 +1,7 @@
 # Reviewing for ACCESS-Hive
 
 Any member of the [ACCESS-Hive Github Community][access-hive-github] ([to join][issue-179]) can join the reviewers team.
-Please ask one of the [maintainers][access-hive-maintainers] to invite you to join the organisation.
+Please ask one of the [maintainers][access-hive-maintainers] to invite you to join the reviewers team.
 
 ## Reviewer Guidelines
 
