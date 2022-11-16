@@ -1,5 +1,7 @@
 # Coupler {{ supported }}
 
+![Coupler Component Logo](../assets/component-logos/ACCESS icon COUPLER (Title).png){align=right width=40%}
+
 A coupler is a software used to perform simulations with different model components at the same time. The coupler enables the different model components to exchange information during the simulation.
 
 ## [OASIS3-MCT][OASIS3-MCT] {{ supported }}
