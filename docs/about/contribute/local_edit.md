@@ -38,6 +38,10 @@ If you don't know how to do these steps, please refer to our [Git and GitHub tra
     
     The level 1 headers are reserved for the title of the page and are ignored from the pages' table of contents. Only use level 2 headers and higher to organise pages.
 
+## Add a new event
+
+The process to add a new event is a bit different from other updates on the site. Since you need to create a new file to contain the information about the event you are adding, it is recommended to work locally. You need to create a new Markdown file (identified by the `.md` extension) as described [on this page][add-event]. To record and submit your modification to the site, make sure you follow all the steps as explained in [the Open Source process][edit-process] in the previous section.
+
 ## Preview of the documentation
 
 ### Preview from a Pull Request
@@ -79,3 +83,5 @@ Your documentation will be built on http://127.0.0.1:8000. Open this URL in your
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
 [issue-179]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/179
+[edit-process]: local_edit.md#edit-to-access-hive
+[add-event]: ../../events/add_event.md
