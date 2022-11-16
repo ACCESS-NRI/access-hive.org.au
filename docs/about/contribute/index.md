@@ -11,7 +11,7 @@ Although we encourage everyone to get involved and contribute to the ACCESS-Hive
 
 ## Become a member of the ACCESS-Hive organisation
 
-The ACCESS-Hive organisation is open to any member of the ACCESS community. Furthermore, organisation members have write access to the ACCESS-Hive repository which simplifies the process to contribute. Members can work from branches to contain their modifications instead of creating and maintaining their own forks. 
+The ACCESS-Hive organisation is open to any member of the ACCESS community. Furthermore, organisation members have write access to the ACCESS-Hive repository which simplifies the process to contribute. Members can work from branches that contain their modifications instead of creating and maintaining their own forks. 
 
 As such, we encourage you to become a member of the organisation by replying to [this issue][issue-179] and ask to be invited to join the organisation.
 
