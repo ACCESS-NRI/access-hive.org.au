@@ -1,4 +1,5 @@
 # Contact
+## Who to contact about ACCESS-Hive? 
 
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
@@ -8,9 +9,13 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 
 **Check the [support page][support]** for information on what is supported and by whom.
 
+**Join the [ACCESS-Hive forum][access-hive-forum]** and find previous related discussions about the hive or the resources listed here, or start your own and make contacts with your community.
+
 **Otherwise, contact ACCESS-NRI directly.** Full contact details for ACCESS-NRI are available on the [ACCESS-NRI website contact page][access-contact]
 
-## Other places where you can find us:
+## Other places where you can find the ACCESS-NRI team:
+
+:fontawesome-brands-discourse:{ .forum }: [ACCESS-Hive Forum][access-hive-forum]
 
 :fontawesome-brands-github:{ .github }: [ACCESS-NRI](https://github.com/ACCESS-NRI) GitHub
 
@@ -24,3 +29,4 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 [access-contact]: https://www.access-nri.org.au/contact/
 [issues]: https://github.com/ACCESS-Hive/access-hive.github.io/issues
 [support]: support.md
+[access-hive-forum]: https://forum.access-hive.org.au
