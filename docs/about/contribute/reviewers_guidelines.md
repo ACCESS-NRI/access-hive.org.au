@@ -1,6 +1,6 @@
 # Reviewing for ACCESS-Hive
 
-Any member of the [ACCESS-Hive Github Community][access-hive-github] can join the reviewers team.
+Any member of the [ACCESS-Hive Github Community][access-hive-github] ([to join][issue-179]) can join the reviewers team.
 Please ask one of the [maintainers][access-hive-maintainers] to invite you to join the organisation.
 
 ## Reviewer Guidelines
@@ -9,7 +9,7 @@ Firstly, thank you so much for helping to review links submitted to the ACCESS-H
 
 ## Guiding principles
 
-If the submitting authors have followed the [contribution guidelines](index.md) then the review should be rapid.
+If the submitting authors have followed the [contribution guidelines](index.md) then the review should be rapid. An important requirement is the ACCESS-Hive is a portal to documentation, it does not host the documentation itself.
 
 For those PRs that don’t quite meet the requirements, please try to give clear feedback on what needs fixing. Our goal is to maintain a high quality platform for exchanging links to relevant documentation and you, as a reviewer, have a key role to play.
 
@@ -32,3 +32,4 @@ You can include in your review links to any new issues that you the reviewer bel
 [access-hive-github]: https://github.com/ACCESS-Hive
 [access-hive-maintainers]: https://github.com/orgs/ACCESS-Hive/teams/maintainers
 [github-review]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews
+[issue-179]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/179
