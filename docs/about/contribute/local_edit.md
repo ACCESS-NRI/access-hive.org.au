@@ -13,20 +13,16 @@ For all additions or modifications to the ACCESS-Hive site, it is recommended to
 ### ACCESS-Hive repository
 
 You first should clone the ACCESS-Hive repository to your local machine:
-```
+
+```bash
 git clone git@github.com:ACCESS-Hive/access-hive.github.io.git
 ```
-
-### Markdown
-This documentation is based on the [Material for Mkdocs][MatforMkdocs] theme. Please see the documentation for the theme or for [Mkdocs][Mkdocs] for a full explanation of all the capabilities.
-
-The documentation is written in Markdown format. Please see this [cheat sheet][MarkdownSheet] for a quick reference to the base syntax. Please note that Material for Mkdocs extends that syntax.
 
 ### Software installation
 
 To build the site locally, you need to install [Material for Mkdocs][MatforMkdocs] and other plugins. You can find a full list in the `requirements.txt` file in the root of the ACCESS-Hive repository. Please use `pip` for the installation as some of the `conda` packages are not kept up-to-date:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -34,17 +30,17 @@ pip install -r requirements.txt
 
 Once you have installed all you need, you will need to follow the usual series of steps when contributing to Open Source developments:
 
- - open an Issue
- - clone the repository locally 
- - start a branch to work on, linked to the Issue
- - commit your modifications to that branch and push to GitHub
- - open a pull request between the `main` branch and your branch, follow the instructions from the Pull request template.
- - ask for reviews by tagging the ACCESS-Hive/reviewers team and reply to requests for changes
+- open an Issue
+- clone the repository locally
+- start a branch to work on, linked to the Issue
+- commit your modifications to that branch and push to GitHub
+- open a pull request between the `main` branch and your branch, follow the instructions from the Pull request template.
+- ask for reviews by tagging the ACCESS-Hive/reviewers team and reply to requests for changes
 
 If you don't know how to do these steps, please refer to our [Git and GitHub training][GitHowTo].
 
 ???+ tip "What page to edit"
-    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESS-Hive site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit. 
+    If you have problems finding the page you need to edit, the easiest way is to head to the ACCESS-Hive site. If you click on the pen icon :material-pencil: at the top right of each page title, you will open a GitHub page showing you the path to the file you want to edit.
 
 ???+ note "Headers and table of content"
     
@@ -73,7 +69,8 @@ In the pull request, you will see the link to the preview appear in this fashion
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving.
 
 To start the server, open a terminal and navigate to your ACCESS-Hive local repository. Now type:
-```
+
+```bash
 mkdocs serve
 ```
 Your documentation will be built on http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications.
@@ -82,7 +79,4 @@ Your documentation will be built on http://127.0.0.1:8000. Open this URL in your
 [ACCESSforum]: https://forum.access-hive.org.au/
 [Issues]: https://github.com/ACCESS-Hive/website/issues
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/
-[MatforMkdocs]: https://squidfunk.github.io/mkdocs-material/
-[Mkdocs]: https://www.mkdocs.org/
-[MarkdownSheet]: https://www.markdownguide.org/cheat-sheet/
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub

@@ -6,26 +6,34 @@ Although we encourage everyone to get involved and contribute to the ACCESS-Hive
     The aim of this how-to is to enable you to:
 
      - add or modify a link to a new documentation in an existing page
+     - contribute complex modifications, eg., add pages, modify the navigation, modify an existing page in depth etc.
      - how to deal with relevant documentation that is not currently on a website
-     - modify the navigation of the site to add a new page for example
 
 ## Become a member of the ACCESS-Hive organisation
 
-The ACCESS-Hive organisation is open to any member of the ACCESS community. Furthermore, organisation members have write access to the ACCESS-Hive repository which means they can create branches to contain their modifications instead of creating their own forks. As such, we encourage you to become a member of the organisation by replying to [this issue][issue-179] and ask to be invited to join the organisation.
+The ACCESS-Hive organisation is open to any member of the ACCESS community. Furthermore, organisation members have write access to the ACCESS-Hive repository which simplifies the process to contribute. Members can work from branches to contain their modifications instead of creating and maintaining their own forks. 
+
+As such, we encourage you to become a member of the organisation by replying to [this issue][issue-179] and ask to be invited to join the organisation.
 
 ## Process to contribute
 
-Since ACCESS-Hive is a portal for documentation hosted elsewhere, the documentation you want to add needs to be available from an existing website. We realise people might have standalone files or other information to share, please see our [Standalone documentation page][standalone_doc] for ways to easily upload your documentation to a site.
+This documentation is based on the [Material for Mkdocs][MatforMkdocs] theme. Please see the documentation for the theme or for [Mkdocs][Mkdocs] for a full explanation of all the capabilities.
+
+The documentation is written in **Markdown** format. Please see this [cheat sheet][MarkdownSheet] for a quick reference to the base syntax. Please note that Material for Mkdocs extends that syntax.
+
+Additionally, ACCESS-Hive is a portal for documentation hosted elsewhere. The documentation you want to add needs to be available from an existing website. We realise people might have standalone files or other information to share, please see our [Standalone documentation page][standalone_doc] for ways to easily upload your documentation to a site.
 
 There are two main ways to contribute to the site:
 
- - you can modify an existing page [directly from GitHub][directedit]. This is a simple way suitable to light modifications.
- - you can work [on your local computer][localedit] and use Git to manage your modifications. This is recommended for more involved modifications. It is the only possible way to add new pages or modify the navigation of the site.
+- you can modify an existing page [directly from GitHub][directedit] without any knowledge of Git. This is a simple way suitable to light modifications.
+- you can work [on your local computer][localedit] and use Git to manage your modifications. This is recommended for more involved modifications. It is the easiest way to modify the navigation of the site.
 
 [Issues]: https://github.com/ACCESS-Hive/website/issues
 [directedit]: direct_edit.md
 [localedit]: local_edit.md
 [standalone_doc]: standalone_doc.md
-[access-hive-maintainers]: https://github.com/orgs/ACCESS-Hive/teams/maintainers
 [issue-179]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/179
+[MatforMkdocs]: https://squidfunk.github.io/mkdocs-material/
+[Mkdocs]: https://www.mkdocs.org/
+[MarkdownSheet]: https://www.markdownguide.org/cheat-sheet/
 
