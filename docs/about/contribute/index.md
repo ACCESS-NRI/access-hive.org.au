@@ -26,7 +26,7 @@ Additionally, ACCESS-Hive is a portal for documentation hosted elsewhere. The do
 There are two main ways to contribute to the site:
 
 - you can modify an existing page [directly from GitHub][directedit] without any knowledge of Git. This is a simple way suitable to light modifications.
-- you can work [on your local computer][localedit] and use Git to manage your modifications. This is recommended for more involved modifications. It is the easiest way to modify the navigation of the site.
+- you can work [on your local computer][localedit] and use Git to manage your modifications. This is recommended for more involved modifications. It is the easiest way to modify the categories and menu structure used to navigate the site.
 
 [Issues]: https://github.com/ACCESS-Hive/website/issues
 [directedit]: direct_edit.md
