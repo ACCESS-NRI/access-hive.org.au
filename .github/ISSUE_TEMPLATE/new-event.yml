@@ -54,5 +54,5 @@ body:
       label: Description
       description: |
         Description of your event. Include enough information to be 
-        useful to potential attendees, but note will be truncated to 
+        useful to potential attendees, but note it will be truncated to 
         255 characters when displayed.
