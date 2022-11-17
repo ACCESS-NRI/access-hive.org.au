@@ -10,4 +10,8 @@ jobs:
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         config-file: '.github/workflows/mlc_config.json'
+        folder-path: 'docs'
+        # Only check links in modified files to reduce false positives
+        check-modified-files-only: 'yes'
+        base-branch: 'main'
     
