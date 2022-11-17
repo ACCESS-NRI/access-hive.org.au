@@ -1,9 +1,10 @@
-name: Check Markdown links
+name: Full Check of markdown links
 
 on:
   schedule:
     # Run every Sunday
     - cron: "* * * * 0"
+  workflow_dispatch:
 
 jobs:
   markdown-link-check:
