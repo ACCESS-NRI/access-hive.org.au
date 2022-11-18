@@ -2,6 +2,7 @@
 [![ACCESS-Hive Badge](docs/assets/badge.svg)](https://access-hive.org.au/)
 [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
+[![Link Check](https://github.com/ACCESS-Hive/access-hive.github.io/actions/workflows/scheduled_link_check.yml/badge.svg)](https://github.com/ACCESS-Hive/access-hive.github.io/actions/workflows/scheduled_link_check.yml)
 
 Documentation hub for the Earth System models, ACCESS, and their community.
 
