@@ -14,11 +14,15 @@
         },
         {
             "pattern": "^http://www.bom.gov.au"
-        },
-        {
-            "pattern": "^https://docs.github.com"
         }
-
+    ],
+    "httpHeaders": [
+        {
+          "urls": ["https://docs.github.com/"],
+          "headers": {
+            "Accept-Encoding": "zstd, br, gzip, deflate"
+          }
+        }
     ],
     "timeout": "20s",
     "retryOn429": true,
