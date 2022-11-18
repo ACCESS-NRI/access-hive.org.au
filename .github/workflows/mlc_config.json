@@ -19,9 +19,9 @@
             "pattern": "^https://docs.github.com"
         }
 
-    ]
+    ],
     "timeout": "20s",
     "retryOn429": true,
     "retryCount": 5,
-    "fallbackRetryDelay": "60s",
+    "fallbackRetryDelay": "60s"
 }
