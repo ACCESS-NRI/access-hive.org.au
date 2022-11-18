@@ -15,5 +15,5 @@ jobs:
       with:
         use-quiet-mode: 'no'
         use-verbose-mode: 'yes'
-        config-file: 'mlc_config.json'
+        config-file: '.github/workflows/mlc_config.json'
         folder-path: 'docs'
