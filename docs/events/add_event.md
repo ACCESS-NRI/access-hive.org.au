@@ -26,8 +26,6 @@ end_date: 27/11/2022
 location: Adelaide, SA
 link: https://www.amos2022.org.au/
 description: This workshop is relevant for those performing regional climate simulations or downscaling with empirical/statistical downscaling approaches including machine learning, as well as those using regional climate projection data in their work. The focus will be on CORDEX related data and modelling. The workshop will have some presentations with extended discussion.
-organisor: Jason Evans, Marcus Thatcher
-comments: AMOS 2022, Workshop
 ---
 
 ```
