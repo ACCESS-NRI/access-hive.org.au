@@ -110,8 +110,8 @@ nav:
   - Working Groups:
     - working_groups/index.md
   - Resources:
-    - glossary
-    - policies
+    - Glossary: glossary.md
+    - Policies: policies.md
   - Events: 
     - events/index.md
     - Add Event: events/add_event.md
