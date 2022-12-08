@@ -2,8 +2,8 @@ name: Full Check of markdown links
 
 on:
   schedule:
-    # Run every Sunday
-    - cron: "* * * * 0"
+    # Run at 03:07 every Sunday
+    - cron: "7 3 * * Sun"
   workflow_dispatch:
 
 jobs:
@@ -17,3 +17,4 @@ jobs:
         use-verbose-mode: 'yes'
         config-file: '.github/workflows/mlc_config.json'
         folder-path: 'docs'
+
