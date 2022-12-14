@@ -102,13 +102,15 @@ nav:
     - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
     - Data processing: model_evaluation/data_processing.md
     - Data catalogs: model_evaluation/data_catalogs.md
-  - Training & Policies: 
-    - training_and_policies/index.md
-    - ACCESS training: training_and_policies/ACCESS_training.md
-    - Additional training: training_and_policies/additional_training.md
-    - Policies: training_and_policies/policies.md
+  - Training: 
+    - training/index.md
+    - ACCESS training: training/ACCESS_training.md
+    - Additional training: training/additional_training.md
   - Working Groups:
     - working_groups/index.md
+  - Resources:
+    - Glossary: resources/glossary.md
+    - Policies: resources/policies.md
   - Events: 
     - events/index.md
     - Add Event: events/add_event.md
