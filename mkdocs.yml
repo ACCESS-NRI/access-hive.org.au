@@ -109,6 +109,7 @@ nav:
   - Working Groups:
     - working_groups/index.md
   - Resources:
+    - Data: resources/data.md
     - Glossary: resources/glossary.md
     - Policies: resources/policies.md
   - Events: 
