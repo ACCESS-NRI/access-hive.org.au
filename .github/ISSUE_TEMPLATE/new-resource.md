@@ -51,12 +51,12 @@ Once you have submitted this issue please [contribute the change yourself](https
     - Biogeochemistry Ocean
     - Data processing
     - Data catalogs
-    - Datasets
-  - Training & Policies:
+  - Training:
     - ACCESS training
     - Additional training
     - Policies
   - Working Groups:
+  - Resources:
   - Events: 
 
 </details>
