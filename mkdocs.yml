@@ -65,18 +65,6 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
-  - About:
-    - How to contribute: 
-      - about/contribute/index.md
-      - Edit on GitHub: about/contribute/direct_edit.md
-      - Edit locally: about/contribute/local_edit.md
-      - Stand-alone documentation: about/contribute/standalone_doc.md
-      - Change the navigation: about/contribute/navigation_changes.md
-      - Reviewers: about/contribute/reviewers_guidelines.md
-    - Support: about/support.md
-    - Code of conduct: about/code_of_conduct.md
-    - Contact: about/contact.md
-    - License: License.md
   - Configurations: 
     - configurations/index.md
     - ACCESS-ESM: configurations/access-esm.md
@@ -115,6 +103,18 @@ nav:
     - events/index.md
     - Add Event: events/add_event.md
   - Forum: https://forum.access-hive.org.au
+  - About:
+    - Contact: about/contact.md
+    - Support: about/support.md
+    - Code of conduct: about/code_of_conduct.md
+    - How to contribute: 
+      - about/contribute/index.md
+      - Edit on GitHub: about/contribute/direct_edit.md
+      - Edit locally: about/contribute/local_edit.md
+      - Stand-alone documentation: about/contribute/standalone_doc.md
+      - Change the navigation: about/contribute/navigation_changes.md
+      - Reviewers: about/contribute/reviewers_guidelines.md
+    - License: License.md
 
 # Footer
 extra:
