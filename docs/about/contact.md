@@ -1,5 +1,4 @@
 # Contact
-## Who to contact about ACCESS-Hive? 
 
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
