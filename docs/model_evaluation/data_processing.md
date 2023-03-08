@@ -12,6 +12,14 @@
 
 Kerchunk is a library that provides a unified way to represent a variety of chunked, compressed data formats (e.g. NetCDF/HDF5, GRIB2, TIFF, …), allowing efficient access to the data from traditional file systems or cloud object storage. It also provides a flexible way to create virtual datasets from multiple files.
 
+### xMIP  {{ community }}
+
+[**Documentation**][xmip-doc] |
+[**Tutorial on NCI**][xmip-tutorial] |
+[**Sources**][xmip-source]
+
+This package facilitates the cleaning, organization and interactive analysis of Model Intercomparison Projects (MIPs) within the Pangeo software stack.
+
 ### Synda  {{ recommended }}
 
 synda is a command line tool to search and download files from the Earth System Grid Federation (ESGF) archive.
@@ -34,3 +42,7 @@ xskillscore is a Python library for computing a wide variety of skill metrics. I
 
 [xskillscore-doc]: https://xskillscore.readthedocs.io/en/stable/
 [xskillscore-source]: https://github.com/xarray-contrib/xskillscore
+
+[xmip-doc]: https://cmip6-preprocessing.readthedocs.io/en/latest/?badge=latest
+[xmip-source]: https://github.com/jbusecke/xMIP
+[xmip-tutorial]: https://github.com/coecms/xmip_nci
