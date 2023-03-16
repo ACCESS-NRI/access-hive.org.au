@@ -1,5 +1,5 @@
 ---
-title: Modeling Earth’s past and future climate using AuScope and ACCESS-NRI - practices and possibilities
+title: Modelling Earth’s past and future climate using AuScope and ACCESS-NRI - practices and possibilities
 start_date: 06/03/2023
 end_date: 06/03/2023
 location: Virtual (Zoom)
