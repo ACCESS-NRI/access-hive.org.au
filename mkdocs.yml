@@ -64,19 +64,7 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - About:
-    - Home: index.md
-    - How to contribute: 
-      - about/contribute/index.md
-      - Edit on GitHub: about/contribute/direct_edit.md
-      - Edit locally: about/contribute/local_edit.md
-      - Stand-alone documentation: about/contribute/standalone_doc.md
-      - Change the navigation: about/contribute/navigation_changes.md
-      - Reviewers: about/contribute/reviewers_guidelines.md
-    - Support: about/support.md
-    - Code of conduct: about/code_of_conduct.md
-    - Contact: about/contact.md
-    - License: License.md
+  - Home: index.md
   - Configurations: 
     - configurations/index.md
     - ACCESS-ESM: configurations/access-esm.md
@@ -100,6 +88,7 @@ nav:
     - Land: model_evaluation/land.md
     - Ocean Sea-ice: model_evaluation/ocean_seaice.md
     - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
+    - Diagnostics: model_evaluation/diagnostics.md
     - Data processing: model_evaluation/data_processing.md
     - Data catalogs: model_evaluation/data_catalogs.md
   - Training: 
@@ -116,6 +105,18 @@ nav:
     - events/index.md
     - Add Event: events/add_event.md
   - Forum: https://forum.access-hive.org.au
+  - About:
+    - Contact: about/contact.md
+    - Support: about/support.md
+    - Code of conduct: about/code_of_conduct.md
+    - How to contribute: 
+      - about/contribute/index.md
+      - Edit on GitHub: about/contribute/direct_edit.md
+      - Edit locally: about/contribute/local_edit.md
+      - Stand-alone documentation: about/contribute/standalone_doc.md
+      - Change the navigation: about/contribute/navigation_changes.md
+      - Reviewers: about/contribute/reviewers_guidelines.md
+    - License: License.md
 
 # Footer
 extra:

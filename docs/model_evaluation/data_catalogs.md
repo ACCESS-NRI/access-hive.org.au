@@ -20,6 +20,10 @@ Two notebooks are provided in the docs folder showing how to access the ERA5 and
 The ACDG portal is a metadata portal listing climate research resources available in Australia from multiple data repositories.
 This is a community based project managed by the ACDG Single Access working group. This is a group of Australian climate community self-nominated representatives. Anyone is welcome to join the group or to contribute independently to the metadata portal the group is developing.
 
+## [Australian Ocean Data Network][AODN-Network] {{ recommended }}
+
+The Australian Ocean Data Network (AODN) is an interoperable online network of marine and climate data resources.  IMOS and the 6 Australian Commonwealth agencies ([see AODN Partners](https://imos.org.au/facilities/aodn/aodn-data-management/aodn-partners)) form the core of the AODN. Increasingly, though, universities and State government offices are offering up data resources to the AODN, and delivery of data to the AODN is being written in to significant research programs e.g. [National Environmental Science Program Marine Biodiversity Hub](http://www.nespmarine.edu.au/) and the [Great Australian Bight research program](http://www.misa.net.au/GAB).
+
 ## [Intake-Ilamb Catalog][Intake-Ilamb] {{ supported }}
 
 The Intake-Ilamb catalog provides an yaml-style intake catalog of the reference data used for ESM model benchmarking in the International Land Model Benchmarking [(ILAMB)][ILAMB-web] effort.
@@ -51,4 +55,4 @@ An [intake-esm catalogue](https://github.com/aus-ref-clim-data-nci/acs-replica-i
 [Intake-Ilamb]: https://github.com/nocollier/intake-ilamb
 [ACDG-Catalog]:  https://oneclimate.dmponline.cloud.edu.au/
 [AusRefClimData]: https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html
-
+[AODN-Network]:  https://imos.org.au/facilities/aodn

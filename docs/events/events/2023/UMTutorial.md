@@ -1,11 +1,10 @@
 ---
-title: 2023 Unified Model Users Tutorial (expression of interest)
+title: 2023 Unified Model Users Tutorial
 start_date: 06/02/2023
-end_date: 13/02/2023
-location: Brisbane Convention and Exhibition Centre and Online, QLD
-link: https://conference.eresearch.edu.au
-description: The Met Office UM Partnership team are starting to plan the Unified Model training course to be held at the Bureau of Meteorology in 2023. The provisional dates for this course are either the week of 6th or 13th February 2023 at the Bureau of Meteorology, Melbourne.
-organisator: Met Office UM Partnership team
-comments: Expression of Interest closes on the 1st of October, 2022 [fill form](https://forms.office.com/r/dgtNtNfZWX)
+end_date: 10/02/2023
+location: Bureau of Meteorology, Melbourne, VIC
+link: https://forms.office.com/pages/responsepage.aspx?id=YYHxF9cgRkeH_VD-PjtmGVrsgB-8uetKhf_JeSsv04VUQVg1Wk9XMjVDVFFMVUpSWTZITjlPQjBUWC4u
+description: Aimed at ‘Beginner to Intermediate’ UM Users, the tutorial will include talks and seminars as well as practicals on rose/cylc, global climate configurations, nesting suite and regional configurations, UM working practices and LFRic data. For more information contact luke.roberts(at)metoffice.gov.uk or bethan.white(at)bom.gov.au
+organisator: Met Office UM Partnership team.
 ---
 
