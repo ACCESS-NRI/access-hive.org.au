@@ -12,6 +12,38 @@
 
 Kerchunk is a library that provides a unified way to represent a variety of chunked, compressed data formats (e.g. NetCDF/HDF5, GRIB2, TIFF, …), allowing efficient access to the data from traditional file systems or cloud object storage. It also provides a flexible way to create virtual datasets from multiple files.
 
+### CMOR3  {{ community }}
+
+*Climate Model Output Rewriter Version 3*
+
+[**Documentation**][cmor3-doc] | 
+[**Sources**][cmor3-source]
+
+CMOR is used to produce CF-compliant netCDF files. The structure of the files created by CMOR and the metadata they contain fulfill the requirements of many of the climate community’s standard model experiments (which are referred to here as “MIPs” and include, for example, AMIP, PMIP, APE, and IPCC scenario runs).
+
+### xMIP  {{ community }}
+
+[**Documentation**][xmip-doc] |
+[**Tutorial on NCI**][xmip-tutorial] |
+[**Sources**][xmip-source]
+
+This package facilitates the cleaning, organization and interactive analysis of Model Intercomparison Projects (MIPs) within the Pangeo software stack.
+
+### APP4 (The ACCESS Post Processor)  {{ community }}
+
+[**Documentation**][APP4-doc] | 
+[**Sources**][APP4-source]
+
+The APP4 is a CMORisation tool designed to convert ACCESS model output to ESGF-compliant formats, primarily for publication to CMIP6. The code was originally built for CMIP5, and was further developed for CMIP6-era activities.
+Uses CMOR3 and files created with the CMIP6 data request to generate CF-compliant files according to the CMIP6 data standards.
+
+### ACCESS-Archiver {{ community }}
+
+[**Documentation**][ACCESS-Archiver-doc] | 
+[**Sources**][ACCESS-Archiver-source]
+
+The ACCESS Archiver is designed to archive model output from ACCESS simulations. It's focus is to copy ACCESS model output from its initial location to a secondary location (typically from `/scratch` to `/g/data`), while converting UM files to netCDF, compressing MOM/CICE files, and culling restart files to 10-yearly. Saves 50-80% of storage space due to conversion and compression.
+
 ### Synda  {{ recommended }}
 
 synda is a command line tool to search and download files from the Earth System Grid Federation (ESGF) archive.
@@ -37,9 +69,16 @@ xskillscore is a Python library for computing a wide variety of skill metrics. I
 
 [kerchunk-doc]: https://fsspec.github.io/kerchunk/
 [kerchunk-source]: https://github.com/fsspec/kerchunk
-
+[APP4-doc]: https://github.com/ACCESS-Hive/APP4
+[APP4-source]: https://github.com/ACCESS-Hive/APP4
+[ACCESS-Archiver-doc]: https://github.com/ACCESS-Hive/ACCESS-Archiver
+[ACCESS-Archiver-source]: https://github.com/ACCESS-Hive/ACCESS-Archiver
 [xskillscore-doc]: https://xskillscore.readthedocs.io/en/stable/
 [xskillscore-source]: https://github.com/xarray-contrib/xskillscore
-
 [fluxnetlsm-source]: https://github.com/aukkola/FluxnetLSM
 [fluxnetlsm-cite]: https://gmd.copernicus.org/articles/10/3379/2017/
+[cmor3-doc]: https://cmor.llnl.gov/
+[cmor3-source]: https://github.com/PCMDI/cmor
+[xmip-doc]: https://cmip6-preprocessing.readthedocs.io/en/latest/?badge=latest
+[xmip-source]: https://github.com/jbusecke/xMIP
+[xmip-tutorial]: https://github.com/coecms/xmip_nci
