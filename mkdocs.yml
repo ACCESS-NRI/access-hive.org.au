@@ -88,6 +88,7 @@ nav:
     - Land: model_evaluation/land.md
     - Ocean Sea-ice: model_evaluation/ocean_seaice.md
     - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
+    - Diagnostics: model_evaluation/diagnostics.md
     - Data processing: model_evaluation/data_processing.md
     - Data catalogs: model_evaluation/data_catalogs.md
   - Training: 
