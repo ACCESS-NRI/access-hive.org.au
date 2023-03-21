@@ -32,6 +32,10 @@ The Intake-Ilamb catalog provides an yaml-style intake catalog of the reference 
 
 FLUXNET is an international “network of networks,” tying together regional networks of earth system scientists. FLUXNET scientists use the eddy covariance technique to measure the cycling of carbon, water, and energy between the biosphere and atmosphere. Scientists use these data to better understand ecosystem functioning, and to detect trends in climate, greenhouse gases, and air pollution.
 
+## [CEDA Archive][CEDA-Archive-Web] {{ community }}
+
+The CEDA Archive forms part of NERC's Environmental Data Service (EDS) and is responsible for looking after data from atmospheric and earth observation research. They host over 18 Petabytes of data from climate models, satellites, aircraft, met observations, and other sources.
+
 ### [OZFlux][OZFlux-web] {{ community }}
 
 OzFlux is an ecosystem research network set up to provide Australian, New Zealand and global ecosystem modelling communities with consistent observations of energy, carbon and water exchange between the atmosphere and key Australian and New Zealand ecosystems.
@@ -46,3 +50,4 @@ OzFlux is an ecosystem research network set up to provide Australian, New Zealan
 [Intake-Ilamb]: https://github.com/nocollier/intake-ilamb
 [ACDG-Catalog]:  https://oneclimate.dmponline.cloud.edu.au/
 [AODN-Network]:  https://imos.org.au/facilities/aodn
+[CEDA-Archive-Web]: https://archive.ceda.ac.uk/
