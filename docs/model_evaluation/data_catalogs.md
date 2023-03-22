@@ -36,6 +36,15 @@ FLUXNET is an international “network of networks,” tying together regional n
 
 OzFlux is an ecosystem research network set up to provide Australian, New Zealand and global ecosystem modelling communities with consistent observations of energy, carbon and water exchange between the atmosphere and key Australian and New Zealand ecosystems.
 
+## [Australian Community Reference Climate Data Collection][AusRefClimData] {{ recommended }}
+
+{{ community }} [Australian Community Reference Climate Data Collection @ NCI]
+
+This collection is a collaborative effort between the Australian Climate Service (ACS), ARC Centre of Excellence for Climate Extremes (CLEX) and the wider Australian climate research community to re-establish and maintain a reference dataset collection at NCI.
+
+An [intake-esm catalogue](https://github.com/aus-ref-clim-data-nci/acs-replica-intake) is also available to facilitate data access.
+
+
 [NCI-geonetwork]:https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home
 [ARE-opus]: https://opus.nci.org.au/display/Help/ARE+User+Guide
 [OZFlux-web]: https://www.ozflux.org.au
@@ -45,4 +54,5 @@ OzFlux is an ecosystem research network set up to provide Australian, New Zealan
 [ILAMB-web]: https://www.ilamb.org/
 [Intake-Ilamb]: https://github.com/nocollier/intake-ilamb
 [ACDG-Catalog]:  https://oneclimate.dmponline.cloud.edu.au/
+[AusRefClimData]: https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html
 [AODN-Network]:  https://imos.org.au/facilities/aodn
