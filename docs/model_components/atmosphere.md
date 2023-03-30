@@ -23,6 +23,11 @@ The ACCESS-CM2 climate model and ACCESS-ESM1-5 earth system model use versions o
 - Forecasting of extreme events and emergencies such as heatwaves, bushfires, cyclones, floods, coral bleaching, sea-level rise, coastal inundation and more.
 - Daily and seasonal weather forecasts
 
+## Useful links
+
+[STASH register](metoffice-stash-register): Metadata reference for the outputs variables.
+
 [um-web]: https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model
 [bom-web]: http://www.bom.gov.au/
 [metoffice-web]: https://www.metoffice.gov.uk/research/approach/collaboration/unified-model/partnership
+[metoffice-stash-register]: https://reference.metoffice.gov.uk/um/_stash
