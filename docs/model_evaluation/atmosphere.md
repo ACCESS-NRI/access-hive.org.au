@@ -7,7 +7,7 @@
 ## [ESMValTool][esmvaltool-web]  {{ recommended }}
 
 [**Documentation**][esmvaltool-doc] |
-[**Tutorial**][esmvaltool-tutorial] | 
+[**Tutorial**][esmvaltool-tutorial] |
 [**Source Code**][esmvaltool-source]
 
 ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. ESMValTool is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. For a comprehensive introduction to ESMValTool please visit our documentation page.
@@ -37,7 +37,7 @@ Links to the code repository and documentation for each METplus component are pr
 
 ## [PCMDI Metrics Package (PMP)][pmp-doc]  {{ recommended }}
 
-[**Documentation**][pmp-doc] | 
+[**Documentation**][pmp-doc] |
 [**Sources**][pmp-source]
 
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
@@ -45,7 +45,7 @@ The PMP is used to provide “quick-look” objective comparisons of Earth Syste
 
 ## [Free Evaluation System Framework (FREVA)][freva-doc] {{ community }}
 
-[**Documentation**][freva-doc] | 
+[**Documentation**][freva-doc] |
 [**Sources**][freva-source]
 
 Freva, the free evaluation system framework, is a data search and analysis platform developed by the atmospheric science community for the atmospheric science community. With help of Freva researchers can:
@@ -117,8 +117,8 @@ Climpred aims to offer a comprehensive set of analysis tools for assessing the q
 [teca-source]: https://github.com/LBL-EESA/TECA
 [teca-tutorials]: https://sourceforge.net/p/teca/TECA_tutorials/HEAD/tree
 
-[freva-doc]: https://freva.gitlab-pages.dkrz.de/evaluation_system/sphinx_docs/index.html
-[freva-source]: https://gitlab.dkrz.de/freva/evaluation_system
+[freva-doc]: https://freva-clint.github.io/freva
+[freva-source]: https://github.com/FREVA-CLINT/freva
 
 [monet-doc]: https://monet-arl.readthedocs.io/en/stable/#
 [monet-tutorial]: https://monet-arl.readthedocs.io/en/stable/tutorial.html
