@@ -34,9 +34,14 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
+    - content.action.edit
+    - content.action.view
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
+  icon:
+    edit: material/pencil
+    view: material/eye
 copyright: Copyright &copy; 2022 ACCESS-NRI
 
 plugins:

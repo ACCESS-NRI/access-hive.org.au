@@ -1,6 +1,6 @@
-mkdocs-material>=7.2.6
-mkdocs-git-revision-date-localized-plugin
-mkdocs-macros-plugin
-pandoc
-mkdocs-bibtex
+mkdocs-material==9.1.8
+mkdocs-git-revision-date-localized-plugin==1.2.0
+mkdocs-macros-plugin==0.7.0
+pandoc==2.3
+mkdocs-bibtex==2.8.16
 git+https://github.com/rbeucher/mkdocs_events_plugin.git
