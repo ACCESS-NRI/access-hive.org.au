@@ -18,13 +18,6 @@ We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our res
 
 ACCESS-Hive is divided into major categories. For the desktop site categories are accessible from the tabs along the top of the header, in the mobile site from the [hamburger button] at the top left of the screen.
 
-<!-- termynal -->
-
-```
-$ pip install spacy
-
-```
-
 ## Support
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:

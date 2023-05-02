@@ -147,3 +147,9 @@ extra:
 extra_css:
   - css/access-nri.css
   - css/fontello.css
+  - css/termynal.css
+  - css/custom.css
+
+extra_js:
+  - js/custom.js
+  - js/termynal.js
