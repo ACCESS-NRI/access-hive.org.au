@@ -50,6 +50,7 @@ plugins:
       enable_creation_date: true
   - search
   - macros
+  - termynal
   - bibtex:
       bib_file: "references.bib"
   - events:
