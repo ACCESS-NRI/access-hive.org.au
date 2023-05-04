@@ -1,3 +1,6 @@
+// References:
+// https://github.com/tiangolo/fastapi/blob/master/docs/en/docs/js/custom.js
+
 function setupTermynal() {
     document.querySelectorAll(".use-termynal").forEach(node => {
         node.style.display = "block";

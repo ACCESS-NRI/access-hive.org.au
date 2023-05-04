@@ -262,3 +262,6 @@ if (document.currentScript.hasAttribute('data-termynal-container')) {
     containers.split('|')
         .forEach(container => new Termynal(container))
 }
+
+// References:
+// https://github.com/tiangolo/fastapi/blob/master/docs/en/docs/js/termynal.js
