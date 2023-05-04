@@ -94,7 +94,6 @@ class Termynal {
      * Start the animation and rener the lines depending on their data attributes.
      */
     async start() {
-        console.log('Starting animation');
         this.addFinish()
         await this._wait(this.startDelay);
 
