@@ -73,59 +73,101 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home: index.md
-  - Configurations: 
-    - configurations/index.md
-    - ACCESS-ESM: configurations/access-esm.md
-    - ACCESS-CM: configurations/access-cm.md
-    - ACCESS-AM: configurations/access-am.md
-    - ACCESS-OM: configurations/access-om.md
-    - ACCESS-S: configurations/access-s.md
-  - Model Components: 
-    - model_components/index.md
-    - Atmosphere: model_components/atmosphere.md
-    - Land: model_components/land.md
-    - Ocean: model_components/ocean.md
-    - Sea Ice: model_components/sea-ice.md
-    - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
-    - Biogeochemistry Land: model_components/bgc_land.md
-    - Biogeochemistry Ocean: model_components/bgc_ocean.md
-    - Coupler: model_components/coupler.md
-  - Model Evaluation & Data: 
-    - model_evaluation/index.md
-    - Atmosphere: model_evaluation/atmosphere.md
-    - Land: model_evaluation/land.md
-    - Ocean Sea-ice: model_evaluation/ocean_seaice.md
-    - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
-    - Diagnostics: model_evaluation/diagnostics.md
-    - Data processing: model_evaluation/data_processing.md
-    - Data catalogs: model_evaluation/data_catalogs.md
+  - Home: 
+    - index.md
+    - home/features.md
+    - home/community.md
+  - Models: 
+    - models/index.md
+    - models/model-components.md
+    - models/model-configurations.md
+    - models/running-a-model.md
+    - models/model-evaluation-and-data.md
   - Training: 
     - training/index.md
-    - ACCESS training: training/ACCESS_training.md
-    - Additional training: training/additional_training.md
-  - Working Groups:
-    - working_groups/index.md
+    - training/git-version-control.md
+    - training/hpc.md
+    - training/ACCESS-training.md
+    - training/nci-training.md
+    - training/additional-training.md
   - Resources:
-    - Data: resources/data.md
-    - Glossary: resources/glossary.md
-    - Policies: resources/policies.md
-  - Events: 
-    - events/index.md
-    - Add Event: events/add_event.md
-  - Forum: https://forum.access-hive.org.au
+    - resources/index.md
+    - resources/working-groups.md
+    - resources/access-hive-forum.md
+    - resources/data.md
+    - resources/glossary.md
+    - resources/policies.md
+    - resources/events.md
+  - Contribute: 
+    - contribute/index.md
+    - contribute/edit-on-github.md
+    - contribute/edit-locally.md
+    - contribute/standalone-documentation.md
+    - contribute/change-the-navigation.md
+    - contribute/reviewers.md
   - About:
-    - Contact: about/contact.md
-    - Support: about/support.md
-    - Code of conduct: about/code_of_conduct.md
-    - How to contribute: 
-      - about/contribute/index.md
-      - Edit on GitHub: about/contribute/direct_edit.md
-      - Edit locally: about/contribute/local_edit.md
-      - Stand-alone documentation: about/contribute/standalone_doc.md
-      - Change the navigation: about/contribute/navigation_changes.md
-      - Reviewers: about/contribute/reviewers_guidelines.md
-    - License: License.md
+    - about/index.md
+    - about/contact.md
+    - about/support.md
+    - about/code-of-conduct.md
+    - about/License.md
+
+
+
+# nav:
+#   - Home: index.md
+#   - Configurations: 
+#     - configurations/index.md
+#     - ACCESS-ESM: configurations/access-esm.md
+#     - ACCESS-CM: configurations/access-cm.md
+#     - ACCESS-AM: configurations/access-am.md
+#     - ACCESS-OM: configurations/access-om.md
+#     - ACCESS-S: configurations/access-s.md
+#   - Model Components: 
+#     - model_components/index.md
+#     - Atmosphere: model_components/atmosphere.md
+#     - Land: model_components/land.md
+#     - Ocean: model_components/ocean.md
+#     - Sea Ice: model_components/sea-ice.md
+#     - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
+#     - Biogeochemistry Land: model_components/bgc_land.md
+#     - Biogeochemistry Ocean: model_components/bgc_ocean.md
+#     - Coupler: model_components/coupler.md
+#   - Model Evaluation & Data: 
+#     - model_evaluation/index.md
+#     - Atmosphere: model_evaluation/atmosphere.md
+#     - Land: model_evaluation/land.md
+#     - Ocean Sea-ice: model_evaluation/ocean_seaice.md
+#     - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
+#     - Diagnostics: model_evaluation/diagnostics.md
+#     - Data processing: model_evaluation/data_processing.md
+#     - Data catalogs: model_evaluation/data_catalogs.md
+#   - Training: 
+#     - training/index.md
+#     - ACCESS training: training/ACCESS_training.md
+#     - Additional training: training/additional_training.md
+#   - Working Groups:
+#     - working_groups/index.md
+#   - Resources:
+#     - Data: resources/data.md
+#     - Glossary: resources/glossary.md
+#     - Policies: resources/policies.md
+#   - Events: 
+#     - events/index.md
+#     - Add Event: events/add_event.md
+#   - Forum: https://forum.access-hive.org.au
+#   - About:
+#     - Contact: about/contact.md
+#     - Support: about/support.md
+#     - Code of conduct: about/code_of_conduct.md
+#     - How to contribute: 
+#       - about/contribute/index.md
+#       - Edit on GitHub: about/contribute/direct_edit.md
+#       - Edit locally: about/contribute/local_edit.md
+#       - Stand-alone documentation: about/contribute/standalone_doc.md
+#       - Change the navigation: about/contribute/navigation_changes.md
+#       - Reviewers: about/contribute/reviewers_guidelines.md
+#     - License: License.md
 
 # Footer
 extra:
