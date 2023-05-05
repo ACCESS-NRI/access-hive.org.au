@@ -79,38 +79,38 @@ nav:
     - home/community.md
   - Models: 
     - models/index.md
-    - models/model-components.md
-    - models/model-configurations.md
-    - models/running-a-model.md
-    - models/model-evaluation-and-data.md
+    - Model Components: models/model-components.md
+    - Model Configurations: models/model-configurations.md
+    - Running a Model: models/running-a-model.md
+    - Model Evaluation and Data: models/model-evaluation-and-data.md
   - Training: 
     - training/index.md
-    - training/git-version-control.md
-    - training/hpc.md
-    - training/ACCESS-training.md
-    - training/nci-training.md
-    - training/additional-training.md
+    - Git Version Control: training/git-version-control.md
+    - High Performance Computing (HPC): training/hpc.md
+    - ACCESS Training: training/ACCESS_training.md
+    - NCI Training: training/nci-training.md
+    - Additional Training: training/additional_training.md
   - Resources:
     - resources/index.md
-    - resources/working-groups.md
-    - resources/access-hive-forum.md
-    - resources/data.md
-    - resources/glossary.md
-    - resources/policies.md
-    - resources/events.md
+    - Working Groups: resources/working-groups.md
+    - ACCESS-HIVE Forum: resources/access-hive-forum.md
+    - Data: resources/data.md
+    - Glossary: resources/glossary.md
+    - Policies: resources/policies.md
+    - Events: resources/events.md
   - Contribute: 
     - contribute/index.md
-    - contribute/edit-on-github.md
-    - contribute/edit-locally.md
-    - contribute/standalone-documentation.md
-    - contribute/change-the-navigation.md
-    - contribute/reviewers.md
+    - Edit on Github: contribute/edit-on-github.md
+    - Edit Locally: contribute/edit-locally.md
+    - Standalone Documentation: contribute/standalone-documentation.md
+    - Change the Navigation: contribute/change-the-navigation.md
+    - Reviewers: contribute/reviewers.md
   - About:
     - about/index.md
-    - about/contact.md
-    - about/support.md
-    - about/code-of-conduct.md
-    - about/License.md
+    - Contact: about/contact.md
+    - Support: about/support.md
+    - Code of Conduct: about/code_of_conduct.md
+    - License: about/License.md
 
 
 

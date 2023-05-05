@@ -1,4 +1,4 @@
-# ACCESS training material
+# ACCESS Training Material
 
 This page is intended to provide access to training material directly related to ACCESS models and model components. This material can cover topics such as but not limited to:
 
