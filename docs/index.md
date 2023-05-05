@@ -56,8 +56,9 @@ ACCESS-Hive contains links to other material which is covered by various licensi
 <div class="termy">
 
 ```console
-$ uvicorn main:app --reload
+$ pip install spacy 
 
+DUMMY:
 <span style="color: green;">INFO</span>:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 <span style="color: green;">INFO</span>:     Started reloader process [28720]
 <span style="color: green;">INFO</span>:     Started server process [28722]

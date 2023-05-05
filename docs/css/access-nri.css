@@ -9,8 +9,11 @@
 :root > * {
   --md-primary-fg-color:        black;
   --md-primary-fg-color--light: #f5edd5;
-  --md-primary-fg-color--dark:  #faa61a;
+  /* --md-primary-fg-color--dark:  #faa61a; */
+  --md-primary-fg-color--dark: #a26d11;
   --md-accent-fg-color: #f5c533;
+  --md-primary-tab-color: #2e303e;
+  --md-primary-hover-tab-color: #444448;
 }
 
 .md-header__button.md-logo :-webkit-any(img,svg) {
@@ -46,7 +49,9 @@
   margin-bottom: 30px;
   text-align: center;
   width: 70%;
+  border-radius: 7px;
   border: 0.1rem solid;
+  border-color: #eeac48;
   display: inline-block;
   font-size: 16px;
   padding: 10px;
@@ -59,7 +64,10 @@
 .access_forum_button:hover {
   background-color: #9b6913;
   color: white;
-  border-color: white; }
+  border-color: white; 
+  border: 0.1rem solid;
+  background-color: var(--md-primary-tab-color);
+}
 
 /* Main body content */
 .md-main__inner {
@@ -100,7 +108,8 @@
 
 /* Selected tab */
 .md-tabs__item--active {
-  background-color: #9b6913;
+  /* background-color: #9b6913; */
+  background-color: var(--md-primary-tab-color);
 }
 
 .md-tabs__item--active .md-tabs__link {
@@ -109,7 +118,9 @@
 
 /* Tab hover state */
 .md-tabs__item:hover {
-  background-color: #9b6913; }
+  /* background-color: #9b6913;  */
+  background-color: var(--md-primary-hover-tab-color);
+}
 
 .md-tabs__item:hover .md-tabs__link {
   opacity: 1;

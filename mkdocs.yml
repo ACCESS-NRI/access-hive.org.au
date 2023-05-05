@@ -19,13 +19,13 @@ theme:
       primary: indigo
       accent: deep orange
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-sunny
         name: Switch to dark mode
     - scheme: slate
       primary: indigo
       accent: deep orange
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-night
         name: Switch to light mode
 
 
@@ -36,6 +36,9 @@ theme:
     - navigation.indexes
     - content.action.edit
     - content.action.view
+    - search.suggest
+    - search.highlight
+    - content.code.copy        # for displaying copy icon at top right in code snippets  
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
@@ -153,5 +156,3 @@ extra_css:
 extra_javascript:
   - js/termynal.js
   - js/custom.js
-
-  
