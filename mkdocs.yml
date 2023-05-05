@@ -53,7 +53,6 @@ plugins:
       enable_creation_date: true
   - search
   - macros
-  # - termynal
   - bibtex:
       bib_file: "references.bib"
   - events:
@@ -79,7 +78,7 @@ nav:
     - home/community.md
 
   - Models: 
-    - models/index.md
+    - Models: models/index.md
     - Model Components: 
       - Overview: models/model-components.md
       - Atmosphere: models/model_components/atmosphere.md
@@ -118,7 +117,7 @@ nav:
       - Data catalogs: models/model_evaluation/data_catalogs.md
 
   - Training: 
-    - training/index.md
+    - Training: training/index.md
     - Git Version Control: training/git-version-control.md
     - High Performance Computing (HPC): training/hpc.md
     - ACCESS Training: training/ACCESS_training.md
@@ -126,16 +125,18 @@ nav:
     - Additional Training: training/additional_training.md
 
   - Resources:
-    - resources/index.md
+    - Resources: resources/index.md
     - Working Groups: resources/working-groups.md
     - ACCESS-HIVE Forum: resources/access-hive-forum.md
     - Data: resources/data.md
     - Glossary: resources/glossary.md
     - Policies: resources/policies.md
-    - Events: resources/events.md
+    - Events: 
+      - Overview: resources/events/index.md
+      - Add Event: resources/events/add_event.md
 
   - Contribute: 
-    - contribute/index.md
+    - Contribute: contribute/index.md
     - Edit on Github: contribute/edit-on-github.md
     - Edit Locally: contribute/edit-locally.md
     - Standalone Documentation: contribute/standalone-documentation.md
@@ -143,7 +144,7 @@ nav:
     - Reviewers: contribute/reviewers.md
 
   - About:
-    - about/index.md
+    - About: about/index.md
     - Contact: about/contact.md
     - Support: about/support.md
     - Code of Conduct: about/code_of_conduct.md

@@ -1,4 +1,4 @@
-# Workshops and Conferences
+# Workshops and Conferences: Add Event
 
 {% include "call_contribute.md" %}
 
