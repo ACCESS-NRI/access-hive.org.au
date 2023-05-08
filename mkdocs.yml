@@ -103,7 +103,7 @@ nav:
       - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
       - Run ACCESS-CM: models/running-a-model/running-access-cm.md
       - Run ACCESS-AM: models/running-a-model/running-access-am.md
-      - Run ACCESS-OM: models/running-a-model/running-access-om.md
+      - Run ACCESS-OM2: models/running-a-model/running-access-om.md
       - Run ACCESS-S: models/running-a-model/running-access-s.md
 
     - Model Evaluation and Data: 
@@ -125,7 +125,7 @@ nav:
     - Additional Training: training/additional_training.md
 
   - Resources:
-    - Resources: resources/index.md
+    # - Resources: resources/index.md
     - Working Groups: resources/working-groups.md
     - ACCESS-HIVE Forum: resources/access-hive-forum.md
     - Data: resources/data.md
@@ -139,12 +139,12 @@ nav:
     - Contribute: contribute/index.md
     - Edit on Github: contribute/edit-on-github.md
     - Edit Locally: contribute/edit-locally.md
-    - Standalone Documentation: contribute/standalone-documentation.md
+    - Stand-alone Documentation: contribute/standalone-documentation.md
     - Change the Navigation: contribute/change-the-navigation.md
     - Reviewers: contribute/reviewers.md
 
   - About:
-    - About: about/index.md
+    # - About: about/index.md
     - Contact: about/contact.md
     - Support: about/support.md
     - Code of Conduct: about/code_of_conduct.md
