@@ -152,10 +152,15 @@ To copy an existing suite, on <i>accessdev</i>:
         <span style="color: orange;">dm5220</span>@<span style="color: indianred;">accessdev.nci.org.au</span>:<span style="color: green;">~roses</span> 
         $ rosie copy u-br565
 
-        Copy 
+        **Input :wq in the VIM prompt to save the changes**
 
-        <span style="color: green;">INFO</span>: create: /home/565/dm5220/roses
-        <span style="color: green;">INFO</span>: u-br565: local copy created at /home/565/dm5220/roses/u-br565
+        Copy "u-br565/trunk@254025" to "u-?????"? [y or n (default)]
+        $ y
+
+        <span style="color: green;">INFO</span>: u-cw281: created at https://code.metoffice.gov.uk/svn/roses-u/c/w/2/8/1
+        <span style="color: green;">INFO</span>: u-cw281: copied items from u-br565/trunk@254025
+        <span style="color: green;">INFO</span>: u-cw281: local copy created at /home/565/dm5220/roses/u-cw281
+        
         ```
 
         </div>
