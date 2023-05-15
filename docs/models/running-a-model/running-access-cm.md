@@ -109,7 +109,7 @@ To copy an existing suite, on <i>accessdev</i>:
         Run <code>mosrs-auth</code> to authenticate using your MOSRS credentials (see 
         <a href="../access_cm2/getting-started/#met-office-science-repository-service-mosrs" target="_blank">Met Office Science Repository Service (MOSRS)</a> for troubleshooting):
         <!-- <img src="../assets/mosrs-auth_command.gif" alt="mosrs-auth command"> -->
-        <br>
+        <br><br>
         <div class="termy">
 
         ```console
@@ -143,7 +143,7 @@ To copy an existing suite, on <i>accessdev</i>:
         <br>
         <br>
         Alternatively, run <code>rosie copy [suite-ID]</code> to create a new full copy (local and remote in the UKMO repository) rather than just a local copy. When a new suite is created in this way, a new unique name is generated within the repository, and populated with some descriptive information about the suite along with all the initial configuration details:
-        <br>
+        <br><br>
         <!-- <img src="../assets/rosie_copy_command.gif" alt="rosie copy command"> -->
 
         <div class="termy">
@@ -152,7 +152,7 @@ To copy an existing suite, on <i>accessdev</i>:
         <span style="color: orange;">dm5220</span>@<span style="color: indianred;">accessdev.nci.org.au</span>:<span style="color: green;">~roses</span> 
         $ rosie copy u-br565
 
-        **Input :wq in the VIM prompt to save the changes**
+        <span style="background-color: #3c3c3c"> > Input :wq in the Vim prompt to save the changes</span>
 
         Copy "u-br565/trunk@254025" to "u-?????"? [y or n (default)]
         $ y
@@ -179,7 +179,19 @@ The suite directory usually contains 2 subdirectories and 3 files:
     <li><code>rose-suite.conf</code> --> the main suite configuration file.</li>
     <li><code>rose-suite.info</code> --> suite information file.</li>
     <li><code>suite.rc</code> --> the Cylc control script file (Jinja2 language).</li>
-    <img src="../assets/suite_content.gif" alt="suite content" />
+    <!-- <img src="../assets/suite_content.gif" alt="suite content" /> -->
+    <br>
+    <div class="termy">
+
+        ```console
+        <span style="color: orange;">dm5220</span>@<span style="color: indianred;">accessdev.nci.org.au</span>:<span style="color: green;">~</span> 
+        $ ls ~/roses/u-br565
+
+        <span style="color: #68A1E0;">app meta </span>rose-suite.conf rose-suite.info suite.rc
+        ```
+
+    </div>
+
 </ul>
 </div>
 ----------------------------------------------------------------------------------------
@@ -194,8 +206,21 @@ To edit a suite configuration, on <i>accessdev</i>:
 <ol>
     <li>
         Run <code>rose edit &</code> (the <code>&</code> is optional and keeps the terminal prompt active while runs the GUI as a separate process) from inside the relevant suite directory (e.g. <code>~/roses/u-[suite_ID]</code>) to open the Rose GUI and inspect the suite information.
-        <br>
-        <img src="../assets/rose_gui.gif" alt="Rose GUI" style="width:700px"/>
+        <br><br>
+        <!-- <img src="../assets/rose_gui.gif" alt="Rose GUI" style="width:700px"/> -->
+        <div class="termy">
+        ```console
+        <span style="color: orange;">dm5220</span>@<span style="color: indianred;">accessdev.nci.org.au</span>:<span style="color: green;">~</span> 
+        $ cd ~/roses/u-br565/
+
+        <span style="color: orange;">dm5220</span>@<span style="color: indianred;">accessdev.nci.org.au</span>:<span style="color: green;">~/roses/u-br565</span> 
+        $ rose edit & 
+
+        [1] 22857
+
+        <span style="background-color: #3c3c3c"> > Rose editor opens...</span>
+        ```
+    </div>
     </li>
     <li>
         There are many settings that can be changed in a Rose GUI. However, there are a few that we definitely want to check and edit before we run a suite:
@@ -207,7 +232,7 @@ To edit a suite configuration, on <i>accessdev</i>:
                 <br>
                 If, for example, we belong to the <i>tm70</i> Project (ACCESS-NRI), we will insert <code>tm70</code> in the <i>Compute project</i> field:
                 <br>
-                <img src="../assets/rose_change_project.gif" alt="Rose change Project" style="width:700px"/>
+                <img src="../../../assets/rose_change_project.gif" alt="Rose change Project" style="width:100%"/>
             </li>
             <li>
                 Total Run length / Cycling frequency
@@ -218,7 +243,7 @@ To edit a suite configuration, on <i>accessdev</i>:
                 <br>
                 If, for example, we want to run the suite for a total of 50 Years, and resubmit every year, we will change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code>. Note that the current maximum <i>Cycling frequency</i> is 2 years:
                 <br>
-                <img src="../assets/rose_change_run_length.gif" alt="Rose change run length" style="width:700px"/>
+                <img src="../../../assets/rose_change_run_length.gif" alt="Rose change run length" style="width:100%"/>
             </li>
             <li>
                 Wallclock time
@@ -229,7 +254,7 @@ To edit a suite configuration, on <i>accessdev</i>:
                 <br>
                 The time needed for the suite to run a full cycle depends on several factors, but a good estimation can be 4 hours per simulated year.
                 <br>
-                To modify the <i>Wallclock time</i>, we can navigate to <i>suite conf --> Run Initialisation and Cycling</i>, edit the respective field, and click the <i>Save</i> button <img src="../assets/save_button.png" alt="Save button" style="height:1em"/>. The value is in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
+                To modify the <i>Wallclock time</i>, we can navigate to <i>suite conf --> Run Initialisation and Cycling</i>, edit the respective field, and click the <i>Save</i> button <img src="../../../assets/save_button.png" alt="Save button" style="height:1em"/>. The value is in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
             </li>
         </ul>
     </li>
