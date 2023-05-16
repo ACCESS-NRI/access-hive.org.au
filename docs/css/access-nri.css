@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
-  --md-primary-fg-color: black;
+  --md-primary-fg-color: rgb(30, 29, 29);
   --md-primary-fg-color--light: #f5edd5;
   --md-primary-fg-color--dark:  #074473;
   /* --md-primary-fg-color--dark: #FFA629; */
@@ -134,13 +134,13 @@
 
 /* Tab hover state */
 .md-tabs__item:hover {
-  background-color: black; 
+  background-color: rgba(0, 0, 0, 0.536); 
   /* background-color: var(--md-primary-hover-tab-color); */
   /* color: white; */
   /* color: #F9A61C; */
   transition-duration: 0.4s;
-  /* border: 2px solid;
-  border-radius: 7px; */
+  /* border: 2px solid; */
+  border-radius: 4px;
 }
 
 .md-tabs__item:hover .md-tabs__link {
