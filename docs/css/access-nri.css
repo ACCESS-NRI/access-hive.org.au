@@ -7,9 +7,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
-  --md-primary-fg-color:        black;
+  /* --md-primary-fg-color: rgba(0, 0, 0, 0.225); */
+  --md-primary-fg-color: #0e4f81;
   --md-primary-fg-color--light: #f5edd5;
-  --md-primary-fg-color--dark:  #A6CE39
+  --md-primary-fg-color--dark:  #074473;
+
+  /* --md-primary-fg-color--dark:  #105D98; */
   /* --md-primary-fg-color--dark: #a26d11;  original */    
   --md-accent-fg-color: #f5c533;
   --md-primary-tab-color: #2e303e;
@@ -51,7 +54,8 @@
   width: 70%;
   border-radius: 7px;
   border: 0.1rem solid;
-  border-color: #eeac48;
+  /* border-color: #eeac48; */
+  border-color: white;
   display: inline-block;
   font-size: 16px;
   padding: 10px;
@@ -62,9 +66,7 @@
 
 
 .access_forum_button:hover {
-  background-color: #9b6913;
-  color: white;
-  border-color: white; 
+  color: #F9A61C;
   border: 0.1rem solid;
   background-color: var(--md-primary-tab-color);
 }
