@@ -9,8 +9,8 @@
 :root > * {
   --md-primary-fg-color:        black;
   --md-primary-fg-color--light: #f5edd5;
-  /* --md-primary-fg-color--dark:  #faa61a; */
-  --md-primary-fg-color--dark: #a26d11;
+  --md-primary-fg-color--dark:  #A6CE39
+  /* --md-primary-fg-color--dark: #a26d11;  original */    
   --md-accent-fg-color: #f5c533;
   --md-primary-tab-color: #2e303e;
   --md-primary-hover-tab-color: #444448;
@@ -56,7 +56,7 @@
   font-size: 16px;
   padding: 10px;
   transition-duration: 0.4s;
-  background-color: var(--md-primary-fg-color--dark);
+  background-color: var(--md-primary-tab-color);
   color: white
 }
 
