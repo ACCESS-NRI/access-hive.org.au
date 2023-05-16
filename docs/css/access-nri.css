@@ -7,10 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
-  /* --md-primary-fg-color: rgba(0, 0, 0, 0.225); */
-  --md-primary-fg-color: #0e4f81;
+  --md-primary-fg-color: black;
   --md-primary-fg-color--light: #f5edd5;
   --md-primary-fg-color--dark:  #074473;
+  /* --md-primary-fg-color--dark: #FFA629; */
 
   /* --md-primary-fg-color--dark:  #105D98; */
   /* --md-primary-fg-color--dark: #a26d11;  original */    
@@ -18,6 +18,14 @@
   --md-primary-tab-color: #2e303e;
   --md-primary-hover-tab-color: #444448;
 }
+
+/* Changing the overall theme (background color) of the app */
+[data-md-color-scheme="slate"] {
+  /* --md-hue: 206;  */
+  --md-hue: 220;
+  /* --md-hue: 248; */
+}
+
 
 .md-header__button.md-logo :-webkit-any(img,svg) {
     fill: currentcolor;
@@ -111,7 +119,13 @@
 /* Selected tab */
 .md-tabs__item--active {
   /* background-color: #9b6913; */
-  background-color: var(--md-primary-tab-color);
+  /* border: 0.1rem solid; */
+  /* color: #F9A61C; */
+  font-weight: bold;
+  /* border-radius: 7px; */
+  /* background-color: var(--md-primary-tab-color); */
+  background-color: black;
+  border-radius: 4px;
 }
 
 .md-tabs__item--active .md-tabs__link {
@@ -120,8 +134,13 @@
 
 /* Tab hover state */
 .md-tabs__item:hover {
-  /* background-color: #9b6913;  */
-  background-color: var(--md-primary-hover-tab-color);
+  background-color: black; 
+  /* background-color: var(--md-primary-hover-tab-color); */
+  /* color: white; */
+  /* color: #F9A61C; */
+  transition-duration: 0.4s;
+  /* border: 2px solid;
+  border-radius: 7px; */
 }
 
 .md-tabs__item:hover .md-tabs__link {
