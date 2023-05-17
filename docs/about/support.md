@@ -4,15 +4,15 @@
 
 The site uses a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
 
-`Supported by ACCESS-NRI` :material-circle: { .icon-supported title="Supported by ACCESS-NRI" }
+`Supported by ACCESS-NRI` :material-circle: { .icon-supported title="Supported by ACCESS-NRI" } {{ supported }}
 
 :    Documentation that is actively maintained and supported by ACCESS-NRI. This is documentation that was either created by ACCESS-NRI, or it is existing documentation for which ACCESS-NRI has taken over responsibility.
 
-`Recommended by ACCESS-NRI` :material-circle: { .icon-recommended title="Recommended by ACCESS-NRI"}
+`Recommended by ACCESS-NRI` :material-dots-circle: { .icon-recommended title="Recommended by ACCESS-NRI"} {{ recommended }}
 
 :    Documentation for third-party software that ACCESS-NRI recommends and facilitates the use of at [NCI][nci-web] as a service to the community. This means ACCESS-NRI supports the infrastructure required to run the software, but not necessarily the software itself. 
 
-`Community contributed` :octicons-heart-fill-24:{ .heart title="Community contributed" }
+`Community contributed` :octicons-heart-fill-24:{ .heart title="Community contributed" } {{ community }}
 
 :    Documentation that is of use to the community, but is not explicitly endorsed or supported by ACCESS-NRI. 
 

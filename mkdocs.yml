@@ -178,15 +178,19 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
+  supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">material-circle</i></a>'
+  recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">material-dots-circle</i></a>'
+  community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">heart</i></a>'
+
+:material-circle: { .icon-supported title="Supported by ACCESS-NRI" }
 
 extra_css:
   - css/termynal.css
   - css/custom.css
   - css/access-nri.css
   - css/fontello.css
+  - "https://fonts.googleapis.com/icon?family=Material+Icons"
+  - node_modules/octicons/build/font/octicons.css
 
 extra_javascript:
   - js/termynal.js
