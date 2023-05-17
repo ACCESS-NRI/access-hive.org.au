@@ -15,12 +15,12 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    # - scheme: light
-    #   primary: indigo
-    #   accent: deep orange
-    #   toggle:
-    #     icon: material/weather-sunny
-    #     name: Switch to dark mode
+    - scheme: light
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
     - scheme: slate
       primary: indigo
       accent: deep orange
@@ -68,6 +68,7 @@ plugins:
 # Extensions
 markdown_extensions: 
   - attr_list
+  - abbr
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg

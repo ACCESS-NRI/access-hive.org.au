@@ -150,3 +150,24 @@
 .md-tabs__item:hover .md-tabs__link {
   opacity: 1;
 }
+
+@keyframes heart {
+  0%, 40%, 80%, 100% {
+    transform: scale(1);
+  }
+  20%, 60% {
+    transform: scale(1.15);
+  }
+}
+.heart {
+  animation: heart 1000ms infinite;
+  color: #F82464;
+}
+
+.icon-supported {
+  color: #a5cd39;
+}
+
+.icon-recommended {
+  color: #F9A61C;
+}
