@@ -45,6 +45,7 @@ theme:
     # - toc.integrate
     # - navigation.sections
     - content.code.copy        # for displaying copy icon at top right in code snippets  
+    - content.code.annotate
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
@@ -75,6 +76,7 @@ markdown_extensions:
   - pymdownx.superfences
   - def_list
   - footnotes
+  - tables
 
 # Navigation
 nav:

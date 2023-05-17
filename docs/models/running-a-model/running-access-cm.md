@@ -52,7 +52,7 @@ The `–Y` switch is used to allow trusted X11 forwarding. Aliases and shortcuts
 
 | Command                |   Purpose                  |
 | ---------------------- | -------------              |
-| `logout` or `[ctrl-d]` | To exit a session          |
+| `logout` or `[Ctrl-d]` | To exit a session          |
 | `hostname`             | Displays login node details|
 | `module list`          | Modules currently loaded   |
 | `module avail`         | Available modules          |
