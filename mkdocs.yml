@@ -178,19 +178,20 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">material-circle</i></a>'
-  recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">material-dots-circle</i></a>'
-  community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">heart</i></a>'
+  # supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">material-circle</i></a>'
+  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">material-dots-circle</i></a>'
+  # community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">favorite</i></a>'
 
-:material-circle: { .icon-supported title="Supported by ACCESS-NRI" }
+  supported: ':material-circle: { .icon-supported title="Supported by ACCESS-NRI" }'
+  recommended: ':material-dots-circle: { .icon-recommended title="Recommended by ACCESS-NRI"}'
+  community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
 
 extra_css:
   - css/termynal.css
   - css/custom.css
   - css/access-nri.css
   - css/fontello.css
-  - "https://fonts.googleapis.com/icon?family=Material+Icons"
-  - node_modules/octicons/build/font/octicons.css
+  - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
 
 extra_javascript:
   - js/termynal.js

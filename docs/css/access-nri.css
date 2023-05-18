@@ -166,15 +166,16 @@
 
 .heart:hover {
   animation: heart 1000ms infinite;
-  color: #f824649b;
+  color: #f82464c0;
 }
 
 .icon-supported {
-  color: #a5cd39;
+  /* color: #a5cd39; */
+  color: #F9A61C; 
 }
 
 .icon-supported:hover {
-  color: #a6cd3987;
+  color: #f9a41cb4;
 }
 
 .icon-recommended {
@@ -182,5 +183,5 @@
 }
 
 .icon-recommended:hover {
-  color: #F9A61C87;
+  color: #f9a41cb3;
 }
