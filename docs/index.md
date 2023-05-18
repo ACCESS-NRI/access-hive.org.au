@@ -82,7 +82,7 @@
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
 
-<div align="center"> {{ supported }} Supported by ACCESS-NRI </div>
+Supported by ACCESS-NRI {{ supported }}
 
 <div align="center"> {{ recommended }} Recommended by ACCESS-NRI </div>
 
