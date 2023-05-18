@@ -182,8 +182,8 @@ extra:
   # recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">material-dots-circle</i></a>'
   # community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">favorite</i></a>'
 
-  supported: ':material-circle: { .icon-supported title="Supported by ACCESS-NRI" }'
-  recommended: ':material-dots-circle: { .icon-recommended title="Recommended by ACCESS-NRI"}'
+  supported: ':octicons-check-circle-24: { .icon-supported title="Supported by ACCESS-NRI" }'
+  recommended: ':octicons-star-24: { .icon-recommended title="Recommended by ACCESS-NRI" }'
   community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
 
 extra_css:

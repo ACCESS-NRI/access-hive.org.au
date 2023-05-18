@@ -60,7 +60,6 @@
   margin-bottom: 30px;
   text-align: center;
   width: 70%;
-  height: 20%;
   border-radius: 7px;
   border: 0.1rem solid;
   /* border-color: #eeac48; */
@@ -167,16 +166,16 @@
 
 .heart:hover {
   animation: heart 1000ms infinite;
-  color: #f82464c0;
+  color: #f82464c9;
 }
 
 .icon-supported {
-  /* color: #a5cd39; */
-  color: #F9A61C; 
+  color: #a5cd39;
+  /* color: #F9A61C;  */
 }
 
 .icon-supported:hover {
-  color: #f9a41cb4;
+  color: #a6cd39c5;
 }
 
 .icon-recommended {
