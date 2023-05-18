@@ -1,4 +1,4 @@
-# ACCESS-ESM {{ supported }}
+# <div style="border: 0.1rem solid; display: flex; align-items: center"> ACCESS-ESM {{ supported }} </div>
 
 {% include "call_contribute.md" %}
 

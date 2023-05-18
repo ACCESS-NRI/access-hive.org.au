@@ -162,6 +162,8 @@
 .heart {
   animation: heart 1000ms infinite;
   color: #F82464;
+  margin-top: 0.5em;
+  font-size: medium;
 }
 
 .heart:hover {
@@ -171,7 +173,9 @@
 
 .icon-supported {
   color: #a5cd39;
-  /* color: #F9A61C;  */
+  font-size: medium;
+  /* margin-top: 10%;
+  margin-bottom: 10%; */
 }
 
 .icon-supported:hover {
@@ -180,6 +184,8 @@
 
 .icon-recommended {
   color: #F9A61C;
+  font-size: medium;
+  /* margin-top: 0.5em; */
 }
 
 .icon-recommended:hover {

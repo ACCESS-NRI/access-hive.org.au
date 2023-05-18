@@ -82,11 +82,11 @@
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
 
-Supported by ACCESS-NRI {{ supported }}
+- `Supported by ACCESS-NRI` {{ supported }}
 
-<div align="center"> {{ recommended }} Recommended by ACCESS-NRI </div>
+- `Recommended by ACCESS-NRI` {{ recommended }}
 
-<div align="center"> {{ community }} Community contributed </div>
+- `Community contributed` {{ community }}
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
