@@ -116,15 +116,15 @@ nav:
       - Run ACCESS-OM2: models/running-a-model/running-access-om.md
       - Run ACCESS-S: models/running-a-model/running-access-s.md
 
-    - Model Evaluation and Data: 
-      - Overview: models/model-evaluation-and-data.md
-      - Atmosphere: models/model_evaluation/atmosphere.md
-      - Land: models/model_evaluation/land.md
-      - Ocean Sea-ice: models/model_evaluation/ocean_seaice.md
-      - Biogeochemistry Ocean: models/model_evaluation/bgc_ocean.md
-      - Diagnostics: models/model_evaluation/diagnostics.md
-      - Data processing: models/model_evaluation/data_processing.md
-      - Data catalogs: models/model_evaluation/data_catalogs.md
+  - Model Evaluation:
+    - model_evaluation/index.md
+    - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
+    - Model Data Catalog:
+      - model_evaluation/model_evaluation_model_catalogs/index.md
+      - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
+      - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
+    - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Training: 
     - Training: training/index.md
