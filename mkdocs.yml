@@ -82,10 +82,14 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home: 
+  - About: 
     - index.md
-    - home/features.md
-    - home/community.md
+    - Contact: about/contact.md
+    - Support: about/support.md
+    - Code of conduct: about/code_of_conduct.md
+    - Glossary: about/glossary.md
+    - Policies: about/policies.md
+    - License: License.md
 
   - Models: 
     - Models: models/index.md
@@ -151,13 +155,6 @@ nav:
       - Reviewers: contribute/reviewers.md
 
   - Community Forum: https://forum.access-hive.org.au
-
-  - About:
-    # - About: about/index.md
-    - Contact: about/contact.md
-    - Support: about/support.md
-    - Code of Conduct: about/code_of_conduct.md
-    - License: about/License.md
 
 # Footer
 extra:
