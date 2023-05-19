@@ -1,6 +1,6 @@
 
 <!-- ![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%} -->
-# Welcome to ACCESS-Hive
+# <div class="highlight-bg"> Welcome to ACCESS-Hive </div>
 
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
@@ -19,7 +19,7 @@
 </tr>
 </table>
 
-# Navigating ACCESS-Hive
+## Navigating ACCESS-Hive
 
 <table>
 <tr>
@@ -76,7 +76,7 @@
 <br><br>
 
 
-# About
+## About
 
 ## Support
 
@@ -96,7 +96,7 @@ See the [support page](about/support.md) for details about the support levels: w
 
 ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone.
 
-## 
+## Acknowledgement
 
 We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
 

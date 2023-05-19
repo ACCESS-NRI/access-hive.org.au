@@ -1,4 +1,4 @@
-# Contact
+# <div class="highlight-bg"> Contact </div>
 
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
@@ -12,7 +12,7 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 
 **Otherwise, contact ACCESS-NRI directly.** Full contact details for ACCESS-NRI are available on the [ACCESS-NRI website contact page][access-contact]
 
-## Other places where you can find the ACCESS-NRI team:
+## <div class="highlight-bg"> Other places where you can find the ACCESS-NRI team: </div>
 
 :fontawesome-brands-discourse:{ .forum }: [ACCESS-Hive Forum][access-hive-forum]
 

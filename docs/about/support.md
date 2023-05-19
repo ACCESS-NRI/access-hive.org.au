@@ -1,6 +1,6 @@
-# Support
+# <div class="highlight-bg"> Support </div>
 
-## Support levels
+## <div class="highlight-bg"> Support levels </div>
 
 The site uses a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
 
@@ -16,7 +16,7 @@ The site uses a system of tags to identify who supports the linked documentation
 
 :    Documentation that is of use to the community, but is not explicitly endorsed or supported by ACCESS-NRI. 
 
-## How to get help
+## <div class="highlight-bg"> How to get help </div>
 
 Each entry on ACCESS-Hive links to another web site. There should be information on how to get help on the linked site. If there are no obvious channels for help, or the help is not adequate consider asking for assistance from fellow members of your community on the [ACCESS-Hive forum][access-hive-forum]. 
 

@@ -81,7 +81,7 @@
 
 /* Main body content */
 .md-main__inner {
-  margin-top: 1em;
+  margin-top: 1.2em;
 }
 
 /* Header */
@@ -203,3 +203,16 @@
   display: flex; 
   align-items: center;
 }
+
+/* Highlight the background of headings */
+.highlight-bg {
+  background-color: rgb(29, 28, 28);
+  color: white;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  width: fit-content;
+  border-radius: 0.1em;
+}
+
