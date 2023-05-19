@@ -63,7 +63,7 @@ plugins:
   - bibtex:
       bib_file: "references.bib"
   - events:
-      events_dir: events/events
+      events_dir: community_resources/events/events
 
 # Extensions
 markdown_extensions: 
@@ -82,10 +82,14 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home: 
+  - About: 
     - index.md
-    - home/features.md
-    - home/community.md
+    - Contact: about/contact.md
+    - Support: about/support.md
+    - Code of conduct: about/code_of_conduct.md
+    - Glossary: about/glossary.md
+    - Policies: about/policies.md
+    - License: License.md
 
   - Models: 
     - Models: models/index.md
@@ -108,57 +112,49 @@ nav:
       - ACCESS-OM: models/configurations/access-om.md
       - ACCESS-S: models/configurations/access-s.md
 
-    - Running a Model: 
-      - Overview: models/running-a-model.md
-      - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
-      - Run ACCESS-CM: models/running-a-model/running-access-cm.md
-      - Run ACCESS-AM: models/running-a-model/running-access-am.md
-      - Run ACCESS-OM2: models/running-a-model/running-access-om.md
-      - Run ACCESS-S: models/running-a-model/running-access-s.md
+  - Run a Model: 
+    - Overview: models/running-a-model.md
+    - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
+    - Run ACCESS-CM: models/running-a-model/running-access-cm.md
+    - Run ACCESS-AM: models/running-a-model/running-access-am.md
+    - Run ACCESS-OM2: models/running-a-model/running-access-om.md
+    - Run ACCESS-S: models/running-a-model/running-access-s.md
 
-    - Model Evaluation and Data: 
-      - Overview: models/model-evaluation-and-data.md
-      - Atmosphere: models/model_evaluation/atmosphere.md
-      - Land: models/model_evaluation/land.md
-      - Ocean Sea-ice: models/model_evaluation/ocean_seaice.md
-      - Biogeochemistry Ocean: models/model_evaluation/bgc_ocean.md
-      - Diagnostics: models/model_evaluation/diagnostics.md
-      - Data processing: models/model_evaluation/data_processing.md
-      - Data catalogs: models/model_evaluation/data_catalogs.md
+  - Model Evaluation:
+    - model_evaluation/index.md
+    - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
+    - Model Data Catalog:
+      - model_evaluation/model_evaluation_model_catalogs/index.md
+      - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
+      - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
+    - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
-  - Training: 
-    - Training: training/index.md
-    - Git Version Control: training/git-version-control.md
-    - High Performance Computing (HPC): training/hpc.md
-    - ACCESS Training: training/ACCESS_training.md
-    - NCI Training: training/nci-training.md
-    - Additional Training: training/additional_training.md
+  - Community Resources:
+    - community_resources/index.md
+    - Community Working Groups: community_resources/community_working_groups.md
+    - Community Training: 
+      - Training: training/index.md
+      - Git Version Control: training/git-version-control.md
+      - High Performance Computing (HPC): training/hpc.md
+      - ACCESS Training: training/ACCESS_training.md
+      - NCI Training: training/nci-training.md
+      - Additional Training: training/additional_training.md
+    - Community Events:
+       - community_resources/events/index.md
+       - Add Event: community_resources/events/add_event.md
+    - Community Model Catalogs: community_resources/community_model_catalogs.md
+    - Community Data Formatting: community_resources/community_data_processing.md
+    - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
+    - Contribute: 
+      - Contribute: contribute/index.md
+      - Edit on Github: contribute/edit-on-github.md
+      - Edit Locally: contribute/edit-locally.md
+      - Stand-alone Documentation: contribute/standalone-documentation.md
+      - Change the Navigation: contribute/change-the-navigation.md
+      - Reviewers: contribute/reviewers.md
 
-  - Resources:
-    # - Resources: resources/index.md
-    - Working Groups: resources/working-groups.md
-    - ACCESS-HIVE Forum: resources/access-hive-forum.md
-    - Data: resources/data.md
-    - Glossary: resources/glossary.md
-    - Policies: resources/policies.md
-    - Events: 
-      - Overview: resources/events/index.md
-      - Add Event: resources/events/add_event.md
-
-  - Contribute: 
-    - Contribute: contribute/index.md
-    - Edit on Github: contribute/edit-on-github.md
-    - Edit Locally: contribute/edit-locally.md
-    - Stand-alone Documentation: contribute/standalone-documentation.md
-    - Change the Navigation: contribute/change-the-navigation.md
-    - Reviewers: contribute/reviewers.md
-
-  - About:
-    # - About: about/index.md
-    - Contact: about/contact.md
-    - Support: about/support.md
-    - Code of Conduct: about/code_of_conduct.md
-    - License: about/License.md
+  - Community Forum: https://forum.access-hive.org.au
 
 # Footer
 extra:

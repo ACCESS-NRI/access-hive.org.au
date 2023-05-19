@@ -1,0 +1,14 @@
+---
+title: 'The Surface Water and Ocean Topography (SWOT) satellite: A primer'
+start_date: 27/11/2022
+end_date: 27/11/2022
+location: Adelaide, SA
+link: https://www.amos2022.org.au/
+description: The Surface Water and Ocean Topography (SWOT) satellite, which will launch in November 2022, is a ground-breaking wide-swath altimetry mission that will observe fine details of the ocean dynamics at a resolution 10 times finer than current satellites. SWOT is jointly developed by NASA and CNES with contributions from researchers around the world, including Australia. The Australian government, the Integrated Marine Observing System, and the Australian marine science community are investing in SWOT through calibration/validation and synergistic in situ measurements of fine-scale ocean dynamics in the Australian region. This workshop will present a primer on the principles of the satellite and instrument, how it works, and what are its possibilities and limitations compared to existing altimetry products. This will be complemented with a brief summary of ocean research related to and enabled by SWOT, including internal waves and tides, sub-mesoscale dynamics, the geoid, and mean dynamic topography. The goal of the workshop is to provide oceanographers, hydrologists and other users of altimetry data with the information they need to prepare for the arrival of SWOT data in late 2023.
+organisator: Dr Benoit Legresy, Dr Shane Keating, Prof. Nicole Jones
+comments: AMOS 2022, Workshop
+---
+
+# The Surface Water and Ocean Topography (SWOT) satellite: A primer
+
+The Surface Water and Ocean Topography (SWOT) satellite, which will launch in November 2022, is a ground-breaking wide-swath altimetry mission that will observe fine details of the ocean dynamics at a resolution 10 times finer than current satellites. SWOT is jointly developed by NASA and CNES with contributions from researchers around the world, including Australia. The Australian government, the Integrated Marine Observing System, and the Australian marine science community are investing in SWOT through calibration/validation and synergistic in situ measurements of fine-scale ocean dynamics in the Australian region. This workshop will present a primer on the principles of the satellite and instrument, how it works, and what are its possibilities and limitations compared to existing altimetry products. This will be complemented with a brief summary of ocean research related to and enabled by SWOT, including internal waves and tides, sub-mesoscale dynamics, the geoid, and mean dynamic topography. The goal of the workshop is to provide oceanographers, hydrologists and other users of altimetry data with the information they need to prepare for the arrival of SWOT data in late 2023.
