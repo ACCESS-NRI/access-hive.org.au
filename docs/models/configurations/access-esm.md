@@ -1,4 +1,4 @@
-# <div style="border: 0.1rem solid; display: flex; align-items: center"> ACCESS-ESM {{ supported }} </div>
+# <div class="center-icons"> ACCESS-ESM {{ supported }} </div>
 
 {% include "call_contribute.md" %}
 
@@ -7,7 +7,7 @@ ACCESS-ESM stands for ACCESS **E**arth **S**ystem **M**odel. Earth system model 
 
 ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of ACCESS-ESM will be derived from the [CSIRO ACCESS-ESM1.5 configuration](#access-esm15) and will include [atmosphere], [land] and [land biogeochemistry], [ocean] and [ocean biogeochemistry], and [sea ice] components.
 
-## [ACCESS-ESM1.5] {{ recommended }}
+## <div class="center-icons"> [ACCESS-ESM1.5] {{ recommended }} </div>
 
 [**Citation** [@Ziehn2020-fq]][ACCESS-ESM1.5-cite]
 
