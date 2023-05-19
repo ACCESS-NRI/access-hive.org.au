@@ -9,12 +9,12 @@
 
 <table>
 <tr>
-<td width="60%">
+<td width="70%">
 <font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
 <br><br>
 </td>
 <td>
-    <img align="right" width="90%" src="assets/ACCESS_icon_HIVE.png">
+    <img width="90%" src="assets/ACCESS_icon_HIVE.png">
 </td>
 </tr>
 </table>
@@ -72,9 +72,6 @@
 <tr>
 </tr>
 </table>
-
-<br><br>
-
 
 ## About
 

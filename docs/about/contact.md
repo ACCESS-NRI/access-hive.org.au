@@ -12,7 +12,7 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 
 **Otherwise, contact ACCESS-NRI directly.** Full contact details for ACCESS-NRI are available on the [ACCESS-NRI website contact page][access-contact]
 
-## <div class="highlight-bg"> Other places where you can find the ACCESS-NRI team: </div>
+## Other places where you can find the ACCESS-NRI team:
 
 :fontawesome-brands-discourse:{ .forum }: [ACCESS-Hive Forum][access-hive-forum]
 

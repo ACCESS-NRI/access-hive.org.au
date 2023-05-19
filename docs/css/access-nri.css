@@ -206,7 +206,7 @@
 
 /* Highlight the background of headings */
 .highlight-bg {
-  background-color: rgb(29, 28, 28);
+  background-color: rgba(29, 28, 28, 0.622);
   color: white;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -215,4 +215,3 @@
   width: fit-content;
   border-radius: 0.1em;
 }
-
