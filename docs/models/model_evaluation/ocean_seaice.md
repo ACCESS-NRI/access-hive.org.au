@@ -4,7 +4,7 @@
 {% include "call_contribute.md" %}
 
 
-## [ESMValTool][esmvaltool-web] {{ recommended }}
+## <div class="center-icons"> [ESMValTool][esmvaltool-web] {{ recommended }} </div>
 
 [**Documentation**][esmvaltool-doc] |
 [**Tutorial**][esmvaltool-tutorial] | 
@@ -35,7 +35,7 @@ The cookbook is structured as follows:
   As a rule of thumb, users who are not interested in data management and, e.g., are only interested in using/analysing model output should never be bothered looking into the `cosima-cookbook` repository. `cosima-cookbook` is developed and maintained and will just *simply work out of the box*. `:)`
 
 
-## [climpred][climpred-doc]  {{ community }}
+## <div class="center-icons"> [climpred][climpred-doc]  {{ community }} </div>
 
 [**Documentation**][climpred-doc] |
 [**Tutorial**][climpred-tutorial] |

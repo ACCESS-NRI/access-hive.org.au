@@ -82,7 +82,7 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - About: 
+  - Home: 
     - index.md
     - Contact: about/contact.md
     - Support: about/support.md

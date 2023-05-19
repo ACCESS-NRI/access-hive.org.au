@@ -4,7 +4,7 @@
 {% include "call_contribute.md" %}
 
 
-## [The International Ocean Model Benchmarking (IOMB)][IOMB-web]  {{ community }}
+## <div class="center-icons"> [The International Ocean Model Benchmarking (IOMB)][IOMB-web]  {{ community }} </div>
 
 [**Documentation**][ilamb-doc] |
 [**Tutorials**][ilamb-tutorial] | 
@@ -15,7 +15,7 @@ The International Ocean Model Benchmarking (IOMB) Package is used to evaluate ma
 IOMB uses the same code base as the International Land Model Benchmarking (ILAMB) Package, so some of the links above refer to ILAMB instead of IOMB.
 
 
-## [climpred][climpred-doc]  {{ community }}
+## <div class="center-icons"> [climpred][climpred-doc]  {{ community }} </div>
 
 [**Documentation**][climpred-doc] |
 [**Tutorial**][climpred-tutorial] |

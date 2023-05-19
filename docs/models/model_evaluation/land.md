@@ -4,7 +4,7 @@
 {% include "call_contribute.md" %}
 
 
-## [iLAMB][ilamb-web] {{ recommended }}
+## <div class="center-icons"> [iLAMB][ilamb-web] {{ recommended }} </div>
 
 [**Documentation**][ilamb-doc] |
 [**Tutorials**][ilamb-tutorial] | 
@@ -16,7 +16,7 @@ The International Land Model Benchmarking (ILAMB) project is a model-data interc
 A collection of scripts used to format ILAMB data and community portal to make contributions
 
 
-## [climpred][climpred-doc]  {{ community }}
+## <div class="center-icons"> [climpred][climpred-doc]  {{ community }} </div>
 
 [**Documentation**][climpred-doc] |
 [**Tutorial**][climpred-tutorial] |

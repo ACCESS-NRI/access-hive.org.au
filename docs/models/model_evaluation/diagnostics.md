@@ -2,7 +2,7 @@
 
 {% include "call_contribute.md" %}
 
-### Afterburner  {{ community }}
+### <div class="center-icons"> Afterburner  {{ community }} </div>
 
 [**Documentation**][afterburner-doc] | 
 [**Sources**][afterburner-source]

@@ -1,4 +1,4 @@
-# ACCESS-AM {{ supported }}
+# <div class="center-icons"> ACCESS-AM {{ supported }} </div>
 
 {% include "call_contribute.md" %}
 

@@ -4,7 +4,7 @@
 {% include "call_contribute.md" %}
 
 
-## [ESMValTool][esmvaltool-web]  {{ recommended }}
+## <div class="center-icons"> [ESMValTool][esmvaltool-web]  {{ recommended }} </div>
 
 [**Documentation**][esmvaltool-doc] |
 [**Tutorial**][esmvaltool-tutorial] | 
@@ -13,7 +13,7 @@
 ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. ESMValTool is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. For a comprehensive introduction to ESMValTool please visit our documentation page.
 
 
-## [METPLUS][metplus-web]  {{ recommended }}
+## <div class="center-icons"> [METPLUS][metplus-web]  {{ recommended }} </div>
 
 [**Tutorial**][metplus-tutorial] |
 [**Paper** [@Brown2021-bams]][MET-paper]
@@ -22,7 +22,7 @@ METplus is a verification framework that spans a wide range of temporal (warn-on
 
 METplus is being actively developed by NCAR/Research Applications Laboratory (RAL), NOAA/Earth Systems Research Laboratories (ESRL), NOAA/Environmental Modeling Center (EMC), and is open to community contributions.
 
-### METplus Components  {{ recommended }}
+### <div class="center-icons"> METplus Components  {{ recommended }} </div>
 
 Links to the code repository and documentation for each METplus component are provided below:
 
@@ -35,7 +35,7 @@ Links to the code repository and documentation for each METplus component are pr
 - METdatadb: [sources][METdatadb-doc] | [docs][METdatadb-source]
 
 
-## [PCMDI Metrics Package (PMP)][pmp-doc]  {{ recommended }}
+## <div class="center-icons"> [PCMDI Metrics Package (PMP)][pmp-doc]  {{ recommended }} </div>
 
 [**Documentation**][pmp-doc] | 
 [**Sources**][pmp-source]
@@ -43,7 +43,7 @@ Links to the code repository and documentation for each METplus component are pr
 The PMP is used to provide “quick-look” objective comparisons of Earth System Models (ESMs) with one another and available observations. Results are produced in the context of all model simulations contributed to CMIP6 and earlier CMIP phases. Currently, the comparisons emphasize metrics of large- to global-scale annual cycle and both tropical and extra-tropical modes of variability. Ongoing work in v1.x development branches include established statistics for ENSO, MJO, regional monsoons, and high frequency characteristics of simulated precipitation.
 
 
-## [Free Evaluation System Framework (FREVA)][freva-doc] {{ community }}
+## <div class="center-icons"> [Free Evaluation System Framework (FREVA)][freva-doc] {{ community }} </div>
 
 [**Documentation**][freva-doc] | 
 [**Sources**][freva-source]
@@ -55,7 +55,7 @@ Freva, the free evaluation system framework, is a data search and analysis platf
 - apply data analysis tools in a reproducible manner.
 
 
-## [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ community }}
+## <div class="center-icons"> [Toolkit for Extremes Climate Analysis (TECA)][teca-web]  {{ community }} </div>
 
 [**Documentation**][teca-doc] |
 [**Tutorials**][teca-tutorials] |
@@ -64,7 +64,7 @@ Freva, the free evaluation system framework, is a data search and analysis platf
 TECA is a general purpose tool for detecting discrete events in climate model output. It leverages a map-reduce framework for efficient parallelization at large scales (order 10K+ cores). Currently, TECA contains detection algorithms for tropical cyclones, atmospheric rivers, and extratropical cyclones; and plans are underway to implement algorithms for mesoscale convective complexes, African Easterly waves, atmospheric blocks, and fronts.
 
 
-## [Model and ObservatioN Evaluation Toolkit (MONET)][monet-doc]  {{ community }}
+## <div class="center-icons"> [Model and ObservatioN Evaluation Toolkit (MONET)][monet-doc]  {{ community }} </div>
 
 [**Documentation**][monet-doc] |
 [**Tutorial**][monet-tutorial] |
@@ -76,7 +76,7 @@ MONET is an open source project and Python package that aims to create a common 
 MONET was developed to evaluate the Community Multiscale Air Quality Model (CMAQ) for the NOAA National Air Quality Forecast Capability (NAQFC) modeling system. MONET is designed to be a modularized Python package for (1) pairing model output to observational data in space and time; (2) leveraging the Pandas Python package for easy searching and grouping; and (3) analyzing and visualizing data. This process introduces a convenient method for evaluating model output.
 
 
-## [climpred][climpred-doc]  {{ community }}
+## <div class="center-icons"> [climpred][climpred-doc]  {{ community }} </div>
 
 [**Documentation**][climpred-doc] |
 [**Tutorial**][climpred-tutorial] |
