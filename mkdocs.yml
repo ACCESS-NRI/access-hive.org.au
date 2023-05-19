@@ -63,7 +63,7 @@ plugins:
   - bibtex:
       bib_file: "references.bib"
   - events:
-      events_dir: events/events
+      events_dir: community_resources/events/events
 
 # Extensions
 markdown_extensions: 
@@ -141,8 +141,8 @@ nav:
       - NCI Training: training/nci-training.md
       - Additional Training: training/additional_training.md
     - Community Events:
-       - events/index.md
-       - Add Event: events/add_event.md
+       - community_resources/events/index.md
+       - Add Event: community_resources/events/add_event.md
     - Community Model Catalogs: community_resources/community_model_catalogs.md
     - Community Data Formatting: community_resources/community_data_processing.md
     - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
