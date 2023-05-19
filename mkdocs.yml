@@ -131,14 +131,8 @@ nav:
     - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
-    # - Resources: resources/index.md
-    - Community Working Groups: resources/working-groups.md
-    - Data: resources/data.md
-    - Glossary: resources/glossary.md
-    - Policies: resources/policies.md
-    - Community Events: 
-      - Overview: resources/events/index.md
-      - Add Event: resources/events/add_event.md
+    - community_resources/index.md
+    - Community Working Groups: community_resources/community_working_groups.md
     - Community Training: 
       - Training: training/index.md
       - Git Version Control: training/git-version-control.md
@@ -146,6 +140,12 @@ nav:
       - ACCESS Training: training/ACCESS_training.md
       - NCI Training: training/nci-training.md
       - Additional Training: training/additional_training.md
+    - Community Events:
+       - events/index.md
+       - Add Event: events/add_event.md
+    - Community Model Catalogs: community_resources/community_model_catalogs.md
+    - Community Data Formatting: community_resources/community_data_processing.md
+    - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
     - Contribute: 
       - Contribute: contribute/index.md
       - Edit on Github: contribute/edit-on-github.md
