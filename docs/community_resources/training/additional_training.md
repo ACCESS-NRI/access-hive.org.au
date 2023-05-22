@@ -8,7 +8,7 @@ To learn the basics of Git and GitHub. It also includes ACCESS-NRI's recommendat
 <!-- ## [NCI training][nci-training] {{ recommended }}
 <div class="result" markdown> -->
 
-![NCI Logo](../assets/nci_logo_color.svg){align=right width=40%}
+![NCI Logo](../../assets/nci_logo_color.svg){align=right width=40%}
 
 The National Computational Infrastructure ([NCI][nci-web]) provides [training resources][nci-training] and in-person training courses throughout the year to help develop the skills of the NCI user community.  
 

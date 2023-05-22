@@ -32,5 +32,5 @@ description: This workshop is relevant for those performing regional climate sim
 
 Make sure to follow [all the steps][edit-process] described in the contribution guidelines to submit this addition for approval for publication.
 
-[edit-process]: ../about/contribute/local_edit.md#edit-to-access-hive
+[edit-process]: ../../contribute/edit-locally.md#edit-to-access-hive
 [add-event-issue]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/new?assignees=&labels=New+Event&template=new-event.yml&title=%5BNew+Event%5D%3A+
