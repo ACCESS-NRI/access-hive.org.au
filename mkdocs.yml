@@ -75,6 +75,7 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.inlinehilite
   - def_list
   - footnotes
   - tables
@@ -134,12 +135,12 @@ nav:
     - community_resources/index.md
     - Community Working Groups: community_resources/community_working_groups.md
     - Community Training: 
-      - Training: training/index.md
-      - Git Version Control: training/git-version-control.md
-      - High Performance Computing (HPC): training/hpc.md
-      - ACCESS Training: training/ACCESS_training.md
-      - NCI Training: training/nci-training.md
-      - Additional Training: training/additional_training.md
+      - Training: community_resources/training/index.md
+      - Git Version Control: community_resources/training/git-version-control.md
+      - High Performance Computing (HPC): community_resources/training/hpc.md
+      - ACCESS Training: community_resources/training/ACCESS_training.md
+      - NCI Training: community_resources/training/nci-training.md
+      - Additional Training: community_resources/training/additional_training.md
     - Community Events:
        - community_resources/events/index.md
        - Add Event: community_resources/events/add_event.md
@@ -174,10 +175,9 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  # supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">material-circle</i></a>'
-  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">material-dots-circle</i></a>'
-  # community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">favorite</i></a>'
-
+  # supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  # community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
   supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
   recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
   community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
