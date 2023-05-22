@@ -90,12 +90,12 @@ nav:
     - Code of conduct: about/code_of_conduct.md
     - Glossary: about/glossary.md
     - Policies: about/policies.md
-    - License: License.md
+    - License: about/License.md
 
   - Models: 
     - Models: models/index.md
     - Model Components: 
-      - Overview: models/model-components.md
+      - Overview: models/model_components/index.md
       - Atmosphere: models/model_components/atmosphere.md
       - Land: models/model_components/land.md
       - Ocean: models/model_components/ocean.md
@@ -106,7 +106,7 @@ nav:
       - Coupler: models/model_components/coupler.md
 
     - Model Configurations: 
-      - Overview: models/model-configurations.md
+      - Overview: models/configurations/index.md
       - ACCESS-ESM: models/configurations/access-esm.md
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-AM: models/configurations/access-am.md

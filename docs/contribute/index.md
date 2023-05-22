@@ -29,9 +29,9 @@ There are two main ways to contribute to the site:
 - you can work [on your local computer][localedit] and use Git to manage your modifications. This is recommended for more involved modifications. It is the easiest way to modify the categories and menu structure used to navigate the site.
 
 [Issues]: https://github.com/ACCESS-Hive/website/issues
-[directedit]: direct_edit.md
-[localedit]: local_edit.md
-[standalone_doc]: standalone_doc.md
+[directedit]: ./edit-on-github.md
+[localedit]: ./edit-locally.md
+[standalone_doc]: ./standalone-documentation.md
 [issue-179]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/179
 [MatforMkdocs]: https://squidfunk.github.io/mkdocs-material/
 [Mkdocs]: https://www.mkdocs.org/
