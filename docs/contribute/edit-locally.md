@@ -50,7 +50,7 @@ When a pull request is created or updated, GitHub will automatically build a pre
 
 In the pull request, you will see the link to the preview appear in this fashion:
 
-![PRpreview](../../assets/site-preview-PR.png)
+![PRpreview](../assets/site-preview-PR.png)
 
 ???+ info "Build delay"
     It can take a while for the preview to build, even after the CI check is indicated as finished. Please wait for the comment with the link to appear and allow for some time after that for the preview to be properly deployed.
@@ -83,5 +83,5 @@ Your documentation will be built on http://127.0.0.1:8000. Open this URL in your
 [Assign]: https://docs.github.com/en/issues/tracking-your-work-with-issues/
 [GitHowTo]: https://access-nri.github.io/Training/HowTos/GitAndGitHub
 [issue-179]: https://github.com/ACCESS-Hive/access-hive.github.io/issues/179
-[edit-process]: local_edit.md#edit-to-access-hive
-[add-event]: ../../events/add_event.md
+[edit-process]: edit-locally.md#edit-to-access-hive
+[add-event]: ../community_resources/events/add_event.md

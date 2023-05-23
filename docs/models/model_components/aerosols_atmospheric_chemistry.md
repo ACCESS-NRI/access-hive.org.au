@@ -2,7 +2,7 @@
 
 {% include "call_contribute.md" %}
 
-![Atmospheric Component Logo](../assets/component-logos/ACCESS icon AEROSOLS (Title).png){align=right width=40%}
+![Atmospheric Component Logo](../../assets/component-logos/ACCESS icon AEROSOLS (Title).png){align=right width=40%}
 
 ## <div class="center-icons"> [UKCA][ukca-wiki] {{ supported }} </div>
 
@@ -12,7 +12,7 @@
 UKCA chemistry model is turned on in ACCESS-CM2-Chem.
 
 
-![Atmospheric Component Logo](../assets/component-logos/ACCESS icon ATMOSPHERIC CHEMISTRY (Title).png){align=right width=40%}
+![Atmospheric Component Logo](../../assets/component-logos/ACCESS icon ATMOSPHERIC CHEMISTRY (Title).png){align=right width=40%}
 
 ## <div class="center-icons"> [GLOMAP][glomap-wiki] {{ supported }} </div>
 
