@@ -1,5 +1,5 @@
 
-# ACCESS-OM {{ supported }}
+# <div class="center-icons"> ACCESS-OM {{ supported }} </div>
 
 {% include "call_contribute.md" %}
 
@@ -7,7 +7,7 @@ ACCESS-OM stands for ACCESS **O**cean **M**odel. There is more than just an ocea
 
 ACCESS-NRI will release an ACCESS-OM model configuration. The first release of ACCESS-OM will be derived from the COSIMA ACCESS-OM2 suite and will include [ocean] and [sea ice] components.
 
-## [ACCESS-OM2][COSIMA-models] {{ recommended }}
+## <div class="center-icons"> [ACCESS-OM2][COSIMA-models] {{ recommended }} </div>
 
 [**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
 [**Documentation**][ACCESS-OM2-docs]

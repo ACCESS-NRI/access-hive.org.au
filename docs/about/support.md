@@ -1,4 +1,4 @@
-# Support
+# <div class="highlight-bg"> Support </div>
 
 ## Support levels
 

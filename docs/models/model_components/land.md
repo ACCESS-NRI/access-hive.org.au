@@ -4,7 +4,7 @@
 
 ![Land Component Logo](../../assets/component-logos/ACCESS icon LAND SURFACE (Title).png){align=right width=40%}
 
-## [CABLE][cable-wiki] {{ supported }}
+## <div class="center-icons"> [CABLE][cable-wiki] {{ supported }} </div>
 
 The Community Atmosphere Biosphere Land Exchange model (CABLE) is a land-surface model that simulates energy, water and carbon flows between the land surface and the atmosphere. This component has been developed by Australian researchers across the national climate science community. 
 
@@ -18,7 +18,7 @@ CABLE is an open source model. [Registration][cable-wiki] is required to access 
 [cable-wiki]: https://trac.nci.org.au/trac/cable/wiki
 
 
-## [JULES][jules-web] {{ supported }}
+## <div class="center-icons"> [JULES][jules-web] {{ supported }} </div>
 
 The Joint UK Land Environment System (JULES) is a land surface model that has evolved from the Met Office Surface Exchange Scheme (MOSES).
 

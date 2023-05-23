@@ -1,4 +1,4 @@
-# License
+# <div class="highlight-bg"> License </div>
 
 The ACCESS-Hive is made available under the [Creative Commons Attribution
 license][cc-by-human]. The following is a human-readable summary of

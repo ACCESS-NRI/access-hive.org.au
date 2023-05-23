@@ -15,18 +15,18 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    - scheme: light
-      primary: indigo
-      accent: deep orange
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
+    # - scheme: light
+    #   primary: indigo
+    #   accent: deep orange
+    #   toggle:
+    #     icon: material/weather-sunny
+    #     name: Switch to dark mode
     - scheme: slate
       primary: indigo
       accent: deep orange
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
+      # toggle:
+      #   icon: material/weather-night
+      #   name: Switch to light mode
 
 
   features:
@@ -83,7 +83,7 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - About: 
+  - Home: 
     - index.md
     - Contact: about/contact.md
     - Support: about/support.md

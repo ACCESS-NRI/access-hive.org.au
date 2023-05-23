@@ -1,4 +1,4 @@
-# Running ACCESS-CM2 Model
+# <div class="highlight-bg"> Running ACCESS-CM2 Model </div>
 This section includes a step-by-step instruction set on how to run the **ACCESS-CM2** suite.
 
 It is also built as a future point of reference, where you can come back and find the section containing the information you need.

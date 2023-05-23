@@ -1,4 +1,4 @@
-# ACCESS Models
+# <div class="highlight-bg"> ACCESS Models </div>
 
 ACCESS is a family of related computer models or components that represent
 different parts of the Earth system. ACCESS links various model components through

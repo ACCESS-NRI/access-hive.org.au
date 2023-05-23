@@ -1,4 +1,4 @@
-# Contact
+# <div class="highlight-bg"> Contact </div>
 
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
