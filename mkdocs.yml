@@ -19,23 +19,33 @@ theme:
       primary: indigo
       accent: deep orange
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-sunny
         name: Switch to dark mode
     - scheme: slate
       primary: indigo
       accent: deep orange
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-night
         name: Switch to light mode
 
 
   features:
+    - navigation.top
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
     - content.action.edit
     - content.action.view
+    - search.suggest
+    - search.highlight
+    - search.share
+    # - navigation.expand
+    # - navigation.path
+    # - toc.integrate
+    # - navigation.sections
+    - content.code.copy        # for displaying copy icon at top right in code snippets  
+    - content.code.annotate
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
@@ -53,79 +63,105 @@ plugins:
   - bibtex:
       bib_file: "references.bib"
   - events:
-      events_dir: events/events
+      events_dir: community_resources/events/events
 
 # Extensions
 markdown_extensions: 
   - attr_list
+  - abbr
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.inlinehilite
   - def_list
   - footnotes
+  - tables
+  - pymdownx.keys
 
 # Navigation
 nav:
-  - Home: index.md
-  - Configurations: 
-    - configurations/index.md
-    - ACCESS-ESM: configurations/access-esm.md
-    - ACCESS-CM: configurations/access-cm.md
-    - ACCESS-AM: configurations/access-am.md
-    - ACCESS-OM: configurations/access-om.md
-    - ACCESS-S: configurations/access-s.md
-  - Model Components: 
-    - model_components/index.md
-    - Atmosphere: model_components/atmosphere.md
-    - Land: model_components/land.md
-    - Ocean: model_components/ocean.md
-    - Sea Ice: model_components/sea-ice.md
-    - Aerosols and Atmospheric Chemistry: model_components/aerosols_atmospheric_chemistry.md
-    - Biogeochemistry Land: model_components/bgc_land.md
-    - Biogeochemistry Ocean: model_components/bgc_ocean.md
-    - Coupler: model_components/coupler.md
-  - Model Evaluation & Data: 
-    - model_evaluation/index.md
-    - Atmosphere: model_evaluation/atmosphere.md
-    - Land: model_evaluation/land.md
-    - Ocean Sea-ice: model_evaluation/ocean_seaice.md
-    - Biogeochemistry Ocean: model_evaluation/bgc_ocean.md
-    - Diagnostics: model_evaluation/diagnostics.md
-    - Data processing: model_evaluation/data_processing.md
-    - Data catalogs: model_evaluation/data_catalogs.md
-  - Training: 
-    - training/index.md
-    - ACCESS training: training/ACCESS_training.md
-    - Additional training: training/additional_training.md
-  - Working Groups:
-    - working_groups/index.md
-  - Resources:
-    - Data: resources/data.md
-    - Glossary: resources/glossary.md
-    - Policies: resources/policies.md
-  - Events: 
-    - events/index.md
-    - Add Event: events/add_event.md
-  - Forum: https://forum.access-hive.org.au
-  - About:
+  - About: 
+    - index.md
     - Contact: about/contact.md
     - Support: about/support.md
     - Code of conduct: about/code_of_conduct.md
-    - How to contribute: 
-      - about/contribute/index.md
-      - Edit on GitHub: about/contribute/direct_edit.md
-      - Edit locally: about/contribute/local_edit.md
-      - Stand-alone documentation: about/contribute/standalone_doc.md
-      - Change the navigation: about/contribute/navigation_changes.md
-      - Reviewers: about/contribute/reviewers_guidelines.md
-    - License: License.md
+    - Glossary: about/glossary.md
+    - Policies: about/policies.md
+    - License: about/License.md
+
+  - Models: 
+    - Models: models/index.md
+    - Model Components: 
+      - Overview: models/model_components/index.md
+      - Atmosphere: models/model_components/atmosphere.md
+      - Land: models/model_components/land.md
+      - Ocean: models/model_components/ocean.md
+      - Sea Ice: models/model_components/sea-ice.md
+      - Aerosols and Atmospheric Chemistry: models/model_components/aerosols_atmospheric_chemistry.md
+      - Biogeochemistry Land: models/model_components/bgc_land.md
+      - Biogeochemistry Ocean: models/model_components/bgc_ocean.md
+      - Coupler: models/model_components/coupler.md
+
+    - Model Configurations: 
+      - Overview: models/configurations/index.md
+      - ACCESS-ESM: models/configurations/access-esm.md
+      - ACCESS-CM: models/configurations/access-cm.md
+      - ACCESS-AM: models/configurations/access-am.md
+      - ACCESS-OM: models/configurations/access-om.md
+      - ACCESS-S: models/configurations/access-s.md
+
+  - Run a Model: 
+    - Overview: models/running-a-model.md
+    - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
+    - Run ACCESS-CM: models/running-a-model/running-access-cm.md
+    - Run ACCESS-AM: models/running-a-model/running-access-am.md
+    - Run ACCESS-OM2: models/running-a-model/running-access-om.md
+    - Run ACCESS-S: models/running-a-model/running-access-s.md
+
+  - Model Evaluation:
+    - model_evaluation/index.md
+    - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
+    - Model Data Catalog:
+      - model_evaluation/model_evaluation_model_catalogs/index.md
+      - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
+      - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
+    - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
+
+  - Community Resources:
+    - community_resources/index.md
+    - Community Working Groups: community_resources/community_working_groups.md
+    - Community Training: 
+      - Training: community_resources/training/index.md
+      - Git Version Control: community_resources/training/git-version-control.md
+      - High Performance Computing (HPC): community_resources/training/hpc.md
+      - ACCESS Training: community_resources/training/ACCESS_training.md
+      - NCI Training: community_resources/training/nci-training.md
+      - Additional Training: community_resources/training/additional_training.md
+    - Community Events:
+       - community_resources/events/index.md
+       - Add Event: community_resources/events/add_event.md
+    - Community Model Catalogs: community_resources/community_model_catalogs.md
+    - Community Data Formatting: community_resources/community_data_processing.md
+    - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
+    - Contribute: 
+      - Contribute: contribute/index.md
+      - Edit on Github: contribute/edit-on-github.md
+      - Edit Locally: contribute/edit-locally.md
+      - Stand-alone Documentation: contribute/standalone-documentation.md
+      - Change the Navigation: contribute/change-the-navigation.md
+      - Reviewers: contribute/reviewers.md
+
+  - Community Forum: https://forum.access-hive.org.au
 
 # Footer
 extra:
   generator: false
+  # version:
+  #   provider: mike
   social:
     - icon: fontawesome/brands/twitter 
       link: https://twitter.com/ACCESS_NRI
@@ -139,10 +175,22 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
-  supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
+  # supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
+  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
+  # community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
+  supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
+  recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
+  community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
 
 extra_css:
+  - css/termynal.css
+  - css/custom.css
   - css/access-nri.css
   - css/fontello.css
+  - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
+
+extra_javascript:
+  - js/termynal.js
+  - js/custom.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
+  - js/tablesort.js

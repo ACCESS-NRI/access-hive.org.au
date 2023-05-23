@@ -7,11 +7,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
-  --md-primary-fg-color:        black;
+  --md-primary-fg-color: rgb(30, 29, 29);
   --md-primary-fg-color--light: #f5edd5;
-  --md-primary-fg-color--dark:  #faa61a;
+  --md-primary-fg-color--dark:  #074473;
+  /* --md-primary-fg-color--dark: #FFA629; */
+
+  /* --md-primary-fg-color--dark:  #105D98; */
+  /* --md-primary-fg-color--dark: #a26d11;  original */    
   --md-accent-fg-color: #f5c533;
+  --md-primary-tab-color: #2e303e;
+  --md-primary-hover-tab-color: #444448;
 }
+
+/* Changing the overall theme (background color) of the app */
+[data-md-color-scheme="slate"] {
+  /* --md-hue: 206;  */
+  --md-hue: 220;
+  /* --md-hue: 248; */
+}
+
 
 .md-header__button.md-logo :-webkit-any(img,svg) {
     fill: currentcolor;
@@ -46,20 +60,24 @@
   margin-bottom: 30px;
   text-align: center;
   width: 70%;
+  border-radius: 7px;
   border: 0.1rem solid;
+  /* border-color: #eeac48; */
+  border-color: white;
   display: inline-block;
   font-size: 16px;
   padding: 10px;
   transition-duration: 0.4s;
-  background-color: var(--md-primary-fg-color--dark);
+  background-color: var(--md-primary-tab-color);
   color: white
 }
 
 
 .access_forum_button:hover {
-  background-color: #9b6913;
-  color: white;
-  border-color: white; }
+  color: #F9A61C;
+  border: 0.1rem solid;
+  background-color: var(--md-primary-tab-color);
+}
 
 /* Main body content */
 .md-main__inner {
@@ -80,15 +98,17 @@
 /* Tab section */
 .md-tabs {
   background-color: var(--md-primary-fg-color--dark);
-  margin-top: 3em; }
+  margin-top: 0.6em; }
 
 /* Unselected tab */
 .md-tabs__item {
   display: inline-block;
   height: min-content;
   transition: background-color 0.5s;
+  color: #aeb3c0;
 }
 
+/* Headings in the nav bar */
 .md-tabs__link {
   display: inline-block;
   opacity: 0.95;
@@ -96,11 +116,20 @@
   margin-top: 0px;
   padding-top: 0.8em;
   padding-bottom: 0.8em;
+  font-size: 1.5em;
 }
 
 /* Selected tab */
 .md-tabs__item--active {
-  background-color: #9b6913;
+  /* background-color: #9b6913; */
+  /* border: 0.1rem solid; */
+  /* color: #F9A61C; */
+  font-weight: bold;
+  /* border-radius: 7px; */
+  /* background-color: var(--md-primary-tab-color); */
+  /* background-color: black; */
+  color: white;
+  border-radius: 4px;
 }
 
 .md-tabs__item--active .md-tabs__link {
@@ -109,8 +138,56 @@
 
 /* Tab hover state */
 .md-tabs__item:hover {
-  background-color: #9b6913; }
+  /* background-color: rgba(0, 0, 0, 0.536);  */
+  /* background-color: var(--md-primary-hover-tab-color); */
+  /* color: white; */
+  /* color: #F9A61C; */
+  transition-duration: 0.4s;
+  font-weight: bold;
+  color: white;
+}
 
 .md-tabs__item:hover .md-tabs__link {
   opacity: 1;
+}
+
+@keyframes heart {
+  0%, 40%, 80%, 100% {
+    transform: scale(1);
+  }
+  20%, 60% {
+    transform: scale(1.15);
+  }
+}
+.heart {
+  animation: heart 1000ms infinite;
+  color: #F82464;
+  margin-top: 0.5em;
+  font-size: medium;
+}
+
+.heart:hover {
+  animation: heart 1000ms infinite;
+  color: #f82464c9;
+}
+
+.icon-supported {
+  color: #a5cd39;
+  font-size: medium;
+  /* margin-top: 10%;
+  margin-bottom: 10%; */
+}
+
+.icon-supported:hover {
+  color: #a6cd39c5;
+}
+
+.icon-recommended {
+  color: #F9A61C;
+  font-size: medium;
+  /* margin-top: 0.5em; */
+}
+
+.icon-recommended:hover {
+  color: #f9a41cb3;
 }
