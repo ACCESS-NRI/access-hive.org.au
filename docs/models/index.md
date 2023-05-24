@@ -7,7 +7,19 @@ software called **couplers** to form different Model Configurations.
 ![ACCESS-HIVE Logo](../assets/component-logos/access-components.png)
 
 ## ACCESS Model Components
-<table>
+<div class="wrapper-div">
+    <div class="wrapper-children-left">
+        <img src="../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" style="width: 70%;"></img> 
+        <div>Atmosphere</div>
+    </div>
+
+    <div class="wrapper-children-right"> 
+        <img src="../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" style="width: 70%;"></img> 
+        <div>Land</div>
+    </div>
+</div>
+
+<!-- <table>
     <tr>
         <td>Atmosphere</td>
         <td>Land</td>
@@ -24,5 +36,5 @@ software called **couplers** to form different Model Configurations.
         <td>Biogeochemistry Ocean</td>
         <td>Coupler</td>
     </tr>
-</table>
+</table> -->
 
