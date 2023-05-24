@@ -8,16 +8,24 @@ software called **couplers** to form different Model Configurations.
 
 ## ACCESS Model Components
 <div class="wrapper-div">
-    <div class="wrapper-children-left">
+    <!-- TODO change href links for these cards -->
+    <a href="model_components/atmosphere/"><div class="wrapper-children">
         <img src="../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" style="width: 70%;"></img> 
-        <div>Atmosphere</div>
+        <div class="card-links">Atmosphere</div>
+    </div></a>
+
+    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
+        <img src="../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" style="width: 70%;"></img> 
+        <div class="card-links">Land</div>
     </div>
 
-    <div class="wrapper-children-right"> 
-        <img src="../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" style="width: 70%;"></img> 
-        <div>Land</div>
+    <div class="wrapper-children">
+        <img src="../assets/component-logos/ACCESS icon OCEAN (Title).png" style="width: 70%;"></img> 
+        <div class="card-links">Ocean</div>
     </div>
+
 </div>
+
 
 <!-- <table>
     <tr>
