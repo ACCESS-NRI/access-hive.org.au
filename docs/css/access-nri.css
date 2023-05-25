@@ -256,10 +256,11 @@
   /* margin-left: 2em; */
   /* margin-right: 1em; */
   box-shadow: 5px 8px 10px #1b1b1b;
+  /* padding: 2%; */
 }
 
 .wrapper-children:hover {
-  box-shadow: 11px 11px 10px #1b1b1b;
+  box-shadow: 10px 10px 10px #000000;
   border-color: white;
   transition-duration: 0.4s;
 }
