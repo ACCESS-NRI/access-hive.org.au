@@ -74,22 +74,6 @@ software called **couplers** to form different Model Configurations.
     </div>
 </div>
 
-<!-- <table>
-    <tr>
-        <td>Atmosphere</td>
-        <td>Land</td>
-    </tr>
-    <tr>
-        <td>Ocean</td>
-        <td>Sea Ice</td>
-    </tr>
-    <tr>
-        <td>Aerosols and Atmospheric Chemistry</td>
-        <td>Biogeochemistry Land</td>
-    </tr>
-    <tr>
-        <td>Biogeochemistry Ocean</td>
-        <td>Coupler</td>
-    </tr>
-</table> -->
+## ACCESS Model Configurations
+
 
