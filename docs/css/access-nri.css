@@ -238,3 +238,33 @@
   width: fit-content;
   border-radius: 0.1em;
 }
+
+.wrapper-div {
+  margin-top: 1em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.wrapper-children {
+  display: inline-block;
+  /* background-color: rgb(255, 255, 255); */
+  border: 0.1em solid;
+  border-radius: 7px;
+  border-color: #5f626a;
+  /* width: 50%; */
+  /* margin-left: 2em; */
+  /* margin-right: 1em; */
+  box-shadow: 5px 8px 10px #1b1b1b;
+  /* padding: 2%; */
+}
+
+.wrapper-children:hover {
+  box-shadow: 10px 10px 10px #000000;
+  border-color: white;
+  transition-duration: 0.4s;
+}
+
+.card-links {
+  color: white;
+}
