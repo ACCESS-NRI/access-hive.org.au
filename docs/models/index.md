@@ -4,7 +4,9 @@ ACCESS is a family of related computer models or components that represent
 different parts of the Earth system. ACCESS links various model components through
 software called **couplers** to form different Model Configurations.
 
-![ACCESS-HIVE Logo](../assets/component-logos/access-components.png)
+<div style="background-color: white; border-radius: 7px;">
+    <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;"></img>
+</div>
 
 ## ACCESS Model Components
 <div class="wrapper-div">
