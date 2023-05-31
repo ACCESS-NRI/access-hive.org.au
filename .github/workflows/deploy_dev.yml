@@ -43,7 +43,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: development_site
+          folder: site
           target-folder: development_site
           commit-message: Deploy Development Preview
           force: false
