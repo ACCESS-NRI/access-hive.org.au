@@ -44,7 +44,7 @@ jobs:
         with:
           branch: gh-pages
           folder: development_site
-          target-folder: development
+          target-folder: development_site
           commit-message: Deploy Development Preview
           force: false
           
