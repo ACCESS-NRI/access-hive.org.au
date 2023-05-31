@@ -40,7 +40,6 @@ jobs:
       - run: unzip development_site.zip
 
       - name: Deploy preview directory
-        if: env.action == 'deploy'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
