@@ -268,8 +268,13 @@
   transition-duration: 0.4s;
 }
 
-.card-links {
+.white-links {
   color: white;
+}
+
+.white-links:hover {
+  transition-duration: 0.4s;
+  color: #F9A61C;
 }
 
 /* -------------------------------------------- */
