@@ -62,18 +62,18 @@
   margin-right: auto;
   border-collapse: disabled;
   border-spacing: 17px;
-  width: 100%;
+  width: 100%;  
 }
 
 .logo_component {
-    width: 70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .logo_cell {
   margin: 0 auto;
-    text-align: center;
-    width: 25%;
+  text-align: center;
+  width: 25%;
 }
 
 .access_forum_button {

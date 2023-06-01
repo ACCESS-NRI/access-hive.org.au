@@ -4,20 +4,20 @@ ACCESS components represent different chemical, physical or biological parts of 
 
 <table class="center">
   <tr>
-     <td class="logo_cell"><a href="atmosphere" title="Atmosphere"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></a></td>
-      <td class="logo_cell"><a href="land" title="Land"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"
-      ></a></td>
-     <td class="logo_cell"><a href="ocean" title="Ocean"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png"  alt="Ocean"></a></td>
-     <td class="logo_cell"><a href="sea-ice" title="Sea Ice"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></a></td>
-   </tr> 
-   <tr>
-      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols" ></a></td>
-      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Chemistry-Atmosphere" ></a></td>
-      <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry-Land" ></a></td>
-      <td class="logo_cell"><a href="bgc_ocean" title="Biogeochemistry-Ocean"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry-Ocean" ></a></td>
+      <td class="logo_cell"><a href="atmosphere" title="Atmosphere"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"><br>Atmosphere</a></td>
+      <td class="logo_cell"><a href="land" title="Land"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"
+      ><br>Land</a></td>
+      <td class="logo_cell"><a href="ocean" title="Ocean"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png"  alt="Ocean"><br>Ocean</a></td>
+      <td class="logo_cell"><a href="sea-ice" title="Sea Ice"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"><br>Sea Ice</a></td>
    </tr>
    <tr>
-      <td class="logo_cell"><a href="coupler" title="Coupler"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler" ></a></td>
+      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"><br>Aerosols</a></td>
+      <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Chemistry-Atmosphere"><br>Atmospheric Chemistry</a></td>
+      <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry-Land"><br>Biogeochemistry Land</a></td>
+      <td class="logo_cell"><a href="bgc_ocean" title="Biogeochemistry-Ocean"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry-Ocean"><br>Biogeochemistry Ocean</a></td>
+   </tr>
+   <tr>
+      <td class="logo_cell"><a href="coupler" title="Coupler"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"><br>Coupler</a></td>
     </tr>
 </table>
 
