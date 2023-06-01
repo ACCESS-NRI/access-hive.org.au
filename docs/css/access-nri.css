@@ -227,7 +227,7 @@
   align-items: center;
 }
 
-/* Highlight the background of headings */
+/* Highlight the background of headings ------------ */
 .highlight-bg {
   background-color: rgba(29, 28, 28, 0.622);
   color: white;
@@ -239,6 +239,7 @@
   border-radius: 0.1em;
 }
 
+/* ACCESS model components in /models tab */
 .wrapper-div {
   margin-top: 1em;
   display: flex;
@@ -268,3 +269,56 @@
 .card-links {
   color: white;
 }
+
+/* -------------------------------------------- */
+
+/* "ACCESS Model Configurations" in `/models` tab CSS --------- */
+.wrapper-div-config {
+  margin-top: 1em;
+  display: flex;
+  border: 0.1em solid;
+  border-radius: 7px;
+  border-color: #5f626a;
+  box-shadow: 5px 8px 10px #1b1b1b;
+}
+
+.wrapper-div-config:hover {
+  box-shadow: 10px 10px 10px #000000;
+  border-color: white;
+  transition-duration: 0.4s;
+}
+
+.wrapper-img-config {
+  background-color: white;
+  display: inline-block;
+  width: 40%;
+  border-radius: 7px;
+  /* aspect-ratio: 1 / 1; */
+}
+
+/* .img-config {
+  display: flex;
+  align-items: center;
+} */
+
+.wrapper-text-config {
+  width: 60%;
+  margin: 1em;
+  color: white;
+}
+
+.arrow-align {
+  text-align: right;
+  color: #aebbff;
+  align-items: bottom;
+  vertical-align: text-bottom;
+  display: flex;
+  align-items: end;
+  padding: 2%;
+}
+
+.arrow-align:hover {
+  color: #F9A61C;
+  transition-duration: 0.4s;
+}
+/* -------------------------------------------- */
