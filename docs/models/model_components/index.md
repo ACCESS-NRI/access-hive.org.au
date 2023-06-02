@@ -10,7 +10,7 @@ ACCESS components represent different chemical, physical or biological parts of 
       <td class="logo_cell"><a href="ocean" title="Ocean"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png"  alt="Ocean"><br><div class="white-links">Ocean</div></a></td>
       <td class="logo_cell"><a href="sea-ice" title="Sea Ice"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"><br><div class="white-links">Sea Ice</div></a></td>
    </tr>
-   <tr>
+   <tr> 
       <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Aerosols"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"><br><div class="white-links">Aerosols</div></a></td>
       <td class="logo_cell"><a href="aerosols_atmospheric_chemistry" title="Atmospheric Chemistry"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Chemistry-Atmosphere"><br><div class="white-links">Atmospheric Chemistry</div></a></td>
       <td class="logo_cell"><a href="bgc_land" title="Biogeochemistry-Land"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry-Land"><br><div class="white-links">Biogeochemistry Land</div></a></td>
