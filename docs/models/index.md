@@ -13,43 +13,42 @@ software called **couplers** to form different Model Configurations.
     <!-- TODO change href links for these cards -->
     <div class="wrapper-children">
         <a href="model_components/atmosphere/">
-            <img src="../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Atmosphere</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" style="width: 70%;"></img> 
+            <div class="white-links">Atmosphere</div>
         </a>
     </div>
     <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
         <a href="model_components/land/">
-            <img src="../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Land</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" style="width: 70%;"></img> 
+            <div class="white-links">Land</div>
         </a>
     </div>
     <div class="wrapper-children">
         <a href="model_components/ocean/">
-            <img src="../assets/component-logos/ACCESS icon OCEAN (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Ocean</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" style="width: 70%;"></img> 
+            <div class="white-links">Ocean</div>
         </a>
     </div>
-
 </div>
 
 <div class="wrapper-div">
     <!-- TODO change href links for these cards -->
     <div class="wrapper-children">
         <a href="model_components/sea-ice/">
-            <img src="../assets/component-logos/ACCESS icon SEA ICE (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Sea Ice</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" style="width: 70%;"></img> 
+            <div class="white-links">Sea Ice</div>
         </a>
     </div>
     <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
         <a href="model_components/aerosols_atmospheric_chemistry/">
-            <img src="../assets/component-logos/ACCESS icon AEROSOLS (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Aerosols</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" style="width: 70%;"></img> 
+            <div class="white-links">Aerosols</div>
         </a>
     </div>
     <div class="wrapper-children">
         <a href="model_components/aerosols_atmospheric_chemistry/">
-            <img src="../assets/component-logos/ACCESS icon ATMOSPHERIC CHEMISTRY (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Atmospheric Chemistry</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" style="width: 70%;"></img> 
+            <div class="white-links">Atmospheric Chemistry</div>
         </a>
     </div>
 </div>
@@ -58,20 +57,20 @@ software called **couplers** to form different Model Configurations.
     <!-- TODO change href links for these cards -->
     <div class="wrapper-children">
         <a href="model_components/bgc_land/">
-                <img src="../assets/component-logos/ACCESS icon BGC LAND (Title).png" style="width: 70%;"></img> 
-                <div class="card-links">Biogeochemistry Land</div>
+                <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" style="width: 70%;"></img> 
+                <div class="white-links">Biogeochemistry Land</div>
         </a>
     </div>
     <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
         <a href="model_components/bgc_ocean/">
-            <img src="../assets/component-logos/ACCESS icon BGC OCEAN (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Biogeochemistry Ocean</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" style="width: 70%;"></img> 
+            <div class="white-links">Biogeochemistry Ocean</div>
         </a>
     </div>
     <div class="wrapper-children">
         <a href="model_components/coupler/">
-            <img src="../assets/component-logos/ACCESS icon COUPLER (Title).png" style="width: 70%;"></img> 
-            <div class="card-links">Coupler</div>
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" style="width: 70%;"></img> 
+            <div class="white-links">Coupler</div>
         </a>
     </div>
 </div>

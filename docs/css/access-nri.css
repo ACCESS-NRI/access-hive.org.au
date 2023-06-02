@@ -62,18 +62,18 @@
   margin-right: auto;
   border-collapse: disabled;
   border-spacing: 17px;
-  width: 100%;
+  width: 100%;  
 }
 
 .logo_component {
-    width: 70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .logo_cell {
   margin: 0 auto;
-    text-align: center;
-    width: 25%;
+  text-align: center;
+  width: 25%;
 }
 
 .access_forum_button {
@@ -253,6 +253,8 @@
   border: 0.1em solid;
   border-radius: 7px;
   border-color: #5f626a;
+  padding-top: 2%;
+  padding-bottom: 1%;
   /* width: 50%; */
   /* margin-left: 2em; */
   /* margin-right: 1em; */
@@ -266,8 +268,13 @@
   transition-duration: 0.4s;
 }
 
-.card-links {
+.white-links {
   color: white;
+}
+
+.white-links:hover {
+  transition-duration: 0.4s;
+  color: #F9A61C;
 }
 
 /* -------------------------------------------- */
