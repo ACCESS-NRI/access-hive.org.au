@@ -1,6 +1,6 @@
 # Model Evaluation and Diagnostics (MED) Recipe Gallery
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 While we are still building this gallery, please have a look at the Community MED Recipes listed at <a href="../community_resources/community_med_recipes.md">Community Resources -> Community Model Evaluation Recipes</a> {{ community}}
 

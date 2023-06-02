@@ -1,7 +1,7 @@
 
 # MED: Biogeochemistry Ocean
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 
 ## <div class="center-icons"> [The International Ocean Model Benchmarking (IOMB)][IOMB-web]  {{ community }} </div>

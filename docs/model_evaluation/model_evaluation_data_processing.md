@@ -1,6 +1,6 @@
 # Data Processing Tools
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 On this page, we will provide you a list of currated data processing tools.
 

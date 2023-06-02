@@ -1,6 +1,6 @@
 # Community Model Evaluation and Diagnostics (MED) Recipe Gallery
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 We are trying to ingest more and more model evaluation and diagnostics recipes in your currated [recipe gallery on this website](../model_evaluation/model_evaluation_recipe_gallery.md) {{ supported }}. While this is a continous effort, this site is intented for a list of model evaluation and diagnostics recipes that are not (yet) ingested but may be interesting for the community {{ community }}:
 

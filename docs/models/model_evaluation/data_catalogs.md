@@ -1,6 +1,6 @@
 # Data Communities / Catalogs
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ## <div class="center-icons"> [NCI datasets][NCI-geonetwork] {{  recommended }} </div>
 

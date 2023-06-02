@@ -1,6 +1,6 @@
 # Community Resources
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 In this area of the Hive, we collect content that is not currated by us, but may be helpful for the community. You can [contribute](../contribute/index.md) to this part of the Hive too!
 
