@@ -2,7 +2,6 @@
 
 ACCESS components represent different chemical, physical or biological parts of the Earth System.
 
-
 <table class="center">
   <tr>
       <td class="logo_cell"><a href="atmosphere" title="Atmosphere"><img class="logo_component" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"><br><div class="white-links">Atmosphere</div></a></td>
