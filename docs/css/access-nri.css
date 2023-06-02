@@ -73,7 +73,14 @@
 .logo_cell {
   margin: 0 auto;
   text-align: center;
+  padding: 0.5%;
   width: 25%;
+}
+
+.logo_cell:hover {
+  /* color: #F9A61C; */
+  transition-duration: 0.4s;
+  padding: 1%;
 }
 
 .access_forum_button {
