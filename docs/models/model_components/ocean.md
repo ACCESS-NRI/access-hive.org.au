@@ -1,6 +1,6 @@
-# Ocean Model Component
+# <div class="highlight-bg"> Ocean Model Component </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ![Ocean Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png){align=right width=40%}
 

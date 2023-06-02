@@ -1,6 +1,6 @@
-# Land Model Components
+# <div class="highlight-bg"> Land Model Components </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ![Land Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png){align=right width=40%}
 

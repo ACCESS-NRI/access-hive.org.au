@@ -1,6 +1,6 @@
-# Aerosol and Chemistry Components
+# <div class="highlight-bg"> Aerosol and Chemistry Components </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ![Atmospheric Component Logo](../../assets/component-logos/components-without-titles/ACCESS%20icon%20AEROSOLS.png){align=right width=40%}
 

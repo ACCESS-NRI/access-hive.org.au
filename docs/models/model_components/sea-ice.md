@@ -1,6 +1,6 @@
-# Sea-Ice Model Component
+# <div class="highlight-bg"> Sea-Ice Model Component </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ![Sea-Ice Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png){align=right width=40%}
 

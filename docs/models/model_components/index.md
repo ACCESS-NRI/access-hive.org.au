@@ -1,4 +1,4 @@
-# Model Components
+# <div class="highlight-bg"> Model Components </div>
 
 ACCESS components represent different chemical, physical or biological parts of the Earth System.
 

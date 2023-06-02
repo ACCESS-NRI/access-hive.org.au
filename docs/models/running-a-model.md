@@ -1,3 +1,5 @@
+# <div class="highlight-bg"> Getting Started </div>
+
 <!-- TODO remove jasmeen. For testing purposes only -->
 <div class="termy">
 
