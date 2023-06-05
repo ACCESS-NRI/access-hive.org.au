@@ -82,6 +82,8 @@
   font-weight: bold;
   transition-duration: 0.4s;
   padding: 0.8%;
+  background-color: rgba(29, 28, 28, 0.185);
+  border-radius: 7px;
 }
 
 .access_forum_button {

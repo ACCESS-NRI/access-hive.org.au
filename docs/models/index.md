@@ -5,7 +5,7 @@ different parts of the Earth system. ACCESS links various model components throu
 software called **couplers** to form different Model Configurations.
 
 <div style="background-color: white; border-radius: 7px;">
-    <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;"></img>
+    <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;" alt="Atmosphere"></img>
 </div>
 
 ## ACCESS Model Components
