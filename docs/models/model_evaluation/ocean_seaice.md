@@ -1,7 +1,7 @@
 
 # MED: Ocean and Sea-Ice
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 
 ## <div class="center-icons"> [ESMValTool][esmvaltool-web] {{ recommended }} </div>

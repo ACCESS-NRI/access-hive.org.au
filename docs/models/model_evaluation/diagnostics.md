@@ -1,6 +1,6 @@
 # MED: Diagnostics
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ### <div class="center-icons"> Afterburner  {{ community }} </div>
 

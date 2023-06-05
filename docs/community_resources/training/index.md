@@ -1,6 +1,6 @@
 # Training and Policies
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 This space is intended to promote training material relevant to ACCESS and its community. The training material can be directly relevant to ACCESS and its model components, such as:
 

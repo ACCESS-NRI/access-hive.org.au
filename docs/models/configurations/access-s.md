@@ -1,6 +1,6 @@
 # <div class="center-icons"> [ACCESS-S][ACCESS-S] {{ community }} </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ACCESS-S is the Bureau of Meteorology's climate modelling system used for seasonal forecasting.
 

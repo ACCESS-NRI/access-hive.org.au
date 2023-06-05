@@ -63,9 +63,12 @@
   border-collapse: disabled;
   border-spacing: 17px;
   width: 100%;  
+  width: 100%;  
 }
 
 .logo_component {
+  width: 70%;
+  margin: 0 auto;
   width: 70%;
   margin: 0 auto;
 }
@@ -73,7 +76,17 @@
 .logo_cell {
   margin: 0 auto;
   text-align: center;
+  padding: 0.5%;
   width: 25%;
+}
+
+.logo_cell:hover {
+  /* color: #F9A61C; */
+  font-weight: bold;
+  transition-duration: 0.4s;
+  padding: 0.8%;
+  background-color: rgba(29, 28, 28, 0.185);
+  border-radius: 7px;
 }
 
 .access_forum_button {
@@ -184,6 +197,7 @@
     transform: scale(1.15);
   }
 }
+
 .heart {
   animation: heart 1000ms infinite;
   color: #F82464;
@@ -255,6 +269,8 @@
   border-color: #5f626a;
   padding-top: 2%;
   padding-bottom: 1%;
+  padding-top: 2%;
+  padding-bottom: 1%;
   /* width: 50%; */
   /* margin-left: 2em; */
   /* margin-right: 1em; */
@@ -270,6 +286,11 @@
 
 .white-links {
   color: white;
+}
+
+.white-links:hover {
+  transition-duration: 0.4s;
+  color: #F9A61C;
 }
 
 .white-links:hover {

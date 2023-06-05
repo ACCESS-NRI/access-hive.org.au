@@ -1,6 +1,6 @@
 # Workshops and Conferences: Add Event
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 We encourage members of the community to list any workshops, tutorials, conferences that might be of interest to the community.
 

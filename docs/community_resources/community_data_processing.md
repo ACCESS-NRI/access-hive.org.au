@@ -1,6 +1,6 @@
 # Community Processing Data Processing Tools
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 
 ## Tools

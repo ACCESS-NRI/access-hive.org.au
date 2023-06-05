@@ -1,7 +1,7 @@
 
-# Biogeochemistry Land
+# <div class="highlight-bg"> Biogeochemistry Land </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ![BGC Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png){align=right width=40%}
 

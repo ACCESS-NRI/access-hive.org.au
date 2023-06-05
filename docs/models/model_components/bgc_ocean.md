@@ -1,6 +1,6 @@
-# Biogeochemistry Ocean
+# <div class="highlight-bg"> Biogeochemistry Ocean </div>
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 ![BGC Ocean Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png){align=right width=40%}
 
