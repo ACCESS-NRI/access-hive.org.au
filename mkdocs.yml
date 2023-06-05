@@ -155,7 +155,8 @@ nav:
       - Change the Navigation: contribute/change-the-navigation.md
       - Reviewers: contribute/reviewers.md
 
-  - Community Forum: https://forum.access-hive.org.au
+  # - Community Forum: https://forum.access-hive.org.au
+  - [Community Forum](https://forum.access-hive.org.au){ .md_button }
 
 # Footer
 extra:
