@@ -18,6 +18,7 @@ ACCESS components represent different chemical, physical or biological parts of 
    </tr>
    <tr>
       <td class="logo_cell"><a href="coupler" title="Coupler"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"><br><div class="white-links">Coupler</div></a></td>
+      <td class="logo_cell"><a href="coupler" title="Coupler"><img class="logo_component"src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"><br><div class="white-links">Coupler</div></a></td>
     </tr>
 </table>
 
