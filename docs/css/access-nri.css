@@ -82,11 +82,18 @@
 
 .logo_cell:hover {
   /* color: #F9A61C; */
-  font-weight: bold;
+  /* font-weight: bold; */
   transition-duration: 0.4s;
   padding: 0.8%;
   background-color: rgba(29, 28, 28, 0.185);
   border-radius: 15px;
+}
+
+/* Upon hovering over the `logo_cell` div, call the 
+`logo_cell_text` div and change the color of it to 
+ACCESS gold */
+.logo_cell:hover .logo_cell_text {
+  color: #F9A61C;
 }
 
 .access_forum_button {
