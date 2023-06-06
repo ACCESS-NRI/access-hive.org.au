@@ -290,6 +290,10 @@ ACCESS gold */
   border-color: white;
   transition-duration: 0.4s;
 }
+/* 
+.wrapper-children:hover .logo_cell_text {
+  color: #F9A61C;
+} */
 
 .white-links {
   color: white;
@@ -350,6 +354,10 @@ ACCESS gold */
   display: flex;
   align-items: end;
   padding: 2%;
+}
+
+.wrapper-div-config:hover .arrow-align {
+  color: #F9A61C;
 }
 
 .arrow-align:hover {

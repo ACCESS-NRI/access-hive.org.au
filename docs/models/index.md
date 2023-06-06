@@ -14,19 +14,19 @@ software called **couplers** to form different Model Configurations.
     <div class="wrapper-children">
         <a href="model_components/atmosphere/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" style="width: 70%;"></img> 
-            <div class="white-links">Atmosphere</div>
+            <div class="white-links"><div class="logo_cell_text">Atmosphere</div></div>
         </a>
     </div>
     <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
         <a href="model_components/land/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" style="width: 70%;"></img> 
-            <div class="white-links">Land</div>
+            <div class="white-links"><div class="logo_cell_text">Land</div></div>
         </a>
     </div>
     <div class="wrapper-children">
         <a href="model_components/ocean/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" style="width: 70%;"></img> 
-            <div class="white-links">Ocean</div>
+            <div class="white-links"><div class="logo_cell_text">Ocean</div></div>
         </a>
     </div>
 </div>
@@ -36,19 +36,19 @@ software called **couplers** to form different Model Configurations.
     <div class="wrapper-children">
         <a href="model_components/sea-ice/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" style="width: 70%;"></img> 
-            <div class="white-links">Sea Ice</div>
+            <div class="white-links"><div class="logo_cell_text">Sea Ice</div></div>
         </a>
     </div>
     <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
         <a href="model_components/aerosols_atmospheric_chemistry/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" style="width: 70%;"></img> 
-            <div class="white-links">Aerosols</div>
+            <div class="white-links"><div class="logo_cell_text">Aerosols</div></div>
         </a>
     </div>
     <div class="wrapper-children">
         <a href="model_components/aerosols_atmospheric_chemistry/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" style="width: 70%;"></img> 
-            <div class="white-links">Atmospheric Chemistry</div>
+            <div class="white-links"><div class="logo_cell_text">Atmospheric Chemistry</div></div>
         </a>
     </div>
 </div>
@@ -58,19 +58,19 @@ software called **couplers** to form different Model Configurations.
     <div class="wrapper-children">
         <a href="model_components/bgc_land/">
                 <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" style="width: 70%;"></img> 
-                <div class="white-links">Biogeochemistry Land</div>
+                <div class="white-links"><div class="logo_cell_text">Biogeochemistry Land</div></div>
         </a>
     </div>
     <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
         <a href="model_components/bgc_ocean/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" style="width: 70%;"></img> 
-            <div class="white-links">Biogeochemistry Ocean</div>
+            <div class="white-links"><div class="logo_cell_text">Biogeochemistry Ocean</div></div>
         </a>
     </div>
     <div class="wrapper-children">
         <a href="model_components/coupler/">
             <img src="../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" style="width: 70%;"></img> 
-            <div class="white-links">Coupler</div>
+            <div class="white-links"><div class="logo_cell_text">Coupler</div></div>
         </a>
     </div>
 </div>
