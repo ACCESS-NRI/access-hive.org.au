@@ -248,6 +248,12 @@ ACCESS gold */
   align-items: center;
 }
 
+.white-img-bg {
+  background-color: white;
+  border-radius: 7px;
+  padding: 1em;
+}
+
 /* Highlight the background of headings ------------ */
 .highlight-bg {
   background-color: rgba(29, 28, 28, 0.622);
