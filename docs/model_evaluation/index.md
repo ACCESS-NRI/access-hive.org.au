@@ -2,6 +2,8 @@
 
 Model evaluation is about measuring how fit for purpose a particular model is.
 
+If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started.md).
+
 Here, we provide catalogs and pointers to [observational data](./model_evaluation_observational_catalogs.md) as well as [model data](./model_evaluation_model_catalogs/index.md) that can be used for evaluation. We provide [tools to process such data](./model_evaluation_data_processing.md) into a comparable format and a [gallery of recipes to evaluate](https://medportal.herokuapp.com/models/published) the formatted data.
 
 <table class="center">

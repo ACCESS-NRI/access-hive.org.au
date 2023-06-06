@@ -123,12 +123,17 @@ nav:
 
   - Model Evaluation:
     - model_evaluation/index.md
+    - Getting Started: model_evaluation/model_evaluation_getting_started.md
     - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
     - Model Data Catalog:
       - model_evaluation/model_evaluation_model_catalogs/index.md
       - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
       - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
     - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Model Evaluation on Gadi: 
+      - model_evaluation/model_evaluation_on_gadi/index.md
+      - ilamb: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
+      - esmvalltool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
     - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
