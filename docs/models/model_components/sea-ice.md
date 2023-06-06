@@ -2,7 +2,9 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
-![Sea-Ice Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png){align=right width=40%}
+<!-- ![Sea-Ice Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png){align=right width=40%} -->
+
+<img src = "../../../assets/component-logos/component-maps/sea-ice-component-map.png" class="white-img-bg"></img>
 
 ## <div class="center-icons"> CICE {{ supported }} </div>
 CICE is a software package developed by researchers at [Los Alamos National Laboratory team][lanl-web] with funding from the US Department of Energy. CICE models the dynamics and thermodynamics of ice. 

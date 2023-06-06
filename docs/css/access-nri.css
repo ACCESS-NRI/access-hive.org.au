@@ -82,11 +82,18 @@
 
 .logo_cell:hover {
   /* color: #F9A61C; */
-  font-weight: bold;
+  /* font-weight: bold; */
   transition-duration: 0.4s;
   padding: 0.8%;
   background-color: rgba(29, 28, 28, 0.185);
-  border-radius: 7px;
+  border-radius: 15px;
+}
+
+/* Upon hovering over the `logo_cell` div, call the 
+`logo_cell_text` div and change the color of it to 
+ACCESS gold */
+.logo_cell:hover .logo_cell_text {
+  color: #F9A61C;
 }
 
 .access_forum_button {
@@ -241,6 +248,12 @@
   align-items: center;
 }
 
+.white-img-bg {
+  background-color: white;
+  border-radius: 7px;
+  padding: 1em;
+}
+
 /* Highlight the background of headings ------------ */
 .highlight-bg {
   background-color: rgba(29, 28, 28, 0.622);
@@ -283,6 +296,10 @@
   border-color: white;
   transition-duration: 0.4s;
 }
+/* 
+.wrapper-children:hover .logo_cell_text {
+  color: #F9A61C;
+} */
 
 .white-links {
   color: white;
@@ -343,6 +360,10 @@
   display: flex;
   align-items: end;
   padding: 2%;
+}
+
+.wrapper-div-config:hover .arrow-align {
+  color: #F9A61C;
 }
 
 .arrow-align:hover {

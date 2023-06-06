@@ -2,7 +2,9 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
-![Land Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png){align=right width=40%}
+<!-- ![Land Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png){align=right width=40%} -->
+
+<img src = "../../../assets/component-logos/component-maps/land-component-map.png" class="white-img-bg"></img>
 
 ## <div class="center-icons"> [CABLE][cable-wiki] {{ supported }} </div>
 
