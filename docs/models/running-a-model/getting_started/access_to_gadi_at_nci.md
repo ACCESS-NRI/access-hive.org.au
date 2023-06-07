@@ -1,13 +1,10 @@
-# <div class="highlight-bg"> Getting Started to Run a Model </div>
+# <div class="highlight-bg"> Getting Started: Access To Gadi@NCI </div>
 
-Welcome to the getting started guide to run a model!
-
-Here, we provide you the important information to give you access to the large data that we curate at NCI's storage and show you how you can use it to figure out how fit for purpose specific models are, in particular when you compare them to osbervational data:
+Here, we provide you the important information to give you access to the large data that we curate at NCI's storage:
 
 1) [Get an NCI Account](#1-nci-account)  
 2) [Join relevant NCI projects](#2-join-relevant-nci-projects)  
-3) [Join `accessdev`](#3-join-accessdev)  
-4) [Accessing gadi@NCI](#4-accessing-gadinci)  
+3) [SSH onto gadi@NCI](#3-accessing-gadinci)  
 
 ## 1) NCI Account
 
@@ -62,14 +59,7 @@ To join a project or find more projects, please use this [NCI website](https://m
 
 The first project that you join will become your default login project, e.g. `xp65`. We will refer to it as `$PROJECT` and we show you how to change it below.
 
-## 3) Join `accessdev`
-
-[Connect to accessdev](https://accessdev.nci.org.au/trac/wiki/GettingConnected) to complete your setup once you have your NCI credentials and are a member of the ACCESS group. 
-*Note:* At present, both accessdev and [ARE](https://opus.nci.org.au/display/Help/ARE+User+Guide) run the models on Gadi. However, ARE only supports shorter-running suites (i.e., runs less than 48 hours). Work is currently in progress to fully transition the cylc workflows from accessdev virtual machine to the ARE.
-
-Additional steps relating to the [communication between accessdev and Gadi](https://accessdev.nci.org.au/trac/wiki/gadi) may also be necessary.
-
-## 4) Accessing gadi@NCI
+## 3) SSH onto gadi@NCI
 
 If you have never logged onto Gadi before, we recommend to take a look at NCI's [Welcome to Gadi website](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi).
 It provides all the important commands and information for logging properly onto Gadi, like the following:
