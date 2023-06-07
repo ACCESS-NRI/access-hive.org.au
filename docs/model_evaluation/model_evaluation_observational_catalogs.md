@@ -36,4 +36,4 @@ As of June 2023, we provide the following observational data catalogs on Gadi@NC
 │       └── ...
 ```
 
-If you want to use but do not have access to Gadi@NCI yet, please follow our instructions on how to [Get Started with Model Evaluation](./model_evaluation_getting_started.md).
+If you want to use but do not have access to Gadi@NCI yet, please follow our instructions on how to [Get Started with Model Evaluation](./model_evaluation_getting_started/index.md).
