@@ -114,7 +114,8 @@ nav:
       - ACCESS-S: models/configurations/access-s.md
 
   - Run a Model: 
-    - Getting Started: models/running-a-model.md
+    - models/running-a-model/index.md
+    - Getting Started: models/running-a-model/running-getting_started.md
     - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
     - Run ACCESS-CM: models/running-a-model/running-access-cm.md
     - Run ACCESS-AM: models/running-a-model/running-access-am.md
