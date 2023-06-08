@@ -111,7 +111,7 @@ To copy an existing suite, on <i>accessdev</i>:
         <!-- <img src="../assets/mosrs-auth_command.gif" alt="mosrs-auth command"> -->
         <br><br>
         <div class="termy">
-
+        
         ```console
         <span style="color: orange;">dm5220</span>@<span style="color: indianred;">accessdev.nci.org.au</span>:<span style="color: green;">~</span> 
         $ mosrs-auth
