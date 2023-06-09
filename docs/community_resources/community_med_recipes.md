@@ -26,7 +26,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://www.esmvaltool.org/">ESMValTool {{ recommended }}<br>(Earth System Model EValuation Tool)</a>
+    <a href="https://www.esmvaltool.org/">ESMValTool {{ recommended }} <br>(Earth System Model EValuation Tool)</a>
     </div>
 </td>
 <td width="10%">
