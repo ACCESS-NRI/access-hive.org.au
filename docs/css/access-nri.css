@@ -209,8 +209,8 @@ ACCESS gold */
   animation: heart 1000ms infinite;
   color: #F82464;
   /* margin-top: 0.5em; */
-  font-size: medium;
-  margin-left: 0.5em;
+  font-size: x-small;
+  /* margin-left: 0.5em; */
 }
 
 .heart:hover {
@@ -220,7 +220,7 @@ ACCESS gold */
 
 .icon-supported {
   color: #a5cd39;
-  font-size: medium;
+  font-size: small;
   margin-left: 0.5em;
   /* margin-top: 10%;
   margin-bottom: 10%; */
@@ -232,7 +232,7 @@ ACCESS gold */
 
 .icon-recommended {
   color: #F9A61C;
-  font-size: medium;
+  font-size: small;
   margin-left: 0.5em;
   /* margin-top: 0.5em; */
 }

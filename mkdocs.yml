@@ -192,9 +192,12 @@ extra:
   # supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
   # recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
   # community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
-  supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
-  recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
-  community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
+  # supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
+  # recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
+  # community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
+  supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">check_circle_outlined</i></a>'
+  recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">star</i></a>'
+  community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">favorite</i></a>'
 
 extra_css:
   - css/termynal.css
