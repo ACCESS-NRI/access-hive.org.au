@@ -2,7 +2,9 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
-![BGC Ocean Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png){align=right width=40%}
+<!-- ![BGC Ocean Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png){align=right width=40%} -->
+
+<img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="white-img-bg"></img>
 
 ## <div class="center-icons"> WOMBAT {{ supported }} </div>
 WOMBAT is the ocean carbon model (World Ocean Model of Biogeochemistry And Trophic-dynamics), developed in Australia. It calculates the carbon fluxes of the ocean, by simulating the evolution of phosphate, oxygen, dissolved inorganic carbon, alkalinity and iron with one class of phytoplankton and zooplankton.

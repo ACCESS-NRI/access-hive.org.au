@@ -3,7 +3,9 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
-![BGC Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png){align=right width=40%}
+<!-- ![BGC Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png){align=right width=40%} -->
+
+<img src = "../../../assets/component-logos/component-maps/bgc-land-component-map.png" class="white-img-bg"></img>
 
 ## <div class="center-icons"> [CASA-CNP][casa-web] {{ supported }} </div>
 

@@ -1,6 +1,8 @@
 # <div class="center-icons highlight-bg"> Coupler {{ supported }} </div>
 
-![Coupler Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png){align=right width=40%}
+<!-- ![Coupler Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png){align=right width=40%} -->
+
+<img src = "../../../assets/component-logos/component-maps/coupler-component-map.png" class="white-img-bg"></img>
 
 A coupler is a software used to perform simulations with different model components at the same time. The coupler enables the different model components to exchange information during the simulation.
 
