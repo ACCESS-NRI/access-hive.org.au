@@ -206,7 +206,7 @@ extra:
   # Fontawesome experimental
   supported: '<a href="https://access-hive.org.au/about/support"><span class="icon-supported"><i class="fa fa-check" title="Supported by ACCESS-NRI"></i></span></a>'
   recommended: '<a href="https://access-hive.org.au/about/support"><span class="icon-recommended"><i class="fa fa-star" title="Recommended by ACCESS-NRI"></i></span></a>'
-  community: '<a href="https://access-hive.org.au/about/support"><span class="heart"><i class="fa fa-heart" title="Community Contributed"></i></span></a>'
+  community: '<a href="https://access-hive.org.au/about/support"><i class="heart fa fa-heart" title="Community Contributed"></i></a>'
 
 extra_css:
   - css/termynal.css
