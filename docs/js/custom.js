@@ -15,8 +15,7 @@ function setupTermynal() {
     let termynals = [];
 
     function createTermynals() {
-        document
-            .querySelectorAll(`.${termynalActivateClass} .highlight`)
+        document.querySelectorAll(`.${termynalActivateClass} .highlight`)
             .forEach(node => {
                 const text = node.textContent;
                 const lines = text.split("\n");

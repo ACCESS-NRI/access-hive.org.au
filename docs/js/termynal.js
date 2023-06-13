@@ -27,11 +27,11 @@ class Termynal {
      * @param {Object[]} lineData - Dynamically loaded line data objects.
      * @param {boolean} options.noInit - Don't initialise the animation.
      */
-    constructor(container = '#termynal', options = {}) {
+    constructor(container = '.termynal', options = {}) {
         this.container = (typeof container === 'string') ? document.querySelector(container) : container;
         this.pfx = `data-${options.prefix || 'ty'}`;
         this.originalStartDelay = this.startDelay = options.startDelay
-            || parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) || 600;
+            || parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) || 700;
         this.originalTypeDelay = this.typeDelay = options.typeDelay
             || parseFloat(this.container.getAttribute(`${this.pfx}-typeDelay`)) || 90;
         this.originalLineDelay = this.lineDelay = options.lineDelay
@@ -53,19 +53,18 @@ class Termynal {
         // Load all the lines and create the container so that the size is fixed
         // Otherwise it would be changing and the user viewport would be constantly
         // moving as she/he scrolls
-        const finish = this.generateFinish()
-        finish.style.visibility = 'hidden'
-        this.container.appendChild(finish)
+        const fastButton = this.generateFast()
+        fastButton.style.visibility = 'hidden'
+        this.container.appendChild(fastButton)
         // Appends dynamically loaded lines to existing line elements.
         this.lines = [...this.container.querySelectorAll(`[${this.pfx}]`)].concat(this.lineData);
         for (let line of this.lines) {
             line.style.visibility = 'hidden'
             this.container.appendChild(line)
         }
-        const restart = this.generateRestart()
-        restart.style.visibility = 'hidden'
-        this.container.appendChild(restart)
-        this.container.setAttribute('data-termynal', '');
+        const restartButton = this.generateRestart()
+        restartButton.style.visibility = 'hidden'
+        this.container.appendChild(restartButton)
     }
 
     /**
@@ -81,8 +80,6 @@ class Termynal {
             containerStyle.width : undefined;
         this.container.style.minHeight = containerStyle.height !== '0px' ?
             containerStyle.height : undefined;
-
-        this.container.setAttribute('data-termynal', '');
         this.container.innerHTML = '';
         for (let line of this.lines) {
             line.style.visibility = 'visible'
@@ -91,67 +88,66 @@ class Termynal {
     }
 
     /**
-     * Start the animation and rener the lines depending on their data attributes.
+     * Start the animation and render the lines depending on their data attributes.
      */
     async start() {
-        this.addFinish()
-        await this._wait(this.startDelay);
+        this.addFastButton()
+        await this.sleep(this.startDelay);
 
         for (let line of this.lines) {
             const type = line.getAttribute(this.pfx);
-            const delay = line.getAttribute(`${this.pfx}-delay`) || this.lineDelay;
+            const lineDelay = line.getAttribute(`${this.pfx}-delay`) || this.lineDelay;
 
             if (type == 'input') {
                 line.setAttribute(`${this.pfx}-cursor`, this.cursor);
-                await this.type(line);
-                await this._wait(delay);
+                await this.typeAnimation(line);
+                await this.sleep(lineDelay);
             }
 
             else if (type == 'progress') {
                 await this.progress(line);
-                await this._wait(delay);
+                await this.sleep(lineDelay);
             }
 
             else {
                 this.container.appendChild(line);
-                await this._wait(delay);
+                await this.sleep(lineDelay);
             }
 
             line.removeAttribute(`${this.pfx}-cursor`);
         }
-        this.addRestart()
-        this.finishElement.style.visibility = 'hidden'
+        this.fastElement.style.visibility = 'hidden'
         this.lineDelay = this.originalLineDelay
         this.typeDelay = this.originalTypeDelay
         this.startDelay = this.originalStartDelay
+        this.addRestart()
     }
 
     generateRestart() {
         const restart = document.createElement('a')
         restart.onclick = (e) => {
             e.preventDefault()
-            this.container.innerHTML = ''
             this.init()
         }
-        restart.href = '#'
-        restart.setAttribute('data-terminal-control', '')
+        restart.href = ''
+        restart.setAttribute('termynal-control-buttons', '')
         restart.innerHTML = "restart ↻"
         return restart
     }
 
-    generateFinish() {
-        const finish = document.createElement('a')
-        finish.onclick = (e) => {
+    generateFast() {
+        const fast = document.createElement('a')
+        fast.onclick = (e) => {
             e.preventDefault()
             this.lineDelay = 0
             this.typeDelay = 0
             this.startDelay = 0
         }
-        finish.href = '#'
-        finish.setAttribute('data-terminal-control', '')
-        finish.innerHTML = "fast →"
-        this.finishElement = finish
-        return finish
+        fast.href = '#'
+        fast.setAttribute('termynal-control-buttons', '')
+        fast.innerHTML = "fast →"
+        this.fastElement = fast
+        return fast
     }
 
     addRestart() {
@@ -159,24 +155,38 @@ class Termynal {
         this.container.appendChild(restart)
     }
 
-    addFinish() {
-        const finish = this.generateFinish()
-        this.container.appendChild(finish)
+    addFastButton() {
+        const fast = this.generateFast()
+        this.container.appendChild(fast)
     }
 
     /**
      * Animate a typed line.
      * @param {Node} line - The line element to render.
      */
-    async type(line) {
-        const chars = [...line.textContent];
-        line.textContent = '';
+    async typeAnimation(line) {
+        function removeAllText(element) {
+            let textArray = [];
+            // loop through all the nodes of the element
+            let nodes = element.childNodes;
+            for (let node of element.childNodes) {
+                textArray.push(node.textContent);
+                node.textContent = "";
+            }
+            return textArray;
+        }
+        
+        const delay = line.getAttribute(`${this.pfx}-typeDelay`) || this.typeDelay;
+        let textArray = removeAllText(line);
         this.container.appendChild(line);
-
-        for (let char of chars) {
-            const delay = line.getAttribute(`${this.pfx}-typeDelay`) || this.typeDelay;
-            await this._wait(delay);
-            line.textContent += char;
+        console.log(line.childNodes);
+        for (let i=0; i<line.childNodes.length; i++) {
+            let node = line.childNodes[i];
+            let text = textArray[i];
+            for (let char of text) {
+                await this.sleep(delay)
+                node.textContent += char;
+            }
         }
     }
 
@@ -196,7 +206,7 @@ class Termynal {
         this.container.appendChild(line);
 
         for (let i = 1; i < chars.length + 1; i++) {
-            await this._wait(this.typeDelay);
+            await this.sleep(this.typeDelay);
             const percent = Math.round(i / chars.length * 100);
             line.textContent = `${chars.slice(0, i)} ${percent}%`;
 			if (percent>progressPercent) {
@@ -209,7 +219,7 @@ class Termynal {
      * Helper function for animation delays, called with `await`.
      * @param {number} time - Timeout, in ms.
      */
-    _wait(time) {
+    sleep(time) {
         return new Promise(resolve => setTimeout(resolve, time));
     }
 
@@ -224,7 +234,6 @@ class Termynal {
         return lineData.map(line => {
             let div = document.createElement('div');
             div.innerHTML = `<span ${this._attributes(line)}>${line.value || ''}</span>`;
-
             return div.firstElementChild;
         });
     }
@@ -254,14 +263,44 @@ class Termynal {
     }
 }
 
-/**
-* HTML API: If current script has container(s) specified, initialise Termynal.
-*/
-if (document.currentScript.hasAttribute('data-termynal-container')) {
-    const containers = document.currentScript.getAttribute('data-termynal-container');
-    containers.split('|')
-        .forEach(container => new Termynal(container))
+function createNotInitialisedTermynals() {
+    let termynals = [];
+    document.querySelectorAll('.termynal').forEach(termynal => termynals.push(new Termynal(termynal, {noInit:true})));
+    return termynals
 }
 
+function startVisibleTerminals(termynals) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const visibleTermynal = termynals.find( termynal => {
+                return termynal.container === entry.target
+            })
+            if (entry.isIntersecting) {
+                visibleTermynal.init();
+                observer.unobserve(entry.target);
+            }
+        })
+    },
+    {
+        rootMargin: "-50px",
+    })
+    termynals.forEach(termynal => observer.observe(termynal.container));
+}
+
+function insertDollarSignBeforeInput(selector='[data-ty="input"]') {
+    document.querySelectorAll(selector).forEach(node => {
+        // node.insertAdjacentHTML("afterbegin","<span class=\"beforeInputChar;\">$ </span>")
+        node.insertAdjacentHTML("afterbegin","<span style=\"color: orange;\">$ </span>")
+    })
+}
+
+function main() {
+    // insertDollarSignBeforeInput();
+    const terms=createNotInitialisedTermynals();
+    startVisibleTerminals(terms);
+}
+
+main()
 // References:
 // https://github.com/tiangolo/fastapi/blob/master/docs/en/docs/js/termynal.js
+

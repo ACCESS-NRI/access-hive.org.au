@@ -184,11 +184,11 @@ extra:
   community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
 
 extra_css:
-  - css/termynal.css
   - css/custom.css
   - css/access-nri.css
   - css/fontello.css
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
+  - css/termynal.css
 
 extra_javascript:
   - js/termynal.js
