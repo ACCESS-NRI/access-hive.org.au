@@ -24,6 +24,7 @@ class Termynal {
      * @param {string} options.progressChar – Character to use for progress bar, defaults to █.
 	 * @param {number} options.progressPercent - Max percent of progress.
      * @param {string} options.cursor – Character to use for cursor, defaults to ▋.
+     * @param {string} options.charBeforeInput – Character to use before the input prompts, defaults to $.
      * @param {Object[]} lineData - Dynamically loaded line data objects.
      * @param {boolean} options.noInit - Don't initialise the animation.
      */
@@ -31,7 +32,7 @@ class Termynal {
         this.container = (typeof container === 'string') ? document.querySelector(container) : container;
         this.pfx = `data-${options.prefix || 'ty'}`;
         this.originalStartDelay = this.startDelay = options.startDelay
-            || parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) || 700;
+            || parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) || 600;
         this.originalTypeDelay = this.typeDelay = options.typeDelay
             || parseFloat(this.container.getAttribute(`${this.pfx}-typeDelay`)) || 90;
         this.originalLineDelay = this.lineDelay = options.lineDelay
@@ -44,6 +45,8 @@ class Termynal {
             || parseFloat(this.container.getAttribute(`${this.pfx}-progressPercent`)) || 100;
         this.cursor = options.cursor
             || this.container.getAttribute(`${this.pfx}-cursor`) || '▋';
+        this.charBeforeInput = options.charBeforeInput
+            || this.container.getAttribute(`${this.pfx}-charBeforeInput`) || '$';
         this.lineData = this.lineDataToElements(options.lineData || []);
         this.loadLines()
         if (!options.noInit) this.init()
@@ -56,6 +59,7 @@ class Termynal {
         const fastButton = this.generateFast()
         fastButton.style.visibility = 'hidden'
         this.container.appendChild(fastButton)
+        this.insertCharBeforeInput();
         // Appends dynamically loaded lines to existing line elements.
         this.lines = [...this.container.querySelectorAll(`[${this.pfx}]`)].concat(this.lineData);
         for (let line of this.lines) {
@@ -107,6 +111,7 @@ class Termynal {
             else if (type == 'progress') {
                 await this.progress(line);
                 await this.sleep(lineDelay);
+                
             }
 
             else {
@@ -168,8 +173,8 @@ class Termynal {
         function removeAllText(element) {
             let textArray = [];
             // loop through all the nodes of the element
-            let nodes = element.childNodes;
             for (let node of element.childNodes) {
+                if (node.nodeType == Node.ELEMENT_NODE && node.classList.contains("charBeforeInput")) {return};
                 textArray.push(node.textContent);
                 node.textContent = "";
             }
@@ -179,7 +184,6 @@ class Termynal {
         const delay = line.getAttribute(`${this.pfx}-typeDelay`) || this.typeDelay;
         let textArray = removeAllText(line);
         this.container.appendChild(line);
-        console.log(line.childNodes);
         for (let i=0; i<line.childNodes.length; i++) {
             let node = line.childNodes[i];
             let text = textArray[i];
@@ -261,6 +265,12 @@ class Termynal {
 
         return attrs;
     }
+
+    insertCharBeforeInput(selector='[data-ty="input"]') {
+        this.container.querySelectorAll(selector).forEach(node => {
+            node.insertAdjacentHTML("afterbegin",`<span charBeforeInput>${this.charBeforeInput} </span>`)
+        })
+    }
 }
 
 function createNotInitialisedTermynals() {
@@ -287,15 +297,7 @@ function startVisibleTerminals(termynals) {
     termynals.forEach(termynal => observer.observe(termynal.container));
 }
 
-function insertDollarSignBeforeInput(selector='[data-ty="input"]') {
-    document.querySelectorAll(selector).forEach(node => {
-        // node.insertAdjacentHTML("afterbegin","<span class=\"beforeInputChar;\">$ </span>")
-        node.insertAdjacentHTML("afterbegin","<span style=\"color: orange;\">$ </span>")
-    })
-}
-
 function main() {
-    // insertDollarSignBeforeInput();
     const terms=createNotInitialisedTermynals();
     startVisibleTerminals(terms);
 }

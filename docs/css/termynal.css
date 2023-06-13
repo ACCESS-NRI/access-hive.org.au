@@ -104,8 +104,7 @@ a[termynal-control-buttons] {
     word-spacing: 1em;
 }
 
-.beforeInputChar {
-    content: "$ ";
+[charBeforeInput] {
     color: var(--color-text-dollar-sign);
 }
 
