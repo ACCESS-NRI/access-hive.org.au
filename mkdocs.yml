@@ -124,7 +124,6 @@ nav:
     - Run ACCESS-CM: models/running-a-model/running-access-cm.md
     - Run ACCESS-AM: models/running-a-model/running-access-am.md
     - Run ACCESS-OM: models/running-a-model/running-access-om.md
-    - Run ACCESS-S: models/running-a-model/running-access-s.md
 
   - Model Evaluation:
     - model_evaluation/index.md
