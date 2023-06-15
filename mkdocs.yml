@@ -145,6 +145,14 @@ nav:
   - Community Resources:
     - community_resources/index.md
     - Community Working Groups: community_resources/community_working_groups.md
+    - Community Glossaries:
+      - community_resources/glossaries/index.md
+      - ACCESS-NRI: community_resources/glossaries/glossary_access_nri.md
+      - IPCC: community_resources/glossaries/glossary_ipcc.md
+      - CSSR: community_resources/glossaries/glossary_cssr.md
+      - CMIP(6): community_resources/glossaries/glossary_cmip.md
+      - ERA(5): community_resources/glossaries/glossary_era.md
+      - UM: community_resources/glossaries/glossary_um.md
     - Community Training: 
       - Training: community_resources/training/index.md
       - Git Version Control: community_resources/training/git-version-control.md
