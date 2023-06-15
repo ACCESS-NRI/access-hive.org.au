@@ -111,7 +111,6 @@ nav:
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-AM: models/configurations/access-am.md
       - ACCESS-OM: models/configurations/access-om.md
-      - ACCESS-S: models/configurations/access-s.md
 
   - Run a Model: 
     - models/running-a-model/index.md
