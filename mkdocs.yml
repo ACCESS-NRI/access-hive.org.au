@@ -163,6 +163,7 @@ nav:
     - Community Events:
        - community_resources/events/index.md
        - Add Event: community_resources/events/add_event.md
+    - Community Observational Catalogs: community_resources/community_observational_catalogs.md
     - Community Model Catalogs: community_resources/community_model_catalogs.md
     - Community Data Formatting: community_resources/community_data_processing.md
     - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
