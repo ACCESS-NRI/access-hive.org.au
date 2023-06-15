@@ -20,6 +20,97 @@
 </table>
 
 ## Navigating ACCESS-Hive
+<div>
+    <div>
+        <!-- TODO change href links for these cards -->
+        <a href="models/">
+            <div class="wrapper-div-config">
+                <div class="wrapper-img-config">
+                    <img src="../assets/ACCESS-MODEL.png"></img> 
+                </div>
+                <div class="wrapper-text-config">
+                    <b><span class="highlight-bg">MODELS</span></b><br><br>
+                    ACCESS is a family of related computer models or <em>components</em> that represent different parts of the Earth-System. ACCESS links various model components through software called <b>couplers</b> to form different <b>model configurations</b>. 
+                </div><br>
+                <div class="arrow-align">
+                    <i class="material-icons">arrow_right_alt</i>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="models/running-a-model">
+            <div class="wrapper-div-config">
+                <!-- TODO change href links for these cards -->
+                <div class="wrapper-img-config">
+                    <img src="assets/get_started_example.png"></img> 
+                </div>
+                <div class="wrapper-text-config">
+                    <b><span class="highlight-bg">RUN A MODEL</span></b><br><br>
+                    Step-by-step guides for running different <b>model configurations</b>.  
+                </div><br>
+                <div class="arrow-align">
+                    <i class="material-icons">arrow_right_alt</i>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="model_evaluation/">
+            <div class="wrapper-div-config">
+                <!-- TODO change href links for these cards -->
+                <div class="wrapper-img-config">
+                    <img src="assets/resources_example.png"></img> 
+                </div>
+                <div class="wrapper-text-config">
+                    <b><span class="highlight-bg">MODEL EVALUATION</span></b><br><br>
+                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                </div><br>
+                <div class="arrow-align">
+                    <i class="material-icons">arrow_right_alt</i>
+                </div>
+            </div>
+        </a>
+    </div>
+        <div>
+        <a href="community_resources/">
+            <div class="wrapper-div-config">
+                <!-- TODO change href links for these cards -->
+                <div class="wrapper-img-config">
+                    <img src="assets/resources_example.png"></img> 
+                </div>
+                <div class="wrapper-text-config">
+                    <b><span class="highlight-bg">COMMUNITY RESOURCES</span></b><br><br>
+                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                </div><br>
+                <div class="arrow-align">
+                    <i class="material-icons">arrow_right_alt</i>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="community_resources/">
+            <div class="wrapper-div-config">
+                <!-- TODO change href links for these cards -->
+                <div class="wrapper-img-config">
+                    <img src="assets/forum_screenshot.png"></img> 
+                </div>
+                <div class="wrapper-text-config">
+                    <b><span class="highlight-bg">COMMUNITY RESOURCES</span></b><br><br>
+                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                </div><br>
+                <div class="arrow-align">
+                    <i class="material-icons">arrow_right_alt</i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------------- -->
+<!-- Previous implementation -->
 
 <table>
 <tr>
