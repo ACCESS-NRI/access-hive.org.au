@@ -242,14 +242,17 @@ ACCESS gold */
 .center-icons {
   /* border: 0.1rem solid;  */
   /* flex: 1 0 auto; */
-  /* display: flex;  */
-  align-items: center;
+  /* display: inline-block; */
+  /* line-height: normal;  */
+  /* align-items: center; */
+  vertical-align: middle;
+  /* height: auto; */
+  /* line-height: auto; */
 }
 
 .white-img-bg {
   background-color: white;
   border-radius: 7px;
-  padding: 1em;
 }
 
 /* Highlight the background of headings ------------ */

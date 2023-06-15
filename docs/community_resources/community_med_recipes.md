@@ -4,8 +4,6 @@
 
 We are trying to ingest more and more model evaluation and diagnostics recipes in your currated [recipe gallery on this website](../model_evaluation/model_evaluation_recipe_gallery.md) {{ supported }}. While this is a continous effort, this site is intented for a list of model evaluation and diagnostics recipes that are not (yet) ingested but may be interesting for the community {{ community }}:
 
-<i class="material-icons">check_circle</i>
-
 <table>
 <tr>
 <td width="25%">

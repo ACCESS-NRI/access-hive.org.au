@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> [ACCESS-S][ACCESS-S] {{ community }} </div>
+# <div class="highlight-bg center-icons"> [ACCESS-S][ACCESS-S] {{ community }} </div>
 
 <!-- {% include "call_contribute.md" %} -->
 
