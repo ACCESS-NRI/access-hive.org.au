@@ -240,14 +240,7 @@ ACCESS gold */
 
 /* Vertically center the icons */
 .center-icons {
-  /* border: 0.1rem solid;  */
-  /* flex: 1 0 auto; */
-  /* display: inline-block; */
-  /* line-height: normal;  */
-  /* align-items: center; */
   vertical-align: middle;
-  /* height: auto; */
-  /* line-height: auto; */
 }
 
 .white-img-bg {

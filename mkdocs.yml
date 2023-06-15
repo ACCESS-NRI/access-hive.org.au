@@ -208,7 +208,7 @@ extra:
   # Fontawesome icons
   supported: '<a href="https://access-hive.org.au/about/support"><span class="icon-supported center-icons"><i class="fa fa-check" title="Supported by ACCESS-NRI"></i></span></a>'
   recommended: '<a href="https://access-hive.org.au/about/support"><span class="icon-recommended center-icons"><i class="fa fa-star" title="Recommended by ACCESS-NRI"></i></span></a>'
-  community: '<a href="https://access-hive.org.au/about/support"><span class="center-icons"><i class="heart fa fa-heart" title="Community Contributed"></i></span></a>'
+  community: '<a href="https://access-hive.org.au/about/support"><span class="heart center-icons"><i class="heart fa fa-heart" title="Community Contributed"></i></span></a>'
 
 extra_css:
   - css/termynal.css
