@@ -102,10 +102,10 @@ To copy an existing suite, on <i>accessdev</i>:
 <!-- Change this to gadi/ARE when it will be completely possible to run CM2 fully on gadi-->
 <ol>
     <li>
-        Run <code>mosrs-auth</code> to authenticate using your MOSRS credentials (see 
-        <a href="../access_cm2/getting-started/#met-office-science-repository-service-mosrs" target="_blank">Met Office Science Repository Service (MOSRS)</a> for troubleshooting):
+        Run <code>mosrs-auth</code> to authenticate using your MOSRS credentials:
+        <!-- TO DO (see <a href="../access_cm2/getting-started/#met-office-science-repository-service-mosrs" target="_blank">Met Office Science Repository Service (MOSRS)</a> for troubleshooting)-->
         <br>
-        <div class="termynal" charBeforeInput="$$$">
+        <div class="termynal">
             <span data-ty="input">mosrs-auth</span>
             <span data-ty>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</span>
             <span data-ty="input" data-ty-delay="1500"></span>
@@ -167,7 +167,7 @@ To edit a suite configuration, on <i>accessdev</i>:
             <span data-ty="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</span>
             <span data-ty data-ty-delay="20" class="double-spaced">[&lt;N&gt;] &lt;PID&gt;</span>
             <span data-ty="input"></span>
-            <span data-ty style="color: red">TO DO --> Add Rose GUI image </span>
+            <!-- <span data-ty style="color: red">TO DO Add Rose GUI image </span> -->
         </div>
     </li>
     <li>
@@ -196,7 +196,7 @@ To edit a suite configuration, on <i>accessdev</i>:
             <li>
                 <b>Wallclock time</b>
                 <br>
-                The <i>Wallclock time</i> is the time requested by the <a href="../getting-started/#pbs-jobs" target="_blank">PBS job</a> to run a single cycle. If this time is not enough for the suite to end its cycle, our job will be terminated before the suite can complete the run. 
+                The <i>Wallclock time</i> is the time requested by the PBS job<!-- TO DO <a href="../getting-started/#pbs-jobs" target="_blank">PBS job</a> --> to run a single cycle. If this time is not enough for the suite to end its cycle, our job will be terminated before the suite can complete the run. 
                 <br>
                 If we change the <i>Cycling frequency</i>, we might need to change the <i>Wallclock time</i> accordingly. 
                 <br>
@@ -207,7 +207,7 @@ To edit a suite configuration, on <i>accessdev</i>:
         </ul>
     </li>
 </ol>
-<!-- For more details on how to edit other suite parameters using Rose GUI, such as component configurations, output variables (STASH), or science settings, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide</a>. -->
+<!-- TO DO For more details on how to edit other suite parameters using Rose GUI, such as component configurations, output variables (STASH), or science settings, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide</a>. -->
 </div>
 ----------------------------------------------------------------------------------------
 
@@ -222,7 +222,7 @@ When the suite gets run, the suite configuration files are copied on Gadi under 
 <br>
 An ACCESS-CM2 suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by Cylc.
 <br>
-<a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" targe="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. Cylc deals with how the job will be run and manages the time steps of each sub-model, as well as monitoring all the tasks and reporting any error that might occur.
+<a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. Cylc deals with how the job will be run and manages the time steps of each sub-model, as well as monitoring all the tasks and reporting any error that might occur.
 <br>
 To run an ACCESS-CM2 suite, on <i>accessdev</i>:
 <ol>
@@ -282,7 +282,9 @@ To run an ACCESS-CM2 suite, on <i>accessdev</i>:
     </div>
     <!-- <img src="../assets/rose_suite_run.gif" alt="rose suite-run" style="width:700px"/> -->
 </ol>
-You are done! If you don't get any errors, you will be able to check the suite output files after the run is complete.
+You are done!!
+<br>
+If you don't get any errors, you will be able to check the suite output files after the run is complete.
 <br>
 Note that, at this stage, it is possible to close the Cylc GUI.
 <br>
@@ -373,7 +375,7 @@ To reopen the Cylc GUI there are 2 main ways:
     <span data-ty>&lt;suite-ID&gt; &lt;$USER&gt;@accessdev.nci.org.au:&lt;port&gt;</span>
     <span data-ty="input">cd ~/roses/&lt;suite-ID&gt;</span>
     <span data-ty="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</span>
-    <span data-ty style="color: red">TO DO --> Add Rose GUI image </span>
+    <!-- <span data-ty style="color: red">TO DO --> Add Rose GUI image </span> -->
 </div>
 </div>
 
