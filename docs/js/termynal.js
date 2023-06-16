@@ -16,7 +16,6 @@ class Termynal {
      * Construct the widget's settings.
      * @param {(string|Node)=} container - Query selector or container element.
      * @param {Object=} options - Custom settings.
-     * @param {string} options.prefix - Prefix to use for data attributes.
      * @param {number} options.startDelay - Delay before animation, in ms.
      * @param {number} options.typeDelay - Delay between each typed character, in ms.
      * @param {number} options.lineDelay - Delay between each line, in ms.
@@ -25,29 +24,27 @@ class Termynal {
 	 * @param {number} options.progressPercent - Max percent of progress.
      * @param {string} options.cursor – Character to use for cursor, defaults to ▋.
      * @param {string} options.charBeforeInput – Character to use before the input prompts, defaults to $.
-     * @param {Object[]} lineData - Dynamically loaded line data objects.
      * @param {boolean} options.noInit - Don't initialise the animation.
      */
-    constructor(container = '.termynal', options = {}) {
+    constructor({container = '.termynal', options={}} = {}) {
         this.container = (typeof container === 'string') ? document.querySelector(container) : container;
-        this.pfx = `data-${options.prefix || 'ty'}`;
+        this.pfx = 'data-ty';
         this.originalStartDelay = this.startDelay = options.startDelay
-            || parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) || 600;
+            || parseFloat(this.container.getAttribute('startDelay')) || 600;
         this.originalTypeDelay = this.typeDelay = options.typeDelay
-            || parseFloat(this.container.getAttribute(`${this.pfx}-typeDelay`)) || 90;
+            || parseFloat(this.container.getAttribute('typeDelay')) || 90;
         this.originalLineDelay = this.lineDelay = options.lineDelay
-            || parseFloat(this.container.getAttribute(`${this.pfx}-lineDelay`)) || 1500;
+            || parseFloat(this.container.getAttribute('lineDelay')) || 1500;
         this.progressLength = options.progressLength
-            || parseFloat(this.container.getAttribute(`${this.pfx}-progressLength`)) || 40;
+            || parseFloat(this.container.getAttribute('progressLength')) || 40;
         this.progressChar = options.progressChar
-            || this.container.getAttribute(`${this.pfx}-progressChar`) || '█';
+            || this.container.getAttribute('progressChar') || '█';
 		this.progressPercent = options.progressPercent
-            || parseFloat(this.container.getAttribute(`${this.pfx}-progressPercent`)) || 100;
+            || parseFloat(this.container.getAttribute('progressPercent')) || 100;
         this.cursor = options.cursor
-            || this.container.getAttribute(`${this.pfx}-cursor`) || '▋';
+            || this.container.getAttribute('cursor') || '▋';
         this.charBeforeInput = options.charBeforeInput
-            || this.container.getAttribute(`${this.pfx}-charBeforeInput`) || '$';
-        this.lineData = this.lineDataToElements(options.lineData || []);
+            || this.container.getAttribute('charBeforeInput') || '$';
         this.loadLines()
         if (!options.noInit) this.init()
     }
@@ -61,7 +58,7 @@ class Termynal {
         this.container.appendChild(fastButton)
         this.insertCharBeforeInput();
         // Appends dynamically loaded lines to existing line elements.
-        this.lines = [...this.container.querySelectorAll(`[${this.pfx}]`)].concat(this.lineData);
+        this.lines = [...this.container.querySelectorAll(`[${this.pfx}]`)];
         for (let line of this.lines) {
             line.style.visibility = 'hidden'
             this.container.appendChild(line)
@@ -100,10 +97,10 @@ class Termynal {
 
         for (let line of this.lines) {
             const type = line.getAttribute(this.pfx);
-            const lineDelay = line.getAttribute(`${this.pfx}-delay`) || this.lineDelay;
+            const lineDelay = line.getAttribute('lineDelay') || this.lineDelay;
 
             if (type == 'input') {
-                line.setAttribute(`${this.pfx}-cursor`, this.cursor);
+                line.setAttribute('cursor', this.cursor);
                 await this.typeAnimation(line);
                 await this.sleep(lineDelay);
             }
@@ -119,7 +116,7 @@ class Termynal {
                 await this.sleep(lineDelay);
             }
 
-            line.removeAttribute(`${this.pfx}-cursor`);
+            line.removeAttribute('cursor');
         }
         this.fastElement.style.visibility = 'hidden'
         this.lineDelay = this.originalLineDelay
@@ -148,7 +145,7 @@ class Termynal {
             this.typeDelay = 0
             this.startDelay = 0
         }
-        fast.href = '#'
+        fast.href = ''
         fast.setAttribute('termynal-control-buttons', '')
         fast.innerHTML = "fast →"
         this.fastElement = fast
@@ -170,22 +167,26 @@ class Termynal {
      * @param {Node} line - The line element to render.
      */
     async typeAnimation(line) {
-        function removeAllText(element) {
+        function getAndRemoveAllText(element) {
             let textArray = [];
             // loop through all the nodes of the element
             for (let node of element.childNodes) {
-                if (node.nodeType == Node.ELEMENT_NODE && node.classList.contains("charBeforeInput")) {return};
+                if (node.nodeType == Node.ELEMENT_NODE && node.hasAttribute("charBeforeInput")) {
+                    textArray.push("");
+                    continue;
+                }
                 textArray.push(node.textContent);
                 node.textContent = "";
             }
             return textArray;
         }
         
-        const delay = line.getAttribute(`${this.pfx}-typeDelay`) || this.typeDelay;
-        let textArray = removeAllText(line);
+        const delay = line.getAttribute('typeDelay') || this.typeDelay;
+        let textArray = getAndRemoveAllText(line);
         this.container.appendChild(line);
         for (let i=0; i<line.childNodes.length; i++) {
             let node = line.childNodes[i];
+            if (node.nodeType == Node.ELEMENT_NODE && node.hasAttribute("charBeforeInput")) {continue};
             let text = textArray[i];
             for (let char of text) {
                 await this.sleep(delay)
@@ -199,12 +200,12 @@ class Termynal {
      * @param {Node} line - The line element to render.
      */
     async progress(line) {
-        const progressLength = line.getAttribute(`${this.pfx}-progressLength`)
+        const progressLength = line.getAttribute('progressLength')
             || this.progressLength;
-        const progressChar = line.getAttribute(`${this.pfx}-progressChar`)
+        const progressChar = line.getAttribute('progressChar')
             || this.progressChar;
         const chars = progressChar.repeat(progressLength);
-		const progressPercent = line.getAttribute(`${this.pfx}-progressPercent`)
+		const progressPercent = line.getAttribute('progressPercent')
 			|| this.progressPercent;
         line.textContent = '';
         this.container.appendChild(line);
@@ -227,45 +228,6 @@ class Termynal {
         return new Promise(resolve => setTimeout(resolve, time));
     }
 
-    /**
-     * Converts line data objects into line elements.
-     *
-     * @param {Object[]} lineData - Dynamically loaded lines.
-     * @param {Object} line - Line data object.
-     * @returns {Element[]} - Array of line elements.
-     */
-    lineDataToElements(lineData) {
-        return lineData.map(line => {
-            let div = document.createElement('div');
-            div.innerHTML = `<span ${this._attributes(line)}>${line.value || ''}</span>`;
-            return div.firstElementChild;
-        });
-    }
-
-    /**
-     * Helper function for generating attributes string.
-     *
-     * @param {Object} line - Line data object.
-     * @returns {string} - String of attributes.
-     */
-    _attributes(line) {
-        let attrs = '';
-        for (let prop in line) {
-            // Custom add class
-            if (prop === 'class') {
-                attrs += ` class=${line[prop]} `
-                continue
-            }
-            if (prop === 'type') {
-                attrs += `${this.pfx}="${line[prop]}" `
-            } else if (prop !== 'value') {
-                attrs += `${this.pfx}-${prop}="${line[prop]}" `
-            }
-        }
-
-        return attrs;
-    }
-
     insertCharBeforeInput(selector='[data-ty="input"]') {
         this.container.querySelectorAll(selector).forEach(node => {
             node.insertAdjacentHTML("afterbegin",`<span charBeforeInput>${this.charBeforeInput} </span>`)
@@ -275,7 +237,14 @@ class Termynal {
 
 function createNotInitialisedTermynals() {
     let termynals = [];
-    document.querySelectorAll('.termynal').forEach(termynal => termynals.push(new Termynal(termynal, {noInit:true})));
+    document.querySelectorAll('.termynal').forEach(termynal => termynals.push(
+        new Termynal({
+            container: termynal,
+            options: {
+                noInit:true,
+            }
+        })
+    ));
     return termynals
 }
 

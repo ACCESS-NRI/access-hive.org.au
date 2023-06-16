@@ -105,7 +105,7 @@ To copy an existing suite, on <i>accessdev</i>:
         Run <code>mosrs-auth</code> to authenticate using your MOSRS credentials (see 
         <a href="../access_cm2/getting-started/#met-office-science-repository-service-mosrs" target="_blank">Met Office Science Repository Service (MOSRS)</a> for troubleshooting):
         <br>
-        <div class="termynal">
+        <div class="termynal" charBeforeInput="$$$">
             <span data-ty="input">mosrs-auth</span>
             <span data-ty>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</span>
             <span data-ty="input" data-ty-delay="1500"></span>
@@ -234,7 +234,7 @@ To run an ACCESS-CM2 suite, on <i>accessdev</i>:
     </li>
     <div class="termynal">
         <span data-ty="input">cd ~/roses/&lt;suite-ID&gt;</span>
-        <span data-ty="input">rose suite-run</span>
+        <span data-ty="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-run</span>
         <span data-ty data-ty-delay="50">[INFO] export CYLC_VERSION=7.8.3</span>
         <span data-ty data-ty-delay="50">[INFO] export ROSE_ORIG_HOST=accessdev.nci.org.au</span>
         <span data-ty data-ty-delay="50">[INFO] export ROSE_SITE=</span>
@@ -323,22 +323,22 @@ To investigate the cause of a failure, we need to look at the logs (<code>job.er
         <br>
         <div class="termynal">
             <span data-ty="input">cd ~/cylc-run/&lt;suite-ID&gt;</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;">ls</span>
             <span data-ty class="double-spaced"><span class="directory-text">app</span> <span class="symlink-text">cylc-suite.db log</span> <span class="directory-text">log.20230530T051952Z meta</span> rose-suite.info <span class="directory-text">share</span> suite.rc suite.rc.processed <span class="directory-text">work</span></span>
-            <span data-ty="input">cd log</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;">cd log</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log">ls</span>
             <span data-ty class="double-spaced">db <span class="directory-text">job rose.conf</span> <span class="symlink-text">rose-suite-run.conf</span> rose-suite-run.locs rose-suite-run.log <span class="symlink-text">rose-suite-run.version</span> <span class="directory-text">suite suiterc</span></span>
-            <span data-ty="input">cd job</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log">cd job</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job">ls</span>
             <span data-ty class="directory-text double-spaced">09500101</span>
-            <span data-ty="input">cd 09500101</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job">cd 09500101</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">ls</span>
             <span data-ty class="directory-text double-spaced">coupled fcm_make2_um fcm_make_um install_warm make2_mom make_mom fcm_make2_drivers fcm_make_drivers install_ancil make2_cice make_cice</span>
-            <span data-ty="input">cd coupled</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">cd coupled</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/coupled">ls</span>
             <span data-ty class="double-spaced"><span class="directory-text">01 02 03</span> <span class="symlink-text">NN</span></span>
-            <span data-ty="input">cd NN</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">cd NN</span>
+            <span data-ty="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/NN">ls</span>
             <span data-ty class="double-spaced">job job-activity.log job.err job.out job.status</span>
         </div>
     </li>
@@ -372,7 +372,7 @@ To reopen the Cylc GUI there are 2 main ways:
     <span data-ty="input">cylc scan</span>
     <span data-ty>&lt;suite-ID&gt; &lt;$USER&gt;@accessdev.nci.org.au:&lt;port&gt;</span>
     <span data-ty="input">cd ~/roses/&lt;suite-ID&gt;</span>
-    <span data-ty="input">rose suite-gcontrol</span>
+    <span data-ty="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</span>
     <span data-ty style="color: red">TO DO --> Add Rose GUI image </span>
 </div>
 </div>
@@ -394,7 +394,7 @@ There are two main ways to restart a suite:
         <div class="termynal">
             <span data-ty="input">cylc</span>
             <span data-ty="input">cd ~/roses/&lt;suite-ID&gt;</span>
-            <span data-ty="input">rose suite-run --restart</span>
+            <span data-ty="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-run --restart</span>
             <span data-ty data-ty-delay="50">[INFO] export CYLC_VERSION=7.8.3</span>
             <span data-ty data-ty-delay="50">[INFO] export ROSE_ORIG_HOST=accessdev.nci.org.au</span>
             <span data-ty data-ty-delay="50">[INFO] export ROSE_SITE=</span>
@@ -477,12 +477,12 @@ This directory contains 2 subdirectories:
         <br>
         <div class="termynal">
             <span data-ty="input">cd /scratch/&lt;$PROJECT&gt;/&lt;USER&gt;/archive</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;USER&gt;/archive">ls</span>
             <span data-ty class="double-spaced directory-text">br565 &lt;suite-name&gt; &lt;other-suite-name&gt;</span>
-            <span data-ty="input">cd br565</span>
-            <span data-ty="input">ls</span>
+            <span data-ty="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;USER&gt;/archive">cd br565</span>
+            <span data-ty="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;USER&gt;/archive/br565">ls</span>
             <span data-ty class="double-spaced directory-text">history restart</span>
-            <span data-ty="input">ls history/atm</span>
+            <span data-ty="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;USER&gt;/archive/br565">ls history/atm</span>
             <span data-ty class="double-spaced">br565a.pd0950apr.nc br565a.pd0950aug.nc br565a.pd0950dec.nc br565a.pd0950feb.nc br565a.pd0950jan.nc br565a.pd0950jul.nc br565a.pd0950jun.nc br565a.pd0950mar.nc br565a.pd0950may.nc br565a.pd0950nov.nc br565a.pd0950oct.nc br565a.pd0950sep.nc br565a.pd0951apr.nc br565a.pd0951aug.nc br565a.pd0951dec.nc br565a.pm0950apr.nc br565a.pm0950aug.nc br565a.pm0950dec.nc br565a.pm0950feb.nc br565a.pm0950jan.nc br565a.pm0950jul.nc br565a.pm0950jun.nc br565a.pm0950mar.nc br565a.pm0950may.nc br565a.pm0950nov.nc br565a.pm0950oct.nc br565a.pm0950sep.nc br565a.pm0951apr.nc br565a.pm0951aug.nc br565a.pm0951dec.nc <span class="directory-text">netCDF</span></span>
         </div>
         <!-- <br>
