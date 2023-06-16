@@ -21,65 +21,6 @@
 
 ## Navigating ACCESS-Hive
 
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children">
-        <a href="model_components/atmosphere/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Models</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
-        <a href="model_components/land/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Run a Model</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children">
-        <a href="model_components/ocean/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Model Evalutation</div></div>
-        </a>
-    </div>
-</div>
-
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children" style="width: 33%; margin-right: 1em;">
-        <a href="model_components/sea-ice/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Community Resources</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="width: 33%;"> 
-        <a href="model_components/aerosols_atmospheric_chemistry/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Community Forum</div></div>
-        </a>
-    </div>
-    <!-- <div class="wrapper-children">
-        <a href="model_components/aerosols_atmospheric_chemistry/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Atmospheric Chemistry</div></div>
-        </a>
-    </div> -->
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- --------------------------------------------------- -->
 <!-- 1st implementation -->
 <div>
@@ -87,15 +28,14 @@
         <!-- TODO change href links for these cards -->
         <a href="models/">
             <div class="wrapper-div-config">
-                <div class="wrapper-img-config">
-                    <img src="../assets/ACCESS-MODEL.png"></img> 
-                </div>
                 <div class="wrapper-text-config">
-                    <b><span class="highlight-bg">MODELS</span></b><br><br>
+                    <b><div style="display: flex; align-items: center;"><div class="highlight-blue-bg" style="margin-top: 1em;">
+                        MODELS
+                    </div></div></b><br>
                     ACCESS is a family of related computer models or <em>components</em> that represent different parts of the Earth-System. ACCESS links various model components through software called <b>couplers</b> to form different <b>model configurations</b>. 
                 </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
+                <div class="wrapper-img-config">
+                    <img src="../assets/ACCESS-MODEL.png"></img> 
                 </div>
             </div>
         </a>
@@ -103,16 +43,14 @@
     <div>
         <a href="models/running-a-model">
             <div class="wrapper-div-config">
-                <!-- TODO change href links for these cards -->
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">RUN A MODEL</span>
+                    </div></b><br>
+                    Step-by-step guides for running different <b>model configurations</b>.  
+                </div>
                 <div class="wrapper-img-config">
                     <img src="assets/get_started_example.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b><span class="highlight-bg">RUN A MODEL</span></b><br><br>
-                    Step-by-step guides for running different <b>model configurations</b>.  
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
                 </div>
             </div>
         </a>
@@ -120,16 +58,14 @@
     <div>
         <a href="model_evaluation/">
             <div class="wrapper-div-config">
-                <!-- TODO change href links for these cards -->
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">MODEL EVALUATION</span>
+                    </div></b><br>
+                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                </div>
                 <div class="wrapper-img-config">
                     <img src="assets/resources_example.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b><span class="highlight-bg">MODEL EVALUATION</span></b><br><br>
-                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
                 </div>
             </div>
         </a>
@@ -137,16 +73,14 @@
         <div>
         <a href="community_resources/">
             <div class="wrapper-div-config">
-                <!-- TODO change href links for these cards -->
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">COMMUNITY RESOURCES</span>
+                    </div></b><br>
+                    The ACCESS-NRI Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                </div>
                 <div class="wrapper-img-config">
                     <img src="assets/resources_example.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b><span class="highlight-bg">COMMUNITY RESOURCES</span></b><br><br>
-                    The ACCESS-NRI Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
                 </div>
             </div>
         </a>
@@ -154,16 +88,14 @@
     <div>
         <a href="https://forum.access-hive.org.au/" target="_blank">
             <div class="wrapper-div-config">
-                <!-- TODO change href links for these cards -->
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">COMMUNITY FORUM</span>
+                    </div></b><br>
+                    <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
+                </div>
                 <div class="wrapper-img-config">
                     <img src="assets/forum_screenshot.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b><span class="highlight-blue-bg">HIVE COMMUNITY FORUM</span></b><br><br>
-                    <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
                 </div>
             </div>
         </a>
