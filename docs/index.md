@@ -20,6 +20,68 @@
 </table>
 
 ## Navigating ACCESS-Hive
+
+<div class="wrapper-div">
+    <!-- TODO change href links for these cards -->
+    <div class="wrapper-children">
+        <a href="model_components/atmosphere/">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" style="width: 70%;"></img> 
+            <div class="white-links"><div class="logo_cell_text">Models</div></div>
+        </a>
+    </div>
+    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
+        <a href="model_components/land/">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" style="width: 70%;"></img> 
+            <div class="white-links"><div class="logo_cell_text">Run a Model</div></div>
+        </a>
+    </div>
+    <div class="wrapper-children">
+        <a href="model_components/ocean/">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" style="width: 70%;"></img> 
+            <div class="white-links"><div class="logo_cell_text">Model Evalutation</div></div>
+        </a>
+    </div>
+</div>
+
+<div class="wrapper-div">
+    <!-- TODO change href links for these cards -->
+    <div class="wrapper-children" style="width: 33%; margin-right: 1em;">
+        <a href="model_components/sea-ice/">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" style="width: 70%;"></img> 
+            <div class="white-links"><div class="logo_cell_text">Community Resources</div></div>
+        </a>
+    </div>
+    <div class="wrapper-children" style="width: 33%;"> 
+        <a href="model_components/aerosols_atmospheric_chemistry/">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" style="width: 70%;"></img> 
+            <div class="white-links"><div class="logo_cell_text">Community Forum</div></div>
+        </a>
+    </div>
+    <!-- <div class="wrapper-children">
+        <a href="model_components/aerosols_atmospheric_chemistry/">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" style="width: 70%;"></img> 
+            <div class="white-links"><div class="logo_cell_text">Atmospheric Chemistry</div></div>
+        </a>
+    </div> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------- -->
+<!-- 1st implementation -->
 <div>
     <div>
         <!-- TODO change href links for these cards -->
@@ -81,7 +143,7 @@
                 </div>
                 <div class="wrapper-text-config">
                     <b><span class="highlight-bg">COMMUNITY RESOURCES</span></b><br><br>
-                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                    The ACCESS-NRI Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
                 </div><br>
                 <div class="arrow-align">
                     <i class="material-icons">arrow_right_alt</i>
@@ -90,15 +152,15 @@
         </a>
     </div>
     <div>
-        <a href="community_resources/">
+        <a href="https://forum.access-hive.org.au/" target="_blank">
             <div class="wrapper-div-config">
                 <!-- TODO change href links for these cards -->
                 <div class="wrapper-img-config">
                     <img src="assets/forum_screenshot.png"></img> 
                 </div>
                 <div class="wrapper-text-config">
-                    <b><span class="highlight-bg">COMMUNITY RESOURCES</span></b><br><br>
-                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                    <b><span class="highlight-blue-bg">HIVE COMMUNITY FORUM</span></b><br><br>
+                    <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
                 </div><br>
                 <div class="arrow-align">
                     <i class="material-icons">arrow_right_alt</i>

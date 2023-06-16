@@ -258,6 +258,17 @@ ACCESS gold */
   border-radius: 0.1em;
 }
 
+.highlight-blue-bg {
+  background-color: #074473;
+  color: white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  width: fit-content;
+  border-radius: 7px;
+}
+
 /* ACCESS model components in /models tab */
 .wrapper-div {
   margin-top: 1em;
