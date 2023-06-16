@@ -11,4 +11,3 @@ Detailed guides for the different Model configurations can then be found on the 
 -  [Run ACCESS-CM](./running-access-cm.md) for the ACCESS Coupled Model configurations  
 -  [Run ACCESS-AM](./running-access-am.md) for the ACCESS Atmosphere Model configurations  
 -  [Run ACCESS-OM](./running-access-om.md) for the ACCESS Ocean Model configurations  
--  [Run ACCESS-S](./running-access-s.md) for the ACCESS Seasonal configuration  
