@@ -36,7 +36,7 @@
 <tr>
 <td width="60%">
 <br>
-    <div align='center' width="90%" ><a href="https://access-hive.org.au/training"><img align="center" width="80%" src="./assets/button_get_started.png"></img></a>
+    <div align='center' width="90%" ><a href="https://access-hive.org.au/training"><img align="center" width="80%" src="./assets/button_run_a_model.png"></img></a>
 <br>
 <font size="4%"> ... will provide step-by-step guides to get access to our models and data and start running your own ones with the help of our tutortials.</font>
 <br><br>
@@ -48,9 +48,9 @@
 <tr>
 <td width="60%">
 <br>
-    <div align='center' width="90%" ><a href="https://access-hive.org.au/resources/data/"><img align="center" width="80%" src="./assets/button_resources.png"></img></a>
+    <div align='center' width="90%" ><a href="https://access-hive.org.au/resources/data/"><img align="center" width="80%" src="./assets/button_model_evaluation.png"></img></a>
 <br>
-<font size="4%"> ... will provide you external links for more details on the useful content that is not currated by ACCESS.</font>
+<font size="4%"> ... will provide you information on how to access and evaluate observational and model data.</font>
 <br><br>
 </td>
 <td>
@@ -60,7 +60,20 @@
 <tr>
 <td width="60%">
 <br>
-    <div align='center' width="90%" ><a href="https://forum.access-hive.org.au"><img align="center" width="80%" src="./assets/button_forum.png"></img></a>
+    <div align='center' width="90%" ><a href="https://access-hive.org.au/resources/data/"><img align="center" width="80%" src="./assets/button_community_resources.png"></img></a>
+<br>
+<font size="4%"> ... will provide you external links for more details on the useful content that is not currated by ACCESS.</font>
+<br><br>
+</td>
+<td>
+    <img align="right" width="90%" src="assets/resources_example.png">
+</td>
+</tr>
+<tr>
+<tr>
+<td width="60%">
+<br>
+    <div align='center' width="90%" ><a href="https://forum.access-hive.org.au"><img align="center" width="80%" src="./assets/button_community_forum.png"></img></a>
 <br>
 <font size="4%"> ... will take to our ACCESS-HIVE Community Forum, where you can get in direct exchange with members of our community.</font>
 <br><br>

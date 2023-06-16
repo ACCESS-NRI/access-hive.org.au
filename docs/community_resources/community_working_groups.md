@@ -9,7 +9,7 @@ The working group activities are coordinated through the [ACCESS Hive Community 
 <td width="33%">
     <a href="https://forum.access-hive.org.au/c/atmosphere/working-group/41">
         <div align='center' width="100%" >
-            <img align="center" width="60%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
+            <img align="center" width="60%" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" />
         </div>
         <div align='center' width="100%" >
             Atmospheric Modelling
@@ -19,7 +19,7 @@ The working group activities are coordinated through the [ACCESS Hive Community 
 <td width="33%">
     <a href="https://forum.access-hive.org.au/c/land/working-group/47">
         <div align='center' width="100%" >
-            <img align="center" width="60%" src="../../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" />
+            <img align="center" width="60%" src="../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" />
         </div>
         <div align='center' width="100%" >
             Land Surface Modelling
@@ -51,7 +51,7 @@ The working group activities are coordinated through the [ACCESS Hive Community 
 <td width="33%">
     <a href="https://forum.access-hive.org.au/c/esm/esm-working-group/43">
         <div align='center' width="100%" >
-            <img align="center" width="60%" src="../../assets/component-logos/ACCESS icon COUPLER (Title).png"/>
+            <img align="center" width="60%" src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png"/>
         </div>
         <div align='center' width="100%" >
             Earth System Modelling

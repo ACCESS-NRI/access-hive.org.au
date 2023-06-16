@@ -88,7 +88,6 @@ nav:
     - Contact: about/contact.md
     - Support: about/support.md
     - Code of conduct: about/code_of_conduct.md
-    - Glossary: about/glossary.md
     - Policies: about/policies.md
     - License: about/License.md
 
@@ -111,29 +110,48 @@ nav:
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-AM: models/configurations/access-am.md
       - ACCESS-OM: models/configurations/access-om.md
-      - ACCESS-S: models/configurations/access-s.md
 
   - Run a Model: 
-    - Getting Started: models/running-a-model.md
+    - models/running-a-model/index.md
+    # If we add an additional subsection
+    # - Getting Started: 
+    #   - models/running-a-model/getting_started/index.md
+    #   - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
+    - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
     - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
     - Run ACCESS-CM: models/running-a-model/running-access-cm.md
     - Run ACCESS-AM: models/running-a-model/running-access-am.md
-    - Run ACCESS-OM2: models/running-a-model/running-access-om.md
-    - Run ACCESS-S: models/running-a-model/running-access-s.md
+    - Run ACCESS-OM: models/running-a-model/running-access-om.md
 
   - Model Evaluation:
     - model_evaluation/index.md
+    - Getting Started: 
+      - model_evaluation/model_evaluation_getting_started/index.md
+      - Access to Gadi@NCI: model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
+      - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
     - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
     - Model Data Catalog:
       - model_evaluation/model_evaluation_model_catalogs/index.md
       - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
       - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
     - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Model Evaluation on Gadi: 
+      - model_evaluation/model_evaluation_on_gadi/index.md
+      - ilamb: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
+      - esmvalltool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
     - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
     - community_resources/index.md
     - Community Working Groups: community_resources/community_working_groups.md
+    - Community Glossaries:
+      - community_resources/glossaries/index.md
+      - ACCESS-NRI: community_resources/glossaries/glossary_access_nri.md
+      - IPCC: community_resources/glossaries/glossary_ipcc.md
+      - CSSR: community_resources/glossaries/glossary_cssr.md
+      - CMIP(6): community_resources/glossaries/glossary_cmip.md
+      - ERA(5): community_resources/glossaries/glossary_era.md
+      - UM: community_resources/glossaries/glossary_um.md
     - Community Training: 
       - Training: community_resources/training/index.md
       - Git Version Control: community_resources/training/git-version-control.md
@@ -144,6 +162,7 @@ nav:
     - Community Events:
        - community_resources/events/index.md
        - Add Event: community_resources/events/add_event.md
+    - Community Observational Catalogs: community_resources/community_observational_catalogs.md
     - Community Model Catalogs: community_resources/community_model_catalogs.md
     - Community Data Formatting: community_resources/community_data_processing.md
     - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
@@ -176,19 +195,34 @@ extra:
   analytics:
     provider: google
     property: G-2T6SQEH2CX
+
+  # Original implementation
   # supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
   # recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
   # community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
-  supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
-  recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
-  community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
+
+  # Octicons experimental 
+  # supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
+  # recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
+  # community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
+
+  # Material icons experimental
+  # supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">check_circle_outlined</i></a>'
+  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">star</i></a>'
+  # community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">favorite</i></a>'
+
+  # Fontawesome icons
+  supported: '<a href="https://access-hive.org.au/about/support"><span class="icon-supported center-icons"><i class="fa fa-check" title="Supported by ACCESS-NRI"></i></span></a>'
+  recommended: '<a href="https://access-hive.org.au/about/support"><span class="icon-recommended center-icons"><i class="fa fa-star" title="Recommended by ACCESS-NRI"></i></span></a>'
+  community: '<a href="https://access-hive.org.au/about/support"><span class="heart center-icons"><i class="heart fa fa-heart" title="Community Contributed"></i></span></a>'
 
 extra_css:
   - css/custom.css
   - css/access-nri.css
   - css/fontello.css
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
-  - css/termynal.css
+  - css/fontawesome-free-6.4.0-web/css/fontawesome.css
+  - css/fontawesome-free-6.4.0-web/css/solid.css
 
 extra_javascript:
   - js/termynal.js

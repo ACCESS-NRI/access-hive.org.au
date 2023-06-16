@@ -8,7 +8,7 @@ The premise of this ACCESS-NRI intake Catalog is to provide a ("meta") catalog o
 <table class="center">
     <tr>
         <td width = "49%">
-        <a href='.model_evaluation_search_models.md'><h3>Search for a model in the ACCESS-NRI intake Catalog {{ supported }}</h3></a>
+        <a href='.model_evaluation_search_models.md'><h3>Search for a model in the ACCESS-NRI intake Catalog</h3></a>
         </td>
         <td width = "49%">
         <a href=".model_evaluation_add_models.md"><h3>Add your model data to the ACCESS-NRI intake Catalog</h3></a>
