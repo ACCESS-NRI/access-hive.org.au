@@ -20,9 +20,6 @@
 </table>
 
 ## Navigating ACCESS-Hive
-
-<!-- --------------------------------------------------- -->
-<!-- 1st implementation -->
 <div>
     <div>
         <a href="models/">
