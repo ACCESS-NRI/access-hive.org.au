@@ -32,7 +32,7 @@
                     <b>
                         <div style="text-align: center; margin-top: 1em;">
                             <span class="highlight-blue-bg">
-                                MODELS
+                                Models
                             </span>
                         </div>
                     </b>
@@ -50,7 +50,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">RUN A MODEL</span>
+                        <span class="highlight-blue-bg">Run a Model</span>
                     </div></b><br>
                     A step-by-step guides for running different <b>model configurations</b>.  
                 </div>
@@ -65,7 +65,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">MODEL EVALUATION</span>
+                        <span class="highlight-blue-bg">Model Evaluation</span>
                     </div></b><br>
                     The ACCESS-NRI Model Evaluation (MED) section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
                 </div>
@@ -80,7 +80,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">COMMUNITY RESOURCES</span>
+                        <span class="highlight-blue-bg">Community Resources</span>
                     </div></b><br>
                     The ACCESS-NRI Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
                 </div>
@@ -95,7 +95,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">COMMUNITY FORUM</span>
+                        <span class="highlight-blue-bg">Community Forum</span>
                     </div></b><br>
                     <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
                 </div>
