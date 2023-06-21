@@ -31,9 +31,9 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon OCEAN (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon SEA ICE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon OCEAN (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon SEA ICE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -49,13 +49,13 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="http://cosima.org.au/">COSIMA Cookbook / Recipes {{ recommended }}<br>((Consortium for Ocean-Sea Ice Modelling in Australia))</a>
+    <a href="http://cosima.org.au/">COSIMA Cookbook / Recipes {{ recommended }}<br>(Consortium for Ocean-Sea Ice Modelling in Australia)</a>
     </div>
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon OCEAN (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon SEA ICE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon OCEAN (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon SEA ICE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -83,7 +83,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon LAND SURFACE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -104,7 +104,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon BGC OCEAN (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon BGC OCEAN (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -127,13 +127,13 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
     </div>
 </td>
 <td width="64%">
     <div align='center' width="100%" >
         <a href="https://dtcenter.org/community-code/metplus/online-tutorial">Tutorial</a> |
-        <a href="https://journals.ametsoc.org/view/journals/bams/102/4/BAMS-D-19-0093.1.xml">Paper: @Brown2021-bams </a>
+        <a href="https://journals.ametsoc.org/view/journals/bams/102/4/BAMS-D-19-0093.1.xml">Paper</a>
         <!-- METplus is a verification framework that spans a wide range of temporal (warn-on-forecast to climate) and spatial (storm to global) scales.  It is intended to be extensible through additional capability developed by the community. The core components of the framework include MET, the associated database and display systems called METviewer and METexpress, and a suite of Python wrappers to provide low-level automation and examples, also called use-cases.  METplus will be a component of NOAA's Unified Forecast System (UFS) cross-cutting infrastructure as well as NCAR's System for Integrated Modeling of the Atmosphere (SIMA).
         METplus is being actively developed by NCAR/Research Applications Laboratory (RAL), NOAA/Earth Systems Research Laboratories (ESRL), NOAA/Environmental Modeling Center (EMC), and is open to community contributions.
         ### METplus Components  {{ recommended }}
@@ -171,7 +171,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -191,11 +191,11 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon LAND SURFACE (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon BGC OCEAN (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon OCEAN (Title).png" />
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon SEA ICE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon LAND SURFACE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon BGC OCEAN (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon OCEAN (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon SEA ICE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -203,7 +203,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
         <a href="https://climpred.readthedocs.io/en/stable/index.html">Documentation</a> |
         <a href="https://climpred.readthedocs.io/en/stable/setting-up-data.html">Tutorial</a> |
         <a href="https://github.com/pangeo-data/climpred">Source Code</a> |
-        <a href="https://joss.theoj.org/papers/10.21105/joss.02781">Paper: @Brady2021-joss </a>
+        <a href="https://joss.theoj.org/papers/10.21105/joss.02781">Paper</a>
         <!-- Climpred aims to offer a comprehensive set of analysis tools for assessing the quality of dynamical forecasts relative to verification products (e.g., observations, reanalysis products, control simulations). Climpred supports a broad range of temporal scales of prediction, spanning the weather, subseasonal-to-seasonal (S2S), and seasonal-to-decadal (S2D) communities. -->
     </div>
 </td>
@@ -217,7 +217,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -240,7 +240,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -261,7 +261,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 <td width="10%">
     <div align='center' width="100%" >
-        <img align="center" width="45%" src="../../assets/component-logos/ACCESS icon ATMOSPHERE (Title).png" />
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
     </div>
 </td>
 <td width="64%">
@@ -269,9 +269,30 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
         <a href="https://monet-arl.readthedocs.io/en/stable/#">Documentation</a> |
         <a href="https://monet-arl.readthedocs.io/en/stable/tutorial.html">Tutorial</a> |
         <a href="https://github.com/noaa-oar-arl/monet">Source Code</a> |
-        <a href="https://www.mdpi.com/2073-4433/8/11/210">Paper: @Baker2017-atmos </a>
+        <a href="https://www.mdpi.com/2073-4433/8/11/210">Paper</a>
         <!-- MONET is an open source project and Python package that aims to create a common platform for atmospheric composition data analysis for weather and air quality models.
         MONET was developed to evaluate the Community Multiscale Air Quality Model (CMAQ) for the NOAA National Air Quality Forecast Capability (NAQFC) modeling system. MONET is designed to be a modularized Python package for (1) pairing model output to observational data in space and time; (2) leveraging the Pandas Python package for easy searching and grouping; and (3) analyzing and visualizing data. This process introduces a convenient method for evaluating model output. -->
+    </div>
+</td>
+</tr>
+
+<tr>
+<td width="25%">
+    <div align='center' width="100%">
+    <a href="https://metoffice.github.io/CSET/index.html">CSET {{ community }}<br>(Convective Scale Evaluation Tool )</a>
+    </div>
+</td>
+<td width="10%">
+    <!-- <div align='center' width="100%" >
+        <img align="center" width="45%" src="../../assets/component-logos/components-with-titles/ACCESS icon ATMOSPHERE (Title).png" />
+    </div> -->
+</td>
+<td width="64%">
+    <div align='center' width="100%" >
+        <a href="https://metoffice.github.io/CSET/index.html">Documentation</a> |
+        <a href="https://metoffice.github.io/CSET/working-practices/index.html#">Tutorial</a> |
+        <a href="https://metoffice.github.io/CSET/">Source Code</a> |
+        <!-- CSET is a tool to aid in verifying and evaluating convective-scale and turbulence-scale (regional and increasingly global) model configurations. It aims to replace the RMED RES and Toolbox and the collection of bespoke scripts littering people's home directories, reducing effort wasted on duplicating already existing code. This centralisation of diagnostics should also make evaluations more consistent, reproducible and comparable. -->
     </div>
 </td>
 </tr>
