@@ -376,7 +376,7 @@ ACCESS gold */
 }
 
 .wrapper-div-config:hover .highlight-blue-bg {
-  box-shadow: 2px 2px 2px #0000009b;
+  box-shadow: 3px 3px 3px #1e1e1e9b;
   transition-duration: 0.4s;
 }
 

@@ -37,7 +37,7 @@
                         </div>
                     </b>
                     <br>
-                    ACCESS is a family of related computer models or <em>components</em> that represent different parts of the Earth-System. ACCESS links various model components through software called <b>couplers</b> to form different <b>model configurations</b>. 
+                    ACCESS is a family of related computer <b>models</b> or <b>components</b> that represent different parts of the Earth-System. ACCESS links various <b>model components</b> through software called <b>couplers</b> to form different <b>model configurations</b>. 
                 </div><br>
                 <div class="wrapper-img-config">
                     <img src="../assets/ACCESS-MODEL.png"></img> 
@@ -67,7 +67,7 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">MODEL EVALUATION</span>
                     </div></b><br>
-                    The ACCESS-NRi Model Evaluation (MED) team will provide guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                    The ACCESS-NRI Model Evaluation (MED) section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
                 </div>
                 <div class="wrapper-img-config">
                     <img src="assets/resources_example.png"></img> 
