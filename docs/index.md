@@ -29,9 +29,14 @@
         <a href="models/">
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
-                    <b><div style="display: flex; align-items: center;"><div class="highlight-blue-bg" style="margin-top: 1em;">
-                        MODELS
-                    </div></div></b><br>
+                    <b>
+                        <div style="text-align: center; margin-top: 1em;">
+                            <span class="highlight-blue-bg">
+                                MODELS
+                            </span>
+                        </div>
+                    </b>
+                    <br>
                     ACCESS is a family of related computer models or <em>components</em> that represent different parts of the Earth-System. ACCESS links various model components through software called <b>couplers</b> to form different <b>model configurations</b>. 
                 </div><br>
                 <div class="wrapper-img-config">
@@ -47,7 +52,7 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">RUN A MODEL</span>
                     </div></b><br>
-                    Step-by-step guides for running different <b>model configurations</b>.  
+                    A step-by-step guides for running different <b>model configurations</b>.  
                 </div>
                 <div class="wrapper-img-config">
                     <img src="assets/get_started_example.png"></img> 
