@@ -80,7 +80,7 @@ software called **couplers** to form different Model Configurations.
     <div>
         <!-- TODO change href links for these cards -->
         <a href="configurations/access-om/">
-            <div class="wrapper-div-config">
+            <div class="wrapper-div-config" style="height: 18em;">
                 <div class="wrapper-img-config">
                     <img src="../assets/model-config-logos/access-om2-config.png"></img> 
                 </div>
@@ -96,7 +96,7 @@ software called **couplers** to form different Model Configurations.
     </div>
     <div>
         <a href="configurations/access-cm/">
-            <div class="wrapper-div-config">
+            <div class="wrapper-div-config" style="height: 18em;">
                 <!-- TODO change href links for these cards -->
                 <div class="wrapper-img-config">
                     <img src="../assets/model-config-logos/access-cm2-config-4.png"></img> 
@@ -113,7 +113,7 @@ software called **couplers** to form different Model Configurations.
     </div>
     <div>
         <a href="configurations/access-esm/">
-            <div class="wrapper-div-config">
+            <div class="wrapper-div-config" style="height: 18em;">
                 <!-- TODO change href links for these cards -->
                 <div class="wrapper-img-config">
                     <img src="../assets/model-config-logos/access-esm-config.png"></img> 
