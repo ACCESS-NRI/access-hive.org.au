@@ -258,6 +258,19 @@ ACCESS gold */
   border-radius: 0.1em;
 }
 
+.highlight-blue-bg {
+  background-color: #074473;
+  color: white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  width: 60%;
+  border-radius: 7px;
+  font-size: large;
+  text-align: center;
+}
+
 /* ACCESS model components in /models tab */
 .wrapper-div {
   margin-top: 1em;
@@ -317,6 +330,7 @@ ACCESS gold */
   border-radius: 7px;
   border-color: #5f626a;
   box-shadow: 5px 8px 10px #1b1b1b;
+  min-height: 15em;
 }
 
 .wrapper-div-config:hover {
@@ -330,7 +344,11 @@ ACCESS gold */
   display: inline-block;
   width: 40%;
   border-radius: 7px;
+  /* padding-top: 1%; */
   /* aspect-ratio: 1 / 1; */
+  display: flex;
+  align-items: center;
+  object-fit: cover;
 }
 
 /* .img-config {
@@ -356,6 +374,11 @@ ACCESS gold */
 
 .wrapper-div-config:hover .arrow-align {
   color: #F9A61C;
+}
+
+.wrapper-div-config:hover .highlight-blue-bg {
+  box-shadow: 3px 3px 3px #1e1e1e9b;
+  transition-duration: 0.4s;
 }
 
 .arrow-align:hover {

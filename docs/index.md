@@ -20,71 +20,88 @@
 </table>
 
 ## Navigating ACCESS-Hive
-
-<table>
-<tr>
-<td width="60%">
-    <div align='center' width="90%" ><a href="https://access-hive.org.au/model_components/"><img align="center" width="80%" src="./assets/button_models.png"></img></a>
-<br>
-<font size="4%"> ... will help you to get an overview of what ACCESS is all about and how our working groups contribute to models for climate and earth system simulations.</font>
-<br><br>
-</td>
-<td>
-    <img align="right" width="90%" src="assets/ACCESS-MODEL.png">
-</td>
-</tr>
-<tr>
-<td width="60%">
-<br>
-    <div align='center' width="90%" ><a href="https://access-hive.org.au/training"><img align="center" width="80%" src="./assets/button_run_a_model.png"></img></a>
-<br>
-<font size="4%"> ... will provide step-by-step guides to get access to our models and data and start running your own ones with the help of our tutortials.</font>
-<br><br>
-</td>
-<td>
-    <img align="right" width="90%" src="assets/get_started_example.png">
-</td>
-</tr>
-<tr>
-<td width="60%">
-<br>
-    <div align='center' width="90%" ><a href="https://access-hive.org.au/resources/data/"><img align="center" width="80%" src="./assets/button_model_evaluation.png"></img></a>
-<br>
-<font size="4%"> ... will provide you information on how to access and evaluate observational and model data.</font>
-<br><br>
-</td>
-<td>
-    <img align="right" width="90%" src="assets/resources_example.png">
-</td>
-</tr>
-<tr>
-<td width="60%">
-<br>
-    <div align='center' width="90%" ><a href="https://access-hive.org.au/resources/data/"><img align="center" width="80%" src="./assets/button_community_resources.png"></img></a>
-<br>
-<font size="4%"> ... will provide you external links for more details on the useful content that is not currated by ACCESS.</font>
-<br><br>
-</td>
-<td>
-    <img align="right" width="90%" src="assets/resources_example.png">
-</td>
-</tr>
-<tr>
-<tr>
-<td width="60%">
-<br>
-    <div align='center' width="90%" ><a href="https://forum.access-hive.org.au"><img align="center" width="80%" src="./assets/button_community_forum.png"></img></a>
-<br>
-<font size="4%"> ... will take to our ACCESS-HIVE Community Forum, where you can get in direct exchange with members of our community.</font>
-<br><br>
-</td>
-<td>
-    <img align="right" width="90%" src="assets/forum_screenshot.png">
-</td>
-</tr><td></td><td></td>
-<tr>
-</tr>
-</table>
+<div>
+    <div>
+        <a href="models/">
+            <div class="wrapper-div-config">
+                <div class="wrapper-text-config">
+                    <b>
+                        <div style="text-align: center; margin-top: 1em;">
+                            <span class="highlight-blue-bg">
+                                Models
+                            </span>
+                        </div>
+                    </b>
+                    <br>
+                    ACCESS is a family of related computer <b>models</b> or <b>components</b> that represent different parts of the Earth-System. ACCESS links various <b>model components</b> through software called <b>couplers</b> to form different <b>model configurations</b>. 
+                </div><br>
+                <div class="wrapper-img-config">
+                    <img src="../assets/ACCESS-MODEL.png"></img> 
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="models/running-a-model">
+            <div class="wrapper-div-config">
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">Run a Model</span>
+                    </div></b><br>
+                    A step-by-step guides for running different <b>model configurations</b>.  
+                </div>
+                <div class="wrapper-img-config">
+                    <img src="assets/get_started_example.png"></img> 
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="model_evaluation/">
+            <div class="wrapper-div-config">
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">Model Evaluation</span>
+                    </div></b><br>
+                    The ACCESS-NRI Model Evaluation (MED) section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                </div>
+                <div class="wrapper-img-config">
+                    <img src="assets/resources_example.png"></img> 
+                </div>
+            </div>
+        </a>
+    </div>
+        <div>
+        <a href="community_resources/">
+            <div class="wrapper-div-config">
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">Community Resources</span>
+                    </div></b><br>
+                    Other important resources contributed by the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
+                </div>
+                <div class="wrapper-img-config">
+                    <img src="assets/community-forum-homepage.png"></img> 
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="https://forum.access-hive.org.au/" target="_blank">
+            <div class="wrapper-div-config">
+                <div class="wrapper-text-config">
+                    <b><div style="text-align: center; margin-top: 1em;">
+                        <span class="highlight-blue-bg">Community Forum</span>
+                    </div></b><br>
+                    <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
+                </div>
+                <div class="wrapper-img-config">
+                    <img src="assets/forum_screenshot.png"></img> 
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
 
 ## About
 {% include "call_contribute.md" %}
