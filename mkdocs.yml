@@ -166,7 +166,7 @@ nav:
     - Community Model Catalogs: community_resources/community_model_catalogs.md
     - Community Data Formatting: community_resources/community_data_processing.md
     - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
-    - Contribute: 
+    - Contribute to ACCESS-Hive: 
       - Contribute: contribute/index.md
       - Edit on Github: contribute/edit-on-github.md
       - Edit Locally: contribute/edit-locally.md
