@@ -78,23 +78,6 @@ software called **couplers** to form different Model Configurations.
 ## ACCESS Model Configurations
 <div>
     <div>
-        <!-- TODO change href links for these cards -->
-        <a href="configurations/access-om/">
-            <div class="wrapper-div-config" style="height: 18em;">
-                <div class="wrapper-img-config">
-                    <img src="../assets/model-config-logos/access-om2-config.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b>ACCESS-OM2 configuration</b><br><br>
-                    ACCESS-OM2 is the ocean and sea-ice component of the ACCESS coupled model. ACCESS-OM2 provides the Australian climate community with ocean weather and climate research, including seasonal forecasting, climate variability studies, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry modelling.
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
         <a href="configurations/access-cm/">
             <div class="wrapper-div-config" style="height: 18em;">
                 <!-- TODO change href links for these cards -->
@@ -121,6 +104,22 @@ software called **couplers** to form different Model Configurations.
                 <div class="wrapper-text-config">
                     <b>ACCESS-ESM 1.5 configuration</b><br><br>
                     An ESM (Earth System Model) simulates the carbon and other bio-chemical cycles alonside climate. ACCESS-ESM 1.5 is one of the two ACCESS global coupled model versions. It includes land and ocean biogeochemistry.
+                </div><br>
+                <div class="arrow-align">
+                    <i class="material-icons">arrow_right_alt</i>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="configurations/access-om/">
+            <div class="wrapper-div-config" style="height: 18em;">
+                <div class="wrapper-img-config">
+                    <img src="../assets/model-config-logos/access-om2-config.png"></img> 
+                </div>
+                <div class="wrapper-text-config">
+                    <b>ACCESS-OM2 configuration</b><br><br>
+                    ACCESS-OM2 is the ocean and sea-ice component of the ACCESS coupled model. ACCESS-OM2 provides the Australian climate community with ocean weather and climate research, including seasonal forecasting, climate variability studies, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry modelling.
                 </div><br>
                 <div class="arrow-align">
                     <i class="material-icons">arrow_right_alt</i>
