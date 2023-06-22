@@ -22,3 +22,5 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
 </td>
 </tr>
 </table>
+
+Our vision: PLACEHOLDER FOR OUTCOME OF STAFF RETREAT
