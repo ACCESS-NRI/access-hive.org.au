@@ -143,19 +143,19 @@ ACCESS-Hive is a community supported site, as such contributions to the ACCESS-H
 
 ## Acknowledgement of Country
 
-<img src = "assets/aboriginal-acknowledgement.png" class="white-img-bg" style="width: 100%; height: 8em; object-fit: cover; border-radius: 7px;"></img>
-
 We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.[^2]
+
+<img src = "assets/aboriginal-acknowledgement.png" class="white-img-bg" style="width: 100%; height: 8em; object-fit: cover; border-radius: 7px;"></img>
 
 [^2]:
     Photo by <a href="https://unsplash.com/@riegal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">René Riegal</a> on <a href="https://unsplash.com/photos/3ZQpQvZxb70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-## License
+<!-- ## License
 
 ![CC-BY][CC-BY]{ align=left }
 The ACCESS-Hive site is covered by the [CC-BY 4.0 license][human-license].
 
-ACCESS-Hive contains links to other material which is covered by various licensing agreements. Users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities. 
+ACCESS-Hive contains links to other material which is covered by various licensing agreements. Users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.  -->
 
 
 [HCG]: contribute/index.md
