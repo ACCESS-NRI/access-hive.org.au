@@ -1,6 +1,11 @@
-# How to contribute guide
+# <div class="highlight-bg"> How to Contribute </div>
 
-Although we encourage everyone to get involved and contribute to the ACCESS-Hive in order to adequately represent the needs of the entire ACCESS community, we recognise not everyone will have the time to do so. In case you do not have a lot of time, please consider sharing your ideas via [issues on the ACCESS-Hive GitHub repository][Issues] so someone might be able to add them to the ACCESS-Hive site for you.
+<img src = "../assets/how-to-contribute-img.jpg" class="white-img-bg" style="width: 100%; height: 13em; object-fit: cover; border-radius: 7px;"></img>
+
+Although we encourage everyone to get involved and contribute to the ACCESS-Hive in order to adequately represent the needs of the entire ACCESS community, we recognise not everyone will have the time to do so. In case you do not have a lot of time, please consider sharing your ideas via [issues on the ACCESS-Hive GitHub repository][Issues] so someone might be able to add them to the ACCESS-Hive site for you.[^1]
+
+[^1]:
+    <a href="https://www.freepik.com/free-vector/team-crisis-managers-solving-businessman-problems-employees-with-lightbulb-unraveling-tangle-vector-illustration-teamwork-solution-management-concept_10613678.htm#query=teamwork%20cartoon&position=18&from_view=keyword&track=ais">Image by pch.vector</a> on Freepik
 
 ???+ abstract
     The aim of this how-to is to enable you to:
