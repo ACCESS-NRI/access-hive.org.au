@@ -105,6 +105,7 @@
 
 ## About
 {% include "call_contribute.md" %}
+
 ## Support
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
@@ -118,6 +119,7 @@ There is a system of tags to identify who supports the linked documentation or s
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
 ## Contribute to ACCESS-Hive
+
 <div>
     <a href="contribute/" target="_blank">
         <div class="wrapper-div-config">
