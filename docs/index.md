@@ -118,7 +118,7 @@ There is a system of tags to identify who supports the linked documentation or s
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
-## Contribute to ACCESS-Hive
+## Contribute to ACCESS-Hive[^1]
 
 <div>
     <a href="contribute/" target="_blank">
@@ -135,6 +135,9 @@ See the [support page](about/support.md) for details about the support levels: w
         </div>
     </a>
 </div>
+
+[^1]:
+    <a href="https://www.freepik.com/free-vector/team-crisis-managers-solving-businessman-problems-employees-with-lightbulb-unraveling-tangle-vector-illustration-teamwork-solution-management-concept_10613678.htm#query=teamwork%20cartoon&position=18&from_view=keyword&track=ais">Image by pch.vector</a> on Freepik
 
 <!-- [How to Contribute][HCG]{ .md-button .md-button--primary }
 
