@@ -179,7 +179,7 @@ nav:
 
 # Footer
 extra:
-  generator: false
+  generator: true
   # version:
   #   provider: mike
   social:
