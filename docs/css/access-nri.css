@@ -271,6 +271,18 @@ ACCESS gold */
   text-align: center;
 }
 
+.highlight-border {
+  border-radius: 7px;
+  border: 0.1em solid;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  width: 60%;
+  font-size: large;
+  text-align: center;
+}
+
 /* ACCESS model components in /models tab */
 .wrapper-div {
   margin-top: 1em;
@@ -373,6 +385,10 @@ ACCESS gold */
 }
 
 .wrapper-div-config:hover .arrow-align {
+  color: #F9A61C;
+}
+
+.wrapper-div-config:hover .highlight-border {
   color: #F9A61C;
 }
 

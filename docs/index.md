@@ -5,18 +5,16 @@
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
 
-
-
 <table>
-<tr>
-<td width="70%">
-<font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
-<br><br>
-</td>
-<td>
-    <img width="90%" src="assets/ACCESS_icon_HIVE.png">
-</td>
-</tr>
+    <tr>
+        <td width="70%">
+            <font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
+            <br><br>
+        </td>
+        <td>
+            <img width="90%" src="assets/ACCESS_icon_HIVE.png">
+        </td>
+    </tr>
 </table>
 
 ## Navigating ACCESS-Hive
@@ -71,14 +69,14 @@
             </div>
         </a>
     </div>
-        <div>
+    <div>
         <a href="community_resources/">
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Community Resources</span>
                     </div></b><br>
-                    Other important resources contributed by the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
+                    Other important resources contributed by and for the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
                 </div>
                 <div class="wrapper-img-config">
                     <img src="assets/community-forum-homepage.png"></img> 
@@ -105,6 +103,7 @@
 
 ## About
 {% include "call_contribute.md" %}
+
 ## Support
 
 There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
@@ -117,22 +116,46 @@ There is a system of tags to identify who supports the linked documentation or s
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
-## Contributions
+## Contribute to ACCESS-Hive[^1]
 
-[How to Contribute][HCG]{ .md-button .md-button--primary }
+<div>
+    <a href="contribute/" target="_blank">
+        <div class="wrapper-div-config">
+            <div class="wrapper-img-config">
+                <img src="assets/how-to-contribute-img.jpg"></img> 
+            </div>
+            <div class="wrapper-text-config">
+                <b><div style="text-align: center; margin-top: 1em;">
+                    <span class="highlight-border">Contribute</span>
+                </div></b><br>
+                ACCESS-Hive is a community-supported site, as such contributions to the ACCESS-Hive site are <b>encouraged by any member of the community</b>. Any member of the ACCESS community is most welcome to become code reviewers.
+            </div>
+        </div>
+    </a>
+</div>
 
-ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone.
+[^1]:
+    <a href="https://www.freepik.com/free-vector/team-crisis-managers-solving-businessman-problems-employees-with-lightbulb-unraveling-tangle-vector-illustration-teamwork-solution-management-concept_10613678.htm#query=teamwork%20cartoon&position=18&from_view=keyword&track=ais">Image by pch.vector</a> on Freepik
 
-## Acknowledgement
+<!-- [How to Contribute][HCG]{ .md-button .md-button--primary }
 
-We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
+ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone. -->
 
-## License
+## Acknowledgement of Country
+
+<em>We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate</em>.[^2]
+
+<img src = "assets/aboriginal-acknowledgement.png" class="white-img-bg" style="width: 100%; height: 8em; object-fit: cover; border-radius: 7px;"></img>
+
+[^2]:
+    Photo by <a href="https://unsplash.com/@riegal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">René Riegal</a> on <a href="https://unsplash.com/photos/3ZQpQvZxb70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+<!-- ## License
 
 ![CC-BY][CC-BY]{ align=left }
 The ACCESS-Hive site is covered by the [CC-BY 4.0 license][human-license].
 
-ACCESS-Hive contains links to other material which is covered by various licensing agreements. Users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities. 
+ACCESS-Hive contains links to other material which is covered by various licensing agreements. Users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.  -->
 
 
 [HCG]: contribute/index.md
