@@ -5,18 +5,16 @@
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
 
-
-
 <table>
-<tr>
-<td width="70%">
-<font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
-<br><br>
-</td>
-<td>
-    <img width="90%" src="assets/ACCESS_icon_HIVE.png">
-</td>
-</tr>
+    <tr>
+        <td width="70%">
+            <font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
+            <br><br>
+        </td>
+        <td>
+            <img width="90%" src="assets/ACCESS_icon_HIVE.png">
+        </td>
+    </tr>
 </table>
 
 ## Navigating ACCESS-Hive
@@ -143,10 +141,15 @@ See the [support page](about/support.md) for details about the support levels: w
 
 ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone. -->
 
-## Acknowledgement
+## Acknowledgement of Country
 
-We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
+<img src = "assets/aboriginal-acknowledgement.png" class="white-img-bg" style="width: 100%; height: 8em; object-fit: cover; border-radius: 7px;"></img>
 
+We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.[^2]
+
+[^2]:
+    Photo by <a href="https://unsplash.com/@riegal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">René Riegal</a> on <a href="https://unsplash.com/photos/3ZQpQvZxb70?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 ## License
 
 ![CC-BY][CC-BY]{ align=left }
