@@ -55,6 +55,17 @@ synda is a command line tool to search and download files from the Earth System 
 
 R package for post-processing FLUXNET datasets for use in land surface modelling. Performs quality control and data conversion of FLUXNET data and collated site metadata. Supports FLUXNET2015, La Thuile, OzFlux and ICOS data releases.
 
+### Metpy  {{ community }}
+
+https://unidata.github.io/MetPy/latest/examples/formats/index.html
+
+[**Documentation**][metpy_docu] |
+[**Sources**][metpy_docu-source]
+
+MetPy is a collection of tools in Python for reading, visualizing, and performing calculations with weather data. MetPy supports Python >= 3.8 and is freely available under a permissive open source license.
+
+Format types are: GINI Water Vapor Imagery, NEXRAD Level 3 File, and NEXRAD Level 2 File.
+
 ### xskillscore  {{ community }}
 
 [**Documentation**][xskillscore-doc] |
@@ -77,6 +88,8 @@ xskillscore is a Python library for computing a wide variety of skill metrics. I
 [xskillscore-source]: https://github.com/xarray-contrib/xskillscore
 [fluxnetlsm-source]: https://github.com/aukkola/FluxnetLSM
 [fluxnetlsm-cite]: https://gmd.copernicus.org/articles/10/3379/2017/
+[metpy_docu]: https://unidata.github.io/MetPy/latest/examples/formats/index.html
+[metpy_docu-source]: https://github.com/Unidata/MetPy
 [cmor3-doc]: https://cmor.llnl.gov/
 [cmor3-source]: https://github.com/PCMDI/cmor
 [xmip-doc]: https://cmip6-preprocessing.readthedocs.io/en/latest/?badge=latest
