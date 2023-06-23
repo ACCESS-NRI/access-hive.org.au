@@ -87,6 +87,13 @@ nav:
     - index.md
     - Contact: about/contact.md
     - Support: about/support.md
+    - Contribute: 
+      - Contribute: contribute/index.md
+      - Edit on Github: contribute/edit-on-github.md
+      - Edit Locally: contribute/edit-locally.md
+      - Stand-alone Documentation: contribute/standalone-documentation.md
+      - Change the Navigation: contribute/change-the-navigation.md
+      - Reviewers: contribute/reviewers.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md
@@ -166,16 +173,8 @@ nav:
     - Community Model Catalogs: community_resources/community_model_catalogs.md
     - Community Data Formatting: community_resources/community_data_processing.md
     - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
-    - Contribute to ACCESS-Hive: 
-      - Contribute: contribute/index.md
-      - Edit on Github: contribute/edit-on-github.md
-      - Edit Locally: contribute/edit-locally.md
-      - Stand-alone Documentation: contribute/standalone-documentation.md
-      - Change the Navigation: contribute/change-the-navigation.md
-      - Reviewers: contribute/reviewers.md
 
   - Community Forum: https://forum.access-hive.org.au
-  # - [Community Forum](https://forum.access-hive.org.au){ .md_button }
 
 # Footer
 extra:

@@ -78,7 +78,7 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Community Resources</span>
                     </div></b><br>
-                    Other important resources contributed by the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
+                    Other important resources contributed by and for the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
                 </div>
                 <div class="wrapper-img-config">
                     <img src="assets/community-forum-homepage.png"></img> 
