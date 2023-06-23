@@ -71,7 +71,7 @@
             </div>
         </a>
     </div>
-        <div>
+    <div>
         <a href="community_resources/">
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
@@ -117,11 +117,26 @@ There is a system of tags to identify who supports the linked documentation or s
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
-## Contributions
+## Contribute to ACCESS-Hive
+<div>
+    <a href="contribute/" target="_blank">
+        <div class="wrapper-div-config">
+            <div class="wrapper-img-config">
+                <img src="assets/how-to-contribute-img.jpg"></img> 
+            </div>
+            <div class="wrapper-text-config">
+                <b><div style="text-align: center; margin-top: 1em;">
+                    <span class="highlight-border">Contribute</span>
+                </div></b><br>
+                ACCESS-Hive is a community-supported site, as such contributions to the ACCESS-Hive site are <b>encouraged by any member of the community</b>. Any member of the ACCESS community is most welcome to become code reviewers.
+            </div>
+        </div>
+    </a>
+</div>
 
-[How to Contribute][HCG]{ .md-button .md-button--primary }
+<!-- [How to Contribute][HCG]{ .md-button .md-button--primary }
 
-ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone.
+ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone. -->
 
 ## Acknowledgement
 

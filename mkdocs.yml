@@ -28,25 +28,26 @@ theme:
       #   icon: material/weather-night
       #   name: Switch to light mode
 
-
   features:
     - navigation.top
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
+    - navigation.footer
     - content.action.edit
     - content.action.view
+    - content.code.copy        # for displaying copy icon at top right in code snippets  
+    - content.code.annotate
     - search.suggest
     - search.highlight
     - search.share
+    - toc.follow
+
     # - navigation.expand
     # - navigation.path
     # - toc.integrate
     # - navigation.sections
-    - content.code.copy        # for displaying copy icon at top right in code snippets  
-    - content.code.annotate
-    - toc.follow
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
