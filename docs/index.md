@@ -143,7 +143,7 @@ ACCESS-Hive is a community supported site, as such contributions to the ACCESS-H
 
 ## Acknowledgement of Country
 
-We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.[^2]
+<em>We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate</em>.[^2]
 
 <img src = "assets/aboriginal-acknowledgement.png" class="white-img-bg" style="width: 100%; height: 8em; object-fit: cover; border-radius: 7px;"></img>
 
