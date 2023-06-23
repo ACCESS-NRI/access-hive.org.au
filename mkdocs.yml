@@ -46,6 +46,7 @@ theme:
     # - navigation.sections
     - content.code.copy        # for displaying copy icon at top right in code snippets  
     - content.code.annotate
+    - toc.follow
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
