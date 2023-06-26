@@ -219,7 +219,6 @@ extra:
 
 extra_css:
   - css/termynal.css
-  - css/custom.css
   - css/access-nri.css
   - css/fontello.css
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
@@ -228,6 +227,5 @@ extra_css:
 
 extra_javascript:
   - js/termynal.js
-  - js/custom.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
   - js/tablesort.js
