@@ -2,7 +2,7 @@
 
 <img src = "../assets/how-to-contribute-img.jpg" class="white-img-bg" style="width: 100%; height: 13em; object-fit: cover; border-radius: 7px;"></img>
 
-ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Members of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone.
+ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Members of the ACCESS community are also welcome to become reviewers. Please refer to the following contribution guidelines to learn how you can help the ACCESS community build a documentation database useful to everyone.
 
 Although we encourage everyone to get involved and contribute to the ACCESS-Hive in order to adequately represent the needs of the entire ACCESS community, we recognise not everyone will have the time to do so. In case you do not have a lot of time, please consider sharing your ideas via [issues on the ACCESS-Hive GitHub repository][Issues] so someone might be able to add them to the ACCESS-Hive site for you.[^1]
 

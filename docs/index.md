@@ -61,7 +61,7 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Model Evaluation</span>
                     </div></b><br>
-                    The ACCESS-NRI Model Evaluation (MED) section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
+                    The<b> ACCESS-NRI Model Evaluation (MED)</b> section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to do model evaluation, using curated data sets and robust statistical practices. 
                 </div>
                 <div class="wrapper-img-config">
                     <img src="assets/resources_example.png"></img> 
@@ -76,7 +76,7 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Community Resources</span>
                     </div></b><br>
-                    Other important resources contributed by and for the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
+                    Other important resources contributed by and for the ACCESS community such as detailed information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
                 </div>
                 <div class="wrapper-img-config">
                     <img src="assets/community-forum-homepage.png"></img> 
@@ -116,7 +116,7 @@ There is a system of tags to identify who supports the linked documentation or s
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
-## Contribute to ACCESS-Hive[^1]
+## Contribute to ACCESS-Hive [^1]
 
 <div>
     <a href="contribute/" target="_blank">
@@ -128,7 +128,7 @@ See the [support page](about/support.md) for details about the support levels: w
                 <b><div style="text-align: center; margin-top: 1em;">
                     <span class="highlight-border">Contribute</span>
                 </div></b><br>
-                ACCESS-Hive is a community-supported site, as such contributions to the ACCESS-Hive site are <b>encouraged by any member of the community</b>. Any member of the ACCESS community is most welcome to become code reviewers.
+                ACCESS-Hive is a community-supported site, as such contributions to the ACCESS-Hive site are <b>encouraged by any member of the community</b>. Any member of the ACCESS community is welcome to become reviewers for ACCESS-Hive repository.
             </div>
         </div>
     </a>
@@ -166,3 +166,4 @@ ACCESS-Hive contains links to other material which is covered by various licensi
 [github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io.git
 [forum]: https://forum.access-hive.org.au
 [hamburger button]: https://en.wikipedia.org/wiki/Hamburger_button
+[access-hive-github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io
