@@ -31,10 +31,10 @@
                         </div>
                     </b>
                     <br>
-                    ACCESS is a family of related computer <b>models</b> or <b>components</b> that represent different parts of the Earth-System. ACCESS links various <b>model components</b> through software called <b>couplers</b> to form different <b>model configurations</b>. 
+                    ACCESS is a family of related computer <b>models</b> or <b>components</b> that represent different parts of the Earth.
                 </div><br>
                 <div class="wrapper-img-config">
-                    <img src="assets/ACCESS-MODEL.png"></img> 
+                    <img src="assets/ACCESS-MODEL.png" style="height: 9em; object-fit: cover;"></img> 
                 </div>
             </div>
         </a>
@@ -49,7 +49,7 @@
                     A step-by-step guides for running different <b>model configurations</b>.  
                 </div>
                 <div class="wrapper-img-config">
-                    <img src="assets/get_started_example.png"></img> 
+                    <img src="assets/get_started_example.png" style="height: 9em; object-fit: cover;"></img> 
                 </div>
             </div>
         </a>
@@ -61,10 +61,10 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Model Evaluation</span>
                     </div></b><br>
-                    The<b> ACCESS-NRI Model Evaluation (MED)</b> section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to do model evaluation, using curated data sets and robust statistical practices. 
+                    Provides guidance for <b>model evaluation</b> of the ACCESS suite.
                 </div>
                 <div class="wrapper-img-config">
-                    <img src="assets/resources_example.png"></img> 
+                    <img src="assets/resources_example.png" style="height: 9em; object-fit: cover;"></img> 
                 </div>
             </div>
         </a>
@@ -76,10 +76,10 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Community Resources</span>
                     </div></b><br>
-                    Other important resources contributed by and for the ACCESS community such as detailed information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
+                    Other important resources contributed by and for the ACCESS community.
                 </div>
                 <div class="wrapper-img-config">
-                    <img src="assets/community-forum-homepage.png"></img> 
+                    <img src="assets/community-forum-homepage.png" style="height: 9em; object-fit: cover;"></img> 
                 </div>
             </div>
         </a>
@@ -91,10 +91,10 @@
                     <b><div style="text-align: center; margin-top: 1em;">
                         <span class="highlight-blue-bg">Community Forum</span>
                     </div></b><br>
-                    <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
+                    <b>ACCESS-Hive Community Forum</b> is a platform to ask questions and share innovative ideas.
                 </div>
                 <div class="wrapper-img-config">
-                    <img src="assets/forum_screenshot.png"></img> 
+                    <img src="assets/forum_screenshot.png" style="height: 9em; object-fit: cover;"></img> 
                 </div>
             </div>
         </a>
@@ -122,13 +122,13 @@ See the [support page](about/support.md) for details about the support levels: w
     <a href="contribute/" target="_blank">
         <div class="wrapper-div-config">
             <div class="wrapper-img-config">
-                <img src="assets/how-to-contribute-img.jpg"></img> 
+                <img src="assets/how-to-contribute-img.jpg" style="height: 9em; object-fit: cover;"></img> 
             </div>
             <div class="wrapper-text-config">
                 <b><div style="text-align: center; margin-top: 1em;">
                     <span class="highlight-border">Contribute</span>
                 </div></b><br>
-                ACCESS-Hive is a community-supported site, as such contributions to the ACCESS-Hive site are <b>encouraged by any member of the community</b>. Any member of the ACCESS community is welcome to become reviewers for ACCESS-Hive repository.
+                We invite you to join the ACCESS-Hive team, and would love to have your contributions onboard!
             </div>
         </div>
     </a>
