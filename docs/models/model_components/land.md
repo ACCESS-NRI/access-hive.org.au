@@ -8,7 +8,7 @@
 
 ## <div class="center-icons"> [CABLE][cable-wiki] {{ supported }} </div>
 
-Community Atmosphere Biosphere Land Exchange (CABLE)](cable-web) is a land surface model, used to calculate the fluxes of momentum, energy, water and carbon between the land surface and the atmosphere. It also models the main biogeochemical cycles of the land ecosystem. 
+[Community Atmosphere Biosphere Land Exchange (CABLE)][cable-web] is a land surface model, used to calculate the fluxes of momentum, energy, water and carbon between the land surface and the atmosphere. It also models the main biogeochemical cycles of the land ecosystem when used in conjunction with [the CASA-CNP module][casa-cnp]. 
 
 ### How is CABLE used?
 
