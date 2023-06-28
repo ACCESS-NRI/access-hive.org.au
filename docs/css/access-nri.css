@@ -129,7 +129,7 @@ ACCESS gold */
 
 /* Header */
 .md-header {
-  padding-top: 1em;
+  /* padding-top: 1em; */
   box-shadow: 0 0 0.2rem rgb(0 0 0 / 10%), 0 0rem 0.4rem rgb(0 0 0 / 20%);
 }
 
@@ -401,4 +401,93 @@ ACCESS gold */
   color: #F9A61C;
   transition-duration: 0.4s;
 }
+
+.md-typeset h3 {
+  margin: 1em 0 0.4em;
+}
+
+/* Justified text */
+.justified {
+  text-align: justify;  
+}
+
+/* Show different markers for different hieratchy of points (up to 3d hierarchy) */
+ul:not([class^='md-']) li {
+  list-style-type: disc;
+}
+
+ul:not([class^='md-']) li ul li {
+  list-style-type: circle;
+} 
+
+ul:not([class^='md-']) li ul li ul li {
+  list-style-type: square;
+} 
+
+/* Code block */
+pre:has(code) {
+  display: flow-root !important;
+  text-align: left !important;
+  padding: 0 0 !important;
+  margin-top: 0.5em !important; 
+  margin-bottom: 0.5em !important;
+}
+
+pre>code {
+  display: block !important;
+  white-space: pre-line !important;
+  padding: 0.5em 0.8em !important;
+  word-break: break-all !important;
+}
+
+/* References */
+.references {
+  font-size:0.8em;
+}
+
+/* Page summary ('on this page' section) */
+div.page-summary {
+  max-width: 100%;
+  border: solid 0.5px var(--md-typeset-color);
+  border-radius: 3px;
+  padding: 0 15px 10px;
+  line-height: 1.2em;
+  margin: 20px 0;
+}
+
+.page-summary h4 {
+  margin: 0.7em 0;
+}
+
+.page-summary ol {
+  list-style-type: none !important;
+  counter-reset: item !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page-summary li {
+  display: table !important;
+  counter-increment: item !important;
+  margin: 0 0 0.5em 0.5em !important;
+}
+
+.page-summary li:before {
+    content: counters(item, ".") ". " !important;
+    display: table-cell !important;
+    padding-right: 0.3em !important;    
+}
+
+.page-summary li li {
+    margin: 0.1em 0 0 0 !important;
+}
+
+.page-summary li li:before {
+    content: counters(item, ".") ". " !important;
+}
+
+div.version label {
+  font-size: 1rem !important;
+}
+
 /* -------------------------------------------- */

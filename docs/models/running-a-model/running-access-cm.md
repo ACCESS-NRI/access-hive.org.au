@@ -85,7 +85,7 @@ On job completion, contents of the job’s standard output/error stream gets cop
 # Copy, Edit, and Run an ACCESS-CM2 suite
 
 <div style="text-align: justify">
-ACCESS-CM2 is a set of sub-models (eg. UM, MOM, CICE, CABLE, OASIS) with a range of model parameters, input data, and computer related information, that need to be packaged together as a <i>suite</i> in order to run.
+ACCESS-CM2 is a set of submodels (eg. UM, MOM, CICE, CABLE, OASIS) with a range of model parameters, input data, and computer related information, that need to be packaged together as a <i>suite</i> in order to run.
 <br>
 Each ACCESS-CM2 suite has an ID, in the format <code>u-&lt;suite-name&gt;</code>, with <code>&lt;suite-name&gt;</code> being a unique identifier (e.g. <code>u-br565</code> is the CMIP6 release preindustrial experiment suite).
 <br>
@@ -218,11 +218,11 @@ After completing all the modifications to the suite, we are ready to run it.
 <br>
 ACCESS-CM2 suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission.
 <br>
-When the suite gets run, the suite configuration files are copied on Gadi under <code>/scratch/&lt;$PROJECT&gt;/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
+When the suite gets run, its configuration files are copied on Gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
 <br>
 An ACCESS-CM2 suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by Cylc.
 <br>
-<a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. Cylc deals with how the job will be run and manages the time steps of each sub-model, as well as monitoring all the tasks and reporting any error that might occur.
+<a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. Cylc deals with how the job will be run and manages the time steps of each submodel, as well as monitoring all the tasks and reporting any error that might occur.
 <br>
 To run an ACCESS-CM2 suite, on <i>accessdev</i>:
 <ol>
@@ -515,7 +515,7 @@ This directory contains 2 subdirectories:
 <!-- References -->
 <br>
 <h6>References</h6>
-<ul style="font-size:0.8em;">
+<ul class="references">
     <li>
         <a href = "https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc" target="_blank">https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc</a>
     </li>

@@ -78,6 +78,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true 
   - def_list
   - footnotes
   - tables
@@ -218,8 +220,8 @@ extra:
   community: '<a href="https://access-hive.org.au/about/support"><span class="heart center-icons"><i class="heart fa fa-heart" title="Community Contributed"></i></span></a>'
 
 extra_css:
-  - css/termynal.css
   - css/access-nri.css
+  - css/termynal.css
   - css/fontello.css
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
   - css/fontawesome-free-6.4.0-web/css/fontawesome.css
@@ -227,5 +229,6 @@ extra_css:
 
 extra_javascript:
   - js/termynal.js
+  - js/terminal_animation.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
   - js/tablesort.js
