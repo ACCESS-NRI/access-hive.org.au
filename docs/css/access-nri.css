@@ -6,13 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
+  --nri-green: #A6CE39;
+  --nri-orange: #FAA619;
+  --nri-dark-blue: #115D97;
+  --nri-blue: #06AEEF;
+  --nri-light-blue: #8ED7F8;
   --md-primary-fg-color: rgb(30, 29, 29);
   --md-primary-fg-color--light: #f5edd5;
-  --md-primary-fg-color--dark:  #074473;
-  /* --md-primary-fg-color--dark: #FFA629; */
-
-  /* --md-primary-fg-color--dark:  #105D98; */
-  /* --md-primary-fg-color--dark: #a26d11;  original */    
+  --md-primary-fg-color--dark:  #074473;  
   --md-accent-fg-color: #f5c533;
   --md-primary-tab-color: #2e303e;
   --md-primary-hover-tab-color: #444448;
@@ -247,7 +248,7 @@ ACCESS gold */
 }
 
 /* Highlight the background of headings ------------ */
-.highlight-bg {
+.md-typeset .highlight-bg {
   background-color: rgba(29, 28, 28, 0.622);
   color: white;
   padding-top: 0.2em;
