@@ -30,4 +30,5 @@ Some of the ACCESS models used for weather simulations use JULES instead of CABL
 
 [jules-web]: https://jules.jchmr.org/
 [cable-web]: https://www.cawcr.gov.au/research/cable/
+[casa-cnp]: bgc_land.md#casa-cnp
 
