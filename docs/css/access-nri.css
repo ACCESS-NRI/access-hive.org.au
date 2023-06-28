@@ -342,7 +342,7 @@ ACCESS gold */
   border-radius: 7px;
   border-color: #5f626a;
   box-shadow: 5px 8px 10px #1b1b1b;
-  min-height: 15em;
+  height: 10em;
 }
 
 .wrapper-div-config:hover {
@@ -361,6 +361,7 @@ ACCESS gold */
   display: flex;
   align-items: center;
   object-fit: cover;
+  justify-content: center;
 }
 
 /* .img-config {
