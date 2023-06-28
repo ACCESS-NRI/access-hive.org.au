@@ -31,7 +31,7 @@
                         </div>
                     </b>
                     <br>
-                    ACCESS is a family of related computer <b>models</b> or <b>components</b> that represent different parts of the Earth.
+                    ACCESS is a family of related computer <b>models</b> that represent different parts of the Earth.
                 </div><br>
                 <div class="wrapper-img-config">
                     <img src="assets/ACCESS-MODEL.png" style="height: 9em; object-fit: cover;"></img> 
