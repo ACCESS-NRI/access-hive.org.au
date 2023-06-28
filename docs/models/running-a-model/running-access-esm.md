@@ -2,7 +2,7 @@
 hide:
   - toc
 ---
-# <div class="highlight-bg"> Run ACCESS-ESM </div>
+# <span class="highlight-bg"> Run ACCESS-ESM </span>
 <div class="page-summary">
     <h4>On this page</h4>
     <ol>
@@ -25,23 +25,23 @@ hide:
     </ol>
 </div>
 
-## <div id="runESM-1.0.0">Requirements</div>
+## <span id="runESM-1.0.0">Requirements</span>
 <div class="justified">
 Before running ACCESS-ESM, you need to make sure to possess the right tools and to have an account with specific institutions. 
 </div>
 
-### <div id="runESM-1.1.0">General requirements</div>
+### <span id="runESM-1.1.0">General requirements</span>
 <div class="justified">
-For the general requirements needed to run all ACCESS models, please refer to the <a href="">Getting Started (TO DO check link)</a> page.
+For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
 </div>
 
-### <div id="runESM-1.2.0">Model-specific requirements</div>
+### <span id="runESM-1.2.0">Model-specific requirements</span>
 <div class="justified">
 <ul>
     <li>
         <b>Payu</b>
         <br>
-        To get payu on Gadi, run:
+        To get Payu on Gadi, run:
         <pre><code>module use /g/data/hh5/public/modules
             module load conda/analysis3
         </code></pre>
@@ -56,7 +56,7 @@ For the general requirements needed to run all ACCESS models, please refer to th
 </div>
 ----------------------------------------------------------------------------------------
 
-## <div id="runESM-2.0.0">Get ACCESS-ESM configuration</div>
+## <span id="runESM-2.0.0">Get ACCESS-ESM configuration</span>
 <div class="justified">
 A suitable ACCESS-ESM pre-industrial configuration is avaible on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
 <br>
@@ -78,16 +78,16 @@ In order to get it, on Gadi, create a directory where to keep the model configur
 </div>
 ----------------------------------------------------------------------------------------
 
-## <div id="runESM-3.0.0">Edit ACCESS-ESM configuration</div>
+## <span id="runESM-3.0.0">Edit ACCESS-ESM configuration</span>
 <div class="justified">
 In order to modify an ACCESS-ESM configuration, it is worth understanding a bit more how its job scheduler Payu works.
 </div>
 
-### <div id="runESM-3.1.0">Payu</div>
+### <span id="runESM-3.1.0">Payu</span>
 <div class="justified">
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank">Payu</a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
-The general layout of a payu-supported model run consists of two main directories:
+The general layout of a Payu-supported model run consists of two main directories:
 <ul>
     <li>
         The <b>laboratory</b> is the directory where all parts of the model are kept. For ACCESS-ESM, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
@@ -118,7 +118,7 @@ This will create the <i>laboratory</i> directory, along with 4 subdirectories:
 </ul>
 </div>
 
-### <div id="runESM-3.2.0">Edit the Master Configuration file</div>
+### <span id="runESM-3.2.0">Edit the Master Configuration file</span>
 <div class="justified">
 The <code>config.yaml</code> file, located in the <i>control</i> directory, is the Master Configuration file. 
 <br>
@@ -133,8 +133,8 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
         <br>
-        For example, to run ACCESS-ESM under a specific project, add the following line to this section:
-        <pre><code>project: &lt;PROJECT&gt;</code></pre>
+        For example, to run ACCESS-ESM under the <code>tm70</code> <a href="TO DO">project (TO DO add NCI Project link)</a>, add the following line to this section:
+        <pre><code>project: tm70</code></pre>
     </li>
     <li>
         <b>Link to the laboratory directory</b>
@@ -142,12 +142,12 @@ This file controls the general model configuration and if we open it in a text e
         <pre><code># note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
             laboratory: access-esm
         </code></pre>
-        This will set the laboratory directory. Relative paths are relative to /scratch/$PROJECT/$USER. Absolute paths can be specified as well.
+        This will set the laboratory directory. Relative paths are relative to <code>/scratch/$PROJECT/$USER</code>. Absolute paths can be specified as well.
     </li>
     <li>
         <b>Model</b>
         <pre><code>model: access</code></pre>
-        The main model. This tells payu which driver to use (<i>access</i> stands for access-esm).
+        The main model. This tells Payu which driver to use (<i>access</i> stands for ACCESS-ESM).
     </li>
     <li>
         <b>Submodels</b>
@@ -222,14 +222,14 @@ This file controls the general model configuration and if we open it in a text e
         <pre><code>runspersub: 5</code></pre>
         ACCESS-ESM configurations are often run in multiple steps (or cycles), with Payu running <code>runspersub</code> internal runs for every PBS submission, and resubmitting the job until the total run length is met.
         <br>
-        <b>Note:</b> If we increase <code>runspersub</code>, we might need to increate the <i>walltime</i> in the PBS resources.
+        <b>Note:</b> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
     </li>
 </ul>
-To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html#configuration-settings" target="_blank">Payu configuration settings documentation</a>.
+To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with Payu</a>.
 </div>
 ----------------------------------------------------------------------------------------
 
-## <div id="runESM-4.0.0">Run ACCESS-ESM configuration</div>
+## <span id="runESM-4.0.0">Run ACCESS-ESM configuration</span>
 <div class="justified">
 ACCESS-ESM suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by Payu.
 <br>
@@ -239,12 +239,12 @@ Cylc (pronounced ‘silk’), is a workflow manager that automatically executes 
 </div>
 ----------------------------------------------------------------------------------------
 
-## <div id="runESM-5.0.0">Monitoring runs</div>
+## <span id="runESM-5.0.0">Monitoring runs</span>
 <div class="justified">
 </div>
 ----------------------------------------------------------------------------------------
 
-## <div id="runESM-6.0.0">Model outputs</div>
+## <span id="runESM-6.0.0">Model outputs</span>
 <div class="justified">
 </div>
 
