@@ -5,6 +5,8 @@
 /* Import medium-weight Roboto font for tabs */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+/* Overriding MkDocs CSS */
+
 :root > * {
   --md-primary-fg-color: rgb(30, 29, 29);
   --md-primary-fg-color--light: #f5edd5;
@@ -22,6 +24,16 @@
   background-color: #cb2828;
   font-size: 2.5em;
 } */
+
+.md-content {
+  border-left: 0.1em solid;
+  border-color: rgba(255, 255, 255, 0.201);
+}
+
+.md-main__inner {
+  border-left: 0.1em solid;
+  border-color: rgba(255, 255, 255, 0.201);
+}
 
 .md-nav--primary {
   font-size: 1.7em;
@@ -56,6 +68,8 @@
     height: 2.5rem;
     width: auto;
 }
+
+/* ------------------------------------------------- */
 
 .center {
   margin-left: auto;
