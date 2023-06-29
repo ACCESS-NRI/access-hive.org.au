@@ -6,23 +6,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root > * {
-  --md-primary-fg-color: rgb(30, 29, 29);
-  --md-primary-fg-color--light: #f5edd5;
-  --md-primary-fg-color--dark:  #074473;
-  /* --md-primary-fg-color--dark: #FFA629; */
-
-  /* --md-primary-fg-color--dark:  #105D98; */
-  /* --md-primary-fg-color--dark: #a26d11;  original */    
-  --md-accent-fg-color: #f5c533;
-  --md-primary-tab-color: #2e303e;
-  --md-primary-hover-tab-color: #444448;
+  --nri-green: #A6CE39;
+  --nri-orange: #FAA619;
+  --nri-dark-blue: #115D97;
+  --nri-blue: #06AEEF;
+  --nri-light-blue: #8ED7F8;
+  --text-color: 233, 239, 252;
+  --md-default-bg-color: rgb(46, 51, 62) !important; /* main body background */
+  --md-typeset-color: rgb(var(--text-color)) !important; /* Main text */
+  --md-code-fg-color: rgb(213, 217, 226) !important; /* code element text */
+  --md-code-bg-color: rgb(33, 36, 44) !important; /* code element background */
+  --md-primary-bg-color: #EDEDED !important; /* top banner text */
+  --md-primary-fg-color: rgb(30, 29, 29) !important; /* top banner background */
+  --md-primary-fg-color--dark: var(--nri-dark-blue) !important; /* top tab background */
+  --md-typeset-a-color: var(--nri-blue) !important; /* link text */
+  --md-accent-fg-color: var(--nri-orange) !important; /* link text hover */
+  --inactive-text: rgba(var(--text-color),0.7); /* inactive top tabs text, passed toc items text */
+  --active-text: var(--md-typeset-color); /* active top tabs text, passed toc items text */
+  --highlight-bg: #242428; /* .highligh-bg */
+  --navigation-border-left: #3E434D; /* Left border on the toc an navigation */
 }
 
-/* .md-sidebar {
-  background-color: #cb2828;
-  font-size: 2.5em;
-} */
+/* =============================================================== 
+  Main headings
+*/
+h1 {
+  color: var(--md-typeset-color) !important;
+  font-weight: 500 !important;
+}
 
+
+/* =============================================================== 
+  Warning windows 
+*/
+.warning, 
+.md-typeset :is(.warning,.caution,.attention)>:is(.admonition-title,summary):before {
+  border-color: var(--nri-orange) !important;
+}
+
+.md-typeset .warning>summary:after {
+  color: var(--nri-orange);
+}
+
+
+/* =============================================================== 
+  Left Navigation and table of content 
+*/
 .md-nav--primary {
   font-size: 1.7em;
 }
@@ -31,25 +60,19 @@
   font-size: 1.5em;
 }
 
-.md-nav {
-  /* background-color: #262623; */
-  /* border: 0.1em solid; */
+.md-nav:not(.md-nav--primary) {
   border-left: 1px solid;
-  border-color: rgba(255, 255, 255, 0.078);
-
-  /* border-left: #e5e527;
-  border-right: #cfcf37; */
-  /* font-size: 1.7em; */
+  border-color: var(--navigation-border-left);
 }
 
-/* Changing the overall theme (background color) of the app */
-[data-md-color-scheme="slate"] {
-  /* --md-hue: 206;  */
-  --md-hue: 220;
-  /* --md-hue: 248; */
+.md-nav__link--passed:not(.md-nav__link--active) {
+  color: var(--inactive-text) !important;
 }
 
 
+/* =============================================================== 
+  Img, main logo 
+*/
 .md-header__button.md-logo :-webkit-any(img,svg) {
     fill: currentcolor;
     display: block;
@@ -57,15 +80,10 @@
     width: auto;
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: disabled;
-  border-spacing: 17px;
-  width: 100%;  
-  width: 100%;  
-}
 
+/* =============================================================== 
+  Model Components icons  
+*/
 .logo_component {
   width: 70%;
   margin: 0 auto;
@@ -81,121 +99,80 @@
 }
 
 .logo_cell:hover {
-  /* color: #F9A61C; */
-  /* font-weight: bold; */
   transition-duration: 0.4s;
   padding: 0.8%;
   background-color: rgba(29, 28, 28, 0.185);
   border-radius: 15px;
 }
 
-/* Upon hovering over the `logo_cell` div, call the 
-`logo_cell_text` div and change the color of it to 
-ACCESS gold */
 .logo_cell:hover .logo_cell_text {
-  color: #F9A61C;
-}
-
-.access_forum_button {
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 30px;
-  text-align: center;
-  width: 70%;
-  border-radius: 7px;
-  border: 0.1rem solid;
-  /* border-color: #eeac48; */
-  border-color: white;
-  display: inline-block;
-  font-size: 16px;
-  padding: 10px;
-  transition-duration: 0.4s;
-  background-color: var(--md-primary-tab-color);
-  color: white
+  color: var(--nri-orange);
 }
 
 
-.access_forum_button:hover {
-  color: #F9A61C;
-  border: 0.1rem solid;
-  background-color: var(--md-primary-tab-color);
-}
-
-/* Main body content */
+/* =============================================================== 
+  Main body content 
+*/
 .md-main__inner {
   margin-top: 1.2em;
 }
 
-/* Header */
-.md-header {
-  padding-top: 1em;
-  box-shadow: 0 0 0.2rem rgb(0 0 0 / 10%), 0 0rem 0.4rem rgb(0 0 0 / 20%);
-}
 
-/* Header brand text */
+/* =============================================================== 
+  Header 
+*/
+/* Main title */
 .md-header__title {
   margin-left: 0.3em !important;
 }
 
+/* Banner */
+.md-header__inner {
+  padding: 0.5em 0;
+}
+
+
 /* Tab section */
 .md-tabs {
   background-color: var(--md-primary-fg-color--dark);
-  margin-top: 0.6em; 
 }
 
 /* Unselected tab */
 .md-tabs__item {
-  display: inline-block;
+  /* display: inline-block; */
+  text-align: center;
   height: min-content;
   transition: background-color 0.5s;
-  color: #aeb3c0;
+  color: var(--inactive-text);
 }
 
 /* Headings in the nav bar */
 .md-tabs__link {
-  display: inline-block;
-  opacity: 0.95;
   font-weight: 500;
-  margin-top: 0px;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
+  margin-top: 0;
+  padding: 0.8em 0;
   font-size: 1.5em;
-  padding-left: 0.7em;
 }
 
 /* Selected tab */
 .md-tabs__item--active {
-  /* background-color: #9b6913; */
-  /* border: 0.1rem solid; */
-  /* color: #F9A61C; */
-  font-weight: bold;
-  /* border-radius: 7px; */
-  /* background-color: var(--md-primary-tab-color); */
-  /* background-color: black; */
-  color: white;
-  border-radius: 4px;
+  color: var(--active-text);
 }
 
-.md-tabs__item--active .md-tabs__link {
+.md-tabs__item--active, .md-tabs__link {
   opacity: 1;
 }
 
 /* Tab hover state */
 .md-tabs__item:hover {
-  /* background-color: rgba(0, 0, 0, 0.536);  */
-  /* background-color: var(--md-primary-hover-tab-color); */
-  /* color: white; */
-  /* color: #F9A61C; */
   transition-duration: 0.4s;
-  font-weight: bold;
-  color: white;
+  color: var(--active-text);
 }
 
-.md-tabs__item:hover .md-tabs__link {
-  opacity: 1;
-}
-
+/* =============================================================== 
+  Support icons
+*/
+/* heart animation */
 @keyframes heart {
   0%, 40%, 80%, 100% {
     transform: scale(1);
@@ -217,23 +194,23 @@ ACCESS gold */
 }
 
 .icon-supported {
-  color: #a5cd39;
+  color: var(--nri-green);
   font-size: medium;
   margin-left: 0.2em;
 }
 
 .icon-supported:hover {
-  color: #a6cd39c5;
+  color: var(--nri-green);
 }
 
 .icon-recommended {
-  color: #F9A61C;
+  color: var(--nri-orange);
   font-size: medium;
   margin-left: 0.2em;
 }
 
 .icon-recommended:hover {
-  color: #f9a41cb3;
+  color: var(--nri-orange);
 }
 
 /* Vertically center the icons */
@@ -244,18 +221,6 @@ ACCESS gold */
 .white-img-bg {
   background-color: white;
   border-radius: 7px;
-}
-
-/* Highlight the background of headings ------------ */
-.highlight-bg {
-  background-color: rgba(29, 28, 28, 0.622);
-  color: white;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  width: fit-content;
-  border-radius: 0.1em;
 }
 
 .highlight-blue-bg {
@@ -401,5 +366,23 @@ ACCESS gold */
 .arrow-align:hover {
   color: #F9A61C;
   transition-duration: 0.4s;
+}
+
+/* Center table */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: disabled;
+  border-spacing: 17px;
+  width: 100%;  
+  width: 100%;  
+}
+
+/* Highlight the background */
+.highlight-bg {
+  background-color: var(--highlight-bg);
+  padding: 0.2em 0.4em;
+  width: fit-content;
+  border-radius: 0.1em;
 }
 /* -------------------------------------------- */
