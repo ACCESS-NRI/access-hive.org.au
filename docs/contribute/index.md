@@ -1,6 +1,6 @@
 # <div class="highlight-bg"> How to Contribute </div>
 
-<img src = "../assets/how-to-contribute-img.jpg" class="white-img-bg" style="width: 100%; height: 13em; object-fit: cover; border-radius: 7px;"></img>
+<img src = "../assets/how-to-contribute-img.jpg" class="white-img-bg"></img>
 
 ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Members of the ACCESS community are also welcome to become reviewers. Please refer to the following contribution guidelines to learn how you can help the ACCESS community build a documentation database useful to everyone.
 

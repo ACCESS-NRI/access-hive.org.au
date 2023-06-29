@@ -15,18 +15,14 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    # - scheme: light
-    #   primary: indigo
-    #   accent: deep orange
-    #   toggle:
-    #     icon: material/weather-sunny
-    #     name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: deep orange
-      # toggle:
-      #   icon: material/weather-night
-      #   name: Switch to light mode
+    - scheme: light
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to dark mode
+    - scheme: custom-dark
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to light mode
 
   features:
     - navigation.top
@@ -218,12 +214,12 @@ extra:
   community: '<a href="https://access-hive.org.au/about/support"><span class="heart center-icons"><i class="heart fa-regular fa-heart" title="Community Contributed"></i></span></a>'
 
 extra_css:
-  - css/access-nri.css
   - css/termynal.css
   - css/fontello.css
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
   - css/fontawesome-free-6.4.0-web/css/fontawesome.css
   - css/fontawesome-free-6.4.0-web/css/solid.css
+  - css/access-nri.css
 
 extra_javascript:
   - js/termynal.js

@@ -126,7 +126,7 @@ See the [support page](about/support.md) for details about the support levels: w
             </div>
             <div class="wrapper-text-config">
                 <b><div style="text-align: center; margin-top: 1em;">
-                    <span class="highlight-border">Contribute</span>
+                    <span class="highlight-blue-bg">Contribute</span>
                 </div></b><br>
                 We invite you to join the ACCESS-Hive team, and would love to have your contributions onboard!
             </div>
