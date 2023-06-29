@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# <div class="highlight-bg"> Getting Started: Access To Gadi@NCI </div>
+# <div class="highlight-bg"> Getting Started: Computing Access (Gadi@NCI) </div>
 
 Here, we provide you the important information to give you access to the large data that we curate at NCI's storage:
 
