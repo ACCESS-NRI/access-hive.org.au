@@ -152,29 +152,27 @@ nav:
 
   - Community Resources:
     - community_resources/index.md
-    - Community Working Groups: community_resources/community_working_groups.md
-    - Community Glossaries:
-      - community_resources/glossaries/index.md
-      - ACCESS-NRI: community_resources/glossaries/glossary_access_nri.md
-      - IPCC: community_resources/glossaries/glossary_ipcc.md
-      - CSSR: community_resources/glossaries/glossary_cssr.md
+    - Working Groups: community_resources/community_working_groups.md
+    - Glossaries: community_resources/glossaries/index.md
+    - Variables:
       - CMIP(6): community_resources/glossaries/glossary_cmip.md
       - ERA(5): community_resources/glossaries/glossary_era.md
       - UM: community_resources/glossaries/glossary_um.md
-    - Community Training: 
+    - Model Evaluation Links:
+      - Observational Catalogs: community_resources/community_observational_catalogs.md
+      - Model Catalogs: community_resources/community_model_catalogs.md
+      - Data Formatting: community_resources/community_data_processing.md
+      - Evaluation Recipes: community_resources/community_med_recipes.md
+    - Training: 
       - Training: community_resources/training/index.md
       - Git Version Control: community_resources/training/git-version-control.md
       - High Performance Computing (HPC): community_resources/training/hpc.md
       - ACCESS Training: community_resources/training/ACCESS_training.md
       - NCI Training: community_resources/training/nci-training.md
       - Additional Training: community_resources/training/additional_training.md
-    - Community Events:
+    - Events:
        - community_resources/events/index.md
        - Add Event: community_resources/events/add_event.md
-    - Community Observational Catalogs: community_resources/community_observational_catalogs.md
-    - Community Model Catalogs: community_resources/community_model_catalogs.md
-    - Community Data Formatting: community_resources/community_data_processing.md
-    - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
 
   - Community Forum: https://forum.access-hive.org.au
 
