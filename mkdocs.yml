@@ -44,7 +44,7 @@ theme:
     - search.share
     - toc.follow
 
-    # - navigation.expand
+    - navigation.expand # reintroduced
     # - navigation.path
     # - toc.integrate
     # - navigation.sections
@@ -138,17 +138,21 @@ nav:
       - model_evaluation/model_evaluation_getting_started/index.md
       - Computing Access (Gadi@NCI): model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-    - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
-    - Model Data Catalog:
-      - model_evaluation/model_evaluation_model_catalogs/index.md
-      - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
-      - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
-    - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
-    - Model Evaluation on Gadi: 
+    - Data Catalogs:
+      - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
+      - Model Data:
+        - model_evaluation/model_evaluation_model_catalogs/index.md
+        - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
+        - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
+        - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Evaluation Tools: 
       - model_evaluation/model_evaluation_on_gadi/index.md
-      - ilamb: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
-      - esmvalltool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
-    - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
+      - Frameworks on Gadi:
+         - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
+         - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
+         - Pangeo & COSIMA: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+      - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
+      - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
     - community_resources/index.md
