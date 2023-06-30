@@ -25,11 +25,11 @@ ACCESS components represent different chemical, physical or biological parts of 
 Most model components have originated from collaborations with international research groups. These include:
 
 - [UK Met Office][met-office-web] &rarr; Unified Model (UM) atmospheric component.
-- [NOAA/ Geophysical Fluid Dynamics Laboratory (GFDL)][noaa-gfdl-web] &rarr; modular ocean model (MOM) component.
-- [Los Alamos National Laboratory (LANL)][lanl-web] &rarr; sea ice model (CICE) component.
-- [Centre Européen de Recherche et de Formation Avancée en Calcul Scientifique (CERFACS)][cerfacs-web] &rarr; OASIS3-MCT Ocean-Atmosphere-Sea Ice-Snowpack Model Coupling Toolkit.
+- [NOAA/ Geophysical Fluid Dynamics Laboratory (GFDL)][noaa-gfdl-web] &rarr; Modular Ocean Model (MOM) component.
+- [Los Alamos National Laboratory (LANL)][lanl-web] &rarr; Sea ice model (CICE) component.
+- [Centre Européen de Recherche et de Formation Avancée en Calcul Scientifique (CERFACS)][cerfacs-web] &rarr; Ocean-Atmosphere-Sea Ice-Snowpack Model Coupling Toolkit (OASIS3-MCT).
 - [United Kingdom Chemistry and Aerosols (UKCA)][ukca-web] &rarr; UK community atmospheric Chemistry-Aerosol (UKCA) model.
-- [CSIRO][csiro-web], [COSIMA][cosima-web] and [CLEX][clex-web]  &rarr; Community Atmosphere Biosphere Land Exchange (CABLE),  Whole Ocean Model with Biogeochemistry And Trophic-dynamics (WOMBAT) and land biogeochemistry Carnegie–Ames–Stanford-Approach (CASA) models, which are developed in Australia.
+- [CSIRO][csiro-web], [COSIMA][cosima-web] and [CLEX][clex-web] &rarr; Community Atmosphere Biosphere Land Exchange (CABLE),  Whole Ocean Model with Biogeochemistry And Trophic-dynamics (WOMBAT) and land biogeochemistry Carnegie–Ames–Stanford-Approach (CASA) models. These models have been developed in Australia.
 
 [met-office-web]: https://www.metoffice.gov.uk/
 [noaa-gfdl-web]: https://www.gfdl.noaa.gov/
