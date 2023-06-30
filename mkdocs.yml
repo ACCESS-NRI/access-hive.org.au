@@ -126,7 +126,7 @@ nav:
     # - Getting Started: 
     #   - models/running-a-model/getting_started/index.md
     #   - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
-    - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
+    - Computing Access (Gadi@NCI): models/running-a-model/getting_started/access_to_gadi_at_nci.md
     - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
     - Run ACCESS-CM: models/running-a-model/running-access-cm.md
     - Run ACCESS-AM: models/running-a-model/running-access-am.md
@@ -136,7 +136,7 @@ nav:
     - model_evaluation/index.md
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
-      - Access to Gadi@NCI: model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
+      - Computing Access (Gadi@NCI): model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
     - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
     - Model Data Catalog:
