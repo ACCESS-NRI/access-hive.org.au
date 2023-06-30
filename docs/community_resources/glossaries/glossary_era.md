@@ -25,12 +25,13 @@ $(document).ready(function(){
 
 ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate covering the period from January 1940 to present. ERA5 is produced by the Copernicus Climate Change Service (C3S) at ECMWF. ERA5 provides hourly estimates of a large number of atmospheric, land and oceanic climate variables.
 
+There are several datasets available as part of the [ERA5 dataset family](https://confluence.ecmwf.int/display/CKB/The+family+of+ERA5+datasets). We plan to expand the datatable to also include the [ERA5-LAND tables](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview). For that, you can find a good list [here](https://collections.eurodatacube.com/reanalysis-era5-land-monthly-means/readme.html).
+
 Search the available variables of ERA5 that are netCDF conform (for all formats including GRIB1 and GRIB2, go to the [ECMWF database](https://codes.ecmwf.int/grib/param-db/)):  
 
 <input id="era_input" type="text" placeholder="Adjust your search here..." style="width:100%; padding: 10px;">
 
-<!-- https://sonra.io/data-marketplace/era5-variables/ -->
-<!-- https://codes.ecmwf.int/grib/param-db/ -->
+<!-- TBD: Compare that we also have all variables from https://sonra.io/data-marketplace/era5-variables/ -->
 
 <!-- ERA5 from https://codes.ecmwf.int/grib/param-db/ -->
 
