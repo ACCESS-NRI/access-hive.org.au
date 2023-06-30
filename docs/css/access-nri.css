@@ -27,7 +27,15 @@
 
 .md-content {
   border-left: 0.2em solid;
-  border-color: rgba(255, 255, 255, 0.028);
+  border-color: rgba(255, 255, 255, 0.027);
+}
+
+/* .md-nav__title {
+ TODO jasmeen
+} */
+
+.md-nav--secondary .md-nav__item {
+  color: #8b8d91;
 }
 
 /* .md-main__inner {
@@ -47,7 +55,7 @@
   /* background-color: #262623; */
   /* border: 0.1em solid; */
   border-left: 1px solid;
-  border-color: rgba(255, 255, 255, 0.027);
+  border-color: rgba(255, 255, 255, 0.020);
 
   /* border-left: #e5e527;
   border-right: #cfcf37; */
