@@ -1,11 +1,1146 @@
-# <div class="highlight-bg"> Glossary and Useful Terms </div>
+---
+hide:
+  - toc
+---
 
-Here you can find a compilation of common terms and acronyms used by the Australian Community Climate and Earth System Simulator (ACCESS)  community:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#era_input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#era_variable_table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<style>
+.dataTables_wrapper {
+    width: 100%;
+    margin-bottom:2em
+}
+</style>
 
+# <div class="highlight-bg"> Variables for ERA5 atmospheric reanalysis </div>
 
-{{ supported }} [ACCESS-NRI Glossary](https://www.access-nri.org.au/community/access-glossary/): This includes common terms and acronyms used by the ACCESS community in research and modelling of past, present and future climate, weather and Earth-Systems.
+ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate covering the period from January 1940 to present. ERA5 is produced by the Copernicus Climate Change Service (C3S) at ECMWF. ERA5 provides hourly estimates of a large number of atmospheric, land and oceanic climate variables.
 
+Search the available variables of ERA5 that are netCDF conform (for all formats including GRIB1 and GRIB2, go to the [ECMWF database](https://codes.ecmwf.int/grib/param-db/)):  
 
-{{ community }} [IPCC Acronyms](https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SR15_AnnexI.pdf): Contains a comprehensive list of acronyms published in the scientific report SR15 of the Intergovernmental Panel on Climate Change (IPCC). The IPCC is the United Nations body for assessing the science related to climate change.
+<input id="era_input" type="text" placeholder="Adjust your search here..." style="width:100%; padding: 10px;">
 
-{{ community }} [CSSR Acronyms and Units](https://science2017.globalchange.gov/chapter/appendix-d/): The Climate Science Special Report (CSSR) is an assessment of the science of climate change with particular focus on the United States.
+<!-- https://sonra.io/data-marketplace/era5-variables/ -->
+<!-- https://codes.ecmwf.int/grib/param-db/ -->
+
+<!-- ERA5 from https://codes.ecmwf.int/grib/param-db/ -->
+
+<table style="border-collapse: collapse; width: 100%;">
+<thead>
+  <tr>
+    <th>Variable</th>
+    <th>Name</th>
+    <th>Units</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody id="era_variable_table">
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=130">t</a></td>
+    <td>Temperature</td>
+    <td>K</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=139">stl1</a></td>
+    <td>Soil temperature level 1</td>
+    <td>K</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=238">tsn</a></td>
+    <td>Temperature of snow layer</td>
+    <td>K</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=31">ci</a></td>
+    <td>Sea ice area fraction</td>
+    <td>(0 - 1)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=164">tcc</a></td>
+    <td>Total cloud cover</td>
+    <td>(0 - 1)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=172">lsm</a></td>
+    <td>Land-sea mask</td>
+    <td>(0 - 1)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174">al</a></td>
+    <td>Albedo</td>
+    <td>(0 - 1)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=185">ccc</a></td>
+    <td>Convective cloud cover</td>
+    <td>(0 - 1)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174092">sialb</a></td>
+    <td>Sea ice albedo</td>
+    <td>(0 - 1)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=142">lsp</a></td>
+    <td>Large-scale precipitation</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=143">cp</a></td>
+    <td>Convective precipitation</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=173">sr</a></td>
+    <td>Surface roughness</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151145">zos</a></td>
+    <td>Sea surface height</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151163">t20d</a></td>
+    <td>Depth of 20C isotherm</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174098">sithick</a></td>
+    <td>Sea-ice thickness</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=3066">sde</a></td>
+    <td>Snow depth</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174097">sisnthick</a></td>
+    <td>Sea ice snow thickness</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151224">mlotdev</a></td>
+    <td>Ocean mixed layer thickness defined by vertical tracer diffusivity threshold</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151225">mlotst010</a></td>
+    <td>Ocean mixed layer thickness defined by sigma theta 0.01 kg/m3</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151226">mlotst030</a></td>
+    <td>Ocean mixed layer thickness defined by sigma theta 0.03 kg/m3</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151227">mlotst125</a></td>
+    <td>Ocean mixed layer thickness defined by sigma theta 0.125 kg/m3</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151228">mlott02</a></td>
+    <td>Ocean mixed layer thickness defined by temperature 0.2C</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151229">mlott05</a></td>
+    <td>Ocean mixed layer thickness defined by temperature 0.5C</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151234">swmth</a></td>
+    <td>Sea water mass per unit area expressed as thickness</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=262104">t20d</a></td>
+    <td>Depth of 20 C isotherm</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=262113">mlotst010</a></td>
+    <td>Ocean mixed layer depth defined by sigma theta 0.01 kg m-3</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=262124">zos</a></td>
+    <td>Sea surface height</td>
+    <td>m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=131">u</a></td>
+    <td>U component of wind</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=132">v</a></td>
+    <td>V component of wind</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151131">ocu</a></td>
+    <td>Eastward sea water velocity</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151132">ocv</a></td>
+    <td>Northward sea water velocity</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151133">wo</a></td>
+    <td>Upward sea water velocity</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174112">siue</a></td>
+    <td>Sea ice velocity along x</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174113">sivn</a></td>
+    <td>Sea ice velocity along y</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151250">voy</a></td>
+    <td>Sea water y velocity</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151251">uox</a></td>
+    <td>Sea water x velocity</td>
+    <td>m s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=145">bld</a></td>
+    <td>Boundary layer dissipation</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=146">sshf</a></td>
+    <td>Surface sensible heat flux</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=147">slhf</a></td>
+    <td>Surface latent heat flux</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=169">ssrd</a></td>
+    <td>Surface short-wave (solar) radiation downwards</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=176">ssr</a></td>
+    <td>Surface net short-wave (solar) radiation</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=177">str</a></td>
+    <td>Surface net long-wave (thermal) radiation</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=178">tsr</a></td>
+    <td>Top net short-wave (solar) radiation</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=179">ttr</a></td>
+    <td>Top net long-wave (thermal) radiation</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210">ssrc</a></td>
+    <td>Surface net short-wave (solar) radiation, clear sky</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=211">strc</a></td>
+    <td>Surface net long-wave (thermal) radiation, clear sky</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151214">hc300m</a></td>
+    <td>Ocean heat content 0-300m</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151215">hc700m</a></td>
+    <td>Ocean heat content 0-700m</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151216">hcbtm</a></td>
+    <td>Ocean heat content 0-bottom</td>
+    <td>J m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=138">vo</a></td>
+    <td>Vorticity (relative)</td>
+    <td>s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=155">d</a></td>
+    <td>Divergence</td>
+    <td>s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151138">sigmat</a></td>
+    <td>Sea water sigma theta</td>
+    <td>kg m**-3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210072">pm1</a></td>
+    <td>Particulate matter d <= 1 um</td>
+    <td>kg m**-3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210073">pm2p5</a></td>
+    <td>Particulate matter d <= 2.5 um</td>
+    <td>kg m**-3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210074">pm10</a></td>
+    <td>Particulate matter d <= 10 um</td>
+    <td>kg m**-3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=180">ewss</a></td>
+    <td>Eastward turbulent surface stress</td>
+    <td>N m**-2 s</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=181">nsss</a></td>
+    <td>Northward turbulent surface stress</td>
+    <td>N m**-2 s</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=129">z</a></td>
+    <td>Geopotential</td>
+    <td>m**2 s**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=134">sp</a></td>
+    <td>Surface pressure</td>
+    <td>Pa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151">msl</a></td>
+    <td>Mean sea level pressure</td>
+    <td>Pa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=133">q</a></td>
+    <td>Specific humidity</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=203">o3</a></td>
+    <td>Ozone mass mixing ratio</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210061">co2</a></td>
+    <td>Carbon Dioxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210062">ch4</a></td>
+    <td>Methane</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210063">n2o</a></td>
+    <td>Nitrous oxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210121">no2</a></td>
+    <td>Nitrogen dioxide mass mixing ratio</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210122">so2</a></td>
+    <td>Sulphur dioxide mass mixing ratio</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210123">co</a></td>
+    <td>Carbon monoxide mass mixing ratio</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210124">hcho</a></td>
+    <td>Formaldehyde</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210181">ra</a></td>
+    <td>Radon</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210203">go3</a></td>
+    <td>Ozone mass mixing ratio (full chemistry scheme)</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217003">h2o2</a></td>
+    <td>Hydrogen peroxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217004">ch4_c</a></td>
+    <td>Methane (chemistry)</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217006">hno3</a></td>
+    <td>Nitric acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217010">c2h4</a></td>
+    <td>Ethene</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217013">pan</a></td>
+    <td>Peroxyacetyl nitrate</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217016">c5h8</a></td>
+    <td>Isoprene</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217018">dms</a></td>
+    <td>Dimethyl sulfide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217019">nh3</a></td>
+    <td>Ammonia mass mixing ratio</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217027">no</a></td>
+    <td>Nitrogen monoxide mass mixing ratio</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217030">oh</a></td>
+    <td>Hydroxyl radical</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217032">no3</a></td>
+    <td>Nitrate radical</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217033">n2o5</a></td>
+    <td>Dinitrogen pentoxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217042">ch3oh</a></td>
+    <td>Methanol</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217043">hcooh</a></td>
+    <td>Formic acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217045">c2h6</a></td>
+    <td>Ethane</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217046">c2h5oh</a></td>
+    <td>Ethanol</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217047">c3h8</a></td>
+    <td>Propane</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217048">c3h6</a></td>
+    <td>Propene</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217049">c10h16</a></td>
+    <td>Terpenes</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217063">oclo</a></td>
+    <td>Chlorine dioxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217064">clono2</a></td>
+    <td>Chlorine nitrate</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217065">hocl</a></td>
+    <td>Hypochlorous acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217068">hbr</a></td>
+    <td>Hydrogen bromide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217070">hobr</a></td>
+    <td>Hypobromous acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217078">ch3cl</a></td>
+    <td>Methyl chloride</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217080">ch3br</a></td>
+    <td>Methyl bromide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217085">h2so4</a></td>
+    <td>Sulfuric acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217086">hono</a></td>
+    <td>Nitrous acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217096">ch3cooh</a></td>
+    <td>Acetic acid</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217174">clo</a></td>
+    <td>Chlorine monoxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217176">bro</a></td>
+    <td>Bromine monoxide</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217194">brono2</a></td>
+    <td>Bromine nitrate</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=217200">hcl</a></td>
+    <td>Hydrogen chloride</td>
+    <td>kg kg**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=137">tcwv</a></td>
+    <td>Total column vertically-integrated water vapour</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=206">tco3</a></td>
+    <td>Total column ozone</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210066">tcn2o</a></td>
+    <td>Total column Nitrous oxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210125">tcno2</a></td>
+    <td>Total column Nitrogen dioxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210126">tcso2</a></td>
+    <td>Total column Sulphur dioxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210127">tcco</a></td>
+    <td>Total column Carbon monoxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210128">tchcho</a></td>
+    <td>Total column Formaldehyde</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210183">tcra</a></td>
+    <td>Total column Radon</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=210206">gtco3</a></td>
+    <td>GEMS Total column ozone</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=3063">acpcp</a></td>
+    <td>Convective precipitation (water)</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218003">tc_h2o2</a></td>
+    <td>Total column hydrogen peroxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218004">tc_ch4</a></td>
+    <td>Total column methane</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218006">tc_hno3</a></td>
+    <td>Total column nitric acid</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218010">tc_c2h4</a></td>
+    <td>Total column ethene</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218013">tc_pan</a></td>
+    <td>Total column  peroxyacetyl nitrate</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218016">tc_c5h8</a></td>
+    <td>Total column  isoprene</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218018">tc_dms</a></td>
+    <td>Total column dimethyl sulfide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218019">tc_nh3</a></td>
+    <td>Total column ammonia</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218020">tc_so4</a></td>
+    <td>Total column  sulfate</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218027">tc_no</a></td>
+    <td>Total column nitrogen monoxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218030">tc_oh</a></td>
+    <td>Total column hydroxyl radical</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218032">tc_no3</a></td>
+    <td>Total column nitrate radical</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218033">tc_n2o5</a></td>
+    <td>Total column dinitrogen pentoxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218042">tc_ch3oh</a></td>
+    <td>Total column methanol</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218043">tc_hcooh</a></td>
+    <td>Total column formic acid</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218045">tc_c2h6</a></td>
+    <td>Total column  ethane</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218046">tc_c2h5oh</a></td>
+    <td>Total column ethanol</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218047">tc_c3h8</a></td>
+    <td>Total column propane</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218048">tc_c3h6</a></td>
+    <td>Total column propene</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218049">tc_c10h16</a></td>
+    <td>Total column terpenes</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218063">tc_oclo</a></td>
+    <td>Total column of chlorine dioxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218064">tc_clono2</a></td>
+    <td>Total column of chlorine nitrate</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218065">tc_hocl</a></td>
+    <td>Total column of hypochlorous acid</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218068">tc_hbr</a></td>
+    <td>Total column of hydrogen bromide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218070">tc_hobr</a></td>
+    <td>Total column of hypobromous acid</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218078">tc_ch3cl</a></td>
+    <td>Total column of methyl chloride</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218080">tc_ch3br</a></td>
+    <td>Total column of methyl bromide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218086">tc_hono</a></td>
+    <td>Total column of nitrous acid</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218096">tc_ch3cooh</a></td>
+    <td>Total column of acetic acid</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218174">tc_clo</a></td>
+    <td>Total column of chlorine monoxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218176">tc_bro</a></td>
+    <td>Total column of bromine monoxide</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218194">tc_brono2</a></td>
+    <td>Total column of bromine nitrate</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=218200">tc_hcl</a></td>
+    <td>Total column of hydrogen chloride</td>
+    <td>kg m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=135">w</a></td>
+    <td>Vertical velocity</td>
+    <td>Pa s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=158">tsp</a></td>
+    <td>Tendency of surface pressure</td>
+    <td>Pa s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=140">swl1</a></td>
+    <td>Soil wetness level 1</td>
+    <td>m of water equivalent</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=141">sd</a></td>
+    <td>Snow depth</td>
+    <td>m of water equivalent</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=144">sf</a></td>
+    <td>Snowfall</td>
+    <td>m of water equivalent</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=182">e</a></td>
+    <td>Evaporation</td>
+    <td>m of water equivalent</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=156">gh</a></td>
+    <td>Geopotential height</td>
+    <td>gpm</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=157">r</a></td>
+    <td>Relative humidity</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=260509">al</a></td>
+    <td>Albedo</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=3072">ccc</a></td>
+    <td>Convective cloud cover</td>
+    <td>%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151153">taueo</a></td>
+    <td>Surface downward eastward stress</td>
+    <td>N m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151154">tauno</a></td>
+    <td>Surface downward northward stress</td>
+    <td>N m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151222">tauvo</a></td>
+    <td>Surface downward y stress</td>
+    <td>N m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151223">tauuo</a></td>
+    <td>Surface downward x stress</td>
+    <td>N m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151230">vsf</a></td>
+    <td>Virtual salt flux into sea water</td>
+    <td>kg m**-2 s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151217">wfcorr</a></td>
+    <td>Water flux correction</td>
+    <td>kg m**-2 s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151129">thetao</a></td>
+    <td>Sea water potential temperature</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151195">t14d</a></td>
+    <td>Depth of 14C isotherm</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151196">t17d</a></td>
+    <td>Depth of 17C isotherm</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151197">t26d</a></td>
+    <td>Depth of 26C isotherm</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151198">t28d</a></td>
+    <td>Depth of 28C isotherm</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=174093">sitemptop</a></td>
+    <td>Sea ice surface temperature</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151189">tos</a></td>
+    <td>Sea surface temperature in degC</td>
+    <td>deg C</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151130">so</a></td>
+    <td>Sea water practical salinity</td>
+    <td>psu</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151219">sos</a></td>
+    <td>Sea surface practical salinity</td>
+    <td>psu</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151147">stfbarot</a></td>
+    <td>Ocean barotropic stream function</td>
+    <td>m**3 s**-1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=3121">lhf</a></td>
+    <td>Latent heat flux</td>
+    <td>W m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=3122">shf</a></td>
+    <td>Sensible heat flux</td>
+    <td>W m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=3123">bld</a></td>
+    <td>Boundary layer dissipation</td>
+    <td>W m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151213">hfds</a></td>
+    <td>Surface downward heat flux in sea water</td>
+    <td>W m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151236">rss</a></td>
+    <td>Surface net downward shortwave flux into ocean</td>
+    <td>W m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=262133">hfcorr</a></td>
+    <td>Heat flux correction</td>
+    <td>W m**-2</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=262100">sos</a></td>
+    <td>Sea surface salinity</td>
+    <td>Numeric</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151232">sc700m</a></td>
+    <td>Integrated salinity 0-700m</td>
+    <td>psu*m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151233">sabtm</a></td>
+    <td>Integrated salinity 0-bottom</td>
+    <td>psu*m</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://codes.ecmwf.int/grib/param-db/?id=151235">sc300m</a></td>
+    <td>Integrated salinity 0-300m</td>
+    <td>psu*m</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
