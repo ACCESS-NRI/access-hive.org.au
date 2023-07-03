@@ -44,7 +44,7 @@ theme:
     - search.share
     - toc.follow
 
-    - navigation.expand # reintroduced
+    # - navigation.expand 
     # - navigation.path
     # - toc.integrate
     # - navigation.sections
