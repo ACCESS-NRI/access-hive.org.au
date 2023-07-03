@@ -5,23 +5,25 @@
 /* Import medium-weight Roboto font for tabs */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+/* Overriding MkDocs CSS */
+
 :root > * {
   --md-primary-fg-color: rgb(30, 29, 29);
   --md-primary-fg-color--light: #f5edd5;
   --md-primary-fg-color--dark:  #074473;
-  /* --md-primary-fg-color--dark: #FFA629; */
-
-  /* --md-primary-fg-color--dark:  #105D98; */
-  /* --md-primary-fg-color--dark: #a26d11;  original */    
   --md-accent-fg-color: #f5c533;
   --md-primary-tab-color: #2e303e;
   --md-primary-hover-tab-color: #444448;
 }
 
-/* .md-sidebar {
-  background-color: #cb2828;
-  font-size: 2.5em;
+/* .md-content {
+  border-left: 0.2em solid;
+  border-color: rgba(255, 255, 255, 0.027);
 } */
+
+.md-nav--secondary .md-nav__item {
+  color: #949db2;
+}
 
 .md-nav--primary {
   font-size: 1.7em;
@@ -32,21 +34,19 @@
 }
 
 .md-nav {
-  /* background-color: #262623; */
-  /* border: 0.1em solid; */
   border-left: 1px solid;
-  border-color: rgba(255, 255, 255, 0.078);
+  border-color: rgba(255, 255, 255, 0.020);
+}
 
-  /* border-left: #e5e527;
-  border-right: #cfcf37; */
-  /* font-size: 1.7em; */
+.md-nav--primary .md-nav .md-nav__item {
+  font-size: 1.1em;
 }
 
 /* Changing the overall theme (background color) of the app */
 [data-md-color-scheme="slate"] {
   /* --md-hue: 206;  */
-  --md-hue: 220;
   /* --md-hue: 248; */
+  --md-hue: 220;
 }
 
 
@@ -56,6 +56,8 @@
     height: 2.5rem;
     width: auto;
 }
+
+/* ------------------------------------------------- */
 
 .center {
   margin-left: auto;
@@ -301,7 +303,7 @@ ACCESS gold */
   padding-bottom: 1%;
   padding-top: 2%;
   padding-bottom: 1%;
-  /* width: 50%; */
+  width: 33%;
   /* margin-left: 2em; */
   /* margin-right: 1em; */
   box-shadow: 5px 8px 10px #1b1b1b;
