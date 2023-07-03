@@ -96,7 +96,7 @@
   --primary-bg-color: 237, 237, 237;
   --md-primary-bg-color: rgb(var(--primary-bg-color)); /* top banner text */
   --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.3); /* search bar 'Search' text */
-  --md-accent-fg-color: var(--nri-blue); /* link text hover */
+  --md-accent-fg-color: var(--nri-dark-blue); /* link text hover */
   --md-accent-fg-color--transparent: #FAA61916;  /* navigation bar little arrows hover */
   --md-accent-bg-color: var(--md-primary-bg-color); /* back to top button text hover */
   --md-accent-bg-color: var(--nri-orange); /* back to top button text hover */
@@ -398,8 +398,6 @@ h1 {
   border-color: var(--navigation-borders);
   padding-top: 2%;
   padding-bottom: 1%;
-  padding-top: 2%;
-  padding-bottom: 1%;
   box-shadow: 5px 8px 10px var(--card-shadows);
 }
 
@@ -418,9 +416,10 @@ h1 {
   color: var(--md-accent-fg-color);
 }
 
-/* -------------------------------------------- */
 
-/* "ACCESS Model Configurations" in `/models` tab CSS --------- */
+/* =============================================================== 
+  ACCESS model configurations in models tab
+*/
 .wrapper-div-config {
   margin-top: 1em;
   display: flex;
@@ -478,6 +477,10 @@ h1 {
   transition-duration: 0.4s;
 }
 
+
+/* =============================================================== 
+  Miscellaneous
+*/
 /* Center table */
 .center {
   margin-left: auto;
@@ -496,18 +499,14 @@ h1 {
   border-radius: 0.1em;
 }
 
+/* Image background */
 .image-background {
   background-color: var(--img-background);
 }
 
+/* With borders */
 .with-borders {
   border-radius: 7px;
   border: 2px solid var(--navigation-borders);
   box-sizing: border-box;
 }
-
-
-
-
-
-/* -------------------------------------------- */
