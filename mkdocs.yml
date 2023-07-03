@@ -35,6 +35,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.footer
+    - navigation.tracking
     - content.action.edit
     - content.action.view
     - content.code.copy        # for displaying copy icon at top right in code snippets  
