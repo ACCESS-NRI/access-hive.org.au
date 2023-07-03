@@ -1,6 +1,12 @@
 # <div class="highlight-bg"> Running ACCESS-CM2 Model </div>
 This section includes a step-by-step instruction set on how to run the **ACCESS-CM2** suite.
-
+```
+/g/data/kj13/datasets
+├── cmip6
+│   └── *.nc
+├── esmvaltool
+│   └── obsdata-v2/
+```
 It is also built as a future point of reference, where you can come back and find the section containing the information you need.
 
 ## **Getting Started**

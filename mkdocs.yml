@@ -15,7 +15,7 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    - scheme: default
+    - scheme: custom-light
       toggle:
         icon: material/theme-light-dark
         name: Switch to dark mode

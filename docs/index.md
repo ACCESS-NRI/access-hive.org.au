@@ -25,7 +25,7 @@
                 <div class="wrapper-text-config">
                     <b>
                         <div style="text-align: center; margin-top: 1em;">
-                            <span class="highlight-blue-bg">
+                            <span class="highlight-background-like-tab">
                                 Models
                             </span>
                         </div>
@@ -44,7 +44,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Run a Model</span>
+                        <span class="highlight-background-like-tab">Run a Model</span>
                     </div></b><br>
                     A step-by-step guides for running different <b>model configurations</b>.  
                 </div>
@@ -59,7 +59,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Model Evaluation</span>
+                        <span class="highlight-background-like-tab">Model Evaluation</span>
                     </div></b><br>
                     Provides guidance for <b>model evaluation</b> of the ACCESS suite.
                 </div>
@@ -74,7 +74,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Community Resources</span>
+                        <span class="highlight-background-like-tab">Community Resources</span>
                     </div></b><br>
                     Other important resources contributed by and for the ACCESS community.
                 </div>
@@ -89,7 +89,7 @@
             <div class="wrapper-div-config">
                 <div class="wrapper-text-config">
                     <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Community Forum</span>
+                        <span class="highlight-background-like-tab">Community Forum</span>
                     </div></b><br>
                     <b>ACCESS-Hive Community Forum</b> is a platform to ask questions and share innovative ideas.
                 </div>
@@ -126,7 +126,7 @@ See the [support page](about/support.md) for details about the support levels: w
             </div>
             <div class="wrapper-text-config">
                 <b><div style="text-align: center; margin-top: 1em;">
-                    <span class="highlight-blue-bg">Contribute</span>
+                    <span class="highlight-background-like-tab">Contribute</span>
                 </div></b><br>
                 We invite you to join the ACCESS-Hive team, and would love to have your contributions onboard!
             </div>

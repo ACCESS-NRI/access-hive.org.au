@@ -4,7 +4,7 @@ ACCESS is a family of related computer models or components that represent
 different parts of the Earth system. ACCESS links various model components through
 software called **couplers** to form different Model Configurations.
 
-<div style="background-color: white; border-radius: 7px;">
+<div class="with-borders image-background">
     <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;" alt="Atmosphere"></img>
 </div>
 
