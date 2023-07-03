@@ -18,7 +18,43 @@
 </table>
 
 ## Navigating ACCESS-Hive
-<div>
+<div class="wrapper-div">
+    <!-- TODO change href links for these cards -->
+    <div class="wrapper-children">
+        <a href="model_components/atmosphere/">
+            <img src="assets/ACCESS-MODEL.png"></img> 
+            <div class="white-links"><div class="logo_cell_text">Models</div></div>
+        </a>
+    </div>
+    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
+        <a href="model_components/land/">
+            <img src="assets/get_started_example.png"></img> 
+            <div class="white-links"><div class="logo_cell_text">Run a Model</div></div>
+        </a>
+    </div>
+    <div class="wrapper-children">
+        <a href="model_components/ocean/">
+            <img src="assets/resources_example.png"></img> 
+            <div class="white-links"><div class="logo_cell_text">Model Evaluation</div></div>
+        </a>
+    </div>
+</div>
+<div class="wrapper-div">
+    <!-- TODO change href links for these cards -->
+    <div class="wrapper-children">
+        <a href="model_components/atmosphere/">
+            <img src="assets/ACCESS-MODEL.png"></img> 
+            <div class="white-links"><div class="logo_cell_text">Models</div></div>
+        </a>
+    </div>
+    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
+        <a href="model_components/land/">
+            <img src="assets/get_started_example.png"></img> 
+            <div class="white-links"><div class="logo_cell_text">Run a Model</div></div>
+        </a>
+    </div>
+</div>
+<!-- <div>
     <div>
         <a href="models/">
             <div class="wrapper-div-config">
@@ -99,7 +135,7 @@
             </div>
         </a>
     </div>
-</div>
+</div> -->
 
 ## About
 {% include "call_contribute.md" %}

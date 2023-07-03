@@ -31,16 +31,17 @@ theme:
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.footer
+    - navigation.tracking       # The URL in the address bar is automatically updated with active anchor
     - content.action.edit
     - content.action.view
-    - content.code.copy        # for displaying copy icon at top right in code snippets  
+    - content.code.copy         # for displaying copy icon at top right in code snippets  
     - content.code.annotate
     - search.suggest
     - search.highlight
     - search.share
-    - toc.follow
+    - toc.follow                # the sidebar is automatically scrolled to the active anchor
 
-    # - navigation.expand
+    # - navigation.expand 
     # - navigation.path
     # - toc.integrate
     # - navigation.sections
@@ -122,7 +123,7 @@ nav:
     # - Getting Started: 
     #   - models/running-a-model/getting_started/index.md
     #   - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
-    - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
+    - Computing Access (Gadi@NCI): models/running-a-model/getting_started/access_to_gadi_at_nci.md
     - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
     - Run ACCESS-CM: models/running-a-model/running-access-cm.md
     - Run ACCESS-AM: models/running-a-model/running-access-am.md
@@ -132,45 +133,47 @@ nav:
     - model_evaluation/index.md
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
-      - Access to Gadi@NCI: model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
+      - Computing Access (Gadi@NCI): model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-    - Observational Data Catalog: model_evaluation/model_evaluation_observational_catalogs.md
-    - Model Data Catalog:
-      - model_evaluation/model_evaluation_model_catalogs/index.md
-      - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
-      - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
-    - Data Format Processing: model_evaluation/model_evaluation_data_processing.md
-    - Model Evaluation on Gadi: 
+    - Data Catalogs:
+      - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
+      - Model Data:
+        - model_evaluation/model_evaluation_model_catalogs/index.md
+        - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
+        - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
+        - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Evaluation Tools: 
       - model_evaluation/model_evaluation_on_gadi/index.md
-      - ilamb: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
-      - esmvalltool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
-    - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
+      - Frameworks on Gadi:
+         - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
+         - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
+         - Pangeo & COSIMA: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+      - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
+      - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
     - community_resources/index.md
-    - Community Working Groups: community_resources/community_working_groups.md
-    - Community Glossaries:
-      - community_resources/glossaries/index.md
-      - ACCESS-NRI: community_resources/glossaries/glossary_access_nri.md
-      - IPCC: community_resources/glossaries/glossary_ipcc.md
-      - CSSR: community_resources/glossaries/glossary_cssr.md
+    - Working Groups: community_resources/community_working_groups.md
+    - Glossaries: community_resources/glossaries/index.md
+    - Variables:
       - CMIP(6): community_resources/glossaries/glossary_cmip.md
       - ERA(5): community_resources/glossaries/glossary_era.md
       - UM: community_resources/glossaries/glossary_um.md
-    - Community Training: 
+    - Model Evaluation Links:
+      - Observational Catalogs: community_resources/community_observational_catalogs.md
+      - Model Catalogs: community_resources/community_model_catalogs.md
+      - Data Formatting: community_resources/community_data_processing.md
+      - Evaluation Recipes: community_resources/community_med_recipes.md
+    - Training: 
       - Training: community_resources/training/index.md
       - Git Version Control: community_resources/training/git-version-control.md
       - High Performance Computing (HPC): community_resources/training/hpc.md
       - ACCESS Training: community_resources/training/ACCESS_training.md
       - NCI Training: community_resources/training/nci-training.md
       - Additional Training: community_resources/training/additional_training.md
-    - Community Events:
+    - Events:
        - community_resources/events/index.md
        - Add Event: community_resources/events/add_event.md
-    - Community Observational Catalogs: community_resources/community_observational_catalogs.md
-    - Community Model Catalogs: community_resources/community_model_catalogs.md
-    - Community Data Formatting: community_resources/community_data_processing.md
-    - Community Model Evaluation Recipes: community_resources/community_med_recipes.md
 
   - Community Forum: https://forum.access-hive.org.au
 
