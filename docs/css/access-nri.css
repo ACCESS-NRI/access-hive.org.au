@@ -54,45 +54,88 @@
   --md-typeset-kbd-color: rgb(39 39 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126 126 126 / 16%); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(39 39 39); /* text as keyboard outer border (<kbd> tag) */
-  --md-typeset-table-color: rgba(0,0,0,.12);
-  --md-typeset-table-color: purple;
-  --md-admonition-fg-color: var(--md-default-fg-color);
-  --md-admonition-bg-color: var(--md-default-bg-color);
-  --md-footer-fg-color: #fff;
-  --md-footer-fg-color--light: hsla(0,0%,100%,.7);
-  --md-footer-fg-color--lighter: hsla(0,0%,100%,.3);
-  --md-footer-bg-color: rgba(0,0,0,.87);
-  --md-footer-bg-color--dark: rgba(0,0,0,.32);
+  --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
+  --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
+  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
+  --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
+  --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
+  --md-footer-fg-color--lighter: var(--md-default-fg-color--lighter); /* Footer 'Made with' (Material for MkDocs) text */
+  --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
+  --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
   --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
   --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
   --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
+  --inactive-text: rgba(var(--default-fg-color),.7); /* inactive top tabs text, passed toc items text */
+  --highlight-bg: #242428; /* .highligh-bg */
+  --card-shadows: #1b1b1b; /* Shadows on cards and other elements */
+  --card-shadows-hover: #080808; /* Shadows hover on cards and other elements */
+  --img-background: #FFFFFF; /* Background for transparent images */
 }
 
-[data-md-color-scheme=default] {
+[data-md-color-scheme="custom-light"] {
   --nri-green: #A6CE39;
   --nri-orange: #FAA619;
   --nri-dark-blue: #115D97;
   --nri-blue: #06AEEF;
   --nri-light-blue: #8ED7F8;
-  --text-color: 233, 239, 252;
-  --md-default-fg-color--lighter_: !important; /* pencil for editing page,  */
-  --md-default-bg-color: rgb(46, 51, 62) !important; /* main body background */
-  --md-typeset-color: rgb(var(--text-color)) !important; /* Main text */
-  --md-code-fg-color: rgb(213, 217, 226) !important; /* code element text */
-  --md-code-bg-color: rgb(33, 36, 44) !important; /* code element background */
-  --md-primary-bg-color: #EDEDED !important; /* top banner text */
-  --md-primary-fg-color: rgb(30, 29, 29) !important; /* top banner background */
-  --md-primary-fg-color--dark: var(--nri-dark-blue) !important; /* top tab background */
-  --md-typeset-a-color: var(--nri-blue) !important; /* link text */
-  --md-accent-fg-color: var(--nri-orange) !important; /* link text hover */
-  --inactive-text: rgba(var(--text-color),0.7); /* inactive top tabs text, passed toc items text */
-  --active-text: var(--md-typeset-color); /* active top tabs text, passed toc items text */
-  --highlight-bg: #242428; /* .highligh-bg */
-  --navigation-borders: #666b75; /* Left border on the toc an navigation, border of cards */
-  --shadows: #1b1b1b; /* Shadows on cards and other elements */
-  --shadows-hover: #080808; /* Shadows hover on cards and other elements */
-  --img-background: #FFFFFF; /* Background for transparent images */
+  --default-fg-color: 213, 217, 226;  /* Color for main text in body, navigation, table of content*/
+  --md-default-fg-color: black; /* Main text in body, navigation, table of content*/ 
+  --md-default-fg-color--light: rgba(var(--default-fg-color),.54);
+  --md-default-fg-color--lighter: rgba(var(--default-fg-color),.32); /* pencil for editing page */
+  --md-default-fg-color--lightest: rgba(var(--default-fg-color),.07);
+  --default-bg-color: 46, 51, 62; /* Color for main background */
+  --md-default-bg-color: rgb(var(--default-bg-color)); /* Main background */
+  --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
+  --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3);
+  --md-default-bg-color--lightest: rgba(var(--default-bg-color),.12);
+  --md-primary-fg-color: rgb(30, 29, 29); /* top banner background */
+  --md-primary-fg-color--light: var(--nri-light-blue);
+  --md-primary-fg-color--dark: var(--nri-dark-blue); /* top tab background */
+  --md-primary-bg-color: #EDEDED; /* top banner text */
+  --md-primary-bg-color--light: var(--md-default-fg-color--lighter); /* search bar 'Search' text */
+  --md-accent-fg-color: var(--nri-orange); /* link text hover */
+  --md-accent-fg-color--transparent: #FAA61916;  /* navigation bar little arrows hover */
+  --md-accent-bg-color: var(--md-primary-bg-color); /* back to top button text hover */
+  --md-accent-bg-color: var(--nri-dark-blue); /* back to top button text hover */
+  --md-accent-bg-color--light: #115D97B0;
+  --md-code-fg-color: rgb(213, 217, 226); /* code element text */
+  --md-code-bg-color: rgb(33, 36, 44); /* code element background */
+  --md-code-hl-color: rgba(255,255,0,.5);
+  --md-code-hl-number-color: #d52a2a;
+  --md-code-hl-special-color: #db1457;
+  --md-code-hl-function-color: #a846b9;
+  --md-code-hl-constant-color: #6e59d9;
+  --md-code-hl-keyword-color: #3f6ec6;
+  --md-code-hl-string-color: #1c7d4d;
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-default-fg-color--light);
+  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+  --md-code-hl-comment-color: var(--md-default-fg-color--light);
+  --md-code-hl-generic-color: var(--md-default-fg-color--light);
+  --md-code-hl-variable-color: var(--md-default-fg-color--light);
+  --md-typeset-color: var(--md-default-fg-color);
+  --md-typeset-a-color: var(--nri-blue); /* link text */
+  --md-typeset-mark-color: #FAA61970; /* marked text (<mark> tag)*/
+  --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
+  --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
+  --md-typeset-kbd-color: rgb(39 39 39); /* keyboard key background (<kbd> tag) */
+  --md-typeset-kbd-accent-color: rgb(126 126 126 / 16%); /* keyboard key inner border (<kbd> tag) */
+  --md-typeset-kbd-border-color: rgb(39 39 39); /* text as keyboard outer border (<kbd> tag) */
+  --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
+  --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
+  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
+  --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
+  --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
+  --md-footer-fg-color--lighter: var(--md-default-fg-color--lighter); /* Footer 'Made with' (Material for MkDocs) text */
+  --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
+  --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
+  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
+  --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
 }
+
 
 /* =============================================================== 
   Main headings
@@ -151,28 +194,7 @@ h1 {
 /* =============================================================== 
   Model Components icons  
 */
-.logo_component {
-  width: 70%;
-  margin: 0 auto;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.logo_cell {
-  margin: 0 auto;
-  text-align: center;
-  padding: 0.5%;
-  width: 25%;
-}
-
-.logo_cell:hover {
-  transition-duration: 0.4s;
-  padding: 0.8%;
-  background-color: rgba(29, 28, 28, 0.185);
-  border-radius: 15px;
-}
-
-.logo_cell:hover .logo_cell_text {
+.logo_cell_text {
   color: var(--nri-orange);
 }
 
@@ -184,6 +206,26 @@ h1 {
   margin-top: 1.2em;
 }
 
+
+/* =============================================================== 
+  Footer
+*/
+
+.partners-logo {
+  display: flex;
+}
+.partners-logo > a {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+.partners-logo img {
+  align-self: center;
+  justify-self: center;
+  width: auto;
+  height: 2.5rem;
+  padding: 0.4rem 0.6rem;
+}
 
 /* =============================================================== 
   Header 
@@ -223,7 +265,7 @@ h1 {
 
 /* Selected tab */
 .md-tabs__item--active {
-  color: var(--active-text);
+  color: var(--md-typeset-color);
 }
 
 .md-tabs__item--active, .md-tabs__link {
@@ -233,7 +275,7 @@ h1 {
 /* Tab hover state */
 .md-tabs__item:hover {
   transition-duration: 0.4s;
-  color: var(--active-text);
+  color: var(--md-typeset-color);
 }
 
 /* =============================================================== 
@@ -327,11 +369,11 @@ h1 {
   padding-bottom: 1%;
   padding-top: 2%;
   padding-bottom: 1%;
-  box-shadow: 5px 8px 10px var(--shadows);
+  box-shadow: 5px 8px 10px var(--card-shadows);
 }
 
 .wrapper-children:hover {
-  box-shadow: 10px 10px 10px var(--shadows-hover);
+  box-shadow: 10px 10px 10px var(--card-shadows-hover);
   border-color: white;
   transition-duration: 0.4s;
 }
@@ -354,12 +396,12 @@ h1 {
   border: 0.1em solid;
   border-radius: 7px;
   border-color: var(--navigation-borders);
-  box-shadow: 5px 8px 10px var(--shadows);
+  box-shadow: 5px 8px 10px var(--card-shadows);
   height: 10em;
 }
 
 .wrapper-div-config:hover {
-  box-shadow: 10px 10px 10px var(--shadows-hover);
+  box-shadow: 10px 10px 10px var(--card-shadows-hover);
   border-color: var(--md-typeset-color);
   transition-duration: 0.4s;
 }
@@ -401,7 +443,7 @@ h1 {
 }
 
 .wrapper-div-config:hover .highlight-blue-bg {
-  box-shadow: 3px 3px 3px var(--shadows-hover);
+  box-shadow: 3px 3px 3px var(--card-shadows-hover);
   transition-duration: 0.4s;
 }
 
