@@ -16,10 +16,10 @@
   --md-primary-hover-tab-color: #444448;
 }
 
-.md-content {
+/* .md-content {
   border-left: 0.2em solid;
   border-color: rgba(255, 255, 255, 0.027);
-}
+} */
 
 .md-nav--secondary .md-nav__item {
   color: #949db2;
