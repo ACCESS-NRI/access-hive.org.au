@@ -4,6 +4,7 @@ function sortTables() {
   tables.forEach(table => new Tablesort(table));
 }
 
+// Remove 'Made with Material for MkDocs' from copyright
 function removeMkDocs() {
   let copyright = document.querySelector(".md-copyright");
   for (let i=0; i<=copyright.childNodes.length; i++) {
