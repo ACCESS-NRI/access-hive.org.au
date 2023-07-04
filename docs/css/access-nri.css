@@ -16,14 +16,20 @@
   --md-primary-hover-tab-color: #444448;
 }
 
+/* Right and left sidebars' children items */
+.md-nav {
+  border-left: 1px solid;
+  border-color: rgba(255, 255, 255, 0.020);
+}
+
+/* Adjusting the font-size of left (main) sidebar heading */
+.md-nav--primary {
+  font-size: 1.7em;
+}
+
 /* Right sidebar children items */
 .md-nav--secondary .md-nav__item {
   color: #949db2;
-}
-
-/* Adjusting the font-size of left (main) sidebar */
-.md-nav--primary {
-  font-size: 1.7em;
 }
 
 /* Adjusting the font-size of right sidebar */
@@ -33,23 +39,12 @@
 
 /* "On this page" sidebar heading  */
 .md-nav--secondary .md-nav__title {
-  /* font-size: 1.1em; */
   margin-bottom: 1em;
-}
-
-.md-nav__link--index {
-  margin-bottom: 1em;
-}
-
-/* Right and left sidebars' children items */
-.md-nav {
-  border-left: 1px solid;
-  border-color: rgba(255, 255, 255, 0.020);
 }
 
 /* Left sidebar children items */
 .md-nav--primary .md-nav .md-nav__item {
-  font-size: 1.1em;
+  font-size: 1.07em;
 }
 
 /* Changing the overall theme (background color) of the app */
