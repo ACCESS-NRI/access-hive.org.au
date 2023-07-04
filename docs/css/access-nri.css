@@ -29,7 +29,6 @@
   --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.3); /* search bar 'Search' text */
   --md-accent-fg-color: var(--nri-orange); /* link text hover */
   --md-accent-fg-color--transparent: #FAA61916;  /* navigation bar little arrows hover */
-  --md-accent-bg-color: var(--md-primary-bg-color); /* back to top button text hover */
   --md-accent-bg-color: var(--nri-dark-blue); /* back to top button text hover */
   --md-accent-bg-color--light: #115D97B0;
   --md-code-fg-color: rgb(213, 217, 226); /* code element text */
@@ -97,8 +96,7 @@
   --md-primary-bg-color: rgb(var(--primary-bg-color)); /* top banner text */
   --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.3); /* search bar 'Search' text */
   --md-accent-fg-color: var(--nri-dark-blue); /* link text hover */
-  --md-accent-fg-color--transparent: #FAA61916;  /* navigation bar little arrows hover */
-  --md-accent-bg-color: var(--md-primary-bg-color); /* back to top button text hover */
+  --md-accent-fg-color--transparent: #115D9716;  /* navigation bar little arrows hover */
   --md-accent-bg-color: var(--nri-orange); /* back to top button text hover */
   --md-accent-bg-color--light: #115D97B0;
   --md-code-fg-color: rgb(33, 36, 44); /* code element text */
@@ -207,6 +205,11 @@ h1 {
 .md-nav--primary .md-nav .md-nav__item:first-child {
   margin-top: 1em;
 }
+
+/* Make toc ligher */
+/* .md-nav--secondary .md-nav__item {
+  color: #949db2;
+} */
 
 /* =============================================================== 
   Img, main logo 
