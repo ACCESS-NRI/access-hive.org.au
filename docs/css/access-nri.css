@@ -31,9 +31,9 @@
   font-size: 1.5em;
 }
 
-/* Changing the font-size and margin of "On this page" sidebar heading  */
+/* "On this page" sidebar heading  */
 .md-nav--secondary .md-nav__title {
-  font-size: 1.1em;
+  /* font-size: 1.1em; */
   margin-bottom: 1em;
 }
 
