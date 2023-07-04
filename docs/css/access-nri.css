@@ -152,6 +152,22 @@ h1 {
   font-weight: 600 !important;
 }
 
+/* =============================================================== 
+  Introductory paragraph
+*/
+.introduction {
+  font-size: 1.2em;
+  text-align: justify;
+  padding: 0.3em 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.introduction > img {
+  max-width: 7em;
+  margin: 0.2em 0.2em 0.2em 0.7em;
+}
+
 
 /* =============================================================== 
   Warning windows 
@@ -362,11 +378,11 @@ h1 {
 /* =============================================================== 
   How to contribute image
 */
-.white-img-bg {
+.rectangular-img {
   width: 100%; 
   height: 13em !important;
   object-fit: cover; 
-  border-radius: 7px;
+  border-radius: 0.6em;
 }
 
 /* =============================================================== 
@@ -380,7 +396,7 @@ h1 {
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 0.8em;
 }
 
 /* Single card */
@@ -460,113 +476,29 @@ h1 {
   height: 15em;
 }
 
-
-.wrapper-div {
-  margin-top: 1em;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.wrapper-children {
-  display: inline-block;
-  border: 0.1em solid;
-  border-radius: 7px;
-  border-color: var(--navigation-borders);
-  padding-top: 2%;
-  padding-bottom: 1%;
-  box-shadow: 5px 8px 10px var(--card-shadows);
-}
-
-.wrapper-children:hover {
-  box-shadow: 10px 10px 10px var(--card-shadows-hover);
-  border-color: var(--md-accent-fg-color);
-  transition-duration: 0.4s;
-}
-
-.white-links {
-  color: var(--md-typeset-color);
-}
-
-.white-links:hover {
-  transition-duration: 0.4s;
-  color: var(--md-accent-fg-color);
-}
-
-
-/* =============================================================== 
-  ACCESS model configurations in models tab
-*/
-.wrapper-div-config {
-  margin-top: 1em;
-  display: flex;
-  border: 0.1em solid;
-  border-radius: 7px;
-  border-color: var(--navigation-borders);
-  box-shadow: 5px 8px 10px var(--card-shadows);
-  height: 10em;
-}
-
-.wrapper-div-config:hover {
-  box-shadow: 10px 10px 10px var(--card-shadows-hover);
-  border-color: var(--md-accent-fg-color);
-  transition-duration: 0.4s;
-}
-
-.wrapper-img-config {
-  background-color: var(--img-background);
-  display: inline-block;
-  width: 40%;
-  border-radius: 7px;
-  display: flex;
+.card-container:has(.component-card) {
+  justify-content: space-between;
   align-items: center;
-  object-fit: cover;
-  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 0.8em;
 }
 
-.wrapper-text-config {
-  width: 60%;
-  margin: 1em;
+a.component-card {
+  border: unset;
+  box-shadow: unset;
   color: var(--md-typeset-color);
+  max-width: 22%;
 }
 
-.arrow-align {
-  text-align: right;
-  color: #aebbff;
-  align-items: bottom;
-  vertical-align: text-bottom;
-  display: flex;
-  align-items: end;
-  padding: 2%;
+.component-card:hover {
+  background-color: var(--shadow-hover-background);
+  box-shadow: unset;
 }
-
-.arrow-align:hover {
-  color: var(--md-accent-fg-color);
-  transition-duration: 0.4s;
-}
-
-.wrapper-div-config:hover :-webkit-any(.arrow-align,.highlight-border) {
-  color: var(--md-accent-fg-color);
-}
-
-.wrapper-div-config:hover .highlight-blue-bg {
-  box-shadow: 3px 3px 3px var(--card-shadows-hover);
-  transition-duration: 0.4s;
-}
-
 
 /* =============================================================== 
   Miscellaneous
 */
-/* Center table */
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: disabled;
-  border-spacing: 17px;
-  width: 100%;  
-  width: 100%;  
-}
 
 /* Highlight the background */
 .highlight-bg {
@@ -589,7 +521,7 @@ h1 {
 }
 
 /* With borders */
-.with-borders {
+.with-border {
   border-radius: 7px;
   border: 2px solid var(--navigation-borders);
   box-sizing: border-box;

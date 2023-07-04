@@ -5,17 +5,13 @@
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
 
-<table>
-    <tr>
-        <td width="70%">
-            <font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
-            <br><br>
-        </td>
-        <td>
-            <img width="90%" src="assets/ACCESS_icon_HIVE.png">
-        </td>
-    </tr>
-</table>
+
+<div class="with-border introduction">
+    <div>
+        ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.
+    </div>
+    <img src="assets/ACCESS_icon_HIVE.png">
+</div>
 
 ## Navigating ACCESS-Hive
 <div class="card-container">
