@@ -9,123 +9,96 @@ software called **couplers** to form different Model Configurations.
 </div>
 
 ## ACCESS Model Components
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children">
-        <a href="model_components/atmosphere/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Atmosphere</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
-        <a href="model_components/land/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Land</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children">
-        <a href="model_components/ocean/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Ocean</div></div>
-        </a>
-    </div>
-</div>
-
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children">
-        <a href="model_components/sea-ice/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Sea Ice</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
-        <a href="model_components/aerosols_atmospheric_chemistry/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Aerosols</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children">
-        <a href="model_components/aerosols_atmospheric_chemistry/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Atmospheric Chemistry</div></div>
-        </a>
-    </div>
-</div>
-
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children">
-        <a href="model_components/bgc_land/">
-                <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" style="width: 70%;"></img> 
-                <div class="white-links"><div class="logo_cell_text">Biogeochemistry Land</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
-        <a href="model_components/bgc_ocean/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Biogeochemistry Ocean</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children">
-        <a href="model_components/coupler/">
-            <img src="../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" style="width: 70%;"></img> 
-            <div class="white-links"><div class="logo_cell_text">Coupler</div></div>
-        </a>
-    </div>
+<div class="card-container">
+    <a href="model_components/atmosphere" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></img>
+        </div>
+        <div class="squared-card-text bold">Atmosphere</div>
+    </a>
+    <a href="model_components/land" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"></img>
+        </div>
+        <div class="squared-card-text bold">Land</div>
+    </a>
+    <a href="model_components/ocean" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" alt="Ocean"></img>
+        </div>
+        <div class="squared-card-text bold">Ocean</div>
+    </a>
+    <a href="model_components/sea-ice" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></img>
+        </div>
+        <div class="squared-card-text bold">Sea Ice</div>
+    </a>
+    <a href="model_components/aerosols_atmospheric_chemistry" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"></img>
+        </div>
+        <div class="squared-card-text bold">Aerosols</div>
+    </a>
+    <a href="model_components/aerosols_atmospheric_chemistry" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Atmospheric Chemistry"></img>
+        </div>
+        <div class="squared-card-text bold">Atmospheric Chemistry</div>
+    </a>
+    <a href="model_components/bgc_land" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry Land"></img>
+        </div>
+        <div class="squared-card-text bold">Biogeochemistry Land</div>
+    </a>
+    <a href="model_components/bgc_ocean" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry Ocean"></img>
+        </div>
+        <div class="squared-card-text bold">Biogeochemistry Ocean</div>
+    </a>
+    <a href="model_components/coupler" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
+        </div>
+        <div class="squared-card-text bold">Coupler</div>
+    </a>
 </div>
 
 ## ACCESS Model Configurations
-<div>
-    <div>
-        <a href="configurations/access-cm/">
-            <div class="wrapper-div-config" style="height: 18em;">
-                <!-- TODO change href links for these cards -->
-                <div class="wrapper-img-config">
-                    <img src="../assets/model-config-logos/access-cm2-config-4.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b>ACCESS-CM2 configuration</b><br><br>
-                    The Coupled Model 2 (CM2) includes the atmosphere, ocean, and sea-ice components and produces physical climate simulations. ACCESS-CM2 features improved fluid dynamics and a microphysical aerosol scheme.
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
-                </div>
+<div class="card-container" style="flex-direction: column">
+    <a href="configurations/access-cm/" class="rectangular-card configuration-card default-text-color">
+            <div class="rectangular-card-image">
+                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background"></img> 
             </div>
-        </a>
-    </div>
-    <div>
-        <a href="configurations/access-esm/">
-            <div class="wrapper-div-config" style="height: 18em;">
-                <!-- TODO change href links for these cards -->
-                <div class="wrapper-img-config">
-                    <img src="../assets/model-config-logos/access-esm-config.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b>ACCESS-ESM 1.5 configuration</b><br><br>
-                    An ESM (Earth System Model) simulates the carbon and other bio-chemical cycles alonside climate. ACCESS-ESM 1.5 is one of the two ACCESS global coupled model versions. It includes land and ocean biogeochemistry.
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
-                </div>
+            <div class="rectangular-card-text">
+                <span class="bold" >ACCESS-CM</span>
+                <span>
+                    ACCESS Coupled Model (CM) produces physical climate simulations by deploying the atmosphere, ocean, and sea-ice components. ACCESS-CM features improved fluid dynamics and a microphysical aerosol scheme.
+                </span>
             </div>
-        </a>
-    </div>
-    <div>
-        <a href="configurations/access-om/">
-            <div class="wrapper-div-config" style="height: 18em;">
-                <div class="wrapper-img-config">
-                    <img src="../assets/model-config-logos/access-om2-config.png"></img> 
-                </div>
-                <div class="wrapper-text-config">
-                    <b>ACCESS-OM2 configuration</b><br><br>
-                    ACCESS-OM2 is the ocean and sea-ice component of the ACCESS coupled model. ACCESS-OM2 provides the Australian climate community with ocean weather and climate research, including seasonal forecasting, climate variability studies, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry modelling.
-                </div><br>
-                <div class="arrow-align">
-                    <i class="material-icons">arrow_right_alt</i>
-                </div>
+    </a>
+    <a href="configurations/access-esm/" class="rectangular-card configuration-card default-text-color">
+            <div class="rectangular-card-image">
+                <img src="../assets/model-config-logos/access-esm-config.png" class="image-background"></img> 
             </div>
-        </a>
-    </div>
+            <div class="rectangular-card-text">
+                <span class="bold" >ACCESS-ESM</span>
+                <span>
+                    ACCESS Earth System Model (ESM) simulates the carbon and other bio-chemical cycles within the climate system, by deploying the atmosphere, ocean, and sea-ice components. ACCESS-ESM is one of the two ACCESS global coupled model versions.
+                </span>
+            </div>
+    </a>
+    <a href="configurations/access-om/" class="rectangular-card configuration-card default-text-color">
+            <div class="rectangular-card-image">
+                <img src="../assets/model-config-logos/access-om2-config.png" class="image-background"></img> 
+            </div>
+            <div class="rectangular-card-text">
+                <span class="bold" >ACCESS-OM</span>
+                <span>
+                    ACCESS Ocean Model (OM) deploys the ocean and sea-ice components to provide the Australian climate community with ocean weather and climate data, including seasonal forecasting, climate variability, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry.
+                </span>
+            </div>
+    </a>
 </div>
-
