@@ -16,112 +16,53 @@
   --md-primary-hover-tab-color: #444448;
 }
 
-/* .md-content {
-  border-left: 0.2em solid;
-  border-color: rgba(255, 255, 255, 0.027);
-} */
-
-.md-nav--secondary .md-nav__item {
-  color: #949db2;
-}
-
-.md-nav--primary {
-  font-size: 1.7em;
-}
-
-.md-nav--secondary {
-  font-size: 1.5em;
-}
-
+/* Right and left sidebars' children items */
 .md-nav {
   border-left: 1px solid;
   border-color: rgba(255, 255, 255, 0.020);
 }
 
+/* Adjusting the font-size of left (main) sidebar heading */
+.md-nav--primary {
+  font-size: 1.7em;
+}
+
+/* Right sidebar children items */
+.md-nav--secondary .md-nav__item {
+  color: #949db2;
+}
+
+/* Adjusting the font-size of right sidebar */
+.md-nav--secondary {
+  font-size: 1.5em;
+}
+
+/* "On this page" sidebar heading  */
+.md-nav--secondary .md-nav__title {
+  margin-bottom: 1em;
+}
+
+/* Left sidebar children items */
 .md-nav--primary .md-nav .md-nav__item {
-  font-size: 1.1em;
+  font-size: 1.07em;
+}
+
+/* Add top margin above the first child in left navigation */
+.md-nav--primary .md-nav .md-nav__item:first-child {
+  margin-top: 1em;
 }
 
 /* Changing the overall theme (background color) of the app */
 [data-md-color-scheme="slate"] {
-  /* --md-hue: 206;  */
-  /* --md-hue: 248; */
   --md-hue: 220;
 }
 
-
+/* ACCESS-Hive logo at top-left of the screen */
 .md-header__button.md-logo :-webkit-any(img,svg) {
     fill: currentcolor;
     display: block;
     height: 2.5rem;
     width: auto;
-}
-
-/* ------------------------------------------------- */
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: disabled;
-  border-spacing: 17px;
-  width: 100%;  
-  width: 100%;  
-}
-
-.logo_component {
-  width: 70%;
-  margin: 0 auto;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.logo_cell {
-  margin: 0 auto;
-  text-align: center;
-  padding: 0.5%;
-  width: 25%;
-}
-
-.logo_cell:hover {
-  /* color: #F9A61C; */
-  /* font-weight: bold; */
-  transition-duration: 0.4s;
-  padding: 0.8%;
-  background-color: rgba(29, 28, 28, 0.185);
-  border-radius: 15px;
-}
-
-/* Upon hovering over the `logo_cell` div, call the 
-`logo_cell_text` div and change the color of it to 
-ACCESS gold */
-.logo_cell:hover .logo_cell_text {
-  color: #F9A61C;
-}
-
-.access_forum_button {
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 30px;
-  text-align: center;
-  width: 70%;
-  border-radius: 7px;
-  border: 0.1rem solid;
-  /* border-color: #eeac48; */
-  border-color: white;
-  display: inline-block;
-  font-size: 16px;
-  padding: 10px;
-  transition-duration: 0.4s;
-  background-color: var(--md-primary-tab-color);
-  color: white
-}
-
-
-.access_forum_button:hover {
-  color: #F9A61C;
-  border: 0.1rem solid;
-  background-color: var(--md-primary-tab-color);
 }
 
 /* Main body content */
@@ -168,13 +109,7 @@ ACCESS gold */
 
 /* Selected tab */
 .md-tabs__item--active {
-  /* background-color: #9b6913; */
-  /* border: 0.1rem solid; */
-  /* color: #F9A61C; */
   font-weight: bold;
-  /* border-radius: 7px; */
-  /* background-color: var(--md-primary-tab-color); */
-  /* background-color: black; */
   color: white;
   border-radius: 4px;
 }
@@ -185,10 +120,6 @@ ACCESS gold */
 
 /* Tab hover state */
 .md-tabs__item:hover {
-  /* background-color: rgba(0, 0, 0, 0.536);  */
-  /* background-color: var(--md-primary-hover-tab-color); */
-  /* color: white; */
-  /* color: #F9A61C; */
   transition-duration: 0.4s;
   font-weight: bold;
   color: white;
@@ -196,6 +127,70 @@ ACCESS gold */
 
 .md-tabs__item:hover .md-tabs__link {
   opacity: 1;
+}
+
+/* ------------------------------------------------- */
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: disabled;
+  border-spacing: 17px;
+  width: 100%;  
+  width: 100%;  
+}
+
+.logo_component {
+  width: 70%;
+  margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.logo_cell {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0.5%;
+  width: 25%;
+}
+
+.logo_cell:hover {
+  transition-duration: 0.4s;
+  padding: 0.8%;
+  background-color: rgba(29, 28, 28, 0.185);
+  border-radius: 15px;
+}
+
+/* Upon hovering over the `logo_cell` div, call the 
+`logo_cell_text` div and change the color of it to 
+ACCESS gold */
+.logo_cell:hover .logo_cell_text {
+  color: #F9A61C;
+}
+
+.access_forum_button {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 70%;
+  border-radius: 7px;
+  border: 0.1rem solid;
+  border-color: white;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px;
+  transition-duration: 0.4s;
+  background-color: var(--md-primary-tab-color);
+  color: white
+}
+
+
+.access_forum_button:hover {
+  color: #F9A61C;
+  border: 0.1rem solid;
+  background-color: var(--md-primary-tab-color);
 }
 
 @keyframes heart {
@@ -212,6 +207,7 @@ ACCESS gold */
   color: #F82464;
   font-size: medium;
   margin-left: 0.2em;
+  margin-right: 0.2em;
 }
 
 .heart:hover {
@@ -222,6 +218,7 @@ ACCESS gold */
   color: #a5cd39;
   font-size: medium;
   margin-left: 0.2em;
+  margin-right: 0.2em;
 }
 
 .icon-supported:hover {
@@ -232,6 +229,7 @@ ACCESS gold */
   color: #F9A61C;
   font-size: medium;
   margin-left: 0.2em;
+  margin-right: 0.2em;
 }
 
 .icon-recommended:hover {
@@ -295,7 +293,6 @@ ACCESS gold */
 
 .wrapper-children {
   display: inline-block;
-  /* background-color: rgb(255, 255, 255); */
   border: 0.1em solid;
   border-radius: 7px;
   border-color: #5f626a;
@@ -304,10 +301,7 @@ ACCESS gold */
   padding-top: 2%;
   padding-bottom: 1%;
   width: 33%;
-  /* margin-left: 2em; */
-  /* margin-right: 1em; */
   box-shadow: 5px 8px 10px #1b1b1b;
-  /* padding: 2%; */
 }
 
 .wrapper-children:hover {
@@ -315,10 +309,6 @@ ACCESS gold */
   border-color: white;
   transition-duration: 0.4s;
 }
-/* 
-.wrapper-children:hover .logo_cell_text {
-  color: #F9A61C;
-} */
 
 .white-links {
   color: white;
@@ -358,18 +348,11 @@ ACCESS gold */
   display: inline-block;
   width: 40%;
   border-radius: 7px;
-  /* padding-top: 1%; */
-  /* aspect-ratio: 1 / 1; */
   display: flex;
   align-items: center;
   object-fit: cover;
   justify-content: center;
 }
-
-/* .img-config {
-  display: flex;
-  align-items: center;
-} */
 
 .wrapper-text-config {
   width: 60%;
