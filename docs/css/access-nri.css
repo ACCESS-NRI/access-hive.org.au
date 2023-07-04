@@ -47,6 +47,11 @@
   font-size: 1.07em;
 }
 
+/* Add top margin above the first child in left navigation */
+.md-nav--primary .md-nav .md-nav__item:first-child {
+  margin-top: 1em;
+}
+
 /* Changing the overall theme (background color) of the app */
 [data-md-color-scheme="slate"] {
   --md-hue: 220;
