@@ -7,7 +7,7 @@
 <img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="white-img-bg"></img>
 
 ## <div class="center-icons"> [WOMBAT][MOM5-WOMBAT-code] {{ supported }} </div>
-The World Ocean Model of Biogeochemistry And Trophic-dynamics ([WOMBAT][MOM5-WOMBAT-code]) is the ocean carbon module added to [MOM][mom-wiki] ocean model. Developed in Australia, WOMBAT calculates the carbon fluxes of the ocean by simulating the evolution of phosphate, oxygen, dissolved inorganic carbon, alkalinity and iron with one class of phytoplankton and zooplankton.
+The World Ocean Model of Biogeochemistry And Trophic-dynamics ([WOMBAT][MOM5-WOMBAT-code]) is the ocean carbon module added to the [MOM][mom-wiki] ocean model. Developed in Australia, WOMBAT calculates the carbon fluxes of the ocean by simulating the evolution of phosphate, oxygen, dissolved inorganic carbon, alkalinity and iron with one class of phytoplankton and zooplankton.
 
 ### How is WOMBAT used?
 
