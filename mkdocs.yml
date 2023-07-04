@@ -225,6 +225,6 @@ extra_css:
   - css/access-nri.css
 
 extra_javascript:
-  - js/termynal.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - js/tablesort.js
+  - js/termynal.js
+  - js/miscellaneous.js
