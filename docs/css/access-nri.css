@@ -192,8 +192,7 @@ h1 {
 }
 
 .md-nav:not(.md-nav--primary) {
-  border-left: 1px solid;
-  border-color: rgba(var(--navigation-borders),.05)
+  border-left: 1px solid var(--navigation-borders);
 }
 
 /* Make passed items lighter */
