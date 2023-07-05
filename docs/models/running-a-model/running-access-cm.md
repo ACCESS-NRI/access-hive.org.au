@@ -5,8 +5,9 @@ It is also built as a future point of reference, where you can come back and fin
 
 ## **Getting Started**
 
-This section outlines some key user requirements and preparations before getting started with running ACCESS-CM suites.
-
+- An institutional email address with an organisation that allows access to NCI (e.g., CSIRO, a university, etc.).
+- Access to NCI compute/storage.
+- A Linux/Mac/Unix computer with an internet connection and a command line terminal (e.g., MacOS with XQuartz and command line tools installed, or Putty Cygwin/MobaXterm/similar X-Windows compatible program on a PC). 
 ### Requirements for running ACCESS-CM suites 
 
 Here, we assume that you already have access to Gadi, the supercomputer hosted by the National Computational Infrastructure (NCI). If needed, you can go back to our guide on how to get [access to Gadi](../running-a-model/getting_started/access_to_gadi_at_nci.md).

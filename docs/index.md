@@ -5,137 +5,37 @@
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
 
-<table>
-    <tr>
-        <td width="70%">
-            <font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
-            <br><br>
-        </td>
-        <td>
-            <img width="90%" src="assets/ACCESS_icon_HIVE.png">
-        </td>
-    </tr>
-</table>
+
+<div class="with-border introduction">
+    <div>
+        ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.
+    </div>
+    <img src="assets/ACCESS_icon_HIVE.png">
+</div>
 
 ## Navigating ACCESS-Hive
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children">
-        <a href="model_components/atmosphere/">
-            <img src="assets/ACCESS-MODEL.png"></img> 
-            <div class="white-links"><div class="logo_cell_text">Models</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
-        <a href="model_components/land/">
-            <img src="assets/get_started_example.png"></img> 
-            <div class="white-links"><div class="logo_cell_text">Run a Model</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children">
-        <a href="model_components/ocean/">
-            <img src="assets/resources_example.png"></img> 
-            <div class="white-links"><div class="logo_cell_text">Model Evaluation</div></div>
-        </a>
-    </div>
+<div class="card-container">
+    <a href="models" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/ACCESS-MODEL.png" alt="Models"></img></div>
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Models</div>
+    </a>
+    <a href="models/running-a-model" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/get_started_example.png" alt="Run a Model"></img></div>
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Run a Model</div>
+    </a>
+    <a href="model_evaluation" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/resources_example.png" alt="Model Evaluation"></img></div>
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Model Evaluation</div>
+    </a>
+    <a href="community_resources" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/community-forum-homepage.png" alt="Community Resources"></img></div> 
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Community Resources</div>
+    </a>
+    <a href="https://forum.access-hive.org.au" target="_blank" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/forum_screenshot.png" alt="Community Forum"></img></div> 
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Community Forum</div>
+    </a>
 </div>
-<div class="wrapper-div">
-    <!-- TODO change href links for these cards -->
-    <div class="wrapper-children">
-        <a href="model_components/atmosphere/">
-            <img src="assets/ACCESS-MODEL.png"></img> 
-            <div class="white-links"><div class="logo_cell_text">Models</div></div>
-        </a>
-    </div>
-    <div class="wrapper-children" style="margin-right: 1em; margin-left: 1em;"> 
-        <a href="model_components/land/">
-            <img src="assets/get_started_example.png"></img> 
-            <div class="white-links"><div class="logo_cell_text">Run a Model</div></div>
-        </a>
-    </div>
-</div>
-<!-- <div>
-    <div>
-        <a href="models/">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b>
-                        <div style="text-align: center; margin-top: 1em;">
-                            <span class="highlight-blue-bg">
-                                Models
-                            </span>
-                        </div>
-                    </b>
-                    <br>
-                    ACCESS is a family of related computer <b>models</b> that represent different parts of the Earth.
-                </div><br>
-                <div class="wrapper-img-config">
-                    <img src="assets/ACCESS-MODEL.png" style="height: 9em; object-fit: cover;"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="models/running-a-model">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Run a Model</span>
-                    </div></b><br>
-                    A step-by-step guides for running different <b>model configurations</b>.  
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/get_started_example.png" style="height: 9em; object-fit: cover;"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="model_evaluation/">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Model Evaluation</span>
-                    </div></b><br>
-                    Provides guidance for <b>model evaluation</b> of the ACCESS suite.
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/resources_example.png" style="height: 9em; object-fit: cover;"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="community_resources/">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Community Resources</span>
-                    </div></b><br>
-                    Other important resources contributed by and for the ACCESS community.
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/community-forum-homepage.png" style="height: 9em; object-fit: cover;"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="https://forum.access-hive.org.au/" target="_blank">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Community Forum</span>
-                    </div></b><br>
-                    <b>ACCESS-Hive Community Forum</b> is a platform to ask questions and share innovative ideas.
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/forum_screenshot.png" style="height: 9em; object-fit: cover;"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-</div> -->
 
 ## About
 {% include "call_contribute.md" %}
@@ -153,19 +53,14 @@ There is a system of tags to identify who supports the linked documentation or s
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
 ## Contribute to ACCESS-Hive [^1]
-
-<div>
-    <a href="contribute/" target="_blank">
-        <div class="wrapper-div-config">
-            <div class="wrapper-img-config">
-                <img src="assets/how-to-contribute-img.jpg" style="height: 9em; object-fit: cover;"></img> 
-            </div>
-            <div class="wrapper-text-config">
-                <b><div style="text-align: center; margin-top: 1em;">
-                    <span class="highlight-border">Contribute</span>
-                </div></b><br>
-                We invite you to join the ACCESS-Hive team, and would love to have your contributions onboard!
-            </div>
+<div class="card-container">
+    <a href="contribute/" target="_blank" class="rectangular-card default-text-color">
+        <div class="rectangular-card-image">
+            <img src="assets/how-to-contribute-img.jpg" class="cover"></img>
+        </div>
+        <div class="rectangular-card-text">
+            <span class="highlight-bg bg-color-like-tab bold">Contribute</span>
+            <span class="">Join the ACCESS-Hive team and have your contributions onboard!</span>
         </div>
     </a>
 </div>
