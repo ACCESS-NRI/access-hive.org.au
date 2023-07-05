@@ -1,5 +1,7 @@
 # <div class="highlight-bg"> Contact </div>
 
+<img src = "../../assets/contact-img.jpg" class="rectangular-img with-border"></img>
+
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
 ACCESS-Hive is an open community supported effort. The underpinning infrastructure is provided by ACCESS-NRI but much of the content is provided by the ACCESS Community.

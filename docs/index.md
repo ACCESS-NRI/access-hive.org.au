@@ -5,100 +5,36 @@
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
 
-<table>
-    <tr>
-        <td width="70%">
-            <font size="4%"> ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.</font>
-            <br><br>
-        </td>
-        <td>
-            <img width="90%" src="assets/ACCESS_icon_HIVE.png">
-        </td>
-    </tr>
-</table>
+
+<div class="with-border introduction">
+    <div>
+        ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.
+    </div>
+    <img src="assets/ACCESS_icon_HIVE.png">
+</div>
 
 ## Navigating ACCESS-Hive
-<div>
-    <div>
-        <a href="models/">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b>
-                        <div style="text-align: center; margin-top: 1em;">
-                            <span class="highlight-blue-bg">
-                                Models
-                            </span>
-                        </div>
-                    </b>
-                    <br>
-                    ACCESS is a family of related computer <b>models</b> or <b>components</b> that represent different parts of the Earth-System. ACCESS links various <b>model components</b> through software called <b>couplers</b> to form different <b>model configurations</b>. 
-                </div><br>
-                <div class="wrapper-img-config">
-                    <img src="assets/ACCESS-MODEL.png"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="models/running-a-model">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Run a Model</span>
-                    </div></b><br>
-                    A step-by-step guides for running different <b>model configurations</b>.  
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/get_started_example.png"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="model_evaluation/">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Model Evaluation</span>
-                    </div></b><br>
-                    The ACCESS-NRI Model Evaluation (MED) section provides guidance for model evaluation of the ACCESS suite. We will promote a systematic approach to model evaluation, using curated data sets and robust statistical practices. 
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/resources_example.png"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="community_resources/">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Community Resources</span>
-                    </div></b><br>
-                    Other important resources contributed by and for the ACCESS community such as further information about <b>community working groups</b>, <b>glossaries</b>, <b>training</b> and <b>model catalogs</b>. 
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/community-forum-homepage.png"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="https://forum.access-hive.org.au/" target="_blank">
-            <div class="wrapper-div-config">
-                <div class="wrapper-text-config">
-                    <b><div style="text-align: center; margin-top: 1em;">
-                        <span class="highlight-blue-bg">Community Forum</span>
-                    </div></b><br>
-                    <b>ACCESS-Hive Community Forum</b> is a platform where members of the ACCESS community come together to share their ideas, opinions, have fruitful discussions and plan shared activities. 
-                </div>
-                <div class="wrapper-img-config">
-                    <img src="assets/forum_screenshot.png"></img> 
-                </div>
-            </div>
-        </a>
-    </div>
+<div class="card-container">
+    <a href="models" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/ACCESS-MODEL.png" alt="Models"></img></div>
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Models</div>
+    </a>
+    <a href="models/running-a-model" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/get_started_example.png" alt="Run a Model"></img></div>
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Run a Model</div>
+    </a>
+    <a href="model_evaluation" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/resources_example.png" alt="Model Evaluation"></img></div>
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Model Evaluation</div>
+    </a>
+    <a href="community_resources" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/community-forum-homepage.png" alt="Community Resources"></img></div> 
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Community Resources</div>
+    </a>
+    <a href="https://forum.access-hive.org.au" target="_blank" class="squared-card default-text-color">
+        <div class="squared-card-image"><img src="assets/forum_screenshot.png" alt="Community Forum"></img></div> 
+        <div class="squared-card-text highlight-bg bg-color-like-tab bold">Community Forum</div>
+    </a>
 </div>
 
 ## About
@@ -116,20 +52,15 @@ There is a system of tags to identify who supports the linked documentation or s
 
 See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
-## Contribute to ACCESS-Hive[^1]
-
-<div>
-    <a href="contribute/" target="_blank">
-        <div class="wrapper-div-config">
-            <div class="wrapper-img-config">
-                <img src="assets/how-to-contribute-img.jpg"></img> 
-            </div>
-            <div class="wrapper-text-config">
-                <b><div style="text-align: center; margin-top: 1em;">
-                    <span class="highlight-border">Contribute</span>
-                </div></b><br>
-                ACCESS-Hive is a community-supported site, as such contributions to the ACCESS-Hive site are <b>encouraged by any member of the community</b>. Any member of the ACCESS community is most welcome to become code reviewers.
-            </div>
+## Contribute to ACCESS-Hive [^1]
+<div class="card-container">
+    <a href="contribute/" target="_blank" class="rectangular-card default-text-color">
+        <div class="rectangular-card-image">
+            <img src="assets/how-to-contribute-img.jpg" class="cover"></img>
+        </div>
+        <div class="rectangular-card-text">
+            <span class="highlight-bg bg-color-like-tab bold">Contribute</span>
+            <span class="">Join the ACCESS-Hive team and have your contributions onboard!</span>
         </div>
     </a>
 </div>
@@ -166,3 +97,4 @@ ACCESS-Hive contains links to other material which is covered by various licensi
 [github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io.git
 [forum]: https://forum.access-hive.org.au
 [hamburger button]: https://en.wikipedia.org/wiki/Hamburger_button
+[access-hive-github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io

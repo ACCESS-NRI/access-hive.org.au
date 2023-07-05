@@ -13,7 +13,7 @@ https://access-hive.org.au/
 If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
 # How to Contribute [Draft]
-- Create a branch from the `main` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy release`. Use the following two commands to create a new branch and push it to github respectively:
+- Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy release`. Use the following two commands to create a new branch and push it to github respectively:
 
     `git checkout -b dev/jasmeen/legacy-release`
 
