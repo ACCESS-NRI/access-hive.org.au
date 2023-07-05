@@ -19,8 +19,15 @@ hide:
                 <li><a href="#runESM-3.2.0">Edit the Master Configuration file</a></li>
             </ol>
         </li>
-        <li><a href="#runESM-4.0.0">Run ACCESS-ESM configuration</a></li>
-        <li><a href="#runESM-5.0.0">Monitoring runs</a></li>
+        <li><a href="#runESM-4.0.0">Run ACCESS-ESM configuration</a>
+            <ol>
+                <li><a href="#runESM-4.1.0">Payu setup (optional)</a></li>
+                <li><a href="#runESM-4.2.0">Run configuration</a></li>
+                <li><a href="#runESM-4.3.0">Run configuration for multiple years</a></li>
+                <li><a href="#runESM-4.4.0">Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters</a></li>
+            </ol>
+        </li>
+        <li><a href="#runESM-5.0.0">Monitor runs</a></li>
         <li><a href="#runESM-6.0.0">Model outputs</a></li>
     </ol>
 </div>
@@ -179,9 +186,9 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;&nbsp;&nbsp;input:
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
         </code></pre>
-        <i>access</i> (i.e. ACCESS-ESM) is a coupled model, which means it has multiple submodels (i.e. model components). 
+        ACCESS-ESM is a coupled model, which means it has multiple submodels (i.e. model components). 
         <br>
-        In this section, some of the parameters of the configurations of all ACCESS-ESM's submodels are specified. The full configuration of a specific submodel can be found in the subdirectory of the <i>laboratory</i> having the <g>name</g> of the submodel (e.g. the configuration for the atmosphere submodel, i.e. the UM, will be in the directory )
+        In this section, some of the parameters of the configurations of all ACCESS-ESM's submodels are specified. The full configuration of a specific submodel can be found in the subdirectory of the <i>laboratory</i> having the <g>name</g> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>).
     </li>
     <li>
         <b>collate</b>
@@ -214,13 +221,13 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         This section specifies the start date and internal run length.
         <br>
-        <b>Note:</b> The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#runESM-4.0.0">Run ACCESS-ESM configuration</a>.
+        <b>Note:</b> The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#runESM-4.3.0">Run configuration for multiple years</a>.
     </li>
     <li>
         <b>Number of runs per PBS submission</b>
         <br>
         <pre><code>runspersub: 5</code></pre>
-        ACCESS-ESM configurations are often run in multiple steps (or cycles), with Payu running <code>runspersub</code> internal runs for every PBS submission, and resubmitting the job until the total run length is met.
+        ACCESS-ESM configurations are often run in multiple steps (or cycles), with Payu running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <br>
         <b>Note:</b> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
     </li>
@@ -230,17 +237,124 @@ To know more about other configuration settings for the <code>config.yaml</code>
 ----------------------------------------------------------------------------------------
 
 ## <span id="runESM-4.0.0">Run ACCESS-ESM configuration</span>
-<div class="justified">
-ACCESS-ESM suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by Payu.
+After editing the configuration, we are ready to run ACCESS-ESM. 
 <br>
-When the suite gets run, the suite configuration files are copied on Gadi under /scratch/<$PROJECT>/$USER/cylc-run/<suite-ID>, and a symbolic link to this folder is also created in the $USER's home directory under ~/cylc-run/<suite-ID>.
-An ACCESS-CM2 suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by Cylc.
-Cylc (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script suite.rc. Cylc deals with how the job will be run and manages the time steps of each sub-model, as well as monitoring all the tasks and reporting any error that might occur.
+ACCESS-ESM suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by Payu.
+
+### <span id="runESM-4.1.0">Payu setup (optional)</span>
+<div class="justified">
+As a first step, from the control directory, is good practice to run:
+<pre><code>payu setup</code></pre>
+This will prepare the model run, based on the experiment configuration.
+<terminal-animation>
+    <terminal-line data="input">payu setup</terminal-line>
+    <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
+    <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
+    <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
+    <terminal-line>work path:  /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
+    <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
+    <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
+    <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
+    <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
+    <terminal-line>Setting up atmosphere</terminal-line>
+    <terminal-line>Setting up ocean</terminal-line>
+    <terminal-line>Setting up ice</terminal-line>
+    <terminal-line>Setting up coupler</terminal-line>
+    <terminal-line>Checking exe and input manifests</terminal-line>
+    <terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
+    <terminal-line>Creating restart manifest</terminal-line>
+    <terminal-line>Updating full hashes for 30 files in manifests/restart.yaml</terminal-line>
+    <terminal-line>Writing manifests/restart.yaml</terminal-line>
+    <terminal-line>Writing manifests/exe.yaml</terminal-line>
+</terminal-animation>
+<b>Note:</b> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors.
+</div>
+
+### <span id="runESM-4.2.0">Run configuration</span>
+<div class="justified">
+To run ACCESS-ESM configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), run:
+<pre><code>payu run</code></pre>
+This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
+<terminal-animation>
+    <terminal-line data="input">payu run</terminal-line>
+    <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
+    <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
+    <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
+    <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
+    <terminal-line>qsub -q normal -P &lt;project&gt; -l walltime=11400 -l ncpus=384 -l mem=1536GB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/access+gdata/hh5 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
+    <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
+</terminal-animation>
+</div>
+
+### <span id="runESM-4.3.0">Run configuration for multiple years</span>
+<div class="justified">
+If you want to run ACCESS-ESM configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
+<pre><code>payu run -n &lt;number-of-runs&gt;</code></pre>
+This will submit a job to the queue (or multiple jobs, depending on the <code>runspersub</code> value specified in the <code>config.yaml</code> file), with a total run length of <code>runtime * number-of-runs</code>.
+</div>
+
+### <span id="runESM-4.4.0">Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters</span>
+<div class="justified">
+With the correct use of <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters, we can have full control of our run.
+<br>
+<ul>
+    <li>
+        <code>runtime</code> defines the internal run length.
+    </li>
+    <li>
+        <code>runspersub</code> defines the maximum number of internal runs for every PBS job submission.
+    </li>
+    <li>
+        <code>-n</code> sets the number of internal runs to be performed.
+    </li>
+</ul>
+Let's have some practical examples:
+<ul>
+    <li>
+        <b>Run 20 years of simulation, with resubmission every 5 years</b>
+        <br>
+        To have a total run length of 20 years, with a resubmition cycle of 5 years, we can leave <code>runtime</code> to the default value of <code>1 year</code>, set <code>runspersub</code> to <code>5</code>, and run the configuration using <code>-n 20</code>:
+        <pre><code>payu run -n 20</code></pre>
+        This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20. With a total of 4 PBS jobs.
+    </li>
+    <li>
+        <b>Run 7 years of simulation, with resubmission every 3 years</b>
+        <br>
+        To have a total run length of 7 years, with a resubmition cycle of 3 years, we can leave <code>runtime</code> to the default value of <code>1 year</code>, set <code>runspersub</code> to <code>3</code>, and run the configuration using <code>-n 7</code>:
+        <pre><code>payu run -n 7</code></pre>
+        This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7. With a total of 3 PBS jobs.
+    </li>
+    <li>
+        <b>Run 3 months and 10 days of simulation, in one single submission</b>
+        <br>
+        To have a total run length of 3 months and 10 days, all in a single submission, we have to set <code>runtime</code> to:
+        <pre><code>years: 0
+            months: 3
+            days: 10
+        </code></pre>
+        set <code>runspersub</code> to <code>1</code> (or any value > 1), and run the configuration wihtout <code>-n</code> (or with <code>-n</code> equals <code>1</code>):
+        <pre><code>payu run</code></pre>
+    </li>
+    <li>
+        <b>Run 1 year and 4 months of simulation, with resubmission every 4 months</b>
+        <br>
+        To have a total run length of 1 year and 4 months (16 months), we will have to split it into multiple internal runs. For example, we can have 4 internal runs of 4 months each. Therefore, we will have to set <code>runtime</code> to:
+        <pre><code>years: 0
+            months: 4
+            days: 0
+        </code></pre>
+        Since the internal run length is set to 4 months, to resubmit our jobs every 4 months (i.e. every internal run), we have to set <code>runspersub</code> to <code>1</code>. Finally, we will perform 4 internal runs by running the configuration with <code>-n 4</code>:
+        <pre><code>payu run -n 4</code></pre>
+    </li>
+</ul>
 </div>
 ----------------------------------------------------------------------------------------
 
-## <span id="runESM-5.0.0">Monitoring runs</span>
+## <span id="runESM-5.0.0">Monitor runs</span>
 <div class="justified">
+Currently, there is no specific tool to monitor ACCESS-ESM runs. 
+<br>
+One way to check 
 </div>
 ----------------------------------------------------------------------------------------
 

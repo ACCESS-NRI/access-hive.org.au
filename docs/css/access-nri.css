@@ -412,7 +412,7 @@ ACCESS gold */
   text-align: justify;  
 }
 
-/* Show different markers for different hieratchy of points (up to 3d hierarchy) */
+/* Show different markers for different hierarchy of points (up to 3d hierarchy) */
 ul:not([class^='md-']) li {
   list-style-type: disc;
 }
@@ -435,7 +435,6 @@ pre:has(code) {
 }
 
 pre>code {
-  display: block !important;
   white-space: pre-line !important;
   padding: 0.5em 0.8em !important;
   word-break: break-all !important;
