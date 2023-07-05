@@ -193,7 +193,7 @@ h1 {
 
 .md-nav:not(.md-nav--primary) {
   border-left: 1px solid;
-  border-color: var(--navigation-borders);
+  border-color: rgba(var(--navigation-borders),.05)
 }
 
 /* Make passed items lighter */
@@ -381,7 +381,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--navigation-borders);
+  border: 1px solid var(--navigation-borders);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
 }
@@ -500,7 +500,7 @@ a.component-card {
 /* With borders */
 .with-border {
   border-radius: 7px;
-  border: 2px solid var(--navigation-borders);
+  border: 1px solid var(--navigation-borders);
   box-sizing: border-box;
 }
 
