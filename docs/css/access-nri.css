@@ -11,7 +11,7 @@
   --nri-dark-blue: #115D97;
   --nri-blue: #06AEEF;
   --nri-light-blue: #8ED7F8;
-  --default-fg-color: 220, 220, 220;  /* Color for main text in body, navigation, table of content*/
+  --default-fg-color: 255, 255, 255;  /* Color for main text in body, navigation, table of content*/
   --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
   --md-default-fg-color--light: rgba(var(--default-fg-color),.65); /* Inactive tabs */
   --md-default-fg-color--lighter: rgba(var(--default-fg-color),.3); /* pencil for editing page, passed toc items text */
@@ -26,7 +26,7 @@
   --md-primary-fg-color--dark: var(--nri-dark-blue); /* top tab background */
   --primary-bg-color: 237, 237, 237;
   --md-primary-bg-color: rgb(var(--primary-bg-color)); /* top banner text */
-  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.3); /* search bar 'Search' text */
+  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
   --md-accent-fg-color: var(--nri-orange); /* link text hover */
   --md-accent-fg-color--transparent: #FAA61916;  /* navigation bar little arrows hover */
   --md-accent-bg-color: var(--nri-dark-blue); /* back to top button text hover */
