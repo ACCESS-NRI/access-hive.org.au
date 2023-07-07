@@ -1,1 +1,1 @@
-../../models/running-a-model/getting_started/access_to_gadi_at_nci.md
+/Users/davide/access-nri/access-hive.github.io/docs/models/run-a-model/getting_started/access_to_gadi_at_nci.md

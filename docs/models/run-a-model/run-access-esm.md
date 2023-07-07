@@ -1,6 +1,6 @@
-<!-- 
+ 
 # <span class="highlight-bg"> Run ACCESS-ESM </span>
-<div class="page-summary">
+<!-- <div class="page-summary">
     <h4>On this page</h4>
     <ol>
         <li><a href="#runESM-1.0.0">Requirements</a>
@@ -49,15 +49,9 @@ For the general requirements needed to run all ACCESS models, please refer to th
     <li>
         <b>Payu</b>
         <br>
-        To get Payu on Gadi, run:
+        To get <i>payu</i> on Gadi, run:
         <pre><code>module use /g/data/hh5/public/modules
             module load conda/analysis3
-        </code></pre>
-        To avoid running the lines above every time you need to run ACCESS-ESM, you may add the following lines to your <code>~/bashrc</code> file:
-        <pre><code>if in_interactive_shell && in_login_shell; then
-            &nbsp;&nbsp;module use /g/data3/hh5/public/modules
-            &nbsp;&nbsp;module load conda/analysis3
-            fi
         </code></pre>
     </li>
 </ul>
@@ -88,14 +82,14 @@ In order to get it, on Gadi, create a directory where to keep the model configur
 
 ## <span id="runESM-3.0.0">Edit ACCESS-ESM configuration</span>
 <div class="justified">
-In order to modify an ACCESS-ESM configuration, it is worth understanding a bit more how its job scheduler Payu works.
+In order to modify an ACCESS-ESM configuration, it is worth understanding a bit more how its job scheduler <i>payu</i> works.
 </div>
 
 ### <span id="runESM-3.1.0">Payu</span>
 <div class="justified">
-<a href="https://payu.readthedocs.io/en/latest/" target="_blank">Payu</a> is a workflow management tool for running numerical models in supercomputing environments.
+<a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
-The general layout of a Payu-supported model run consists of two main directories:
+The general layout of a <i>payu</i>-supported model run consists of two main directories:
 <ul>
     <li>
         The <b>laboratory</b> is the directory where all parts of the model are kept. For ACCESS-ESM, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
@@ -104,14 +98,14 @@ The general layout of a Payu-supported model run consists of two main directorie
         The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-esm/esm-pre-industrial</code>).
     </li>
 </ul>
-This separation allows to run multiple self-resubmitting experiments simultaneously that might share common executables and input data.
+This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on Gadi that is actively backed up), without overloading it with too much data.
 <br>
-To setup the <i>laboratory</i>, from the <i>control</i> directory run:
+Moreover, this separation allows to run multiple self-resubmitting experiments simultaneously that might share common executables and input data.
+<br>
+To proceed with the setup of the <i>laboratory</i> directory, from the <i>control</i> directory run:
 <pre><code>payu init</code></pre> 
-This will create the <i>laboratory</i> directory, along with 4 subdirectories:
+This will create the <i>laboratory</i> directory, along with other subdirectories (depending on the configuration). The main subdirectories we are interested in are: 
 <ul>
-    <li><code>bin</code> &rarr; directory containing the model binaries.</li>
-    <li><code>input</code> &rarr; directory containing all the input files.</li>
     <li><code>work</code> &rarr; temporary directory where the model is actually run. It gets cleaned after each run.</li>
     <li><code>archive</code> &rarr; directory where the output is placed after each run.</li>
     <terminal-animation>
@@ -141,7 +135,7 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
         <br>
-        For example, to run ACCESS-ESM under the <code>tm70</code> <a href="TO DO">project (TO DO add NCI Project link)</a>, add the following line to this section:
+        For example, to run ACCESS-ESM under the <code>tm70</code> <a href="TO DO">project (TO DO add Getting started, join a NCI Project link)</a>, add the following line to this section:
         <pre><code>project: tm70</code></pre>
     </li>
     <li>
@@ -155,7 +149,7 @@ This file controls the general model configuration and if we open it in a text e
     <li>
         <b>Model</b>
         <pre><code>model: access</code></pre>
-        The main model. This tells Payu which driver to use (<i>access</i> stands for ACCESS-ESM).
+        The main model. This tells <i>payu</i> which driver to use (<i>access</i> stands for ACCESS-ESM).
     </li>
     <li>
         <b>Submodels</b>
@@ -189,7 +183,7 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         ACCESS-ESM is a coupled model, which means it has multiple submodels (i.e. model components). 
         <br>
-        In this section, some of the parameters of the configurations of all ACCESS-ESM's submodels are specified. The full configuration of a specific submodel can be found in the subdirectory of the <i>laboratory</i> having the <g>name</g> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>).
+        This section specifies the submodels and contains configuration options (for example the directories of input files) that are required to ensure the model can execute correctly. Each submodel also has additional configuration options that are read in when the submodel is running. These specific configuration options are found in the subdirectory of the <i>control</i> directory having the <i>name</i> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>).
     </li>
     <li>
         <b>collate</b>
@@ -199,10 +193,10 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;restart: true
             &nbsp;&nbsp;mem: 4GB
         </code></pre>
-        The <i>collate</i> process joins a number of smaller files, which contain different parts of the model grid, together into target output files. The restart files are typically tiled in the same way.
+        The <i>collate</i> process joins a number of smaller files, which contain different parts of the model grid, together into target output files. The restart files are typically tiled in the same way and will also be joined together if the <i>restart</i> option is set to <code>true</code>.
     </li>
     <li>
-        <b>collate</b>
+        <b>restart</b>
         <br>
         <pre><code>restart: /g/data/access/payu/access-esm/restart/pre-industrial</code></pre>
         The location of the files used for a warm restart.
@@ -228,19 +222,19 @@ This file controls the general model configuration and if we open it in a text e
         <b>Number of runs per PBS submission</b>
         <br>
         <pre><code>runspersub: 5</code></pre>
-        ACCESS-ESM configurations are often run in multiple steps (or cycles), with Payu running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
+        ACCESS-ESM configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <br>
         <b>Note:</b> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
     </li>
 </ul>
-To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with Payu</a>.
+To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
 </div>
 ----------------------------------------------------------------------------------------
 
 ## <span id="runESM-4.0.0">Run ACCESS-ESM configuration</span>
 After editing the configuration, we are ready to run ACCESS-ESM. 
 <br>
-ACCESS-ESM suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by Payu.
+ACCESS-ESM suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by <i>payu</i>.
 
 ### <span id="runESM-4.1.0">Payu setup (optional)</span>
 <div class="justified">
@@ -268,16 +262,18 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-animation>
-<b>Note:</b> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors.
+<b>Note:</b> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
 ### <span id="runESM-4.2.0">Run configuration</span>
 <div class="justified">
 To run ACCESS-ESM configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), run:
-<pre><code>payu run</code></pre>
+<pre><code>payu run -f</code></pre>
 This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
+<br>
+<b>Note:</b>The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
 <terminal-animation>
-    <terminal-line data="input">payu run</terminal-line>
+    <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
@@ -291,7 +287,7 @@ This will submit a single job to the queue with a total run length of <code>runt
 <div class="justified">
 If you want to run ACCESS-ESM configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
 <pre><code>payu run -n &lt;number-of-runs&gt;</code></pre>
-This will submit a job to the queue (or multiple jobs, depending on the <code>runspersub</code> value specified in the <code>config.yaml</code> file), with a total run length of <code>runtime * number-of-runs</code>.
+This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive PBS jobs submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
 </div>
 
 ### <span id="runESM-4.4.0">Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters</span>
@@ -333,7 +329,7 @@ Let's have some practical examples:
             months: 3
             days: 10
         </code></pre>
-        set <code>runspersub</code> to <code>1</code> (or any value > 1), and run the configuration wihtout <code>-n</code> (or with <code>-n</code> equals <code>1</code>):
+        set <code>runspersub</code> to <code>1</code> (or any value > 1), and run the configuration without <code>-n</code> (or with <code>-n</code> equals <code>1</code>):
         <pre><code>payu run</code></pre>
     </li>
     <li>
@@ -374,17 +370,36 @@ If you changed the <code>jobname</code> in the PBS resources of the <a href="#ru
     <li>R &rarr; Job running</li>
     <li>E &rarr; Job ending</li>
 </ul>
-If no listed job has your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
+If there is no listed job with your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
 </div>
 
 ### <span id="runESM-5.1.0">Check the output and error log files</span>
 <div class="justified">
-
+While the model is running, <i>payu</i> saves the standard output and standard error into the files <code>access.out</code> and <code>access.err</code> in the <i>control</i> directory. You can examine these files, as the run progresses, to check on it's status.
+<br>
+After the model has completed its run, or if it crashed, the output and error log files, respectively, are renamed by default into <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>.
 </div>
 ----------------------------------------------------------------------------------------
 
 ## <span id="runESM-6.0.0">Model outputs</span>
 <div class="justified">
+While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-esm/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-esm/esm-pre-industrial/archive</code>).
+<br>
+Both outputs and restarts are stored into subfolders for each different configuration (<code>esm-pre-industrial</code> in our case), and inside the configuration folder, they are subdivided for each internal run.
+<br>
+The format of a typical output folder is <code>outputXXX</code>, whereas the typical restart folder is usually formatted as <code>restartXXX</code>, with <i>XXX</i> being the number of internal run, starting from <code>000</code>.
+<br>
+In the respective folders, outputs and restarts are separated for each model component.
+<br>
+For the atmospheric output data, each file it is usually a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
+<terminal-animation>
+    <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial</terminal-line>
+    <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls</terminal-line>
+    <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
+    <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls output000/atmosphere</terminal-line>
+    <terminal-line class="ls-output-format">aiihca.daa1210 aiihca.daa1810 aiihca.paa1apr aiihca.paa1jun aiihca.pea1apr aiihca.pea1jun aiihca.pga1apr aiihca.pga1jun atm.fort6.pe0 exstat ihist prefix.CNTLGEN UAFLDS_A aiihca.daa1310  aiihca.daa1910  aiihca.paa1aug aiihca.paa1mar aiihca.pea1aug aiihca.pea1mar aiihca.pga1aug aiihca.pga1mar cable.nml fort.57 INITHIS prefix.PRESM_A um_env.py aiihca.daa1410 aiihca.daa1a10 aiihca.paa1dec aiihca.paa1may aiihca.pea1dec aiihca.pea1may aiihca.pga1dec aiihca.pga1may CNTLALL ftxx input_atm.nml SIZES xhist aiihca.daa1510 aiihca.daa1b10 aiihca.paa1feb aiihca.paa1nov aiihca.pea1feb aiihca.pea1nov aiihca.pga1feb aiihca.pga1nov CONTCNTL ftxx.new namelists STASHC aiihca.daa1610 aiihca.daa1c10 aiihca.paa1jan aiihca.paa1oct aiihca.pea1jan aiihca.pea1oct aiihca.pga1jan aiihca.pga1oct debug.root.01 ftxx.vars nout.000000 thist aiihca.daa1710 aiihca.daa2110 aiihca.paa1jul aiihca.paa1sep aiihca.pea1jul aiihca.pea1sep aiihca.pga1jul aiihca.pga1sep errflag hnlist prefix.CNTLATM UAFILES_A</terminal-line>
+</terminal-animation>
+
 </div>
 
 

@@ -54,9 +54,9 @@
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
-  --navigation-borders: var(--md-primary-fg-color--dark); /* Left border on the toc and navigation, border of cards */
-  --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
+  --navigation-borders: #115D9750; /* Left border on the toc and navigation */
+  --card-borders: var(--md-primary-fg-color--dark); /* Borders of cards */
+  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
   --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
@@ -75,6 +75,7 @@
   --terminal-animation-directory: var(--nri-green);
   --terminal-animation-buttons: var(--nri-orange);
   --terminal-animation-buttons-hover: var(--nri-dark-blue);
+  
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -126,8 +127,9 @@
   --md-typeset-kbd-color: rgb(226, 226, 226); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: var(--md-primary-fg-color--dark); /* Left border on the toc and navigation, border of cards */
-  --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
+  --navigation-borders: #FAA61950; /* Left border on the toc and navigation */
+  --card-borders: var(--md-primary-fg-color--dark); /* Borders of cards */
+  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
   --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
@@ -155,6 +157,10 @@
 h1 {
   color: var(--md-typeset-color) !important;
   font-weight: 600 !important;
+}
+
+h2 {
+  font-weight: 500 !important;
 }
 
 h3 {
@@ -392,7 +398,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--navigation-borders);
+  border: 1px solid var(--card-borders);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
 }
@@ -594,6 +600,11 @@ pre>code {
   color: var(--terminal-animation-buttons-hover);
 }
 
+/* Try to format like the output of `ls` command */
+.ls-output-format {
+  word-spacing: 2em;
+  word-break: normal;
+}
 
 /* =============================================================== 
   Miscellaneous
@@ -627,8 +638,7 @@ pre>code {
 /* With borders */
 .with-border {
   border-radius: 7px;
-  /* border: 2px solid var(--navigation-borders); */
-  border: 1px solid var(--navigation-borders);
+  border: 1px solid var(--card-borders);
   box-sizing: border-box;
 }
 
