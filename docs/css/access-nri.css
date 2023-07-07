@@ -54,8 +54,9 @@
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
-  --navigation-borders-light: var(--md-default-fg-color--lightest);   /* Light color for left border of navigation and toc */
+  --navigation-borders: var(--md-default-fg-color--lighter); /* Border of cards */
+  --navigation-borders-lighter: rgba(var(--default-fg-color),.2); /* Lighter border of cards */
+  --navigation-borders-lightest: var(--md-default-fg-color--lightest);   /* Lightest color for left border of navigation and toc */
   --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
@@ -124,7 +125,8 @@
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
   --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
-  --navigation-borders-light: var(--md-default-fg-color--lightest);   /* Light left border for navigation */
+  --navigation-borders-lighter: rgba(var(--default-fg-color),.2); /* Lighter border of cards */
+  --navigation-borders-lightest: var(--md-default-fg-color--lightest);   /* Lightest left border for navigation */
   --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
@@ -157,8 +159,7 @@ h1 {
 */
 .introduction {
   font-size: 1.2em;
-  text-align: justify;
-  padding: 0.3em 0.5em;
+  padding: 1em;
   display: flex;
   align-items: center;
 }
@@ -194,7 +195,7 @@ h1 {
 }
 
 .md-nav:not(.md-nav--primary) {
-  border-left: 1px solid var(--navigation-borders-light);
+  border-left: 1px solid var(--navigation-borders-lightest);
 }
 
 /* Make passed items lighter */
@@ -382,7 +383,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--navigation-borders);
+  border: 1px solid var(--navigation-borders-lighter);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
 }
@@ -501,7 +502,7 @@ a.component-card {
 /* With borders */
 .with-border {
   border-radius: 7px;
-  border: 1px solid var(--navigation-borders);
+  border: 1px solid var(--navigation-borders-lightest);
   box-sizing: border-box;
 }
 
