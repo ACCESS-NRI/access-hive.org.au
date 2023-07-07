@@ -1,7 +1,4 @@
----
-hide:
-  - toc
----
+<!-- 
 # <span class="highlight-bg"> Run ACCESS-ESM </span>
 <div class="page-summary">
     <h4>On this page</h4>
@@ -27,10 +24,14 @@ hide:
                 <li><a href="#runESM-4.4.0">Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters</a></li>
             </ol>
         </li>
-        <li><a href="#runESM-5.0.0">Monitor runs</a></li>
+        <li><a href="#runESM-5.0.0">Monitor runs</a>
+            <ol>
+                <li><a href="#runESM-5.1.0">Check the output and error log files</a></li>
+            </ol>
+        </li>
         <li><a href="#runESM-6.0.0">Model outputs</a></li>
     </ol>
-</div>
+</div> -->
 
 ## <span id="runESM-1.0.0">Requirements</span>
 <div class="justified">
@@ -354,7 +355,31 @@ Let's have some practical examples:
 <div class="justified">
 Currently, there is no specific tool to monitor ACCESS-ESM runs. 
 <br>
-One way to check 
+One way to check the status of our run is running:
+<pre><code>qstat -u $USER</code></pre>
+This will show the status of all your PBS jobs (if there is any PBS job submitted):
+<terminal-animation>
+    <terminal-line data="input">qstat -u $USER</terminal-line>
+    <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
+    <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+</terminal-animation>
+If you changed the <code>jobname</code> in the PBS resources of the <a href="#runESM-3.2.0">Master Configuration file</a>, that will be your job's <i>Name</i> instead of <code>pre-industrial</code>.
+<br>
+<i>S</i> indicates the status of your run:
+<ul>
+    <li>Q &rarr; Job waiting in the queue to start</li>
+    <li>R &rarr; Job running</li>
+    <li>E &rarr; Job ending</li>
+</ul>
+If no listed job has your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
+</div>
+
+### <span id="runESM-5.1.0">Check the output and error log files</span>
+<div class="justified">
+
 </div>
 ----------------------------------------------------------------------------------------
 

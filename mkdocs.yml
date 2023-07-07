@@ -41,11 +41,6 @@ theme:
     - search.share
     - toc.follow                # the sidebar is automatically scrolled to the active anchor
 
-    # - navigation.expand 
-    # - navigation.path
-    # - toc.integrate
-    # - navigation.sections
-
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
   icon:
@@ -81,6 +76,8 @@ markdown_extensions:
   - footnotes
   - tables
   - pymdownx.keys
+  - toc:
+      title: On this page
 
 # Navigation
 nav:
