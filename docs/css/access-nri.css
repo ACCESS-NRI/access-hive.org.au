@@ -54,8 +54,9 @@
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
-  --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
+  --navigation-borders: #115D9750; /* Left border on the toc and navigation */
+  --card-borders: var(--md-primary-fg-color--dark); /* Borders of cards */
+  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
   --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
@@ -70,7 +71,11 @@
   --card-shadows: #00000075; /* Shadows on cards and other elements */
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
   --img-background: #FFFFFF; /* Background for transparent images */
-  --shadow-hover-background: rgba(29, 28, 28, 0.185) /* Shadow Background on hover */
+  --shadow-hover-background: rgba(29, 28, 28, 0.185); /* Shadow Background on hover */
+  --terminal-animation-directory: var(--nri-green);
+  --terminal-animation-buttons: var(--nri-orange);
+  --terminal-animation-buttons-hover: var(--nri-dark-blue);
+  
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -100,7 +105,7 @@
   --md-accent-bg-color: var(--nri-orange); /* back to top button text hover */
   --md-accent-bg-color--light: #115D97B0;
   --md-code-fg-color: rgb(33, 36, 44); /* code element text */
-  --md-code-bg-color: #c3c3c3; /* code element background */
+  --md-code-bg-color: #dedede; /* code element background */
   --md-code-hl-color: rgba(255,255,0,.5);
   --md-code-hl-number-color: #d52a2a;
   --md-code-hl-special-color: #db1457;
@@ -122,8 +127,9 @@
   --md-typeset-kbd-color: rgb(226, 226, 226); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
-  --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
+  --navigation-borders: #FAA61950; /* Left border on the toc and navigation */
+  --card-borders: var(--md-primary-fg-color--dark); /* Borders of cards */
+  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
   --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
@@ -138,7 +144,10 @@
   --card-shadows: #00000075; /* Shadows on cards and other elements */
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
   --img-background: #FFFFFF; /* Background for transparent images */
-  --shadow-hover-background: rgba(29, 28, 28, 0.185) /* Shadow Background on hover */
+  --shadow-hover-background: rgba(29, 28, 28, 0.185); /* Shadow Background on hover */
+  --terminal-animation-directory: var(--nri-blue);
+  --terminal-animation-buttons: var(--nri-dark-blue);
+  --terminal-animation-buttons-hover: var(--nri-orange);
 }
 
 
@@ -148,6 +157,14 @@
 h1 {
   color: var(--md-typeset-color) !important;
   font-weight: 600 !important;
+}
+
+h2 {
+  font-weight: 500 !important;
+}
+
+h3 {
+  margin: 1em 0 0.4em !important;
 }
 
 /* =============================================================== 
@@ -381,7 +398,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--navigation-borders);
+  border: 1px solid var(--card-borders);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
 }
@@ -474,8 +491,129 @@ a.component-card {
 }
 
 /* =============================================================== 
+  References
+*/
+.references {
+  font-size:0.8em;
+}
+
+/* =============================================================== 
+  Page summary ('on this page' section)
+*/
+div.page-summary {
+  max-width: 100%;
+  border: solid 0.5px var(--md-typeset-color);
+  border-radius: 3px;
+  padding: 0 15px 10px;
+  line-height: 1.2em;
+  margin: 20px 0;
+}
+
+.page-summary h4 {
+  margin: 0.7em 0;
+}
+
+.page-summary ol {
+  list-style-type: none !important;
+  counter-reset: item !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page-summary li {
+  display: table !important;
+  counter-increment: item !important;
+  margin: 0 0 0.5em 0.5em !important;
+}
+
+.page-summary li:before {
+    content: counters(item, ".") ". " !important;
+    display: table-cell !important;
+    padding-right: 0.3em !important;    
+}
+
+.page-summary li li {
+    margin: 0.1em 0 0 0 !important;
+}
+
+.page-summary li li:before {
+    content: counters(item, ".") ". " !important;
+}
+
+
+/* =============================================================== 
+  Show different markers for different hierarchy of points (up to 3d hierarchy)
+*/
+ul:not([class^='md-']) li {
+  list-style-type: disc;
+}
+
+ul:not([class^='md-']) li ul li {
+  list-style-type: circle;
+} 
+
+ul:not([class^='md-']) li ul li ul li {
+  list-style-type: square;
+} 
+
+/* =============================================================== 
+  Code block
+*/
+pre:has(code) {
+  display: flow-root !important;
+  text-align: left !important;
+  padding: 0 0 !important;
+  margin-top: 0.5em !important; 
+  margin-bottom: 0.5em !important;
+}
+
+pre>code {
+  white-space: pre-line !important;
+  padding: 0.5em 0.8em !important;
+  word-break: break-all !important;
+}
+
+/* =============================================================== 
+  Terminal animations
+*/
+::part(terminal-container) {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  font-family: var(--md-code-font-family);
+  font-weight: unset;
+}
+
+::part(input-character) {
+  color: var(--terminal-animation-buttons);
+}
+
+::part(directory) {
+  color: var(--terminal-animation-directory);
+}
+
+::part(fast-button), ::part(restart-button) {
+  color: var(--terminal-animation-buttons);
+  font-weight: 700;
+}
+
+::part(fast-button):hover, ::part(restart-button):hover {
+  color: var(--terminal-animation-buttons-hover);
+}
+
+/* Try to format like the output of `ls` command */
+.ls-output-format {
+  word-spacing: 2em;
+  word-break: normal;
+}
+
+/* =============================================================== 
   Miscellaneous
 */
+
+/* Justified text */
+.justified {
+  text-align: justify;  
+}
 
 /* Highlight the background */
 .highlight-bg {
@@ -500,7 +638,7 @@ a.component-card {
 /* With borders */
 .with-border {
   border-radius: 7px;
-  border: 2px solid var(--navigation-borders);
+  border: 1px solid var(--card-borders);
   box-sizing: border-box;
 }
 
