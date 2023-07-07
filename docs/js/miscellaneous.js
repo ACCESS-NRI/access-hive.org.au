@@ -16,9 +16,34 @@ function removeMkDocs() {
   }
 }
 
+/*
+  Adjust the scrolling so that the paragraph's titles is not 
+  partially covered by the sticky banner when clicking on a toc link
+*/
+function adjustScrollingToId() {
+  let header = document.querySelector('header');
+  let links = document.querySelectorAll("a[href^='#'].md-nav__link");
+
+  function adjustClick() {
+    links.forEach(link => link.addEventListener('click', e => {
+      e.preventDefault();
+      if (location.pathname.replace(/^\//,'') == link.pathname.replace(/^\//,'') && location.hostname == link.hostname) {
+        let offset = header.offsetHeight
+        window.scrollTo(0, document.querySelector(link.hash).offsetTop - offset);
+      }
+    }))
+  }
+  
+  let observer = new ResizeObserver(entries => adjustClick());
+  
+  adjustClick();
+  observer.observe(header);
+}
+
 function main() {
   sortTables();
   removeMkDocs();
+  adjustScrollingToId();
 }
 
 window.onload = () => document$.subscribe(() => main());
