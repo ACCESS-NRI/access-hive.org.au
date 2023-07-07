@@ -4,6 +4,7 @@ function sortTables() {
   tables.forEach(table => new Tablesort(table));
 }
 
+
 // Remove 'Made with Material for MkDocs' from copyright
 function removeMkDocs() {
   let copyright = document.querySelector(".md-copyright");
@@ -16,6 +17,7 @@ function removeMkDocs() {
   }
 }
 
+
 /*
   Adjust the scrolling so that the paragraph's titles is not 
   partially covered by the sticky banner when clicking on a toc link
@@ -27,10 +29,8 @@ function adjustScrollingToId() {
   function adjustClick() {
     links.forEach(link => link.addEventListener('click', e => {
       e.preventDefault();
-      if (location.pathname.replace(/^\//,'') == link.pathname.replace(/^\//,'') && location.hostname == link.hostname) {
-        let offset = header.offsetHeight
-        window.scrollTo(0, document.querySelector(link.hash).offsetTop - offset);
-      }
+      let offset = header.offsetHeight
+      window.scrollTo(0, document.querySelector(link.hash).offsetTop - offset);
     }))
   }
   
@@ -40,10 +40,12 @@ function adjustScrollingToId() {
   observer.observe(header);
 }
 
+// Join all functions
 function main() {
   sortTables();
   removeMkDocs();
   adjustScrollingToId();
 }
 
+// Run all functions
 window.onload = () => document$.subscribe(() => main());
