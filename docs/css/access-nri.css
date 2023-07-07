@@ -55,6 +55,7 @@
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
   --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
+  --navigation-borders-light: var(--md-default-fg-color--lightest);   /* Light color for left border of navigation and toc */
   --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
@@ -123,6 +124,7 @@
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
   --navigation-borders: var(--md-default-fg-color--lighter); /* Left border on the toc and navigation, border of cards */
+  --navigation-borders-light: var(--md-default-fg-color--lightest);   /* Light left border for navigation */
   --md-typeset-table-color: var(--navigation-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
@@ -192,7 +194,7 @@ h1 {
 }
 
 .md-nav:not(.md-nav--primary) {
-  border-left: 1px solid var(--navigation-borders);
+  border-left: 1px solid var(--navigation-borders-light);
 }
 
 /* Make passed items lighter */
