@@ -3,16 +3,17 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
-ACCESS-OM stands for ACCESS **O**cean **M**odel. There is more than just an ocean model, but it indicates that this is not a fully-coupled model, i.e. not coupled with a model atmosphere, the atmospheric fields that drive the model are provided by a data product, usually derived from reanalysis.
+The ACCESS **O**cean **M**odel, ACCESS-OM, is a global coupled ocean and sea ice configuration. It couples the ocean and sea ice components via a coupler. The atmospheric fields that drive the model are provided by a data product, usually derived from reanalysis.
 
-ACCESS-NRI will release an ACCESS-OM model configuration. The first release of ACCESS-OM will be derived from the COSIMA ACCESS-OM2 suite and will include [ocean] and [sea ice] components.
+ACCESS-NRI will release supported ACCESS-OM configurations. The first release will be derived from the COSIMA [ACCESS-OM2][COSIMA-models] suite and will include [ocean] and [sea ice] components.
+
 
 ## <div class="center-icons"> [ACCESS-OM2][COSIMA-models] {{ recommended }} </div>
 
 [**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
 [**Documentation**][ACCESS-OM2-docs]
 
-ACCESS-OM2 [@Kiss2020-gmd] is a suite of coupled ocean-sea ice models developed by the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)][COSIMA]. All models use the [MOM5] ocean model coupled to the [CICE5] sea ice model via OASIS3-MCT.
+ACCESS-OM2 [@Kiss2020-gmd] is a suite of coupled ocean-sea ice models developed by the Consortium for Ocean-Sea Ice Modelling in Australia ([COSIMA][COSIMA]). All models use the [MOM5] ocean model coupled to the [CICE5] sea ice model via an OASIS3-MCT coupler.
 
 The models in the ACCESS-OM2 suite differ by their grid spatial resolution:
 
