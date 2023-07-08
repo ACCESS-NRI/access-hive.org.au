@@ -40,18 +40,6 @@
 ## About
 {% include "call_contribute.md" %}
 
-## Support
-
-There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
-
-- `Supported by ACCESS-NRI` 
-
-- `Recommended by ACCESS-NRI` 
-
-- `Community contributed` 
-
-See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
-
 ## Contribute to ACCESS-Hive [^1]
 <div class="card-container">
     <a href="contribute/" target="_blank" class="rectangular-card default-text-color">
