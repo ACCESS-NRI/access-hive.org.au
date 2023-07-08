@@ -1,5 +1,5 @@
 
-# <div class="center-icons"> ACCESS-OM {{ supported }} </div>
+# <div class="center-icons"> ACCESS-OM  </div>
 
 <!-- {% include "call_contribute.md" %} -->
 
@@ -8,7 +8,7 @@ The ACCESS **O**cean **M**odel, ACCESS-OM, is a global coupled ocean and sea ice
 ACCESS-NRI will release supported ACCESS-OM configurations. The first release will be derived from the COSIMA [ACCESS-OM2][COSIMA-models] suite and will include [ocean] and [sea ice] components.
 
 
-## <div class="center-icons"> [ACCESS-OM2][COSIMA-models] {{ recommended }} </div>
+## <div class="center-icons"> [ACCESS-OM2][COSIMA-models]  </div>
 
 [**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
 [**Documentation**][ACCESS-OM2-docs]

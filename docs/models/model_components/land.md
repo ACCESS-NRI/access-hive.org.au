@@ -6,7 +6,7 @@
 
 <img src = "../../../assets/component-logos/component-maps/land-component-map.png" class="white-img-bg"></img>
 
-## <div class="center-icons"> [CABLE][cable-wiki] {{ supported }} </div>
+## <div class="center-icons"> [CABLE][cable-wiki]  </div>
 
 [Community Atmosphere Biosphere Land Exchange (CABLE)][cable-web] is a land surface model, used to calculate the fluxes of momentum, energy, water and carbon between the land surface and the atmosphere. It also models the main biogeochemical cycles of the land ecosystem when used in conjunction with [the CASA-CNP module][casa-cnp]. 
 
@@ -20,7 +20,7 @@ CABLE is an open source model developed by a community of Australian climate sci
 [um-web]: https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model
 
 
-## <div class="center-icons"> [JULES][jules-web] {{ supported }} </div>
+## <div class="center-icons"> [JULES][jules-web]  </div>
 
 The [Joint UK Land Environment System (JULES)](jules-web) is a community land surface model that can be used both as a standalone model and as the land surface component in the UM model. By modelling different land surface processes (surface energy balance, hydrological cycle, carbon cycle, dynamic vegetation, etc.) and their interaction with each other, JULES provides a framework to assess the impact of modifying a particular process on the ecosystem as a whole, e.g., the impact of climate change on hydrology.
 
