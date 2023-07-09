@@ -14,7 +14,7 @@
 
 ### How is CASA-CNP used?
 
-In the ACCESS-ESM1.5 model, CASA-CNP is enabled within CABLE for simulation of the carbon-cycle.
+In the ACCESS-ESM1.5 model, CASA-CNP is enabled within CABLE for the simulation of the carbon cycle.
 
 [casa-web]: https://carbonwaterobservatory.csiro.au/casa.html
 [cable-wiki]: https://trac.nci.org.au/trac/cable/wiki
