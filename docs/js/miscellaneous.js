@@ -28,28 +28,12 @@ function adjustScrollingToId() {
 
   const clickEvent = e => {
       e.preventDefault();
-      console.log('ciao');
+      window.scrollTo(0, document.querySelector(e.target.hash).offsetTop - header.offsetHeight);
   }
   
   links.forEach(link => {
     link.addEventListener('click', clickEvent)
   })
-
-  // function adjustClick() {
-  //   const clickEvent = (e) => {
-  //     e.preventDefault();
-  //     window.scrollTo(0, document.querySelector(e.target.hash).offsetTop - header.offsetHeight);
-  //   }
-  //   links.forEach(link => {
-  //     link.removeEventListener('click', clickEvent);
-  //     link.addEventListener('click', clickEvent);
-  //   })
-  // }
-  
-  // let observer = new ResizeObserver(entries => adjustClick());
-  
-  // adjustClick();
-  // observer.observe(header);
 }
 
 // Join all functions
