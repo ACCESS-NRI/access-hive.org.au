@@ -10,7 +10,7 @@ It is also built as a future point of reference, where you can come back and fin
 - A Linux/Mac/Unix computer with an internet connection and a command line terminal (e.g., MacOS with XQuartz and command line tools installed, or Putty Cygwin/MobaXterm/similar X-Windows compatible program on a PC). 
 ### Requirements for running ACCESS-CM suites 
 
-Here, we assume that you already have access to Gadi, the supercomputer hosted by the National Computational Infrastructure (NCI). If needed, you can go back to our guide on how to get [access to Gadi](../running-a-model/getting_started/access_to_gadi_at_nci.md).
+Here, we assume that you already have access to Gadi, the supercomputer hosted by the National Computational Infrastructure (NCI). If needed, you can go back to our guide on how to get [access to Gadi](../run-a-model/getting_started/access_to_gadi_at_nci.md).
 
 #### Basic Setup 
 To run an ACCESS-CM suite, new users will need to:
