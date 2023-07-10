@@ -6,6 +6,26 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
 
 Here, we provide catalogs and pointers to [observational data](./model_evaluation_observational_catalogs.md) as well as [model data](./model_evaluation_model_catalogs/index.md) that can be used for evaluation. We provide [tools to process such data](./model_evaluation_data_processing.md) into a comparable format and a [gallery of recipes to evaluate](https://medportal.herokuapp.com/models/published) the formatted data.
 
+<!-- THIS NEEDS TO BE DONE -->
+## TBD: FRAMEWORKS AND RECIPES
+
+TBD: ILAMB, ESMVALTOOL, COSMIA -> Pangeo (extended COSIMA)
+
+## TBD: COMMUNITY MED
+
+TBD: Mention Community MED in our curated MED
+<!-- THIS NEEDS TO BE DONE -->
+
+## TBD: CMORisation
+
+TBD: Raw data vs. curated data: CMORized vs. not! What does CMORized actually mean (look at ESMValTool documentation)?
+
+TBD: Add APP4 to navigation (replace **Model Format Processing**?)
+TBD: Tools to check if data is CMOR-compliant (raise issue)
+TBD: Discuss with Dougie: How can we identify what is CMORized and what is not?
+
+<!-- THIS NEEDS TO BE DONE -->
+
 <table class="center">
 <tr>
 <td width="24%">

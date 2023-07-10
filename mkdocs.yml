@@ -134,6 +134,11 @@ nav:
       - model_evaluation/model_evaluation_getting_started/index.md
       - Computing Access (Gadi@NCI): model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
+      - Model Variables:
+        - model_evaluation/model_evaluation_getting_started/model_variables/index.md
+        - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
+        - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
+        - UM: model_evaluation/model_evaluation_getting_started/model_variables/variables_um.md
     - Data Catalogs:
       - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
       - Model Data:
@@ -154,10 +159,6 @@ nav:
     - community_resources/index.md
     - Working Groups: community_resources/community_working_groups.md
     - Glossaries: community_resources/glossaries/index.md
-    - Variables:
-      - CMIP(6): community_resources/glossaries/glossary_cmip.md
-      - ERA(5): community_resources/glossaries/glossary_era.md
-      - UM: community_resources/glossaries/glossary_um.md
     - Model Evaluation Links:
       - Observational Catalogs: community_resources/community_observational_catalogs.md
       - Model Catalogs: community_resources/community_model_catalogs.md
