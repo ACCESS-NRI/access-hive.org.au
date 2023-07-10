@@ -285,11 +285,11 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 ```
 Open this link in your browser and you will see a webpage with a summary table in the center. As we have so few variables and a single model at this point, the table will very simple:
 
-<p align="center"><img align="center" width="30%" src="../../assets/model_evaluation/ilamb_output_1.png" alt="Starting side of ilamb output"></p>  
+<p align="center"><img align="center" width="30%" src="../../../assets/model_evaluation/ilamb_output_1.png" alt="Starting side of ilamb output"></p>  
   
 As we add more variables and models, this summary table helps you understand relative differences in scores among models. For now, clicking on a row of the table will expand it to reveal the underlying datasets used. Clicking on CERES will take you to another page which presents detailed scores and plots.
 
-<p align="center"><img align="center" width="50%" src="../../assets/model_evaluation/ilamb_output_2.png" alt="Detailed output of Surface Upward SW Radiation Benchmarking"></p>  
+<p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_2.png" alt="Detailed output of Surface Upward SW Radiation Benchmarking"></p>  
 
 ## 5. Run `ilamb` on NCI
 
