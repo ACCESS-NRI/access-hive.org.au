@@ -9,5 +9,5 @@ Currently, we provide pointers to the following categories:
 - [Glossaries](./glossaries/index.md)  
 - [Variables](./glossaries/glossary_cmip.md)  
 - [Model Evaluation Links](community_model_catalogs)  
-- [Training](../training/index.md)
+- [Training](training/)  
 - [Events](./events/index.md)  
