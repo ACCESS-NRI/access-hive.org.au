@@ -1,3 +1,3 @@
 # Tutorial for using `esmvaltool` on Gadi@NCI
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
