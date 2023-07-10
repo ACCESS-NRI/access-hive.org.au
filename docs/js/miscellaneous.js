@@ -27,9 +27,9 @@ function adjustScrollingToId() {
   let links = document.querySelectorAll("a[href^='#'].md-nav__link");
 
   function adjustClick() {
+    let offset = header.offsetHeight;
     links.forEach(link => link.addEventListener('click', e => {
       e.preventDefault();
-      let offset = header.offsetHeight
       window.scrollTo(0, document.querySelector(link.hash).offsetTop - offset);
     }))
   }
