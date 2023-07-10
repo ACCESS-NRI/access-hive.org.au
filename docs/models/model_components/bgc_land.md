@@ -9,12 +9,12 @@
 
 ## <div class="center-icons"> [CASA-CNP][casa-web] {{ supported }} </div>
 
-CASA (Carnegie-Ames-Stanford Approach)-CNP (Carbon-Nitrogen-Phosphorous) is the land biogeochemistry model developed in CABLE.
-
-CASA-CNP models the dynamics of carbon pools and nitrogen and phosphorous limitations. It is directly coupled with the CABLE land surface model.
+[CASA-CNP][casa-web], the Carnegie-Ames-Stanford Approach with Carbon-Nitrogen-Phosphorus, is the biogeochemical module implemented in the ACCESS land surface model [CABLE][cable-wiki]. It models the dynamics of carbon pools and the dependance of carbon uptake due to nitrogen and phosphorous limitations.  
+ 
 
 ### How is CASA-CNP used?
 
-CASA-CNP is switched on for carbon-cycle to use in the ACCESS-ESM1.5 model.
+In the ACCESS-ESM1.5 model, CASA-CNP is enabled within CABLE for the simulation of the carbon cycle.
 
 [casa-web]: https://carbonwaterobservatory.csiro.au/casa.html
+[cable-wiki]: https://trac.nci.org.au/trac/cable/wiki
