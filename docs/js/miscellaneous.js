@@ -26,18 +26,30 @@ function adjustScrollingToId() {
   let header = document.querySelector('header');
   let links = document.querySelectorAll("a[href^='#'].md-nav__link");
 
-  function adjustClick() {
-    let offset = header.offsetHeight;
-    links.forEach(link => link.addEventListener('click', e => {
+  const clickEvent = e => {
       e.preventDefault();
-      window.scrollTo(0, document.querySelector(link.hash).offsetTop - offset);
-    }))
+      console.log('ciao');
   }
   
-  let observer = new ResizeObserver(entries => adjustClick());
+  links.forEach(link => {
+    link.addEventListener('click', clickEvent)
+  })
+
+  // function adjustClick() {
+  //   const clickEvent = (e) => {
+  //     e.preventDefault();
+  //     window.scrollTo(0, document.querySelector(e.target.hash).offsetTop - header.offsetHeight);
+  //   }
+  //   links.forEach(link => {
+  //     link.removeEventListener('click', clickEvent);
+  //     link.addEventListener('click', clickEvent);
+  //   })
+  // }
   
-  adjustClick();
-  observer.observe(header);
+  // let observer = new ResizeObserver(entries => adjustClick());
+  
+  // adjustClick();
+  // observer.observe(header);
 }
 
 // Join all functions
