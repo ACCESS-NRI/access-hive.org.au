@@ -1,4 +1,4 @@
-# <div class="center-icons"> ACCESS-AM {{ supported }} </div>
+# <div class="center-icons"> ACCESS-AM  </div>
 
 <!-- {% include "call_contribute.md" %} -->
 

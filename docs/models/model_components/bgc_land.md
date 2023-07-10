@@ -7,7 +7,7 @@
 
 <img src = "../../../assets/component-logos/component-maps/bgc-land-component-map.png" class="white-img-bg"></img>
 
-## <div class="center-icons"> [CASA-CNP][casa-web] {{ supported }} </div>
+## <div class="center-icons"> [CASA-CNP][casa-web]  </div>
 
 [CASA-CNP][casa-web], the Carnegie-Ames-Stanford Approach with Carbon-Nitrogen-Phosphorus, is the biogeochemical module implemented in the ACCESS land surface model [CABLE][cable-wiki]. It models the dynamics of carbon pools and the dependance of carbon uptake due to nitrogen and phosphorous limitations.  
  

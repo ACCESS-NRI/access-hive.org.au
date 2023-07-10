@@ -1,12 +1,12 @@
 # Search for a model in the ACCESS-NRI intake Catalog
 
-To have the huge amount of data from different experiments on the NCI storage at the palm of your hand, we provide a ("meta") catalog for you to query via python as part of the `#!python intake` package with our curated catalog plugin `#!python intake.cat.access_nri` {{ supported }}.
+To have the huge amount of data from different experiments on the NCI storage at the palm of your hand, we provide a ("meta") catalog for you to query via python as part of the `#!python intake` package with our curated catalog plugin `#!python intake.cat.access_nri` .
 
-To use this catalog, you need access to NCI's Gadi. Check out our [Get Started with ACCESS at NCI](../model_evaluation_getting_started/index.md)  {{ supported }} guide on how to get access.
+To use this catalog, you need access to NCI's Gadi. Check out our [Get Started with ACCESS at NCI](../model_evaluation_getting_started/index.md)   guide on how to get access.
 
-Once logged in to Gadi, you will need to add the `#!python access-nri-catalog` to your `#!python conda` environments and start an [ARE JupyterLab Session](https://are.nci.org.au/pun/sys/dashboard). Check out our [ACCESS-NRI Intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/getting_started/index.rst) guide {{ supported }} for the specific setup (note that you can only read in data from specific experiments if they are loaded through the *Storage* keyword).
+Once logged in to Gadi, you will need to add the `#!python access-nri-catalog` to your `#!python conda` environments and start an [ARE JupyterLab Session](https://are.nci.org.au/pun/sys/dashboard). Check out our [ACCESS-NRI Intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/getting_started/index.rst) guide  for the specific setup (note that you can only read in data from specific experiments if they are loaded through the *Storage* keyword).
 
-Once your JupyterLab session started, you can access the `#!python intake` catalog to load the data. Take a look at this [Tutorial](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/how_tos/example_usage.ipynb) {{ supported }}.
+Once your JupyterLab session started, you can access the `#!python intake` catalog to load the data. Take a look at this [Tutorial](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/how_tos/example_usage.ipynb) .
 
 ``` py
 # Impport packages for searching/loading/plotting
