@@ -122,7 +122,7 @@ nav:
     # - Getting Started: 
     #   - models/running-a-model/getting_started/index.md
     #   - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
-    - Computing Access (Gadi@NCI): models/run-a-model/getting_started/access_to_gadi_at_nci.md
+    - Gadi Computing Access at NCI: models/run-a-model/getting_started/access_to_gadi_at_nci.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-CM: models/run-a-model/run-access-cm.md
     - Run ACCESS-AM: models/run-a-model/run-access-am.md
@@ -132,13 +132,12 @@ nav:
     - model_evaluation/index.md
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
-      - Computing Access (Gadi@NCI): model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
+      - Gadi Computing Access at NCI: model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
       - Model Variables:
         - model_evaluation/model_evaluation_getting_started/model_variables/index.md
         - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
         - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
-        - UM: model_evaluation/model_evaluation_getting_started/model_variables/variables_um.md
     - Data Catalogs:
       - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
       - Model Data:

@@ -11,9 +11,17 @@ Note: You do not automatically have access to all of Gadi's storage at `/g/data/
 To avoid running multiple (different) versions of code on Gadi, we provide you with a `conda` environment called `access-med` that we actually curate for you (version 0.1 is from June 2023).
 
 In order to change to this environment, please execute the following commands after loggin onto Gadi (and as part of your PBS scripts):
+<terminal-animation>
+    <terminal-line data="input">module use /g/data/xp65/public/modules</terminal-line>
+    <terminal-line data="input">module load conda/access-med</terminal-line>
+    <terminal-line>Loading conda/access-med-0.1</terminal-line>
+    <terminal-line>   Loading requirement: singularity</terminal-line>
+    <terminal-line data="input">esmvaltool recipes list</terminal-line>
+</terminal-animation>
+
 ```
 $ module use /g/data/xp65/public/modules
-$ module load conda/access-med-0.1
+$ module load conda/access-med
 ```
 
 If you are planning to run your code through JupyterLab on [NCI's ARE](https://are.nci.org.au), you need to use `/g/data/xp65/public/modules` as **Module directories** and `conda/are` as **Modules** when launching a JupyterLab session.
