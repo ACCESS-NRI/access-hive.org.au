@@ -208,7 +208,7 @@ h3 {
 }
 
 .md-nav:not(.md-nav--primary) {
-  border-left: 1px solid var(--navigation-borders-lightest);
+  border-left: 1px solid var(--navigation-borders);
 }
 
 /* Make passed items lighter */
@@ -221,7 +221,7 @@ h3 {
   margin-top: 1em;
 }
 
-/* Make toc ligher */
+/* Make toc lighter */
 /* .md-nav--secondary .md-nav__item {
   color: #949db2;
 } */
