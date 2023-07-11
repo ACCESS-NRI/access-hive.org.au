@@ -1,82 +1,73 @@
-# <div class="highlight-bg"> Running ACCESS-CM2 Model </div>
-This section includes a step-by-step instruction set on how to run the **ACCESS-CM2** suite.
-
-It is also built as a future point of reference, where you can come back and find the section containing the information you need.
-
-## **Getting Started**
-
-- An institutional email address with an organisation that allows access to NCI (e.g., CSIRO, a university, etc.).
-- Access to NCI compute/storage.
-- A Linux/Mac/Unix computer with an internet connection and a command line terminal (e.g., MacOS with XQuartz and command line tools installed, or Putty Cygwin/MobaXterm/similar X-Windows compatible program on a PC). 
-### Requirements for running ACCESS-CM suites 
-
-Here, we assume that you already have access to Gadi, the supercomputer hosted by the National Computational Infrastructure (NCI). If needed, you can go back to our guide on how to get [access to Gadi](../run-a-model/getting_started/access_to_gadi_at_nci.md).
-
-#### Basic Setup 
-To run an ACCESS-CM suite, new users will need to:
-
-- [Join the ACCESS group](https://my.nci.org.au/mancini/project/access/join). You can also find instructions on how to [join a particular project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through the NCI self-service portal. 
-- [Connect to accessdev](https://accessdev.nci.org.au/trac/wiki/GettingConnected) to complete your setup once you have your NCI credentials and are a member of the ACCESS group. 
-*Note:* At present, both accessdev and [ARE](https://opus.nci.org.au/display/Help/ARE+User+Guide) run the models on Gadi. However, ARE only supports shorter-running suites (i.e., runs less than 48 hours). Work is currently in progress to fully transition the cylc workflows from accessdev virtual machine to the ARE.
-- Additional steps relating to the [communication between accessdev and Gadi](https://accessdev.nci.org.au/trac/wiki/gadi) may also be necessary.
-
-#### UK Met Office Environment on NCI
-As components within the ACCESS-CM suites use the UK Met Office model code, the [UK Met Office Environment](https://opus.nci.org.au/display/DAE/UK+Met+Office+Environment+on+NCI) is installed on NCI. This comprises the model software and tools as well as the cylc workflow system, rose suites, the Met Office MOSRS repository and our local replica repository. In order to checkout and run ACCESS-CM2 suites on Gadi using Rose/Cylc, you need to have access to a number of repositories at the Met Office as well as the local replica and local software on NCI, which will require fullfilling these [prerequisites](https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites).
-
-#### Met Office Science Repository Service (MOSRS)
-[Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a Trac server run by the UK Met Office for sharing code and configurations for the climate models it runs with partners. It contains the source code and configurations for the UM and JULES amongst other things.
-
-To apply for a MOSRS account, you should contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites).
-
---------------------------------------------
-
-### Preparing to run an ACCESS-CM suite
-At this stage, you should be able to connect to accessdev and Gadi. 
-
-[accessdev](https://accessdev.nci.org.au) is a frontend system where you prepare ACCESS jobs and then submit them to [Gadi](https://nci.org.au/our-systems/hpc-systems) (the supercomputer at NCI where ACCESS is run).  
-
-#### Logging in to Gadi and accessdev
-
-To run an ACCESS-CM2 suite (i.e., job), you need to first [login to Gadi](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-LoggingIn&LoginNodes) with your `username` through a login node. 
-
-`ssh -Y username@gadi.nci.org.au`
-
-Similarly, to login to accessdev: 
-
-`ssh -Y $USER@accessdev.nci.org.au`
-
-Aliases and shortcuts can be created to simplify these commands by [configuring SSH](https://accessdev.nci.org.au/trac/wiki/Guides/SSH).
-
---------------------------------------------
-# Copy, Edit, and Run an ACCESS-CM2 suite
-
-<div style="text-align: justify">
-ACCESS-CM2 is a set of submodels (eg. UM, MOM, CICE, CABLE, OASIS) with a range of model parameters, input data, and computer related information, that need to be packaged together as a <i>suite</i> in order to run.
-<br>
-Each ACCESS-CM2 suite has an ID, in the format <code>u-&lt;suite-name&gt;</code>, with <code>&lt;suite-name&gt;</code> being a unique identifier (e.g. <code>u-br565</code> is the CMIP6 release preindustrial experiment suite).
-<br>
-Typically, an existing suite is copied and then edited as needed for a particular run.
-<br>
+{% set model = "ACCESS-CM" %}
+<!-- # <span class="highlight-bg"> Run {{ model }} </span> -->
+# <span class="highlight-bg"> Run {{ model }} </span>
+## <span>Requirements</span>
+<div class="justified">
+Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
 </div>
 
-## Copy ACCESS-CM2 suites with Rosie
+### <span>General requirements</span>
+<div class="justified">
+For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
+</div>
+
+### <span>Model-specific requirements</span>
+<div class="justified">
+<ul>
+    <li>
+        <b>Join the <i>access</i> project at NCI</i></b>
+        <br>
+        To join the <i>access</i> project at NCI, request membership for it on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">NCI access project</a> page.
+        <br>
+        For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+    </li>
+    <li>
+        <b>Connection to <i>accessdev</i></b>
+        <br>
+        To run {{ model }} you need the connection to <a href="https://accessdev.nci.org.au/trac/wiki" target="_blank"><i>accessdev</i></a>, an NCI server providing configuration and run control for {{ model }}.
+        <br>
+        Also, you need to make sure there is correct communication between <i>accessdev</i> and <i>gadi</i>.
+        <br>
+        To complete these steps, you can follow the guides on <a href="">SSH connections on <i>accessdev</i></a>.
+    </li>
+    <li>
+        <b>Get a <i>MOSRS</i> account</i></b>
+        <br>
+        The <a href="https://code.metoffice.gov.uk">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office to support collaborative development with other partners organisations, which contains the source code and configurations of some of the components used by {{ model }} (for example the <a href="../model_components/atmosphere/#the-unified-model-um">UM</a>).
+        <br>
+        To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
+    </li>
+</ul>
+</div>
+
+--------------------------------------------
+## Get {{ model }} configuration (suite)
 
 <div style="text-align: justify">
-<a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options to work with ACCESS-CM2 suites.
+{{ model }} is a set of submodels (e.g. UM, MOM, CICE, CABLE, OASIS) with a range of model parameters, input data, and computer related information, that need to be packaged together as a configuration in order to run. These configurations are called  <i>suites</i>
+<br>
+Each {{ model }} suite has an ID, in the format <code>u-&lt;suite-name&gt;</code>, with <code>&lt;suite-name&gt;</code> being a unique identifier (e.g. <code>u-br565</code> is the CMIP6 release preindustrial experiment suite).
+<br>
+Typically, an existing suite is copied and then edited as needed for a particular run.
+</div>
+
+### Copy {{ model }} suite with Rosie
+
+<div style="text-align: justify">
+<a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options to work with {{ model }} suites.
 <br>
 To copy an existing suite, on <i>accessdev</i>:
 <!-- Change this to gadi/ARE when it will be completely possible to run CM2 fully on gadi-->
 <ol>
     <li>
-        Run <code>mosrs-auth</code> to authenticate using your MOSRS credentials:
-        <!-- TO DO (see <a href="../access_cm2/getting-started/#met-office-science-repository-service-mosrs" target="_blank">Met Office Science Repository Service (MOSRS)</a> for troubleshooting)-->
+        Run:
+        >pre><code>mosrs-auth</code> to authenticate using your <i>MOSRS</i> credentials:
         <br>
-        <div class="termynal">
-            <span data-ty="input">mosrs-auth</span>
-            <span data-ty>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</span>
-            <span data-ty="input" data-ty-delay="1500"></span>
-            <span data-ty>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</span>
-        </div>
+        <terminal-animation>
+            <terminal-line data="input">mosrs-auth</terminal-line>
+            <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
+            <terminal-line lineDelay="2000">Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
+        </terminal-animation>
     </li>
     <li>
         Run <code>rosie checkout &lt;suite-ID&gt;</code> to create a local copy of the <code>&lt;suite-ID&gt;</code> from the UKMO repository (used mostly for testing and examining existing suites):
@@ -117,10 +108,10 @@ The suite directory usually contains 2 subdirectories and 3 files:
 </div>
 ----------------------------------------------------------------------------------------
 
-## Edit an ACCESS-CM2 suite configuration with Rose GUI
+## Edit an {{ model }} suite configuration with Rose GUI
 
 <div style="text-align: justify">
-<a href = "http://metomi.github.io/rose/doc/html/index.html" target="_blank">Rose</a> is a configuration editor which can be used to view, edit, or run an ACCESS-CM2 suite.
+<a href = "http://metomi.github.io/rose/doc/html/index.html" target="_blank">Rose</a> is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
 <br>
 To edit a suite configuration, on <i>accessdev</i>:
 <!-- Change this to gadi/ARE when it will be completely possible to run CM2 fully on gadi-->
@@ -151,7 +142,7 @@ To edit a suite configuration, on <i>accessdev</i>:
             <li>
                 <b>Total Run length / Cycling frequency</b>
                 <br>
-                ACCESS-CM2 suites are often run in multiple steps, each of them constituting a cycle, with the job scheduler resubmitting the suite every chosen <i>Cycling frequency</i>, until the <i>Total Run length</i> is met.
+                {{ model }} suites are often run in multiple steps, each of them constituting a cycle, with the job scheduler resubmitting the suite every chosen <i>Cycling frequency</i>, until the <i>Total Run length</i> is met.
                 <br>
                 To modify these parameters, we can navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective fields, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. The values are in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
                 <br>
@@ -177,20 +168,20 @@ To edit a suite configuration, on <i>accessdev</i>:
 </div>
 ----------------------------------------------------------------------------------------
 
-## Run an ACCESS-CM2 suite
+## Run an {{ model }} suite
 
 <div style="text-align: justify">
 After completing all the modifications to the suite, we are ready to run it.
 <br>
-ACCESS-CM2 suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">gadi</a> through a PBS job submission.
 <br>
-When the suite gets run, its configuration files are copied on Gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
+When the suite gets run, its configuration files are copied on gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
 <br>
-An ACCESS-CM2 suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by Cylc.
+An {{ model }} suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by Cylc.
 <br>
 <a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. Cylc deals with how the job will be run and manages the time steps of each submodel, as well as monitoring all the tasks and reporting any error that might occur.
 <br>
-To run an ACCESS-CM2 suite, on <i>accessdev</i>:
+To run an {{ model }} suite, on <i>accessdev</i>:
 <ol>
     <li>
         Run <code>rose suite-run</code>, from inside the suite directory, to run the initial tasks.
@@ -262,7 +253,7 @@ If you want to open it again, just run <code>rose suite-gcontrol</code> from ins
 ## Check for errors
 
 <div style="text-align: justify">
-It is quite common, especially during the first few runs, to experience errors and job failures. An ACCESS-CM2 suite is constituted by several tasks, 
+It is quite common, especially during the first few runs, to experience errors and job failures. An {{ model }} suite is constituted by several tasks, 
 and each of these tasks could fail. When a task fails, the suite is halted and you will see a red icon next to the respective task name in the Cylc GUI. 
 <br>
 To investigate the cause of a failure, we need to look at the logs (<code>job.err</code> and <code>job.out</code>) from the suite run. There are two main ways to do so:
@@ -413,7 +404,7 @@ To reload a suite run <code>rose suite-run --reload</code> from inside the suite
 ## Suite output files
 
 <div style="text-align: justify">
-All output files (as well as work files) are available on Gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> (also symlinked in <code>~/cylc-run/&lt;suite-ID&gt;</code>).
+All output files (as well as work files) are available on gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> (also symlinked in <code>~/cylc-run/&lt;suite-ID&gt;</code>).
 <br>
 While the suite is running, files move between the <code>share</code> and the <code>work</code> directories.
 <br>
