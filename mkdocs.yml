@@ -84,7 +84,7 @@ nav:
   - Home: 
     - index.md
     - Contact: about/contact.md
-    - Support: about/support.md
+    - User support: about/user_support.md
     - Contribute: 
       - Contribute: contribute/index.md
       - Edit on Github: contribute/edit-on-github.md

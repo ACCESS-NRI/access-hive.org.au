@@ -1,11 +1,11 @@
 # Additional training material
 
-<!-- ## [Git and GitHub][GitAndGitHub] {{ supported }} -->
+<!-- ## [Git and GitHub][GitAndGitHub]  -->
 
 To learn the basics of Git and GitHub. It also includes ACCESS-NRI's recommendations to setup GitHub. 
 
 
-<!-- ## [NCI training][nci-training] {{ recommended }}
+<!-- ## [NCI training][nci-training] 
 <div class="result" markdown> -->
 
 ![NCI Logo](../../assets/nci_logo_color.svg){align=right width=40%}
