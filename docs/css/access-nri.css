@@ -11,7 +11,7 @@
   --nri-dark-blue: #115D97;
   --nri-blue: #06AEEF;
   --nri-light-blue: #8ED7F8;
-  --default-fg-color: 220, 220, 220;  /* Color for main text in body, navigation, table of content*/
+  --default-fg-color: 255, 255, 255;  /* Color for main text in body, navigation, table of content*/
   --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
   --md-default-fg-color--light: rgba(var(--default-fg-color),.65); /* Inactive tabs */
   --md-default-fg-color--lighter: rgba(var(--default-fg-color),.3); /* pencil for editing page, passed toc items text */
@@ -26,7 +26,7 @@
   --md-primary-fg-color--dark: var(--nri-dark-blue); /* top tab background */
   --primary-bg-color: 237, 237, 237;
   --md-primary-bg-color: rgb(var(--primary-bg-color)); /* top banner text */
-  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.3); /* search bar 'Search' text */
+  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
   --md-accent-fg-color: var(--nri-orange); /* link text hover */
   --md-accent-fg-color--transparent: #FAA61916;  /* navigation bar little arrows hover */
   --md-accent-bg-color: var(--nri-dark-blue); /* back to top button text hover */
@@ -172,8 +172,7 @@ h3 {
 */
 .introduction {
   font-size: 1.2em;
-  text-align: justify;
-  padding: 0.3em 0.5em;
+  padding: 1em;
   display: flex;
   align-items: center;
 }
@@ -209,8 +208,7 @@ h3 {
 }
 
 .md-nav:not(.md-nav--primary) {
-  border-left: 1px solid;
-  border-color: var(--navigation-borders);
+  border-left: 1px solid var(--navigation-borders);
 }
 
 /* Make passed items lighter */
@@ -223,7 +221,7 @@ h3 {
   margin-top: 1em;
 }
 
-/* Make toc ligher */
+/* Make toc lighter */
 /* .md-nav--secondary .md-nav__item {
   color: #949db2;
 } */
@@ -419,12 +417,10 @@ h3 {
 }
 
 .squared-card-image {
-  height: 75%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5em 0.5em 0 0.5em;
+  flex: 1;
   overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
 }
 
 .squared-card-image >img {
@@ -618,8 +614,8 @@ pre>code {
 /* Highlight the background */
 .highlight-bg {
   background-color: var(--highlight-bg);
-  padding: 0.2em 0.4em;
-  margin: 0.5em 0;
+  padding: 0.2em 0.6em;
+  margin: 0.6em 0;
   width: fit-content;
   height: fit-content;
   border-radius: 0.3em;
