@@ -417,12 +417,7 @@ h3 {
 }
 
 .squared-card-image {
-  /* height: 75%; */
   flex: 1;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin: 0 0.5em 0 0.5em; */
   overflow: hidden;
   border-radius: 15px 15px 0 0;
   object-fit: cover;
