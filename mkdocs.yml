@@ -17,11 +17,11 @@ theme:
   palette:
     - scheme: custom-dark
       toggle:
-        icon: material/weather-sunny
+        icon: material/theme-light-dark
         name: Switch to light mode
     - scheme: custom-light
       toggle:
-        icon: material/weather-night
+        icon: material/theme-light-dark
         name: Switch to dark mode
 
   features:
