@@ -614,8 +614,8 @@ pre>code {
 /* Highlight the background */
 .highlight-bg {
   background-color: var(--highlight-bg);
-  padding: 0.2em 0.4em;
-  margin: 0.5em 0;
+  padding: 0.2em 0.6em;
+  margin: 0.6em 0;
   width: fit-content;
   height: fit-content;
   border-radius: 0.3em;

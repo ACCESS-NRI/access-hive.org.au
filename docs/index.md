@@ -19,7 +19,7 @@
         <img src="assets/ACCESS-MODEL.png" alt="Models" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Models</div>
     </a>
-    <a href="models/running-a-model" class="squared-card default-text-color">
+    <a href="models/run-a-model" class="squared-card default-text-color">
         <img src="assets/get_started_example.png" alt="Run a Model" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Run a Model</div>
     </a>
