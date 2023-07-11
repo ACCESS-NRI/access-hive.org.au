@@ -378,6 +378,16 @@ h3 {
 }
 
 /* =============================================================== 
+Model configurations images 
+*/
+.portrait-img {
+  height: 30em !important;
+  /* width: 100%; */
+  object-fit: contain;
+  border-radius: 0.6em;
+}
+
+/* =============================================================== 
   Cards for ACCESS-Hive navigation, model components and model tabs
 */
 /* Flexbox container for cards*/
@@ -629,6 +639,7 @@ pre>code {
 /* Image background */
 .image-background {
   background-color: var(--img-background);
+  border-radius: 7px;
 }
 
 /* With borders */

@@ -70,7 +70,7 @@ software called **couplers** to form different Model Configurations.
 <div class="card-container" style="flex-direction: column">
     <a href="configurations/access-cm/" class="rectangular-card configuration-card default-text-color">
             <div class="rectangular-card-image">
-                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background"></img> 
+                <img src="../assets/model-config-logos/access-cm2-config.png" class="image-background"></img> 
             </div>
             <div class="rectangular-card-text">
                 <span class="bold" >ACCESS-CM</span>
