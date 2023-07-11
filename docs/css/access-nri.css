@@ -621,7 +621,7 @@ pre>code {
   border-radius: 0.3em;
 }
 
-/* Higlight background of the same color as tab */
+/* Highlight background of the same color as tab */
 .bg-color-like-tab {
   background-color: var(--md-primary-fg-color--dark);
 }
