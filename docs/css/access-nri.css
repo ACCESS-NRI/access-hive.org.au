@@ -481,10 +481,12 @@ h3 {
 
 .rectangular-card-image {
   height: 100%;
+  width: 35%;
 }
 
 .rectangular-card-image > img {
   height: inherit;
+  object-fit: cover;
 }
 
 .rectangular-card-text {
