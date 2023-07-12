@@ -368,7 +368,7 @@ h3 {
 
 
 /* =============================================================== 
-  How to contribute image
+  "How to contribute" image under the `contribute` section
 */
 .rectangular-img {
   width: 100%; 
@@ -461,7 +461,7 @@ h3 {
 .rectangular-card {
   flex-direction: row;
   width: 100%;
-  height: 8em;
+  height: 9em;
   overflow: hidden;
 }
 
