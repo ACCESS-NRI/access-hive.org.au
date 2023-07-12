@@ -86,7 +86,7 @@ software called **couplers** to form different Model Configurations.
             <div class="rectangular-card-text">
                 <span class="bold" >ACCESS-ESM</span>
                 <span>
-                    ACCESS Earth System Model (ESM) simulates the carbon and other bio-chemical cycles within the climate system, by deploying the atmosphere, ocean, and sea-ice components. ACCESS-ESM is one of the two ACCESS global coupled model versions.
+                    ACCESS Earth System Model (ESM) simulates the carbon and other bio-chemical cycles within the climate system, by deploying the atmosphere, ocean, and sea-ice components. It is one of the two ACCESS global coupled model versions.
                 </span>
             </div>
     </a>
@@ -97,7 +97,7 @@ software called **couplers** to form different Model Configurations.
             <div class="rectangular-card-text">
                 <span class="bold" >ACCESS-OM</span>
                 <span>
-                    ACCESS Ocean Model (OM) deploys the ocean and sea-ice components to provide the Australian climate community with ocean weather and climate data, including seasonal forecasting, climate variability, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry.
+                    ACCESS Ocean Model (OM) deploys the ocean and sea-ice components to provide the Australian climate community with ocean weather and climate data, including seasonal forecasting, climate variability, and ocean biogeochemistry.
                 </span>
             </div>
     </a>
