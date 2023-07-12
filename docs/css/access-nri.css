@@ -377,6 +377,27 @@ h3 {
   border-radius: 0.6em;
 }
 
+/* ===============================================================
+  Model components cards
+*/
+.squared-card-image {
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0.5em 0 0.5em;
+}
+
+/* ===============================================================
+  Home page navigation cards
+*/
+.home-page-sq-card {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+
 /* =============================================================== 
   Model configuration images 
 */
@@ -431,10 +452,11 @@ h3 {
 }
 
 .squared-card-image {
-  flex: 1;
-  overflow: hidden;
-  border-radius: 15px 15px 0 0;
-  object-fit: cover;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0.5em 0 0.5em;
 }
 
 .squared-card-image >img {
