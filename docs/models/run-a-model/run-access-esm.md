@@ -102,7 +102,7 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
         <br>
-        For example, to run {{ model }} under the <code>tm70</code> <a href="TO DO">project (TO DO add Getting started, join a NCI Project link)</a>, add the following line to this section:
+        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
         <pre><code>project: tm70</code></pre>
     </li>
     <li>
@@ -314,7 +314,7 @@ Let's have some practical examples:
 </div>
 ----------------------------------------------------------------------------------------
 
-## Monitor runs
+## Monitor {{ model }} runs
 <div class="justified">
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
@@ -340,7 +340,7 @@ If you changed the <code>jobname</code> in the PBS resources of the <a href="#ru
 If there is no listed job with your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
 </div>
 
-### Check the output and error log files
+### Error and output log files
 <div class="justified">
 While the model is running, <i>payu</i> saves the standard output and standard error into the files <code>access.out</code> and <code>access.err</code> in the <i>control</i> directory. You can examine these files, as the run progresses, to check on it's status.
 <br>
@@ -348,7 +348,7 @@ After the model has completed its run, or if it crashed, the output and error lo
 </div>
 ----------------------------------------------------------------------------------------
 
-## Model outputs
+## {{ model }} outputs
 <div class="justified">
 While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-esm/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-esm/esm-pre-industrial/archive</code>).
 <br>

@@ -42,6 +42,13 @@
 */
 'use strict';
 
+function replaceTagSymbols(str) {
+    /**
+    * Replace HTML tag symbols '<' and '>' with HTML enities '&lt;' and '&gt;'
+    * for correct usage in directories, PS1, input/promp characters etc.
+    */ 
+    return str?.replace('<','&lt;').replace('>','&gt;')
+}
 
 const terminalTemplate = document.createElement('template');
 terminalTemplate.innerHTML = `
@@ -255,7 +262,7 @@ class TerminalAnimation extends HTMLElement {
         /**
         * Getter for the progressChar property
         */
-        return this.getAttribute('progressChar')?.toString() || '█';
+        return replaceTagSymbols(this.getAttribute('progressChar')?.toString()) || '█';
     }
     
     get progressPercent() {
@@ -269,7 +276,7 @@ class TerminalAnimation extends HTMLElement {
         /**
         * Getter for the cursor property
         */
-        return this.getAttribute('cursor')?.toString() || '▋';
+        return replaceTagSymbols(this.getAttribute('cursor')?.toString()) || '▋';
     }
     
     get inputChar() {
@@ -279,7 +286,7 @@ class TerminalAnimation extends HTMLElement {
         if (this.hasAttribute('PS1')) {
             return '';
         } else {
-            return this.getAttribute('inputChar')?.toString() || '$';
+            return replaceTagSymbols(this.getAttribute('inputChar')?.toString()) || '$';
         }
     }
     
@@ -287,7 +294,7 @@ class TerminalAnimation extends HTMLElement {
         /**
         * Getter for the promptChar property
         */
-        return this.getAttribute('promptChar')?.toString() || '>>>';
+        return replaceTagSymbols(this.getAttribute('promptChar')?.toString()) || '>>>';
     }
     
     get directory() {
@@ -297,7 +304,7 @@ class TerminalAnimation extends HTMLElement {
         if (this.hasAttribute('PS1')) {
             return '';
         } else {
-            return this.getAttribute('directory')?.toString() || '';
+            return replaceTagSymbols(this.getAttribute('directory')?.toString()) || '';
         }
     }
 
@@ -579,8 +586,6 @@ class TerminalAnimation extends HTMLElement {
         let margin = `${parseInt(getComputedStyle(this.container).marginBottom) - 5}px` // Margin of the intersectionObserver computed as bottom margin - 5px (5px padding)
         let intersectionObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                console.log(entry.intersectionRatio)
-                console.log(this.container.scrollTop)
                 intersectionFunction(entry)
             })
         },
@@ -655,8 +660,8 @@ lineTemplate.innerHTML = `
         }
         
         div.terminal-line {
-            min-height: 2em;
-            line-height: 2;
+            /* min-height: 2em; */
+            line-height: 1.5em;
             display: inline;
             align-self: center;
         }
@@ -785,7 +790,7 @@ class TerminalLine extends HTMLElement {
         /**
         * Getter for the progressChar property
         */
-        return this.getAttribute('progressChar')?.toString() || this.container.progressChar;
+        return replaceTagSymbols(this.getAttribute('progressChar')?.toString()) || this.container.progressChar;
     }
     
     get progressPercent() {
@@ -799,7 +804,7 @@ class TerminalLine extends HTMLElement {
         /**
         * Getter for the cursor property
         */
-        return this.getAttribute('cursor')?.toString() || this.container.cursor;
+        return replaceTagSymbols(this.getAttribute('cursor')?.toString()) || this.container.cursor;
     }
     
     get inputChar() {
@@ -809,7 +814,7 @@ class TerminalLine extends HTMLElement {
         if (this.hasAttribute('PS1')) {
             return '';
         } else {
-            return this.getAttribute('inputChar')?.toString() || this.container.inputChar;
+            return replaceTagSymbols(this.getAttribute('inputChar')?.toString()) || this.container.inputChar;
         }
     }
     
@@ -817,7 +822,7 @@ class TerminalLine extends HTMLElement {
         /**
         * Getter for the promptChar property
         */
-        return this.getAttribute('promptChar')?.toString() || this.container.promptChar;
+        return replaceTagSymbols(this.getAttribute('promptChar')?.toString()) || this.container.promptChar;
     }
     
     get directory() {
@@ -827,7 +832,7 @@ class TerminalLine extends HTMLElement {
         if (this.hasAttribute('PS1')) {
             return '';
         } else {
-            return this.getAttribute('directory')?.toString() || this.container.directory;
+            return replaceTagSymbols(this.getAttribute('directory')?.toString()) || this.container.directory;
         }
     }
 
