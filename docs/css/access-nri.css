@@ -638,15 +638,19 @@ pre>code {
 .highlight-bg {
   background-color: var(--highlight-bg);
   padding: 0.2em 0.6em;
-  margin: 0.6em 0;
   width: fit-content;
   height: fit-content;
   border-radius: 0.3em;
 }
 
 /* Highlight background of the same color as tab */
-.bg-color-like-tab {
+.nav-tab-btn {
   background-color: var(--md-primary-fg-color--dark);
+  margin: 0.6em 0;
+  padding: 0.2em 0.6em;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.3em;
 }
 
 /* Image background */
