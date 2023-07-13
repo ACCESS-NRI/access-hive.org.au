@@ -1,5 +1,7 @@
 # Tutorial for using `esmvaltool` on Gadi@NCI
 
+![ESMValTool-logo](https://docs.esmvaltool.org/en/latest/_static/ESMValTool-logo-2.png)
+
 {% include "call_contribute.md" %}
 
 > An introductory course on how to configure, run and make your own recipes for ESMValtool.
