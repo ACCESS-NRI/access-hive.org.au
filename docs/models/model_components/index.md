@@ -2,58 +2,58 @@
 ACCESS components represent different chemical, physical or biological parts of the Earth System.
 <div class="card-container">
     <a href="atmosphere" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></img>
         </div>
-        <div class="squared-card-text">Atmosphere</div>
+        <div class="squared-card-text-container">Atmosphere</div>
     </a>
     <a href="land" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"></img>
         </div>
-        <div class="squared-card-text">Land</div>
+        <div class="squared-card-text-container">Land</div>
     </a>
     <a href="ocean" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" alt="Ocean"></img>
         </div>
-        <div class="squared-card-text">Ocean</div>
+        <div class="squared-card-text-container">Ocean</div>
     </a>
     <a href="sea-ice" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></img>
         </div>
-        <div class="squared-card-text">Sea Ice</div>
+        <div class="squared-card-text-container">Sea Ice</div>
     </a>
     <a href="aerosols_atmospheric_chemistry" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"></img>
         </div>
-        <div class="squared-card-text">Aerosols</div>
+        <div class="squared-card-text-container">Aerosols</div>
     </a>
     <a href="aerosols_atmospheric_chemistry" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Atmospheric Chemistry"></img>
         </div>
-        <div class="squared-card-text">Atmospheric Chemistry</div>
+        <div class="squared-card-text-container">Atmospheric Chemistry</div>
     </a>
     <a href="bgc_land" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry Land"></img>
         </div>
-        <div class="squared-card-text">Biogeochemistry Land</div>
+        <div class="squared-card-text-container">Biogeochemistry Land</div>
     </a>
     <a href="bgc_ocean" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry Ocean"></img>
         </div>
-        <div class="squared-card-text">Biogeochemistry Ocean</div>
+        <div class="squared-card-text-container">Biogeochemistry Ocean</div>
     </a>
     <a href="coupler" class="squared-card component-card">
-        <div class="squared-card-image">
+        <div class="squared-card-image-container">
             <img src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
         </div>
-        <div class="squared-card-text">Coupler</div>
+        <div class="squared-card-text-container">Coupler</div>
     </a>
 </div>
 

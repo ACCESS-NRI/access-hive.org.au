@@ -8,9 +8,3 @@ Here you can find a compilation of common terms and acronyms used by the Austral
  [IPCC Acronyms](https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SR15_AnnexI.pdf): Contains a comprehensive list of acronyms published in the scientific report SR15 of the Intergovernmental Panel on Climate Change (IPCC). The IPCC is the United Nations body for assessing the science related to climate change.
 
  [CSSR Acronyms and Units](https://science2017.globalchange.gov/chapter/appendix-d/): The Climate Science Special Report (CSSR) is an assessment of the science of climate change with particular focus on the United States.
-
- [CMIP(6)](#):  
-
- [ERA(5)](#):  
-
- [UM](#): 
