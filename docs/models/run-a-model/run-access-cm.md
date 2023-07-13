@@ -137,6 +137,7 @@ To make sure we run the suite under the NCI project we belong to, we can navigat
 For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), we will insert <code>tm70</code> in the <i>Compute project</i> field:
 <br>
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
+<span class="note">Note:</span> You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
 </div>
 
 ### Change run length and cycling frequency
