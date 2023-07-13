@@ -1,11 +1,46 @@
-# <div class="highlight-bg"> ACCESS Models </div>
+# <div class="highlight-bg">Supported ACCESS Models</div>
 
-ACCESS is a family of related computer models or components that represent
-different parts of the Earth system. ACCESS links various model components through
-software called couplers to form different Model Configurations.
+ACCESS is a family of related computer models that are able to represent different parts of the Earth system trough the deployment of various model components. ACCESS models link these model components through software called couplers to form different Model Configurations.
 
 <div class="with-border image-background">
     <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;" alt="Atmosphere"></img>
+</div>
+
+## Supported ACCESS Model Configurations
+<div class="card-container" style="flex-direction: column">
+    <a href="configurations/access-cm/" class="justified rectangular-card configuration-card default-text-color">
+            <div class="rectangular-card-image-container">
+                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background img-cover"></img> 
+            </div>
+            <div class="rectangular-card-text-container">
+                <span class="bold" >ACCESS-CM</span>
+                <span>
+                    ACCESS Coupled Model (CM) produces physical climate simulations by deploying the atmosphere, ocean, and sea-ice components. ACCESS-CM features improved fluid dynamics and a microphysical aerosol scheme.
+                </span>
+            </div>
+    </a>
+    <a href="configurations/access-esm/" class="justified rectangular-card configuration-card default-text-color">
+            <div class="rectangular-card-image-container">
+                <img src="../assets/model-config-logos/access-esm-config.png" class="image-background img-cover"></img> 
+            </div>
+            <div class="rectangular-card-text-container">
+                <span class="bold" >ACCESS-ESM</span>
+                <span>
+                    ACCESS Earth System Model (ESM) simulates the carbon and other bio-chemical cycles within the climate system, by deploying the atmosphere, ocean, and sea-ice components. ACCESS-ESM is one of the two ACCESS global coupled model versions.
+                </span>
+            </div>
+    </a>
+    <a href="configurations/access-om/" class="justified rectangular-card configuration-card default-text-color">
+            <div class="rectangular-card-image-container">
+                <img src="../assets/model-config-logos/access-om2-config.png" class="image-background img-cover"></img> 
+            </div>
+            <div class="rectangular-card-text-container">
+                <span class="bold" >ACCESS-OM</span>
+                <span>
+                    ACCESS Ocean Model (OM) deploys the ocean and sea-ice components to provide the Australian climate community with ocean weather and climate data, including seasonal forecasting, climate variability, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry.
+                </span>
+            </div>
+    </a>
 </div>
 
 ## ACCESS Model Components
@@ -63,42 +98,5 @@ software called couplers to form different Model Configurations.
             <img src="../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
         </div>
         <div class="squared-card-text-container bold">Coupler</div>
-    </a>
-</div>
-
-## ACCESS Model Configurations
-<div class="card-container" style="flex-direction: column">
-    <a href="configurations/access-cm/" class="justified rectangular-card configuration-card default-text-color">
-            <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background img-cover"></img> 
-            </div>
-            <div class="rectangular-card-text-container">
-                <span class="bold" >ACCESS-CM</span>
-                <span>
-                    ACCESS Coupled Model (CM) produces physical climate simulations by deploying the atmosphere, ocean, and sea-ice components. ACCESS-CM features improved fluid dynamics and a microphysical aerosol scheme.
-                </span>
-            </div>
-    </a>
-    <a href="configurations/access-esm/" class="justified rectangular-card configuration-card default-text-color">
-            <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-esm-config.png" class="image-background img-cover"></img> 
-            </div>
-            <div class="rectangular-card-text-container">
-                <span class="bold" >ACCESS-ESM</span>
-                <span>
-                    ACCESS Earth System Model (ESM) simulates the carbon and other bio-chemical cycles within the climate system, by deploying the atmosphere, ocean, and sea-ice components. ACCESS-ESM is one of the two ACCESS global coupled model versions.
-                </span>
-            </div>
-    </a>
-    <a href="configurations/access-om/" class="justified rectangular-card configuration-card default-text-color">
-            <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-om2-config.png" class="image-background img-cover"></img> 
-            </div>
-            <div class="rectangular-card-text-container">
-                <span class="bold" >ACCESS-OM</span>
-                <span>
-                    ACCESS Ocean Model (OM) deploys the ocean and sea-ice components to provide the Australian climate community with ocean weather and climate data, including seasonal forecasting, climate variability, downscaling of climate in the marine environment around Australia, and ocean biogeochemistry.
-                </span>
-            </div>
     </a>
 </div>

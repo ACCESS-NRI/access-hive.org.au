@@ -422,10 +422,11 @@ h3 {
 
 .squared-card-image-container {
   height: 75%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.6em 0.6em 0 0.6em;
+  padding: 0.6em 0.6em 0 0.6em;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -454,10 +455,11 @@ h3 {
 
 .rectangular-card-image-container {
   width: 35%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.6em 0 0.6em 0.6em;
+  padding: 0.6em 0 0.6em 0.6em;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -475,6 +477,11 @@ h3 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.rectangular-card-image-container > img, 
+.squared-card-image-container > img {
+  border-radius: 8px;
 }
 
 .configuration-card {
