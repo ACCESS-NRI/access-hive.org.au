@@ -579,8 +579,6 @@ class TerminalAnimation extends HTMLElement {
         let margin = `${parseInt(getComputedStyle(this.container).marginBottom) - 5}px` // Margin of the intersectionObserver computed as bottom margin - 5px (5px padding)
         let intersectionObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                console.log(entry.intersectionRatio)
-                console.log(this.container.scrollTop)
                 intersectionFunction(entry)
             })
         },
