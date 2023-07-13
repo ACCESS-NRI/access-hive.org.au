@@ -2,7 +2,7 @@
 
 ACCESS is a family of related computer models or components that represent
 different parts of the Earth system. ACCESS links various model components through
-software called **couplers** to form different Model Configurations.
+software called couplers to form different Model Configurations.
 
 <div class="with-border image-background">
     <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;" alt="Atmosphere"></img>
@@ -68,9 +68,9 @@ software called **couplers** to form different Model Configurations.
 
 ## ACCESS Model Configurations
 <div class="card-container" style="flex-direction: column">
-    <a href="configurations/access-cm/" class="rectangular-card configuration-card default-text-color">
+    <a href="configurations/access-cm/" class="justified rectangular-card configuration-card default-text-color">
             <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background"></img> 
+                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-CM</span>
@@ -79,9 +79,9 @@ software called **couplers** to form different Model Configurations.
                 </span>
             </div>
     </a>
-    <a href="configurations/access-esm/" class="rectangular-card configuration-card default-text-color">
+    <a href="configurations/access-esm/" class="justified rectangular-card configuration-card default-text-color">
             <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-esm-config.png" class="image-background"></img> 
+                <img src="../assets/model-config-logos/access-esm-config.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-ESM</span>
@@ -90,9 +90,9 @@ software called **couplers** to form different Model Configurations.
                 </span>
             </div>
     </a>
-    <a href="configurations/access-om/" class="rectangular-card configuration-card default-text-color">
+    <a href="configurations/access-om/" class="justified rectangular-card configuration-card default-text-color">
             <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-om2-config.png" class="image-background"></img> 
+                <img src="../assets/model-config-logos/access-om2-config.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-OM</span>
