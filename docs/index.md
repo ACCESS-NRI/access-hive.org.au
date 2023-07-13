@@ -16,41 +16,29 @@
 ## Navigating ACCESS-Hive
 <div class="card-container">
     <a href="models" class="squared-card default-text-color">
-        <div class="squared-card-image"><img src="assets/ACCESS-MODEL.png" alt="Models"></img></div>
+        <img src="assets/ACCESS-MODEL.png" alt="Models" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Models</div>
     </a>
-    <a href="models/running-a-model" class="squared-card default-text-color">
-        <div class="squared-card-image"><img src="assets/get_started_example.png" alt="Run a Model"></img></div>
+    <a href="models/run-a-model" class="squared-card default-text-color">
+        <img src="assets/get_started_example.png" alt="Run a Model" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Run a Model</div>
     </a>
     <a href="model_evaluation" class="squared-card default-text-color">
-        <div class="squared-card-image"><img src="assets/resources_example.png" alt="Model Evaluation"></img></div>
+        <img src="assets/resources_example.png" alt="Model Evaluation" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Model Evaluation</div>
     </a>
     <a href="community_resources" class="squared-card default-text-color">
-        <div class="squared-card-image"><img src="assets/community-forum-homepage.png" alt="Community Resources"></img></div> 
+        <img src="assets/community-forum-homepage.png" alt="Community Resources" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Community Resources</div>
     </a>
     <a href="https://forum.access-hive.org.au" target="_blank" class="squared-card default-text-color">
-        <div class="squared-card-image"><img src="assets/forum_screenshot.png" alt="Community Forum"></img></div> 
+        <img src="assets/forum_screenshot.png" alt="Community Forum" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg bg-color-like-tab bold">Community Forum</div>
     </a>
 </div>
 
 ## About
 {% include "call_contribute.md" %}
-
-## Support
-
-There is a system of tags to identify who supports the linked documentation or software, and the level of support you can expect:
-
-- `Supported by ACCESS-NRI` {{ supported }}
-
-- `Recommended by ACCESS-NRI` {{ recommended }}
-
-- `Community contributed` {{ community }}
-
-See the [support page](about/support.md) for details about the support levels: what is supported, by who, and how to access help.
 
 ## Contribute to ACCESS-Hive [^1]
 <div class="card-container">

@@ -6,20 +6,24 @@
 
 <img src = "../../../assets/component-logos/component-maps/ocean-component-map.png" class="white-img-bg"></img>
 
-## <div class="center-icons"> [Modular Ocean Model (MOM)][mom-wiki]  {{ supported }} </div>
+## <div class="center-icons"> [Modular Ocean Model (MOM)][mom-wiki]   </div>
 The [Modular Ocean Model (MOM)][mom-wiki] is one of the ocean components of the ACCESS climate model system. Used to simulate ocean currents at both regional and global scales, MOM is an invaluable tool for studying the global ocean climate system, as well as capabilities for regional and coastal applications. 
 
-### <div class="center-icons"> MOM5 {{ supported }} </div>
+MOM is an open source development by a consortium of scientists across several government agencies and academic institutions worldwide. 
+
+### <div class="center-icons"> MOM5  </div>
+
 [**Source Code**][mom5-github]
 
-MOM5 is used in supported climate ACCESS configurations.
+MOM5 is used in supported configurations, such as ACCESS-OM2, ACCESS-CM2 and ACCESS-ESM1.5.
 
-### <div class="center-icons"> MOM6 {{ recommended }} </div>
+### <div class="center-icons"> MOM6  </div>
 
 [**Source Code**][mom6-github] |
 [**Tutorials**][mom6-tutes]
 
-The most recent version, [MOM6][gfdl-web], is an open source development by a consortium of scientists across several government agencies and academic institutions with critical contributions provided by researchers worldwide.
+[MOM6][gfdl-web] is the most recent version. An ACCESS-OM3 configuration is currently under development that uses MOM6 as the ocean model component.
+
 
 [mom5-github]: https://github.com/mom-ocean/MOM5
 [mom6-github]: https://github.com/mom-ocean/MOM6

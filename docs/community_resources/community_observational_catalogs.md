@@ -1,6 +1,6 @@
 # Community Observational Data Catalogs
 
-We are trying to ingest more and more model data catalogs in your currated [catalog on this website](../model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md){{ supported }}. While this is a continous effort, this site is intented for a list of additional model data catalogs that are not (yet) ingested but are recommended by us ({{ recommended }}) or may be interesting for the community ({{ community }}):
+We are trying to ingest more and more model data catalogs in your currated [catalog on this website](../model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md). While this is a continous effort, this site is intented for a list of additional model data catalogs that are not (yet) ingested but are recommended by us () or may be interesting for the community ():
 
 <table class="center">
 <tr>
@@ -25,7 +25,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://cds.climate.copernicus.eu/">Copernicus Climate Change Service (C3S) Data Store (CDS)</a> {{ recommended }}
+    <a href="https://cds.climate.copernicus.eu/">Copernicus Climate Change Service (C3S) Data Store (CDS)</a> 
     </div>
 </td>
 <td width="10%">
@@ -47,7 +47,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://catalogue.ceda.ac.uk">Catalogue Search at CEDA (Centre for Environmental Data Analysis) </a> {{ recommended }}
+    <a href="https://catalogue.ceda.ac.uk">Catalogue Search at CEDA (Centre for Environmental Data Analysis) </a> 
     </div>
 </td>
 <td width="10%">

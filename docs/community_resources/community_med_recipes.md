@@ -2,7 +2,7 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
-We are trying to ingest more and more model evaluation and diagnostics recipes in your currated [recipe gallery on this website](../model_evaluation/model_evaluation_recipe_gallery.md) {{ supported }}. While this is a continous effort, this site is intented for a list of model evaluation and diagnostics recipes that are not (yet) ingested but may be interesting for the community {{ community }}:
+We are trying to ingest more and more model evaluation and diagnostics recipes in your currated [recipe gallery on this website](../model_evaluation/model_evaluation_recipe_gallery.md) . While this is a continous effort, this site is intented for a list of model evaluation and diagnostics recipes that are not (yet) ingested but may be interesting for the community :
 
 <table>
 <tr>
@@ -26,7 +26,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://www.esmvaltool.org/">ESMValTool {{ recommended }} <br>(Earth System Model EValuation Tool)</a>
+    <a href="https://www.esmvaltool.org/">ESMValTool  <br>(Earth System Model EValuation Tool)</a>
     </div>
 </td>
 <td width="10%">
@@ -49,7 +49,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="http://cosima.org.au/">COSIMA Cookbook / Recipes {{ recommended }}<br>(Consortium for Ocean-Sea Ice Modelling in Australia)</a>
+    <a href="http://cosima.org.au/">COSIMA Cookbook / Recipes <br>(Consortium for Ocean-Sea Ice Modelling in Australia)</a>
     </div>
 </td>
 <td width="10%">
@@ -78,7 +78,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://www.ilamb.org/">iLAMB {{ recommended }}<br>(international Land Model Benchmarking)</a>
+    <a href="https://www.ilamb.org/">iLAMB <br>(international Land Model Benchmarking)</a>
     </div>
 </td>
 <td width="10%">
@@ -99,7 +99,7 @@ We are trying to ingest more and more model evaluation and diagnostics recipes i
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://cmec.llnl.gov/iomb.html">iOMB {{ recommended }}<br>(international Ocean Model Benchmarking)</a>
+    <a href="https://cmec.llnl.gov/iomb.html">iOMB <br>(international Ocean Model Benchmarking)</a>
     </div>
 </td>
 <td width="10%">
@@ -122,7 +122,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://dtcenter.org/community-code/metplus">METPlus {{ recommended }}<br>(Model Evaluation Tool Plus)</a>
+    <a href="https://dtcenter.org/community-code/metplus">METPlus <br>(Model Evaluation Tool Plus)</a>
     </div>
 </td>
 <td width="10%">
@@ -136,7 +136,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
         <a href="https://journals.ametsoc.org/view/journals/bams/102/4/BAMS-D-19-0093.1.xml">Paper</a>
         <!-- METplus is a verification framework that spans a wide range of temporal (warn-on-forecast to climate) and spatial (storm to global) scales.  It is intended to be extensible through additional capability developed by the community. The core components of the framework include MET, the associated database and display systems called METviewer and METexpress, and a suite of Python wrappers to provide low-level automation and examples, also called use-cases.  METplus will be a component of NOAA's Unified Forecast System (UFS) cross-cutting infrastructure as well as NCAR's System for Integrated Modeling of the Atmosphere (SIMA).
         METplus is being actively developed by NCAR/Research Applications Laboratory (RAL), NOAA/Earth Systems Research Laboratories (ESRL), NOAA/Environmental Modeling Center (EMC), and is open to community contributions.
-        ### METplus Components  {{ recommended }}
+        ### METplus Components  
         Links to the code repository and documentation for each METplus component are provided below:
         - METplus Wrappers: [sources][METplusWrappers-source] | [docs][METplusWrappers-doc]
         - MET: [sources][MET-source] | [docs][MET-doc]
@@ -166,7 +166,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="http://pcmdi.github.io/pcmdi_metrics/index.html#">PMP {{ recommended }}<br>(PCMDI Metrics Package)</a>
+    <a href="http://pcmdi.github.io/pcmdi_metrics/index.html#">PMP <br>(PCMDI Metrics Package)</a>
     </div>
 </td>
 <td width="10%">
@@ -186,7 +186,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://climpred.readthedocs.io/en/stable/index.html">climpred {{ community }}</a>
+    <a href="https://climpred.readthedocs.io/en/stable/index.html">climpred </a>
     </div>
 </td>
 <td width="10%">
@@ -212,7 +212,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://freva.gitlab-pages.dkrz.de/evaluation_system/sphinx_docs/index.html">FREVA {{ community }}<br>(Free Evaluation System Framework)</a>
+    <a href="https://freva.gitlab-pages.dkrz.de/evaluation_system/sphinx_docs/index.html">FREVA <br>(Free Evaluation System Framework)</a>
     </div>
 </td>
 <td width="10%">
@@ -235,7 +235,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://cmec.llnl.gov/teca.html">TECA {{ community }}<br>(Toolkit for Extremes Climate Analysis)</a>
+    <a href="https://cmec.llnl.gov/teca.html">TECA <br>(Toolkit for Extremes Climate Analysis)</a>
     </div>
 </td>
 <td width="10%">
@@ -257,7 +257,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://monet-arl.readthedocs.io/en/stable/#">MONET {{ community }}<br>(Model and ObservatioN Evaluation Toolkit)</a>
+    <a href="https://monet-arl.readthedocs.io/en/stable/#">MONET <br>(Model and ObservatioN Evaluation Toolkit)</a>
     </div>
 </td>
 <td width="10%">
@@ -280,7 +280,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://livvkit.github.io/Docs/">LIVVkit {{ community }}<br>(land ice verification & validation toolkit)</a>
+    <a href="https://livvkit.github.io/Docs/">LIVVkit <br>(land ice verification & validation toolkit)</a>
     </div>
 </td>
 <td width="10%">
@@ -302,7 +302,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://metoffice.github.io/CSET/index.html">CSET {{ community }}<br>(Convective Scale Evaluation Tool )</a>
+    <a href="https://metoffice.github.io/CSET/index.html">CSET <br>(Convective Scale Evaluation Tool )</a>
     </div>
 </td>
 <td width="10%">
@@ -324,7 +324,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://unidata.github.io/MetPy/latest/index.html">MetPy {{ community }}<br>(Model Evaluation Tool Plus)</a>
+    <a href="https://unidata.github.io/MetPy/latest/index.html">MetPy <br>(Model Evaluation Tool Plus)</a>
     </div>
 </td>
 <td width="10%">
@@ -346,7 +346,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://code.metoffice.gov.uk/doc/afterburner/current/html/index.html">Afterburner {{ community }}</a>
+    <a href="https://code.metoffice.gov.uk/doc/afterburner/current/html/index.html">Afterburner </a>
     </div>
 </td>
 <td width="10%">

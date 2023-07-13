@@ -8,5 +8,5 @@ Currently, we provide pointers to the following categories:
 - [Working Groups](community_working_groups.md)    
 - [Glossaries](./glossaries/index.md)  
 - [Model Evaluation Links](community_model_catalogs)  
-- [Training](./training/index.md)
+- [Training](training/)  
 - [Events](./events/index.md)  
