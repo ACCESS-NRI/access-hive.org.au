@@ -11,7 +11,7 @@
   --nri-dark-blue: #115D97;
   --nri-blue: #06AEEF;
   --nri-light-blue: #8ED7F8;
-  --default-fg-color: 255, 255, 255;  /* Color for main text in body, navigation, table of content*/
+  --default-fg-color: 220, 220, 220;  /* Color for main text in body, navigation, table of content*/
   --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
   --md-default-fg-color--light: rgba(var(--default-fg-color),.65); /* Inactive tabs */
   --md-default-fg-color--lighter: rgba(var(--default-fg-color),.3); /* pencil for editing page, passed toc items text */
