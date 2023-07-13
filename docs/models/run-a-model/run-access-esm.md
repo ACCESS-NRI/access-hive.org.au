@@ -63,7 +63,7 @@ For the general requirements needed to run all ACCESS models, please refer to th
 A suitable ACCESS-ESM pre-industrial configuration is avaible on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
 <br>
 In order to get it, on Gadi, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
-<pre><code>git clone https://github.com/coecms/esm-pre-industrial</code></pre>
+<pre><code>git clone https://github.com/coecms/esm-pre-industrial.git</code></pre>
 <terminal-animation>
     <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
     <terminal-line data="input">cd ~/access-esm</terminal-line>
