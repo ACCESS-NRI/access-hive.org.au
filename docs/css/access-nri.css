@@ -75,7 +75,7 @@
   --terminal-animation-directory: var(--nri-green);
   --terminal-animation-buttons: var(--nri-orange);
   --terminal-animation-buttons-hover: var(--nri-dark-blue);
-  
+  --note: var(--nri-orange);
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -148,6 +148,7 @@
   --terminal-animation-directory: var(--nri-blue);
   --terminal-animation-buttons: var(--nri-dark-blue);
   --terminal-animation-buttons-hover: var(--nri-orange);
+  --note: var(--nri-blue);
 }
 
 
@@ -605,6 +606,12 @@ pre>code {
 /* =============================================================== 
   Miscellaneous
 */
+
+/* Highlight 'Note:' kwyqord before noted comment */
+.note {
+  font-weight: 500;
+  color: var(--note);
+}
 
 /* Justified text */
 .justified {

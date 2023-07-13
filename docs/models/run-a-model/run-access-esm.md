@@ -76,13 +76,14 @@ In order to get it, on Gadi, create a directory where to keep the model configur
     <terminal-line>Receiving objects: 100% (767/767), 461.57 KiB | 5.24 MiB/s, done.</terminal-line>
     <terminal-line>Resolving deltas: 100% (450/450), done.</terminal-line>
 </terminal-animation>
-<b>Note:</b> Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
+<span class="note">Note:</span> Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
 </div>
 ----------------------------------------------------------------------------------------
 
 ## <span id="runESM-3.0.0">Edit ACCESS-ESM configuration</span>
 <div class="justified">
-In order to modify an ACCESS-ESM configuration, it is worth understanding a bit more how its job scheduler <i>payu</i> works.
+First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
+<pre><code>git checkout -b example_run</code></pre>
 </div>
 
 ### <span id="runESM-3.1.0">Payu</span>
@@ -137,6 +138,7 @@ This file controls the general model configuration and if we open it in a text e
         <br>
         For example, to run ACCESS-ESM under the <code>tm70</code> <a href="TO DO">project (TO DO add Getting started, join a NCI Project link)</a>, add the following line to this section:
         <pre><code>project: tm70</code></pre>
+        <span class="note">Note:</span> You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
     </li>
     <li>
         <b>Link to the laboratory directory</b>
@@ -216,7 +218,7 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         This section specifies the start date and internal run length.
         <br>
-        <b>Note:</b> The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#runESM-4.3.0">Run configuration for multiple years</a>.
+        <span class="note">Note:</span> The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#runESM-4.3.0">Run configuration for multiple years</a>.
     </li>
     <li>
         <b>Number of runs per PBS submission</b>
@@ -224,7 +226,7 @@ This file controls the general model configuration and if we open it in a text e
         <pre><code>runspersub: 5</code></pre>
         ACCESS-ESM configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <br>
-        <b>Note:</b> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
+        <span class="note">Note:</span> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
     </li>
 </ul>
 To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
@@ -262,7 +264,7 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-animation>
-<b>Note:</b> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
+<span class="note">Note:</span> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
 ### <span id="runESM-4.2.0">Run configuration</span>
@@ -271,7 +273,7 @@ To run ACCESS-ESM configuration for one internal run length (controlled by <code
 <pre><code>payu run -f</code></pre>
 This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
 <br>
-<b>Note:</b>The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
+<span class="note">Note:</span>The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
 <terminal-animation>
     <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>

@@ -147,6 +147,7 @@ To edit a suite configuration, on <i>accessdev</i>:
                 If, for example, we belong to the <i>tm70</i> Project (ACCESS-NRI), we will insert <code>tm70</code> in the <i>Compute project</i> field:
                 <br>
                 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change Project" style="width:750px"/>
+                <span class="note">Note:</span> You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
             </li>
             <li>
                 <b>Total Run length / Cycling frequency</b>

@@ -22,6 +22,9 @@ For the general requirements needed to run all ACCESS models, please refer to th
             module load conda/analysis3
         </code></pre>
     </li>
+    
+    qv56, ik11 and hh5
+    
 </ul>
 </div>
 ----------------------------------------------------------------------------------------
@@ -46,13 +49,14 @@ In order to get it, on <i>gadi</i>, create a directory where to keep the model c
     <terminal-line>Receiving objects: 100% (14715/14715), 35.68 MiB | 18.11 MiB/s, done.</terminal-line>
     <terminal-line>Resolving deltas: 100% (10707/10707), done.</terminal-line>
 </terminal-animation>
-<b>Note:</b> Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
+<span class="note">Note:</span> Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
 </div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
 <div class="justified">
-In order to modify an {{ model }} configuration, it is worth understanding a bit more how its job scheduler <i>payu</i> works.
+First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
+<pre><code>git checkout -b example_run</code></pre>
 </div>
 
 ### Payu
@@ -62,10 +66,10 @@ In order to modify an {{ model }} configuration, it is worth understanding a bit
 The general layout of a <i>payu</i>-supported model run consists of two main directories:
 <ul>
     <li>
-        The <b>laboratory</b> is the directory where all parts of the model are kept. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
+        The <b>laboratory</b> is the directory where all parts of the model are kept. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-om2</code>.
     </li>
     <li>
-        The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-esm/esm-pre-industrial</code>).
+        The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-om/1deg_jra55_iaf</code>).
     </li>
 </ul>
 This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on <i>gadi</i> that is actively backed up), without overloading it with too much data.
@@ -79,13 +83,13 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
     <li><code>work</code> &rarr; temporary directory where the model is actually run. It gets cleaned after each run.</li>
     <li><code>archive</code> &rarr; directory where the output is placed after each run.</li>
     <terminal-animation>
-        <terminal-line data="input">cd ~/access-esm/esm-pre-industrial</terminal-line>
-        <terminal-line data="input" directory="~/access-esm/esm-pre-industrial">payu init</terminal-line>
-        <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
-        <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
-        <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
-        <terminal-line>work path:  /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
-        <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
+        <terminal-line data="input">cd ~/access-om/1deg_jra55_iaf</terminal-line>
+        <terminal-line data="input" directory="~/access-om/1deg_jra55_iaf">payu init</terminal-line>
+        <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
+        <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
+        <terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
+        <terminal-line>work path:  /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
+        <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
     </terminal-animation>
 </ul>
 </div>
@@ -99,67 +103,77 @@ This file controls the general model configuration and if we open it in a text e
     <li>
         <b>PBS resources</b>
         <br>
-        <pre><code>jobname: pre-industrial
-            queue: normal
-            walltime: 20:00:00
+        <pre><code>queue: normal
+            walltime: 3:00:00
+            jobname: 1deg_jra55_iaf
+            mem: 1000GB
         </code></pre>
         These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
         <pre><code>project: tm70</code></pre>
+        <span class="note">Note:</span> You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
     </li>
     <li>
-        <b>Link to the laboratory directory</b>
-        <br>
-        <pre><code># note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
-            laboratory: access-esm
+        <b>Model configuration</b>
+        <pre><code>name: common
+            model: access-om2
+            input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
         </code></pre>
-        This will set the laboratory directory. Relative paths are relative to <code>/scratch/$PROJECT/$USER</code>. Absolute paths can be specified as well.
-    </li>
-    <li>
-        <b>Model</b>
-        <pre><code>model: access</code></pre>
-        The main model. This tells <i>payu</i> which driver to use (<i>access</i> stands for {{ model }}).
+        The main model configuration. This tells <i>payu</i> which driver to use (<i>access-om</i>).
+        <br>
+        The <code>name</code> field here is not actually used for the configuration run and you can safely disregard it.
     </li>
     <li>
         <b>Submodels</b>
         <br>
         <pre><code>submodels:
             &nbsp;&nbsp;- name: atmosphere
-            &nbsp;&nbsp;&nbsp;&nbsp;model: um
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 192
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+            &nbsp;&nbsp;&nbsp;&nbsp;model: yatm
+            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-om2/bin/coe/um7.3x
             &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/start_dump<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/ik11/inputs/access-om2/input_20201102/yatm_1deg
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rsds/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rlds/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prra/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prsn/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/psl/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/land/day/friver/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/tas/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/huss/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/uas/gr/v20190429
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/vas/gr/v20190429
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 1<br>
             &nbsp;&nbsp;- name: ocean
             &nbsp;&nbsp;&nbsp;&nbsp;model: mom
             &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 180
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
+            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-om2/bin/coe/mom5xx
             &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-om2/input/pre-industrial/ocean/common
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-om2/input/pre-industrial/ocean/pre-industrial
+            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 1<br>
             &nbsp;&nbsp;- name: ice
             &nbsp;&nbsp;&nbsp;&nbsp;model: cice
             &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 12
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/coe/cicexx
+            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-om2/bin/coe/cicexx
             &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/ice<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-om2/input/pre-industrial/ice<br>
             &nbsp;&nbsp;- name: coupler
             &nbsp;&nbsp;&nbsp;&nbsp;model: oasis
             &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 0
             &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-om2/input/pre-industrial/coupler
         </code></pre>
         {{ model }} is a coupled model, which means it has multiple submodels (i.e. model components). 
         <br>
-        This section specifies the submodels and contains configuration options (for example the directories of input files) that are required to ensure the model can execute correctly. Each submodel also has additional configuration options that are read in when the submodel is running. These specific configuration options are found in the subdirectory of the <i>control</i> directory having the <i>name</i> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>).
+        This section specifies the submodels and contains configuration options (for example the directories of input files) that are required to ensure the model can execute correctly. Each submodel also has additional configuration options that are read in when the submodel is running. These specific configuration options are found in the subdirectory of the <i>control</i> directory having the <i>name</i> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-om2/esm-pre-industrial/atmosphere</code>).
     </li>
     <li>
         <b>collate</b>
         <br>
         <pre><code>collate:
-            &nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/mppnccombine
+            &nbsp;&nbsp;exe: /g/data/access/payu/access-om2/bin/mppnccombine
             &nbsp;&nbsp;restart: true
             &nbsp;&nbsp;mem: 4GB
         </code></pre>
@@ -168,7 +182,7 @@ This file controls the general model configuration and if we open it in a text e
     <li>
         <b>restart</b>
         <br>
-        <pre><code>restart: /g/data/access/payu/access-esm/restart/pre-industrial</code></pre>
+        <pre><code>restart: /g/data/access/payu/access-om2/restart/pre-industrial</code></pre>
         The location of the files used for a warm restart.
     </li>
     <li>
@@ -186,7 +200,7 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         This section specifies the start date and internal run length.
         <br>
-        <b>Note:</b> The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#runESM-4.3.0">Run configuration for multiple years</a>.
+        <span class="note">Note:</span> The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#runESM-4.3.0">Run configuration for multiple years</a>.
     </li>
     <li>
         <b>Number of runs per PBS submission</b>
@@ -194,7 +208,7 @@ This file controls the general model configuration and if we open it in a text e
         <pre><code>runspersub: 5</code></pre>
         {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <br>
-        <b>Note:</b> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
+        <span class="note">Note:</span> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
     </li>
 </ul>
 To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
@@ -213,11 +227,11 @@ As a first step, from the control directory, is good practice to run:
 This will prepare the model run, based on the experiment configuration.
 <terminal-animation>
     <terminal-line data="input">payu setup</terminal-line>
-    <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
-    <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
-    <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
-    <terminal-line>work path:  /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
-    <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
+    <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
+    <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
+    <terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
+    <terminal-line>work path:  /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
+    <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
@@ -232,7 +246,7 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-animation>
-<b>Note:</b> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
+<span class="note">Note:</span> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
 ### Run configuration
@@ -241,7 +255,7 @@ To run {{ model }} configuration for one internal run length (controlled by <cod
 <pre><code>payu run -f</code></pre>
 This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
 <br>
-<b>Note:</b>The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
+<span class="note">Note:</span>The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
 <terminal-animation>
     <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
@@ -353,7 +367,7 @@ After the model has completed its run, or if it crashed, the output and error lo
 
 ## {{ model }} outputs
 <div class="justified">
-While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-esm/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-esm/esm-pre-industrial/archive</code>).
+While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-om2/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-om2/esm-pre-industrial/archive</code>).
 <br>
 Both outputs and restarts are stored into subfolders for each different configuration (<code>esm-pre-industrial</code> in our case), and inside the configuration folder, they are subdivided for each internal run.
 <br>
@@ -363,10 +377,10 @@ In the respective folders, outputs and restarts are separated for each model com
 <br>
 For the atmospheric output data, each file it is usually a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
 <terminal-animation>
-    <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial</terminal-line>
-    <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls</terminal-line>
+    <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/esm-pre-industrial</terminal-line>
+    <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/esm-pre-industrial">ls</terminal-line>
     <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
-    <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls output000/atmosphere</terminal-line>
+    <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/esm-pre-industrial">ls output000/atmosphere</terminal-line>
     <terminal-line class="ls-output-format">aiihca.daa1210 aiihca.daa1810 aiihca.paa1apr aiihca.paa1jun aiihca.pea1apr aiihca.pea1jun aiihca.pga1apr aiihca.pga1jun atm.fort6.pe0 exstat ihist prefix.CNTLGEN UAFLDS_A aiihca.daa1310  aiihca.daa1910  aiihca.paa1aug aiihca.paa1mar aiihca.pea1aug aiihca.pea1mar aiihca.pga1aug aiihca.pga1mar cable.nml fort.57 INITHIS prefix.PRESM_A um_env.py aiihca.daa1410 aiihca.daa1a10 aiihca.paa1dec aiihca.paa1may aiihca.pea1dec aiihca.pea1may aiihca.pga1dec aiihca.pga1may CNTLALL ftxx input_atm.nml SIZES xhist aiihca.daa1510 aiihca.daa1b10 aiihca.paa1feb aiihca.paa1nov aiihca.pea1feb aiihca.pea1nov aiihca.pga1feb aiihca.pga1nov CONTCNTL ftxx.new namelists STASHC aiihca.daa1610 aiihca.daa1c10 aiihca.paa1jan aiihca.paa1oct aiihca.pea1jan aiihca.pea1oct aiihca.pga1jan aiihca.pga1oct debug.root.01 ftxx.vars nout.000000 thist aiihca.daa1710 aiihca.daa2110 aiihca.paa1jul aiihca.paa1sep aiihca.pea1jul aiihca.pea1sep aiihca.pga1jul aiihca.pga1sep errflag hnlist prefix.CNTLATM UAFILES_A</terminal-line>
 </terminal-animation>
 
