@@ -134,10 +134,9 @@ nav:
       - model_evaluation/model_evaluation_getting_started/index.md
       - Gadi Computing Access at NCI: model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-      - Model Variables:
-        - model_evaluation/model_evaluation_getting_started/model_variables/index.md
-        - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
-        - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
+      - Model Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
+        # - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
+        # - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
     - Data Catalogs:
       - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
       - Model Data:
@@ -147,12 +146,12 @@ nav:
         - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
     - Evaluation Tools: 
       - model_evaluation/model_evaluation_on_gadi/index.md
-      - Frameworks on Gadi:
-         - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
-         - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
-         - Pangeo & COSIMA: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
-      - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
-      - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
+      # - Frameworks on Gadi:
+      - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
+      - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
+      - COSIMA cookbook: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+      # - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
+      # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
     - community_resources/index.md

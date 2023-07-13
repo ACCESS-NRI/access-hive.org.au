@@ -360,4 +360,23 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </td>
 </tr>
 
+
+<tr>
+<td width="25%">
+    <div align='center' width="100%">
+    <a href="https://cookbooks.projectpythia.org">Pythia Cookbooks {{ community }}</a>
+    </div>
+</td>
+<td width="10%">
+</td>
+<td width="64%">
+    <div align='center' width="100%" >
+        <a href="https://cookbooks.projectpythia.org">Documentation</a> |
+        <a href="https://github.com/ProjectPythia">Source </a>
+        <!-- The Afterburner project is a multi-year initiative of the UK Met Office to develop a suite of robust, reusable scientific software tools and applications which can be integrated into climate model runs to deliver commonly needed in-line (as a model is running) and post-processing functionality. The project is funded by the UK government through a combination of direct grant and the ​[Newton Fund](http://www.newtonfund.ac.uk). -->
+    </div>
+</td>
+</tr>
+
+
 <table/>

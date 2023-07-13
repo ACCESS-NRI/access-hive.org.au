@@ -4,5 +4,23 @@ Welcome to Model Evaluation and Diagnostics!
 
 Here, we provide you the important information to give you access to the large data that we curate at NCI's storage and show you how you can use it to figure out how fit for purpose specific models are, in particular when you compare them to osbervational data:
 
-1) [Getting Access to NCI and relevant NCI projects](./access_to_gadi_at_nci.md)  
-2) [Setting up environments at gadi@NCI to load and evaluate observational and model data](./model_evaluation_getting_started.md)
+<div class="card-container">
+    <a href="./access_to_gadi_at_nci" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access"></img>
+        </div>
+        <div class="squared-card-text bold">Computing Access</div>
+    </a>
+    <a href="./model_evaluation_getting_started" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment"></img>
+        </div>
+        <div class="squared-card-text bold">MED Conda Environment</div>
+    </a>
+    <a href="./model_variables" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables"></img>
+        </div>
+        <div class="squared-card-text bold">Model Variables</div>
+    </a>
+</div>

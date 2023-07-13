@@ -1,6 +1,6 @@
 # Observational Data Catalog
 
-As of June 2023, we provide the following observational data catalogs on Gadi@NCI through the project `kj13`:
+<!-- As of June 2023, we provide the following observational data catalogs on Gadi@NCI through the project `kj13`:
 
 <pre><code>/g/data/kj13/datasets
 ├── cmip6
@@ -154,4 +154,4 @@ If you want to use but do not have access to Gadi@NCI yet, please follow our ins
 | NIWA-BS	                    |            | Tier3/                               |
 | NSIDC-0116-nh	                |            | Tier3/                               |
 | NSIDC-0116-sh	                |            | Tier3/                               |
-| UWisc                         |            | Tier3/                               |
+| UWisc                         |            | Tier3/                               | -->

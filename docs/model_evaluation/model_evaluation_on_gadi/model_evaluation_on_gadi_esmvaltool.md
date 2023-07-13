@@ -30,6 +30,8 @@ esmvaltool run examples/recipe_python.yml --search_esgf=when_missing
 
 Below you can find the recipes from `esmvaltool` that we are providing to run on Gadi. The original recipes are 
 
+<!-- Compare to list from https://github.com/ACCESS-NRI/ESMValTool-workflow/issues/103 -->
+
 <table>
 <tr>
   <td><a href="/assets/model_evaluation/esmvaltool/fig-9-3.png"><img src="/assets/model_evaluation/esmvaltool/fig-9-3.png" title="CMIP5 multi-model mean 2m temperature, multi-model mean of absolute seasonality, multi-model mean bias in seasonality, multi-model mean bias in absolute seasonality; resembling Flato et al. (2013), Fig. 9.3." /></a></td>

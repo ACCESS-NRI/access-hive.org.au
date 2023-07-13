@@ -1,5 +1,30 @@
-# Model Evaluation on Gadi
+# Model Evaluation on Gadi/NCI
 
-To kick-start your model evaluation efforts, we provide the following tools as part of our `access-med` `conda` environment (and tutorials for how to use them on Gadi@NCI):  
-  - [ilamb](./model_evaluation_on_gadi_ilamb.md), a tool for [International Land (and Ocean) Model Benchmarking](https://www.ilamb.org).  
-  - [esmvaltool](./model_evaluation_on_gadi_esmvaltool.md), an [Earth System Model Evaluation Tool](https://esmvaltool.org.)  
+We are providing support for an increasing amount of frameworks and recipes on Gadi/NCI.
+
+At the moment, we are actively supporting:
+
+<div class="card-container">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
+        </div>
+        <div class="squared-card-text bold">ILAMB</div>
+    </a>
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
+        </div>
+        <div class="squared-card-text bold">ESMValTool</div>
+    </a>
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="squared-card default-text-color">
+        <div class="squared-card-image">
+            <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
+        </div>
+        <div class="squared-card-text bold">COSIMA cookbook</div>
+    </a>
+</div>
+
+The best way to get our help is by raising an issue on the [community forum](https://forum.access-hive.org.au/) with tags `help` and another tag for the specific framework.
+
+In the future, we are also aiming to support a broader range of frameworks and recipes.
