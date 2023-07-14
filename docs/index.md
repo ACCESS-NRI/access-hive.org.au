@@ -5,7 +5,7 @@ hide:
 ---
 
 <!-- ![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%} -->
-# <div class="highlight-bg"> Welcome to ACCESS-Hive </div>
+# <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  Hosted by [ACCESS-NRI](http://access-nri.org.au) </div>
 
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
@@ -68,28 +68,6 @@ hide:
     </a>
 </div>
 
-## About
-{% include "call_contribute.md" %}
-
-## Contribute to ACCESS-Hive [^1]
-<div class="card-container">
-    <a href="contribute/" target="_blank" class="rectangular-card default-text-color">
-        <div class="rectangular-card-image-container">
-            <img src="assets/how-to-contribute-img.jpg" class="cover"></img>
-        </div>
-        <div class="rectangular-card-text-container">
-            <span class="highlight-bg bg-color-like-tab bold">Contribute</span>
-            <span class="">Join the ACCESS-Hive team and have your contributions onboard!</span>
-        </div>
-    </a>
-</div>
-
-[^1]:
-    <a href="https://www.freepik.com/free-vector/team-crisis-managers-solving-businessman-problems-employees-with-lightbulb-unraveling-tangle-vector-illustration-teamwork-solution-management-concept_10613678.htm#query=teamwork%20cartoon&position=18&from_view=keyword&track=ais">Image by pch.vector</a> on Freepik
-
-<!-- [How to Contribute][HCG]{ .md-button .md-button--primary }
-
-ACCESS-Hive is a community supported site, as such contributions to the ACCESS-Hive site are **encouraged by any member of the community**. Member of the ACCESS community are also welcome to become reviewers. Please refer to the [contribution guidelines][HCG] to learn how you can help the ACCESS community build a documentation database useful to everyone. -->
 
 ## Acknowledgement of Country
 
