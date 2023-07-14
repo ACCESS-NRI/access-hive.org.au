@@ -5,7 +5,6 @@
 {% include "call_contribute.md" %}
 
 
-Throughout the workshop, participants will have access to the ESMValTool pre-installed on NCI-Gadi,along with the required CMIP model output and observational datasets.
 
 [ACCESS ESMValTool Worflow recipe status][esmvaltool-workflow-repository]
 
