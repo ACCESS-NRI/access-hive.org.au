@@ -1,4 +1,4 @@
-# Running a Model
+# <div class="highlight-bg">Run a Model</div>
 
 Here, we are providing the information to run different ACCESS models.
 

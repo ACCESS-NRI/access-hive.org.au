@@ -16,28 +16,34 @@
 ## Navigating ACCESS-Hive
 <div class="card-container">
     <a href="models" class="squared-card default-text-color">
-        <div>
-            <img src="assets/ACCESS-MODEL.png" alt="Models" class="squared-card-image"></img>
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/ACCESS-MODEL.png" alt="Models">
         </div>
-        <div class="squared-card-text highlight-bg nav-tab-btn bold">Models</div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Models</div>
     </a>
     <a href="models/run-a-model" class="squared-card default-text-color">
-        <div>
-            <img src="assets/get_started_example.png" alt="Run a Model" class="squared-card-image"></img>
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/get_started_example.png" alt="Run a Model">
         </div>
-        <div class="squared-card-text highlight-bg nav-tab-btn bold">Run a Model</div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Run a Model</div>
     </a>
     <a href="model_evaluation" class="squared-card default-text-color">
-        <img src="assets/resources_example.png" alt="Model Evaluation" class="squared-card-image"></img>
-        <div class="squared-card-text highlight-bg nav-tab-btn bold">Model Evaluation</div>
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/resources_example.png" alt="Model Evaluation">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Model Evaluation</div>
     </a>
     <a href="community_resources" class="squared-card default-text-color">
-        <img src="assets/community-forum-homepage.png" alt="Community Resources" class="squared-card-image"></img>
-        <div class="squared-card-text highlight-bg nav-tab-btn bold">Community Resources</div>
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/community-forum-homepage.png" alt="Community Resources">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Community Resources</div>
     </a>
     <a href="https://forum.access-hive.org.au" target="_blank" class="squared-card default-text-color">
-        <img src="assets/forum_screenshot.png" alt="Community Forum" class="squared-card-image"></img>
-        <div class="squared-card-text highlight-bg nav-tab-btn bold">Community Forum</div>
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/forum_screenshot.png" alt="Community Forum">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Community Forum</div>
     </a>
 </div>
 
@@ -47,10 +53,10 @@
 ## Contribute to ACCESS-Hive [^1]
 <div class="card-container">
     <a href="contribute/" target="_blank" class="rectangular-card default-text-color">
-        <div class="rectangular-card-image">
+        <div class="rectangular-card-image-container">
             <img src="assets/how-to-contribute-img.jpg" class="cover"></img>
         </div>
-        <div class="rectangular-card-text">
+        <div class="rectangular-card-text-container">
             <span class="highlight-bg bg-color-like-tab bold">Contribute</span>
             <span class="">Join the ACCESS-Hive team and have your contributions onboard!</span>
         </div>

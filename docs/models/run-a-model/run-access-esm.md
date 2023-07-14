@@ -1,55 +1,22 @@
- 
-# <span class="highlight-bg"> Run ACCESS-ESM </span>
-<!-- <div class="page-summary">
-    <h4>On this page</h4>
-    <ol>
-        <li><a href="#runESM-1.0.0">Requirements</a>
-            <ol>
-                <li><a href="#runESM-1.2.0">General requirements</a></li>
-                <li><a href="#runESM-1.2.0">Model-specific requirements</a></li>
-            </ol>
-        </li>
-        <li><a href="#runESM-2.0.0">Get ACCESS-ESM configuration</a></li>
-        <li><a href="#runESM-3.0.0">Edit ACCESS-ESM configuration</a>
-            <ol>
-                <li><a href="#runESM-3.1.0">Payu</a></li>
-                <li><a href="#runESM-3.2.0">Edit the Master Configuration file</a></li>
-            </ol>
-        </li>
-        <li><a href="#runESM-4.0.0">Run ACCESS-ESM configuration</a>
-            <ol>
-                <li><a href="#runESM-4.1.0">Payu setup (optional)</a></li>
-                <li><a href="#runESM-4.2.0">Run configuration</a></li>
-                <li><a href="#runESM-4.3.0">Run configuration for multiple years</a></li>
-                <li><a href="#runESM-4.4.0">Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters</a></li>
-            </ol>
-        </li>
-        <li><a href="#runESM-5.0.0">Monitor runs</a>
-            <ol>
-                <li><a href="#runESM-5.1.0">Check the output and error log files</a></li>
-            </ol>
-        </li>
-        <li><a href="#runESM-6.0.0">Model outputs</a></li>
-    </ol>
-</div> -->
-
-## <span id="runESM-1.0.0">Requirements</span>
+{% set model = "ACCESS-ESM" %}
+# <span class="highlight-bg"> Run {{ model }} </span>
+## Requirements
 <div class="justified">
-Before running ACCESS-ESM, you need to make sure to possess the right tools and to have an account with specific institutions. 
+Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
 </div>
 
-### <span id="runESM-1.1.0">General requirements</span>
+### General requirements
 <div class="justified">
 For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
 </div>
 
-### <span id="runESM-1.2.0">Model-specific requirements</span>
+### Model-specific requirements
 <div class="justified">
 <ul>
     <li>
         <b>Payu</b>
         <br>
-        To get <i>payu</i> on Gadi, run:
+        To get <i>payu</i> on <i>gadi</i>, run:
         <pre><code>module use /g/data/hh5/public/modules
             module load conda/analysis3
         </code></pre>
@@ -58,11 +25,11 @@ For the general requirements needed to run all ACCESS models, please refer to th
 </div>
 ----------------------------------------------------------------------------------------
 
-## <span id="runESM-2.0.0">Get ACCESS-ESM configuration</span>
+## Get {{ model }} configuration
 <div class="justified">
-A suitable ACCESS-ESM pre-industrial configuration is avaible on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
+A suitable {{ model }} pre-industrial configuration is avaible on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
 <br>
-In order to get it, on Gadi, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
+In order to get it, on <i>gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/coecms/esm-pre-industrial</code></pre>
 <terminal-animation>
     <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
@@ -80,25 +47,25 @@ In order to get it, on Gadi, create a directory where to keep the model configur
 </div>
 ----------------------------------------------------------------------------------------
 
-## <span id="runESM-3.0.0">Edit ACCESS-ESM configuration</span>
+## Edit {{ model }} configuration
 <div class="justified">
-In order to modify an ACCESS-ESM configuration, it is worth understanding a bit more how its job scheduler <i>payu</i> works.
+In order to modify an {{ model }} configuration, it is worth understanding a bit more how its job scheduler <i>payu</i> works.
 </div>
 
-### <span id="runESM-3.1.0">Payu</span>
+### Payu
 <div class="justified">
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
 The general layout of a <i>payu</i>-supported model run consists of two main directories:
 <ul>
     <li>
-        The <b>laboratory</b> is the directory where all parts of the model are kept. For ACCESS-ESM, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
+        The <b>laboratory</b> is the directory where all parts of the model are kept. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
     </li>
     <li>
         The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-esm/esm-pre-industrial</code>).
     </li>
 </ul>
-This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on Gadi that is actively backed up), without overloading it with too much data.
+This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on <i>gadi</i> that is actively backed up), without overloading it with too much data.
 <br>
 Moreover, this separation allows to run multiple self-resubmitting experiments simultaneously that might share common executables and input data.
 <br>
@@ -120,7 +87,7 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
 </ul>
 </div>
 
-### <span id="runESM-3.2.0">Edit the Master Configuration file</span>
+### Edit the Master Configuration file
 <div class="justified">
 The <code>config.yaml</code> file, located in the <i>control</i> directory, is the Master Configuration file. 
 <br>
@@ -135,7 +102,7 @@ This file controls the general model configuration and if we open it in a text e
         </code></pre>
         These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
         <br>
-        For example, to run ACCESS-ESM under the <code>tm70</code> <a href="TO DO">project (TO DO add Getting started, join a NCI Project link)</a>, add the following line to this section:
+        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
         <pre><code>project: tm70</code></pre>
     </li>
     <li>
@@ -149,7 +116,7 @@ This file controls the general model configuration and if we open it in a text e
     <li>
         <b>Model</b>
         <pre><code>model: access</code></pre>
-        The main model. This tells <i>payu</i> which driver to use (<i>access</i> stands for ACCESS-ESM).
+        The main model. This tells <i>payu</i> which driver to use (<i>access</i> stands for {{ model }}).
     </li>
     <li>
         <b>Submodels</b>
@@ -181,7 +148,7 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;&nbsp;&nbsp;input:
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
         </code></pre>
-        ACCESS-ESM is a coupled model, which means it has multiple submodels (i.e. model components). 
+        {{ model }} is a coupled model, which means it has multiple submodels (i.e. model components). 
         <br>
         This section specifies the submodels and contains configuration options (for example the directories of input files) that are required to ensure the model can execute correctly. Each submodel also has additional configuration options that are read in when the submodel is running. These specific configuration options are found in the subdirectory of the <i>control</i> directory having the <i>name</i> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>).
     </li>
@@ -222,7 +189,7 @@ This file controls the general model configuration and if we open it in a text e
         <b>Number of runs per PBS submission</b>
         <br>
         <pre><code>runspersub: 5</code></pre>
-        ACCESS-ESM configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
+        {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <br>
         <b>Note:</b> If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
     </li>
@@ -231,12 +198,12 @@ To know more about other configuration settings for the <code>config.yaml</code>
 </div>
 ----------------------------------------------------------------------------------------
 
-## <span id="runESM-4.0.0">Run ACCESS-ESM configuration</span>
-After editing the configuration, we are ready to run ACCESS-ESM. 
+## Run {{ model }} configuration
+After editing the configuration, we are ready to run {{ model }}. 
 <br>
-ACCESS-ESM suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by <i>payu</i>.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>gadi</i></a> through a PBS job submission managed by <i>payu</i>.
 
-### <span id="runESM-4.1.0">Payu setup (optional)</span>
+### Payu setup (optional)
 <div class="justified">
 As a first step, from the control directory, is good practice to run:
 <pre><code>payu setup</code></pre>
@@ -265,9 +232,9 @@ This will prepare the model run, based on the experiment configuration.
 <b>Note:</b> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
-### <span id="runESM-4.2.0">Run configuration</span>
+### Run configuration
 <div class="justified">
-To run ACCESS-ESM configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), run:
+To run {{ model }} configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), run:
 <pre><code>payu run -f</code></pre>
 This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
 <br>
@@ -283,14 +250,14 @@ This will submit a single job to the queue with a total run length of <code>runt
 </terminal-animation>
 </div>
 
-### <span id="runESM-4.3.0">Run configuration for multiple years</span>
+### Run configuration for multiple years
 <div class="justified">
-If you want to run ACCESS-ESM configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
+If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
 <pre><code>payu run -n &lt;number-of-runs&gt;</code></pre>
 This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive PBS jobs submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
 </div>
 
-### <span id="runESM-4.4.0">Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters</span>
+### Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters
 <div class="justified">
 With the correct use of <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters, we can have full control of our run.
 <br>
@@ -347,9 +314,9 @@ Let's have some practical examples:
 </div>
 ----------------------------------------------------------------------------------------
 
-## <span id="runESM-5.0.0">Monitor runs</span>
+## Monitor {{ model }} runs
 <div class="justified">
-Currently, there is no specific tool to monitor ACCESS-ESM runs. 
+Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
 One way to check the status of our run is running:
 <pre><code>qstat -u $USER</code></pre>
@@ -373,7 +340,7 @@ If you changed the <code>jobname</code> in the PBS resources of the <a href="#ru
 If there is no listed job with your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
 </div>
 
-### <span id="runESM-5.1.0">Check the output and error log files</span>
+### Error and output log files
 <div class="justified">
 While the model is running, <i>payu</i> saves the standard output and standard error into the files <code>access.out</code> and <code>access.err</code> in the <i>control</i> directory. You can examine these files, as the run progresses, to check on it's status.
 <br>
@@ -381,7 +348,7 @@ After the model has completed its run, or if it crashed, the output and error lo
 </div>
 ----------------------------------------------------------------------------------------
 
-## <span id="runESM-6.0.0">Model outputs</span>
+## {{ model }} outputs
 <div class="justified">
 While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-esm/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-esm/esm-pre-industrial/archive</code>).
 <br>
