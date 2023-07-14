@@ -6,11 +6,11 @@ Speaking a common language and using the same variables is key for a united clim
 <!-- Because they were not ready for quick searches (jquery with extended html tables is slow), we did not include them in the Legacy Relase (July/August 2023). -->
 <!-- The code and markdown files are hosted on a github repository, however: https://github.com/svenbuder/access_model_variables -->
 
-# Variables for CMIP version 6<br>(Coupled Model Intercomparison Project)
+## Variables for CMIP version 6<br>(Coupled Model Intercomparison Project)
 
 You can search the extensive list of Coupled Model Intercomparison Project version 6 on [this website](Chttps://clipc-services.ceda.ac.uk/dreq/index/var.html).
 
-# Variables for ERA5 atmospheric reanalysis
+## Variables for ERA5 atmospheric reanalysis
 
 ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate covering the period from January 1940 to present. ERA5 is produced by the Copernicus Climate Change Service (C3S) at ECMWF. ERA5 provides hourly estimates of a large number of atmospheric, land and oceanic climate variables.
 

@@ -25,8 +25,8 @@ You are now able to use the scripts of our currated environment, including `pyth
 
 [![Raise Issue](../../assets/model_evaluation/condaenv_list.png)](https://github.com/ACCESS-NRI/MED-condaenv/issues)
 
-## 3 If you need more packages
+<!-- ## 3 If you need more packages
 
 Simply raise an issue to *add a package* in our [ACCESS-NRI/MED-condaenv GitHub repository](https://github.com/ACCESS-NRI/MED-condaenv/issues):
 
-[![Raise Issue](../../assets/model_evaluation/condaenv_raise_issue.png)](https://github.com/ACCESS-NRI/MED-condaenv/issues)
+[![Raise Issue](../../assets/model_evaluation/condaenv_raise_issue.png)](https://github.com/ACCESS-NRI/MED-condaenv/issues) -->
