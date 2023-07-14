@@ -628,6 +628,13 @@ pre>code {
   Miscellaneous
 */
 
+/* Gifs, videos and example images (For example the ones in 'how to run' a model */
+.example-img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 8px;
+}
+
 /* Justified text */
 .justified {
   text-align: justify;  
