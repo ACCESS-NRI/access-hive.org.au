@@ -4,7 +4,7 @@ ACCESS-CM2 (ACCESS Coupled Model 2) is a global fully-coupled climate model that
 <a href = "https://www.wcrp-climate.org/wgcm-cmip" target="_blank"> Coupled Model Intercomparison Project, CMIP</a>.
 <br>
 
-<img src="../../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS CM model" class="image-background center-img"></img>
+<img src="../../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
 
 ## ACCESS-CM2 configurations
 

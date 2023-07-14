@@ -667,6 +667,11 @@ pre>code {
   box-sizing: border-box;
 }
 
+/* Add padding to image container */
+.with-padding {
+  padding: 0.5em;
+}
+
 /* Typeset text color (even links) */
 .default-text-color {
   color: var(--md-typeset-color) !important;
