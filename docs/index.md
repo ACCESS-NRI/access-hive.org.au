@@ -16,23 +16,27 @@
 ## Navigating ACCESS-Hive
 <div class="card-container">
     <a href="models" class="squared-card default-text-color">
-        <img src="assets/ACCESS-MODEL.png" alt="Models" class="home-page-sq-card"></img>
+        <div>
+            <img src="assets/ACCESS-MODEL.png" alt="Models" class="squared-card-image"></img>
+        </div>
         <div class="squared-card-text highlight-bg nav-tab-btn bold">Models</div>
     </a>
     <a href="models/run-a-model" class="squared-card default-text-color">
-        <img src="assets/get_started_example.png" alt="Run a Model" class="home-page-sq-card"></img>
+        <div>
+            <img src="assets/get_started_example.png" alt="Run a Model" class="squared-card-image"></img>
+        </div>
         <div class="squared-card-text highlight-bg nav-tab-btn bold">Run a Model</div>
     </a>
     <a href="model_evaluation" class="squared-card default-text-color">
-        <img src="assets/resources_example.png" alt="Model Evaluation" class="home-page-sq-card"></img>
+        <img src="assets/resources_example.png" alt="Model Evaluation" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg nav-tab-btn bold">Model Evaluation</div>
     </a>
     <a href="community_resources" class="squared-card default-text-color">
-        <img src="assets/community-forum-homepage.png" alt="Community Resources" class="home-page-sq-card"></img>
+        <img src="assets/community-forum-homepage.png" alt="Community Resources" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg nav-tab-btn bold">Community Resources</div>
     </a>
     <a href="https://forum.access-hive.org.au" target="_blank" class="squared-card default-text-color">
-        <img src="assets/forum_screenshot.png" alt="Community Forum" class="home-page-sq-card"></img>
+        <img src="assets/forum_screenshot.png" alt="Community Forum" class="squared-card-image"></img>
         <div class="squared-card-text highlight-bg nav-tab-btn bold">Community Forum</div>
     </a>
 </div>

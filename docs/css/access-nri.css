@@ -380,13 +380,13 @@ h3 {
 /* ===============================================================
   Model components cards
 */
-.squared-card-image {
+/* .squared-card-image {
   height: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.5em 0.5em 0 0.5em;
-}
+} */
 
 /* ===============================================================
   Home page navigation cards
@@ -438,15 +438,14 @@ h3 {
 }
 
 .squared-card-image {
-  height: 75%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5em 0.5em 0 0.5em;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
 }
 
 .squared-card-image >img {
-  width: 80%
+  width: 80%;
 }
 
 .squared-card-text {
