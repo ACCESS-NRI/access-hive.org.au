@@ -15,23 +15,12 @@ hide:
     <div>
         ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.  
         The HIVE-Forum is the platform for collaboration of the climate research community.
+        <div>
+            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Get Support</div>
+            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Contribute</div>
+        </div>
     </div>
     <img src="assets/ACCESS_icon_HIVE.png">
-</div>
-
-<div class="card-container">
-    <a href="models" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img class="img-cover" src="assets/community-forum-homepage.png" alt="Models">
-        </div>
-        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Get Support</div>
-    </a>
-    <a href="./contribute" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img class="img-cover" src="assets/community-forum-homepage.png" alt="Run a Model">
-        </div>
-        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Contribute</div>
-    </a>
 </div>
 
 ## Navigating ACCESS-Hive

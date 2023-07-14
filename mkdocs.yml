@@ -153,27 +153,27 @@ nav:
   - Community Resources:
     - community_resources/index.md
     - Working Groups: community_resources/community_working_groups.md
-    - Glossaries: community_resources/glossaries/index.md
     - Model Evaluation Links:
       - Observational Catalogs: community_resources/community_observational_catalogs.md
       - Model Catalogs: community_resources/community_model_catalogs.md
       - Data Formatting: community_resources/community_data_processing.md
       - Evaluation Recipes: community_resources/community_med_recipes.md
-    - Training: 
-      - Training: community_resources/training/index.md
-      - Git Version Control: community_resources/training/git-version-control.md
-      - High Performance Computing (HPC): community_resources/training/hpc.md
-      - ACCESS Training: community_resources/training/ACCESS_training.md
-      - NCI Training: community_resources/training/nci-training.md
-      - Additional Training: community_resources/training/additional_training.md
+    # - Training: 
+    #   - Training: community_resources/training/index.md
+    #   - Git Version Control: community_resources/training/git-version-control.md
+    #   - High Performance Computing (HPC): community_resources/training/hpc.md
+    #   - ACCESS Training: community_resources/training/ACCESS_training.md
+    #   - NCI Training: community_resources/training/nci-training.md
+    #   - Additional Training: community_resources/training/additional_training.md
     - Events:
        - community_resources/events/index.md
-       - Add Event: community_resources/events/add_event.md
+      #  - Add Event: community_resources/events/add_event.md
 
   - Community Forum: https://forum.access-hive.org.au
 
   - About:
     - Contact: about/contact.md
+    - Glossaries: community_resources/glossaries/index.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md
