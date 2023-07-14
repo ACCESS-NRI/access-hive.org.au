@@ -7,14 +7,14 @@ COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings 
 
 ## Getting Started
 
-The easiest way to use the COSIMA Cookbook is through NCI's HPC systems. The cookbook is preinstalled both in the latest `access-med` (project `xp65`) and `conda/analysis3` (project hh5) environments.
+The easiest way to use the COSIMA Cookbook is through NCI's HPC systems. The cookbook is preinstalled both in the `conda/analysis3` (project hh5) environments.
 
 1. Clone the <a href="https://github.com/COSIMA/cosima-recipes"><code>cosima-recipes</code></a> repository to your local file space.  
 2. Start an [ARE JupyterLab session on NCI](https://are.nci.org.au) or a jupyter notebook on Gadi:  
   *If you are using ARE*:  
-  **Storage**: gdata/xp65+gdata/ik11  
-  **Module directories**: /g/data/xp65/public/modules  
-  **Modules**: conda/are
+  **Storage**: gdata/hh5+gdata/ik11  
+  **Module directories**: /g/data/hh5/public/modules  
+  **Modules**: conda/analysis3
 3. Navigate to one of the COSIMA recipes and run the analysis.
 
 ## Using the Cookbook
