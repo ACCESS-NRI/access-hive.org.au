@@ -2,40 +2,53 @@
 {% set model = "ACCESS-OM" %}
 # <span class="highlight-bg"> Run {{ model }} </span>
 ## Requirements
-<div class="justified">
-Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
-</div>
+
+Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
 
 ### General requirements
-<div class="justified">
 For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
-</div>
 
 ### Model-specific requirements
-<div class="justified">
 <ul>
+    <li>
+        <b>Join the <i>hh5</i>, <i>qv56</i> and <i>ik11</i> projects at NCI</i></b>
+        <br>
+        The <i>hh5</i> project hosts the conda environment that supports most workflows for climate science on <i>Gadi</i>.
+        <br>
+        The <i>qv56</i> and <i>ik11</i> projects, instead, store some of the input data for {{ model }}.
+        <br>
+        To join these projects at NCI, request membership for them on the respective <a href="https://my.nci.org.au/mancini/project/hh5" target="_blank">hh5</a>, <a href="https://my.nci.org.au/mancini/project/qv56" target="_blank">qv56</a> and <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">ik11</a> NCI project pages.
+        <br>
+        For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+    </li>
     <li>
         <b>Payu</b>
         <br>
-        To get <i>payu</i> on <i>gadi</i>, run:
+        <i>payu</i> on <i>Gadi</i> is available through the <code>conda/analysis3</code> environment in the <i>hh5</i> project.
+        <br>
+        After getting access to the <i>hh5</i> project, load the <code>conda/analysis3</code> environment by running:
         <pre><code>module use /g/data/hh5/public/modules
             module load conda/analysis3
         </code></pre>
+        to automatically get <i>payu</i>. 
+        <br>
+        To check that payu is effectively available, you can run:
+        <pre><code>payu --version</code></pre>
+        <terminal-animation>
+            <terminal-line data="input">payu --version</terminal-line>
+            <terminal-line lineDelay="1000">1.0.19</terminal-line>
+        </terminal-animation>
     </li>
-    
-    qv56, ik11 and hh5
-    
 </ul>
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
-<div class="justified">
+
 A standard {{ model }} configuration is avaible on the <a href = "https://github.com/COSIMA/1deg_jra55_iaf/" target="_blank">COSIMA GitHub</a>.
 <br>
 This is a 1° horizontal resolution configuration, with interannual forcing from 1 Jan 1958 to 31 Dec 2018.
 <br>
-In order to get it, on <i>gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
+In order to get it, on <i>Gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/COSIMA/1deg_jra55_iaf.git</code></pre>
 <terminal-animation>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
@@ -50,17 +63,14 @@ In order to get it, on <i>gadi</i>, create a directory where to keep the model c
     <terminal-line>Resolving deltas: 100% (10707/10707), done.</terminal-line>
 </terminal-animation>
 <span class="note">Note:</span> Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-<div class="justified">
+
 First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
 <pre><code>git checkout -b example_run</code></pre>
-</div>
 
 ### Payu
-<div class="justified">
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
 The general layout of a <i>payu</i>-supported model run consists of two main directories:
@@ -72,7 +82,7 @@ The general layout of a <i>payu</i>-supported model run consists of two main dir
         The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-om/1deg_jra55_iaf</code>).
     </li>
 </ul>
-This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on <i>gadi</i> that is actively backed up), without overloading it with too much data.
+This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on <i>Gadi</i> that is actively backed up), without overloading it with too much data.
 <br>
 Moreover, this separation allows to run multiple self-resubmitting experiments simultaneously that might share common executables and input data.
 <br>
@@ -92,10 +102,8 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
         <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
     </terminal-animation>
 </ul>
-</div>
 
 ### Edit the Master Configuration file
-<div class="justified">
 The <code>config.yaml</code> file, located in the <i>control</i> directory, is the Master Configuration file. 
 <br>
 This file controls the general model configuration and if we open it in a text editor, we can see different parts:
@@ -143,7 +151,6 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/huss/gr/v20190429
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/uas/gr/v20190429
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/vas/gr/v20190429
-            
             &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 1<br>
             &nbsp;&nbsp;- name: ocean
             &nbsp;&nbsp;&nbsp;&nbsp;model: mom
@@ -212,16 +219,14 @@ This file controls the general model configuration and if we open it in a text e
     </li>
 </ul>
 To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
 After editing the configuration, we are ready to run {{ model }}. 
 <br>
-{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>gadi</i></a> through a PBS job submission managed by <i>payu</i>.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>Gadi</i></a> through a PBS job submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
-<div class="justified">
 As a first step, from the control directory, is good practice to run:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
@@ -247,10 +252,8 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-animation>
 <span class="note">Note:</span> You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
-</div>
 
 ### Run configuration
-<div class="justified">
 To run {{ model }} configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), run:
 <pre><code>payu run -f</code></pre>
 This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
@@ -265,17 +268,13 @@ This will submit a single job to the queue with a total run length of <code>runt
     <terminal-line>qsub -q normal -P &lt;project&gt; -l walltime=11400 -l ncpus=384 -l mem=1536GB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/access+gdata/hh5 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
     <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
 </terminal-animation>
-</div>
 
 ### Run configuration for multiple years
-<div class="justified">
 If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
 <pre><code>payu run -n &lt;number-of-runs&gt;</code></pre>
 This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive PBS jobs submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
-</div>
 
 ### Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters
-<div class="justified">
 With the correct use of <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters, we can have full control of our run.
 <br>
 <ul>
@@ -328,11 +327,9 @@ Let's have some practical examples:
         <pre><code>payu run -n 4</code></pre>
     </li>
 </ul>
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
-<div class="justified">
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
 One way to check the status of our run is running:
@@ -355,18 +352,14 @@ If you changed the <code>jobname</code> in the PBS resources of the <a href="#ru
     <li>E &rarr; Job ending</li>
 </ul>
 If there is no listed job with your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
-</div>
 
 ### Error and output log files
-<div class="justified">
 While the model is running, <i>payu</i> saves the standard output and standard error into the files <code>access.out</code> and <code>access.err</code> in the <i>control</i> directory. You can examine these files, as the run progresses, to check on it's status.
 <br>
 After the model has completed its run, or if it crashed, the output and error log files, respectively, are renamed by default into <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>.
-</div>
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-<div class="justified">
 While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-om2/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-om2/esm-pre-industrial/archive</code>).
 <br>
 Both outputs and restarts are stored into subfolders for each different configuration (<code>esm-pre-industrial</code> in our case), and inside the configuration folder, they are subdivided for each internal run.
@@ -383,8 +376,6 @@ For the atmospheric output data, each file it is usually a <a href = "https://co
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/esm-pre-industrial">ls output000/atmosphere</terminal-line>
     <terminal-line class="ls-output-format">aiihca.daa1210 aiihca.daa1810 aiihca.paa1apr aiihca.paa1jun aiihca.pea1apr aiihca.pea1jun aiihca.pga1apr aiihca.pga1jun atm.fort6.pe0 exstat ihist prefix.CNTLGEN UAFLDS_A aiihca.daa1310  aiihca.daa1910  aiihca.paa1aug aiihca.paa1mar aiihca.pea1aug aiihca.pea1mar aiihca.pga1aug aiihca.pga1mar cable.nml fort.57 INITHIS prefix.PRESM_A um_env.py aiihca.daa1410 aiihca.daa1a10 aiihca.paa1dec aiihca.paa1may aiihca.pea1dec aiihca.pea1may aiihca.pga1dec aiihca.pga1may CNTLALL ftxx input_atm.nml SIZES xhist aiihca.daa1510 aiihca.daa1b10 aiihca.paa1feb aiihca.paa1nov aiihca.pea1feb aiihca.pea1nov aiihca.pga1feb aiihca.pga1nov CONTCNTL ftxx.new namelists STASHC aiihca.daa1610 aiihca.daa1c10 aiihca.paa1jan aiihca.paa1oct aiihca.pea1jan aiihca.pea1oct aiihca.pga1jan aiihca.pga1oct debug.root.01 ftxx.vars nout.000000 thist aiihca.daa1710 aiihca.daa2110 aiihca.paa1jul aiihca.paa1sep aiihca.pea1jul aiihca.pea1sep aiihca.pga1jul aiihca.pga1sep errflag hnlist prefix.CNTLATM UAFILES_A</terminal-line>
 </terminal-animation>
-
-</div>
 
 
 <!-- References -->
@@ -404,42 +395,3 @@ For the atmospheric output data, each file it is usually a <a href = "https://co
         <a href = "https://github.com/COSIMA/access-om2/wiki/Getting-started#quick-start" target="_blank">https://github.com/COSIMA/access-om2/wiki/Getting-started#quick-start</a>
     </li>
 </ul>
-
-
-Welcome to **ACCESS-OM2** &mdash; a coupled ocean-ice model and collection of [configurations](http://cosima.org.au/index.php/models/) developed by the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)](http://cosima.org.au/).
-
-ACCESS-OM2 consists of the [MOM 5.1](https://mom-ocean.github.io) ocean model, [CICE 5.1.2](https://github.com/CICE-Consortium/CICE-svn-trunk/tree/cice-5.1.2) sea ice model, and a file-based atmosphere called [YATM](https://github.com/COSIMA/libaccessom2) coupled together using the [OASIS3-MCT v2.0](https://portal.enes.org/oasis) coupler. Regridding is done using [ESMF](https://www.earthsystemcog.org/projects/esmf/) and [KDTREE2](https://github.com/jmhodges/kdtree2).
-
-The configurations available here are updated from the version 1.0 configurations described in [Kiss et al. (2020)](https://doi.org/10.5194/gmd-13-401-2020). Further details are given in the [ACCESS-OM2 technical report](https://github.com/COSIMA/ACCESS-OM2-1-025-010deg-report).
-
-## How to access existing ACCESS-OM2 output
-
-[NCI](http://nci.org.au) users can access model output via the [COSIMA Cookbook](https://github.com/COSIMA/cosima-cookbook). A good place to start is the [data explorer](https://nbviewer.jupyter.org/github/COSIMA/cosima-recipes/blob/master/Tutorials/Using_Explorer_tools.ipynb), which will give an overview of the data available. Also see this [overview of 0.1° IAF outputs](http://cosima.org.au/index.php/2020/07/29/data-available-0-1-1958-2018-access-om2-iaf-run/).
-
-Non-NCI users can access a subset of the ACCESS-OM2 output via the [COSIMA Model Output Collection](https://dx.doi.org/10.4225/41/5a2dc8543105a).
-
-
-
-## How to run ACCESS-OM2
-
-Start by reading the [[Quick start\|Getting-started#quick-start]] guide. If you are using [gadi.nci.org.au](http://nci.org.au/our-systems/hpc-systems) at the [NCI National Facility](http://nci.org.au/) and are happy to use our pre-compiled executables then this should be all you need. The page also provides instructions for building your own executables.
-
-**NOTE:** All ACCESS-OM2 model components and configurations are undergoing continual improvement. We strongly recommend that you "watch" this repo (see button at top of screen; ask to be notified of all conversations) and also watch all the [component models](https://github.com/COSIMA/access-om2/tree/master/src), whichever [configuration(s)](https://github.com/COSIMA/access-om2/tree/master/control) you are using, and [payu](https://github.com/payu-org/payu) to be kept informed of updates, problems and bug fixes as they arise.
-
-## Getting help and reporting issues
-
-For all help requests and error reports please create a "GitHub issue" at [ACCESS-OM2 issues](https://github.com/COSIMA/access-om2/issues).
-
-### For self-help
-
-Setting up and running the model is primarily supported via the [[ACCESS-OM2 wiki|Home]] (that you are already reading). _It is a "wiki" so feel free to correct and contribute_.
-
-## How to update this wiki
-
-The wiki attached to a public repository can be edited by anyone. Just navigate to the page you wish to edit and click on the 'edit' button on the top right hand side.
-
-
-
-# References
-[ACCESS-OM2]: https://github.com/COSIMA/access-om2/
-[ACCESS-OM2 wiki]: https://github.com/COSIMA/access-om2/
