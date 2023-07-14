@@ -4,7 +4,6 @@
 
 {% include "call_contribute.md" %}
 
-> An introductory course on how to configure, run and make your own recipes for ESMValtool.
 
 Throughout the workshop, participants will have access to the ESMValTool pre-installed on NCI-Gadi,along with the required CMIP model output and observational datasets.
 
