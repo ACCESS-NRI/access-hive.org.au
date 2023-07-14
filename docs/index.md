@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+  - toc
+---
 
 <!-- ![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%} -->
 # <div class="highlight-bg"> Welcome to ACCESS-Hive </div>
@@ -8,13 +13,29 @@
 
 <div class="with-border introduction">
     <div>
-        ACCESS-Hive is a portal to all documentation relevant to the Australian Community Climate and Earth System Simulator, ACCESS, and the wider ACCESS community. ACCESS-Hive is developed for and by the ACCESS community following an open-source development model.
+        ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.  
+        The HIVE-Forum is the platform for collaboration of the climate research community.
     </div>
     <img src="assets/ACCESS_icon_HIVE.png">
 </div>
 
-## Navigating ACCESS-Hive
 <div class="card-container">
+    <a href="models" class="squared-card default-text-color">
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/community-forum-homepage.png" alt="Models">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Get Support</div>
+    </a>
+    <a href="./contribute" class="squared-card default-text-color">
+        <div class="squared-card-image-container">
+            <img class="img-cover" src="assets/community-forum-homepage.png" alt="Run a Model">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Contribute</div>
+    </a>
+</div>
+
+## Navigating ACCESS-Hive
+<div class="card-container" style="flex-wrap:nowrap;">
     <a href="models" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img class="img-cover" src="assets/ACCESS-MODEL.png" alt="Models">
