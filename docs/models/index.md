@@ -10,7 +10,7 @@ ACCESS is a family of related computer models that are able to represent differe
 <div class="card-container" style="flex-direction: column">
     <a href="configurations/access-cm/" class="justified rectangular-card configuration-card default-text-color">
             <div class="rectangular-card-image-container">
-                <img src="../assets/model-config-logos/access-cm2-config-4.png" class="image-background img-cover"></img> 
+                <img src="../assets/model-config-logos/access-cm2-config.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-CM</span>

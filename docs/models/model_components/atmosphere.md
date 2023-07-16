@@ -4,7 +4,7 @@
 
 <!-- ![Atmosphere Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/atmosphere-component-map.png" class="white-img-bg"></img>
+<img src = "../../../assets/component-logos/component-maps/atmosphere-component-map.png" class="image-background"></img>
 
 ## <div class="center-icons"> The Unified Model (UM)  </div>
 

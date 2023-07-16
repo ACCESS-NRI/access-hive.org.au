@@ -2,6 +2,7 @@
 
 <!-- {% include "call_contribute.md" %} -->
 
+<img src="../../../assets/model-config-logos/access-esm-config.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
 
 ACCESS-ESM stands for ACCESS **E**arth **S**ystem **M**odel. Earth system model means it is a fully-coupled model that includes carbon cycle components.
 
