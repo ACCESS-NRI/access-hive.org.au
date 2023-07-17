@@ -1,5 +1,5 @@
 
-# <div class="center-icons"> ACCESS-OM  </div>
+# <div class="highlight-bg">ACCESS-OM</div>
 
 <!-- IMPORTANT REFERENCE 
 https://forum.access-hive.org.au/t/access-om2-control-runs/258
@@ -11,7 +11,7 @@ The ACCESS **O**cean **M**odel, ACCESS-OM, is a global coupled ocean and sea ice
 ACCESS-NRI will release supported ACCESS-OM configurations. The first release will be derived from the COSIMA [ACCESS-OM2][COSIMA-models] suite and will include [ocean] and [sea ice] components.
 
 
-## <div class="center-icons"> [ACCESS-OM2][COSIMA-models]  </div>
+## [ACCESS-OM2][COSIMA-models]
 
 [**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
 [**Documentation**][ACCESS-OM2-docs]

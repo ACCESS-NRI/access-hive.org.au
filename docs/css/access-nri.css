@@ -319,57 +319,6 @@ h3 {
   color: var(--md-typeset-color);
 }
 
-
-/* =============================================================== 
-  Support icons
-*/
-/* heart animation */
-@keyframes heart {
-  0%, 40%, 80%, 100% {
-    transform: scale(1);
-  }
-  20%, 60% {
-    transform: scale(1.15);
-  }
-}
-
-.heart {
-  animation: heart 1000ms infinite;
-  color: #F82464;
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.heart:hover {
-  color: #f82464c9;
-}
-
-.icon-supported {
-  color: var(--nri-green);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-supported:hover {
-  color: var(--nri-green);
-}
-
-.icon-recommended {
-  color: var(--nri-orange);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-recommended:hover {
-  color: var(--nri-orange);
-}
-
-/* Vertically center the icons */
-.center-icons {
-  vertical-align: middle;
-}
-
-
 /* =============================================================== 
   How to contribute image
 */

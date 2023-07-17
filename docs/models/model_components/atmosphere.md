@@ -6,7 +6,7 @@
 
 <img src = "../../../assets/component-logos/component-maps/atmosphere-component-map.png" class="image-background"></img>
 
-## <div class="center-icons"> The Unified Model (UM)  </div>
+## The Unified Model (UM)
 
 [The Unified Model (UM)][um-web] is a numerical model of the atmosphere used for both weather and climate applications, developed by the [Met Office][metoffice-web] in the United Kingdom (UK). It includes solutions of the equations of atmospheric fluid dynamics with advanced parameterizations of subgrid-scale physical processes like convection, cloud formation and atmospheric radiation.
 

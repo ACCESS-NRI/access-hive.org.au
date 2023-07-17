@@ -1,4 +1,4 @@
-# <div class="center-icons"> ACCESS-CM  </div>
+# <div class="highlight-bg"> ACCESS-CM  </div>
 
 ACCESS-CM2 (ACCESS Coupled Model 2) is a global fully-coupled climate model that includes the atmosphere, ocean and sea-ice components, and produces physical climate simulations. ACCESS-CM2 is one of the two models run by the Australian climate community for the 
 <a href = "https://www.wcrp-climate.org/wgcm-cmip" target="_blank"> Coupled Model Intercomparison Project, CMIP</a>.
@@ -26,7 +26,7 @@ ACCESS-CM2 (ACCESS Coupled Model 2) is a global fully-coupled climate model that
 
 ACCESS-NRI will release an ACCESS-CM model configuration. The first release of ACCESS-CM will be derived from the [CSIRO ACCESS-CM2 configuration](#access-cm2) and will include [atmosphere], [land], [ocean] and [sea ice] components.
 
-## <div class="center-icons"> [ACCESS-CM2]  </div>
+## [ACCESS-CM2]
 
 [**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
 [**Tutorial**][ACCESS-CM2-tute]

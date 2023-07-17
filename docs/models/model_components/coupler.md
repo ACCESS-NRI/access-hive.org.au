@@ -1,4 +1,4 @@
-# <div class="highlight-bg center-icons"> Coupler  </div>
+# <div class="highlight-bg">Coupler</div>
 
 <!-- ![Coupler Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png){align=right width=40%} -->
 
@@ -6,7 +6,7 @@
 
 A coupler is a software package that allows synchronised exchanges of coupling information between numerical codes representing different components of the climate system.
 
-## <div class="center-icons"> [OASIS3-MCT][OASIS3-MCT]  </div>
+## [OASIS3-MCT][OASIS3-MCT]
 
 [OASIS3-MCT][OASIS3-MCT] is the version of the Ocean Atmosphere Sea Ice Soil (OASIS) coupler interfaced with the Model Coupling Toolkit (MCT) from the Argonne National Laboratory. OASIS3-MCT is the coupler used in the configurations:
 
@@ -15,7 +15,7 @@ A coupler is a software package that allows synchronised exchanges of coupling i
 - ACCESS-OM2
 - ACCESS-S
 
-## <div class="center-icons"> [NUOPC interoperability layer][NUOPC] </div>
+## [NUOPC interoperability layer][NUOPC]
 
 [NUOPC][NUOPC-int-layer] (National Unified Operational Prediction Capability) Interoperability Layer defines conventions and a set of generic components for building coupled models using the Earth System Modeling Framework (ESMF).
 
