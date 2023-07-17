@@ -6,13 +6,12 @@
 
 <img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="white-img-bg"></img>
 
-## <div class="center-icons"> [WOMBAT][MOM5-WOMBAT-code] {{ supported }} </div>
-The World Ocean Model of Biogeochemistry And Trophic-dynamics ([WOMBAT][MOM5-WOMBAT-code]) is the ocean carbon module added to the [MOM][mom-wiki] ocean model. Developed in Australia, WOMBAT calculates the carbon fluxes of the ocean by simulating the evolution of phosphate, oxygen, dissolved inorganic carbon, alkalinity and iron with one class of phytoplankton and zooplankton.
+## <div class="center-icons"> WOMBAT  </div>
+
+The World Ocean Model of Biogeochemistry And Trophic-dynamics (WOMBAT) is the ocean biogeochemistry module added to ACCESS models. The core of WOMBAT is a Nutrient, Phytoplankton, Zooplankton and Detritus (NPZD) cycle. WOMBAT simulates the evolution of open-ocean phosphate, oxygen, dissolved inorganic carbon, alkalinity, iron and carbon fluxes with one zooplankton and one phytoplankton class
 
 ### How is WOMBAT used?
+WOMBAT is applied as a tracer package in the ACCESS ocean model [MOM5][mom5-github]. In the ACCESS-OM2 configuration, WOMBAT is used in MOM5 and coupled with sea ice biogeochemistry. WOMBAT is also applied in [MOM5 of the ACCESS-ESM1.5 configuration][MOM5-esm-code]  used for CMIP6.
 
-WOMBAT is applied as a Nutrient, Phytoplankton, Zooplankton and Detritus (NPZD) tracer package in the [MOM5][MOM5-WOMBAT-code] ocean model of the ACCESS-OM2 and ACCESS-ESM1.5 configurations.
-
-
-[MOM5-WOMBAT-code]: https://github.com/COSIMA/ACCESS-ESM1.5-MOM5
-[mom-wiki]: https://mom-ocean.github.io/
+[mom5-github]: https://github.com/mom-ocean/MOM5
+[MOM5-esm-code]: https://github.com/COSIMA/ACCESS-ESM1.5-MOM5
