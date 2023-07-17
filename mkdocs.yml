@@ -173,7 +173,7 @@ nav:
 
   - About:
     - Contact: about/contact.md
-    - Glossaries: community_resources/glossaries/index.md
+    - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md

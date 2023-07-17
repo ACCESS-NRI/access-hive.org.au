@@ -5,7 +5,7 @@ hide:
 ---
 
 <!-- ![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%} -->
-# <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  Hosted by [ACCESS-NRI](http://access-nri.org.au) </div>
+# <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></div>
 
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
