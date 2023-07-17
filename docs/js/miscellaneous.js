@@ -24,7 +24,7 @@ function removeMkDocs() {
 */
 function adjustScrollingToId() {
   let header = document.querySelector('header');
-  let links = document.querySelectorAll("a[href^='#'].md-nav__link");
+  let links = document.querySelectorAll("a[href^='#'].md-nav__link,a[href^='#']:not([class])");
 
   const clickEvent = e => {
       e.preventDefault();
@@ -36,11 +36,24 @@ function adjustScrollingToId() {
   })
 }
 
+
+/*
+  Add the external-link icon to <a> tags with target="_blank"
+*/
+function addExternalLinkIcon() {
+  let extLinks = document.querySelectorAll("article a[target='_blank']");
+  extLinks.forEach(link => {
+    link.classList.add('external-link');
+  })
+}
+
+
 // Join all functions
 function main() {
   sortTables();
   removeMkDocs();
   adjustScrollingToId();
+  addExternalLinkIcon();
 }
 
 // Run all functions

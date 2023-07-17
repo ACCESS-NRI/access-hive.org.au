@@ -76,6 +76,7 @@
   --terminal-animation-buttons: var(--nri-orange);
   --terminal-animation-buttons-hover: var(--nri-dark-blue);
   --note: var(--nri-orange);
+  --note-bg: var(--md-accent-fg-color--transparent);
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -149,6 +150,7 @@
   --terminal-animation-buttons: var(--nri-dark-blue);
   --terminal-animation-buttons-hover: var(--nri-orange);
   --note: var(--nri-blue);
+  --note-bg: var(--md-accent-fg-color--transparent);
 }
 
 
@@ -626,14 +628,42 @@ pre>code {
 }
 
 /* =============================================================== 
+  Notes (!! icon marks)
+*/
+.note {
+  position: relative;
+  border: solid 0.01em var(--note);
+  background-color: var(--note-bg);
+  border-radius: 0.3em;
+  padding: 0.2em 0.3em 0.2em 1.5em;
+}
+
+.note::before {
+  position: absolute;
+  left: 0.3em;
+  font-family: "fontello";
+  content: '\e800';
+  color: var(--note);
+}
+
+/* =============================================================== 
+  External links
+*/
+.external-link::after {
+  font-family: "fontello";
+  content: '\e803';
+  vertical-align: super;
+  font-size: 0.5em;
+  margin-left: 0.3em;
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+
+/* =============================================================== 
   Miscellaneous
 */
 
-/* Highlight 'Note:' kwyqord before noted comment */
-.note {
-  font-weight: 500;
-  color: var(--note);
-  
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
   width: 100% !important;
@@ -685,4 +715,8 @@ pre>code {
 /* image cover */
 .img-cover {
   object-fit: cover;
+}
+
+.img-contain {
+  object-fit: contain;
 }
