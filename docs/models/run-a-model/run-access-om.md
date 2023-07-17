@@ -393,4 +393,7 @@ In the respective folders, outputs and restarts are separated for each model com
     <li>
         <a href = "https://github.com/COSIMA/access-om2/wiki/Getting-started#quick-start" target="_blank">https://github.com/COSIMA/access-om2/wiki/Getting-started#quick-start</a>
     </li>
+    <li>
+        <a href = "https://payu.readthedocs.io/en/latest/usage.html" target="_blank">https://payu.readthedocs.io/en/latest/usage.html</a>
+    </li>
 </ul>
