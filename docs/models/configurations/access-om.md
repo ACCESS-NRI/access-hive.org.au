@@ -1,8 +1,9 @@
 
 # <div class="center-icons"> ACCESS-OM  </div>
 
-<!-- {% include "call_contribute.md" %} -->
-
+<!-- IMPORTANT REFERENCE 
+https://forum.access-hive.org.au/t/access-om2-control-runs/258
+-->
 <img src="../../../assets/model-config-logos/access-om2-config.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
 
 The ACCESS **O**cean **M**odel, ACCESS-OM, is a global coupled ocean and sea ice configuration. It couples the ocean and sea ice components via a coupler. The atmospheric fields that drive the model are provided by a data product, usually derived from reanalysis.
