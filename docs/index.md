@@ -39,13 +39,13 @@ hide:
     </a>
     <a href="model_evaluation" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img class="img-cover" src="assets/resources_example.png" alt="Model Evaluation">
+            <img class="img-cover" src="assets/community_medlinks.jpg" alt="Model Evaluation">
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Model Evaluation</div>
     </a>
     <a href="community_resources" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img class="img-cover" src="assets/community-forum-homepage.png" alt="Community Resources">
+            <img class="img-cover" src="assets/community_workinggroups.jpg" alt="Community Resources">
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Community Resources</div>
     </a>
