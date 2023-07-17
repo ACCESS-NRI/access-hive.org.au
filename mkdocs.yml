@@ -89,18 +89,14 @@ markdown_extensions:
 nav:
   - Home: 
     - index.md
-    - Contact: about/contact.md
-    - User support: about/user_support.md
-    - Contribute: 
-      - Contribute: contribute/index.md
-      - Edit on Github: contribute/edit-on-github.md
-      - Edit Locally: contribute/edit-locally.md
-      - Stand-alone Documentation: contribute/standalone-documentation.md
-      - Change the Navigation: contribute/change-the-navigation.md
-      - Reviewers: contribute/reviewers.md
-    - Code of conduct: about/code_of_conduct.md
-    - Policies: about/policies.md
-    - License: about/License.md
+    # - User support: about/user_support.md
+    # - Contribute: 
+    #   - Contribute: contribute/index.md
+    #   - Edit on Github: contribute/edit-on-github.md
+    #   - Edit Locally: contribute/edit-locally.md
+    #   - Stand-alone Documentation: contribute/standalone-documentation.md
+    #   - Change the Navigation: contribute/change-the-navigation.md
+    #   - Reviewers: contribute/reviewers.md
 
   - Models: 
     - Models: models/index.md
@@ -157,25 +153,32 @@ nav:
   - Community Resources:
     - community_resources/index.md
     - Working Groups: community_resources/community_working_groups.md
-    - Glossaries: community_resources/glossaries/index.md
-    - Model Evaluation Links:
-      - Observational Catalogs: community_resources/community_observational_catalogs.md
-      - Model Catalogs: community_resources/community_model_catalogs.md
-      - Data Formatting: community_resources/community_data_processing.md
-      - Evaluation Recipes: community_resources/community_med_recipes.md
-    - Training: 
-      - Training: community_resources/training/index.md
-      - Git Version Control: community_resources/training/git-version-control.md
-      - High Performance Computing (HPC): community_resources/training/hpc.md
-      - ACCESS Training: community_resources/training/ACCESS_training.md
-      - NCI Training: community_resources/training/nci-training.md
-      - Additional Training: community_resources/training/additional_training.md
     - Events:
        - community_resources/events/index.md
-       - Add Event: community_resources/events/add_event.md
-
+      #  - Add Event: community_resources/events/add_event.md
+    - Model Evaluation Links:
+      - community_resources/community_med/index.md
+      - Observational Catalogs: community_resources/community_med/community_observational_catalogs.md
+      - Model Catalogs: community_resources/community_med/community_model_catalogs.md
+      - Data Formatting: community_resources/community_med/community_data_processing.md
+      - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
+    # - Training: 
+    #   - Training: community_resources/training/index.md
+    #   - Git Version Control: community_resources/training/git-version-control.md
+    #   - High Performance Computing (HPC): community_resources/training/hpc.md
+    #   - ACCESS Training: community_resources/training/ACCESS_training.md
+    #   - NCI Training: community_resources/training/nci-training.md
+    #   - Additional Training: community_resources/training/additional_training.md
+    
   - Community Forum: https://forum.access-hive.org.au
 
+  - About:
+    - Contact: about/contact.md
+    - Glossaries: community_resources/glossaries/index.md
+    - Code of conduct: about/code_of_conduct.md
+    - Policies: about/policies.md
+    - License: about/License.md
+    
 # Footer
 extra:
   generator: true
