@@ -8,11 +8,12 @@
 
 ## <div class="center-icons"> [CABLE][cable-wiki]  </div>
 
-[Community Atmosphere Biosphere Land Exchange (CABLE)][cable-web] is a land surface model, used to calculate the fluxes of momentum, energy, water and carbon between the land surface and the atmosphere. It also models the main biogeochemical cycles of the land ecosystem when used in conjunction with [the CASA-CNP module][casa-cnp]. 
+[Community Atmosphere Biosphere Land Exchange (CABLE)][cable-web] is a land surface model used to calculate the fluxes of momentum, energy, water and carbon between the land surface, canopy and the
+atmospheric boundary layer. It also includes descriptions of thermal and hydrological processes in the soil and snow, and models the main biogeochemical cycles of the land ecosystem when used in conjunction with the [CASA-CNP][casa-cnp] module.  
 
 ### How is CABLE used?
 
-CABLE can be run as a standalone model, for a single location, a region or globally. Coupled to the Met Office [Unified Model (UM)](um-web), CABLE provides the land surface component of the ACCESS Earth System Model (ACCESS-ESM) and ACCESS Coupled Model (ACCESS-CM).
+CABLE provides the land surface component of the ACCESS Earth System Model (ACCESS-ESM) and the ACCESS Coupled Model (ACCESS-CM). Directly coupled into the [Unified Model (UM)](um-web), CABLE replaces relevant parts of the functionality of the UM’s own land surface scheme (JULES), where applicable. CABLE can also be run as a standalone model, for a single location, a region or globally. 
 
 CABLE is an open source model developed by a community of Australian climate science researchers. [Registration][cable-wiki] is required to access the CABLE code repository.
 
