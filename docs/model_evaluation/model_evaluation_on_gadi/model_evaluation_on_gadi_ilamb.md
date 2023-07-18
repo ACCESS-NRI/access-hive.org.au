@@ -1,6 +1,6 @@
 # `ilamb` on Gadi at NCI
 
-ACCESS-NRI is maintaining the `python` package `ilamb` for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB) on Gadi at the National Compuational Infrastructure (NCI).
+ACCESS-NRI is maintaining a version of the `python` package `ilamb` for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB) on Gadi at the National Compuational Infrastructure (NCI).
 
 Here, we provide a quick tutorial on how use `ilamb` on Gadi. We assume that you already have access to Gadi, logged onto Gadi via secure shell (ssh) and loaded our `access-med` `conda` environment (if not, follow [these instructions](../model_evaluation_getting_started/index.md)).
 
@@ -220,7 +220,7 @@ export CARTOPY_DATA_DIR=/g/data/xp65/public/apps/cartopy-data
 ilamb-run --config cmip.cfg --model_setup $PWD/modelroute.txt --regions global
 ```
 
-If you are not familiar with PBS jobs on NCI, you could find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script (which you can submit via the bash command `qsub ilamb_test.sh`), will submit a job to Gadi with the job name (#PBS -N) *default_ilamb* under project (#PBS -P) `tm70` with a normal queue (#PBS -q normalbw), for 1 CPU (#PBS -l ncpus=1) with 32 GB RAM (#PBS -l mem=32GB), with an walltime of 10 hours and access to 10 GB local disk space (#PBS -l jobfs=10GB) as well as data storage access to projects `xp65`, `kj13`, and `fs38` (again, note that you have to be [member of both projects on NCI](https://my.nci.org.au/mancini/project-search). Upon starting the job, it will change into to the working directory that you started the job from (#PBS -l wd) and load the access-med conda environment. Finally, it will export the $ILAMB_ROOT as well as $ARTOPY_DATA_DIR paths and start an `ilamb-run`.
+If you are not familiar with PBS jobs on NCI, you could find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script (which you can submit via the bash command `qsub ilamb_test.sh`), will submit a job to Gadi with the job name (`#PBS -N`) *default_ilamb* under project (`#PBS -P`) `tm70` with a normal queue (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 32 GB RAM (`#PBS -l mem=32GB`), with an walltime of 10 hours (`#PBS -l walltime=00:10:00`) and access to 10 GB local disk space (`#PBS -l jobfs=10GB`) as well as data storage access to projects `xp65`, `kj13`, and `fs38` (again, note that you have to be [member of both projects on NCI](https://my.nci.org.au/mancini/project-search). Upon starting the job, it will change into to the working directory that you started the job from (`#PBS -l wd`) and load the access-med conda environment. Finally, it will export the $ILAMB_ROOT as well as $ARTOPY_DATA_DIR paths and start an `ilamb-run`.
 
 In our example, we actually run the `cmip.cfg` file from the `ilamb` [config file github repository](https://github.com/rubisco-sfa/ILAMB/blob/master/src/ILAMB/data/) for files spec
 
@@ -230,12 +230,12 @@ export ILAMB_ROOT=/absolute/path/where/ILAMB_ROOT/actually/is
 export CARTOPY_DATA_DIR=/absolute/path/where/shapefiles/actually/are
 ```
 
-Once the jobs are finished, you can again inspect the outcome as described in [Section 4.3](#43-viewing-the-benchmarking-output-in-your-browser)
+Once the jobs are finished, you can again inspect the outcome via an http server as described at the top of this tutorial
 
 
 ## 5 An example `ilamb` run
 
-When running `ilamb` will the example configuration file that we provided above via
+When running, `ilamb` will the example configuration file that we provided above via
 ```
 ilamb-run --config sample.cfg --model_root $ILAMB_ROOT/MODELS/ --regions global
 ```
