@@ -319,6 +319,14 @@ h3 {
 /* =============================================================== 
   Community Forum Button
 */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.6em;
+}
+
 .header-btn {
   /* color: var(--nri-orange); */
   border-radius: 0.3em;
@@ -328,6 +336,7 @@ h3 {
   font-weight: 500;
   transition: background-color 0.5s;
   margin: 0 0.1em 0 1em;
+  height: 1.8rem;
 }
 
 .header-btn:hover {
@@ -346,7 +355,12 @@ h3 {
 }
 
 .nri-green-border {
-  border-color: var(--nri-green);
+  border-color: var(--nri-dark-blue);
+}
+
+.icon-image {
+  height: 1.3em;
+  width: auto;
 }
 
 /* =============================================================== 

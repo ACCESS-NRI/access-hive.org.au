@@ -97,14 +97,15 @@
         {% include "partials/search.html" %}
       {% endif %}
         <a href="https://forum.access-hive.org.au/" target="_blank">
-            <div class="header-btn nri-orange-border large-text bold">
-                Hive Forum
+            <div class="flex-container header-btn nri-orange-border large-text bold">
+                <i class="fa-regular fa-earth-americas"></i>
+                <span>Hive Forum</span>
             </div>
         </a>
         <a href="https://forum.access-hive.org.au/" target="_blank">
-            <div class="header-btn nri-green-border large-text bold">
-                <img src="../../../docs/assets/ACCESS-Logo.png">
-                ACCESS-NRI
+            <div class="flex-container header-btn nri-green-border large-text bold">
+                <img src="../assets/ACCESS-Logo.png" class="icon-image">
+                <span>ACCESS-NRI</span>
             </div>
         </a>
       {% if config.repo_url %}
