@@ -4,15 +4,15 @@
 
 <img src="../../../assets/model-config-logos/access-esm-config.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
 
-The ACCESS **E**arth **S**ystem **M**odel,, ACCESS-ESM, is a fully-coupled global climate model that also includes representations of land and ocean biogeochemisty. This means it can simulate both the physical climate and global biogeochemical cycles (the carbon cycle in particular)
+The ACCESS **E**arth **S**ystem **M**odel (ACCESS-ESM) is a fully-coupled global climate model that also includes representations of land and ocean biogeochemisty. This means it can simulate both the physical climate and global biogeochemical cycles (the carbon cycle in particular).
 
 ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of ACCESS-ESM will be derived from the [CSIRO ACCESS-ESM1.5 configuration](#access-esm15) and will include [atmosphere], [land] and [land biogeochemistry], [ocean] and [ocean biogeochemistry], and [sea ice] components.
 
 ## <div class="center-icons"> [ACCESS-ESM1.5]  </div>
 
-ACCESS-ESM1.5 [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 has mainly been developed to enable Australia to participate in the Coupled Model Intercomparison Project Phase 6 (CMIP6) with an ESM version.
+ACCESS-ESM1.5 [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 was developed primarily to enable Australia to participate in the Coupled Model Intercomparison Project Phase 6 (CMIP6) with an ESM version.
 
-The component models are:
+The model component are:
 
 - Atmosphere model (UM vn7.3, GA7.1): N96 resolution (1.875° x 1.25°, 38 levels).
 
@@ -24,11 +24,11 @@ The component models are:
 
 - Ocean biogeochemistry (WOMBAT)
 
-- Sea ice model (CICE4.1); Same grid as ocean.
+- Sea ice model (CICE4.1): Same grid as the ocean.
 
 - Coupler (OASIS3-MCT)
 
-ACCESS-ESM1.5 has an equilibrium climate sensitivity of 3.87°C for doubled CO<sub>2</sub>.
+ACCESS-ESM1.5 has an equilibrium climate sensitivity of 3.87°C for doubled CO<sub>2</sub> concentration.
 
 [**Citation** [@Ziehn2020-fq]][ACCESS-ESM1.5-cite]
 
