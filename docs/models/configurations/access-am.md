@@ -6,7 +6,7 @@
 
 The ACCESS **A**tmosphere **M**odel (ACCESS-AM) is a global model with atmosphere and land surface components. It is often used in Atmospheric Model Intercomparison Project (AMIP) experiments where it is driven by historically observed sea surface temperature and sea ice data.
 
-ACCESS-NRI will release supported ACCESS-AM configurations.  The first release, ACCESS-AM2, will be derived from the [CSIRO ACCESS-CM2 configuration](#access-cm2) and will include [atmosphere] and [land] components.
+ACCESS-NRI will release supported ACCESS-AM configurations.  The first release, ACCESS-AM2, will be derived from the [CSIRO ACCESS-CM2 configuration](access-cm#access-cm2) and will include [atmosphere] and [land] components.
 
 ## <div class="center-icons"> ACCESS-AM2 </div>
 
