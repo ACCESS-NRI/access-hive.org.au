@@ -10,15 +10,10 @@ ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of 
 
 ## <div class="center-icons"> [ACCESS-ESM1.5]  </div>
 
-[**Citation** [@Ziehn2020-fq]][ACCESS-ESM1.5-cite]
-
-[**ACCESS Training Workshop (AMOS 2021)**][ACCESS-AMOS-Workshop]
-
-[**Webinar: *Getting Started with ACCESS-CM2 and ACCESS-ESM1.5* **][ACCESS-ESM1.5-tute]
-
 ACCESS-ESM1.5 [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 has mainly been developed to enable Australia to participate in the Coupled Model Intercomparison Project Phase 6 (CMIP6) with an ESM version.
 
 The component models are:
+
 - Atmosphere model (UM vn7.3, GA7.1): N96 resolution (1.875° x 1.25°, 38 levels).
 
 - Land surface model (CABLE2.4)
@@ -34,6 +29,12 @@ The component models are:
 - Coupler (OASIS3-MCT)
 
 ACCESS-ESM1.5 has an equilibrium climate sensitivity of 3.87°C for doubled CO<sub>2</sub>.
+
+[**Citation** [@Ziehn2020-fq]][ACCESS-ESM1.5-cite]
+
+[**ACCESS Training Workshop (AMOS 2021)**][ACCESS-AMOS-Workshop]
+
+[**Webinar: *Getting Started with ACCESS-CM2 and ACCESS-ESM1.5* **][ACCESS-ESM1.5-tute]
 
 [atmosphere]: ../model_components/atmosphere.md
 [land]: ../model_components/land.md

@@ -10,12 +10,10 @@ ACCESS-NRI will release supported ACCESS-CM configurations.  The first release o
 
 ## <div class="center-icons"> [ACCESS-CM2]  </div>
 
-[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
-[**Tutorial**][ACCESS-CM2-tute]
-
 ACCESS-CM2 [@Bi2020-vj] is one of Australia’s contributions to the World Climate Research Programme’s Coupled Model Intercomparison Project Phase 6 (CMIP6).
 
 The component models are:
+
 - Atmosphere model (UM vn10.6, GA7.1 science configuration): N96 resolution (1.875° x 1.25°, 85 levels). Physical model only – no carbon cycle.
 
 - Land surface model (CABLE2.5)
@@ -26,7 +24,10 @@ The component models are:
 
 - Coupler (OASIS3-MCT)
 
-Compared to previous model versions ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean but a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. It has a relatively high equilibrium climate sensivity of 4.7 for doubled CO<sub>2</sub>.
+Compared to previous model versions ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean but a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. It has a relatively high equilibrium climate sensivity of 4.7°C for doubled CO<sub>2</sub>.
+
+[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
+[**Tutorial**][ACCESS-CM2-tute]
 
 [atmosphere]: ../model_components/atmosphere.md
 [land]: ../model_components/land.md

@@ -12,9 +12,6 @@ ACCESS-NRI will release supported ACCESS-OM configurations. The first release wi
 
 ## <div class="center-icons"> [ACCESS-OM2][COSIMA-models]  </div>
 
-[**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
-[**Documentation**][ACCESS-OM2-docs]
-
 ACCESS-OM2 [@Kiss2020-gmd] is a suite of coupled ocean-sea ice models developed by the Consortium for Ocean-Sea Ice Modelling in Australia ([COSIMA][COSIMA]). All models use the [MOM5] ocean model coupled to the [CICE5] sea ice model via the OASIS3-MCT coupler.
 
 The ACCESS-OM2 suite has models at three different spatial resolutions:
@@ -22,6 +19,9 @@ The ACCESS-OM2 suite has models at three different spatial resolutions:
  - [ACCESS-OM2][ACCESS-OM2] at 1° with 50 vertical levels
  - [ACCESS-OM2-025][ACCESS-OM2-025] at 0.25° with 50 vertical levels
  - [ACCESS-OM2-01][ACCESS-OM2-01] at 0.1° with 75 vertical levels
+
+[**Citation** [@Kiss2020-gmd]][ACCESS-OM2-cite] |
+[**Documentation**][ACCESS-OM2-docs]
 
 [ocean]: ../model_components/ocean.md
 [sea ice]: ../model_components/sea-ice.md

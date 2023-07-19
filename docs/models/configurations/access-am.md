@@ -10,14 +10,15 @@ ACCESS-NRI will release supported ACCESS-AM configurations.  The first release, 
 
 ## <div class="center-icons"> ACCESS-AM2 </div>
 
-[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
-
 This is the model configuration used for the AMIP experiments contributed to the World Climate Research Programme’s Coupled Model Intercomparison Project Phase 6 (CMIP6). Note that the CMIP model naming is the same for both the AM and CM configurations, so the CMIP6 experiments are ACCESS-CM2 AMIP rather than ACCESS-AM2.
 
 The component models are the same as ACCESS-CM2:
+
 - Atmosphere model (UM vn10.6, GA7.1 science configuration): N96 resolution (1.875° x 1.25°, 85 levels). Physical model only – no carbon cycle.
 
 - Land surface model (CABLE2.5)
+
+[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite]
 
 ### Other configurations
 
@@ -32,3 +33,4 @@ Some experiments already run with other atmospheric model configurations  are li
 [CABLE-hive]: ../model_components/land.md#cable
 [UMstart]: http://climate-cms.wikis.unsw.edu.au/Unified_Model
 [UMexperiments]: http://climate-cms.wikis.unsw.edu.au/UM_Experiments
+[ACCESS-CM2-cite]: https://www.publish.csiro.au/es/ES19040
