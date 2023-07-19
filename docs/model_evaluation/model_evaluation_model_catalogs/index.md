@@ -5,79 +5,55 @@ ACCESS-NRI is hosting a number of calculated models for you through National Com
 We have set up an [ACCESS-NRI intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog) package that allows you to easily search and load the model data on this storage.
 The premise of this ACCESS-NRI intake Catalog is to provide a ("meta") catalog of intake-esm ("sub") catalogs, which each correspond to different "experiments".
 
-<table class="center">
-    <tr>
-        <td width = "49%">
-        <a href='.model_evaluation_search_models.md'><h3>Search for a model in the ACCESS-NRI intake Catalog</h3></a>
-        </td>
-        <td width = "49%">
-        <a href=".model_evaluation_add_models.md"><h3>Add your model data to the ACCESS-NRI intake Catalog</h3></a>
-        </td>
-    </tr>
-</table>
-<div width = "50%">
-</div>
+## The ACCESS-NRI intake catalog
 
-<!-- # Data Communities / Catalogs
+To have the huge amount of data from different experiments on the NCI storage at the palm of your hand, we provide a ("meta") catalog for you to query via python as part of the `#!python intake` package with our curated catalog plugin `#!python intake.cat.access_nri` .
 
-{% include "call_contribute.md" %}
+``` py
+import intake
+access_nri_catalog_sections = intake.cat.access_nri
+```
 
-## [NCI datasets][NCI-geonetwork] {{ recommended }}
+To use this catalog, you need access to NCI's Gadi. Check out our [Get Started with ACCESS at NCI](../model_evaluation_getting_started/index.md)   guide on how to get access.
 
-NCI has an extensive catalog of datasets of interest to the weather and climate community. These datasets are directly available on the NCI supercomputer and the [Australian Research Environment][ARE-opus]
+Once logged in to Gadi, you will need to add the `#!python access-nri-catalog` to your `#!python conda` environments and start an [ARE JupyterLab Session](https://are.nci.org.au/pun/sys/dashboard). Check out our [ACCESS-NRI Intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/getting_started/index.rst) guide  for the specific setup (note that you can only read in data from specific experiments if they are loaded through the *Storage* keyword).
 
-## [CLEX NCI Data Collection Intake Catalogue][Intake-CLEX] {{ recommended }}
+Once your JupyterLab session started, you can access the `#!python intake` catalog to load the data. Take a look at this [Tutorial](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/how_tos/example_usage.ipynb) .
 
-This is an Intake catalogue maintained by the ARC Centre of Excellence for Climate Extremes [(CLEX)][CLEX-web].
-Only datasets from the NCI Catalog are referenced.
-The catalogue is available in intake's default catalogue list in the CLEX Conda environment.
-Two notebooks are provided in the docs folder showing how to access the ERA5 and CIP6 datasets.
+## Example Search with our intake catalog
 
-## [Australia Climate Data Guide Catalogue][ACDG-Catalog] {{ recommended }}
+``` py
+# Impport packages for searching/loading/plotting
+import intake
+from distributed import Client
+import matplotlib.pyplot as plt
 
-*A one-stop catalogue to discover Climate Data in Australia*
+# The search process is a 2-step one
+# Comparable with searching for a book in a library:
+# 1) You look for the right book/catalog sections
+# 2) You look for the right book/catalog in the these sections
 
-The ACDG portal is a metadata portal listing climate research resources available in Australia from multiple data repositories.
-This is a community based project managed by the ACDG Single Access working group. This is a group of Australian climate community self-nominated representatives. Anyone is welcome to join the group or to contribute independently to the metadata portal the group is developing.
+# Load the ACCES-NRI list of catalogs for available experiment data
+# Similar to an overview of library section
+access_nri_catalog_sections = intake.cat.access_nri
 
-## [Australian Ocean Data Network][AODN-Network] {{ recommended }}
+# Perform a search for names, models, variables etc.
+example_section_search = access_nri_catalog_sections.search(name="cmip6_oi10")
 
-The Australian Ocean Data Network (AODN) is an interoperable online network of marine and climate data resources.  IMOS and the 6 Australian Commonwealth agencies ([see AODN Partners](https://imos.org.au/facilities/aodn/aodn-data-management/aodn-partners)) form the core of the AODN. Increasingly, though, universities and State government offices are offering up data resources to the AODN, and delivery of data to the AODN is being written in to significant research programs e.g. [National Environmental Science Program Marine Biodiversity Hub](http://www.nespmarine.edu.au/) and the [Great Australian Bight research program](http://www.misa.net.au/GAB).
+# Once you are sufficiently happy with your search, you can load the "section"
+catalog_sections = access_nri_catalog_sections.search(name="025deg_jra55_iaf_omip2_cycle1").to_source()
+# and start looking for the right catalogs of interest
+catalogs_of_interest = catalog_sections.search(filename="ocean_scalar.*")
 
-## [Intake-Ilamb Catalog][Intake-Ilamb] {{ supported }}
+# Call the client that allows use load the data efficiently
+client = Client(threads_per_worker=1)
+client.dashboard_link
 
-The Intake-Ilamb catalog provides an yaml-style intake catalog of the reference data used for ESM model benchmarking in the International Land Model Benchmarking [(ILAMB)][ILAMB-web] effort.
+# Actually load the data
+experiment_data = catalogs_of_interest.to_dataset_dict(progressbar=False)
 
-## [FLUXNET][FLUXNET-web] {{ community }}
-
-FLUXNET is an international “network of networks,” tying together regional networks of earth system scientists. FLUXNET scientists use the eddy covariance technique to measure the cycling of carbon, water, and energy between the biosphere and atmosphere. Scientists use these data to better understand ecosystem functioning, and to detect trends in climate, greenhouse gases, and air pollution.
-
-## [CEDA Archive][CEDA-Archive-Web] {{ community }}
-
-The CEDA Archive forms part of NERC's Environmental Data Service (EDS) and is responsible for looking after data from atmospheric and earth observation research. They host over 18 Petabytes of data from climate models, satellites, aircraft, met observations, and other sources.
-
-### [OZFlux][OZFlux-web] {{ community }}
-
-OzFlux is an ecosystem research network set up to provide Australian, New Zealand and global ecosystem modelling communities with consistent observations of energy, carbon and water exchange between the atmosphere and key Australian and New Zealand ecosystems.
-
-## [Australian Community Reference Climate Data Collection][AusRefClimData] {{ recommended }}
-
-{{ community }} [Australian Community Reference Climate Data Collection @ NCI]
-
-This collection is a collaborative effort between the Australian Climate Service (ACS), ARC Centre of Excellence for Climate Extremes (CLEX) and the wider Australian climate research community to re-establish and maintain a reference dataset collection at NCI.
-
-An [intake-esm catalogue](https://github.com/aus-ref-clim-data-nci/acs-replica-intake) is also available to facilitate data access.
-
-
-[NCI-geonetwork]:https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home
-[ARE-opus]: https://opus.nci.org.au/display/Help/ARE+User+Guide
-[OZFlux-web]: https://www.ozflux.org.au
-[FLUXNET-web]: https://fluxnet.org/
-[CLEX-web]: https://climateextremes.org.au/
-[Intake-CLEX]: https://github.com/coecms/nci-intake-catalogue
-[ILAMB-web]: https://www.ilamb.org/
-[Intake-Ilamb]: https://github.com/nocollier/intake-ilamb
-[ACDG-Catalog]:  https://oneclimate.dmponline.cloud.edu.au/
-[AODN-Network]:  https://imos.org.au/facilities/aodn
-[AusRefClimData]: https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html
-[CEDA-Archive-Web]: https://archive.ceda.ac.uk/ -->
+# Et voilà, you have loaded the data and can start plotting
+experiment_data["ocean_scalar_snapshot.1day"]["temp_global_ave"].plot(label="daily")
+experiment_data["ocean_scalar.1mon"]["temp_global_ave"].plot(label="monthly")
+_ = plt.legend()
+```

@@ -7,7 +7,6 @@ In this area of the Hive, we collect content that is not currated by us, but may
 Currently, we provide pointers to the following categories:  
 - [Working Groups](community_working_groups.md)    
 - [Glossaries](./glossaries/index.md)  
-- [Variables](./glossaries/glossary_cmip.md)  
 - [Model Evaluation Links](community_model_catalogs)  
-- [Training](../training/index.md)
+- [Training](training/)  
 - [Events](./events/index.md)  

@@ -15,18 +15,20 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-    # - scheme: light
-    #   primary: indigo
-    #   accent: deep orange
-    #   toggle:
-    #     icon: material/weather-sunny
-    #     name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: deep orange
-      # toggle:
-      #   icon: material/weather-night
-      #   name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: custom-light
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: custom-dark
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to light mode
 
   features:
     - navigation.top
@@ -44,11 +46,6 @@ theme:
     - search.highlight
     - search.share
     - toc.follow                # the sidebar is automatically scrolled to the active anchor
-
-    # - navigation.expand 
-    # - navigation.path
-    # - toc.integrate
-    # - navigation.sections
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
@@ -79,17 +76,21 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true 
   - def_list
   - footnotes
   - tables
   - pymdownx.keys
+  - toc:
+      title: On this page
 
 # Navigation
 nav:
   - Home: 
     - index.md
     - Contact: about/contact.md
-    - Support: about/support.md
+    - User support: about/user_support.md
     - Contribute: 
       - Contribute: contribute/index.md
       - Edit on Github: contribute/edit-on-github.md
@@ -103,6 +104,12 @@ nav:
 
   - Models: 
     - Models: models/index.md
+    - Model Configurations: 
+      - Overview: models/configurations/index.md
+      - ACCESS-ESM: models/configurations/access-esm.md
+      - ACCESS-CM: models/configurations/access-cm.md
+      - ACCESS-AM: models/configurations/access-am.md
+      - ACCESS-OM: models/configurations/access-om.md
     - Model Components: 
       - Overview: models/model_components/index.md
       - Atmosphere: models/model_components/atmosphere.md
@@ -114,55 +121,43 @@ nav:
       - Biogeochemistry Ocean: models/model_components/bgc_ocean.md
       - Coupler: models/model_components/coupler.md
 
-    - Model Configurations: 
-      - Overview: models/configurations/index.md
-      - ACCESS-ESM: models/configurations/access-esm.md
-      - ACCESS-CM: models/configurations/access-cm.md
-      - ACCESS-AM: models/configurations/access-am.md
-      - ACCESS-OM: models/configurations/access-om.md
+    
 
   - Run a Model: 
-    - models/running-a-model/index.md
-    # If we add an additional subsection
-    # - Getting Started: 
-    #   - models/running-a-model/getting_started/index.md
-    #   - Access to Gadi@NCI: models/running-a-model/getting_started/access_to_gadi_at_nci.md
-    - Computing Access (Gadi@NCI): models/running-a-model/getting_started/access_to_gadi_at_nci.md
-    - Run ACCESS-ESM: models/running-a-model/running-access-esm.md
-    - Run ACCESS-CM: models/running-a-model/running-access-cm.md
-    - Run ACCESS-AM: models/running-a-model/running-access-am.md
-    - Run ACCESS-OM: models/running-a-model/running-access-om.md
+    - models/run-a-model/index.md
+    - Gadi Computing Access at NCI: models/run-a-model/getting_started/access_to_gadi_at_nci.md
+    - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
+    - Run ACCESS-CM: models/run-a-model/run-access-cm.md
+    - Run ACCESS-AM: models/run-a-model/run-access-am.md
+    - Run ACCESS-OM: models/run-a-model/run-access-om.md
 
   - Model Evaluation:
     - model_evaluation/index.md
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
-      - Computing Access (Gadi@NCI): model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
+      - Gadi Computing Access at NCI: model_evaluation/model_evaluation_getting_started/access_to_gadi_at_nci.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-    - Data Catalogs:
-      - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
-      - Model Data:
-        - model_evaluation/model_evaluation_model_catalogs/index.md
-        - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
-        - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
-        - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
+      - Model Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
+        # - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
+        # - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
+    - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
+    - Model Data: model_evaluation/model_evaluation_model_catalogs/index.md
+        # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
+        # - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
+        # - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
     - Evaluation Tools: 
       - model_evaluation/model_evaluation_on_gadi/index.md
-      - Frameworks on Gadi:
-         - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
-         - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
-         - Pangeo & COSIMA: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
-      - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
-      - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
+      # - Frameworks on Gadi:
+      - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
+      - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
+      - COSIMA cookbook: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+      # - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
+      # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Community Resources:
     - community_resources/index.md
     - Working Groups: community_resources/community_working_groups.md
     - Glossaries: community_resources/glossaries/index.md
-    - Variables:
-      - CMIP(6): community_resources/glossaries/glossary_cmip.md
-      - ERA(5): community_resources/glossaries/glossary_era.md
-      - UM: community_resources/glossaries/glossary_um.md
     - Model Evaluation Links:
       - Observational Catalogs: community_resources/community_observational_catalogs.md
       - Model Catalogs: community_resources/community_model_catalogs.md
@@ -184,8 +179,6 @@ nav:
 # Footer
 extra:
   generator: true
-  # version:
-  #   provider: mike
   social:
     - icon: fontawesome/brands/twitter 
       link: https://twitter.com/ACCESS_NRI
@@ -200,35 +193,19 @@ extra:
     provider: google
     property: G-2T6SQEH2CX
 
-  # Original implementation
-  # supported: '<a href="https://access-hive.org.au/about/support"><i class="icon-supported" title="Supported by ACCESS-NRI"></i></a>'
-  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="icon-recommended" title="Recommended by ACCESS-NRI"></i></a>'
-  # community: '<a href="https://access-hive.org.au/about/support"><i class="icon-community" title="Community Contributed"></i></a>'
-
-  # Octicons experimental 
-  # supported: ':octicons-check-circle-24:{ .icon-supported title="Supported by ACCESS-NRI" }'
-  # recommended: ':octicons-star-24:{ .icon-recommended title="Recommended by ACCESS-NRI" }'
-  # community: ':octicons-heart-fill-24:{ .heart title="Community contributed" }'
-
-  # Material icons experimental
-  # supported: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-supported" title="Supported by ACCESS-NRI">check_circle_outlined</i></a>'
-  # recommended: '<a href="https://access-hive.org.au/about/support"><i class="material-icons icon-recommended" title="Recommended by ACCESS-NRI">star</i></a>'
-  # community: '<a href="https://access-hive.org.au/about/support"><i class="material-icons heart" title="Community Contributed">favorite</i></a>'
-
-  # Fontawesome icons
-  supported: '<a href="https://access-hive.org.au/about/support"><span class="icon-supported center-icons"><i class="fa fa-check" title="Supported by ACCESS-NRI"></i></span></a>'
-  recommended: '<a href="https://access-hive.org.au/about/support"><span class="icon-recommended center-icons"><i class="fa fa-star" title="Recommended by ACCESS-NRI"></i></span></a>'
-  community: '<a href="https://access-hive.org.au/about/support"><span class="heart center-icons"><i class="heart fa-regular fa-heart" title="Community Contributed"></i></span></a>'
+  # # Fontawesome icons
+  # supported: '<a href="https://access-hive.org.au/about/support"><span class="icon-supported center-icons"><i class="fa fa-check" title="Supported by ACCESS-NRI"></i></span></a>'
+  # recommended: '<a href="https://access-hive.org.au/about/support"><span class="icon-recommended center-icons"><i class="fa fa-star" title="Recommended by ACCESS-NRI"></i></span></a>'
+  # community: '<a href="https://access-hive.org.au/about/support"><span class="heart center-icons"><i class="heart fa-regular fa-heart" title="Community Contributed"></i></span></a>'
 
 extra_css:
-  - css/termynal.css
-  - css/access-nri.css
   - css/fontello.css
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
   - css/fontawesome-free-6.4.0-web/css/fontawesome.css
   - css/fontawesome-free-6.4.0-web/css/solid.css
+  - css/access-nri.css
 
 extra_javascript:
-  - js/termynal.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - js/tablesort.js
+  - js/terminal_animation.js
+  - js/miscellaneous.js

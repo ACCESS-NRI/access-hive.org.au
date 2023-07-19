@@ -1,6 +1,6 @@
 # <div class="highlight-bg"> Contact </div>
 
-<img src = "../../assets/contact-img.jpg" class="white-img-bg" style="width: 100%; height: 13em; object-fit: cover; border-radius: 7px;"></img>
+<img src = "../../assets/contact-img.jpg" class="rectangular-img with-border"></img>
 
 ACCESS-Hive is an initiative of the [The Australian Earth-System Simulator (ACCESS-NRI)][access-about].
 
@@ -29,5 +29,5 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
 [access-about]: https://www.access-nri.org.au/about/what-is-access-nri/
 [access-contact]: https://www.access-nri.org.au/contact/
 [issues]: https://github.com/ACCESS-Hive/access-hive.github.io/issues
-[support]: support.md
+[support]: user_support.md
 [access-hive-forum]: https://forum.access-hive.org.au

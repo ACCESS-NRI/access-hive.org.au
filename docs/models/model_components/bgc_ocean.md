@@ -4,7 +4,7 @@
 
 <!-- ![BGC Ocean Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="white-img-bg"></img>
+<img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="image-background"></img>
 
 ## <div class="center-icons"> WOMBAT  </div>
 

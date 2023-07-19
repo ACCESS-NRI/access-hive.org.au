@@ -1,6 +1,6 @@
 # Community Model Data Catalogs
 
-We are trying to ingest more and more model data catalogs in your currated [catalog on this website](../model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md){{ supported }}. While this is a continous effort, this site is intented for a list of additional model data catalogs that are not (yet) ingested but are recommended by us ({{ recommended }}) or may be interesting for the community ({{ community }}):
+We are trying to ingest more and more model data catalogs in your currated [catalog on this website](../model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md). While this is a continous effort, this site is intented for a list of additional model data catalogs that are not (yet) ingested but are recommended by us () or may be interesting for the community ():
 
 <table class="center">
 <tr>
@@ -25,7 +25,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home">NCI datasets</a> {{ recommended }}
+    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home">NCI datasets</a> 
     </div>
 </td>
 <td width="10%">
@@ -45,7 +45,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://github.com/coecms/nci-intake-catalogue">CLEX NCI Data Collection Intake Catalogue</a> {{ recommended }}
+    <a href="https://github.com/coecms/nci-intake-catalogue">CLEX NCI Data Collection Intake Catalogue</a> 
     </div>
 </td>
 <td width="10%">
@@ -68,7 +68,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://oneclimate.dmponline.cloud.edu.au/">Australia Climate Data Guide Catalogue</a> {{ recommended }}
+    <a href="https://oneclimate.dmponline.cloud.edu.au/">Australia Climate Data Guide Catalogue</a> 
     </div>
 </td>
 <td width="10%">
@@ -91,7 +91,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://imos.org.au/facilities/aodn">Australian Ocean Data Network</a> {{ recommended }}
+    <a href="https://imos.org.au/facilities/aodn">Australian Ocean Data Network</a> 
     </div>
 </td>
 <td width="10%">
@@ -112,7 +112,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://github.com/nocollier/intake-ilamb">Intake-Ilamb Catalog</a> {{ supported }}
+    <a href="https://github.com/nocollier/intake-ilamb">Intake-Ilamb Catalog</a> 
     </div>
 </td>
 <td width="10%">
@@ -132,7 +132,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://fluxnet.org/">FLUXNET</a> {{ community }}
+    <a href="https://fluxnet.org/">FLUXNET</a> 
     </div>
 </td>
 <td width="10%">
@@ -151,7 +151,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://archive.ceda.ac.uk/">CEDA Archive</a> {{ community }}
+    <a href="https://archive.ceda.ac.uk/">CEDA Archive</a> 
     </div>
 </td>
 <td width="10%">
@@ -170,7 +170,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://www.ozflux.org.au">OZFlux</a> {{ community }}
+    <a href="https://www.ozflux.org.au">OZFlux</a> 
     </div>
 </td>
 <td width="10%">
@@ -189,7 +189,7 @@ We are trying to ingest more and more model data catalogs in your currated [cata
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html">Australian Community Reference Climate Data Collection</a> {{ recommended }}
+    <a href="https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html">Australian Community Reference Climate Data Collection</a> 
     </div>
 </td>
 <td width="10%">
