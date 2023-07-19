@@ -1,7 +1,7 @@
 # <div class="center-icons"> ACCESS-CM  </div>
 
-The ACCESS **C**oupled **M**odel, ACCESS-CM, is a fully-coupled global climate model  that includes atmosphere, land, ocean and sea-ice components, and produces physical climate simulations. Coupled models run by the Australian climate community are contributed to the
-<a href = "https://www.wcrp-climate.org/wgcm-cmip" target="_blank"> Coupled Model Intercomparison Project, CMIP</a>.
+The ACCESS **C**oupled **M**odel (ACCESS-CM) is a fully-coupled global climate model that includes atmosphere, land, ocean and sea ice components, and produces physical climate simulations. Coupled models run by the Australian climate community are contributed to the
+<a href = "https://www.wcrp-climate.org/wgcm-cmip" target="_blank"> Coupled Model Intercomparison Project (CMIP)</a>.
 <br>
 
 ACCESS-NRI will release supported ACCESS-CM configurations.  The first release of ACCESS-CM will be derived from the [CSIRO ACCESS-CM2 configuration](#access-cm2) and will include [atmosphere], [land], [ocean] and [sea ice] components.
@@ -24,7 +24,7 @@ The component models are:
 
 - Coupler (OASIS3-MCT)
 
-Compared to previous model versions ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean but a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. It has a relatively high equilibrium climate sensivity of 4.7°C for doubled CO<sub>2</sub>.
+Compared to previous model versions, ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean. It does, however, produce a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. ACCESS-CM2 has a relatively high equilibrium climate sensivity of 4.7°C for doubled CO<sub>2</sub> concentration.
 
 [**Citation** [@Bi2020-vj]][ACCESS-CM2-cite] |
 [**Tutorial**][ACCESS-CM2-tute]
