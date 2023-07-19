@@ -630,7 +630,7 @@ pre>code {
 .tabLabels {
   position: relative;
   box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
-  display: inline-block;
+  display: flex;
   max-width: 100%;
   overflow: auto;
   margin-top: 1em;
@@ -674,7 +674,6 @@ pre>code {
 .tabContents > .activeTabContent {
   display: block;
   margin-bottom: 1em;
-  padding: 1em 0;
 }
 
 /* =============================================================== 
