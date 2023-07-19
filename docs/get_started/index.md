@@ -25,7 +25,7 @@ To be able to access them, you need an NCI account.
   If you don't think you possess an email address with such institution, please <a href="https://www.access-nri.org.au/contact/" target="_blank">get in contact</a>. 
 </div>
 <br>
-Once you sign up, you will be assigned a <i>username</i> (e.g. `ab1234`). We will also refer to this <i>username</i> as `$USER`.
+Once you sign up, you will be assigned a <i>username</i> (e.g. `ab1234`).
 <hr>
 
 ## Join relevant NCI projects
@@ -33,7 +33,7 @@ To join a project, search for it on <a href="https://my.nci.org.au/mancini/proje
 
 Every project has an ID (e.g. `xp65`). This ID is what the term <i>project</i> actually refers to.
 <br>
-The first project that you join will become your default one. We will also refer to it as `$PROJECT`.
+The first project that you join will become your default one.
 <br>
 If you want to change your default project, please check <a href="#change-default-project-on-gadi">how to change your default project on gadi</a>.
 
