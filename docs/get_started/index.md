@@ -255,3 +255,27 @@ For example, if you want to change your default project to `tm70`, on <i>Gadi</i
         <a href = "https://linuxize.com/post/using-the-ssh-config-file/" target="_blank">https://linuxize.com/post/using-the-ssh-config-file</a>
     </li>
 </ul>
+
+<!-- Tab labels -->
+<div class="tabLabels" label="systems">
+  <button>MacOS</button>
+  <button>Linux</button>
+  <button>Windows</button>
+</div>
+<!-- Tab content -->
+<div class="tabContents" label="systems">
+  <div>
+    Ciaone mammona
+  </div>
+  <div>
+    Ciaone bubbino
+    <br>
+    Ciaone bubbino
+  </div>
+  <div>
+    <p>Ciaone alalal</p>
+    <p>Ciaone alalal</p>
+    <p>Ciaone alalal</p>
+    <p>Ciaone alalal</p>
+  </div>
+</div>
