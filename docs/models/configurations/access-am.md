@@ -1,4 +1,4 @@
-# <div class="center-icons"> ACCESS-AM  </div>
+# <div class="highlight-bg"> ACCESS-AM  </div>
 
 <!-- {% include "call_contribute.md" %} -->
 
