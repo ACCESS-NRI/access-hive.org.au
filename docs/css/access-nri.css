@@ -167,7 +167,7 @@ h2 {
 }
 
 h3 {
-  margin: 1em 0 0.4em !important;
+  margin: 1.3em 0 0.4em !important;
 }
 
 /* =============================================================== 
@@ -574,6 +574,58 @@ pre>code {
 .ls-output-format {
   word-spacing: 2em;
   word-break: normal;
+}
+
+/* =============================================================== 
+  General styling for html tabs
+*/
+.tabLabels {
+  position: relative;
+  box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
+  display: flex;
+  max-width: 100%;
+  overflow: auto;
+  margin-top: 1em;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabLabels button {
+  color: var(--md-accent-fg-color);
+  border-bottom: 0.1rem solid transparent;
+  border-radius: 0.1rem 0.1rem 0 0;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: .64rem;
+  font-weight: 700;
+  padding: 0.78125em 1.25em 0.625em;
+  scroll-margin-inline-start: 1rem;
+  transition: background-color .25s;
+  white-space: nowrap;
+  width: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Change background color of buttons on hover */
+.tabLabels button:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* Create an active/current tablink class */
+.tabLabels button.activeTab {
+  color: var(--md-accent-fg-color);
+  border-bottom: solid 2px var(--md-accent-fg-color);
+  transition: border-bottom .2s;
+}
+
+/* Style the tab content */
+.tabContents > * {
+  display: none;
+}
+
+.tabContents > .activeTabContent {
+  display: block;
+  margin-bottom: 1em;
 }
 
 /* =============================================================== 

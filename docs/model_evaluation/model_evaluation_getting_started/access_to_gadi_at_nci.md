@@ -1,1 +1,0 @@
-../../models/run-a-model/getting_started/access_to_gadi_at_nci.md
