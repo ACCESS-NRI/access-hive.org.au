@@ -1,26 +1,36 @@
-# <div class="center-icons"> ACCESS-AM  </div>
+# <div class="highlight-bg"> ACCESS-AM  </div>
 
 <!-- {% include "call_contribute.md" %} -->
 
 <img src="../../../assets/model-config-logos/access-am-config.png" alt="ACCESS AM model" class="image-background center-img with-border with-padding"></img>
 
-The ACCESS-AM model is a coupled model between the atmosphere and the land. The atmospheric model component is the [UM model][UM-hive]. The UM model comes by default coupled to the [JULES][JULES-hive] land model. That is why the first configurations and experiments released of ACCESS-AM will be UM-JULES configurations. But the ACCESS-NRI is working to ensure subsequent releases of ACCESS-AM use the [CABLE][CABLE-hive] land model instead.
+The ACCESS Atmosphere Model (ACCESS-AM) is a global model with atmosphere and land surface components. It is often used in Atmospheric Model Intercomparison Project (AMIP) experiments where it is driven by historically observed sea surface temperature and sea ice data.
 
-### Getting started information
+ACCESS-NRI will release supported ACCESS-AM configurations.  The first release, ACCESS-AM2, will be derived from the [CSIRO ACCESS-CM2 configuration](access-cm.md#access-cm2) and will include [atmosphere] and [land] components.
 
-[On this page][UMstart], you will find information on how to gain access to the UM model and start using the model. You will also find links to various configurations and experiments you can use as a basis to design your experiment.
+## <div class="center-icons"> ACCESS-AM2 </div>
 
-### Configurations
+This is the model configuration used for the AMIP experiments contributed to the World Climate Research Programme’s Coupled Model Intercomparison Project Phase 6 (CMIP6). Note that the CMIP model naming is the same for both the AM and CM configurations, so the CMIP6 experiments are ACCESS-CM2 AMIP rather than ACCESS-AM2.
 
+The component models are the same as ACCESS-CM2:
 
-### Experiments
+- Atmosphere model (UM vn10.6, GA7.1 science configuration): N96 resolution (1.875° x 1.25°, 85 levels). Physical model only – no carbon cycle.
 
-Some experiments already run with the UM are listed on:
+- Land surface model (CABLE2.5)
+
+[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite]
+
+### Other configurations
+
+Some experiments already run with other atmospheric model configurations  are listed at:
 
  - [CLEX CMS wiki][UMexperiments]
 
+[atmosphere]: ../model_components/atmosphere.md
+[land]: ../model_components/land.md
 [UM-hive]: ../model_components/atmosphere.md#the-unified-model
 [JULES-hive]: ../model_components/land.md#jules
 [CABLE-hive]: ../model_components/land.md#cable
 [UMstart]: http://climate-cms.wikis.unsw.edu.au/Unified_Model
 [UMexperiments]: http://climate-cms.wikis.unsw.edu.au/UM_Experiments
+[ACCESS-CM2-cite]: https://www.publish.csiro.au/es/ES19040
