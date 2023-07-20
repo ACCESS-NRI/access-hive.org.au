@@ -172,7 +172,7 @@ nav:
     #   - NCI Training: community_resources/training/nci-training.md
     #   - Additional Training: community_resources/training/additional_training.md
     
-  - Community Forum: https://forum.access-hive.org.au
+  # - Community Forum: https://forum.access-hive.org.au
 
   - About:
     - Contact: about/contact.md
