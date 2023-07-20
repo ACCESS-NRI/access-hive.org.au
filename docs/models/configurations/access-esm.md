@@ -4,7 +4,7 @@
 
 <img src="../../../assets/model-config-logos/access-esm-config.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
 
-The ACCESS **E**arth **S**ystem **M**odel (ACCESS-ESM) is a fully-coupled global climate model that also includes representations of land and ocean biogeochemisty. This means it can simulate both the physical climate and global biogeochemical cycles (the carbon cycle in particular).
+The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate model that also includes representations of land and ocean biogeochemisty. This means it can simulate both the physical climate and global biogeochemical cycles (the carbon cycle in particular).
 
 ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of ACCESS-ESM will be derived from the [CSIRO ACCESS-ESM1.5 configuration](#access-esm15) and will include [atmosphere], [land] and [land biogeochemistry], [ocean] and [ocean biogeochemistry], and [sea ice] components.
 

@@ -1,13 +1,40 @@
 # <div class="highlight-bg">Run a Model</div>
+If you are new to climate science or ACCESS Models, check [how to get started](../../../get_started).
 
-Here, we are providing the information to run different ACCESS models.
+If you are not sure which ACCESS Model is the right one for your needs, check out our
+[ACCESS Models overview](../).
 
-If *Model*, *Model Component* or *Model Configuration* are not familiar terms for you, please check out our [Model overview](../index.md).
-
-If you have not run a model before, our [Getting Started Guide](./getting_started/access_to_gadi_at_nci.md) will give you the basics to access the Model infrastructure on the high-performance-computing facility Gadi@NCI.
-
-Detailed guides for the different Model configurations can then be found on the following pages:  
--  [Run ACCESS-ESM](./run-access-esm.md) for the ACCESS Earth System Model configurations  
--  [Run ACCESS-CM](./run-access-cm.md) for the ACCESS Coupled Model configurations  
--  [Run ACCESS-AM](./run-access-am.md) for the ACCESS Atmosphere Model configurations  
--  [Run ACCESS-OM](./run-access-om.md) for the ACCESS Ocean Model configurations  
+<div class="card-container">
+    <a href="run-access-am" class="squared-card default-text-color test">
+        <div class="squared-card-image-container">
+            <img class="img-cover image-background" src="../../assets/model-config-logos/access-am-config.png" alt="ACCESS-AM">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+            Run ACCESS-AM
+        </div>
+    </a>
+    <a href="run-access-cm" class="squared-card default-text-color test">
+        <div class="squared-card-image-container">
+            <img class="img-cover image-background" src="../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS-CM">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+            Run ACCESS-CM
+        </div>
+    </a>
+    <a href="run-access-esm" class="squared-card default-text-color test">
+        <div class="squared-card-image-container">
+            <img class="img-cover image-background" src="../../assets/model-config-logos/access-esm-config.png" alt="ACCESS-ESM">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+            Run ACCESS-ESM
+        </div>
+    </a>
+    <a href="run-access-om" class="squared-card default-text-color test">
+        <div class="squared-card-image-container">
+            <img class="img-cover image-background" src="../../assets/model-config-logos/access-om2-config.png" alt="ACCESS-OM">
+        </div>
+        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+            Run ACCESS-OM
+        </div>
+    </a>
+</div>
