@@ -5,11 +5,7 @@ hide:
 ---
 
 <!-- ![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%} -->
-<<<<<<< HEAD
 # <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></div>
-=======
-# <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  Hosted by [ACCESS-NRI](http://access-nri.org.au) </div>
->>>>>>> development
 
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
@@ -20,13 +16,8 @@ hide:
         ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.  
         The HIVE-Forum is the platform for collaboration of the climate research community.
         <div>
-<<<<<<< HEAD
-            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Get Support</div>
-            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">How To Contribute</div>
-=======
             <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="https://forum.access-hive.org.au/about">How To Get Support</a></div>
             <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="./contribute">How To Contribute</a></div>
->>>>>>> development
         </div>
     </div>
     <img src="assets/ACCESS_icon_HIVE.png">
