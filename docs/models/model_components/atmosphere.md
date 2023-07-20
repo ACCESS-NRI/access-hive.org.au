@@ -8,15 +8,15 @@
 
 ## <div class="center-icons"> The Unified Model (UM)  </div>
 
-The UK Met Office [Unified Model (UM)][um-web] is a numerical model of the atmosphere used for both weather and climate applications across a wide range of time scales (nowcasting to centennial) and spatial scales (sub km convective scale to global modelling). The UM includes solutions of the equations of atmospheric fluid dynamics with advanced parameterisations of physical processes like convection, cloud formation and atmospheric radiation. 
+The UK Met Office [Unified Model (UM)][um-web] is a numerical model of the atmosphere used for both weather and climate applications across a wide range of time scales (nowcasting to centennial) and spatial scales (sub km convective scale to global). The UM includes solutions of the equations of atmospheric fluid dynamics with advanced parameterisations of physical processes like convection, cloud formation and atmospheric radiation. 
 
 ## How is the UM used?
 
 The UM is the atmospheric component in many of the ACCESS models used at regional and global scales, e.g. the [ACCESS-CM](../configurations/access-cm.md) and [ACCESS-ESM](../configurations/access-esm.md) global climate models. 
 
-The Australian Bureau of Meteorology (BoM) uses the UM as part of ACCESS in its operational global forecasting system for [daily and seasonal weather](bom-forecasts)  as well as extreme events and emergencies (e.g., bushfires, cyclones, floods, coral bleaching, coastal inundation, etc.).
+The Australian Bureau of Meteorology (BoM) uses the UM in its suite of ACCESS forecast systems for [daily and seasonal weather][bom-forecasts] as well as extreme events and emergencies (e.g., bushfires, cyclones, floods, coral bleaching, coastal inundation, etc.).
 
-The UM is used by several international operational meteorology and research organisations, and these contribute towards its development through the [UM partnership](metoffice-web).
+The UM is used by several international operational meteorology and research organisations, and these contribute towards its development through the [UM partnership][metoffice-web].
 
 <!--### Useful links
 [STASH register](metoffice-stash-register): Metadata reference for the outputs variables. 
