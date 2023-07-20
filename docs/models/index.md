@@ -1,10 +1,11 @@
 # <div class="highlight-bg">Supported ACCESS Models</div>
 
-ACCESS is a family of related computer models that are able to represent different parts of the Earth system trough the deployment of various model components. ACCESS models link these model components through software called couplers to form different Model Configurations.
+ACCESS models are computer codes comprising complex mathematical representations of major earth system components (atmosphere, land surface, ocean and sea ice) based on physical, biological and chemical principles or laws. Different ACCESS model components can be linked together via a coupler to form ACCESS model configurations, such as ACCESS-ESM, which are then used to perform simulations corresponding to realistic past or future conditions and idealised experiments.
+<!-- ACCESS is a family of related computer models that are able to represent different parts of the Earth system trough the deployment of various model components. ACCESS models link these model components through software called couplers to form different Model Configurations. -->
+<!-- See also specific phrasing of components / configurations / experiments -->
+<!-- https://access-nri.github.io/procedures-and-practices/pr-preview/pr-19/release/release_specification/ -->
 
-<div class="with-border image-background">
-    <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;" alt="Atmosphere"></img>
-</div>
+![Overview of models](../assets/overview_models.png)
 
 ## Supported ACCESS Model Configurations
 <div class="card-container" style="flex-direction: column">
@@ -99,4 +100,8 @@ ACCESS is a family of related computer models that are able to represent differe
         </div>
         <div class="squared-card-text-container bold">Coupler</div>
     </a>
+</div>
+
+<div class="with-border image-background">
+    <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;width:50%;" alt="Atmosphere"></img>
 </div>
