@@ -1,4 +1,4 @@
-# <div class="center-icons"> ACCESS-ESM  </div>
+# <div class="highlight-bg">ACCESS-ESM</div>
 
 <!-- {% include "call_contribute.md" %} -->
 
@@ -8,7 +8,7 @@ The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate mod
 
 ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of ACCESS-ESM will be derived from the [CSIRO ACCESS-ESM1.5 configuration](#access-esm15) and will include [atmosphere], [land] and [land biogeochemistry], [ocean] and [ocean biogeochemistry], and [sea ice] components.
 
-## <div class="center-icons"> [ACCESS-ESM1.5]  </div>
+## [ACCESS-ESM1.5]
 
 ACCESS-ESM1.5 [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 was developed primarily to enable Australia to participate in the Coupled Model Intercomparison Project Phase 6 (CMIP6) with an ESM version.
 

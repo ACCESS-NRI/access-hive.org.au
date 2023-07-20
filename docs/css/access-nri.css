@@ -75,7 +75,8 @@
   --terminal-animation-directory: var(--nri-green);
   --terminal-animation-buttons: var(--nri-orange);
   --terminal-animation-buttons-hover: var(--nri-dark-blue);
-  
+  --note: var(--nri-orange);
+  --note-bg: var(--md-accent-fg-color--transparent);
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -148,6 +149,8 @@
   --terminal-animation-directory: var(--nri-blue);
   --terminal-animation-buttons: var(--nri-dark-blue);
   --terminal-animation-buttons-hover: var(--nri-orange);
+  --note: var(--nri-blue);
+  --note-bg: var(--md-accent-fg-color--transparent);
 }
 
 
@@ -164,7 +167,7 @@ h2 {
 }
 
 h3 {
-  margin: 1em 0 0.4em !important;
+  margin: 1.3em 0 0.4em !important;
 }
 
 /* =============================================================== 
@@ -315,57 +318,6 @@ h3 {
   transition-duration: 0.4s;
   color: var(--md-typeset-color);
 }
-
-
-/* =============================================================== 
-  Support icons
-*/
-/* heart animation */
-@keyframes heart {
-  0%, 40%, 80%, 100% {
-    transform: scale(1);
-  }
-  20%, 60% {
-    transform: scale(1.15);
-  }
-}
-
-.heart {
-  animation: heart 1000ms infinite;
-  color: #F82464;
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.heart:hover {
-  color: #f82464c9;
-}
-
-.icon-supported {
-  color: var(--nri-green);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-supported:hover {
-  color: var(--nri-green);
-}
-
-.icon-recommended {
-  color: var(--nri-orange);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-recommended:hover {
-  color: var(--nri-orange);
-}
-
-/* Vertically center the icons */
-.center-icons {
-  vertical-align: middle;
-}
-
 
 /* =============================================================== 
   How to contribute image
@@ -621,6 +573,91 @@ pre>code {
 }
 
 /* =============================================================== 
+  General styling for html tabs
+*/
+.tabLabels {
+  position: relative;
+  box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
+  display: flex;
+  max-width: 100%;
+  overflow: auto;
+  margin-top: 1em;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabLabels button {
+  color: var(--md-accent-fg-color);
+  border-bottom: 0.1rem solid transparent;
+  border-radius: 0.1rem 0.1rem 0 0;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: .64rem;
+  font-weight: 700;
+  padding: 0.78125em 1.25em 0.625em;
+  scroll-margin-inline-start: 1rem;
+  transition: background-color .25s;
+  white-space: nowrap;
+  width: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Change background color of buttons on hover */
+.tabLabels button:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* Create an active/current tablink class */
+.tabLabels button.activeTab {
+  color: var(--md-accent-fg-color);
+  border-bottom: solid 2px var(--md-accent-fg-color);
+  transition: border-bottom .2s;
+}
+
+/* Style the tab content */
+.tabContents > * {
+  display: none;
+}
+
+.tabContents > .activeTabContent {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* =============================================================== 
+  Notes (!! icon marks)
+*/
+.note {
+  position: relative;
+  border: solid 0.01em var(--note);
+  background-color: var(--note-bg);
+  border-radius: 0.3em;
+  padding: 0.2em 0.3em 0.2em 1.5em;
+}
+
+.note::before {
+  position: absolute;
+  left: 0.3em;
+  font-family: "fontello";
+  content: '\e800';
+  color: var(--note);
+}
+
+/* =============================================================== 
+  External links
+*/
+.external-link::after {
+  font-family: "fontello";
+  content: '\e803';
+  vertical-align: super;
+  font-size: 0.5em;
+  margin-left: 0.3em;
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+
+/* =============================================================== 
   Miscellaneous
 */
 
@@ -680,4 +717,8 @@ pre>code {
 /* image cover */
 .img-cover {
   object-fit: cover;
+}
+
+.img-contain {
+  object-fit: contain;
 }

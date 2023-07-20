@@ -2,22 +2,17 @@
 <!-- # <span class="highlight-bg"> Run {{ model }} </span> -->
 # <span class="highlight-bg"> Run {{ model }} </span>
 ## <span>Requirements</span>
-<div class="justified">
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
-</div>
 
 ### <span>General requirements</span>
-<div class="justified">
 For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
-</div>
 
 ### <span>Model-specific requirements</span>
-<div class="justified">
 <ul>
     <li>
         <b>Join the <i>access</i> project at NCI</i></b>
         <br>
-        To join the <i>access</i> project at NCI, request membership for it on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">NCI access project</a> page.
+        To join the <i>access</i> project at NCI, request membership for it on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access</a> NCI project page.
         <br>
         For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
@@ -26,7 +21,7 @@ For the general requirements needed to run all ACCESS models, please refer to th
         <br>
         To run {{ model }} you need the connection to <a href="https://accessdev.nci.org.au/trac/wiki" target="_blank"><i>accessdev</i></a>, an NCI server providing configuration and run control for {{ model }}.
         <br>
-        Also, you need to make sure there is correct communication between <i>accessdev</i> and <i>gadi</i>.
+        Also, you need to make sure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
         <br>
         To complete these steps, you can follow the guides on <a href="">SSH connections on <i>accessdev</i></a>.
     </li>
@@ -38,24 +33,19 @@ For the general requirements needed to run all ACCESS models, please refer to th
         To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
     </li>
 </ul>
-</div>
 
 --------------------------------------------
 ## Get {{ model }} suite
-<div class="justified">
 {{ model }} is a set of submodels (e.g. UM, MOM, CICE, CABLE, OASIS) with a range of model parameters, input data, and computer related information, that need to be packaged together as a <i>suite</i> in order to run.
 <br>
 Each {{ model }} suite has an ID, in the format <code>u-&lt;suite-name&gt;</code>, with <code>&lt;suite-name&gt;</code> being a unique identifier (e.g. <code>u-br565</code> is the CMIP6 release preindustrial experiment suite).
 <br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
-</div>
 
 ### Copy {{ model }} suite with Rosie
-<div class="justified">
 <a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options to work with {{ model }} suites.
 <br>
 To copy an existing suite, on <i>accessdev</i>:
-<!-- Change this to gadi/ARE when it will be completely possible to run CM2 fully on gadi-->
 <ol>
     <li>
         Run
@@ -105,22 +95,21 @@ The suite directory usually contains 2 subdirectories and 3 files:
         <terminal-line class="ls-output-format">app meta rose-suite.conf rose-suite.info suite.rc</terminal-line>
     </terminal-animation>
 </ul>
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} suite configuration
 
 ### Rose
-<div class="justified">
 <a href = "http://metomi.github.io/rose/doc/html/index.html" target="_blank">Rose</a> is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
 <br>
 To edit a suite configuration, on <i>accessdev</i>:
-<!-- Change this to gadi/ARE when it will be completely possible to run CM2 fully on gadi-->
 From inside the relevant suite directory (e.g. <code>~/roses/&lt;suite-ID&gt;</code>), run 
 <pre><code>rose edit &</code></pre> 
 to open the <i>Rose</i> GUI and inspect the suite information.
 <br>
-<b>Note:</b> the <code>&</code> is optional and keeps the terminal prompt active while runs the GUI as a separate process. 
+<div class="note">
+    The <code>&</code> is optional and keeps the terminal prompt active while runs the GUI as a separate process.
+</div>
 <terminal-animation>
     <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
     <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
@@ -128,20 +117,18 @@ to open the <i>Rose</i> GUI and inspect the suite information.
     <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
     <img src="../../../assets/run_access_cm/Rose GUI.png" alt="Rose GUI">
 </terminal-animation>
-</div>
 
 ### Change NCI project
-<div class="justified">
 To make sure we run the suite under the NCI project we belong to, we can navigate to <i>suite conf &rarr; Machine and Runtime Options</i>, edit the <i>Compute project</i> field, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. (Check <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> if you have not joined one yet).
 <br>
 For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), we will insert <code>tm70</code> in the <i>Compute project</i> field:
 <br>
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
-<span class="note">Note:</span> You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
+<div class="note">
+    You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
 </div>
 
 ### Change run length and cycling frequency
-<div class="justified">
 {{ model }} suites are often run in multiple steps, each of them constituting a cycle, with the job scheduler resubmitting the suite every chosen <i>Cycling frequency</i>, until the <i>Total Run length</i> is met.
 <br>
 To modify these parameters, we can navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective fields, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. The values are in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
@@ -149,10 +136,8 @@ To modify these parameters, we can navigate to <i>suite conf &rarr; Run Initiali
 If, for example, we want to run the suite for a total of 50 Years, and resubmit every year, we will change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code>. Note that the current maximum <i>Cycling frequency</i> is 2 years:
 <br>
 <img src="../../../assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img"/>
-</div>
 
 ### Change wallclock time
-<div class="justified">
 The <i>Wallclock time</i> is the time requested by the PBS job<!-- TO DO <a href="../getting-started/#pbs-jobs" target="_blank">PBS job</a> --> to run a single cycle. If this time is not enough for the suite to end its cycle, our job will be terminated before the suite can complete the run. 
 <br>
 If we change the <i>Cycling frequency</i>, we might need to change the <i>Wallclock time</i> accordingly. 
@@ -162,21 +147,16 @@ The time needed for the suite to run a full cycle depends on several factors, bu
 To modify the <i>Wallclock time</i>, we can navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective field, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. The value is in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
 
 <!-- TO DO For more details on how to edit other suite parameters using Rose GUI, such as component configurations, output variables (STASH), or science settings, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide</a>. -->
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} suite
-
-<div class="justified">
-{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">gadi</a> through a PBS job submission.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission.
 <br>
-When the suite gets run, its configuration files are copied on gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
+When the suite gets run, its configuration files are copied on <i>Gadi</i> under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
 <br>
 An {{ model }} suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by <i>Cylc</i>.
-</div>
 
 ### Cylc
-<div class="justified">
 <a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. <i>Cylc</i> deals with how the job will be run and manages the time steps of each submodel, as well as monitoring all the tasks and reporting any error that might occur.
 <br>
 To run an {{ model }} suite, on <i>accessdev</i>:
@@ -236,19 +216,20 @@ To run an {{ model }} suite, on <i>accessdev</i>:
         <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
         <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
     </terminal-animation>
-    <br>
-    <b>Note:</b> If after you run the command <code>rose suite-run</code> you get an error similar to the following:
-    <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
-        <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
-        <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_HOST=accessdev.nci.org.au
-        <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_OWNER=&lt;$USER&gt;
-        <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PORT=&lt;port&gt;
-        <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PROCESS=&lt;PID&gt; python2 /usr/local/cylc/cylc-7.8.3/bin/cylc-run &lt;suite-ID&gt;
-        <span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?
-    </code></pre>
-    you should run
-    <pre><code>rm /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact</code></pre>
-    before running the <code>rose suite-run</code> command again.
+    <div class="note">
+        If after you run the command <code>rose suite-run</code> you get an error similar to the following:
+        <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
+            <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
+            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_HOST=accessdev.nci.org.au
+            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_OWNER=&lt;$USER&gt;
+            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PORT=&lt;port&gt;
+            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PROCESS=&lt;PID&gt; python2 /usr/local/cylc/cylc-7.8.3/bin/cylc-run &lt;suite-ID&gt;
+            <span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?
+        </code></pre>
+        you should run
+        <pre><code>rm /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact</code></pre>
+        before running the <code>rose suite-run</code> command again.
+    </div>
 </ol>
 You are done!!
 <br>
@@ -258,14 +239,10 @@ Note that, at this stage, it is possible to close the <i>Cylc</i> GUI.
 <br>
 If you want to open it again, from inside the suite directory run
 <pre><code>rose suite-gcontrol</code></pre>
-
-</div>
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
 ### Check for errors
-
-<div class="justified">
 It is quite common, especially during the first few runs, to experience errors and job failures. An {{ model }} suite is constituted by several tasks, and each of these tasks could fail. When a task fails, the suite is halted and you will see a red icon next to the respective task name in the <i>Cylc</i> GUI. 
 <br>
 To investigate the cause of a failure, we need to look at the logs (<code>job.err</code> and <code>job.out</code>) from the suite run. There are two main ways to do so:
@@ -313,13 +290,9 @@ To investigate the cause of a failure, we need to look at the logs (<code>job.er
         </terminal-animation>
     </li>
 </ul>
-</div>
-
 ----------------------------------------------------------------------------------------
 
 ## Stop, restart and reload suites
-
-<div class="justified">
 Sometimes, you may want to control the running state of a suite.
 <br>
 If your <i>Cylc</i> GUI has been closed and you are unsure whether your suite is still running, you can scan for active suites and reopen the GUI if desired.
@@ -335,10 +308,8 @@ To reopen the <i>Cylc</i> GUI, from inside the suite directory run
     <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</terminal-line>
     <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
 </terminal-animation>
-</div>
 
 ### STOP a suite
-<div class="justified">
 To shutdown a suite in a safe manner, from inside the suite directory run
 <pre><code>rose suite-stop -y</code></pre>
 Alternatively, you can directly kill the PBS job(s) connected to your run. To do so:
@@ -352,10 +323,8 @@ Alternatively, you can directly kill the PBS job(s) connected to your run. To do
         <pre><code>qdel &lt;job-ID&gt;</code></pre>
     </li>
 </ol>
-</div>
 
 ### RESTART a suite
-<div class="justified">
 There are two main ways to restart a suite:
 <ul>
     <li>
@@ -407,22 +376,16 @@ There are two main ways to restart a suite:
         if you want to overwrite any previous runs of the suite and begin completely afresh (WARNING!! This will overwrite all existing model output and logs for the same suite).
     </li>
 </ul>
-</div>
 
 ### RELOAD a suite
-<div class="justified">
 In some cases the suite needs to be updated without necessarily having to stop it (e.g. after fixing a typo in a file). Updating an active suite is called a 'reload', where the suite is 're-installed' and <i>Cylc</i> is updated with the changes (this is similar to a 'soft' restart, but with the new changes installed, so you may need to manually trigger failed tasks from the <i>Cylc</i> GUI).
 <br>
 To reload a suite, from inside the suite directory run
 <pre><code>rose suite-run --reload</code></pre>
-</div>
-
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} output files
-
-<div class="justified">
-All {{ model }} output files (as well as work files) are available on gadi under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> (also symlinked in <code>~/cylc-run/&lt;suite-ID&gt;</code>).
+All {{ model }} output files (as well as work files) are available on <i>Gadi</i> under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> (also symlinked in <code>~/cylc-run/&lt;suite-ID&gt;</code>).
 <br>
 While the suite is running, files move between the <code>share</code> and the <code>work</code> directories.
 <br>
@@ -433,10 +396,8 @@ This directory contains 2 subdirectories:
     <li><code>history</code></li>
     <li><code>restart</code></li>
 </ul>
-</div>
 
 ### Output data
-<div class="justified">
 <code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/history</code> is the directory where the model output data is found, separated for each model component:
 <ul>
     <li>
@@ -467,10 +428,8 @@ In the case of the <code>u-br565</code> suite we will have:
 </terminal-animation>
 <!-- <br>
 For more details on how to control different output variables (STASH), and output streams, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
-</div>
 
 ### Restart files
-<div class="justified">
 <code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/restart</code> is the directory where the restart dumps are found, subdivided for each model component (see <code>history</code> folder above).
 <br>
 For the atmospheric restart files, each of them is a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;suite-name&gt;a.da&lt;year&gt;&lt;month&gt;&lt;day&gt;_00</code>.
@@ -485,9 +444,6 @@ In the case of the <code>u-br565</code> suite we will have:
     <terminal-line class="ls-output-format">br565a.da09500201_00 br565a.da09510101_00 br565.xhist-09500131 br565.xhist-09501231 </terminal-line>
 </terminal-animation>
 
-</div>
-
-<!-- References -->
 <br>
 <h6>References</h6>
 <ul class="references">
