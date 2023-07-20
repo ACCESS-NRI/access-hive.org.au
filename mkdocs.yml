@@ -4,8 +4,8 @@ site_name: ACCESS-Hive
 # then used to create the sitemap for search engine indexing
 site_url: https://access-hive.org.au
 # Git repository
-repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
-repo_name: ACCESS-Hive
+# repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
+# repo_name: ACCESS-Hive
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs
 docs_dir: docs

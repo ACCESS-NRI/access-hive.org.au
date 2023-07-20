@@ -331,11 +331,10 @@ h3 {
 }
 
 .header-btn {
-  /* color: var(--nri-orange); */
   border-radius: 0.3em;
   border: 0.1em solid;
   padding: 0.5em 1em;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   font-weight: 500;
   /* transition: background-color 0.5s; */
   margin: 0 0.1em 0 1em;
@@ -344,6 +343,7 @@ h3 {
 
 .header-btn:hover {
   border: 0.1em solid var(--nri-green);
+  /* border: 0.1em dashed; */
   color: var(--md-default-fg-color--light);
   transition-duration: 0.4s;
   transition-property: all;
@@ -363,7 +363,7 @@ h3 {
   border-color: var(--nri-orange);
 }
 
-.nri-green-border {
+.nri-blue-border {
   border-color: var(--nri-blue);
 }
 
@@ -372,6 +372,9 @@ h3 {
   width: auto;
 }
 
+.white-text {
+  color: white;
+}
 
 /* =============================================================== 
   Support icons
