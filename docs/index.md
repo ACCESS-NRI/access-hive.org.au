@@ -5,7 +5,7 @@ hide:
 ---
 
 <!-- ![ACCESS-HIVE Logo](assets/ACCESS_icon_HIVE.png){align=right width=40%} -->
-# <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></div>
+# <div><span class="highlight-bg"> Welcome to ACCESS-Hive</span>  <span style="font-size: 0.5em;">Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></span></div>
 
 <!-- [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo] -->
 <!-- [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum] -->
@@ -13,11 +13,15 @@ hide:
 
 <div class="with-border introduction">
     <div>
-        ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.  
-        The HIVE-Forum is the platform for collaboration of the climate research community.
-        <div>
-            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="https://forum.access-hive.org.au/about">How To Get Support</a></div>
-            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="./contribute">How To Contribute</a></div>
+        ACCESS-Hive is the platform for documentation that ACCESS-NRI is providing for the community to run and evaluate ACCESS models.  
+        The Hive-Forum is the platform for collaboration of the climate research community.
+        <div class="card-container">
+            <a href="https://forum.access-hive.org.au/about" class="highlight-bg bg-color-like-tab bold default-text-color" style="margin: 1em;">
+                How To Get Support
+            </a>
+            <a href="contribute" class="highlight-bg bg-color-like-tab bold default-text-color" style="margin: 1em;">
+                How To Contribute
+            </a>
         </div>
     </div>
     <img src="assets/ACCESS_icon_HIVE.png">
