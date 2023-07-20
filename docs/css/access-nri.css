@@ -337,15 +337,21 @@ h3 {
   padding: 0.5em 1em;
   font-size: 1.2em;
   font-weight: 500;
-  transition: background-color 0.5s;
+  /* transition: background-color 0.5s; */
   margin: 0 0.1em 0 1em;
   height: 1.8rem;
 }
 
 .header-btn:hover {
-  border: 0.1em solid var(--nri-blue);
+  border: 0.1em solid var(--nri-green);
   color: var(--md-default-fg-color--light);
   transition-duration: 0.4s;
+  transition-property: all;
+}
+
+.header-btn:hover > img {
+  filter: grayscale(100%);
+  transition-duration: 0.5s;
   transition-property: all;
 }
 
@@ -358,7 +364,7 @@ h3 {
 }
 
 .nri-green-border {
-  border-color: var(--nri-dark-blue);
+  border-color: var(--nri-blue);
 }
 
 .icon-image {
