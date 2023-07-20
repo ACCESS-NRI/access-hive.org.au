@@ -16,19 +16,19 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
 
 ### Getting Started
 <div class="card-container">
-    <a href="./model_evaluation_getting_started/access_to_gadi_at_nci" class="squared-card default-text-color">
+    <a href="../get_started" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access"></img>
         </div>
         <div class="squared-card-text-container bold">Computing Access</div>
     </a>
-    <a href="./model_evaluation_getting_started/model_evaluation_getting_started" class="squared-card default-text-color">
+    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment"></img>
         </div>
         <div class="squared-card-text-container bold">MED Conda Environment</div>
     </a>
-    <a href="./model_evaluation_getting_started/model_variables" class="squared-card default-text-color">
+    <a href="model_evaluation_getting_started/model_variables" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables"></img>
         </div>
@@ -38,13 +38,13 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
 
 ### Data Catalogs
 <div class="card-container">
-    <a href="./model_evaluation_observational_catalogs" class="squared-card default-text-color">
+    <a href="model_evaluation_observational_catalogs" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalog. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images"></img>
         </div>
         <div class="squared-card-text-container bold">Observational Data Catalog</div>
     </a>
-    <a href="./model_evaluation_model_catalogs" class="squared-card default-text-color">
+    <a href="model_evaluation_model_catalogs" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment"></img>
         </div>
@@ -55,19 +55,19 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
 ### Supported Community Frameworks on Gadi
 
 <div class="card-container">
-    <a href="./model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="squared-card default-text-color">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
         </div>
         <div class="squared-card-text-container bold">ILAMB</div>
     </a>
-    <a href="./model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="squared-card default-text-color">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
         </div>
         <div class="squared-card-text-container bold">ESMValTool</div>
     </a>
-    <a href="./model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="squared-card default-text-color">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="squared-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
         </div>
