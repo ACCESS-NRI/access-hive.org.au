@@ -170,8 +170,26 @@ h3 {
   margin: 1.3em 0 0.4em !important;
 }
 
+
 /* =============================================================== 
-  Introductory paragraph
+  Keep ACCESS-Hive title as it is, without changing when scrolling
+*/
+.md-header__title--active .md-header__topic {
+  opacity: 1;
+  transform: none;
+  z-index: 0;
+  pointer-events: auto;
+  transition: none;
+}
+
+.md-header__title--active .md-header__topic+.md-header__topic {
+  opacity: 0;
+  z-index: -1;
+}
+
+
+/* =============================================================== 
+Introductory paragraph
 */
 .introduction {
   font-size: 1.2em;
