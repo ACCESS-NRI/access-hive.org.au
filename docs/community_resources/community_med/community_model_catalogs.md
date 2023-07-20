@@ -1,6 +1,6 @@
 # Community Model Data Catalogs
 
-We are trying to ingest more and more model data catalogs in your currated [catalog on this website](../model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md). While this is a continous effort, this site is intented for a list of additional model data catalogs that are not (yet) ingested but are recommended by us () or may be interesting for the community ():
+We are trying to ingest more and more model data catalogs in your currated [catalog on this website](../../model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md). While this is a continous effort, this site is intented for a list of additional model data catalogs that are not (yet) ingested but are recommended by us or may be interesting for the community:
 
 <table class="center">
 <tr>
