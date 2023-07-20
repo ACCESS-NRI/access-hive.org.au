@@ -1,6 +1,6 @@
 # <div class="highlight-bg"> ACCESS-CM  </div>
 
-The ACCESS **C**oupled **M**odel (ACCESS-CM) is a fully-coupled global climate model that includes atmosphere, land, ocean and sea ice components, and produces physical climate simulations. Coupled models run by the Australian climate community are contributed to the
+The ACCESS Coupled Model (ACCESS-CM) is a fully-coupled global climate model that includes atmosphere, land, ocean and sea ice components, and produces physical climate simulations. Coupled models run by the Australian climate community are contributed to the
 <a href = "https://www.wcrp-climate.org/wgcm-cmip" target="_blank"> Coupled Model Intercomparison Project (CMIP)</a>.
 <br>
 

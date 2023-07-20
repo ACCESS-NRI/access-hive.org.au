@@ -325,7 +325,6 @@ h3 {
 .rectangular-img {
   width: 100%; 
   height: 13em !important;
-  object-fit: cover; 
   border-radius: 0.6em;
 }
 
@@ -369,6 +368,7 @@ h3 {
 .squared-card {
   flex-direction: column;
   max-width: 30%;
+  min-width: 20%;
   aspect-ratio: 1;
 }
 
@@ -434,10 +434,6 @@ h3 {
 .rectangular-card-image-container > img, 
 .squared-card-image-container > img {
   border-radius: 8px;
-}
-
-.configuration-card {
-  height: 15em;
 }
 
 .card-container:has(.component-card) {
