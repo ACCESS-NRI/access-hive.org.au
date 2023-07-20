@@ -319,6 +319,53 @@ h3 {
   color: var(--md-typeset-color);
 }
 
+/* =============================================================== 
+  Community Forum Button
+*/
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.6em;
+}
+
+.header-btn {
+  /* color: var(--nri-orange); */
+  border-radius: 0.3em;
+  border: 0.1em solid;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  font-weight: 500;
+  transition: background-color 0.5s;
+  margin: 0 0.1em 0 1em;
+  height: 1.8rem;
+}
+
+.header-btn:hover {
+  border: 0.1em solid var(--nri-blue);
+  color: var(--md-default-fg-color--light);
+  transition-duration: 0.4s;
+  transition-property: all;
+}
+
+.large-text {
+  font-size: 1.4em;
+}
+
+.nri-orange-border {
+  border-color: var(--nri-orange);
+}
+
+.nri-green-border {
+  border-color: var(--nri-dark-blue);
+}
+
+.icon-image {
+  height: 1.3em;
+  width: auto;
+}
+
 
 /* =============================================================== 
   Support icons
