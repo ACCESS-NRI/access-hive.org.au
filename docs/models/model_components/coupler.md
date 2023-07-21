@@ -15,9 +15,9 @@ A coupler is a software package that allows synchronised exchanges of coupling i
 - ACCESS-OM2
 - ACCESS-S
 
-## [NUOPC interoperability layer][NUOPC]
+## [NUOPC][NUOPC-int-layer]
 
-[NUOPC][NUOPC-int-layer] (National Unified Operational Prediction Capability) Interoperability Layer defines conventions and a set of generic components for building coupled models using the Earth System Modeling Framework (ESMF).
+The [National Unified Operational Prediction Capability (NUOPC)][NUOPC-int-layer] interoperability layer defines conventions and a set of generic components for building coupled models using the Earth System Modeling Framework (ESMF).
 
 ACCESS-OM3, a configuration currently under development, uses [NUOPC to couple its MOM6 and CICE6 model components][coupler-choice] as there are no respective OASIS coupling interfaces for these components.
 
