@@ -320,7 +320,7 @@ h3 {
 }
 
 /* =============================================================== 
-  Community Forum Button
+  Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
 .flex-container {
   display: flex;
@@ -334,26 +334,16 @@ h3 {
   border-radius: 0.3em;
   border: 0.1em solid;
   padding: 0.5em 1em;
-  /* font-size: 1.2em; */
   font-weight: 500;
-  /* transition: background-color 0.5s; */
   margin: 0 0.5em 0 0.5em;
   height: 1.7rem;
 }
 
 .header-btn:hover {
-  /* border: 0.1em solid var(--nri-green); */
   background-color: var(--md-default-fg-color--lightest);
-  /* color: var(--md-default-fg-color--light); */
   transition-duration: 0.4s;
   transition-property: all;
 }
-
-/* .header-btn:hover > img {
-  filter: grayscale(100%);
-  transition-duration: 0.5s;
-  transition-property: all;
-} */
 
 .large-text {
   font-size: 1.4em;
@@ -361,14 +351,10 @@ h3 {
 
 .nri-orange-border {
   border-color: var(--nri-orange);
-  /* background-color: var(--nri-orange);
-  color: black; */
 }
 
 .nri-blue-border {
   border-color: var(--nri-blue);
-  /* background-color: var(--nri-blue);
-  color: black; */
 }
 
 .icon-image {
