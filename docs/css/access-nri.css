@@ -200,7 +200,7 @@ h3 {
 
 
 /* =============================================================== 
-  Left Navigation and table of content 
+  Left Navigation and right "On this page" navigation 
 */
 .md-nav--primary {
   font-size: 1.7em;
@@ -320,6 +320,99 @@ h3 {
 }
 
 /* =============================================================== 
+  Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
+*/
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.6em;
+}
+
+.header-btn {
+  border-radius: 0.3em;
+  border: 0.1em solid;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  margin: 0 0.5em 0 0.5em;
+  height: 1.7rem;
+}
+
+.header-btn:hover {
+  background-color: var(--md-default-fg-color--lightest);
+  transition-duration: 0.4s;
+  transition-property: all;
+}
+
+.large-text {
+  font-size: 1.4em;
+}
+
+.nri-orange-border {
+  border-color: var(--nri-orange);
+}
+
+.nri-blue-border {
+  border-color: var(--nri-blue);
+}
+
+.icon-image {
+  height: 1.3em;
+  width: auto;
+}
+
+/* =============================================================== 
+  Support icons
+*/
+/* heart animation */
+@keyframes heart {
+  0%, 40%, 80%, 100% {
+    transform: scale(1);
+  }
+  20%, 60% {
+    transform: scale(1.15);
+  }
+}
+
+.heart {
+  animation: heart 1000ms infinite;
+  color: #F82464;
+  font-size: medium;
+  margin: 0 0.2em;
+}
+
+.heart:hover {
+  color: #f82464c9;
+}
+
+.icon-supported {
+  color: var(--nri-green);
+  font-size: medium;
+  margin: 0 0.2em;
+}
+
+.icon-supported:hover {
+  color: var(--nri-green);
+}
+
+.icon-recommended {
+  color: var(--nri-orange);
+  font-size: medium;
+  margin: 0 0.2em;
+}
+
+.icon-recommended:hover {
+  color: var(--nri-orange);
+}
+
+/* Vertically center the icons */
+.center-icons {
+  vertical-align: middle;
+}
+
+
+/* =============================================================== 
   How to contribute image
 */
 .rectangular-img {
@@ -355,7 +448,6 @@ h3 {
 .card-container > * > * {
   flex-grow: 1;
 }
-
 
 /* Single card hover */
 .card-container > *:hover {
