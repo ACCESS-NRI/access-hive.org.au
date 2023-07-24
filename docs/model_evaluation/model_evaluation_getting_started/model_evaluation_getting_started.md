@@ -1,6 +1,6 @@
-# Model Evaluation Environment at Gadi@NCI
+# Model Evaluation Environment at NIC's Gadi
 
-At this stage of *Getting Started*, we assume that you already have access to Gadi@NCI. If this is not the case, please go to our instructions on how to get [access to Gadi@NCI](./access_to_gadi_at_nci.md).
+At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to Gadi at NCI](../../get_started/index.md).
 
 Here we describe the additional information to get started with model evaluation that is supported by ACCESS-NRI.
 
