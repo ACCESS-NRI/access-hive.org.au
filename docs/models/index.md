@@ -10,7 +10,7 @@ ACCESS models are computer codes comprising complex mathematical representations
 
 ## Supported ACCESS Model Configurations
 <div class="card-container" style="flex-direction: column">
-<a href="configurations/access-am/" class="justified rectangular-card default-text-color" style="height: 9em;">
+<a href="configurations/access-am/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-am.png" class="image-background img-cover"></img> 
         </div>
@@ -21,7 +21,7 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-cm/" class="justified rectangular-card default-text-color" style="height: 9em;">
+    <a href="configurations/access-cm/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-cm.png" class="image-background img-cover"></img> 
         </div>
@@ -32,7 +32,7 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-esm/" class="justified rectangular-card default-text-color" style="height: 9em;">
+    <a href="configurations/access-esm/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-esm.png" class="image-background img-cover"></img> 
         </div>
@@ -43,7 +43,7 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-om/" class="justified rectangular-card default-text-color" style="height: 9em;">
+    <a href="configurations/access-om/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-om.png" class="image-background img-cover"></img> 
         </div>

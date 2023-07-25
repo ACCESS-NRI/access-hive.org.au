@@ -1,7 +1,7 @@
 # <div class="highlight-bg">Supported ACCESS Model Configurations</div>
 
 <div class="card-container" style="flex-direction: column">
-    <a href="access-am/" class="justified rectangular-card default-text-color" style="height:10em;">
+    <a href="access-am/" class="rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-am.png" class="image-background img-cover"></img> 
             </div>
@@ -12,7 +12,7 @@
                 </span>
             </div>
     </a>
-     <a href="access-cm/" class="justified rectangular-card default-text-color" style="height:10em;">
+     <a href="access-cm/" class="rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="image-background img-cover"></img> 
             </div>
@@ -23,7 +23,7 @@
                 </span>
             </div>
     </a>
-    <a href="access-esm/" class="justified rectangular-card default-text-color" style="height:10em;">
+    <a href="access-esm/" class="rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-esm.png" class="image-background img-cover"></img> 
             </div>
@@ -34,7 +34,7 @@
                 </span>
             </div>
     </a>
-    <a href="access-om/" class="justified rectangular-card default-text-color" style="height:10em;">
+    <a href="access-om/" class="rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-om.png" class="image-background img-cover"></img> 
             </div>
