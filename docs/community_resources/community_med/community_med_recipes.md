@@ -364,7 +364,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://cookbooks.projectpythia.org">Pythia Cookbooks {{ community }}</a>
+    <a href="https://cookbooks.projectpythia.org">Pythia Cookbooks</a>
     </div>
 </td>
 <td width="10%">
