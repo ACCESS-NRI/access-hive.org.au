@@ -6,10 +6,11 @@ ACCESS models are computer codes comprising complex mathematical representations
 <!-- https://access-nri.github.io/procedures-and-practices/pr-preview/pr-19/release/release_specification/ -->
 
 ![Overview of models](../assets/models_flow_diagram.png)
+<img src="Assets/icon.png" width="200">
 
 ## Supported ACCESS Model Configurations
 <div class="card-container" style="flex-direction: column">
-<a href="configurations/access-am/" class="justified rectangular-card default-text-color" style="height: 15em;">
+<a href="configurations/access-am/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/access-am-config.png" class="image-background img-cover"></img> 
         </div>
@@ -20,7 +21,7 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-cm/" class="justified rectangular-card default-text-color" style="height: 15em;">
+    <a href="configurations/access-cm/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/access-cm2-config.png" class="image-background img-cover"></img> 
         </div>
@@ -31,18 +32,18 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-esm/" class="justified rectangular-card default-text-color" style="height: 15em;">
+    <a href="configurations/access-esm/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/access-esm-config.png" class="image-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-ESM</span>
             <span>
-                ACCESS-ESM is a global climate model that also includes land and ocean biogeochemical components to simulate both the physical climate and global biogeochemical cycles.
+                ACCESS-ESM is a global climate model with additional land and ocean biogeochemical components to simulate both the physical climate and global biogeochemical cycles.
             </span>
         </div>
     </a>
-    <a href="configurations/access-om/" class="justified rectangular-card default-text-color" style="height: 15em;">
+    <a href="configurations/access-om/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
             <img src="../assets/model-config-logos/access-om2-config.png" class="image-background img-cover"></img> 
         </div>
