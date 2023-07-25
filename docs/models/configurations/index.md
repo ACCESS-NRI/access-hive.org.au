@@ -3,7 +3,7 @@
 <div class="card-container" style="flex-direction: column">
     <a href="access-am/" class="justified rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
-                <img src="../../assets/configurations-without-titles/model-config-logos/access-am-config.png" class="image-background img-cover"></img> 
+                <img src="../../assets/model-config-logos/configurations-without-titles/access-am.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-AM</span>
@@ -14,7 +14,7 @@
     </a>
      <a href="access-cm/" class="justified rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
-                <img src="../../assets/configurations-without-titles/model-config-logos/access-cm2-config.png" class="image-background img-cover"></img> 
+                <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-CM</span>
@@ -25,7 +25,7 @@
     </a>
     <a href="access-esm/" class="justified rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
-                <img src="../../assets/configurations-without-titles/model-config-logos/access-esm-config.png" class="image-background img-cover"></img> 
+                <img src="../../assets/model-config-logos/configurations-without-titles/access-esm.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-ESM</span>
@@ -36,7 +36,7 @@
     </a>
     <a href="access-om/" class="justified rectangular-card default-text-color" style="height:10em;">
             <div class="rectangular-card-image-container">
-                <img src="../../assets/configurations-without-titles/model-config-logos/access-om2-config.png" class="image-background img-cover"></img> 
+                <img src="../../assets/model-config-logos/configurations-without-titles/access-om.png" class="image-background img-cover"></img> 
             </div>
             <div class="rectangular-card-text-container">
                 <span class="bold" >ACCESS-OM</span>

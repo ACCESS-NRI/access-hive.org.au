@@ -12,7 +12,7 @@ ACCESS models are computer codes comprising complex mathematical representations
 <div class="card-container" style="flex-direction: column">
 <a href="configurations/access-am/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/access-am-config.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-am.png" class="image-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-AM</span>
@@ -23,7 +23,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-cm/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/access-cm2-config.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-cm.png" class="image-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-CM</span>
@@ -34,7 +34,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-esm/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/access-esm-config.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-esm.png" class="image-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-ESM</span>
@@ -45,7 +45,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-om/" class="justified rectangular-card default-text-color" style="height: 9em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/access-om2-config.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-om.png" class="image-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-OM</span>
