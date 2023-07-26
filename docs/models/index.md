@@ -6,7 +6,7 @@ ACCESS models are computer codes comprising complex mathematical representations
 <!-- https://access-nri.github.io/procedures-and-practices/pr-preview/pr-19/release/release_specification/ -->
 
 ![Overview of models](../assets/models_flow_diagram.png)
-<img src="Assets/icon.png" width="200">
+<!-- <img src="Assets/icon.png" width="200"> -->
 
 ## Supported ACCESS Model Configurations
 <div class="card-container" style="flex-direction: column">
