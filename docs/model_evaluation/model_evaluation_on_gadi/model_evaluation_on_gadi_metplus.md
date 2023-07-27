@@ -1,10 +1,10 @@
 # `METplus` on Gadi at NCI
 
+[METplus](https://dtcenter.org/community-code/metplus) is the enhanced Model Evaluation Tools (METplus) verification system. 
+
 ???+ int "ACCESS-NRI is actively supporting METplus on Gadi"
 
-[METplus](https://dtcenter.org/community-code/metplus) is the enhanced Model Evaluation Tools (METplus) verification system. For the detailed documentation of METplus, please visit
-
-For detailed information, tutorials and more, please go to the
+For detailed information, tutorials and more of [METplus](https://metplus.readthedocs.io/en/latest/index.html), please go to the
  <div class="card-container">
      <a href="https://metplus.readthedocs.io/en/latest/index.html" class="aspect1to2-card default-text-color">
          <div class="squared-card-image-container">
