@@ -26,7 +26,7 @@ module use /g/data/access/ngm/modules
 module load envs/metplus/5.0
 ```
 
-1. Download the sample data from https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz and untar into a directory on Gadi, for example `~/METplus.
+1. Download the sample data from [https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz](https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz) and untar into a directory on Gadi, for example `~/METplus`.
 
 2. Create a configuration file `local.conf` containing the input and output paths, for example `INPUT_BASE=~/METplus`.
 
