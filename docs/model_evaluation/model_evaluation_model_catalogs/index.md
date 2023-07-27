@@ -1,59 +1,71 @@
 # ACCESS-NRI intake Model Catalog
 
-ACCESS-NRI is hosting a number of calculated models for you through National Computational Infrastructure (NCI) storage.
+The ACCESS-NRI intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on the Australian NCI supercomputer Gadi. For detailed information, tutorials and more, please go to the
+<div class="card-container">
+    <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" class="aspect1to2-card default-text-color">
+        <div class="squared-card-image-container">
+            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation"></img>
+        </div>
+        <div class="squared-card-text-container bold">Documentation</div>
+    </a>
+</div>
 
-We have set up an [ACCESS-NRI intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog) package that allows you to easily search and load the model data on this storage.
-The premise of this ACCESS-NRI intake Catalog is to provide a ("meta") catalog of intake-esm ("sub") catalogs, which each correspond to different "experiments".
+## What is the ACCESS-NRI intake Model Catalog?
 
-## The ACCESS-NRI intake catalog
+The ACCESS-NRI catalog is essentially a table of climate data products that exist on Gadi. Each entry in the table corresponds to a different product, and the columns contain attributes associated with each product–things like the models, frequencies and variables available. Users can search on the attributes to find the products that might be useful to them. For example, a user might want to know which data products contain variables X, Y and Z at monthly frequency. The ACCESS-NRI catalog enables users to find products that satisfy their query and to subsequently load their data without having to know the location and structure of the underlying files.
 
-To have the huge amount of data from different experiments on the NCI storage at the palm of your hand, we provide a ("meta") catalog for you to query via python as part of the `#!python intake` package with our curated catalog plugin `#!python intake.cat.access_nri` .
+## Showcase: Search with intake to easily load and plot data
 
-``` py
+```py
 import intake
-access_nri_catalog_sections = intake.cat.access_nri
+catalog = intake.cat.access_nri
+```
+You can then search for a model, variable, frequency and more across all the project that we provide support for on Gadi:
+```py
+catalog_filtered = catalog.search(name="cmip6_oi10", variable="burntFractionAll")
+```
+You can then easily load this particular datastore and look at its metadata or keywords
+```py
+esm_datastore = catalog_filtered.to_source()
+esm_datastore.keys()
 ```
 
-To use this catalog, you need access to NCI's Gadi. Check out our [Get Started with ACCESS at NCI](../model_evaluation_getting_started/index.md)   guide on how to get access.
+```py
+['iceh_XXXX_XX.1mon',
+ 'iceh_XXXX_XX_daily.1day',
+ 'ocean_budget.1yr',
+ 'ocean_daily.1day',
+ 'ocean_grid.fx',
+ 'ocean_month.1mon',
+ 'ocean_scalar.1mon',
+ 'ocean_scalar_snapshot.1day']
+```
 
-Once logged in to Gadi, you will need to add the `#!python access-nri-catalog` to your `#!python conda` environments and start an [ARE JupyterLab Session](https://are.nci.org.au/pun/sys/dashboard). Check out our [ACCESS-NRI Intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/getting_started/index.rst) guide  for the specific setup (note that you can only read in data from specific experiments if they are loaded through the *Storage* keyword).
-
-Once your JupyterLab session started, you can access the `#!python intake` catalog to load the data. Take a look at this [Tutorial](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/how_tos/example_usage.ipynb) .
-
-## Example Search with our intake catalog
-
-``` py
-# Impport packages for searching/loading/plotting
+The potential of the intake catalog can also be shown in this quick example (where we pretend that we have already searched for a specific datastore as part of NCI project `ik11`):
+```py
 import intake
 from distributed import Client
 import matplotlib.pyplot as plt
-
-# The search process is a 2-step one
-# Comparable with searching for a book in a library:
-# 1) You look for the right book/catalog sections
-# 2) You look for the right book/catalog in the these sections
-
-# Load the ACCES-NRI list of catalogs for available experiment data
-# Similar to an overview of library section
-access_nri_catalog_sections = intake.cat.access_nri
-
-# Perform a search for names, models, variables etc.
-example_section_search = access_nri_catalog_sections.search(name="cmip6_oi10")
-
-# Once you are sufficiently happy with your search, you can load the "section"
-catalog_sections = access_nri_catalog_sections.search(name="025deg_jra55_iaf_omip2_cycle1").to_source()
-# and start looking for the right catalogs of interest
-catalogs_of_interest = catalog_sections.search(filename="ocean_scalar.*")
-
-# Call the client that allows use load the data efficiently
 client = Client(threads_per_worker=1)
 client.dashboard_link
 
-# Actually load the data
-experiment_data = catalogs_of_interest.to_dataset_dict(progressbar=False)
+# Load intake catalog and filter for specific datastore
+catalog = intake.cat.access_nri
+# Here you could include your search for a specific datastore. We assume that we were looking for this specific one:
+esm_datastore = catalog["025deg_jra55_iaf_omip2_cycle1"]
+esm_datastore_filtered = esm_datastore.search(variable="temp_global_ave")
 
-# Et voilà, you have loaded the data and can start plotting
-experiment_data["ocean_scalar_snapshot.1day"]["temp_global_ave"].plot(label="daily")
-experiment_data["ocean_scalar.1mon"]["temp_global_ave"].plot(label="monthly")
-_ = plt.legend()
+# Load datastore
+dataset_dict = esm_datastore_filtered.to_dataset_dict(progressbar=False)
+
+# Plot a timeseries of global average temperatures
+dataset_dict["ocean_scalar_snapshot.1day"]["temp_global_ave"].plot(label="daily")
+dataset_dict["ocean_scalar.1mon"]["temp_global_ave"].plot(label="monthly")
+plt.title("")
+plt.legend()
+plt.grid()
 ```
+
+<div style="text-align: center;">
+    <img src="../../assets/model_evaluation/intake_example.png" alt="Plot af timeseries of global average temperatures" width="50%"/>
+</div>
