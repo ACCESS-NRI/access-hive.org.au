@@ -4,8 +4,8 @@ site_name: ACCESS-Hive
 # then used to create the sitemap for search engine indexing
 site_url: https://access-hive.org.au
 # Git repository
-repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
-repo_name: ACCESS-Hive
+# repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
+# repo_name: ACCESS-Hive
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs
 docs_dir: docs
@@ -172,7 +172,7 @@ nav:
     #   - NCI Training: community_resources/training/nci-training.md
     #   - Additional Training: community_resources/training/additional_training.md
     
-  - Community Forum: https://forum.access-hive.org.au
+  # - Community Forum: https://forum.access-hive.org.au
 
   - About:
     - Contact: about/contact.md
@@ -200,8 +200,7 @@ extra:
 
 extra_css:
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
-  - fontawesome-free-6.4.0-web/css/fontawesome.css
-  - fontawesome-free-6.4.0-web/css/solid.css
+  - fontawesome-free-6.4.0-web/css/all.css
   - fontello/css/fontello-codes.css
   - fontello/css/fontello-ie7-codes.css
   - fontello/css/fontello-ie7.css
