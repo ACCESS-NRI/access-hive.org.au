@@ -135,7 +135,7 @@ nav:
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-      - Model Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
+      - Data Format and Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
         # - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
         # - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
     - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
