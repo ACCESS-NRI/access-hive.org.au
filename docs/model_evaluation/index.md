@@ -67,6 +67,12 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
     </a>
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card default-text-color">
+        <div class="squared-card-image-container">
+            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
+        </div>
+        <div class="squared-card-text-container bold">METplus</div>
+    </a>
 </div>
 
 

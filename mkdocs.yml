@@ -149,6 +149,7 @@ nav:
       - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
       - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
       - COSIMA cookbook: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+      - METplus: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_metplus.md
       # - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
       # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
