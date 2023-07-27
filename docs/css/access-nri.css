@@ -457,6 +457,13 @@ h3 {
   transition-duration: 0.4s;
 }
 
+.aspect1to2-card {
+  flex-direction: column;
+  max-width: 30%;
+  min-width: 20%;
+  aspect-ratio: 2;
+}
+
 .squared-card {
   flex-direction: column;
   max-width: 30%;
