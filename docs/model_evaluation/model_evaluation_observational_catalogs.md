@@ -5,8 +5,8 @@ We are working in cooperation with NCI to currate observational data collections
 You can search the available data collections on the NCI Data Collections website:
 
 <div class="card-container">
-    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank" class="squared-card default-text-color">
-        <div class="aspect1to2-card-image">
+    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank" class="aspect1to2-card default-text-color">
+        <div class="squared-card-image">
             <img src="../../assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections"></img>
         </div>
         <div class="squared-card-text bold">NCI Data Collections</div>
