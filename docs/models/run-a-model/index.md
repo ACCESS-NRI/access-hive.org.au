@@ -1,8 +1,7 @@
 # <div class="highlight-bg">Run a Model</div>
-If you are new to climate science or ACCESS Models, check [how to get started](../../../get_started).
+If you are a new user of ACCESS climate models, please refer to the [Get Started](../../../get_started) section.
 
-If you are not sure which ACCESS Model is the right one for your needs, check out our
-[ACCESS Models overview](../).
+If you are unsure which ACCESS model is the right choice for your experiment, take a look at the overview of [ACCESS Models](../).
 
 <div class="card-container">
     <a href="run-access-am" class="squared-card default-text-color">

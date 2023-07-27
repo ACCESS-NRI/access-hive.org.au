@@ -2,33 +2,31 @@
 <!-- # <span class="highlight-bg"> Run {{ model }} </span> -->
 # <span class="highlight-bg"> Run {{ model }} </span>
 ## <span>Requirements</span>
-Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
-
 ### <span>General requirements</span>
-For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
+Before running {{ model }}, you need to fulfil general requirements outlined in the [Get Started](../../../get_started) section, e.g. obtain an NCI account, etc.
 
 ### <span>Model-specific requirements</span>
 <ul>
     <li>
-        <b>Join the <i>access</i> project at NCI</i></b>
+        <b>Join the <i>access</i> project at NCI</i></b> 
         <br>
-        To join the <i>access</i> project at NCI, request membership for it on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access</a> NCI project page.
+        You need to request membership of the <i>access</i> project on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access NCI project</a> page.
         <br>
         For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
     <li>
-        <b>Connection to <i>accessdev</i></b>
+        <b>Connect to <i>accessdev</i></b>
         <br>
-        To run {{ model }} you need the connection to <a href="https://accessdev.nci.org.au/trac/wiki" target="_blank"><i>accessdev</i></a>, an NCI server providing configuration and run control for {{ model }}.
+        To run {{ model }}, you need to connect to <a href="https://accessdev.nci.org.au/trac/wiki" target="_blank"><i>accessdev</i></a>. This is an NCI server providing configuration and run control for {{ model }}.
         <br>
-        Also, you need to make sure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
+        You also need to ensure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
         <br>
-        To complete these steps, you can follow the guides on <a href="">SSH connections on <i>accessdev</i></a>.
+        To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
     </li>
     <li>
         <b>Get a <i>MOSRS</i> account</i></b>
         <br>
-        The <a href="https://code.metoffice.gov.uk">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations, which contains the source code and configurations of some of the components used by {{ model }} (for example the <a href="../model_components/atmosphere/#the-unified-model-um">UM</a>).
+        The <a href="https://code.metoffice.gov.uk">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }}, e.g. the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>.
         <br>
         To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
     </li>
@@ -36,21 +34,23 @@ For the general requirements needed to run all ACCESS models, please refer to th
 
 --------------------------------------------
 ## Get {{ model }} suite
-{{ model }} is a set of submodels (e.g. UM, MOM, CICE, CABLE, OASIS) with a range of model parameters, input data, and computer related information, that need to be packaged together as a <i>suite</i> in order to run.
+{{ model }} comprises the model components <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
 <br>
-Each {{ model }} suite has an ID, in the format <code>u-&lt;suite-name&gt;</code>, with <code>&lt;suite-name&gt;</code> being a unique identifier (e.g. <code>u-br565</code> is the CMIP6 release preindustrial experiment suite).
+Each {{ model }} suite has an ID in the format <code>u-&lt;suite-name&gt;</code>, where <code>&lt;suite-name&gt;</code> is a unique identifier. For example, <code>u-br565</code> is the CMIP6-release preindustrial experiment suite.
 <br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
 ### Copy {{ model }} suite with Rosie
-<a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options to work with {{ model }} suites.
+<a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options specific for {{ model }} suites.
 <br>
-To copy an existing suite, on <i>accessdev</i>:
+To copy an existing suite on <i>accessdev</i>:
 <ol>
     <li>
-        Run
+        <b>MOSRS authentication</b>
+        <br>
+        To authenticate using your <i>MOSRS</i> credentials, run:
         <pre><code>mosrs-auth</code></pre> 
-        to authenticate using your <i>MOSRS</i> credentials:
+        
         <terminal-animation>
             <terminal-line data="input">mosrs-auth</terminal-line>
             <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
@@ -58,38 +58,52 @@ To copy an existing suite, on <i>accessdev</i>:
         </terminal-animation>
     </li>
     <li>
-        Run 
-        <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
-        to create a local copy of the <code>&lt;suite-ID&gt;</code> from the UKMO repository (used mostly for testing and examining existing suites):
-        <terminal-animation>
-            <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
-            <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
-            <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
-        </terminal-animation>
-        Alternatively, run 
-        <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
-        to create a new full copy (local and remote in the UKMO repository) rather than just a local copy. When a new suite is created in this way, a new unique name is generated within the repository, and populated with some descriptive information about the suite along with all the initial configuration details:
-        <terminal-animation class="termynal">
-            <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
-            <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
-            <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
-            <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
-            <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
-        </terminal-animation>
+        <b>Copy a suite</b>
+        <br>
+        <ul>
+            <li>
+                <i>Local-only copy</i>
+                <br>
+                To create a <i>local copy</i> of the <code>&lt;suite-ID&gt;</code> from the UKMO repository, run:
+                <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
+                
+                <terminal-animation>
+                    <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
+                    <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
+                    <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
+                </terminal-animation>
+                This option is mostly used for testing and examining existing suites.
+            </li>
+            <li>
+                <i>Remote and local copy</i>
+                <br> 
+                Alternatively, to create a new copy of an existing suite, both <i>locally and remotely</i> in the UKMO repository, run: 
+                <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
+                When a new suite is created in this way, a new unique name is generated within the repository and populated with descriptive information about the suite along with its initial configuration details:
+                <terminal-animation class="termynal">
+                    <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
+                    <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
+                    <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
+                    <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
+                    <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
+                </terminal-animation>
+            </li>
+        </ul>
     </li>
 </ol>
+
 For additional <code>rosie</code> options, run 
 <pre><code>rosie help</code></pre>
 <br>
-The suites are created in the user's <i>accessdev</i> home directory, under <code>~/roses/&lt;suite-ID&gt;</code>.
+The suites are created in the user's <i>accessdev</i> home directory under <code>~/roses/&lt;suite-ID&gt;</code>.
 <br>
-The suite directory usually contains 2 subdirectories and 3 files:
+The suite directory usually contains two subdirectories and three files:
 <ul>
     <li><code>app</code> &rarr; directory containing the configuration files for the various tasks within the suite.</li>
     <li><code>meta</code> &rarr; directory containing the GUI metadata.</li>
-    <li><code>rose-suite.conf</code> &rarr; the main suite configuration file.</li>
+    <li><code>rose-suite.conf</code> &rarr; main suite configuration file.</li>
     <li><code>rose-suite.info</code> &rarr; suite information file.</li>
-    <li><code>suite.rc</code> &rarr; the <i>Cylc</i> control script file (Jinja2 language).</li>
+    <li><code>suite.rc</code> &rarr; <i>Cylc</i> control script file (Jinja2 language).</li>
     <terminal-animation>
         <terminal-line data="input">ls ~/roses/&lt;suite-ID&gt;</terminal-line>
         <terminal-line class="ls-output-format">app meta rose-suite.conf rose-suite.info suite.rc</terminal-line>
@@ -101,14 +115,13 @@ The suite directory usually contains 2 subdirectories and 3 files:
 
 ### Rose
 <a href = "http://metomi.github.io/rose/doc/html/index.html" target="_blank">Rose</a> is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
-<br>
-To edit a suite configuration, on <i>accessdev</i>:
-From inside the relevant suite directory (e.g. <code>~/roses/&lt;suite-ID&gt;</code>), run 
+<br> 
+From within the relevant suite directory <code>~/roses/&lt;suite-ID&gt;</code>, run:
 <pre><code>rose edit &</code></pre> 
-to open the <i>Rose</i> GUI and inspect the suite information.
+to open the <i>Rose</i> GUI to view and/ or edit a suite configuration on <i>accessdev</i>.
 <br>
 <div class="note">
-    The <code>&</code> is optional and keeps the terminal prompt active while runs the GUI as a separate process.
+    The <code>&</code> is optional. It keeps the terminal prompt active while running the <i>Rose</i> GUI as a separate process in the background.
 </div>
 <terminal-animation>
     <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
@@ -119,21 +132,19 @@ to open the <i>Rose</i> GUI and inspect the suite information.
 </terminal-animation>
 
 ### Change NCI project
-To make sure we run the suite under the NCI project we belong to, we can navigate to <i>suite conf &rarr; Machine and Runtime Options</i>, edit the <i>Compute project</i> field, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. (Check <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> if you have not joined one yet).
+To ensure that your suite is run under the correct NCI project for which you are a member of, navigate to <i>suite conf &rarr; Machine and Runtime Options</i> and edit the <i>Compute project</i> field. Don't forget to click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. (If you have not yet joined a project, check out <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> ).
 <br>
-For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), we will insert <code>tm70</code> in the <i>Compute project</i> field:
+For example, to run an {{ model }} suite under the <code>tm70</code> project (ACCESS-NRI), insert <code>tm70</code> in the <i>Compute project</i> field:
 <br>
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
 <div class="note">
-    You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
+    To be able to run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check how to <a href="../../../get_started/#join-relevant-nci-projects">Join relevant NCI projects</a>.
 </div>
 
 ### Change run length and cycling frequency
-{{ model }} suites are often run in multiple steps, each of them constituting a cycle, with the job scheduler resubmitting the suite every chosen <i>Cycling frequency</i>, until the <i>Total Run length</i> is met.
+{{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen <i>Cycling frequency</i> until the <i>Total Run length</i> is reached.
 <br>
-To modify these parameters, we can navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective fields, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. The values are in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
-<br>
-If, for example, we want to run the suite for a total of 50 Years, and resubmit every year, we will change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code>. Note that the current maximum <i>Cycling frequency</i> is 2 years:
+To modify these parameters, navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>. Edit the respective fields, which are in <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. For example, to run a suite for a total of 50 years with a 1-year job resubmission, change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code>. Note that the current maximum <i>Cycling frequency</i> is 2 years:
 <br>
 <img src="../../../assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img"/>
 
