@@ -12,7 +12,7 @@ ACCESS-NRI strives for comparable model outputs for easily model evaulation.
 
 We therefore support projects like the Coupled Model Intercomparison Projects (CMIP) and the use of common data formats and variables.
 
-## 1 Our Data Format: Network Common Data Format (NetCDF)
+## 1 Network Common Data Format (NetCDF)
 
 Many organizations and scientific groups in different countries have adopted a data format called [NetCDF](https://www.unidata.ucar.edu/software/NetCDF/) by the Unidata Community as a standard way to represent some forms of scientific data.
 
@@ -36,7 +36,7 @@ To facilitate this process, there are conventions for CF (Climate and Forecast) 
 
 The data in a netCDF file is stored in the form of arrays. For example, temperature varying over time at a location is stored as a one-dimensional array. Temperature over an area for a given time is stored as a two-dimensional array. Three-dimensional (3D) data, like temperature over an area varying with time, or four-dimensional (4D) data, like temperature over an area varying with time and altitude, is stored as a series of two-dimensional arrays.
 
-## 2 Model Variables
+## 2 Common Variables
 
 Using common variables is key for a united climate modelling community. While we are trying to bring together modellers from different communities, we understand that the variables used for climate modelling may differ for historical reasons. Here, we are collating lists of different widely used variable formats.
 
