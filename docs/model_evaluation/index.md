@@ -50,19 +50,19 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
 
 <div class="card-container">
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
+        <div class="docs/model_evaluation/model_evaluation_on_gadi/index.md-card-image-container">
             <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
         </div>
         <div class="squared-card-text-container bold">ILAMB</div>
     </a>
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
+        <div class="docs/model_evaluation/model_evaluation_on_gadi/index.md-card-image-container">
             <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
         </div>
         <div class="squared-card-text-container bold">ESMValTool</div>
     </a>
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
+        <div class="docs/model_evaluation/model_evaluation_on_gadi/index.md-card-image-container">
             <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
