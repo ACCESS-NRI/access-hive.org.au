@@ -54,6 +54,8 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
     ![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
 
+- When creating a pull request (PR) please also assign a reviewer to avoid delays. For technical content please assign an expert reviewer.
+
 # License
 The ACCESS-Hive site is covered by [the CC-BY 4.0 license][License].
 
