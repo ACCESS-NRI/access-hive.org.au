@@ -28,7 +28,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
     `git pull`
 
-- Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy-release`. 
+- Once the latest version of `development` branch is pulled locally, create a new branch, for instance, `dev/jasmeen/legacy-release` from `development` branch. 
 
 - Use the following two commands to create a new branch and push it to github respectively:
 
