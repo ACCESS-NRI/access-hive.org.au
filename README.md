@@ -24,8 +24,8 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
     `git switch development`     
 
-    OR...
-
+    __**or**__
+  
     If using VSCode, change the current branch selected to `development` branch in the bottom right tab (as in the below screenshot): 
 
     ![Screenshot 2023-07-28 at 10 14 39 am](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/aa1c5281-2298-41d6-8ac1-adc478d72a58)
