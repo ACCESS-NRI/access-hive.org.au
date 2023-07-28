@@ -16,11 +16,17 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
 - Pull the latest version of `development` branch locally by using the following commands:
 
-    `git fetch`    > Fetch all remote branches from github
- 
-    `git switch development`     > Switch to the `development` branch
+    > Fetch all remote branches from github:
 
-    `git pull`      > Pull latest remote changes on the `development` branch locally 
+    `git fetch`
+    
+    > Switch to the `development` branch locally:
+
+    `git switch development`     
+
+    > Pull the latest changes on the `development` branch: 
+
+    `git pull`
 
 - If using VSCode, make sure the `development` branch is currently selected at the bottom right branch tab.
 
