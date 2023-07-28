@@ -14,51 +14,27 @@ The ACCESS-NRI intake catalog aims to provide a way for Python users to discover
 
 The ACCESS-NRI catalog is essentially a table of climate data products that exist on Gadi. Each entry in the table corresponds to a different product, and the columns contain attributes associated with each product–things like the models, frequencies and variables available. Users can search on the attributes to find the products that might be useful to them. For example, a user might want to know which data products contain variables X, Y and Z at monthly frequency. The ACCESS-NRI catalog enables users to find products that satisfy their query and to subsequently load their data without having to know the location and structure of the underlying files.
 
-## Showcase: Search with intake to easily load and plot data
+## Showcase: use intake to easily find, load and plot data
 
-```py
+In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an ACCESS-OM2 run called "025deg_jra55_iaf_omip2_cycle1".
+
+First we load the catalog using
+
+```python
 import intake
 catalog = intake.cat.access_nri
 ```
-You can then search for a model, variable, frequency and more across all the project that we provide support for on Gadi:
-```py
-catalog_filtered = catalog.search(name="cmip6_oi10", variable="burntFractionAll")
-```
-You can then easily load this particular datastore and look at its metadata or keywords
-```py
-esm_datastore = catalog_filtered.to_source()
-esm_datastore.keys()
-```
 
-```py
-['iceh_XXXX_XX.1mon',
- 'iceh_XXXX_XX_daily.1day',
- 'ocean_budget.1yr',
- 'ocean_daily.1day',
- 'ocean_grid.fx',
- 'ocean_month.1mon',
- 'ocean_scalar.1mon',
- 'ocean_scalar_snapshot.1day']
-```
+Now we can load and plot available datasets of the variable "temp_global_ave" from the product "025deg_jra55_iaf_omip2_cycle1" using
 
-The potential of the intake catalog can also be shown in this quick example (where we pretend that we have already searched for a specific datastore as part of NCI project `ik11`):
-```py
-import intake
-from distributed import Client
+```python
 import matplotlib.pyplot as plt
-client = Client(threads_per_worker=1)
-client.dashboard_link
 
-# Load intake catalog and filter for specific datastore
-catalog = intake.cat.access_nri
-# Here you could include your search for a specific datastore. We assume that we were looking for this specific one:
-esm_datastore = catalog["025deg_jra55_iaf_omip2_cycle1"]
-esm_datastore_filtered = esm_datastore.search(variable="temp_global_ave")
+dataset_dict = catalog["025deg_jra55_iaf_omip2_cycle1"].search(
+    variable="temp_global_ave"
+).to_dataset_dict()
 
-# Load datastore
-dataset_dict = esm_datastore_filtered.to_dataset_dict(progressbar=False)
-
-# Plot a timeseries of global average temperatures
+# `dataset_dict` contains two xarray Datasets, one at daily frequency and one at monthly
 dataset_dict["ocean_scalar_snapshot.1day"]["temp_global_ave"].plot(label="daily")
 dataset_dict["ocean_scalar.1mon"]["temp_global_ave"].plot(label="monthly")
 plt.title("")
