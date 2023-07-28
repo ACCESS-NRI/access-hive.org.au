@@ -16,7 +16,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
 - Pull the latest version of `development` branch locally by using the following commands:
 
-    > Fetch all remote branches from github:
+    > Fetch the remote branches from github:
 
     `git fetch`
     
