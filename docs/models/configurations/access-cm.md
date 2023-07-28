@@ -6,7 +6,7 @@ The ACCESS Coupled Model (ACCESS-CM) is a fully-coupled global climate model tha
 
 ACCESS-NRI will release supported ACCESS-CM configurations.  The first release of ACCESS-CM will be derived from the [CSIRO ACCESS-CM2 configuration](#access-cm2) and will include [atmosphere], [land], [ocean] and [sea ice] components.
 
-<img src="../../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
+<img src="../../../assets/model-config-logos/configurations-without-titles/access-cm.png" alt="ACCESS CM model" class="image-background center-img with-border with-padding"></img>
 
 ## <div class="center-icons"> [ACCESS-CM2]  </div>
 
