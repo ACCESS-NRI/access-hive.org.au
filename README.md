@@ -15,7 +15,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 # How to Contribute [Draft]
 - Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy-release`. 
 
-- Use the following commands to download contents from remote branches locally, switch to the `development` branch and then, pulling the latest changes from remote repository respectively:
+- For pulling the latest version of `development` branch locally, switch to the `development` branch and pull the latest changes from remote repository respectively:
 
     `git fetch`
 
