@@ -24,13 +24,16 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
     `git switch development`     
 
-    > Pull the latest changes on the `development` branch: 
+    OR...
+
+    If using VSCode, change the current branch selected to `development` branch in the bottom right tab (as in the below screenshot): 
+
+    ![Screenshot 2023-07-28 at 10 14 39 am](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/aa1c5281-2298-41d6-8ac1-adc478d72a58)
+
+- Pull the latest changes on the `development` branch: 
 
     `git pull`
 
-- If using VSCode, make sure the `development` branch is currently selected at the bottom right branch tab.
-
-![Screenshot 2023-07-28 at 10 14 39 am](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/aa1c5281-2298-41d6-8ac1-adc478d72a58)
 
 - Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy-release`. 
 
@@ -58,7 +61,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
 - Once the changes on the local branch `dev/jasmeen/legacy-release` is ready to be integrated with the `development` branch, create a pull request on github by changing the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
 
-![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
+    ![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
 
 # License
 The ACCESS-Hive site is covered by [the CC-BY 4.0 license][License].
