@@ -77,9 +77,8 @@ To copy an existing suite on <i>accessdev</i>:
             <li>
                 <i>Remote and local copy</i>
                 <br> 
-                Alternatively, to create a new copy of an existing suite, both <i>locally and remotely</i> in the UKMO repository, run: 
+                Alternatively, to create a new copy of an existing <code>&lt;suite-ID&gt;</code> both <i>locally and remotely</i> in the UKMO repository, run: 
                 <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
-                When a new suite is created in this way, a new unique name is generated within the repository and populated with descriptive information about the suite along with its initial configuration details:
                 <terminal-animation class="termynal">
                     <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
                     <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
@@ -87,19 +86,18 @@ To copy an existing suite on <i>accessdev</i>:
                     <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
                     <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
                 </terminal-animation>
+                When a new suite is created in this way, a <i>unique</i> <code>&lt;suite-ID&gt;</code> is generated within the repository and populated with descriptive information about the suite and its initial configuration.
             </li>
         </ul>
     </li>
 </ol>
 
-For additional <code>rosie</code> options, run 
+For additional <code>rosie</code> options, run:
 <pre><code>rosie help</code></pre>
 <br>
-The suites are created in the user's <i>accessdev</i> home directory under <code>~/roses/&lt;suite-ID&gt;</code>.
-<br>
-The suite directory usually contains two subdirectories and three files:
+Suites are created in the user's home directory on <i>accessdev</i> in the <code>~/roses/&lt;suite-ID&gt;</code> directory. Each suite directory usually contains two subdirectories and three files:
 <ul>
-    <li><code>app</code> &rarr; directory containing the configuration files for the various tasks within the suite.</li>
+    <li><code>app</code> &rarr; directory containing the configuration files for various tasks within the suite.</li>
     <li><code>meta</code> &rarr; directory containing the GUI metadata.</li>
     <li><code>rose-suite.conf</code> &rarr; main suite configuration file.</li>
     <li><code>rose-suite.info</code> &rarr; suite information file.</li>
@@ -116,12 +114,11 @@ The suite directory usually contains two subdirectories and three files:
 ### Rose
 <a href = "http://metomi.github.io/rose/doc/html/index.html" target="_blank">Rose</a> is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
 <br> 
-From within the relevant suite directory <code>~/roses/&lt;suite-ID&gt;</code>, run:
-<pre><code>rose edit &</code></pre> 
-to open the <i>Rose</i> GUI to view and/ or edit a suite configuration on <i>accessdev</i>.
 <br>
+To open the <i>Rose</i> GUI to view/ edit a suite configuration on <i>accessdev</i>, run the following command from within the <code>~/roses/&lt;suite-ID&gt;</code> directory:
+<pre><code>rose edit &</code></pre> 
 <div class="note">
-    The <code>&</code> is optional. It keeps the terminal prompt active while running the <i>Rose</i> GUI as a separate process in the background.
+    The <code>&</code> is optional. It allows the terminal prompt to remain active while running the <i>Rose</i> GUI as a separate process in the background.
 </div>
 <terminal-animation>
     <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
@@ -132,30 +129,30 @@ to open the <i>Rose</i> GUI to view and/ or edit a suite configuration on <i>acc
 </terminal-animation>
 
 ### Change NCI project
-To ensure that your suite is run under the correct NCI project for which you are a member of, navigate to <i>suite conf &rarr; Machine and Runtime Options</i> and edit the <i>Compute project</i> field. Don't forget to click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. (If you have not yet joined a project, check out <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> ).
-<br>
-For example, to run an {{ model }} suite under the <code>tm70</code> project (ACCESS-NRI), insert <code>tm70</code> in the <i>Compute project</i> field:
-<br>
+To ensure that your suite is run under the correct NCI project for which you are a member,  edit the <i>Compute project</i> field in <i>suite conf &rarr; Machine and Runtime Options</i>, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
+<br> <br>
+E.g., to run an {{ model }} suite under the <code>tm70</code> project (ACCESS-NRI), enter <code>tm70</code> in the <i>Compute project</i> field:
+
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
 <div class="note">
-    To be able to run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check how to <a href="../../../get_started/#join-relevant-nci-projects">Join relevant NCI projects</a>.
+    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> and <a href="../../../get_started/#join-relevant-nci-projects">Join relevant NCI projects</a>.
 </div>
 
+
 ### Change run length and cycling frequency
-{{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen <i>Cycling frequency</i> until the <i>Total Run length</i> is reached.
+{{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen <i>Cycling frequency</i> until the <i>Total Run length</i> is reached. To modify these parameters, navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective fields (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>.
+<br> 
 <br>
-To modify these parameters, navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>. Edit the respective fields, which are in <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. For example, to run a suite for a total of 50 years with a 1-year job resubmission, change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code>. Note that the current maximum <i>Cycling frequency</i> is 2 years:
-<br>
+ E.g., to run a suite for a total of 50 years with a 1-year job resubmission, change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code> (the maximum <i>Cycling frequency</i> is currently two years):
+
 <img src="../../../assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img"/>
 
+
 ### Change wallclock time
-The <i>Wallclock time</i> is the time requested by the PBS job<!-- TO DO <a href="../getting-started/#pbs-jobs" target="_blank">PBS job</a> --> to run a single cycle. If this time is not enough for the suite to end its cycle, our job will be terminated before the suite can complete the run. 
+The <i>Wallclock time</i> is the time requested by the PBS job<!-- TO DO <a href="../getting-started/#pbs-jobs" target="_blank">PBS job</a> --> to run a single cycle. If this time is insufficient for the suite to complete a cycle, your job will be terminated before completing the run. Hence, if you change the <i>Cycling frequency</i>, you may also need to change the <i>Wallclock time</i> accordingly. While the time required for a suite to complete a cycle depends on several factors, a good estimation is 4 hours per simulated year.
 <br>
-If we change the <i>Cycling frequency</i>, we might need to change the <i>Wallclock time</i> accordingly. 
 <br>
-The time needed for the suite to run a full cycle depends on several factors, but a good estimation can be 4 hours per simulated year.
-<br>
-To modify the <i>Wallclock time</i>, we can navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective field, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. The value is in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format.
+To modify the <i>Wallclock time</i>, edit the respective field in <i>suite conf &rarr; Run Initialisation and Cycling</i> (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
 
 <!-- TO DO For more details on how to edit other suite parameters using Rose GUI, such as component configurations, output variables (STASH), or science settings, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide</a>. -->
 ----------------------------------------------------------------------------------------
@@ -163,22 +160,19 @@ To modify the <i>Wallclock time</i>, we can navigate to <i>suite conf &rarr; Run
 ## Run {{ model }} suite
 {{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission.
 <br>
-When the suite gets run, its configuration files are copied on <i>Gadi</i> under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>, and a symbolic link to this folder is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
+When the suite runs, its configuration files are copied on <i>Gadi</i> in <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> and a symbolic link to this directory is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
 <br>
-An {{ model }} suite is constituted by several tasks (such as checking out code repositories, compiling and building the different model components, running the model, etc.). The workflow of these tasks is controlled by <i>Cylc</i>.
+An {{ model }} suite comprises several tasks, such as checking out code repositories, compiling and building the different model components, running the model, etc. The workflow of these tasks is controlled by <i>Cylc</i>.
 
 ### Cylc
-<a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’), is a workflow manager that automatically executes tasks according to the model main cycle script <code>suite.rc</code>. <i>Cylc</i> deals with how the job will be run and manages the time steps of each submodel, as well as monitoring all the tasks and reporting any error that might occur.
+<a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’) is a workflow manager that automatically executes tasks according to the model's main cycle script <code>suite.rc</code>. <i>Cylc</i> controls how the job will be run and manages the time steps of each submodel. It also monitors all tasks, reporting any errors that may occur.
 <br>
-To run an {{ model }} suite, on <i>accessdev</i>:
+<br>
+To run an {{ model }} suite on <i>accessdev</i>, run the following command from inside the suite directory:
+<pre><code>rose suite-run</code></pre>
+
+After the initial tasks are executed, the <i>Cylc</i> GUI will open. You can now see and control the different tasks in the suite as they are run:
 <ol>
-    <li>
-        From inside the suite directory, run
-        <pre><code>rose suite-run</code></pre>
-    </li>
-    <li>
-        After the initial tasks get executed, the <i>Cylc</i> GUI will open up and you will be able to see and control all the different tasks in the suite as they are run:
-    </li>
     <terminal-animation lineDelay="50">
         <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
         <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run</terminal-line>
@@ -228,7 +222,7 @@ To run an {{ model }} suite, on <i>accessdev</i>:
         <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
     </terminal-animation>
     <div class="note">
-        If after you run the command <code>rose suite-run</code> you get an error similar to the following:
+        If you get an error similar to the following after running the command <code>rose suite-run</code>:
         <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
             <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
             <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_HOST=accessdev.nci.org.au
@@ -237,48 +231,46 @@ To run an {{ model }} suite, on <i>accessdev</i>:
             <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PROCESS=&lt;PID&gt; python2 /usr/local/cylc/cylc-7.8.3/bin/cylc-run &lt;suite-ID&gt;
             <span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?
         </code></pre>
-        you should run
+        you should run:
         <pre><code>rm /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact</code></pre>
         before running the <code>rose suite-run</code> command again.
     </div>
 </ol>
 You are done!!
 <br>
-If you don't get any errors, you will be able to check the suite output files after the run is complete.
 <br>
-Note that, at this stage, it is possible to close the <i>Cylc</i> GUI.
+If you don't get any errors, you can check the suite output files after the run is complete.
 <br>
-If you want to open it again, from inside the suite directory run
+You can now close the <i>Cylc</i> GUI. To open it again, run the following command from inside the suite directory: 
 <pre><code>rose suite-gcontrol</code></pre>
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
 ### Check for errors
-It is quite common, especially during the first few runs, to experience errors and job failures. An {{ model }} suite is constituted by several tasks, and each of these tasks could fail. When a task fails, the suite is halted and you will see a red icon next to the respective task name in the <i>Cylc</i> GUI. 
+It is quite common, especially during the first few runs, to experience errors and job failures. Running an {{ model }} suite involves the execution of several tasks, and any of these tasks could fail. When a task fails, the suite is halted and a red icon appears next to the respective task name in the <i>Cylc</i> GUI. 
 <br>
-To investigate the cause of a failure, we need to look at the logs (<code>job.err</code> and <code>job.out</code>) from the suite run. There are two main ways to do so:
-<ul>
+To investigate the cause of a failure, we need to look at the logs <code>job.err</code> and <code>job.out</code> from the suite run. There are two main ways to do so:
+<ol>
     <li>
         <b>Using the <i>Cylc</i> GUI</b>
         <br>
         Right-click on the task that failed and click on <i>View Job Logs (Viewer) &rarr; job.err</i> or <i>job.out</i>.
         <br>
-        To access the specific task you might have to click on the arrow next to the task, to extend the drop-down menu with all the sub-taks.
+        To access a specific task, click on the arrow next to the task to extend the drop-down menu with all the subtasks.
         <br>
         <img src="../../../assets/run_access_cm/investigate_error_gui.gif" alt="Investigate Error GUI" class="example-img"/>
     </li>
     <li>
         <b>Through the suite directory</b>
         <br>
-        The suite logs directories are stored inside <code>~/cylc-run/&lt;suite-ID&gt;</code> as <code>log.&lt;TIMESTAMP&gt;</code>, with the lastest set of logs also symlinked in the <code>~/cylc-run/&lt;suite-ID&gt;/log</code> directory.
+        The suite's log directories are stored in <code>~/cylc-run/&lt;suite-ID&gt;</code> as <code>log.&lt;TIMESTAMP&gt;</code>, and the lastest set of logs are also symlinked in the <code>~/cylc-run/&lt;suite-ID&gt;/log</code> directory.
         <br>
-        The logs for the main job are inside the <code>~/cylc-run/&lt;suite-ID&gt;/log/job</code> directory.
+        The logs for the main job can be found in the <code>~/cylc-run/&lt;suite-ID&gt;/log/job</code> directory.
         <br>
-        Logs are separated into simulation cycles through their starting dates, and then differentiated by task.
+        Logs are separated into simulation cycles according to their starting dates, and then differentiated by task. They are then further separated into "attempts" (consecutive failed/successful tasks), where <code>NN</code> is a symlink to the most recent attempt.
         <br>
-        They are then further separated into "attempts" (consecutive failed/successful tasks), with <code>NN</code> being a symlink to the most recent attempt.
         <br>
-        In our example, the failure occurred for the <i>09500101</i> simulation cycle (starting date on 1st January 950) in the <i>coupled</i> task. Therefore, the directory where to find the <code>job.err</code> and <code>job.out</code> files is <code>~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/coupled/NN</code>.
+        E.g., a failure occurred for the <i>09500101</i> simulation cycle (i.e. 1st January 950 starting date) in the <i>coupled</i> task. Hence, the <code>job.err</code> and <code>job.out</code> files can be found in the <code>~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/coupled/NN</code> directory.
         <terminal-animation>
             <terminal-line data="input">cd ~/cylc-run/&lt;suite-ID&gt;</terminal-line>
             <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;">ls</terminal-line>
@@ -300,17 +292,17 @@ To investigate the cause of a failure, we need to look at the logs (<code>job.er
             <terminal-line class="ls-output-format">job job-activity.log job.err job.out job.status</terminal-line>
         </terminal-animation>
     </li>
-</ul>
+</ol>
 ----------------------------------------------------------------------------------------
 
 ## Stop, restart and reload suites
-Sometimes, you may want to control the running state of a suite.
+In some cases, you may want to control the running state of a suite.
 <br>
 If your <i>Cylc</i> GUI has been closed and you are unsure whether your suite is still running, you can scan for active suites and reopen the GUI if desired.
 <br>
-To scan for active suites run
+To scan for active suites, run:
 <pre><code>cylc scan</code></pre>
-To reopen the <i>Cylc</i> GUI, from inside the suite directory run
+To reopen the <i>Cylc</i> GUI, run the following command from inside the suite directory:
 <pre><code>rose suite-gcontrol</code></pre>
 <terminal-animation>
     <terminal-line data="input">cylc scan</terminal-line>
@@ -321,30 +313,28 @@ To reopen the <i>Cylc</i> GUI, from inside the suite directory run
 </terminal-animation>
 
 ### STOP a suite
-To shutdown a suite in a safe manner, from inside the suite directory run
+To shutdown a suite in a safe manner, run the following command from inside the suite directory:
 <pre><code>rose suite-stop -y</code></pre>
 Alternatively, you can directly kill the PBS job(s) connected to your run. To do so:
 <ol>
     <li>
-        Check the status of all your PBS jobs by running
+        Check the status of all your PBS jobs:
         <pre><code>qstat -u $USER</code></pre>
     </li>
     <li>
-        Delete any job related to your run with
+        Delete any job related to your run:
         <pre><code>qdel &lt;job-ID&gt;</code></pre>
     </li>
 </ol>
 
 ### RESTART a suite
 There are two main ways to restart a suite:
-<ul>
+<ol>
     <li>
         <b>'SOFT' restart</b>
         <br>
-        From inside the suite directory, run 
+        From inside the suite directory, run: 
         <pre><code>rose suite-run --restart</code></pre>
-        to re-install the suite and reopen <i>Cylc</i> in the same state as when it was stopped (you may need to manually trigger failed tasks from the <i>Cylc</i> GUI).
-        <br>
         <terminal-animation lineDelay="50">
             <terminal-line data="input" lineDelay="300">cylc</terminal-line>
             <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
@@ -378,38 +368,40 @@ There are two main ways to restart a suite:
             <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
             <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
         </terminal-animation>
+
+        To reinstall the suite and reopen <i>Cylc</i> in the same state it was prior to being stopped, you may need to manually trigger failed tasks from the <i>Cylc</i> GUI.
     </li>
+    <br>  
     <li>
         <b>'HARD' restart</b>
         <br>
-        From inside the suite directory, run
+        To overwrite any previous runs of the suite and start afresh, run the following command from within the suite directory:
         <pre><code>rose suite-run --new</code></pre>
-        if you want to overwrite any previous runs of the suite and begin completely afresh (WARNING!! This will overwrite all existing model output and logs for the same suite).
+        WARNING!! This will overwrite all existing model output and logs for the same suite.
     </li>
-</ul>
+</ol>
 
 ### RELOAD a suite
-In some cases the suite needs to be updated without necessarily having to stop it (e.g. after fixing a typo in a file). Updating an active suite is called a 'reload', where the suite is 're-installed' and <i>Cylc</i> is updated with the changes (this is similar to a 'soft' restart, but with the new changes installed, so you may need to manually trigger failed tasks from the <i>Cylc</i> GUI).
+In some cases the suite needs to be updated without necessarily having to stop it, e.g., after fixing a typo in a file. Updating an active suite is called a 'reload', where the suite is 're-installed' and <i>Cylc</i> is updated with the changes. This is similar to a 'soft' restart, except new changes are installed, so you may need to manually trigger failed tasks from the <i>Cylc</i> GUI.
 <br>
-To reload a suite, from inside the suite directory run
+<br>
+To reload a suite, run the following command from within the suite directory:
 <pre><code>rose suite-run --reload</code></pre>
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} output files
-All {{ model }} output files (as well as work files) are available on <i>Gadi</i> under <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> (also symlinked in <code>~/cylc-run/&lt;suite-ID&gt;</code>).
+All {{ model }} output files, together with work files, are available on <i>Gadi</i> in the directory <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code>. They are also symlinked in <code>~/cylc-run/&lt;suite-ID&gt;</code>.
 <br>
-While the suite is running, files move between the <code>share</code> and the <code>work</code> directories.
+While the suite is running, files are moved between the <code>share</code> and <code>work</code> directories.
 <br>
-At the end of each cycle, model output data and restart files are moved to <code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;</code>. 
-<br>
-This directory contains 2 subdirectories:
-<ul>
+At the end of each cycle, model output data and restart files are moved to <code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;</code>. This directory contains two subdirectories:
+<ol>
     <li><code>history</code></li>
     <li><code>restart</code></li>
-</ul>
+</ol>
 
 ### Output data
-<code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/history</code> is the directory where the model output data is found, separated for each model component:
+<code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/history</code> is the directory containing the model output data, which is separated according to each model component:
 <ul>
     <li>
     <code>atm</code> &rarr; atmosphere (UM)
@@ -424,9 +416,9 @@ This directory contains 2 subdirectories:
     <code>ice</code> &rarr; ice (CICE)
     </li>
 </ul>
-For the atmospheric output data, each file it is usually a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a> or netCDF file, formatted as <code>&lt;suite-name&gt;a.p&lt;output-stream-identifier&gt;&lt;year&gt;&lt;month-string&gt;</code>.
+For the atmospheric output data, the files are typically a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a> or netCDF file, formatted as <code>&lt;suite-name&gt;a.p&lt;output-stream-identifier&gt;&lt;year&gt;&lt;month-string&gt;</code>.
 <br>
-In the case of the <code>u-br565</code> suite we will have:
+E.g., for the <code>u-br565</code> suite, the <code>atm</code> directory contains the following files:
 <terminal-animation>
     <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
     <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
@@ -441,19 +433,17 @@ In the case of the <code>u-br565</code> suite we will have:
 For more details on how to control different output variables (STASH), and output streams, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
 
 ### Restart files
-<code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/restart</code> is the directory where the restart dumps are found, subdivided for each model component (see <code>history</code> folder above).
+The restart files can be found in the <code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/restart</code> directory, where they are categorised according to model components (similar to the <code>history</code> folder above).
 <br>
-For the atmospheric restart files, each of them is a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;suite-name&gt;a.da&lt;year&gt;&lt;month&gt;&lt;day&gt;_00</code>.
-<br>
-In the directory there are also some files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;day&gt;</code> containing metadata information.
+The atmospheric restart files, which are <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfiles</a>, are formatted as <code>&lt;suite-name&gt;a.da&lt;year&gt;&lt;month&gt;&lt;day&gt;_00</code>. 
 <!-- <br>
 For more details on how to control the frequency and formatting of restart dumps, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
-<br>
-In the case of the <code>u-br565</code> suite we will have:
+E.g., for the <code>u-br565</code> suite, the <code>atm</code> directory contains:
 <terminal-animation>
     <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565/restart/atm</terminal-line>
     <terminal-line class="ls-output-format">br565a.da09500201_00 br565a.da09510101_00 br565.xhist-09500131 br565.xhist-09501231 </terminal-line>
 </terminal-animation>
+Files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;day&gt;</code> contain metadata information.
 
 <br>
 <h6>References</h6>
