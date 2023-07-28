@@ -39,7 +39,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
   This would make sure that the local branch `dev/jasmeen/legacy-release` is always in sync with the `development` branch, which is updated with PRs regularly. 
 
-- Once the changes on the local branch `dev/jasmeen/legacy-release` is ready to be integrated with the `development` branch, create a pull request on github for merging into the `development` branch. If not already, might need to change the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
+- Once the changes on the local branch `dev/jasmeen/legacy-release` is ready to be integrated with the `development` branch, create a pull request on github by changing the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
 
 ![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
 
