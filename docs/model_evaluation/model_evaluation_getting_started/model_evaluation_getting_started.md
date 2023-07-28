@@ -1,10 +1,10 @@
 # Model Evaluation Environment at NIC's Gadi
 
-At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to Gadi at NCI](../../get_started/index.md).
+At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to NCI's Gadi](../../get_started/index.md).
 
 Here we describe the additional information to get started with model evaluation that is supported by ACCESS-NRI.
 
-???+ warning "ACCESS-NRI provides support and code, but not computing resources"
+???+ warning "ACCESS-NRI provides code and support, but not computing resources"
     You do not automatically have access to all of Gadi's storage at `/g/data/`, but need to be part of a `$PROJECT` to see files at `/g/data/$PROJECT`. Furthermore, if you use Gadi's job submission system PBS (Portable Batch System), you need to add the relevant storage to the `#PBS -l storage=gdata/xp65+gdata/kj13` (if you want the job to have access to `xp65` and `kj13` in this example).
 
 ## 1 `access-med`: Our currated `conda` environment on Gadi
