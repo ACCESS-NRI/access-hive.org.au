@@ -44,7 +44,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
     `git push`
   
-- While working locally on the branch, please make sure to regularly pull the changes from the `development` branch into your branch, using the command:
+- While working locally on the branch, please make sure to regularly pull changes from remote `development` branch into your branch, using the command:
 
     `git pull origin development`
 
