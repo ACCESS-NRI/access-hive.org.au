@@ -13,19 +13,20 @@ https://access-hive.org.au/
 If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
 # How to Contribute [Draft]
-- Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy-release`. 
 
-- For pulling the latest version of `development` branch locally, switch to the `development` branch and pull the latest changes from remote repository respectively:
+- Pull the latest version of `development` branch locally by using the following commands:
 
-    `git fetch`
+    `git fetch`    > Fetch all remote branches from github
+ 
+    `git switch development`     > Switch to the `development` branch
 
-    `git switch development`
-
-    `git pull`
+    `git pull`      > Pull latest remote changes on the `development` branch locally 
 
 - If using VSCode, make sure the `development` branch is currently selected at the bottom right branch tab.
 
 ![Screenshot 2023-07-28 at 10 14 39 am](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/aa1c5281-2298-41d6-8ac1-adc478d72a58)
+
+- Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy-release`. 
 
 - Use the following two commands to create a new branch and push it to github respectively:
 
