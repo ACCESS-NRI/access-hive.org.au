@@ -8,7 +8,7 @@ For climate modelling, we need to store multidimensional scientific data (variab
      <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Example of a three-dimensional data array" width="25%"/>
  </div>
 
-ACCESS-NRI strives for comparable model outputs for easily model evaulation.
+ACCESS-NRI strives for comparable model outputs for easily model evaluation.
 
 We therefore support projects like the Coupled Model Intercomparison Projects (CMIP) and the use of common data formats and variables.
 
