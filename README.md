@@ -48,7 +48,7 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
 
     `git pull origin development`
 
-  This would make sure that the local branch `dev/jasmeen/legacy-release` is always in sync with the `development` branch, which is updated with PRs regularly. 
+  This would make sure that the local branch `dev/jasmeen/legacy-release` is always in sync with the latest changes in the remote `development` branch. 
 
 - Once the changes on the local branch `dev/jasmeen/legacy-release` is ready to be integrated with the `development` branch, create a pull request on github by changing the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
 
