@@ -1,11 +1,9 @@
 {% set model = "ACCESS-ESM" %}
 # <span class="highlight-bg"> Run {{ model }} </span>
 ## Requirements
-Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
+Before running {{ model }}, you need to fulfil general requirements outlined in the [Get Started](../../../get_started) section, e.g. obtain an NCI account, etc.
 
 ### General requirements
-For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
-
 ### Model-specific requirements
 <ul>
     <li>
@@ -13,22 +11,20 @@ For the general requirements needed to run all ACCESS models, please refer to th
         <br>
         The <i>hh5</i> project hosts the conda environment that supports most workflows for climate science on <i>Gadi</i>.
         <br>
-        To join the <i>hh5</i> project at NCI, request membership for it on the <a href="https://my.nci.org.au/mancini/project/hh5/join" target="_blank">hh5</a> NCI project page.
+        You need to request membership of the <i>hh5</i> project on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access NCI project</a> page.
         <br>
-        For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+        For more information on joining specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
     <li>
         <b>Payu</b>
         <br>
-        <i>payu</i> on <i>Gadi</i> is available through the <code>conda/analysis3</code> environment in the <i>hh5</i> project.
+        <i>Payu</i> on <i>Gadi</i> is available through the <code>conda/analysis3</code> environment in the <i>hh5</i> project.
         <br>
-        After getting access to the <i>hh5</i> project, load the <code>conda/analysis3</code> environment by running:
+        After obtaining <i>hh5</i> project membership, load the <code>conda/analysis3</code> environment to automatically retrieve <i>payu</i> as follows:
         <pre><code>module use /g/data/hh5/public/modules
             module load conda/analysis3
-        </code></pre>
-        to automatically get <i>payu</i>. 
-        <br>
-        To check that payu is effectively available, you can run:
+        </code></pre> 
+        To check that <i>payu</i> is available, run:
         <pre><code>payu --version</code></pre>
         <terminal-animation>
             <terminal-line data="input">payu --version</terminal-line>
@@ -39,9 +35,9 @@ For the general requirements needed to run all ACCESS models, please refer to th
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
-A suitable {{ model }} pre-industrial configuration is avaible on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
+A pre-industrial configuration of {{ model }} is available on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
 <br>
-In order to get it, on <i>Gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
+To run this on <i>Gadi</i>, create a directory to store the configuration and clone the GitHub repo (from within this directory) by running: 
 <pre><code>git clone https://github.com/coecms/esm-pre-industrial.git</code></pre>
 <terminal-animation>
     <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
@@ -56,36 +52,38 @@ In order to get it, on <i>Gadi</i>, create a directory where to keep the model c
     <terminal-line>Resolving deltas: 100% (450/450), done.</terminal-line>
 </terminal-animation>
 <div class="note">
-    Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
+    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
 </div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
+It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the <i>reference</i> configuration. 
+
+To create a local branch called <i>"example_run"</i>, execute:
 <pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
-The general layout of a <i>payu</i>-supported model run consists of two main directories:
-<ul>
+The general layout of a <i>payu</i>-supported model run comprises two main directories:
+<ol>
     <li>
-        The <b>laboratory</b> is the directory where all parts of the model are kept. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
+        The <b>laboratory</b> directory, where all the model components reside. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
     </li>
     <li>
-        The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-esm/esm-pre-industrial</code>).
+        The <b>control</b> directory, where the model configuration resides and from where the model is run, e.g., the cloned directory <code>~/access-esm/esm-pre-industrial</code>.
     </li>
-</ul>
-This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on <i>Gadi</i> that is actively backed up), without overloading it with too much data.
+</ol>
+This distinction of directories separates the small-size configuration files from the larger binary outputs and inputs. In this way, the configuration files can be placed in the <code>$HOME</code> directory (as it is the only filesystem actively backed-up on <i>Gadi</i>), without overloading it with too much data.
+Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 <br>
-Moreover, this separation allows to run multiple self-resubmitting experiments simultaneously that might share common executables and input data.
 <br>
-To proceed with the setup of the <i>laboratory</i> directory, from the <i>control</i> directory run:
+To setup the <i>laboratory</i> directory, run the following command from the <i>control</i> directory:
 <pre><code>payu init</code></pre> 
-This will create the <i>laboratory</i> directory, along with other subdirectories (depending on the configuration). The main subdirectories we are interested in are: 
+This creates the <i>laboratory</i> directory, together with relevant subdirectories, depending on the configuration. The main subdirectories of interest are: 
 <ul>
-    <li><code>work</code> &rarr; temporary directory where the model is actually run. It gets cleaned after each run.</li>
-    <li><code>archive</code> &rarr; directory where the output is placed after each run.</li>
+    <li><code>work</code> &rarr; a temporary directory where the model is run. It gets cleaned after each run.</li>
+    <li><code>archive</code> &rarr; the directory where output is stored after each run.</li>
     <terminal-animation>
         <terminal-line data="input">cd ~/access-esm/esm-pre-industrial</terminal-line>
         <terminal-line data="input" directory="~/access-esm/esm-pre-industrial">payu init</terminal-line>
@@ -97,41 +95,47 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
     </terminal-animation>
 </ul>
 
-### Edit the Master Configuration file
-The <code>config.yaml</code> file, located in the <i>control</i> directory, is the Master Configuration file. 
+### Edit Master Configuration file
+The <code>config.yaml</code> file located in the <code>control</code> directory, is the Master Configuration file. 
 <br>
-This file controls the general model configuration and if we open it in a text editor, we can see different parts:
+This file, which controls the general model configuration, comprises several parts:
 <ul>
     <li>
         <b>PBS resources</b>
         <br>
+        The following lines describe the settings for the PBS scheduler: 
         <pre><code>jobname: pre-industrial
             queue: normal
             walltime: 20:00:00
         </code></pre>
-        These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
-        <br>
-        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
+       These PBS resources can be edited for a particular run.
+       <br>
+       E.g., to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
+            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> and <a href="../../../get_started/#join-relevant-nci-projects">Join relevant NCI projects</a>.
         </div>
     </li>
     <li>
         <b>Link to the laboratory directory</b>
         <br>
+        The following line sets the laboratory directory path, which unless otherwise specified is relative to <code>/scratch/$PROJECT/$USER</code>: 
+
         <pre><code># note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
             laboratory: access-esm
         </code></pre>
-        This will set the laboratory directory. Relative paths are relative to <code>/scratch/$PROJECT/$USER</code>. Absolute paths can be specified as well.
+        Absolute paths can also be specified.
     </li>
     <li>
         <b>Model</b>
+         <br>
+       This line tells <i>payu</i> which driver to use for the main model (<code>access</code> refers to {{ model }}):
         <pre><code>model: access</code></pre>
-        The main model. This tells <i>payu</i> which driver to use (<i>access</i> stands for {{ model }}).
     </li>
     <li>
         <b>Submodels</b>
+        <br>
+        The following section specifies the submodels and configuration options (e.g., directories of input files) required to execute the model correctly: 
         <br>
         <pre><code>submodels:
             &nbsp;&nbsp;- name: atmosphere
@@ -160,29 +164,33 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;&nbsp;&nbsp;input:
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
         </code></pre>
-        {{ model }} is a coupled model, which means it has multiple submodels (i.e. model components). 
+        Each submodel contains additional configuration options that are read in when the submodel is running. These configuration options are specified in the submodel's <code>name</code> subdirectory of the  <code>control</code> directory.
         <br>
-        This section specifies the submodels and contains configuration options (for example the directories of input files) that are required to ensure the model can execute correctly. Each submodel also has additional configuration options that are read in when the submodel is running. These specific configuration options are found in the subdirectory of the <i>control</i> directory having the <i>name</i> of the submodel (e.g. in our case the configuration for the atmosphere submodel, i.e. the UM, will be in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>).
+        E.g., the configuration options for the <code>atmosphere</code> submodel (i.e. the UM) are in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>.
+        <br>
     </li>
+      
     <li>
         <b>Collate</b>
         <br>
+        The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
+
         <pre><code>collate:
             &nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/mppnccombine
             &nbsp;&nbsp;restart: true
             &nbsp;&nbsp;mem: 4GB
         </code></pre>
-        The <i>collate</i> process joins a number of smaller files, which contain different parts of the model grid, together into target output files. The restart files are typically tiled in the same way and will also be joined together if the <i>restart</i> option is set to <code>true</code>.
     </li>
     <li>
         <b>Restart</b>
         <br>
+        This is the location of the files used for a warm restart:
         <pre><code>restart: /g/data/access/payu/access-esm/restart/pre-industrial</code></pre>
-        The location of the files used for a warm restart.
     </li>
     <li>
         <b>Start date and internal run length</b>
         <br>
+        This section specifies the start date and internal run length:
         <pre><code>calendar:
             &nbsp;&nbsp;start:
             &nbsp;&nbsp;&nbsp;&nbsp;year: 101
@@ -193,25 +201,24 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;&nbsp;&nbsp;months: 0
             &nbsp;&nbsp;&nbsp;&nbsp;days: 0
         </code></pre>
-        This section specifies the start date and internal run length.
         <br>
         <div class="note">
-            The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, the <code>runtime</code> value can be lowered, but should not be increased to a total of more than 1 year, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
+            The internal run length (controlled by <code>runtime</code>) can be different from the total run length. While the <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
         </div>
     </li>
     <li>
         <b>Number of runs per PBS submission</b>
         <br>
-        <pre><code>runspersub: 5</code></pre>
         {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
+        <pre><code>runspersub: 5</code></pre>
         <br>
         <div class="note">
-            If we increase <code>runspersub</code>, we might need to increase the <i>walltime</i> in the PBS resources.
+            If you increase <code>runspersub</code>, you may need to increase the <i>walltime</i> in the PBS resources.
         </div>
     </li>
 </ul>
 <br>
-To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
+To find out more about other configuration settings for the <code>config.yaml</code> file, check out <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
