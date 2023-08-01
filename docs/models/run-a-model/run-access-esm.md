@@ -96,7 +96,7 @@ This creates the <i>laboratory</i> directory, together with relevant subdirector
 </ul>
 
 ### Edit Master Configuration file
-The <code>config.yaml</code> file located in the <code>control</code> directory, is the Master Configuration file. 
+The <code>config.yaml</code> file located in the <i>control</i> directory, is the Master Configuration file. 
 <br>
 This file, which controls the general model configuration, comprises several parts:
 <ul>
@@ -164,9 +164,9 @@ This file, which controls the general model configuration, comprises several par
             &nbsp;&nbsp;&nbsp;&nbsp;input:
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
         </code></pre>
-        Each submodel contains additional configuration options that are read in when the submodel is running. These configuration options are specified in the submodel's <code>name</code> subdirectory of the  <code>control</code> directory.
+        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the corresponding submodel's <i>name</i> directory, which resides in the parent <i>control</i> directory.
         <br>
-        E.g., the configuration options for the <code>atmosphere</code> submodel (i.e. the UM) are in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>.
+        E.g., configuration options for the <code>atmosphere</code> submodel (i.e. the UM) are in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>.
         <br>
     </li>
       
@@ -222,12 +222,12 @@ To find out more about other configuration settings for the <code>config.yaml</c
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
-After editing the configuration, we are ready to run {{ model }}. 
+After editing the configuration, you are ready to run {{ model }}. 
 <br>
 {{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
-As a first step, from the control directory, is good practice to run:
+As a first step, it is good practice to run from the <i>control</i> directory:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
 <terminal-animation>
@@ -252,16 +252,16 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-animation>
 <div class="note">
-    You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
+    This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
 ### Run configuration
-To run {{ model }} configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), run:
+To run {{ model }} configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), execute:
 <pre><code>payu run -f</code></pre>
-This will submit a single job to the queue with a total run length of <code>runtime</code>. It there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file, otherwise it will perform a warm restart from a precedently saved restart file.
+This will submit a single job to the queue with a total run length of <code>runtime</code>. If there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file. Otherwise, it will perform a warm restart from a previously saved restart file.
 <br>
 <div class="note">
-    The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
+    The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory created from a previous failed run.
 </div>
 <terminal-animation>
     <terminal-line data="input">payu run -f</terminal-line>
@@ -274,12 +274,12 @@ This will submit a single job to the queue with a total run length of <code>runt
 </terminal-animation>
 
 ### Run configuration for multiple years
-If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
+If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), use the option <code>-n</code>:
 <pre><code>payu run -f -n &lt;number-of-runs&gt;</code></pre>
 This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive PBS jobs submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
 
 ### Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters
-With the correct use of <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters, we can have full control of our run.
+With the correct use of <code>runtime</code>, <code>runspersub</code> and <code>-n</code> parameters, you can have full control of your run. To recap:
 <br>
 <ul>
     <li>
@@ -292,42 +292,42 @@ With the correct use of <code>runtime</code>, <code>runspersub</code>, and <code
         <code>-n</code> sets the number of internal runs to be performed.
     </li>
 </ul>
-Let's have some practical examples:
+Now some practical examples:
 <ul>
     <li>
-        <b>Run 20 years of simulation, with resubmission every 5 years</b>
+        <b>Run 20 years of simulation with resubmission every 5 years</b>
         <br>
-        To have a total run length of 20 years, with a resubmition cycle of 5 years, we can leave <code>runtime</code> to the default value of <code>1 year</code>, set <code>runspersub</code> to <code>5</code>, and run the configuration using <code>-n 20</code>:
+        To have a total run length of 20 years with a 5-year resubmission cycle, leave <code>runtime</code> as the default value of <code>1 year</code> and set <code>runspersub</code> to <code>5</code>. Then run the configuration using <code>-n 20</code>:
         <pre><code>payu run-f -n 20</code></pre>
-        This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20. With a total of 4 PBS jobs.
+        This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20, which is a total of 4 PBS jobs.
     </li>
     <li>
-        <b>Run 7 years of simulation, with resubmission every 3 years</b>
+        <b>Run 7 years of simulation with resubmission every 3 years</b>
         <br>
-        To have a total run length of 7 years, with a resubmition cycle of 3 years, we can leave <code>runtime</code> to the default value of <code>1 year</code>, set <code>runspersub</code> to <code>3</code>, and run the configuration using <code>-n 7</code>:
+        To have a total run length of 7 years with a 3-year resubmission cycle, leave <code>runtime</code> as the default value of <code>1 year</code> and set <code>runspersub</code> to <code>3</code>. Then run the configuration with <code>-n 7</code>:
         <pre><code>payu run -f -n 7</code></pre>
-        This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7. With a total of 3 PBS jobs.
+        This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
     </li>
     <li>
-        <b>Run 3 months and 10 days of simulation, in one single submission</b>
+        <b>Run 3 months and 10 days of simulation in a single submission</b>
         <br>
-        To have a total run length of 3 months and 10 days, all in a single submission, we have to set <code>runtime</code> to:
+        To have a total run length of 3 months and 10 days in a single submission, set the <code>runtime</code> as follows:
         <pre><code>years: 0
             months: 3
             days: 10
         </code></pre>
-        set <code>runspersub</code> to <code>1</code> (or any value > 1), and run the configuration without <code>-n</code> (or with <code>-n</code> equals <code>1</code>):
+        Set <code>runspersub</code> to <code>1</code> (or any value > 1) and run the configuration without option <code>-n</code> (or with <code>-n</code> set to <code>1</code>):
         <pre><code>payu run -f</code></pre>
     </li>
     <li>
-        <b>Run 1 year and 4 months of simulation, with resubmission every 4 months</b>
+        <b>Run 1 year and 4 months of simulation with resubmission every 4 months</b>
         <br>
-        To have a total run length of 1 year and 4 months (16 months), we will have to split it into multiple internal runs. For example, we can have 4 internal runs of 4 months each. Therefore, we will have to set <code>runtime</code> to:
+        To have a total run length of 1 year and 4 months (16 months), you need to split it into multiple internal runs, e.g., 4 internal runs, each 4 months. For this case, set the <code>runtime</code> as follows:
         <pre><code>years: 0
             months: 4
             days: 0
         </code></pre>
-        Since the internal run length is set to 4 months, to resubmit our jobs every 4 months (i.e. every internal run), we have to set <code>runspersub</code> to <code>1</code>. Finally, we will perform 4 internal runs by running the configuration with <code>-n 4</code>:
+        Since the internal run length is set to 4 months, set <code>runspersub</code> to <code>1</code> to resubmit your jobs every 4 months (i.e. every internal run). Then run the configuration with <code>-n 4</code>:
         <pre><code>payu run -f -n 4</code></pre>
     </li>
 </ul>
@@ -336,9 +336,8 @@ Let's have some practical examples:
 ## Monitor {{ model }} runs
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
-One way to check the status of our run is running:
+To check the status of your run, execute the following command to show the status of all your submitted PBS jobs:
 <pre><code>qstat -u $USER</code></pre>
-This will show the status of all your PBS jobs (if there is any PBS job submitted):
 <terminal-animation>
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
@@ -347,36 +346,37 @@ This will show the status of all your PBS jobs (if there is any PBS job submitte
     <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-animation>
-If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file">Master Configuration file</a>, that will be your job's <i>Name</i> instead of <code>pre-industrial</code>.
+If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file">Master Configuration file</a>, this will appear as your job's <i>Name</i> instead of <code>pre-industrial</code>.
 <br>
-<i>S</i> indicates the status of your run:
+<i>S</i> indicates the status of your run, where:
 <ul>
     <li>Q &rarr; Job waiting in the queue to start</li>
     <li>R &rarr; Job running</li>
     <li>E &rarr; Job ending</li>
 </ul>
-If there is no listed job with your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
+If there are no jobs listed with your <code>jobname</code> (or if no job was submitted), your run either successfully completed or was terminated due to an error.
 
 ### Stop a run
-If you want to manually terminate a run, you can do it by running:
+If you want to manually terminate a run, you can do so by executing:
 <pre><code>qdel &lt;job-ID&gt;</code></pre>
 
 ### Error and output log files
-While the model is running, <i>payu</i> saves the standard output and standard error into the files <code>access.out</code> and <code>access.err</code> in the <i>control</i> directory. You can examine these files, as the run progresses, to check on it's status.
+While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access.out</code> and <code>access.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
 <br>
-After the model has completed its run, or if it crashed, the output and error log files, respectively, are renamed by default into <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>.
+When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-esm/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-esm/esm-pre-industrial/archive</code>).
+While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory in <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/esm-pre-industrial/archive</code>.
 <br>
-Both outputs and restarts are stored into subfolders for each different configuration (<code>esm-pre-industrial</code> in our case), and inside the configuration folder, they are subdivided for each internal run.
 <br>
-The format of a typical output folder is <code>outputXXX</code>, whereas the typical restart folder is usually formatted as <code>restartXXX</code>, with <i>XXX</i> being the number of internal run, starting from <code>000</code>.
+Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>esm-pre-industrial</code> ). Inside the configuration folder, they are further subdivided for each internal run.
 <br>
-In the respective folders, outputs and restarts are separated for each model component.
+The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
 <br>
-For the atmospheric output data, each file it is usually a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
+Outputs and restarts are separated in the respective folders for each model component.
+<br>
+For the atmospheric output data, the files are usually <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a> format, e.g., <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
 <terminal-animation>
     <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls</terminal-line>
