@@ -757,7 +757,7 @@ pre:has(code):hover > button {
 }
 
 /* Image background */
-.image-background {
+.white-background {
   background-color: var(--white-background);
 }
 

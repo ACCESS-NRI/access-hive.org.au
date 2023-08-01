@@ -7,7 +7,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
 <div class="card-container">
     <a href="run-access-am" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img class="img-cover image-background" src="../../assets/model-config-logos/access-am-config.png" alt="ACCESS-AM">
+            <img class="img-cover white-background" src="../../assets/model-config-logos/access-am-config.png" alt="ACCESS-AM">
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
             Run ACCESS-AM
@@ -15,7 +15,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
     </a>
     <a href="run-access-cm" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img class="img-cover image-background" src="../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS-CM">
+            <img class="img-cover white-background" src="../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS-CM">
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
             Run ACCESS-CM
@@ -23,7 +23,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
     </a>
     <a href="run-access-esm" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img class="img-cover image-background" src="../../assets/model-config-logos/access-esm-config.png" alt="ACCESS-ESM">
+            <img class="img-cover white-background" src="../../assets/model-config-logos/access-esm-config.png" alt="ACCESS-ESM">
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
             Run ACCESS-ESM
@@ -31,7 +31,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
     </a>
     <a href="run-access-om" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img class="img-cover image-background" src="../../assets/model-config-logos/access-om2-config.png" alt="ACCESS-OM">
+            <img class="img-cover white-background" src="../../assets/model-config-logos/access-om2-config.png" alt="ACCESS-OM">
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
             Run ACCESS-OM
