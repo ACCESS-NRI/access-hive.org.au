@@ -4,11 +4,7 @@
 
 ACCESS-NRI's "Model Evaluation and Diagnostics" work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
 
-## ACCESS-MED data and tools hosted on Gadi
-
-If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md). Here, we provide catalogs and pointers to [observational data](./model_evaluation_observational_catalogs.md) as well as [model data](./model_evaluation_model_catalogs/index.md) that can be used for evaluation. We also provide a number of [frameworks for model evaluation](./model_evaluation_on_gadi/index.md). We are also working on implementing more frameworks and recipes as well as formatting tools for a better model evaluation and diagnostics.
-
-### Getting Started
+If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
     <a href="../get_started" class="squared-card default-text-color">
         <div class="squared-card-image-container">
@@ -30,6 +26,10 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
     </a>
 </div>
 
+Here, we provide catalogs and pointers to [observational data](./model_evaluation_observational_catalogs.md) as well as [model data](./model_evaluation_model_catalogs/index.md) that can be used for evaluation. We also provide a number of [frameworks for model evaluation](./model_evaluation_on_gadi/index.md). We are also working on implementing more frameworks and recipes as well as formatting tools for a better model evaluation and diagnostics.
+
+## ACCESS-MED data and tools hosted on Gadi
+
 ### Data Catalogs
 <div class="card-container">
     <a href="model_evaluation_observational_catalogs" class="squared-card default-text-color">
@@ -49,23 +49,29 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
 ### Supported Community Frameworks on Gadi
 
 <div class="card-container">
-    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="squared-card default-text-color">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
         </div>
         <div class="squared-card-text-container bold">ILAMB</div>
     </a>
-    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="squared-card default-text-color">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
         </div>
         <div class="squared-card-text-container bold">ESMValTool</div>
     </a>
-    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="squared-card default-text-color">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
+    </a>
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card default-text-color">
+        <div class="squared-card-image-container">
+            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
+        </div>
+        <div class="squared-card-text-container bold">METplus</div>
     </a>
 </div>
 
@@ -73,6 +79,7 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
 ### Tools in development
 
 We are currently setting up a range of tools that will help you to better evaluate and diagnose climate models:  
+
 * Model Diagnostics for on-the-fly analysis of your models at different snapshots  
 * Data format processing tools like APP4  
 * An Evaluation Recipe Gallery with searching functionality  

@@ -68,8 +68,6 @@ Even though we recommend you have a chat with your supervisor to identify the re
 | ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Other projects |
 | v45  | <a href="https://my.nci.org.au/mancini/project/v45"  target="_blank">Ocean Extremes</a> | Other projects |
 | ga6  | <a href="https://my.nci.org.au/mancini/project/ga6"  target="_blank">Modelling the formation of sedimentary basins and continental margins</a> | Other projects |
-| m18  | <a href="https://my.nci.org.au/mancini/project/m18"  target="_blank">Evolution and dynamics of the Australian lithosphere</a> | Other projects |
-| q97  | <a href="https://my.nci.org.au/mancini/project/q97"  target="_blank">Earth dynamics and resources over the last billion years</a> | Other projects |
 | qu79 | <a href="https://my.nci.org.au/mancini/project/qu79" target="_blank">Collaborative REAnalysis Technical Environment Intercomparison Project (CREATE-IP)</a> | Other projects |
 <hr>
 
