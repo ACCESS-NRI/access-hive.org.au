@@ -6,34 +6,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 [data-md-color-scheme="custom-dark"] {
-  --nri-green: #A6CE39;
-  --nri-orange: #FAA619;
-  --nri-dark-blue: #115D97;
-  --nri-blue: #06AEEF;
-  --nri-light-blue: #8ED7F8;
-  --default-fg-color: 230, 230, 230;  /* Color for main text in body, navigation, table of content*/
-  --black-text-colour: 10, 10, 10; /* Text of top tab and back to top button */
-  --black-text: rgb(var(--black-text-colour)); /* Main text in navigation tab */
-  --black-text-light: rgba(var(--black-text-colour),.7); /* Main text in navigation tab inactive */
-  --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
-  --md-default-fg-color--light: rgba(var(--default-fg-color),.7); /* Inactive tabs */
-  --md-default-fg-color--lighter: rgba(var(--default-fg-color),.3); /* pencil for editing page, passed toc items text */
-  --md-default-fg-color--lightest: rgba(var(--default-fg-color),.07);
+  --nri-green-color: 166, 206, 57; 
+  --nri-orange-color: 250, 166, 25; 
+  --nri-dark-blue-color: 17, 93, 151;
+  --nri-blue-color: 6, 174, 239;
+  --nri-light-blue-color: 142, 215, 248;
+  --nri-green: rgb(var(--nri-green-color)); /* rgb(166, 206, 57) */
+  --nri-orange: rgb(var(--nri-orange-color)); /* rgb(250, 166, 25) */
+  --nri-dark-blue: rgb(var(--nri-dark-blue-color)); /* rgb(17, 93, 151) */
+  --nri-blue: rgb(var(--nri-blue-color)); /* rgb(6, 174, 239) */
+  --nri-light-blue: rgb(var(--nri-light-blue-color)); /* rgb(142, 215, 248) */
+  --default-fg-color: 235, 235, 235;  /* Color for main text in body, navigation, table of content*/
+  --tab-text-color: var(--default-fg-color); /* Text of top tab and back to top button */
+  --tab-text: rgb(var(--tab-text-color)); /* Main text in navigation tab */
+  --tab-text-light: rgba(var(--tab-text-color),.7); /* rgba(230, 230, 230,.7) Main text in navigation tab inactive */
+  --md-default-fg-color: rgb(var(--default-fg-color)); /* rgb(230, 230, 230) Main text in body, navigation, table of content*/ 
+  --md-default-fg-color--light: rgba(var(--default-fg-color),.7); /* rgba(230, 230, 230,.7) Back to top button text, inactive tab text */
+  --md-default-fg-color--lighter: rgba(var(--default-fg-color),.4); /* rgba(230, 230, 230,.4) pencil for editing page, passed toc items text */
+  --md-default-fg-color--lightest: rgba(var(--default-fg-color),.07); /* rgba(230, 230, 230,.07) */
   --default-bg-color: 46, 51, 62; /* Color for main background */
-  --md-default-bg-color: rgb(var(--default-bg-color)); /* Main background */
-  --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
-  --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3);
-  --md-default-bg-color--lightest: rgba(var(--default-bg-color),.12);
+  --md-default-bg-color: rgb(var(--default-bg-color)); /* rgb(46, 51, 62) Main background */
+  --md-default-bg-color--light: rgba(var(--default-bg-color),.7); /* rgba(46, 51, 62, .7) */
+  --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3); /* rgba(46, 51, 62, .3) */
+  --md-default-bg-color--lightest: rgba(var(--default-bg-color),.12); /* rgba(46, 51, 62, .12) */
   --md-primary-fg-color: rgb(30, 29, 29); /* top banner background */
-  --md-primary-fg-color--light: var(--nri-light-blue);
-  --md-primary-fg-color--dark: var(--nri-orange); /* top tab background */
-  --primary-bg-color: 237, 237, 237;
-  --md-primary-bg-color: rgb(var(--primary-bg-color)); /* top banner text */
-  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
+  --md-primary-fg-color--dark: var(--nri-dark-blue); /* top tab background */
+  --primary-bg-color: var(--default-fg-color); /* Color for top banner text */
+  --md-primary-bg-color: rgb(var(--primary-bg-color)); /* rgb(230, 230, 230) top banner text */
+  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* rgba(230, 230, 230, .5) search bar 'Search' text */
+  --md-typeset-a-color: var(--nri-light-blue); /* link text */
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
-  --md-accent-fg-color--transparent: #115D9726;  /* navigation bar little arrows hover */
-  --md-accent-bg-color: rgb(var(--black-text-colour)); /* back to top button text hover */
-  --md-accent-bg-color--light: #FAA61920;
+  --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* rgba(6, 174, 239,.05) navigation bar little arrows hover */
+  --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
   --md-code-fg-color: rgb(213, 217, 226); /* code element text */
   --md-code-bg-color: #242428; /* code element background */
   --md-code-hl-color: rgba(255,255,0,.5);
@@ -49,37 +53,34 @@
   --md-code-hl-comment-color: var(--md-default-fg-color--light);
   --md-code-hl-generic-color: var(--md-default-fg-color--light);
   --md-code-hl-variable-color: var(--md-default-fg-color--light);
-  --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: var(--md-primary-fg-color--dark); /* link text */
-  --md-typeset-mark-color: #FAA61970; /* marked text (<mark> tag)*/
+  --md-typeset-color: var(--md-default-fg-color); /* rgb(230, 230, 230) Color for text warnings */
+  --md-typeset-mark-color: rgba(var(--nri-orange-color),.4); /* rgba(250, 166, 25,.4) marked text (<mark> tag)*/
   --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
   --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: #FAA61930; /* Left border on the toc and navigation2*/
-  --card-borders: var(--md-primary-fg-color--dark); /* Borders of cards */
-  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
-  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
-  --md-admonition-bg-color: var(--md-default-bg-color); /* Background warnings */
-  --md-footer-fg-color: var(--md-primary-bg-color); /* footer text (not much used) */
-  --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
-  --md-footer-fg-color--lighter: var(--md-default-fg-color--lighter);
+  --navigation-borders: rgba(var(--nri-orange-color),.2); /* rgba(250, 166, 25,.2) Left border on the toc and navigation2*/
+  --card-borders: rgba(var(--nri-orange-color),.8); /* rgba(250, 166, 25,.8) Borders of cards */
+  --md-typeset-table-color: var(--card-borders); /* rgba(250, 166, 25,.8) table borders (<table> tag) */
+  --md-admonition-fg-color: var(--md-typeset-color); /* rgb(230, 230, 230) Main text warnings */
+  --md-admonition-bg-color: transparent; /* Background warnings */
+  --md-footer-fg-color: var(--nri-orange); /* footer link icon hover (social) */
+  --md-footer-fg-color--light: var(--md-primary-bg-color); /* rgb(230, 230, 230) Footer copyright text and social icons fill */
   --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
   --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
   --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
   --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
   --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
-  --highlight-bg: #242428; /* .highligh-bg */
   --card-shadows: #00000075; /* Shadows on cards and other elements */
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
-  --img-background: #FFFFFF; /* Background for transparent images */
-  --shadow-hover-background: rgba(29, 28, 28, 0.185); /* Shadow Background on hover */
+  --white-background: rgb(255, 255, 255); /* Background for transparent images */
+  --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
   --terminal-animation-directory: var(--nri-green);
   --terminal-animation-buttons: var(--nri-orange);
   --terminal-animation-buttons-hover: var(--nri-blue);
-  --note: var(--md-primary-fg-color--dark);
-  --note-bg: var(--md-accent-bg-color--light);
+  --note: var(--card-borders); /* rgba(250, 166, 25,.8) Note border and icon*/
+  --note-bg: rgba(var(--nri-orange-color),.05); /* rgba(250, 166, 25,.05) */
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -89,9 +90,9 @@
   --nri-blue: #06AEEF;
   --nri-light-blue: #8ED7F8;
   --default-fg-color: 10, 10, 10;  /* Color for main text in body, navigation, table of content*/
-  --black-text-colour: var(--default-fg-color);  /* Color for main text in body, navigation, table of content*/
-  --black-text: rgb(var(--black-text-colour)); /* Main text in navigation tab */
-  --black-text-light: rgba(var(--black-text-colour),.7); /* Main text in navigation tab inactive */
+  --tab-text-color: white;  /* Color for main text in body, navigation, table of content*/
+  --tab-text: rgb(var(--tab-text-color)); /* Main text in navigation tab */
+  --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
   --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
   --md-default-fg-color--light: rgba(var(--default-fg-color),.65); /* Inactive tabs */
   --md-default-fg-color--lighter: rgba(var(--default-fg-color),.3); /* pencil for editing page, passed toc items text */
@@ -102,14 +103,14 @@
   --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3);
   --md-default-bg-color--lightest: rgba(var(--default-bg-color),.12);
   --md-primary-fg-color: rgb(30, 29, 29); /* top banner background */
-  --md-primary-fg-color--light: var(--nri-light-blue);
-  --md-primary-fg-color--dark: var(--nri-orange); /* top tab background */
+  --md-primary-fg-color--dark: var(--nri-dark-blue); /* top tab background */
   --primary-bg-color: 237, 237, 237;
   --md-primary-bg-color: rgb(var(--primary-bg-color)); /* top banner text */
   --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.3); /* search bar 'Search' text */
+  --md-typeset-a-color: var(--nri-dark-blue); /* link text */
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
   --md-accent-fg-color--transparent: #06AEEF16;  /* navigation bar little arrows hover */
-  --md-accent-bg-color: rgb(var(--black-text-colour)); /* back to top button text hover */
+  --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
   --md-accent-bg-color--light: #FAA61920;
   --md-code-fg-color: rgb(33, 36, 44); /* code element text */
   --md-code-bg-color: #dedede; /* code element background */
@@ -127,7 +128,6 @@
   --md-code-hl-generic-color: var(--md-default-fg-color--light);
   --md-code-hl-variable-color: var(--md-default-fg-color--light);
   --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: var(--nri-orange); /* link text */
   --md-typeset-mark-color: #FAA61970; /* marked text (<mark> tag)*/
   --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
   --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
@@ -147,11 +147,10 @@
   --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
   --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
   --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
-  --highlight-bg: #c3c3c3; /* .highligh-bg */
   --card-shadows: #00000075; /* Shadows on cards and other elements */
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
-  --img-background: #FFFFFF; /* Background for transparent images */
-  --shadow-hover-background: rgba(29, 28, 28, 0.185); /* Shadow Background on hover */
+  --white-background: #FFFFFF; /* Background for transparent images */
+  --darker-background-hover: rgba(29, 28, 28, 0.185); /* Shadow Background on hover */
   --terminal-animation-directory: var(--nri-dark-blue);
   --terminal-animation-buttons: var(--nri-orange);
   --terminal-animation-buttons-hover: var(--nri-blue);
@@ -164,7 +163,7 @@
   Main headings
 */
 h1 {
-  color: var(--md-typeset-color) !important;
+  color: var(--default-fg-color) !important;
   font-weight: 600 !important;
 }
 
@@ -289,7 +288,10 @@ h3 {
 .md-header__inner {
   padding: 0.5em 0;
 }
-
+.md-header--shadow {
+  box-shadow: 0 0 5px var(--navigation-borders);
+  border-bottom: solid 1px var(--nri-orange);
+}
 
 /* Tab section */
 .md-tabs {
@@ -302,7 +304,7 @@ h3 {
   text-align: center;
   height: min-content;
   transition: background-color 0.5s;
-  color: var(--black-text-light);
+  color: var(--tab-text-light);
 }
 
 /* Headings in the nav bar */
@@ -315,7 +317,7 @@ h3 {
 
 /* Selected tab */
 .md-tabs__item--active {
-  color: var(--black-text);
+  color: var(--tab-text);
 }
 
 .md-tabs__item--active, .md-tabs__link {
@@ -325,7 +327,7 @@ h3 {
 /* Tab hover state */
 .md-tabs__item:hover {
   transition-duration: 0.4s;
-  color: var(--black-text);
+  color: var(--tab-text);
 }
 
 /* =============================================================== 
@@ -548,12 +550,11 @@ h3 {
 a.component-card {
   border: unset;
   box-shadow: unset;
-  color: var(--md-typeset-color);
   max-width: 22%;
 }
 
 .component-card:hover {
-  background-color: var(--shadow-hover-background);
+  background-color: var(--darker-background-hover);
   box-shadow: unset;
 }
 
@@ -563,50 +564,6 @@ a.component-card {
 .references {
   font-size:0.8em;
 }
-
-/* =============================================================== 
-  Page summary ('on this page' section)
-*/
-div.page-summary {
-  max-width: 100%;
-  border: solid 0.5px var(--md-typeset-color);
-  border-radius: 3px;
-  padding: 0 15px 10px;
-  line-height: 1.2em;
-  margin: 20px 0;
-}
-
-.page-summary h4 {
-  margin: 0.7em 0;
-}
-
-.page-summary ol {
-  list-style-type: none !important;
-  counter-reset: item !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.page-summary li {
-  display: table !important;
-  counter-increment: item !important;
-  margin: 0 0 0.5em 0.5em !important;
-}
-
-.page-summary li:before {
-    content: counters(item, ".") ". " !important;
-    display: table-cell !important;
-    padding-right: 0.3em !important;    
-}
-
-.page-summary li li {
-    margin: 0.1em 0 0 0 !important;
-}
-
-.page-summary li li:before {
-    content: counters(item, ".") ". " !important;
-}
-
 
 /* =============================================================== 
   Show different markers for different hierarchy of points (up to 3d hierarchy)
@@ -785,7 +742,8 @@ pre:has(code):hover > button {
 
 /* Highlight the background */
 .highlight-bg {
-  background-color: var(--highlight-bg);
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--tab-text);
   padding: 0.2em 0.6em;
   margin: 0.6em 0;
   width: fit-content;
@@ -796,12 +754,11 @@ pre:has(code):hover > button {
 /* Highlight background of the same color as tab */
 .bg-color-like-tab {
   background-color: var(--md-primary-fg-color--dark);
-  color: var(--black-text);
 }
 
 /* Image background */
 .image-background {
-  background-color: var(--img-background);
+  background-color: var(--white-background);
 }
 
 /* With borders */
@@ -818,7 +775,7 @@ pre:has(code):hover > button {
 
 /* Typeset text color (even links) */
 .default-text-color {
-  color: var(--md-typeset-color) !important;
+  color: var(--md-default-fg-color) !important;
 }
 
 .bold {
