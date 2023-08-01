@@ -1,4 +1,4 @@
-# <div class="highlight-bg">Run a Model</div>
+# Run a Model
 If you are new to climate science or ACCESS Models, check [how to get started](../../../get_started).
 
 If you are not sure which ACCESS Model is the right one for your needs, check out our
@@ -9,7 +9,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-am-config.png" alt="ACCESS-AM">
         </div>
-        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+        <div class="squared-card-text-container  highlight-bg bold">   
             Run ACCESS-AM
         </div>
     </a>
@@ -17,7 +17,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS-CM">
         </div>
-        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+        <div class="squared-card-text-container  highlight-bg bold">   
             Run ACCESS-CM
         </div>
     </a>
@@ -25,7 +25,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-esm-config.png" alt="ACCESS-ESM">
         </div>
-        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+        <div class="squared-card-text-container  highlight-bg bold">   
             Run ACCESS-ESM
         </div>
     </a>
@@ -33,7 +33,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-om2-config.png" alt="ACCESS-OM">
         </div>
-        <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">   
+        <div class="squared-card-text-container  highlight-bg bold">   
             Run ACCESS-OM
         </div>
     </a>

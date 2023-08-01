@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Aerosol and Atmospheric Chemistry Components </div>
+#  Aerosol and Atmospheric Chemistry Components 
 
 <!-- {% include "call_contribute.md" %} -->
 

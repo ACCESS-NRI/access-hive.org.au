@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Sea-Ice Model Component </div>
+#  Sea-Ice Model Component 
 
 <!-- {% include "call_contribute.md" %} -->
 

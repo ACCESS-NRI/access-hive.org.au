@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# <div class="highlight-bg">Get Started</div>
+# Get Started
 
 If you are new to climate science or <a href="../models/">ACCESS models</a>, and you want to:
 

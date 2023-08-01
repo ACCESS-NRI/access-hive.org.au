@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Code of Conduct </div>
+#  Code of Conduct 
 
 ACCESS-Hive is an open community supported effort. For it to be successful it must be a welcoming and inclusive space so that everyone in the community feels able to contribute. 
 

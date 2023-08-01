@@ -1,4 +1,4 @@
-# <div class="highlight-bg">Supported ACCESS Models</div>
+# Supported ACCESS Models
 
 ACCESS models are computer codes comprising complex mathematical representations of major earth system components (atmosphere, land surface, ocean and sea ice) based on physical, biological and chemical principles or laws. Different ACCESS model components can be linked together via a coupler to form ACCESS model configurations, such as ACCESS-ESM, which are then used to perform simulations corresponding to realistic past or future conditions and idealised experiments.
 <!-- ACCESS is a family of related computer models that are able to represent different parts of the Earth system trough the deployment of various model components. ACCESS models link these model components through software called couplers to form different Model Configurations. -->

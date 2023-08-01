@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Biogeochemistry Ocean </div>
+#  Biogeochemistry Ocean 
 
 <!-- {% include "call_contribute.md" %} -->
 

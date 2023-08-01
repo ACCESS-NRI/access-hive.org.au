@@ -751,11 +751,6 @@ pre:has(code):hover > button {
   border-radius: 0.3em;
 }
 
-/* Highlight background of the same color as tab */
-.bg-color-like-tab {
-  background-color: var(--md-primary-fg-color--dark);
-}
-
 /* Image background */
 .white-background {
   background-color: var(--white-background);

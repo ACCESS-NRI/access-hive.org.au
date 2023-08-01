@@ -1,4 +1,4 @@
-# <div class="highlight-bg">ACCESS-ESM</div>
+# ACCESS-ESM
 
 <!-- {% include "call_contribute.md" %} -->
 

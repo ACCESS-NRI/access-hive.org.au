@@ -1,4 +1,4 @@
-# <div class="highlight-bg">Coupler</div>
+# Coupler
 
 <!-- ![Coupler Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png){align=right width=40%} -->
 

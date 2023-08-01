@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Land Model Components </div>
+#  Land Model Components 
 
 <!-- {% include "call_contribute.md" %} -->
 

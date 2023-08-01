@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Atmospheric Model Component </div>
+#  Atmospheric Model Component 
 
 <!-- {% include "call_contribute.md" %} -->
 

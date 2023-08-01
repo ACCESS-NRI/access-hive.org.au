@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Glossary and Useful Terms </div>
+#  Glossary and Useful Terms 
 
 Here you can find a compilation of common terms and acronyms used by the Australian Community Climate and Earth System Simulator (ACCESS)  community:
 

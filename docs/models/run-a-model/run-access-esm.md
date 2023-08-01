@@ -1,5 +1,5 @@
 {% set model = "ACCESS-ESM" %}
-# <span class="highlight-bg"> Run {{ model }} </span>
+# <span class=""> Run {{ model }} </span>
 ## Requirements
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
 

@@ -1,4 +1,4 @@
-# <div class="highlight-bg">Supported ACCESS Model Configurations</div>
+# Supported ACCESS Model Configurations
 
 <div class="card-container" style="flex-direction: column">
     <a href="access-cm/" class="justified rectangular-card default-text-color" style="height:15em;">

@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Ocean Model Component </div>
+#  Ocean Model Component 
 
 <!-- {% include "call_contribute.md" %} -->
 

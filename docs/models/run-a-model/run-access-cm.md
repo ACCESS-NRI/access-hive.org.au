@@ -1,6 +1,6 @@
 {% set model = "ACCESS-CM" %}
-<!-- # <span class="highlight-bg"> Run {{ model }} </span> -->
-# <span class="highlight-bg"> Run {{ model }} </span>
+<!-- # <span class=""> Run {{ model }} </span> -->
+# <span class=""> Run {{ model }} </span>
 ## <span>Requirements</span>
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
 

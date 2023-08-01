@@ -1,5 +1,5 @@
 
-# <div class="highlight-bg">ACCESS-OM</div>
+# ACCESS-OM
 
 <!-- IMPORTANT REFERENCE 
 https://forum.access-hive.org.au/t/access-om2-control-runs/258
