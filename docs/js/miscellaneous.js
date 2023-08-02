@@ -118,7 +118,7 @@ function toggleTerminalAnimations() {
     }
 
     function setCookie() {
-      document.cookie = `terminalState=${state};path=${location.origin};max-age=31536000;samesite=lax`;
+      document.cookie = `terminalState=${state};path=/;max-age=2592000;samesite=lax`; // Expires after 1 month
     }
 
     function toggleState(e) {
@@ -149,8 +149,9 @@ function toggleTerminalAnimations() {
       rootDir = location.origin;
     }
     terminalAnimationsSwitch.setAttribute('src',`${rootDir}/assets/terminal_animation_switch_${state}.png`);
-    let action = state == 'active' ? 'Disable' : 'Enable';
-    terminalAnimationsSwitch.setAttribute('title',`${action} terminal animations`);
+    let current = state == 'active' ? 'enabled' : 'disabled';
+    let onclick = state == 'active' ? 'disable' : 'enable';
+    terminalAnimationsSwitch.setAttribute('title',`Terminal animations ${current}.\nClick to ${onclick} them.`);
     terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
     let h1 = document.querySelector('h1');
     h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
