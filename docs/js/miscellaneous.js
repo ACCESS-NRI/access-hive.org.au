@@ -138,7 +138,15 @@ function toggleTerminalAnimations() {
     }
     applyState();
     let terminalAnimationsSwitch = document.createElement('img');
-    terminalAnimationsSwitch.setAttribute('src',`../assets/terminal_animation_switch_${state}.png`);
+    let origin;
+    if (location.pathname.startsWith('/development_site')) {
+      rootDir = `${location.origin}/development_site`;
+    } else if (location.pathname.startsWith('/pr-preview')) {
+      rootDir = `${location.origin}${location.pathname.split('/').slice(0,3).join('/')}`;
+    } else {
+      rootDir = location.origin;
+    }
+    terminalAnimationsSwitch.setAttribute('src',`${rootDir}/assets/terminal_animation_switch_${state}.png`);
     let action = state == 'active' ? 'Disable' : 'Enable';
     terminalAnimationsSwitch.setAttribute('title',`${action} terminal animations`);
     terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
