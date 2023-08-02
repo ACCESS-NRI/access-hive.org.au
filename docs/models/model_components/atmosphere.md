@@ -1,10 +1,10 @@
-# <div class="highlight-bg"> Atmospheric Model Component </div>
+#  Atmospheric Model Component 
 
 <!-- {% include "call_contribute.md" %} -->
 
 <!-- ![Atmosphere Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/atmosphere-component-map.png" class="image-background"></img>
+<img src = "../../../assets/component-logos/component-maps/atmosphere-component-map.png" class="white-background"></img>
 
 ## The Unified Model (UM)
 

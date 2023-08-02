@@ -1,4 +1,4 @@
-# <div class="highlight-bg">Supported ACCESS Models</div>
+# Supported ACCESS Models
 
 ACCESS models are computer codes comprising complex mathematical representations of major Earth system components (atmosphere, land surface, ocean and sea ice) based on physical, biological and chemical principles or laws. Different ACCESS model components can be linked together via a coupler to form ACCESS model configurations (e.g. ACCESS-ESM), which are then used to simulate realistic past or future conditions and idealised experiments.
 <!-- ACCESS is a family of related computer models that are able to represent different parts of the Earth system trough the deployment of various model components. ACCESS models link these model components through software called couplers to form different Model Configurations. -->
@@ -12,7 +12,7 @@ ACCESS models are computer codes comprising complex mathematical representations
 <div class="card-container" style="flex-direction: column">
 <a href="configurations/access-am/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-am.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-am.png" class="white-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-AM</span>
@@ -23,7 +23,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-cm/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-cm.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-CM</span>
@@ -34,7 +34,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-esm/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-esm.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-ESM</span>
@@ -45,7 +45,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-om/" class="rectangular-card default-text-color" style="height: 10em;">
         <div class="rectangular-card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-om.png" class="image-background img-cover"></img> 
+            <img src="../assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-cover"></img> 
         </div>
         <div class="rectangular-card-text-container">
             <span class="bold" >ACCESS-OM</span>
@@ -113,8 +113,3 @@ ACCESS models are computer codes comprising complex mathematical representations
         <div class="squared-card-text-container bold">Coupler</div>
     </a>
 </div>
-
-<!--
-<div class="with-border image-background">
-    <img src="../assets/ACCESS-MODEL.png" style="padding: 2em;width:50%;" alt="Atmosphere"></img>
-</div>  -->

@@ -1,10 +1,10 @@
-# <div class="highlight-bg"> Biogeochemistry Ocean </div>
+#  Biogeochemistry Ocean 
 
 <!-- {% include "call_contribute.md" %} -->
 
 <!-- ![BGC Ocean Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="image-background"></img>
+<img src = "../../../assets/component-logos/component-maps/bgc-ocean-component-map.png" class="white-background"></img>
 
 ## <div class="center-icons"> WOMBAT  </div>
 

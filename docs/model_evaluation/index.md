@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Model Evaluation and Diagnostics (MED) </div>
+#  Model Evaluation and Diagnostics (MED) 
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
