@@ -76,9 +76,9 @@
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
   --white-background: rgb(255, 255, 255); /* Background for transparent images */
   --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
-  --terminal-animation-directory: var(--nri-green);
-  --terminal-animation-buttons: var(--nri-orange);
-  --terminal-animation-buttons-hover: var(--nri-blue);
+  --animated-terminal-directory: var(--nri-green);
+  --animated-terminal-buttons: var(--nri-orange);
+  --animated-terminal-buttons-hover: var(--nri-blue);
   --note: var(--card-borders); /* Note border and icon */
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
 }
@@ -154,9 +154,9 @@
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
   --white-background: rgb(255, 255, 255); /* Background for transparent images */
   --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
-  --terminal-animation-directory: var(--nri-dark-blue);
-  --terminal-animation-buttons: var(--nri-orange);
-  --terminal-animation-buttons-hover: var(--nri-blue);
+  --animated-terminal-directory: var(--nri-dark-blue);
+  --animated-terminal-buttons: var(--nri-orange);
+  --animated-terminal-buttons-hover: var(--nri-blue);
   --note: var(--card-borders); /* Note border and icon */
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
 }
@@ -625,28 +625,29 @@ pre:has(code):hover > button {
 /* =============================================================== 
   Terminal animations
 */
-::part(terminal-container) {
+::part(terminal-window) {
   background-color: var(--md-code-bg-color);
   color: var(--md-code-fg-color);
   font-family: var(--md-code-font-family);
   font-weight: unset;
+  box-shadow: 0 0 2px var(--card-borders);
 }
 
 ::part(input-character) {
-  color: var(--terminal-animation-buttons);
+  color: var(--animated-terminal-buttons);
 }
 
 ::part(directory) {
-  color: var(--terminal-animation-directory);
+  color: var(--animated-terminal-directory);
 }
 
-::part(fast-button), ::part(restart-button) {
-  color: var(--terminal-animation-buttons);
+::part(fast-button), ::part(restart-button), ::part(img-icon) {
+  color: var(--animated-terminal-buttons);
   font-weight: 700;
 }
 
-::part(fast-button):hover, ::part(restart-button):hover {
-  color: var(--terminal-animation-buttons-hover);
+::part(fast-button):hover, ::part(restart-button):hover, ::part(img-icon):hover {
+  color: var(--animated-terminal-buttons-hover);
 }
 
 /* Try to format like the output of `ls` command */
@@ -655,6 +656,17 @@ pre:has(code):hover > button {
   word-break: normal;
 }
 
+#terminalSwitch {
+  float: right;
+  height: 1.1rem;
+  display: inline;
+  vertical-align: top;
+  margin: 0.5rem 0.2rem;
+}
+
+#terminalSwitch:hover {
+  cursor: pointer;
+}
 /* =============================================================== 
   General styling for html tabs
 */
@@ -663,7 +675,6 @@ pre:has(code):hover > button {
   box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
   display: flex;
   width: fit-content;
-  /* max-width: 100%; */
   overflow: auto;
   margin-top: 1em;
 }
