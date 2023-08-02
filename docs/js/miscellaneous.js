@@ -1,3 +1,5 @@
+'use strict';
+
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
@@ -138,7 +140,7 @@ function toggleTerminalAnimations() {
     }
     applyState();
     let terminalAnimationsSwitch = document.createElement('img');
-    let origin;
+    let rootDir;
     if (location.pathname.startsWith('/development_site')) {
       rootDir = `${location.origin}/development_site`;
     } else if (location.pathname.startsWith('/pr-preview')) {
