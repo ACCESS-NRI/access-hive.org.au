@@ -138,7 +138,7 @@ function toggleTerminalAnimations() {
     }
     applyState();
     let terminalAnimationsSwitch = document.createElement('img');
-    terminalAnimationsSwitch.setAttribute('src',`${location.origin}/docs/assets/terminal_animation_switch_${state}.png`);
+    terminalAnimationsSwitch.setAttribute('src',`${location.origin}/assets/terminal_animation_switch_${state}.png`);
     let action = state == 'active' ? 'Disable' : 'Enable';
     terminalAnimationsSwitch.setAttribute('title',`${action} terminal animations`);
     terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
