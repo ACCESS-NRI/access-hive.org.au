@@ -49,7 +49,7 @@ To copy an existing suite, on <i>accessdev</i>:
     <li>
         Run
         <pre><code>mosrs-auth</code></pre> 
-        to authenticate using your <i>MOSRS</i> credentials:
+        to authenticate using your <i>MOSRS</i> credentials test:
         <terminal-window>
             <terminal-line data="input">mosrs-auth</terminal-line>
             <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
