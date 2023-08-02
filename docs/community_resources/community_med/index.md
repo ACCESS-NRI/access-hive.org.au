@@ -1,6 +1,7 @@
 # Community Model Evaluation and Diagnostics Links
 
-<!-- {% include "call_contribute.md" %} -->
+???+ warning "These resource collections are not actively supported by ACCESS-NRI"
+    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not actively support unless stated otherwise.
 
 <div class="card-container" style="flex-wrap:nowrap;">
     <a href="community_observational_catalogs" class="squared-card default-text-color">

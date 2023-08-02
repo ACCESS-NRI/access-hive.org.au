@@ -1,6 +1,13 @@
 # COSIMA cookbooks on NCI's Gadi
 <!-- # COSIMA cookbooks and Pangeo on NCI's Gadi -->
 
+???+ int "ACCESS-NRI is actively supporting the COSIMA Cookbook on Gadi"
+    <!-- Who develped the tool? -->
+    The COSIMA Cookbook is developed by the Consortium for Ocean-Sea Ice Modelling in Australia.
+    <!-- Code ownership and support -->
+    ACCESS-NRI does not own the code of the COSIMA Cookbook, but actively supports the use of the COSIMA Cookbook on Gadi.
+    ACCESS-NRI provides access to the latest version of the COSIMA Cookbook via the `hh5` access-med conda environment deployed on NCI-Gadi.
+
 COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings together Australian researchers involved in global ocean and sea ice modelling. The consortium provides a collection of `cosmia-recipes` for the evaluation of ocean-sea ice modelling that are currated for you on Gadi.
 
 <!-- [Pangeo](https://pangeo.io) is a community of people working collaboratively to develop software environments around the Xarray and Dask packages. -->
