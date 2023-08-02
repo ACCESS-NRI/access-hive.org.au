@@ -88,6 +88,67 @@ function addExternalLinkIcon() {
 }
 
 
+/*
+  Add button to toggle terminal-animations for the whole page (next to the page title)
+*/
+function toggleTerminalAnimations() {
+  if (document.querySelector('terminal-window')) {
+    let state;
+
+    function applyState() {
+      let terminalWindows = document.querySelectorAll('terminal-window');
+      if (state == 'active') {
+        terminalWindows.forEach(t => {
+          t.removeAttribute('static');
+        })
+      } else {
+        terminalWindows.forEach(t => {
+          t.setAttribute('static',"");
+        })
+      }
+    }
+    
+    function getCookie() {
+      let cvalue = document.cookie.split(';')
+      .find(c => c.trim().startsWith('terminalState='))
+      ?.split("=")[1];
+      return cvalue;
+    }
+
+    function setCookie() {
+      document.cookie = `terminalState=${state};path=${location.origin};max-age=31536000;samesite=lax`;
+    }
+
+    function toggleState(e) {
+      if (state == 'active') {
+        state='inactive'
+      } else {
+        state='active'
+      }
+      setCookie();
+      location.reload();
+    }
+    
+    let terminalStateCookie = getCookie();
+    if (! terminalStateCookie) {
+      state = 'active';
+      setCookie();
+    } else {
+      state = terminalStateCookie;
+    }
+    applyState();
+    let terminalAnimationsSwitch = document.createElement('img');
+    terminalAnimationsSwitch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
+    let action = state == 'active' ? 'Disable' : 'Enable';
+    terminalAnimationsSwitch.setAttribute('title',`${action} terminal animations`);
+    terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
+    let h1 = document.querySelector('h1');
+    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
+    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
+  }
+}
+
+
 // Join all functions
 function main() {
   sortTables();
@@ -95,6 +156,7 @@ function main() {
   adjustScrollingToId();
   tabFunctionality();
   addExternalLinkIcon();
+  toggleTerminalAnimations();
 }
 
 // Run all functions
