@@ -90,7 +90,6 @@ markdown_extensions:
 nav:
   - Home: 
     - index.md
-    # - User support: about/user_support.md
     # - Contribute: 
     #   - Contribute: contribute/index.md
     #   - Edit on Github: contribute/edit-on-github.md
@@ -177,6 +176,7 @@ nav:
 
   - About:
     - Contact: about/contact.md
+    - User support: about/user_support.md
     - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
