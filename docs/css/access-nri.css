@@ -454,10 +454,6 @@ h3 {
   box-shadow: 6px 6px 10px var(--card-shadows);
 }
 
-.card-container > * > * {
-  flex-grow: 1;
-}
-
 /* Single card hover */
 .card-container > *:hover {
   border-color: var(--md-accent-fg-color);
@@ -476,24 +472,17 @@ h3 {
 .squared-card {
   flex-direction: column;
   max-width: 30%;
-  min-width: 20%;
   aspect-ratio: 1;
-}
-
-.aspect1to2-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 2;
+  min-height: 0;
 }
 
 .squared-card-image-container {
-  height: 75%;
+  flex-basis: 80%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.6em 0.6em 0 0.6em;
+  padding: 0.6em 0.6em 0.3em 0.6em;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -504,12 +493,14 @@ h3 {
 }
 
 .squared-card-text-container {
-  height: 25%;
+  flex-basis: 20%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0.3em 0.6em 0.6em 0.6em;
 }
 
 .rectangular-card {
@@ -521,7 +512,7 @@ h3 {
 }
 
 .rectangular-card-image-container {
-  width: 35%;
+  flex-basis: 35%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -537,11 +528,11 @@ h3 {
 }
 
 .rectangular-card-text-container {
-  padding: 0 1em;
   height: 100%;
-  width: 65%;
+  flex-basis: 65%;
   display: flex;
   flex-direction: column;
+  padding: 0 1em;
   justify-content: space-around;
   align-items: center;
 }
@@ -757,9 +748,7 @@ pre:has(code):hover > button {
   background-color: var(--md-primary-fg-color--dark);
   color: var(--tab-text);
   padding: 0.2em 0.6em;
-  margin: 0.6em 0;
   width: fit-content;
-  height: fit-content;
   border-radius: 0.3em;
 }
 
