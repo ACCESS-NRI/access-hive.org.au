@@ -477,13 +477,13 @@ h3 {
   aspect-ratio: 1/1;
 }
 
-.squared-card {
+.vertical-card {
   flex-direction: column;
   max-width: 30%;
   min-height: 0;
 }
 
-.squared-card-image-container {
+.vertical-card-image-container {
   flex-basis: 80%;
   width: 100%;
   display: flex;
@@ -494,12 +494,12 @@ h3 {
   border-radius: 8px;
 }
 
-.squared-card-image-container > img {
+.vertical-card-image-container > img {
   width: 100%;
   height: 100%;
 }
 
-.squared-card-text-container {
+.vertical-card-text-container {
   flex-basis: 20%;
   display: flex;
   width: 100%;
@@ -545,7 +545,7 @@ h3 {
 }
 
 .rectangular-card-image-container > img, 
-.squared-card-image-container > img {
+.vertical-card-image-container > img {
   border-radius: 8px;
 }
 

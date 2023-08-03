@@ -6,28 +6,28 @@ At the moment, we are actively supporting:
 
 <div class="card-container">
     <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
+        <div class="vertical-card-image-container">
             <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
         </div>
-        <div class="squared-card-text-container bold">ILAMB</div>
+        <div class="vertical-card-text-container bold">ILAMB</div>
     </a>
     <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
+        <div class="vertical-card-image-container">
             <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
         </div>
-        <div class="squared-card-text-container bold">ESMValTool</div>
+        <div class="vertical-card-text-container bold">ESMValTool</div>
     </a>
     <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
+        <div class="vertical-card-image-container">
             <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
         </div>
-        <div class="squared-card-text-container bold">COSIMA cookbook</div>
+        <div class="vertical-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card aspect-ratio1to1 default-text-color">
-        <div class="squared-card-image-container">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio1to1 default-text-color">
+        <div class="vertical-card-image-container">
             <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
         </div>
-        <div class="squared-card-text-container bold">METplus</div>
+        <div class="vertical-card-text-container bold">METplus</div>
     </a>
 </div>
 
