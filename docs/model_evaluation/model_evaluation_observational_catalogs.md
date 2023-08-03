@@ -11,7 +11,7 @@ You can search the available data collections on the NCI Data Collections websit
         </div>
         <div class="squared-card-text bold">NCI Data Collections</div>
     </a>
-    <!-- <a href="https://esgf.nci.org.au/projects/esgf-nci/" target="_blank" class="squared-card default-text-color">
+    <!-- <a href="https://esgf.nci.org.au/projects/esgf-nci/" target="_blank" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image">
             <img src="../../assets/model_evaluation/logo_nci_data_esgf.png" alt="ESGF Data Collection at NCI"></img>
         </div>

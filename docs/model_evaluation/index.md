@@ -6,19 +6,19 @@ ACCESS-NRI's "Model Evaluation and Diagnostics" work is a critical facet of clim
 
 If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
-    <a href="../get_started" class="squared-card default-text-color">
+    <a href="../get_started" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access"></img>
         </div>
         <div class="squared-card-text-container bold">Computing Access</div>
     </a>
-    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="squared-card default-text-color">
+    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment"></img>
         </div>
         <div class="squared-card-text-container bold">MED Conda Environment</div>
     </a>
-    <a href="model_evaluation_getting_started/model_variables" class="squared-card default-text-color">
+    <a href="model_evaluation_getting_started/model_variables" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables"></img>
         </div>
@@ -32,13 +32,13 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
 
 ### Data Catalogs
 <div class="card-container">
-    <a href="model_evaluation_observational_catalogs" class="squared-card default-text-color">
+    <a href="model_evaluation_observational_catalogs" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalog. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images"></img>
         </div>
         <div class="squared-card-text-container bold">Observational Data Catalog</div>
     </a>
-    <a href="model_evaluation_model_catalogs" class="squared-card default-text-color">
+    <a href="model_evaluation_model_catalogs" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment"></img>
         </div>
@@ -67,7 +67,7 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card default-text-color">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
         </div>
@@ -91,19 +91,19 @@ While we are working on these, we have collected a number of links to existing t
 <!-- 
 
 <div class="card-container">
-    <a href="./model_evaluation_getting_started/access_to_gadi_at_nci.md" class="squared-card default-text-color">
+    <a href="./model_evaluation_getting_started/access_to_gadi_at_nci.md" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Model Diagnostics"></img>
         </div>
         <div class="squared-card-text-container bold">Model Diagnostics</div>
     </a>
-    <a href="./model_evaluation_data_processing.md" class="squared-card default-text-color">
+    <a href="./model_evaluation_data_processing.md" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_formatting.jpg" alt="A picture visualising the conversion of data in text columns into a useful python xarray data format. Image credit: https://support.solarwinds.com and https://i.stack.imgur.com/" title="Image credit: https://support.solarwinds.com and https://i.stack.imgur.com/"></img>
         </div>
         <div class="squared-card-text-container bold">Data Format Processing</div>
     </a>
-    <a href="./model_evaluation_recipe_gallery.md" class="squared-card default-text-color">
+    <a href="./model_evaluation_recipe_gallery.md" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_recipe.jpg" alt="A code snippet from the COSIMA documented recipes. Image credit: https://github.com/COSIMA/cosima-recipes" title="Image credit: https://github.com/COSIMA/cosima-recipes"></img>
         </div>

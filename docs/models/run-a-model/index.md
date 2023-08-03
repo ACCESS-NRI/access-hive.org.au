@@ -5,7 +5,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
 [ACCESS Models overview](../).
 
 <div class="card-container">
-    <a href="run-access-am" class="squared-card default-text-color">
+    <a href="run-access-am" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-am-config.png" alt="ACCESS-AM">
         </div>
@@ -13,7 +13,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
             Run ACCESS-AM
         </div>
     </a>
-    <a href="run-access-cm" class="squared-card default-text-color">
+    <a href="run-access-cm" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS-CM">
         </div>
@@ -21,7 +21,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
             Run ACCESS-CM
         </div>
     </a>
-    <a href="run-access-esm" class="squared-card default-text-color">
+    <a href="run-access-esm" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-esm-config.png" alt="ACCESS-ESM">
         </div>
@@ -29,7 +29,7 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
             Run ACCESS-ESM
         </div>
     </a>
-    <a href="run-access-om" class="squared-card default-text-color">
+    <a href="run-access-om" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-om2-config.png" alt="ACCESS-OM">
         </div>

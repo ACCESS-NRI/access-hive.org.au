@@ -23,7 +23,7 @@ At the moment, we are actively supporting:
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card default-text-color">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card aspect-ratio1to1 default-text-color">
         <div class="squared-card-image-container">
             <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
         </div>
