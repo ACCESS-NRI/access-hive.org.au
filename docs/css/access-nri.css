@@ -469,6 +469,14 @@ h3 {
   aspect-ratio: 2;
 }
 
+.aspect-ratio1to2 {
+  aspect-ratio: 2/1;
+}
+
+.aspect-ratio1to1 {
+  aspect-ratio: 1/1;
+}
+
 .squared-card {
   flex-direction: column;
   max-width: 30%;
