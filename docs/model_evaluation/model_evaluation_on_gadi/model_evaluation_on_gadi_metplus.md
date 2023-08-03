@@ -6,7 +6,7 @@
 
 For detailed information, tutorials and more of [METplus](https://metplus.readthedocs.io/en/latest/index.html), please go to the
  <div class="card-container">
-     <a href="https://metplus.readthedocs.io/en/latest/index.html" class="aspect1to2-card default-text-color">
+     <a href="https://metplus.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1 default-text-color">
          <div class="vertical-card-image-container">
              <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation"></img>
          </div>

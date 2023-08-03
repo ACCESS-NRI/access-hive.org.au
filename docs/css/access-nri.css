@@ -462,21 +462,6 @@ h3 {
   transition-duration: 0.4s;
 }
 
-.aspect1to2-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 2;
-}
-
-.aspect-ratio1to2 {
-  aspect-ratio: 2/1;
-}
-
-.aspect-ratio1to1 {
-  aspect-ratio: 1/1;
-}
-
 .vertical-card {
   flex-direction: column;
   max-width: 30%;
@@ -566,6 +551,14 @@ a.component-card {
 .component-card:hover {
   background-color: var(--darker-background-hover);
   box-shadow: unset;
+}
+
+.aspect-ratio2to1 {
+  aspect-ratio: 2/1;
+}
+
+.aspect-ratio1to1 {
+  aspect-ratio: 1/1;
 }
 
 /* =============================================================== 
