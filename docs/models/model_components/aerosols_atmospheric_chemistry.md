@@ -1,10 +1,10 @@
-# <div class="highlight-bg"> Aerosol and Atmospheric Chemistry Components </div>
+#  Aerosol and Atmospheric Chemistry Components 
 
 <!-- {% include "call_contribute.md" %} -->
 
 <!-- ![Atmospheric Component Logo](../../assets/component-logos/components-without-titles/ACCESS%20icon%20AEROSOLS.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/aerosol-chemistry-component-map.png" class="image-background"></img>
+<img src = "../../../assets/component-logos/component-maps/aerosol-chemistry-component-map.png" class="white-background"></img>
 
 ## [UKCA][ukca-wiki]
 

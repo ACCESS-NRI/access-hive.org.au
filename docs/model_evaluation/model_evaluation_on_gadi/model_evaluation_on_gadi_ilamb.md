@@ -2,7 +2,7 @@
 
 `ilamb` is a Python framework for for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB).
 
-???+ int "ACCESS-NRI is actively supporting ILAMB/IOMB on Gadi"
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
     ILAMB/IOMB is a community-developed climate model diagnostics and evaluation software package.
     <!-- Code ownership and support -->

@@ -2,7 +2,7 @@
 
 `esmvaltool` is the Earth System Model Evaluation Tool.
 
-???+ int "ACCESS-NRI is actively supporting ESMValTool on Gadi"
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
     ESMValTool is a community-developed climate model diagnostics and evaluation software package.
     <!-- Code ownership and support -->

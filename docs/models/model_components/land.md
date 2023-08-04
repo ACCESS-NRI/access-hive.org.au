@@ -1,10 +1,10 @@
-# <div class="highlight-bg"> Land Model Components </div>
+#  Land Model Components 
 
 <!-- {% include "call_contribute.md" %} -->
 
 <!-- ![Land Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/land-component-map.png" class="image-background"></img>
+<img src = "../../../assets/component-logos/component-maps/land-component-map.png" class="white-background"></img>
 
 ## [CABLE][cable-wiki]
 

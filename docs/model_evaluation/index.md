@@ -1,8 +1,8 @@
-# <div class="highlight-bg"> Model Evaluation and Diagnostics (MED) </div>
+#  Model Evaluation and Diagnostics (MED) 
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
-ACCESS-NRI's "Model Evaluation and Diagnostics" work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
+ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
 
 If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
@@ -61,13 +61,15 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
         </div>
         <div class="squared-card-text-container bold">ESMValTool</div>
     </a>
+</div>
+<div class="card-container">
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card default-text-color">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
         </div>
