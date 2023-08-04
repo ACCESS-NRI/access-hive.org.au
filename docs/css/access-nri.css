@@ -437,7 +437,7 @@ h3 {
 .card-container {
   margin: 1em 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
@@ -485,6 +485,7 @@ h3 {
 }
 
 .vertical-card-text-container {
+  color: var(--md-default-fg-color);
   flex-basis: 20%;
   display: flex;
   width: 100%;
@@ -520,6 +521,7 @@ h3 {
 }
 
 .horizontal-card-text-container {
+  color: var(--md-default-fg-color);
   height: 100%;
   flex-basis: 65%;
   display: flex;
@@ -534,18 +536,11 @@ h3 {
   border-radius: 8px;
 }
 
-.card-container:has(.component-card) {
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 0.8em;
-}
-
 a.component-card {
   border: unset;
   box-shadow: unset;
   max-width: 22%;
+  min-height: 0;
 }
 
 .component-card:hover {

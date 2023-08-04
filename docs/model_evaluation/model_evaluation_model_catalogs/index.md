@@ -6,7 +6,7 @@ The ACCESS-NRI intake catalog aims to provide a way for Python users to discover
         <div class="vertical-card-image-container">
             <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain"></img>
         </div>
-        <div class="vertical-card-text-container bold highlight-bg">Documentation</div>
+        <div class="vertical-card-text-container bold ">Documentation</div>
     </a>
 </div>
 

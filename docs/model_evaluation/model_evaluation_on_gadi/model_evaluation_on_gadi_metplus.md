@@ -6,9 +6,9 @@
 
 For detailed information, tutorials and more of [METplus](https://metplus.readthedocs.io/en/latest/index.html), please go to the
  <div class="card-container">
-     <a href="https://metplus.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1 default-text-color">
+     <a href="https://metplus.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1">
          <div class="vertical-card-image-container">
-             <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation"></img>
+             <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation" class="img-contain"></img>
          </div>
          <div class="vertical-card-text-container bold">Documentation</div>
      </a>

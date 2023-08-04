@@ -1,7 +1,7 @@
 # Supported ACCESS Model Configurations
 
 <div class="card-container" style="flex-direction: column">
-    <a href="access-am/" class="horizontal-card default-text-color" style="height:10em;">
+    <a href="access-am/" class="horizontal-card" style="height:10em;">
             <div class="horizontal-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-am.png" class="white-background img-cover"></img> 
             </div>
@@ -12,7 +12,7 @@
                 </span>
             </div>
     </a>
-     <a href="access-cm/" class="horizontal-card default-text-color" style="height:10em;">
+     <a href="access-cm/" class="horizontal-card" style="height:10em;">
             <div class="horizontal-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
             </div>
@@ -23,7 +23,7 @@
                 </span>
             </div>
     </a>
-    <a href="access-esm/" class="horizontal-card default-text-color" style="height:10em;">
+    <a href="access-esm/" class="horizontal-card" style="height:10em;">
             <div class="horizontal-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-cover"></img> 
             </div>
@@ -34,7 +34,7 @@
                 </span>
             </div>
     </a>
-    <a href="access-om/" class="horizontal-card default-text-color" style="height:10em;">
+    <a href="access-om/" class="horizontal-card" style="height:10em;">
             <div class="horizontal-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-cover"></img> 
             </div>
