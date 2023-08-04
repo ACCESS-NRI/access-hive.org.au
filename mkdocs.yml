@@ -106,7 +106,7 @@ nav:
     - Models: models/index.md
     - Model Configurations: 
       - Overview: models/configurations/index.md
-      - ACCESS-AM: models/configurations/access-am.md
+      # - ACCESS-AM: models/configurations/access-am.md
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-ESM: models/configurations/access-esm.md
       - ACCESS-OM: models/configurations/access-om.md
@@ -125,7 +125,7 @@ nav:
 
   - Run a Model: 
     - models/run-a-model/index.md
-    - Run ACCESS-AM: models/run-a-model/run-access-am.md
+    # - Run ACCESS-AM: models/run-a-model/run-access-am.md
     - Run ACCESS-CM: models/run-a-model/run-access-cm.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md

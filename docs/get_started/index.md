@@ -82,9 +82,11 @@ To log in to <i>Gadi</i> you need a few pre-requisites:
     <br>
     Operative Systems such as Linux or MacOS already have a built-in UNIX-like terminal.
     <br>
-    Windows users can get a terminal simulator such as <a href="https://www.cygwin.com/install.html" target="_blank">Cygwin</a>, <a href="https://www.putty.org/" target="_blank">PuTTY</a>, or log in through <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE's Gadi Terminal</a>.
+    Windows users can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>, or log in through <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE's Gadi Terminal</a>.
     <div class="note">
       If you choose to log in through <i>ARE's Gadi Terminal</i>, you don't need to follow the next steps as you would already be connected to <i>Gadi</i>.
+      <br>
+      However, we do suggest you to follow through, as setting up a connection to <i>Gadi</i> from your local machine (without the need for ARE) is the suggested workflow.
     </div>
   </li>
 </ul>

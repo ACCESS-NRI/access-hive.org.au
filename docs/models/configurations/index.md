@@ -1,7 +1,7 @@
 # Supported ACCESS Model Configurations
 
 <div class="card-container" style="flex-direction: column">
-    <a href="access-am/" class="horizontal-card" style="height:10em;">
+    <!-- <a href="access-am/" class="horizontal-card" style="height:10em;">
             <div class="horizontal-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-am.png" class="white-background img-cover"></img> 
             </div>
@@ -11,7 +11,7 @@
                     ACCESS-AM is a global climate model that includes atmosphere and land components, driven by historical sea surface temperature and ice data.
                 </span>
             </div>
-    </a>
+    </a> -->
      <a href="access-cm/" class="horizontal-card" style="height:10em;">
             <div class="horizontal-card-image-container">
                 <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
