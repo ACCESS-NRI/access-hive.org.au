@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> How to Contribute </div>
+#  How to Contribute 
 
 <img src = "../assets/how-to-contribute-img.jpg" class="rectangular-img img-cover with-border"></img>
 

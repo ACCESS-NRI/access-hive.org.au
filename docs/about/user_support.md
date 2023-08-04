@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> User support </div>
+#  User support 
 
 ## How to get help
 

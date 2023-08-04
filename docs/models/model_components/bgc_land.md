@@ -1,11 +1,11 @@
 
-# <div class="highlight-bg"> Biogeochemistry Land </div>
+#  Biogeochemistry Land 
 
 <!-- {% include "call_contribute.md" %} -->
 
 <!-- ![BGC Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/bgc-land-component-map.png" class="image-background"></img>
+<img src = "../../../assets/component-logos/component-maps/bgc-land-component-map.png" class="white-background"></img>
 
 ## [CASA-CNP][casa-web]
 

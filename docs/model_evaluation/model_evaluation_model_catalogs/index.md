@@ -16,7 +16,7 @@ The ACCESS-NRI catalog is essentially a table of climate data products that exis
 
 ## Showcase: use intake to easily find, load and plot data
 
-In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an ACCESS-OM2 run called "025deg_jra55_iaf_omip2_cycle1".
+In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an ACCESS-ESM1-5 run called "HI_CN_05", which is an historical run using same configuration as CMIP6 ACCESS-ESM1-5 historical r1i1p1f1, but with phosphorus limitation disabled within CASA-CNP.
 
 First we load the catalog using
 
@@ -25,20 +25,17 @@ import intake
 catalog = intake.cat.access_nri
 ```
 
-Now we can load and plot available datasets of the variable "temp_global_ave" from the product "025deg_jra55_iaf_omip2_cycle1" using
+Now we can load and plot available datasets of the variable "temp_global_ave" from the product "HI_CN_05" using
 
 ```python
 import matplotlib.pyplot as plt
 
-dataset_dict = catalog["025deg_jra55_iaf_omip2_cycle1"].search(
-    variable="temp_global_ave"
-).to_dataset_dict()
+# This returns an xarray Dataset
+dataset = catalog["HI_CN_05"].search(variable="temp_global_ave").to_dask()
 
-# `dataset_dict` contains two xarray Datasets, one at daily frequency and one at monthly
-dataset_dict["ocean_scalar_snapshot.1day"]["temp_global_ave"].plot(label="daily")
-dataset_dict["ocean_scalar.1mon"]["temp_global_ave"].plot(label="monthly")
+# Plot the data
+dataset["temp_global_ave"].plot()
 plt.title("")
-plt.legend()
 plt.grid()
 ```
 
