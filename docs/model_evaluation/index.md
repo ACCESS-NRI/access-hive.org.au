@@ -2,7 +2,7 @@
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
-ACCESS-NRI's "Model Evaluation and Diagnostics" work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
+ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
 
 If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
