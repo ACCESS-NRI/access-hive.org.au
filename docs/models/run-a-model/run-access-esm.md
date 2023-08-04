@@ -369,8 +369,7 @@ When the model completes its run, or if it crashes, the output and error log fil
 ## {{ model }} outputs
 While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory in <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/esm-pre-industrial/archive</code>.
 <br>
-<br>
-Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>esm-pre-industrial</code> ). Inside the configuration folder, they are further subdivided for each internal run.
+Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>esm-pre-industrial</code>). Inside the configuration folder, they are further subdivided for each internal run.
 <br>
 The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
 <br>
