@@ -61,13 +61,15 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
         </div>
         <div class="squared-card-text-container bold">ESMValTool</div>
     </a>
+</div>
+<div class="card-container">
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
         </div>
         <div class="squared-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="squared-card default-text-color">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
             <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
         </div>

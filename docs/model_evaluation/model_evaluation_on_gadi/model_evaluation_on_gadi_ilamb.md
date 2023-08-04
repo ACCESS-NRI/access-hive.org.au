@@ -1,6 +1,15 @@
 # `ilamb` on Gadi at NCI
 
-ACCESS-NRI is maintaining a version of the `python` package `ilamb` for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB) on Gadi at the National Compuational Infrastructure (NCI).
+`ilamb` is a Python framework for for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB).
+
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+    <!-- Who develped the tool? -->
+    ILAMB/IOMB is a community-developed climate model diagnostics and evaluation software package.
+    <!-- Code ownership and support -->
+    ACCESS-NRI does not own the code of ILAMB/IOMB, but actively supports the use of ILAMB/IOMB on Gadi.
+    ACCESS-NRI provides access to the latest version of ILAMB/IOMB via the `xp65` access-med conda environment deployed on NCI-Gadi.
+
+ACCESS-NRI is maintaining a version of the package `ilamb`  on Gadi at the National Compuational Infrastructure (NCI).
 
 Here, we provide a quick tutorial on how use `ilamb` on Gadi. We assume that you already have access to Gadi, logged onto Gadi via secure shell (ssh) and loaded our `access-med` `conda` environment (if not, follow [these instructions](../model_evaluation_getting_started/index.md)).
 

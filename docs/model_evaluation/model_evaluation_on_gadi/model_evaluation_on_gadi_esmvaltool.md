@@ -1,5 +1,14 @@
 # Tutorial for using `esmvaltool` on Gadi@NCI
 
+`esmvaltool` is the Earth System Model Evaluation Tool.
+
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+    <!-- Who develped the tool? -->
+    ESMValTool is a community-developed climate model diagnostics and evaluation software package.
+    <!-- Code ownership and support -->
+    ACCESS-NRI does not own the code of ESMValTool, but actively supports the use of ESMValTool on Gadi.
+    ACCESS-NRI provides access to the latest version of ESMValTool via the `xp65` access-med conda environment deployed on NCI-Gadi.
+
 <div class="card-container">
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="aspect1to2-card default-text-color">
         <div class="squared-card-image-container">
