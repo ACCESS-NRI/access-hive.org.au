@@ -14,7 +14,7 @@ We therefore support projects like the Coupled Model Intercomparison Projects (C
 
 ## 1 Network Common Data Format (NetCDF)
 
-Many organizations and scientific groups in different countries have adopted a data format called [NetCDF](https://www.unidata.ucar.edu/software/NetCDF/) by the Unidata Community as a standard way to represent some forms of scientific data.
+Many organizations and scientific groups in different countries have adopted a data format called <a href="https://www.unidata.ucar.edu/software/netcdf/" target="_blank">NetCDF</a> by the Unidata Community as a standard way to represent some forms of scientific data.
 
 NetCDF (with file extensions `*.nc`) is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.
 
@@ -23,14 +23,14 @@ NetCDF (with file extensions `*.nc`) is a set of software libraries and self-des
 - **Array-oriented** means that the `*.nc` data is typically spanning multiple dimensions with the same lengths (like latitude and longitude or time) and variables (like temperature or humidity) which are stored in arrays.
 
 <div style="text-align: center;">
-     <img src="../../../assets/model_evaluation/NetCDF_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" width="75%"/>
+     <img src="../../../assets/model_evaluation/netcdf_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" width="75%"/>
  </div>
 
 ### 1.1 NetCDF metadata
 
 Metadata enables users of data from different sources to decide which quantities are comparable, and facilitates building applications with powerful extraction, regridding, and display capabilities.
 
-To facilitate this process, there are conventions for CF (Climate and Forecast) metadata. These are designed to promote the processing and sharing of files created with NetCDF. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. Learn more about the CF metadata conventions [here](http://cfconventions.org).
+To facilitate this process, there are conventions for CF (Climate and Forecast) metadata. These are designed to promote the processing and sharing of files created with NetCDF. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. Learn more about the CF metadata conventions <a href="http://cfconventions.org" target="_blank">here</a>.
 
 ### 1.2 NetCDF data and variables
 
@@ -46,20 +46,19 @@ Using common variables is key for a united climate modelling community. While we
 
 ### 2.1 Variables of CMIP6 (Coupled Model Intercomparison Project Version 6)
 
-You can search the extensive list of Coupled Model Intercomparison Project version 6 on [this website](Chttps://clipc-services.ceda.ac.uk/dreq/index/var.html).
+You can search the extensive list of Coupled Model Intercomparison Project version 6 on <a href="https://clipc-services.ceda.ac.uk/dreq/index/var.html" target="_blank">this website</a>.
 
 ### 2.2 Variables of the ERA5 atmospheric reanalysis
 
 ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate covering the period from January 1940 to present. ERA5 is produced by the Copernicus Climate Change Service (C3S) at ECMWF. ERA5 provides hourly estimates of a large number of atmospheric, land and oceanic climate variables.
 
-A full list of ERA5 parameters is available on the [ECMWF database](https://codes.ecmwf.int/grib/param-db/). It covers both the [ERA5 parameter listings](https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation#ERA5:datadocumentation-Parameterlistings) as well as the [ERA5-LAND parameter listings](https://confluence.ecmwf.int/display/CKB/ERA5-Land%3A+data+documentation#ERA5Land:datadocumentation-parameterlistingParameterlistings).
+A full list of ERA5 parameters is available on the <a href="https://codes.ecmwf.int/grib/param-db/" target="_blank">ECMWF database</a>. It covers both the <a href="https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation#ERA5:datadocumentation-Parameterlistings" target="_blank">ERA5 parameter listings</a> as well as the <a href="https://confluence.ecmwf.int/display/CKB/ERA5-Land%3A+data+documentation#ERA5Land:datadocumentation-parameterlistingParameterlistings" target="_blank">ERA5-LAND parameter listings</a>.
 
 ## 3 Loading NetCDF files
 
-Our Model Evaluation and Diagnostics tools are based around the reading and storing of files via the Python package `xarray`. You can find a quick overview [here](https://docs.xarray.dev/en/stable/getting-started-guide/quick-overview.html) and tutorials [here](
-https://tutorial.xarray.dev/intro.html#).
+Our Model Evaluation and Diagnostics tools are based around the reading and storing of files via the Python package `xarray`. You can find a quick overview <a href="https://docs.xarray.dev/en/stable/getting-started-guide/quick-overview.html" target="_blank">here</a> and tutorials <a href="https://tutorial.xarray.dev/intro.html" target="_blank">here</a>.
 
-We provide `xarray` through out `conda` environment, so you can use it either directly as shown below, or through the dataset capabilities of our catalog [ACCESS-NRI Model Intake Catalog Tool](../../model_evaluation_model_catalogs/index.md).
+We provide `xarray` through out `conda` environment, so you can use it either directly as shown below, or through the dataset capabilities of our catalog [ACCESS-NRI Model Intake Catalog Tool](../../model_evaluation_model_catalogs/index.md</a>.
 
 ```
 import xarray as xr
