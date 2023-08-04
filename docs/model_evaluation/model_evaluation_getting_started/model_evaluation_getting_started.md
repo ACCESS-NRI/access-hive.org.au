@@ -1,4 +1,4 @@
-# Model Evaluation Environment at NIC's Gadi
+# Model Evaluation Environment at NCI's Gadi
 
 At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to NCI's Gadi](../../get_started/index.md).
 
@@ -25,7 +25,7 @@ You are now able to use the scripts of our currated environment, including `pyth
 
 
 <div style="text-align: center;">
-    <a href="https://github.com/ACCESS-NRI/MED-condaenv/blob/main/scripts/environment.yml" target="_blank"><img src="../../../assets/model_evaluation/condaenv_list.png" alt="List of packages that are provided as part of the xp65 access-med environment" width="75%"/></a>
+    <img src="../../../assets/model_evaluation/condaenv_list.png" alt="List of packages that are provided as part of the xp65 access-med environment" width="75%"/>
 </div>
 
 ## 3 Interactive computing on NCI via the Australian Research Environment (ARE)

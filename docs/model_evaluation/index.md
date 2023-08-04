@@ -6,23 +6,23 @@ ACCESS-NRI's "Model Evaluation and Diagnostics" work is a critical facet of clim
 
 If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
-    <a href="../get_started" class="vertical-card aspect-ratio1to1 default-text-color">
+    <a href="../get_started" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access"></img>
+            <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold">Computing Access</div>
+        <div class="vertical-card-text-container bold highlight-bg">Computing Access</div>
     </a>
-    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="vertical-card aspect-ratio1to1 default-text-color">
+    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment"></img>
+            <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment" class="img-cover" style="object-position: left;"></img>
         </div>
-        <div class="vertical-card-text-container bold">MED Conda Environment</div>
+        <div class="vertical-card-text-container bold highlight-bg">MED Conda Environment</div>
     </a>
-    <a href="model_evaluation_getting_started/model_variables" class="vertical-card aspect-ratio1to1 default-text-color">
+    <a href="model_evaluation_getting_started/model_variables" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables"></img>
+            <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold">Model Variables</div>
+        <div class="vertical-card-text-container bold highlight-bg">Model Variables</div>
     </a>
 </div>
 
@@ -32,17 +32,17 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
 
 ### Data Catalogs
 <div class="card-container">
-    <a href="model_evaluation_observational_catalogs" class="vertical-card aspect-ratio1to1 default-text-color">
+    <a href="model_evaluation_observational_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalog. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images"></img>
+            <img src="../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalog. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold">Observational Data Catalog</div>
+        <div class="vertical-card-text-container bold highlight-bg">Observational Data Catalog</div>
     </a>
-    <a href="model_evaluation_model_catalogs" class="vertical-card aspect-ratio1to1 default-text-color">
+    <a href="model_evaluation_model_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment"></img>
+            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold">Model Data Catalog</div>
+        <div class="vertical-card-text-container bold highlight-bg">Model Data Catalog</div>
     </a>
 </div>
 
@@ -51,25 +51,25 @@ Here, we provide catalogs and pointers to [observational data](./model_evaluatio
 <div class="card-container">
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="vertical-card aspect-ratio2to1 default-text-color">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
+            <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB" class="img-cover"></img>
         </div>
         <div class="vertical-card-text-container bold">ILAMB</div>
     </a>
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="vertical-card aspect-ratio2to1 default-text-color">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
+            <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
         <div class="vertical-card-text-container bold">ESMValTool</div>
     </a>
     <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="vertical-card aspect-ratio2to1 default-text-color">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
+            <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA" class="img-cover"></img>
         </div>
         <div class="vertical-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio1to1 default-text-color">
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1 default-text-color">
         <div class="vertical-card-image-container">
-            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
+            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
         </div>
         <div class="vertical-card-text-container bold">METplus</div>
     </a>

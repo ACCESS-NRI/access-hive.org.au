@@ -2,11 +2,11 @@
 
 The ACCESS-NRI intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on the Australian NCI supercomputer Gadi. For detailed information, tutorials and more, please go to the
 <div class="card-container">
-    <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1 default-text-color">
+    <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1">
         <div class="vertical-card-image-container">
-            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation"></img>
+            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain"></img>
         </div>
-        <div class="vertical-card-text-container bold">Documentation</div>
+        <div class="vertical-card-text-container bold highlight-bg">Documentation</div>
     </a>
 </div>
 

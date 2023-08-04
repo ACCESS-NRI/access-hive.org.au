@@ -81,7 +81,7 @@ function tabFunctionality() {
   Add the external-link icon to <a> tags with target="_blank"
 */
 function addExternalLinkIcon() {
-  let extLinks = document.querySelectorAll("article a[target='_blank']");
+  let extLinks = document.querySelectorAll("article a[target='_blank']:not(> img)");
   extLinks.forEach(link => {
     link.classList.add('external-link');
   })
