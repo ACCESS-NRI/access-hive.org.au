@@ -5,13 +5,13 @@ We are working in cooperation with NCI to currate observational data collections
 You can search the available data collections on the NCI Data Collections website:
 
 <div class="card-container">
-    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank" class="aspect1to2-card default-text-color">
-        <div class="vertical-card-image">
-            <img src="../../assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections"></img>
+    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text bold">NCI Data Collections</div>
+        <div class="vertical-card-text-container bold ">NCI Data Collections</div>
     </a>
-    <!-- <a href="https://esgf.nci.org.au/projects/esgf-nci/" target="_blank" class="vertical-card default-text-color">
+    <!-- <a href="https://esgf.nci.org.au/projects/esgf-nci/" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image">
             <img src="../../assets/model_evaluation/logo_nci_data_esgf.png" alt="ESGF Data Collection at NCI"></img>
         </div>

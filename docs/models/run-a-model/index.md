@@ -5,35 +5,35 @@ If you are not sure which ACCESS Model is the right one for your needs, check ou
 [ACCESS Models overview](../).
 
 <div class="card-container">
-    <a href="run-access-am" class="vertical-card default-text-color">
+    <a href="run-access-am" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-am-config.png" alt="ACCESS-AM">
         </div>
-        <div class="vertical-card-text-container  highlight-bg bold">   
+        <div class="vertical-card-text-container   bold">   
             Run ACCESS-AM
         </div>
     </a>
-    <a href="run-access-cm" class="vertical-card default-text-color">
+    <a href="run-access-cm" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-cm2-config.png" alt="ACCESS-CM">
         </div>
-        <div class="vertical-card-text-container  highlight-bg bold">   
+        <div class="vertical-card-text-container   bold">   
             Run ACCESS-CM
         </div>
     </a>
-    <a href="run-access-esm" class="vertical-card default-text-color">
+    <a href="run-access-esm" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-esm-config.png" alt="ACCESS-ESM">
         </div>
-        <div class="vertical-card-text-container  highlight-bg bold">   
+        <div class="vertical-card-text-container   bold">   
             Run ACCESS-ESM
         </div>
     </a>
-    <a href="run-access-om" class="vertical-card default-text-color">
+    <a href="run-access-om" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img class="img-cover white-background" src="../../assets/model-config-logos/access-om2-config.png" alt="ACCESS-OM">
         </div>
-        <div class="vertical-card-text-container  highlight-bg bold">   
+        <div class="vertical-card-text-container   bold">   
             Run ACCESS-OM
         </div>
     </a>
