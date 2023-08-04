@@ -35,7 +35,7 @@ Every project has an ID (e.g. `xp65`). This ID is what the term <i>project</i> a
 <br>
 The first project that you join will become your default one.
 <br>
-If you want to change your default project, please check <a href="#change-default-project-on-gadi">how to change your default project on gadi</a>.
+If you want to change your default project, please check <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
 
 There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out.
 <br>
@@ -184,7 +184,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
             </terminal-animation>
             <div class="note">
-              If you are running a MacOS versions prior to Monterey (12.0), the <code>--apple-use-keychain</code> flag needs to be substituted with <code>-K</code>.
+              If you are running a MacOS version prior to Monterey (12.0), the <code>--apple-use-keychain</code> flag needs to be substituted with <code>-K</code>.
             </div>
           </li>
         </ol>
@@ -192,7 +192,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
       <li>
         <b>Create/Update the SSH config file</b>
         <br>
-        The <code>~/.ssh/config</code> file is a file where you can store the SSH configurations for different servers, labeled so you don't have to remember them.
+        The <code>~/.ssh/config</code> file is a file where you can store labelled SSH configurations for different servers so you don’t have to remember them.
         <br>
         To create your ssh config file, in your terminal, run:
         <pre><code>touch ~/.ssh/config</code></pre>
@@ -303,7 +303,7 @@ Once you complete all the above steps, you will be able to connect to <i>Gadi</i
 <pre><code>ssh gadi</code></pre>
 
 ### Change default project on Gadi
-It is recommended that you change your default project on <i>Gadi</i>, as this might be used by tasks such as running a model or model evaluation.
+It is recommended that you check what your default project on <i>Gadi</i> is set to. The default project should be set to the computational project you will most likely use to run simulations/forecasts and store data.
 <br>
 To check which is your default project, on <i>Gadi</i>, run:
 <pre><code>echo $PROJECT</code></pre>
