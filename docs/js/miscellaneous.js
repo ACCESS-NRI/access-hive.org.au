@@ -1,3 +1,5 @@
+'use strict';
+
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
@@ -88,6 +90,76 @@ function addExternalLinkIcon() {
 }
 
 
+/*
+  Add button to toggle terminal-animations for the whole page (next to the page title)
+*/
+function toggleTerminalAnimations() {
+  if (document.querySelector('terminal-window')) {
+    let state;
+
+    function applyState() {
+      let terminalWindows = document.querySelectorAll('terminal-window');
+      if (state == 'active') {
+        terminalWindows.forEach(t => {
+          t.removeAttribute('static');
+        })
+      } else {
+        terminalWindows.forEach(t => {
+          t.setAttribute('static',"");
+        })
+      }
+    }
+    
+    function getCookie() {
+      let cvalue = document.cookie.split(';')
+      .find(c => c.trim().startsWith('terminalState='))
+      ?.split("=")[1];
+      return cvalue;
+    }
+
+    function setCookie() {
+      document.cookie = `terminalState=${state};path=/;max-age=2592000;samesite=lax`; // Expires after 1 month
+    }
+
+    function toggleState(e) {
+      if (state == 'active') {
+        state='inactive'
+      } else {
+        state='active'
+      }
+      setCookie();
+      location.reload();
+    }
+    
+    let terminalStateCookie = getCookie();
+    if (! terminalStateCookie) {
+      state = 'active';
+      setCookie();
+    } else {
+      state = terminalStateCookie;
+    }
+    applyState();
+    let terminalAnimationsSwitch = document.createElement('img');
+    let rootDir;
+    if (location.pathname.startsWith('/development_site')) {
+      rootDir = `${location.origin}/development_site`;
+    } else if (location.pathname.startsWith('/pr-preview')) {
+      rootDir = `${location.origin}${location.pathname.split('/').slice(0,3).join('/')}`;
+    } else {
+      rootDir = location.origin;
+    }
+    terminalAnimationsSwitch.setAttribute('src',`${rootDir}/assets/terminal_animation_switch_${state}.png`);
+    let current = state == 'active' ? 'enabled' : 'disabled';
+    let onclick = state == 'active' ? 'disable' : 'enable';
+    terminalAnimationsSwitch.setAttribute('title',`Terminal animations ${current}.\nClick to ${onclick} them.`);
+    terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
+    let h1 = document.querySelector('h1');
+    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
+    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
+  }
+}
+
+
 // Join all functions
 function main() {
   sortTables();
@@ -95,6 +167,7 @@ function main() {
   adjustScrollingToId();
   tabFunctionality();
   addExternalLinkIcon();
+  toggleTerminalAnimations();
 }
 
 // Run all functions

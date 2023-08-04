@@ -210,5 +210,5 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - js/terminal_animation.js
+  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js
   - js/miscellaneous.js
