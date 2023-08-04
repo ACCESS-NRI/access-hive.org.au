@@ -61,7 +61,7 @@ In order to get it, on <i>Gadi</i>, create a directory where to keep the model c
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
+First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, from inside the cloned repo we can run:
 <pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
