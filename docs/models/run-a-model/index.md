@@ -1,5 +1,5 @@
 # Run a Model
-If you are new to climate science or ACCESS Models, check [how to get started](../../../get_started).
+If you are new to climate science or ACCESS Models, check [how to get started](../../get_started).
 
 If you are not sure which ACCESS Model is the right one for your needs, check out our
 [ACCESS Models overview](../).
