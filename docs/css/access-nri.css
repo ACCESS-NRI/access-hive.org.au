@@ -200,8 +200,9 @@ h3 {
 
 
 /* =============================================================== 
-Introductory paragraph
+Homepage
 */
+/* Introductory paragraph */
 .introduction {
   font-size: 1.2em;
   padding: .7em;
@@ -212,6 +213,13 @@ Introductory paragraph
 .introduction > img {
   max-width: 7em;
   margin: 0.2em 0.2em 0.2em 0.7em;
+}
+
+img.acknowledgement-img {
+  width: 100%;
+  height: 8em;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 

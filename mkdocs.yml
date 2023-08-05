@@ -59,7 +59,8 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - macros
   - bibtex:
       bib_file: "references.bib"
