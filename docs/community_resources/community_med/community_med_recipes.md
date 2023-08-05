@@ -1,6 +1,7 @@
 # Community Model Evaluation and Diagnostics (MED) Recipe Gallery
 
-<!-- {% include "call_contribute.md" %} -->
+???+ danger "Support Level: NOT supported by ACCESS-NRI"
+    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
 
 We are trying to ingest more and more model evaluation and diagnostics recipes in your currated [recipe gallery on this website](../../model_evaluation/model_evaluation_recipe_gallery.md). While this is a continous effort, this site is intented for a list of model evaluation and diagnostics recipes that are not (yet) ingested but may be interesting for the community:
 
@@ -379,4 +380,4 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 </tr>
 
 
-<table/>
+</table>

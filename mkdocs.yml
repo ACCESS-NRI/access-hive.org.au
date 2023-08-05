@@ -4,8 +4,8 @@ site_name: ACCESS-Hive
 # then used to create the sitemap for search engine indexing
 site_url: https://access-hive.org.au
 # Git repository
-repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
-repo_name: ACCESS-Hive
+# repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
+# repo_name: ACCESS-Hive
 # Material default to a "master" branch, need to change to "main"
 edit_uri: edit/main/docs
 docs_dir: docs
@@ -135,7 +135,7 @@ nav:
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
       - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-      - Model Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
+      - Data Format and Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
         # - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
         # - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
     - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
@@ -149,6 +149,7 @@ nav:
       - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
       - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
       - COSIMA cookbook: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+      - METplus: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_metplus.md
       # - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
       # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
@@ -200,8 +201,7 @@ extra:
 
 extra_css:
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
-  - fontawesome-free-6.4.0-web/css/fontawesome.css
-  - fontawesome-free-6.4.0-web/css/solid.css
+  - fontawesome-free-6.4.0-web/css/all.css
   - fontello/css/fontello-codes.css
   - fontello/css/fontello-ie7-codes.css
   - fontello/css/fontello-ie7.css
@@ -210,5 +210,5 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - js/terminal_animation.js
+  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js
   - js/miscellaneous.js

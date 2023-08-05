@@ -1,6 +1,6 @@
 
 {% set model = "ACCESS-OM" %}
-# <span class="highlight-bg"> Run {{ model }} </span>
+# Run {{ model }}
 ## Requirements
 
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
@@ -34,10 +34,10 @@ For the general requirements needed to run all ACCESS models, please refer to th
         <br>
         To check that payu is effectively available, you can run:
         <pre><code>payu --version</code></pre>
-        <terminal-animation>
+        <terminal-window>
             <terminal-line data="input">payu --version</terminal-line>
             <terminal-line lineDelay="1000">1.0.19</terminal-line>
-        </terminal-animation>
+        </terminal-window>
     </li>
 </ul>
 ----------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ This is a 1° horizontal resolution configuration, with interannual forcing from
 <br>
 In order to get it, on <i>Gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/COSIMA/1deg_jra55_iaf.git</code></pre>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
     <terminal-line data="input">cd ~/access-eom</terminal-line>
     <terminal-line data="input" directory="~/access-om">git clone https://github.com/COSIMA/1deg_jra55_iaf.git</terminal-line>
@@ -61,7 +61,7 @@ In order to get it, on <i>Gadi</i>, create a directory where to keep the model c
     <terminal-line>remote: Total 14715 (delta 3383), reused 3379 (delta 3377), pack-reused 11314</terminal-line>
     <terminal-line>Receiving objects: 100% (14715/14715), 35.68 MiB | 18.11 MiB/s, done.</terminal-line>
     <terminal-line>Resolving deltas: 100% (10707/10707), done.</terminal-line>
-</terminal-animation>
+</terminal-window>
 <div class="note">
     Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
 </div>
@@ -93,7 +93,7 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
 <ul>
     <li><code>work</code> &rarr; temporary directory where the model is actually run. It gets cleaned after each run.</li>
     <li><code>archive</code> &rarr; directory where the output is placed after each run.</li>
-    <terminal-animation>
+    <terminal-window>
         <terminal-line data="input">cd ~/access-om/1deg_jra55_iaf</terminal-line>
         <terminal-line data="input" directory="~/access-om/1deg_jra55_iaf">payu init</terminal-line>
         <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
@@ -101,7 +101,7 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
         <terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
         <terminal-line>work path:  /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
         <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
-    </terminal-animation>
+    </terminal-window>
 </ul>
 
 ### Edit the Master Configuration file
@@ -276,7 +276,7 @@ After editing the configuration, we are ready to run {{ model }}.
 As a first step, from the control directory, is good practice to run:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">payu setup</terminal-line>
     <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
     <terminal-line>binary ppath:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
@@ -295,7 +295,7 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Creating restart manifest</terminal-line>
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
-</terminal-animation>
+</terminal-window>
 <div class="note">
     You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
@@ -308,7 +308,7 @@ This will submit a single job to the queue with a total run length of <code>rest
 <div class="note">
     The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
 </div>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
     <terminal-line>payu: warning: CPU request increased from 241 to 288</terminal-line>
@@ -318,7 +318,7 @@ This will submit a single job to the queue with a total run length of <code>rest
     <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line>qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_iaf -l wd -j n -v PYTHONPATH=/g/data3/tm70/dm5220/scripts/python_modules/,PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,PAYU_FORCE=True,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/ik11+gdata/qv56 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
     <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
-</terminal-animation>
+</terminal-window>
 
 ### Run configuration for multiple years
 If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>restart_period</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
@@ -335,14 +335,14 @@ Currently, there is no specific tool to monitor {{ model }} runs.
 One way to check the status of our run is running:
 <pre><code>qstat -u $USER</code></pre>
 This will show the status of all your PBS jobs (if there is any PBS job submitted):
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_iaf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-</terminal-animation>
+</terminal-window>
 If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file">Master Configuration file</a>, that will be your job's <i>Name</i> instead of <code>1deg_jra55_iaf</code>.
 <br>
 <i>S</i> indicates the status of your run:
@@ -371,11 +371,11 @@ Both outputs and restarts are stored into subfolders for each different configur
 The format of a typical output folder is <code>outputXXX</code>, whereas the typical restart folder is usually formatted as <code>restartXXX</code>, with <i>XXX</i> being the number of internal run, starting from <code>000</code>.
 <br>
 In the respective folders, outputs and restarts are separated for each model component.
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf">ls</terminal-line>
     <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
-</terminal-animation>
+</terminal-window>
 
 <br>
 <h6>References</h6>

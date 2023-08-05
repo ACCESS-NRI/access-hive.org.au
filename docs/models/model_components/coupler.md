@@ -1,8 +1,8 @@
-# <div class="highlight-bg">Coupler</div>
+# Coupler
 
 <!-- ![Coupler Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png){align=right width=40%} -->
 
-<img src = "../../../assets/component-logos/component-maps/coupler-component-map.png" class="image-background"></img>
+<img src = "../../../assets/component-logos/component-maps/coupler-component-map.png" class="white-background"></img>
 
 A coupler is a software package that allows synchronised exchanges of coupling information between numerical codes representing different components of the climate system.
 
@@ -15,9 +15,9 @@ A coupler is a software package that allows synchronised exchanges of coupling i
 - ACCESS-OM2
 - ACCESS-S
 
-## [NUOPC interoperability layer][NUOPC]
+## [NUOPC][NUOPC-int-layer]
 
-[NUOPC][NUOPC-int-layer] (National Unified Operational Prediction Capability) Interoperability Layer defines conventions and a set of generic components for building coupled models using the Earth System Modeling Framework (ESMF).
+The [National Unified Operational Prediction Capability (NUOPC)][NUOPC-int-layer] interoperability layer defines conventions and a set of generic components for building coupled models using the Earth System Modeling Framework (ESMF).
 
 ACCESS-OM3, a configuration currently under development, uses [NUOPC to couple its MOM6 and CICE6 model components][coupler-choice] as there are no respective OASIS coupling interfaces for these components.
 

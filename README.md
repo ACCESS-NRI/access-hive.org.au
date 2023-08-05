@@ -13,7 +13,22 @@ https://access-hive.org.au/
 If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
 # How to Contribute [Draft]
-- Create a branch from the `development` branch of ACCESS-HIVE repo, for instance, `dev/jasmeen/legacy release`. Use the following two commands to create a new branch and push it to github respectively:
+
+- Pull the latest version of `development` branch locally by using the following commands:
+
+    > Fetch the remote branches from github:
+
+    `git fetch`
+
+    > On terminal, switch to the `development` branch locally using the command:
+
+    `git switch development`     
+
+    > Pull the latest changes from remote `development` branch locally: 
+
+    `git pull`
+
+- Once the latest version of `development` branch is pulled locally, use the following two commands to create the new branch and push it to github respectively:
 
     `git checkout -b dev/jasmeen/legacy-release`
 
@@ -28,10 +43,18 @@ If you wish to add documentation to the ACCESS-Hive website see the [contributio
     `git commit -m "First commit"`
 
     `git push`
+  
+- While working locally on the branch, please make sure to regularly pull changes from remote `development` branch into your branch, using the command:
 
-- On github, create a pull request and making sure to change the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
+    `git pull origin development`
 
-![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
+  This would make sure that the local branch `dev/jasmeen/legacy-release` is always in sync with the latest changes in the remote `development` branch. 
+
+- Once the changes on the local branch `dev/jasmeen/legacy-release` is ready to be integrated with the `development` branch, create a pull request on github by changing the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
+
+    ![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
+
+- When creating a pull request (PR) please also assign a reviewer to avoid delays. For technical content please assign an expert reviewer.
 
 # License
 The ACCESS-Hive site is covered by [the CC-BY 4.0 license][License].

@@ -1,6 +1,5 @@
 {% set model = "ACCESS-CM" %}
-<!-- # <span class="highlight-bg"> Run {{ model }} </span> -->
-# <span class="highlight-bg"> Run {{ model }} </span>
+# Run {{ model }}
 ## <span>Requirements</span>
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
 
@@ -51,31 +50,31 @@ To copy an existing suite, on <i>accessdev</i>:
         Run
         <pre><code>mosrs-auth</code></pre> 
         to authenticate using your <i>MOSRS</i> credentials:
-        <terminal-animation>
+        <terminal-window>
             <terminal-line data="input">mosrs-auth</terminal-line>
             <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
-            <terminal-line>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
-        </terminal-animation>
+            <terminal-line lineDelay=1000>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
+        </terminal-window>
     </li>
     <li>
         Run 
         <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
         to create a local copy of the <code>&lt;suite-ID&gt;</code> from the UKMO repository (used mostly for testing and examining existing suites):
-        <terminal-animation>
+        <terminal-window>
             <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
             <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
             <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
-        </terminal-animation>
+        </terminal-window>
         Alternatively, run 
         <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
         to create a new full copy (local and remote in the UKMO repository) rather than just a local copy. When a new suite is created in this way, a new unique name is generated within the repository, and populated with some descriptive information about the suite along with all the initial configuration details:
-        <terminal-animation class="termynal">
+        <terminal-window class="termynal">
             <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
             <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
             <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
             <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
             <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
-        </terminal-animation>
+        </terminal-window>
     </li>
 </ol>
 For additional <code>rosie</code> options, run 
@@ -90,10 +89,10 @@ The suite directory usually contains 2 subdirectories and 3 files:
     <li><code>rose-suite.conf</code> &rarr; the main suite configuration file.</li>
     <li><code>rose-suite.info</code> &rarr; suite information file.</li>
     <li><code>suite.rc</code> &rarr; the <i>Cylc</i> control script file (Jinja2 language).</li>
-    <terminal-animation>
+    <terminal-window>
         <terminal-line data="input">ls ~/roses/&lt;suite-ID&gt;</terminal-line>
         <terminal-line class="ls-output-format">app meta rose-suite.conf rose-suite.info suite.rc</terminal-line>
-    </terminal-animation>
+    </terminal-window>
 </ul>
 ----------------------------------------------------------------------------------------
 
@@ -110,13 +109,13 @@ to open the <i>Rose</i> GUI and inspect the suite information.
 <div class="note">
     The <code>&</code> is optional and keeps the terminal prompt active while runs the GUI as a separate process.
 </div>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
     <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
     <terminal-line class="ls-output-format">[&lt;N&gt;] &lt;PID&gt;</terminal-line>
     <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
     <img src="../../../assets/run_access_cm/Rose GUI.png" alt="Rose GUI">
-</terminal-animation>
+</terminal-window>
 
 ### Change NCI project
 To make sure we run the suite under the NCI project we belong to, we can navigate to <i>suite conf &rarr; Machine and Runtime Options</i>, edit the <i>Compute project</i> field, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. (Check <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> if you have not joined one yet).
@@ -168,7 +167,7 @@ To run an {{ model }} suite, on <i>accessdev</i>:
     <li>
         After the initial tasks get executed, the <i>Cylc</i> GUI will open up and you will be able to see and control all the different tasks in the suite as they are run:
     </li>
-    <terminal-animation lineDelay="50">
+    <terminal-window lineDelay="50">
         <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
         <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run</terminal-line>
         <terminal-line>[INFO] export CYLC_VERSION=7.8.3</terminal-line>
@@ -215,7 +214,7 @@ To run an {{ model }} suite, on <i>accessdev</i>:
         <terminal-line>[INFO]  $ cylc ping -v --host=accessdev.nci.org.au &lt;suite-ID&gt;</terminal-line>
         <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
         <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
-    </terminal-animation>
+    </terminal-window>
     <div class="note">
         If after you run the command <code>rose suite-run</code> you get an error similar to the following:
         <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
@@ -268,7 +267,7 @@ To investigate the cause of a failure, we need to look at the logs (<code>job.er
         They are then further separated into "attempts" (consecutive failed/successful tasks), with <code>NN</code> being a symlink to the most recent attempt.
         <br>
         In our example, the failure occurred for the <i>09500101</i> simulation cycle (starting date on 1st January 950) in the <i>coupled</i> task. Therefore, the directory where to find the <code>job.err</code> and <code>job.out</code> files is <code>~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/coupled/NN</code>.
-        <terminal-animation>
+        <terminal-window>
             <terminal-line data="input">cd ~/cylc-run/&lt;suite-ID&gt;</terminal-line>
             <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;">ls</terminal-line>
             <terminal-line class="ls-output-format">app cylc-suite.db log log.20230530T051952Z meta rose-suite.info share suite.rc suite.rc.processed work</terminal-line>
@@ -287,7 +286,7 @@ To investigate the cause of a failure, we need to look at the logs (<code>job.er
             <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">cd NN</terminal-line>
             <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/NN">ls</terminal-line>
             <terminal-line class="ls-output-format">job job-activity.log job.err job.out job.status</terminal-line>
-        </terminal-animation>
+        </terminal-window>
     </li>
 </ul>
 ----------------------------------------------------------------------------------------
@@ -301,13 +300,13 @@ To scan for active suites run
 <pre><code>cylc scan</code></pre>
 To reopen the <i>Cylc</i> GUI, from inside the suite directory run
 <pre><code>rose suite-gcontrol</code></pre>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">cylc scan</terminal-line>
     <terminal-line>&lt;suite-ID&gt; &lt;$USER&gt;@accessdev.nci.org.au:&lt;port&gt;</terminal-line>
     <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
     <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</terminal-line>
     <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
-</terminal-animation>
+</terminal-window>
 
 ### STOP a suite
 To shutdown a suite in a safe manner, from inside the suite directory run
@@ -334,7 +333,7 @@ There are two main ways to restart a suite:
         <pre><code>rose suite-run --restart</code></pre>
         to re-install the suite and reopen <i>Cylc</i> in the same state as when it was stopped (you may need to manually trigger failed tasks from the <i>Cylc</i> GUI).
         <br>
-        <terminal-animation lineDelay="50">
+        <terminal-window lineDelay="50">
             <terminal-line data="input" lineDelay="300">cylc</terminal-line>
             <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
             <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run --restart</terminal-line>
@@ -366,7 +365,7 @@ There are two main ways to restart a suite:
             <terminal-line>[INFO]  $ cylc ping -v --host=accessdev.nci.org.au &lt;suite-ID&gt;</terminal-line>
             <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
             <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
-        </terminal-animation>
+        </terminal-window>
     </li>
     <li>
         <b>'HARD' restart</b>
@@ -416,7 +415,7 @@ This directory contains 2 subdirectories:
 For the atmospheric output data, each file it is usually a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a> or netCDF file, formatted as <code>&lt;suite-name&gt;a.p&lt;output-stream-identifier&gt;&lt;year&gt;&lt;month-string&gt;</code>.
 <br>
 In the case of the <code>u-br565</code> suite we will have:
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
     <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
     <terminal-line class="ls-output-format">br565 &lt;other-suite-name&gt; &lt;other-suite-name&gt;</terminal-line>
@@ -425,7 +424,7 @@ In the case of the <code>u-br565</code> suite we will have:
     <terminal-line class="ls-output-format">history restart</terminal-line>
     <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565">ls history/atm</terminal-line>
     <terminal-line class="ls-output-format">br565a.pd0950apr.nc br565a.pd0950aug.nc br565a.pd0950dec.nc br565a.pd0950feb.nc br565a.pd0950jan.nc br565a.pd0950jul.nc br565a.pd0950jun.nc br565a.pd0950mar.nc br565a.pd0950may.nc br565a.pd0950nov.nc br565a.pd0950oct.nc br565a.pd0950sep.nc br565a.pd0951apr.nc br565a.pd0951aug.nc br565a.pd0951dec.nc br565a.pm0950apr.nc br565a.pm0950aug.nc br565a.pm0950dec.nc br565a.pm0950feb.nc br565a.pm0950jan.nc br565a.pm0950jul.nc br565a.pm0950jun.nc br565a.pm0950mar.nc br565a.pm0950may.nc br565a.pm0950nov.nc br565a.pm0950oct.nc br565a.pm0950sep.nc br565a.pm0951apr.nc br565a.pm0951aug.nc br565a.pm0951dec.nc netCDF</terminal-line>
-</terminal-animation>
+</terminal-window>
 <!-- <br>
 For more details on how to control different output variables (STASH), and output streams, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
 
@@ -439,10 +438,10 @@ In the directory there are also some files formatted as <code>&lt;suite-name&gt;
 For more details on how to control the frequency and formatting of restart dumps, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
 <br>
 In the case of the <code>u-br565</code> suite we will have:
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565/restart/atm</terminal-line>
     <terminal-line class="ls-output-format">br565a.da09500201_00 br565a.da09510101_00 br565.xhist-09500131 br565.xhist-09501231 </terminal-line>
-</terminal-animation>
+</terminal-window>
 
 <br>
 <h6>References</h6>

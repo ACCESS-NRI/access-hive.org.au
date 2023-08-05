@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# <div class="highlight-bg">Get Started</div>
+# Get Started
 
 If you are new to climate science or <a href="../models/">ACCESS models</a>, and you want to:
 
@@ -68,8 +68,6 @@ Even though we recommend you have a chat with your supervisor to identify the re
 | ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Other projects |
 | v45  | <a href="https://my.nci.org.au/mancini/project/v45"  target="_blank">Ocean Extremes</a> | Other projects |
 | ga6  | <a href="https://my.nci.org.au/mancini/project/ga6"  target="_blank">Modelling the formation of sedimentary basins and continental margins</a> | Other projects |
-| m18  | <a href="https://my.nci.org.au/mancini/project/m18"  target="_blank">Evolution and dynamics of the Australian lithosphere</a> | Other projects |
-| q97  | <a href="https://my.nci.org.au/mancini/project/q97"  target="_blank">Earth dynamics and resources over the last billion years</a> | Other projects |
 | qu79 | <a href="https://my.nci.org.au/mancini/project/qu79" target="_blank">Collaborative REAnalysis Technical Environment Intercomparison Project (CREATE-IP)</a> | Other projects |
 <hr>
 
@@ -95,7 +93,7 @@ To log in to <i>Gadi</i> we use <a href="https://en.wikipedia.org/wiki/Secure_Sh
 The basic command is:
 <pre><code>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</code></pre>
 You will be asked for your NCI password and then you will get connected to <i>Gadi</i>:
-<terminal-animation lineDelay=0>
+<terminal-window lineDelay=0>
   <terminal-line data="input" lineDelay=300>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</terminal-line>
   <terminal-line lineDelay=300>&lt;NCI-username&gt;@gadi.nci.org.au's password: <i class="icon-key" style="display: inline-block; font-size: 0.4em; transform: rotate(-90deg);"></i></terminal-line>
   <terminal-line lineDelay=3000>###############################################################################</terminal-line>
@@ -111,7 +109,7 @@ You will be asked for your NCI password and then you will get connected to <i>Ga
   <terminal-line>===============================================================================</terminal-line>
   <terminal-line>===============================================================================</terminal-line>
   <terminal-line data="input" lineDelay=200></terminal-line>
-</terminal-animation>
+</terminal-window>
 
 ### Automate the log in step
 To simplify the log in step and avoid having to always insert your NCI password, there are a few steps we suggest you to follow:
@@ -132,7 +130,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
         To create an SSH key, in your terminal, run:
         <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
         You will be asked to create a passphrase linked to the SSH key, and insert it twice:
-        <terminal-animation>
+        <terminal-window>
           <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
           <terminal-line>Generating public/private rsa key pair.</terminal-line>
           <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
@@ -152,7 +150,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
           <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
           <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
           <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
-        </terminal-animation>
+        </terminal-window>
         <div class="note">
           We suggest you don't leave the passphrase empty for security reason.
           <br>
@@ -169,20 +167,20 @@ To simplify the log in step and avoid having to always insert your NCI password,
           <li>
             In your terminal, start the ssh-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
               <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
           </li>
           <li>
             Add your SSH key to the ssh-agent by running:
             <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
             You will be asked for the SSH key passphrase, which will be stored inside the ssh-agent:
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">ssh-add --apple-use-keychain ~/.ssh/id_gadi</terminal-line>
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
             <div class="note">
               If you are running a MacOS versions prior to Monterey (12.0), the <code>--apple-use-keychain</code> flag needs to be substituted with <code>-K</code>.
             </div>
@@ -221,7 +219,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
         To create an SSH key, in your terminal, run:
         <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
         You will be asked to create a passphrase linked to the SSH key, and insert it twice:
-        <terminal-animation>
+        <terminal-window>
           <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
           <terminal-line>Generating public/private rsa key pair.</terminal-line>
           <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
@@ -241,7 +239,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
           <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
           <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
           <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
-        </terminal-animation>
+        </terminal-window>
         <div class="note">
           We suggest you don't leave the passphrase empty for security reason.
           <br>
@@ -258,20 +256,20 @@ To simplify the log in step and avoid having to always insert your NCI password,
           <li>
             In your terminal, start the ssh-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
               <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
           </li>
           <li>
             Add your SSH key to the ssh-agent by running:
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
             You will be asked for the SSH key passphrase, which will be stored inside the ssh-agent:
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">ssh-add ~/.ssh/id_gadi</terminal-line>
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
           </li>
         </ol>
       </li>
@@ -314,7 +312,7 @@ Alternatively, on <i>Gadi</i> you can run:
 exit from <i>Gadi</i>, and log back in.
 <br>
 For example, if you want to change your default project to `tm70`, on <i>Gadi</i>, run:
-<terminal-animation>
+<terminal-window>
   <terminal-line data="input">echo $PROJECT</terminal-line>
   <terminal-line>&lt;old-default-project&gt;</terminal-line>
   <terminal-line data="input">sed "s/\(PROJECT \).*/\1tm70/" ~/.config/gadi-login.conf</terminal-line>
@@ -336,7 +334,7 @@ For example, if you want to change your default project to `tm70`, on <i>Gadi</i
   <terminal-line lineDelay=0>===============================================================================</terminal-line>
   <terminal-line data="input">echo $PROJECT</terminal-line>
   <terminal-line>tm70</terminal-line>
-</terminal-animation>
+</terminal-window>
 <hr>
 
 <h6>References</h6>

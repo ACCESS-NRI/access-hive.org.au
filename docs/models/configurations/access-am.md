@@ -1,8 +1,8 @@
-# <div class="highlight-bg"> ACCESS-AM  </div>
+#  ACCESS-AM  
 
 <!-- {% include "call_contribute.md" %} -->
 
-<img src="../../../assets/model-config-logos/access-am-config.png" alt="ACCESS AM model" class="image-background center-img with-border with-padding"></img>
+<img src="../../../assets/model-config-logos/configurations-without-titles/access-am.png" alt="ACCESS AM model" class="white-background  with-border with-padding"></img>
 
 The ACCESS Atmosphere Model (ACCESS-AM) is a global model with atmosphere and land surface components. It is often used in Atmospheric Model Intercomparison Project (AMIP) experiments where it is driven by historically observed sea surface temperature and sea ice data.
 

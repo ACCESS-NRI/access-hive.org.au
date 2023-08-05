@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Model Components </div>
+#  Model Components 
 ACCESS model components represent different chemical, physical or biological parts of the Earth System.
 <div class="card-container">
     <a href="atmosphere" class="squared-card component-card">
