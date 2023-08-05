@@ -211,7 +211,8 @@ Homepage
 }
 
 .introduction > img {
-  max-width: 7em;
+  float: right;
+  max-width: 5em;
   margin: 0.2em 0.2em 0.2em 0.7em;
 }
 

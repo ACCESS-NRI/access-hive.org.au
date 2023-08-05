@@ -4,18 +4,19 @@ hide:
   - toc
 ---
 
-# <div><span>Welcome to ACCESS-Hive</span>  Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></div>
+# <div><span>Welcome to ACCESS-Hive</span> Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></div>
 
-<div class="with-border introduction">
-    <div>
-        ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.  
-        The HIVE-Forum is the platform for collaboration of the climate research community.
-        <div>
-            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="https://forum.access-hive.org.au/about">How To Get Support</a></div>
-            <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="./contribute">How To Contribute</a></div>
-        </div>
-    </div>
-    <img src="assets/ACCESS_icon_HIVE.png">
+<div class="introduction">
+  <div>
+    ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.
+    The HIVE-Forum is the platform for collaboration of the climate research community.
+  </div>
+  <img src="assets/ACCESS_icon_HIVE.png">
+</div>
+
+<div>
+  <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="https://forum.access-hive.org.au/about">How To Get Support</a></div>
+  <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="./contribute">How To Contribute</a></div>
 </div>
 
 ## Navigating ACCESS-Hive
