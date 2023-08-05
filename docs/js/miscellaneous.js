@@ -5,19 +5,6 @@ function sortTables() {
 }
 
 
-// Remove 'Made with Material for MkDocs' from copyright
-function removeMkDocs() {
-  let copyright = document.querySelector(".md-copyright");
-  for (let i=0; i<=copyright.childNodes.length; i++) {
-    let node = copyright.childNodes[i];
-    if (node?.textContent.includes('Made with') || node?.textContent.includes('Material for MkDocs')) {
-      i--;
-      copyright.removeChild(node);
-    }
-  }
-}
-
-
 /*
   Adjust the scrolling so that the paragraph's titles is not 
   partially covered by the sticky banner when clicking on a toc link
@@ -91,7 +78,6 @@ function addExternalLinkIcon() {
 // Join all functions
 function main() {
   sortTables();
-  removeMkDocs();
   adjustScrollingToId();
   tabFunctionality();
   addExternalLinkIcon();

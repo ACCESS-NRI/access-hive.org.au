@@ -184,7 +184,7 @@ nav:
     
 # Footer
 extra:
-  generator: true
+  generator: false
   social:
     - icon: fontawesome/brands/twitter 
       link: https://twitter.com/ACCESS_NRI
