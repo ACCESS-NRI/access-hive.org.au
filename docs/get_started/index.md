@@ -50,8 +50,6 @@ Here, we only show a few examples of projects that will be used by many users:
 | hh5  | <a href="https://my.nci.org.au/mancini/project/hh5"  target="_blank">Climate-LIEF code environment </a> | Code environment |
 | access | <a href="https://my.nci.org.au/mancini/project/access" target="_blank">ACCESS software sharing</a> | ACCESS code environment |
 | ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Data storage |
-| oi10 | <a href="https://my.nci.org.au/mancini/project/oi10" target="_blank">ESGF CMIP6 Replication Data</a> | Data storage|
-| fs38 | <a href="https://my.nci.org.au/mancini/project/fs38" target="_blank">ESGF CMIP6 Australian Data Publication</a> | Data storage|
 
 <hr>
 
