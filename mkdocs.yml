@@ -168,6 +168,7 @@ nav:
 
   - About:
     - Contact: about/contact.md
+    - User support: about/user_support.md
     - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
