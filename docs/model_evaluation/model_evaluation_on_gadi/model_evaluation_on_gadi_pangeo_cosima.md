@@ -1,12 +1,15 @@
 # COSIMA Cookbook on NCI's Gadi
 
-COSIMA is the [Consortium for Ocean-Sea Ice Modelling in Australia](http://cosima.org.au/), which brings together Australian researchers involved in global ocean and sea ice modelling.
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+    <!-- Who develped the tool? -->
+    The COSIMA Cookbook is developed and maintained by the Consortium for Ocean-Sea Ice Modelling in Australia.
+    <!-- Code ownership and support -->
+    ACCESS-NRI does not own the code of the COSIMA Cookbook, but actively supports the use of the COSIMA Cookbook and its collection of `cosmia-recipes` on Gadi.
+    ACCESS-NRI provides access to the latest version of the COSIMA Cookbook via the `hh5` access-med conda environment deployed on NCI-Gadi.
+
+COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings together Australian researchers involved in global ocean and sea ice modelling. The consortium provides a collection of `cosmia-recipes` for the evaluation of ocean-sea ice modelling that are currated for you on Gadi.
 
 The COSIMA Cookbook is a framework for analysing output from ocean-sea ice models. The focus is on the [ACCESS-OM2](../../models/configurations/access-om.md) suite of models being developed and run by members of [COSIMA]((http://cosima.org.au/)). But this framework is suited to analysing any MOM5/MOM6 output, as well as output from other models.
-
-???+ warning "The COSIMA Cookbook is a framework by COSIMA"
-    The COSIMA Cookbook itself is maintained by the COSIMA members.
-    ACCESS-NRI is only providing support for the COSIMA Cookbook and its collection of `cosmia-recipes` for the evaluation of ocean-sea ice modelling on Gadi.
 
 ## Getting Started
 

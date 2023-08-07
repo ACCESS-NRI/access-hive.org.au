@@ -1,8 +1,6 @@
 # Model Evaluation on Gadi/NCI
 
-We are providing support for an increasing amount of frameworks and recipes on Gadi/NCI.
-
-At the moment, we are actively supporting:
+At the moment, we are providing support for an the following model evaluation frameworks on Gadi/NCI:
 
 
 <div class="card-container">
@@ -34,4 +32,4 @@ At the moment, we are actively supporting:
 
 The best way to get our help is by raising an issue on the [community forum](https://forum.access-hive.org.au/) with tags `help` and another tag for the specific framework.
 
-In the future, we are also aiming to support a broader range of frameworks and recipes.
+In the future, we are also aiming to support a broader range of frameworks and recipes which are currently not supported (see [our community resource lists](../../community_resources/community_med/index.md) for this collection).

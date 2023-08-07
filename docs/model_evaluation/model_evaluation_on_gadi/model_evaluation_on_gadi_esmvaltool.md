@@ -1,12 +1,22 @@
 # Tutorial for using `esmvaltool` on Gadi@NCI
 
-![ESMValTool-logo](https://docs.esmvaltool.org/en/latest/_static/ESMValTool-logo-2.png)
+`esmvaltool` is the Earth System Model Evaluation Tool.
 
-{% include "call_contribute.md" %}
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+    <!-- Who develped the tool? -->
+    ESMValTool is a community-developed climate model diagnostics and evaluation software package.
+    <!-- Code ownership and support -->
+    ACCESS-NRI does not own the code of ESMValTool, but actively supports the use of ESMValTool on Gadi.
+    ACCESS-NRI provides access to the latest version of ESMValTool via the `xp65` access-med conda environment deployed on NCI-Gadi.
 
-
-
-[ACCESS ESMValTool Worflow recipe status][esmvaltool-workflow-repository]
+<div class="card-container">
+    <a href="https://docs.esmvaltool.org/en/latest/" target="_blank" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
+        </div>
+        <div class="vertical-card-text-container bold">ESMValTool</div>
+    </a>
+</div>
 
 ## About ESMValTool
 
@@ -70,32 +80,41 @@ The ESMValTool is released under the Apache License, version 2.0. Citation of th
 Besides the above citation, users are kindly asked to register any journal articles (or other scientific documents) that use the software at the ESMValTool webpage (http://www.esmvaltool.org/). Citing the Software Documentation Paper and registering your paper(s) will serve to document the scientific impact of the Software, which is of vital importance for securing future funding. You should consider this an obligation if you have taken advantage of the ESMValTool, which represents the end product of considerable effort by the development team.
 
 
-## ESMValTool recipes examples
+## ESMValTool recipe examples
 
 <!-- Explain what the Tiers mean: Tier3 not to be distributed / license issue, Tier2: some restrictions, but can be redistributed while citing papers etc., Tier1: open for everyone -->
 
-Below you can find the recipes from `esmvaltool` that we are providing to run on Gadi. The original recipes are 
+To find the available recipes, please go see the [ACCESS ESMValTool Worflow recipe status][esmvaltool-workflow-repository]
+
+Below we showcase example recipes from `esmvaltool` that we are providing to run on Gadi:
 
 <!-- Compare to list from https://github.com/ACCESS-NRI/ESMValTool-workflow/issues/103 -->
 
-<table>
-<tr>
-  <td><a href="../../../assets/model_evaluation/esmvaltool/fig-9-3.png"><img src="../../../assets/model_evaluation/esmvaltool/fig-9-3.png" title="CMIP5 multi-model mean 2m temperature, multi-model mean of absolute seasonality, multi-model mean bias in seasonality, multi-model mean bias in absolute seasonality; resembling Flato et al. (2013), Fig. 9.3." /></a></td>
-  <td><a href="../../../assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png"><img src="../../../assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" title="Relative space-time root-mean-square deviation (RMSD) calculated from the climatological seasonal cycle of the CMIP5 simulations." /></a></td>
-  <td><a href="../../../assets/model_evaluation/esmvaltool/ltmi1_1.png"><img src="../../../assets/model_evaluation/esmvaltool/ltmi1_1.png" title="Lower tropospheric mixing index (LTMI; Sherwood et al., 2014) vs. equilibrium climate sensitivity from CMIP5 models." /></a></td>
-</tr>
-<tr>
-  <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_ipccwg1ar5ch9.html">
-      recipe_flato13ipcc.yml</a></td>
-  <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_perfmetrics.html">
-	  recipe_perfmetrics_CMIP5.yml</a></td>
-  <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_emergent_constraints.html">
-	  recipe_ecs_scatter.yml</a></td>
-</tr>
-<tr>
-  <td><a href="../../../assets/model_evaluation/esmvaltool/fig-9-8.png"><img src="../../../assets/model_evaluation/esmvaltool/fig-9-8.png" title="Global average 2m temperature anomalies; resembling Flato et al. (2013), Fig. 9.8." /></a></td>
-  <td><a href="../../../assets/model_evaluation/esmvaltool/fig-9-4.png"><img src="../../../assets/model_evaluation/esmvaltool/fig-9-4.png" title="CMIP5 multi-model mean precipitation, multi-model mean bias, multi-model mean of absolute error, multi-model mean of relative error; resembling Flato et al. (2013), Fig. 9.4." /></a></td>
-  <td><a href="../../../assets/model_evaluation/esmvaltool/diurnal_fig1.png"><img src="../../../assets/model_evaluation/esmvaltool/diurnal_fig1.png" title="Mean number of days exceeding the Diurnal Temperature Range (DTR) simulated during the historical period (1961-1990) by 5 degrees during the period 2030-2080. The result is derived from one RCP 8.5 scenario simulated by MPI-ESM-MR." /></a></td>
+<div class="card-container">
+    <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_ipccwg1ar5ch9.html" target="_blank" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../../../assets/model_evaluation/esmvaltool/fig-9-3.png" alt="Computing Access"></img>
+        </div>
+        <div class="vertical-card-text-container bold">recipe_flato13ipcc.yml</div>
+    </a>
+    <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_perfmetrics.html" target="_blank" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../../../assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" alt="MED Conda Environment"></img>
+        </div>
+        <div class="vertical-card-text-container bold">recipe_perfmetrics_CMIP5.yml</div>
+    </a>
+    <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_emergent_constraints.html" target="_blank" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../../../assets/model_evaluation/esmvaltool/ltmi1_1.png" alt="Model Variables"></img>
+        </div>
+        <div class="vertical-card-text-container bold">recipe_ecs_scatter.yml</div>
+    </a>
+</div>
+
+<!-- <tr>
+  <td><a href="/assets/model_evaluation/esmvaltool/fig-9-8.png"><img src="/assets/model_evaluation/esmvaltool/fig-9-8.png" title="Global average 2m temperature anomalies; resembling Flato et al. (2013), Fig. 9.8." /></a></td>
+  <td><a href="/assets/model_evaluation/esmvaltool/fig-9-4.png"><img src="/assets/model_evaluation/esmvaltool/fig-9-4.png" title="CMIP5 multi-model mean precipitation, multi-model mean bias, multi-model mean of absolute error, multi-model mean of relative error; resembling Flato et al. (2013), Fig. 9.4." /></a></td>
+  <td><a href="/assets/model_evaluation/esmvaltool/diurnal_fig1.png"><img src="/assets/model_evaluation/esmvaltool/diurnal_fig1.png" title="Mean number of days exceeding the Diurnal Temperature Range (DTR) simulated during the historical period (1961-1990) by 5 degrees during the period 2030-2080. The result is derived from one RCP 8.5 scenario simulated by MPI-ESM-MR." /></a></td>
 </tr>
 <tr>
   <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_ipccwg1ar5ch9.html">
@@ -131,7 +150,6 @@ Below you can find the recipes from `esmvaltool` that we are providing to run on
   <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_russell18jgr.html">
       recipe_russell18jgr.yml</a></td>
 </tr>
-
 <tr>
   <td><a href="../../../assets/model_evaluation/esmvaltool/sos_bias_comparison_MPI-ESM1-2-HR_ESACCI-SSS.png"><img src="../../../assets/model_evaluation/esmvaltool/sos_bias_comparison_MPI-ESM1-2-HR_ESACCI-SSS.png" title="Radar plot showing the mean state biases (simulation minus observations) for the regional averages of sea surface salinity in the selected ocean basins and seas." /></a></td>
   <td><a href="../../../assets/model_evaluation/esmvaltool/scatterplot_merged_training_data_SHL.png"><img src="../../../assets/model_evaluation/esmvaltool/scatterplot_merged_training_data_SHL.png" title="Emergent relationship (solid blue and orange lines) of the Sherwood et al. (2014) emergent constraint, which is based on the lower tropospheric mixing index (LTMI)." /></a></td>
@@ -145,7 +163,6 @@ Below you can find the recipes from `esmvaltool` that we are providing to run on
   <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_runoff_et.html">
       recipe_runoff_et.yml</a></td>
 </tr>
-
 <tr>
   <td><a href="../../../assets/model_evaluation/esmvaltool/perfmetrics_fig_1.png"><img src="../../../assets/model_evaluation/esmvaltool/perfmetrics_fig_1.png" title="Annual cycle of globally averaged temperature at 850 hPa (time period 1980-2005) for different CMIP5 models (historical simulation) (thin colored lines) in comparison to ERA-Interim (thick yellow line) and NCEP (thick black dashed line) reanalysis data." /></a></td>
   <td><a href="../../../assets/model_evaluation/esmvaltool/histogram_spi.png"><img src="../../../assets/model_evaluation/esmvaltool/histogram_spi.png" title="(top) Probability distribution of the standardized precipitation index of a sub-set of the CMIP5 models, and (bottom) bias relative to the CRU reference data set." /></a></td>
@@ -185,7 +202,6 @@ Below you can find the recipes from `esmvaltool` that we are providing to run on
   <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_miles.html">
       recipe_miles_block.yml</a></td>
 </tr>
-
 <tr>
   <td><a href="../../../assets/model_evaluation/esmvaltool/total_Phytoplankton_MPI-ESM1-2-LR_ESACCI-OC_scatter.png"><img src="../../../assets/model_evaluation/esmvaltool/total_Phytoplankton_MPI-ESM1-2-LR_ESACCI-OC_scatter.png" title="Scatter plot of surface chlorophyll from ESACCI-OC ocean colour data version 5.0 and the MPI-ESM1-2-LR model." /></a></td>
   <td><a href="../../../assets/model_evaluation/esmvaltool/HadGEM2-CC_NHW_ice_extent_Fractionalcover_1989DJF.png"><img src="../../../assets/model_evaluation/esmvaltool/HadGEM2-CC_NHW_ice_extent_Fractionalcover_1989DJF.png" title="Northern hemisphere Winter sea ice extent for the HadGem2-CC model." /></a></td>
@@ -198,7 +214,7 @@ Below you can find the recipes from `esmvaltool` that we are providing to run on
       recipe_ocean_ice_extent.yml</a></td>
   <td><a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_oceans.html">
       recipe_ocean_amoc.yml</a></td>
-</tr>
+</tr> -->
 
 </table>
 

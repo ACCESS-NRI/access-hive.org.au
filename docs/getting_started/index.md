@@ -29,6 +29,11 @@ Once you sign up, you will be assigned a <i>username</i> (e.g. `ab1234`).
 <hr>
 
 ## Join relevant NCI projects
+
+NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. The access to this storage as well as to computing resources to run models and evaluate them is organised in *projects*.
+
+To be able to perform computations yourself, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
+
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
 
 Every project has an ID (e.g. `xp65`). This ID is what the term <i>project</i> actually refers to.
@@ -41,16 +46,13 @@ There are several NCI projects that may be relevant to you, depending on the tas
 <br>
 Even though we recommend you have a chat with your supervisor to identify the relevant projects for your needs, the table below has a list of some useful climate-related projects at NCI:
 
-| Project | Description | Group | 
+| Project | Description | Type | 
 |:------- |:----------- |:----- |
-| access | <a href="https://my.nci.org.au/mancini/project/access" target="_blank">ACCESS software sharing</a> | ACCESS |
-| hh5  | <a href="https://my.nci.org.au/mancini/project/hh5"  target="_blank">Climate-LIEF Data Storage</a> | Data output|
-| oi10 | <a href="https://my.nci.org.au/mancini/project/oi10" target="_blank">ESGF CMIP6 Replication Data</a> | Data output|
-| fs38 | <a href="https://my.nci.org.au/mancini/project/fs38" target="_blank">ESGF CMIP6 Australian Data Publication</a> | Data output|
-| rt52 | <a href="https://my.nci.org.au/mancini/project/rt52" target="_blank">ERA5 Replicated Data: Single and pressure-levels data</a> | Data output|
-| uc16 | <a href="https://my.nci.org.au/mancini/project/uc16" target="_blank">ERA5 Replicated Datasets on Potential Temperature & Vorticity Levels</a> | Data output|
-| zz93 | <a href="https://my.nci.org.au/mancini/project/zz93" target="_blank">ERA5-Land Replicated Data</a> | Data output|
-| qv56 | <a href="https://my.nci.org.au/mancini/project/qv56" target="_blank">Reference Datasets for Climate Model Analysis/Forcing</a> | Data output|
+| xp65 | <a href="https://my.nci.org.au/mancini/project/xp65" target="_blank">ACCESS-NRI code environments</a> | ACCESS-NRI code environment |
+| hh5  | <a href="https://my.nci.org.au/mancini/project/hh5"  target="_blank">Climate-LIEF code environment </a> | Code environment |
+| access | <a href="https://my.nci.org.au/mancini/project/access" target="_blank">ACCESS software sharing</a> | ACCESS code environment |
+| ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Data storage |
+
 <hr>
 
 ## Log in to Gadi
@@ -77,7 +79,7 @@ To log in to <i>Gadi</i> we use <a href="https://en.wikipedia.org/wiki/Secure_Sh
 The basic command is:
 <pre><code>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</code></pre>
 You will be asked for your NCI password and then you will get connected to <i>Gadi</i>:
-<terminal-animation lineDelay=0>
+<terminal-window lineDelay=0>
   <terminal-line data="input" lineDelay=300>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</terminal-line>
   <terminal-line lineDelay=300>&lt;NCI-username&gt;@gadi.nci.org.au's password: <i class="icon-key" style="display: inline-block; font-size: 0.4em; transform: rotate(-90deg);"></i></terminal-line>
   <terminal-line lineDelay=3000>###############################################################################</terminal-line>
@@ -93,7 +95,7 @@ You will be asked for your NCI password and then you will get connected to <i>Ga
   <terminal-line>===============================================================================</terminal-line>
   <terminal-line>===============================================================================</terminal-line>
   <terminal-line data="input" lineDelay=200></terminal-line>
-</terminal-animation>
+</terminal-window>
 
 ### Automate the log in step
 To simplify the log in step and avoid having to always insert your NCI password, there are a few steps we suggest you to follow:
@@ -105,7 +107,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
     To create an SSH key, in your machine's local terminal, run:
     <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
     You will be asked to create a passphrase linked to the SSH key, and insert it twice:
-    <terminal-animation>
+    <terminal-window>
       <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
       <terminal-line>Generating public/private rsa key pair.</terminal-line>
       <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
@@ -125,7 +127,7 @@ To simplify the log in step and avoid having to always insert your NCI password,
       <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
       <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
       <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
-    </terminal-animation>
+    </terminal-window>
     <div class="note">
       We suggest you don't leave the passphrase empty for security reason.
       <br>
@@ -151,20 +153,20 @@ To simplify the log in step and avoid having to always insert your NCI password,
           <li>
             In your machine's local terminal, start the ssh-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
               <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
           </li>
           <li>
             Add your SSH key to the ssh-agent by running:
             <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
             You will be asked for the SSH key passphrase, which will be stored inside the ssh-agent:
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">ssh-add --apple-use-keychain ~/.ssh/id_gadi</terminal-line>
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
             <div class="note">
               If you are running a MacOS version prior to Monterey (12.0), the <code>--apple-use-keychain</code> flag needs to be substituted with <code>-K</code>.
             </div>
@@ -177,24 +179,25 @@ To simplify the log in step and avoid having to always insert your NCI password,
           <li>
             In your machine's local terminal, start the ssh-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
               <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
           </li>
           <li>
             Add your SSH key to the ssh-agent by running:
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
             You will be asked for the SSH key passphrase, which will be stored inside the ssh-agent:
-            <terminal-animation>
+            <terminal-window>
               <terminal-line data="input">ssh-add ~/.ssh/id_gadi</terminal-line>
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-            </terminal-animation>
+            </terminal-window>
           </li>
         </ol>
       </div>
     </div>
+    <!-- End of tab content -->
   </li>
   <li>
     <b>Create/Update the SSH config file</b>
@@ -245,7 +248,7 @@ Alternatively, on <i>Gadi</i> you can run:
 exit from <i>Gadi</i>, and log back in.
 <br>
 For example, if you want to change your default project to `tm70`, on <i>Gadi</i>, run:
-<terminal-animation>
+<terminal-window>
   <terminal-line data="input">echo $PROJECT</terminal-line>
   <terminal-line>&lt;old-default-project&gt;</terminal-line>
   <terminal-line data="input">sed "s/\(PROJECT \).*/\1tm70/" ~/.config/gadi-login.conf</terminal-line>
@@ -267,7 +270,7 @@ For example, if you want to change your default project to `tm70`, on <i>Gadi</i
   <terminal-line lineDelay=0>===============================================================================</terminal-line>
   <terminal-line data="input">echo $PROJECT</terminal-line>
   <terminal-line>tm70</terminal-line>
-</terminal-animation>
+</terminal-window>
 <hr>
 
 <h6>References</h6>
