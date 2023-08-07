@@ -1,59 +1,59 @@
 #  Model Components 
 ACCESS model components represent different chemical, physical or biological parts of the Earth System.
 <div class="card-container">
-    <a href="atmosphere" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="atmosphere" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></img>
         </div>
-        <div class="squared-card-text-container">Atmosphere</div>
+        <div class="vertical-card-text-container">Atmosphere</div>
     </a>
-    <a href="land" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="land" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"></img>
         </div>
-        <div class="squared-card-text-container">Land</div>
+        <div class="vertical-card-text-container">Land</div>
     </a>
-    <a href="ocean" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="ocean" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" alt="Ocean"></img>
         </div>
-        <div class="squared-card-text-container">Ocean</div>
+        <div class="vertical-card-text-container">Ocean</div>
     </a>
-    <a href="sea-ice" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="sea-ice" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></img>
         </div>
-        <div class="squared-card-text-container">Sea Ice</div>
+        <div class="vertical-card-text-container">Sea Ice</div>
     </a>
-    <a href="aerosols_atmospheric_chemistry" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="aerosols_atmospheric_chemistry" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"></img>
         </div>
-        <div class="squared-card-text-container">Aerosols</div>
+        <div class="vertical-card-text-container">Aerosols</div>
     </a>
-    <a href="aerosols_atmospheric_chemistry" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="aerosols_atmospheric_chemistry" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Atmospheric Chemistry"></img>
         </div>
-        <div class="squared-card-text-container">Atmospheric Chemistry</div>
+        <div class="vertical-card-text-container">Atmospheric Chemistry</div>
     </a>
-    <a href="bgc_land" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="bgc_land" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry Land"></img>
         </div>
-        <div class="squared-card-text-container">Biogeochemistry Land</div>
+        <div class="vertical-card-text-container">Biogeochemistry Land</div>
     </a>
-    <a href="bgc_ocean" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="bgc_ocean" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry Ocean"></img>
         </div>
-        <div class="squared-card-text-container">Biogeochemistry Ocean</div>
+        <div class="vertical-card-text-container">Biogeochemistry Ocean</div>
     </a>
-    <a href="coupler" class="squared-card component-card">
-        <div class="squared-card-image-container">
+    <a href="coupler" class="vertical-card aspect-ratio1to1 component-card">
+        <div class="vertical-card-image-container">
             <img class="img-contain" src="../../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
         </div>
-        <div class="squared-card-text-container">Coupler</div>
+        <div class="vertical-card-text-container">Coupler</div>
     </a>
 </div>
 

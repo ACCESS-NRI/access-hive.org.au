@@ -13,22 +13,22 @@ Welcome to Model Evaluation and Diagnostics!
 Here, we provide you the important information to give you access to the large data that we curate at NCI's storage and show you how you can use it to figure out how fit for purpose specific models are, in particular when you compare them to osbervational data:
 
 <div class="card-container">
-    <a href="../../get_started" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access"></img>
+    <a href="../../getting_started" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">Computing Access</div>
+        <div class="vertical-card-text-container bold">Computing Access</div>
     </a>
-    <a href="model_evaluation_getting_started" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/model_evaluation_conda.png" alt="Model Evaluation on Gadi"></img>
+    <a href="model_evaluation_getting_started" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/model_evaluation_conda.png" alt="Model Evaluation on Gadi" class="img-cover" style="object-position: left;"></img>
         </div>
-        <div class="squared-card-text-container bold">Model Evaluation on Gadi</div>
+        <div class="vertical-card-text-container bold">Model Evaluation on Gadi</div>
     </a>
-    <a href="model_variables" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables"></img>
+    <a href="model_variables" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">Model Variables</div>
+        <div class="vertical-card-text-container bold">Model Variables</div>
     </a>
 </div>

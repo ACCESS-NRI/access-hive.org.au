@@ -9,23 +9,23 @@ ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of 
 If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 
 <div class="card-container">
-    <a href="../get_started" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access"></img>
+    <a href="../getting_started" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">Computing Access</div>
+        <div class="vertical-card-text-container bold ">Computing Access</div>
     </a>
-    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="Model Evaluation on Gadi"></img>
+    <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="Model Evaluation on Gadi" class="img-cover" style="object-position: left;"></img>
         </div>
-        <div class="squared-card-text-container bold">Model Evaluation on Gadi</div>
+        <div class="vertical-card-text-container bold ">Model Evaluation on Gadi</div>
     </a>
-    <a href="model_evaluation_getting_started/model_variables" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables"></img>
+    <a href="model_evaluation_getting_started/model_variables" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Model Variables" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">Model Variables</div>
+        <div class="vertical-card-text-container bold ">Model Variables</div>
     </a>
 </div>
 
@@ -33,48 +33,46 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
 
 ### Data Catalogs
 <div class="card-container">
-    <a href="model_evaluation_observational_catalogs" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalog. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images"></img>
+    <a href="model_evaluation_observational_catalogs" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalog. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">Observational Data Catalog</div>
+        <div class="vertical-card-text-container bold ">Observational Data Catalog</div>
     </a>
-    <a href="model_evaluation_model_catalogs" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment"></img>
+    <a href="model_evaluation_model_catalogs" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">Model Data Catalog</div>
+        <div class="vertical-card-text-container bold ">Model Data Catalog</div>
     </a>
 </div>
 
 ### Supported Community Frameworks on Gadi
 
 <div class="card-container">
-    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/logo_ilamb.png" alt="ILAMB" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">ILAMB</div>
+        <div class="vertical-card-text-container bold">ILAMB</div>
     </a>
-    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">ESMValTool</div>
+        <div class="vertical-card-text-container bold">ESMValTool</div>
     </a>
-</div>
-<div class="card-container">
-    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">COSIMA cookbook</div>
+        <div class="vertical-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
         </div>
-        <div class="squared-card-text-container bold">METplus</div>
+        <div class="vertical-card-text-container bold">METplus</div>
     </a>
 </div>
 
@@ -94,23 +92,23 @@ While we are working on these, we have collected a number of links to existing t
 <!-- 
 
 <div class="card-container">
-    <a href="./model_evaluation_getting_started/access_to_gadi_at_nci.md" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
+    <a href="./model_evaluation_getting_started/access_to_gadi_at_nci.md" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
             <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Model Diagnostics"></img>
         </div>
-        <div class="squared-card-text-container bold">Model Diagnostics</div>
+        <div class="vertical-card-text-container bold">Model Diagnostics</div>
     </a>
-    <a href="./model_evaluation_data_processing.md" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
+    <a href="./model_evaluation_data_processing.md" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_formatting.jpg" alt="A picture visualising the conversion of data in text columns into a useful python xarray data format. Image credit: https://support.solarwinds.com and https://i.stack.imgur.com/" title="Image credit: https://support.solarwinds.com and https://i.stack.imgur.com/"></img>
         </div>
-        <div class="squared-card-text-container bold">Data Format Processing</div>
+        <div class="vertical-card-text-container bold">Data Format Processing</div>
     </a>
-    <a href="./model_evaluation_recipe_gallery.md" class="squared-card default-text-color">
-        <div class="squared-card-image-container">
+    <a href="./model_evaluation_recipe_gallery.md" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_recipe.jpg" alt="A code snippet from the COSIMA documented recipes. Image credit: https://github.com/COSIMA/cosima-recipes" title="Image credit: https://github.com/COSIMA/cosima-recipes"></img>
         </div>
-        <div class="squared-card-text-container bold">Evaluation Recipe Gallery</div>
+        <div class="vertical-card-text-container bold">Evaluation Recipe Gallery</div>
     </a>
 </div> -->
 
