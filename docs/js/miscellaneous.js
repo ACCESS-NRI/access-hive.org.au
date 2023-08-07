@@ -7,19 +7,6 @@ function sortTables() {
 }
 
 
-// Remove 'Made with Material for MkDocs' from copyright
-function removeMkDocs() {
-  let copyright = document.querySelector(".md-copyright");
-  for (let i=0; i<=copyright.childNodes.length; i++) {
-    let node = copyright.childNodes[i];
-    if (node?.textContent.includes('Made with') || node?.textContent.includes('Material for MkDocs')) {
-      i--;
-      copyright.removeChild(node);
-    }
-  }
-}
-
-
 /*
   Adjust the scrolling so that the paragraph's titles is not 
   partially covered by the sticky banner when clicking on a toc link
@@ -83,7 +70,7 @@ function tabFunctionality() {
   Add the external-link icon to <a> tags with target="_blank"
 */
 function addExternalLinkIcon() {
-  let extLinks = document.querySelectorAll("article a[target='_blank']");
+  let extLinks = document.querySelectorAll("article a[target='_blank']:not(:has(img))");
   extLinks.forEach(link => {
     link.classList.add('external-link');
   })
@@ -163,7 +150,6 @@ function toggleTerminalAnimations() {
 // Join all functions
 function main() {
   sortTables();
-  removeMkDocs();
   adjustScrollingToId();
   tabFunctionality();
   addExternalLinkIcon();
