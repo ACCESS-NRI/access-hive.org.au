@@ -29,46 +29,28 @@ Once you sign up, you will be assigned a <i>username</i> (e.g. `ab1234`).
 <hr>
 
 ## Join relevant NCI projects
+
+NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. The access to this storage as well as to computing resources to run models and evaluate them is organised in *projects*.
+
+To be able to perform computations yourself, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
+
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
 
-Every project has an ID (e.g. `xp65`). This ID is what the term <i>project</i> actually refers to.
-<br>
-The first project that you join will become your default one.
-<br>
-If you want to change your default project, please check <a href="#change-default-project-on-gadi">how to change your default project on gadi</a>.
+Every project has an ID (e.g. `xp65`). This ID is what the term `$PROJECT` actually refers to.
 
-There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out.
-<br>
-Even though we recommend you have a chat with your supervisor to identify the relevant projects for your needs, the table below has a list of some of the most useful climate-related projects at NCI:
+The first project that you join will become your default one (you can change it later [here](#change-default-project-on-gadi)).
 
-| Project | Description | Group | 
+Depending on the work you do (running a model, model evaluation, etc.), you need to be part of different projects. We list them under the *Getting Started* pages of the respective sections. 
+
+Here, we only show a few examples of projects that will be used by many users:
+
+| Project | Description | Type | 
 |:------- |:----------- |:----- |
-| tm70 | <a href="https://my.nci.org.au/mancini/project/tm70" target="_blank">ACCESS-NRI Working Project</a> |ACCESS-NRI |
-| iq82 | <a href="https://my.nci.org.au/mancini/project/iq82" target="_blank">ACCESS-NRI MED Compute</a> | ACCESS-NRI |
-| kj13 | <a href="https://my.nci.org.au/mancini/project/kj13" target="_blank">ACCESS-NRI MED Data Dev</a> | ACCESS-NRI |
-| ct11 | <a href="https://my.nci.org.au/mancini/project/ct11" target="_blank">ACCESS-NRI Replicated Datasets</a> | ACCESS-NRI |
-| xp65 | <a href="https://my.nci.org.au/mancini/project/xp65" target="_blank">ACCESS-NRI Analysis Environments</a> | ACCESS-NRI |
-| access | <a href="https://my.nci.org.au/mancini/project/access" target="_blank">ACCESS software sharing</a> | ACCESS |
-| p66  | <a href="https://my.nci.org.au/mancini/project/p66"  target="_blank">ACCESS - AOGCM / suppport development of the ACCESS modelling system</a> | ACCESS |
-| p73  | <a href="https://my.nci.org.au/mancini/project/p73"  target="_blank">ACCESS Model Output Archive (AOGCM)</a> | ACCESS |
-| hh5  | <a href="https://my.nci.org.au/mancini/project/hh5"  target="_blank">Climate-LIEF Data Storage</a> | Data output|
-| ub7  | <a href="https://my.nci.org.au/mancini/project/ub7"  target="_blank">Seasonal Prediction ACCESS-S1 Hindcast</a> | Data output|
-| ux62 | <a href="https://my.nci.org.au/mancini/project/ux62" target="_blank">Seasonal Prediction ACCESS-S2 Hindcast</a> | Data output|
-| cb20 | <a href="https://my.nci.org.au/mancini/project/cb20" target="_blank">ESGF CMIP3 Replication Data</a> | Data output|
-| al33 | <a href="https://my.nci.org.au/mancini/project/al33" target="_blank">ESGF CMIP5 Replication Data</a> | Data output|
-| rr3  | <a href="https://my.nci.org.au/mancini/project/rr3"  target="_blank">ESGF CMIP5 Australian Data Publication</a> | Data output|
-| oi10 | <a href="https://my.nci.org.au/mancini/project/oi10" target="_blank">ESGF CMIP6 Replication Data</a> | Data output|
-| fs38 | <a href="https://my.nci.org.au/mancini/project/fs38" target="_blank">ESGF CMIP6 Australian Data Publication</a> | Data output|
-| rt52 | <a href="https://my.nci.org.au/mancini/project/rt52" target="_blank">ERA5 Replicated Data: Single and pressure-levels data</a> | Data output|
-| uc16 | <a href="https://my.nci.org.au/mancini/project/uc16" target="_blank">ERA5 Replicated Datasets on Potential Temperature & Vorticity Levels</a> | Data output|
-| zz93 | <a href="https://my.nci.org.au/mancini/project/zz93" target="_blank">ERA5-Land Replicated Data</a> | Data output|
-| zv2  | <a href="https://my.nci.org.au/mancini/project/zv2"  target="_blank">Australian Gridded Climate Data (AGCD) Collection</a> | Data output|
-| qv56 | <a href="https://my.nci.org.au/mancini/project/qv56" target="_blank">Reference Datasets for Climate Model Analysis/Forcing</a> | Data output|
-| cj50 | <a href="https://my.nci.org.au/mancini/project/cj50" target="_blank">COSIMA Model Output Collection</a> | Data output|
-| ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Other projects |
-| v45  | <a href="https://my.nci.org.au/mancini/project/v45"  target="_blank">Ocean Extremes</a> | Other projects |
-| ga6  | <a href="https://my.nci.org.au/mancini/project/ga6"  target="_blank">Modelling the formation of sedimentary basins and continental margins</a> | Other projects |
-| qu79 | <a href="https://my.nci.org.au/mancini/project/qu79" target="_blank">Collaborative REAnalysis Technical Environment Intercomparison Project (CREATE-IP)</a> | Other projects |
+| xp65 | <a href="https://my.nci.org.au/mancini/project/xp65" target="_blank">ACCESS-NRI code environments</a> | ACCESS-NRI code environment |
+| hh5  | <a href="https://my.nci.org.au/mancini/project/hh5"  target="_blank">Climate-LIEF code environment </a> | Code environment |
+| access | <a href="https://my.nci.org.au/mancini/project/access" target="_blank">ACCESS software sharing</a> | ACCESS code environment |
+| ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Data storage |
+
 <hr>
 
 ## Log in to Gadi
@@ -301,9 +283,7 @@ Once you complete all the above steps, you will be able to connect to <i>Gadi</i
 <pre><code>ssh gadi</code></pre>
 
 ### Change default project on Gadi
-It is recommended that you change your default project on <i>Gadi</i>, as this might be used by tasks such as running a model or model evaluation.
-<br>
-To check which is your default project, on <i>Gadi</i>, run:
+If you need to change your default project on <i>Gadi</i>, check which is your default project by running:
 <pre><code>echo $PROJECT</code></pre>
 If you want to change your default project, on <i>Gadi</i> you should manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file, exit from <i>Gadi</i>, and log back in.
 <br>
