@@ -2,17 +2,12 @@
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
-ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
-
-## What is MED about?
-
-**Evaluation** involves scrutinizing the model through Model/Observation confrontations, checking its performance against real-world observations. It also includes experiment comparisons, testing the model under different scenarios, and inter-model comparisons like the Coupled Model Intercomparison Project (CMIP), assessing how the ACCESS-NRI model fares when compared with other climate models.
-
-**Diagnostics** involves constant monitoring of model runs to detect any anomalies or inconsistencies and a thorough analysis of outputs to verify the model's accuracy over time.
+ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of climate modeling that includes the comparison of different models and their confrontation with real-world data to test a model's reliability and accuracy in order to draw scientific conclusions.
 
 ## Getting Started with MED
 
-If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
+If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
+
 <div class="card-container">
     <a href="../get_started" class="squared-card default-text-color">
         <div class="squared-card-image-container">
@@ -33,8 +28,6 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
         <div class="squared-card-text-container bold">Model Variables</div>
     </a>
 </div>
-
-Here, we provide catalogs and pointers to [observational data](./model_evaluation_observational_catalogs.md) as well as [model data](./model_evaluation_model_catalogs/index.md) that can be used for evaluation. We also provide a number of [frameworks for model evaluation](./model_evaluation_on_gadi/index.md). We are also working on implementing more frameworks and recipes as well as formatting tools for a better model evaluation and diagnostics.
 
 ## ACCESS-MED data and tools hosted on Gadi
 
