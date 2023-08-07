@@ -4,7 +4,7 @@
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
 
 ### <span>General requirements</span>
-For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
+For the general requirements needed to run all ACCESS models, please refer to the <a href="../../../getting_started">Getting Started</a> page.
 
 ### <span>Model-specific requirements</span>
 <ul>
@@ -124,7 +124,7 @@ For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI)
 <br>
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
 <div class="note">
-    You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
+    You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="../../../getting_started#join-relevant-nci-projects">how to join NCI projects</a>.
 </div>
 
 ### Change run length and cycling frequency

@@ -65,7 +65,7 @@
   --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: transparent; /* Background warnings */
-  --md-footer-fg-color: var(--nri-orange); /* footer link icon hover (social) */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
   --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
   --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
   --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
@@ -145,7 +145,7 @@
   --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: transparent; /* Background warnings */
-  --md-footer-fg-color: var(--nri-orange); /* footer link icon hover (social) */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
   --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
   --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
   --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
@@ -264,23 +264,64 @@ h3 {
 /* =============================================================== 
   Footer
 */
-
-.partners-logo {
+.md-footer-meta.md-typeset.md-grid {
+  color: var(--md-footer-fg-color--light);
   display: flex;
-}
-.partners-logo > a {
-  display: flex;
-  align-self: center;
-  justify-self: center;
-}
-.partners-logo img {
-  align-self: center;
-  justify-self: center;
-  width: auto;
-  height: 2.5rem;
-  padding: 0.4rem 0.6rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
+.md-footer-meta.md-typeset.md-grid > * {
+  color: var(--tab-text);
+  display: inline-flex;
+  flex-direction: column;
+}
+/* Funding */
+.md-footer-meta.md-typeset.md-grid :first-child {
+  flex-basis: 15%;
+}
+/* Partners */
+.md-footer-meta.md-typeset.md-grid :last-child {
+  flex-basis: 80%;
+}
+
+/* Text */
+.md-footer-meta.md-typeset.md-grid > * > :first-child {
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.2rem;
+  margin: 0.3rem 0;
+}
+
+/* Logos */
+.md-footer-meta.md-typeset.md-grid > * > :last-child {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.md-footer-meta.md-typeset.md-grid > * > :last-child a {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+  padding: 0.2rem;
+}
+
+.md-footer-meta.md-typeset.md-grid > :last-child > :last-child a {
+  padding: 0.5rem;
+}
+
+.md-footer-meta.md-typeset.md-grid > * > :last-child img {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+}
 
 /* =============================================================== 
   Header 
@@ -435,13 +476,13 @@ h3 {
 }
 
 /* =============================================================== 
-  Cards for ACCESS-Hive navigation, model components and model tabs
+  Cards for ACCESS-Hive navigation, model components, model tabs, MED stuff
 */
 /* Flexbox container for cards*/
 .card-container {
   margin: 1em 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
@@ -456,10 +497,7 @@ h3 {
   border: 1.3px solid var(--card-borders);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
-}
-
-.card-container > * > * {
-  flex-grow: 1;
+  overflow: hidden;
 }
 
 /* Single card hover */
@@ -470,62 +508,49 @@ h3 {
   transition-duration: 0.4s;
 }
 
-.aspect1to2-card {
+.vertical-card {
   flex-direction: column;
   max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 2;
+  min-height: 0;
 }
 
-.squared-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 1;
-}
-
-.aspect1to2-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 2;
-}
-
-.squared-card-image-container {
-  height: 75%;
+.vertical-card-image-container {
+  flex-basis: 80%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.6em 0.6em 0 0.6em;
+  padding: 0.6em 0.6em 0.3em 0.6em;
   overflow: hidden;
   border-radius: 8px;
 }
 
-.squared-card-image-container > img {
+.vertical-card-image-container > img {
   width: 100%;
   height: 100%;
 }
 
-.squared-card-text-container {
-  height: 25%;
+.vertical-card-text-container {
+  color: var(--md-default-fg-color);
+  flex-basis: 20%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0.3em 0.6em 0.6em 0.6em;
 }
 
-.rectangular-card {
+.horizontal-card {
   flex-direction: row;
   width: 100%;
   height: 10em;
-  overflow: hidden;
   align-items: stretch;
 }
 
-.rectangular-card-image-container {
-  width: 35%;
+.horizontal-card-image-container {
+  flex-basis: 35%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -535,43 +560,45 @@ h3 {
   border-radius: 8px;
 }
 
-.rectangular-card-image-container > img {
+.horizontal-card-image-container > img {
   height: 100%;
   width: 100%;
 }
 
-.rectangular-card-text-container {
-  padding: 0 1em;
+.horizontal-card-text-container {
+  color: var(--md-default-fg-color);
   height: 100%;
-  width: 65%;
+  flex-basis: 65%;
   display: flex;
   flex-direction: column;
+  padding: 0 1em;
   justify-content: space-around;
   align-items: center;
 }
 
-.rectangular-card-image-container > img, 
-.squared-card-image-container > img {
+.horizontal-card-image-container > img, 
+.vertical-card-image-container > img {
   border-radius: 8px;
-}
-
-.card-container:has(.component-card) {
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 0.8em;
 }
 
 a.component-card {
   border: unset;
   box-shadow: unset;
   max-width: 22%;
+  min-height: 0;
 }
 
 .component-card:hover {
   background-color: var(--darker-background-hover);
   box-shadow: unset;
+}
+
+.aspect-ratio2to1 {
+  aspect-ratio: 2/1;
+}
+
+.aspect-ratio1to1 {
+  aspect-ratio: 1/1;
 }
 
 /* =============================================================== 
@@ -769,9 +796,7 @@ pre:has(code):hover > button {
   background-color: var(--md-primary-fg-color--dark);
   color: var(--tab-text);
   padding: 0.2em 0.6em;
-  margin: 0.6em 0;
   width: fit-content;
-  height: fit-content;
   border-radius: 0.3em;
 }
 

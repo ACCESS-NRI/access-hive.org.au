@@ -2,32 +2,31 @@
 
 At the moment, we are providing support for an the following model evaluation frameworks on Gadi/NCI:
 
+
 <div class="card-container">
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB"></img>
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">ILAMB</div>
+        <div class="vertical-card-text-container bold">ILAMB</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool"></img>
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">ESMValTool</div>
+        <div class="vertical-card-text-container bold">ESMValTool</div>
     </a>
-</div>
-<div class="card-container">
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA"></img>
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA" class="img-cover"></img>
         </div>
-        <div class="squared-card-text-container bold">COSIMA cookbook</div>
+        <div class="vertical-card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="aspect1to2-card default-text-color">
-        <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus"></img>
+    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
+        <div class="vertical-card-image-container">
+            <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
         </div>
-        <div class="squared-card-text-container bold">METplus</div>
+        <div class="vertical-card-text-container bold">METplus</div>
     </a>
 </div>
 
