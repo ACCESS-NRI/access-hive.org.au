@@ -85,11 +85,11 @@ You can then go to [https://are.nci.org.au](https://are.nci.org.au) to log in. I
 - **Walltime (hours)** `1` 
 - **Queue** `normalbw` 
 - **Compute Size** `tiny` 
-- **Project** `iq82` (This should match your project's computing resources)
+- **Project** `iq82` (This should match your project with computing resources)
 - **Storage** `gdata/xp65+gdata/hh5` (Select all which match your project's gdata storage)
 - *Advanced Options ...* (click button to expand) 
-- **Module directories** `/g/data/xp65/public/modules` (This should be your module directory)
-- **Modules** `conda/are` (exchange with your modules, like `conda/analysis3`) 
+- **Module directories** `/g/data/xp65/public/modules`
+- **Modules** `conda/are`
 - *Launch* (click to submit) 
 
 This will launch a JupyterLab session with a Session ID and display it in the list of interactive sessions (you can also find it under **My Interactive Sessions** in the top left of the ARE website).
