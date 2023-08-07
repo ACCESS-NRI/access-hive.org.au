@@ -50,19 +50,8 @@ Here, we only show a few examples of projects that will be used by many users:
 | hh5  | <a href="https://my.nci.org.au/mancini/project/hh5"  target="_blank">Climate-LIEF code environment </a> | Code environment |
 | access | <a href="https://my.nci.org.au/mancini/project/access" target="_blank">ACCESS software sharing</a> | ACCESS code environment |
 | ik11 | <a href="https://my.nci.org.au/mancini/project/ik11" target="_blank">COSIMA shared working space</a> | Data storage |
-| ct11 | <a href="https://my.nci.org.au/mancini/project/ct11" target="_blank">ACCESS-NRI Replicated Datasets</a> | Data storage |
-| p73  | <a href="https://my.nci.org.au/mancini/project/p73"  target="_blank">ACCESS Model Output Archive (AOGCM)</a> | Data storage |
-| cb20 | <a href="https://my.nci.org.au/mancini/project/cb20" target="_blank">ESGF CMIP3 Replication Data</a> | Data storage |
-| al33 | <a href="https://my.nci.org.au/mancini/project/al33" target="_blank">ESGF CMIP5 Replication Data</a> | Data storage |
-| rr3  | <a href="https://my.nci.org.au/mancini/project/rr3"  target="_blank">ESGF CMIP5 Australian Data Publication</a> | Data storage |
-| oi10 | <a href="https://my.nci.org.au/mancini/project/oi10" target="_blank">ESGF CMIP6 Replication Data</a> | Data storage |
-| fs38 | <a href="https://my.nci.org.au/mancini/project/fs38" target="_blank">ESGF CMIP6 Australian Data Publication</a> | Data storage |
-| rt52 | <a href="https://my.nci.org.au/mancini/project/rt52" target="_blank">ERA5 Replicated Data: Single and pressure-levels data</a> | Data storage |
-| uc16 | <a href="https://my.nci.org.au/mancini/project/uc16" target="_blank">ERA5 Replicated Datasets on Potential Temperature & Vorticity Levels</a> | Data storage |
-| zz93 | <a href="https://my.nci.org.au/mancini/project/zz93" target="_blank">ERA5-Land Replicated Data</a> | Data storage |
-| zv2  | <a href="https://my.nci.org.au/mancini/project/zv2"  target="_blank">Australian Gridded Climate Data (AGCD) Collection</a> | Data storage |
-| qv56 | <a href="https://my.nci.org.au/mancini/project/qv56" target="_blank">Reference Datasets for Climate Model Analysis/Forcing</a> | Data storage |
-| cj50 | <a href="https://my.nci.org.au/mancini/project/cj50" target="_blank">COSIMA Model Output Collection</a> | Data storage |
+
+For project codes related to more data collections (e.g., CMIP6, ERA5, etc.) please see our [model evaluation pages](../model_evaluation) as well as [NCI’s Data Catalogue](geonetwork.nci.org.au).
 
 <hr>
 
