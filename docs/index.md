@@ -4,22 +4,18 @@ hide:
   - toc
 ---
 
-# <div><span>Welcome to ACCESS-Hive</span> Hosted by <a href="http://access-nri.org.au" target="_blank">ACCESS-NRI</a></div>
-
+<h1 class="homepage"></h1>
 <div class="introduction">
-  <div>
-    ACCESS-Hive is the platform for documentation that ACCESS-NRI is prodiving for the community to run and evaluate ACCESS models.
-    The HIVE-Forum is the platform for collaboration of the climate research community.
-  </div>
-  <img src="assets/ACCESS_icon_HIVE.png">
+    <div>
+        <div>Welcome to ACCESS-Hive!</div>
+        <div>The ACCESS-NRI open portal for the ACCESS user community</div>
+    </div>
+    <div>
+        <img class="horizontal-card-image-container" src="assets/ACCESS_icon_HIVE.png">
+    </div>
 </div>
 
-<div>
-  <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="https://forum.access-hive.org.au/about">How To Get Support</a></div>
-  <div class="squared-card-text-container highlight-bg bg-color-like-tab bold"><a href="./contribute">How To Contribute</a></div>
-</div>
-
-## Navigating ACCESS-Hive
+<!-- ## Navigating ACCESS-Hive
 <div class="card-container" style="flex-wrap:nowrap;">
     <a href="models" class="squared-card default-text-color">
         <div class="squared-card-image-container">
@@ -51,9 +47,9 @@ hide:
         </div>
         <div class="squared-card-text-container highlight-bg bg-color-like-tab bold">Community Forum</div>
     </a>
-</div>
+</div> -->
 
-
+<!-- 
 ## Acknowledgement of Country
 
 We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
@@ -68,4 +64,4 @@ We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our res
 [github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io.git
 [forum]: https://forum.access-hive.org.au
 [hamburger button]: https://en.wikipedia.org/wiki/Hamburger_button
-[access-hive-github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io
+[access-hive-github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io -->
