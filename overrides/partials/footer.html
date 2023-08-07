@@ -18,39 +18,48 @@
 -->
 
 <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      {% include "partials/copyright.html" %}
-      <div class="partners-logo">
+  <div class="md-footer-meta md-typeset md-grid">
+    <div>
+      <div>Funded by</div>
+      <div>
         <a href="https://www.education.gov.au/ncris" target="_blank" rel="noopener" title="NCRIS">
-        <img src="{{ base_url }}/assets/ncris_logo.png" alt="logo">
-        </a>
-        <a href="https://www.anu.edu.au" target="_blank" rel="noopener" title="The Australian National University">
-        <img src="{{ base_url }}/assets/anu_logo.svg" alt="logo">
-        </a>
-        <a href="http://www.bom.gov.au/" target="_blank" rel="noopener" title="Australian Bureau of Meteorology">
-        <img src="{{ base_url }}/assets/bom_logo.svg" alt="logo">
-        </a>
-        <a href="https://www.csiro.au/" target="_blank" rel="noopener" title="CSIRO">
-        <img src="{{ base_url }}/assets/csiro_logo.svg" alt="logo">
-        </a>
-        <a href="https://www.monash.edu" target="_blank" rel="noopener" title="Monash University">
-        <img src="{{ base_url }}/assets/monash-university_logo.svg" alt="logo">
-        </a>
-        <a href="https://www.unimelb.edu.au" target="_blank" rel="noopener" title="The University of Melbourne">
-        <img src="{{ base_url }}/assets/university-of-melbourne_logo.png" alt="logo">
-        </a>
-        <a href="https://www.unsw.edu.au" target="_blank" rel="noopener" title="The University of New South Wales">
-        <img src="{{ base_url }}/assets/university-of-nsw_logo.png" alt="logo">
-        </a>
-        <a href="https://www.utas.edu.au" target="_blank" rel="noopener" title="The University of Tasmania">
-        <img src="{{ base_url }}/assets/university-of-tasmania_logo.svg" alt="logos">
+          <img src="{{ base_url }}/assets/ncris_logo.png" alt="logo">
         </a>
       </div>
-      {% if config.extra.social %}
-        {% include "partials/social.html" %}
-      {% endif %}    
     </div>
+    <div>
+      <div>Partner Organizations</div>
+      <div>
+        <a href="https://www.anu.edu.au" target="_blank" rel="noopener" title="The Australian National University">
+          <img src="{{ base_url }}/assets/anu_logo.svg" alt="logo">
+        </a>
+        <a href="http://www.bom.gov.au/" target="_blank" rel="noopener" title="Australian Bureau of Meteorology">
+          <!-- <img src="{{ base_url }}/assets/bom_logo.svg" alt="logo"> -->
+          <img src="https://www.access-nri.org.au/wp-content/uploads/2022/03/bom.png" alt="logo">
+        </a>
+        <a href="https://www.csiro.au/" target="_blank" rel="noopener" title="CSIRO">
+          <img src="{{ base_url }}/assets/csiro_logo.svg" alt="logo">
+        </a>
+        <a href="https://www.monash.edu" target="_blank" rel="noopener" title="Monash University">
+          <img src="{{ base_url }}/assets/monash-university_logo.svg" alt="logo">
+        </a>
+        <a href="https://www.unimelb.edu.au" target="_blank" rel="noopener" title="The University of Melbourne">
+          <img src="{{ base_url }}/assets/university-of-melbourne_logo.png" alt="logo">
+        </a>
+        <a href="https://www.unsw.edu.au" target="_blank" rel="noopener" title="The University of New South Wales">
+          <img src="{{ base_url }}/assets/university-of-nsw_logo.png" alt="logo">
+        </a>
+        <a href="https://www.utas.edu.au" target="_blank" rel="noopener" title="The University of Tasmania">
+          <img src="{{ base_url }}/assets/university-of-tasmania_logo.svg" alt="logos">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="md-footer-meta__inner md-grid">
+    {% include "partials/copyright.html" %}
+    
+    {% if config.extra.social %}
+      {% include "partials/social.html" %}
+    {% endif %}    
   </div>
 </footer>

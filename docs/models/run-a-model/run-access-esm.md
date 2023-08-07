@@ -1,10 +1,10 @@
 {% set model = "ACCESS-ESM" %}
-# <span class=""> Run {{ model }} </span>
+# Run {{ model }}
 ## Requirements
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
 
 ### General requirements
-For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
+For the general requirements needed to run all ACCESS models, please refer to the <a href="../../../getting_started">Getting Started</a> page.
 
 ### Model-specific requirements
 <ul>
@@ -30,10 +30,10 @@ For the general requirements needed to run all ACCESS models, please refer to th
         <br>
         To check that payu is effectively available, you can run:
         <pre><code>payu --version</code></pre>
-        <terminal-animation>
+        <terminal-window>
             <terminal-line data="input">payu --version</terminal-line>
             <terminal-line lineDelay="1000">1.0.19</terminal-line>
-        </terminal-animation>
+        </terminal-window>
     </li>
 </ul>
 ----------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ A suitable {{ model }} pre-industrial configuration is avaible on the <a href="h
 <br>
 In order to get it, on <i>Gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/coecms/esm-pre-industrial.git</code></pre>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
     <terminal-line data="input">cd ~/access-esm</terminal-line>
     <terminal-line data="input" directory="~/access-esm">git clone https://github.com/coecms/esm-pre-industrial</terminal-line>
@@ -54,14 +54,14 @@ In order to get it, on <i>Gadi</i>, create a directory where to keep the model c
     <terminal-line>remote: Total 767 (delta 173), reused 274 (delta 157), pack-reused 472</terminal-line>
     <terminal-line>Receiving objects: 100% (767/767), 461.57 KiB | 5.24 MiB/s, done.</terminal-line>
     <terminal-line>Resolving deltas: 100% (450/450), done.</terminal-line>
-</terminal-animation>
+</terminal-window>
 <div class="note">
     Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
 </div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
+First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, from inside the cloned repo we can run:
 <pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
@@ -86,7 +86,7 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
 <ul>
     <li><code>work</code> &rarr; temporary directory where the model is actually run. It gets cleaned after each run.</li>
     <li><code>archive</code> &rarr; directory where the output is placed after each run.</li>
-    <terminal-animation>
+    <terminal-window>
         <terminal-line data="input">cd ~/access-esm/esm-pre-industrial</terminal-line>
         <terminal-line data="input" directory="~/access-esm/esm-pre-industrial">payu init</terminal-line>
         <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
@@ -94,7 +94,7 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
         <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
         <terminal-line>work path:  /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
         <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
-    </terminal-animation>
+    </terminal-window>
 </ul>
 
 ### Edit the Master Configuration file
@@ -114,7 +114,7 @@ This file controls the general model configuration and if we open it in a text e
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
+            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="../../../getting_started#join-relevant-nci-projects">how to join NCI projects</a>.
         </div>
     </li>
     <li>
@@ -223,7 +223,7 @@ After editing the configuration, we are ready to run {{ model }}.
 As a first step, from the control directory, is good practice to run:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">payu setup</terminal-line>
     <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
     <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
@@ -243,7 +243,7 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Updating full hashes for 30 files in manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
-</terminal-animation>
+</terminal-window>
 <div class="note">
     You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
@@ -256,7 +256,7 @@ This will submit a single job to the queue with a total run length of <code>runt
 <div class="note">
     The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
 </div>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
@@ -264,7 +264,7 @@ This will submit a single job to the queue with a total run length of <code>runt
     <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line>qsub -q normal -P &lt;project&gt; -l walltime=11400 -l ncpus=384 -l mem=1536GB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/access+gdata/hh5 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
     <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
-</terminal-animation>
+</terminal-window>
 
 ### Run configuration for multiple years
 If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
@@ -332,14 +332,14 @@ Currently, there is no specific tool to monitor {{ model }} runs.
 One way to check the status of our run is running:
 <pre><code>qstat -u $USER</code></pre>
 This will show the status of all your PBS jobs (if there is any PBS job submitted):
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-</terminal-animation>
+</terminal-window>
 If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file">Master Configuration file</a>, that will be your job's <i>Name</i> instead of <code>pre-industrial</code>.
 <br>
 <i>S</i> indicates the status of your run:
@@ -370,13 +370,13 @@ The format of a typical output folder is <code>outputXXX</code>, whereas the typ
 In the respective folders, outputs and restarts are separated for each model component.
 <br>
 For the atmospheric output data, each file it is usually a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls</terminal-line>
     <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls output000/atmosphere</terminal-line>
     <terminal-line class="ls-output-format">aiihca.daa1210 aiihca.daa1810 aiihca.paa1apr aiihca.paa1jun aiihca.pea1apr aiihca.pea1jun aiihca.pga1apr aiihca.pga1jun atm.fort6.pe0 exstat ihist prefix.CNTLGEN UAFLDS_A aiihca.daa1310  aiihca.daa1910  aiihca.paa1aug aiihca.paa1mar aiihca.pea1aug aiihca.pea1mar aiihca.pga1aug aiihca.pga1mar cable.nml fort.57 INITHIS prefix.PRESM_A um_env.py aiihca.daa1410 aiihca.daa1a10 aiihca.paa1dec aiihca.paa1may aiihca.pea1dec aiihca.pea1may aiihca.pga1dec aiihca.pga1may CNTLALL ftxx input_atm.nml SIZES xhist aiihca.daa1510 aiihca.daa1b10 aiihca.paa1feb aiihca.paa1nov aiihca.pea1feb aiihca.pea1nov aiihca.pga1feb aiihca.pga1nov CONTCNTL ftxx.new namelists STASHC aiihca.daa1610 aiihca.daa1c10 aiihca.paa1jan aiihca.paa1oct aiihca.pea1jan aiihca.pea1oct aiihca.pga1jan aiihca.pga1oct debug.root.01 ftxx.vars nout.000000 thist aiihca.daa1710 aiihca.daa2110 aiihca.paa1jul aiihca.paa1sep aiihca.pea1jul aiihca.pea1sep aiihca.pga1jul aiihca.pga1sep errflag hnlist prefix.CNTLATM UAFILES_A</terminal-line>
-</terminal-animation>
+</terminal-window>
 ----------------------------------------------------------------------------------------
 <!-- References -->
 <h6>References</h6>

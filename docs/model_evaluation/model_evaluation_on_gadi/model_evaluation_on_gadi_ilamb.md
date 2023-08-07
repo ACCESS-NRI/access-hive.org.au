@@ -1,17 +1,30 @@
 # `ilamb` on Gadi at NCI
 
-ACCESS-NRI is maintaining a version of the `python` package `ilamb` for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB) on Gadi at the National Compuational Infrastructure (NCI).
+`ilamb` is a Python framework for for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB).
+
+???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+    <!-- Who develped the tool? -->
+    ILAMB/IOMB is a community-developed climate model diagnostics and evaluation software package.
+    <!-- Code ownership and support -->
+    ACCESS-NRI does not own the code of ILAMB/IOMB, but actively supports the use of ILAMB/IOMB on Gadi.
+    ACCESS-NRI provides access to the latest version of ILAMB/IOMB via the `xp65` access-med conda environment deployed on NCI-Gadi.
+
+ACCESS-NRI is maintaining a version of the package `ilamb`  on Gadi at the National Compuational Infrastructure (NCI).
 
 Here, we provide a quick tutorial on how use `ilamb` on Gadi. We assume that you already have access to Gadi, logged onto Gadi via secure shell (ssh) and loaded our `access-med` `conda` environment (if not, follow [these instructions](../model_evaluation_getting_started/index.md)).
 
 All you need are configuration files and paths for models and data (we show you how to set up all necessary steps and options below). You should then be able to execute `ilamb` with the following command:
-```
+
+```py
 ilamb-run --config config.cfg --model_root $ILAMB_ROOT/MODELS --regions global
 ```
+
 This will create output files that you can load as a html website via the prompt
+
 ```
 python -m http.server
 ```
+
 This command will show you which port the browser is sending output to (for example http://0.0.0.0:8000/). Opening this link in your browser will show a summary table of the `ilamb` runs in the center, which will look similar to this minimum example:
 
 <p align="center"><img align="center" width="30%" src="../../../assets/model_evaluation/ilamb_output_1.png" alt="Starting side of ilamb output"></p>  

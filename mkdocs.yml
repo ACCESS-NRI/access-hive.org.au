@@ -59,7 +59,8 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - macros
   - bibtex:
       bib_file: "references.bib"
@@ -90,22 +91,15 @@ markdown_extensions:
 nav:
   - Home: 
     - index.md
-    # - Contribute: 
-    #   - Contribute: contribute/index.md
-    #   - Edit on Github: contribute/edit-on-github.md
-    #   - Edit Locally: contribute/edit-locally.md
-    #   - Stand-alone Documentation: contribute/standalone-documentation.md
-    #   - Change the Navigation: contribute/change-the-navigation.md
-    #   - Reviewers: contribute/reviewers.md
 
-  - Get Started: 
-    - get_started/index.md
+  - Getting Started: 
+    - getting_started/index.md
 
   - Models: 
     - Models: models/index.md
     - Model Configurations: 
       - Overview: models/configurations/index.md
-      - ACCESS-AM: models/configurations/access-am.md
+      # - ACCESS-AM: models/configurations/access-am.md
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-ESM: models/configurations/access-esm.md
       - ACCESS-OM: models/configurations/access-om.md
@@ -120,11 +114,9 @@ nav:
       - Biogeochemistry Ocean: models/model_components/bgc_ocean.md
       - Coupler: models/model_components/coupler.md
 
-    
-
   - Run a Model: 
     - models/run-a-model/index.md
-    - Run ACCESS-AM: models/run-a-model/run-access-am.md
+    # - Run ACCESS-AM: models/run-a-model/run-access-am.md
     - Run ACCESS-CM: models/run-a-model/run-access-cm.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
@@ -184,7 +176,7 @@ nav:
     
 # Footer
 extra:
-  generator: true
+  generator: false
   social:
     - icon: fontawesome/brands/twitter 
       link: https://twitter.com/ACCESS_NRI
@@ -210,5 +202,5 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - js/terminal_animation.js
+  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js
   - js/miscellaneous.js

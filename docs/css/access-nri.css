@@ -24,7 +24,7 @@
   --tab-text-color: 235, 235, 235; /* Color for text of top tab and back to top button */
   --tab-text: rgb(var(--tab-text-color)); /*  Main text in navigation tab */
   --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
-  --default-bg-color: 46, 51, 62; /* Color for main background */
+  --default-bg-color: 53, 54, 58; /* Color for main background */
   --md-default-bg-color: rgb(var(--default-bg-color)); /*  Main background */
   --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
   --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3);
@@ -38,8 +38,8 @@
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
   --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* navigation bar little arrows hover */
   --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
-  --md-code-fg-color: rgb(213, 217, 226); /* code element text */
-  --md-code-bg-color: #242428; /* code element background */
+  --md-code-fg-color: var(--md-default-fg-color); /* code element text */
+  --md-code-bg-color: rgb(41, 41, 41); /* code element background */
   --md-code-hl-color: rgba(255,255,0,.5);
   --md-code-hl-number-color: #d52a2a;
   --md-code-hl-special-color: #db1457;
@@ -65,7 +65,7 @@
   --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: transparent; /* Background warnings */
-  --md-footer-fg-color: var(--nri-orange); /* footer link icon hover (social) */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
   --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
   --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
   --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
@@ -76,9 +76,11 @@
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
   --white-background: rgb(255, 255, 255); /* Background for transparent images */
   --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
-  --terminal-animation-directory: var(--nri-green);
-  --terminal-animation-buttons: var(--nri-orange);
-  --terminal-animation-buttons-hover: var(--nri-blue);
+  --animated-terminal-directory: var(--nri-green);
+  --animated-terminal-buttons: var(--nri-orange);
+  --animated-terminal-buttons-hover: var(--nri-blue);
+  --animated-terminal-text: rgb(235, 235, 235);
+  --animated-terminal-background: var(--md-primary-fg-color);
   --note: var(--card-borders); /* Note border and icon */
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
 }
@@ -143,7 +145,7 @@
   --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: transparent; /* Background warnings */
-  --md-footer-fg-color: var(--nri-orange); /* footer link icon hover (social) */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
   --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
   --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
   --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
@@ -154,9 +156,11 @@
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
   --white-background: rgb(255, 255, 255); /* Background for transparent images */
   --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
-  --terminal-animation-directory: var(--nri-dark-blue);
-  --terminal-animation-buttons: var(--nri-orange);
-  --terminal-animation-buttons-hover: var(--nri-blue);
+  --animated-terminal-directory: var(--nri-dark-blue);
+  --animated-terminal-buttons: var(--nri-orange);
+  --animated-terminal-buttons-hover: var(--nri-blue);
+  --animated-terminal-text: rgb(235, 235, 235);
+  --animated-terminal-background: var(--md-primary-fg-color);
   --note: var(--card-borders); /* Note border and icon */
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
 }
@@ -177,21 +181,113 @@ h3 {
   margin: 1.3em 0 0.4em !important;
 }
 
+
 /* =============================================================== 
-  Introductory paragraph
+  Keep ACCESS-Hive title as it is, without changing when scrolling
+*/
+.md-header__title--active .md-header__topic {
+  opacity: 1;
+  transform: none;
+  z-index: 0;
+  pointer-events: auto;
+  transition: none;
+}
+
+.md-header__title--active .md-header__topic+.md-header__topic {
+  opacity: 0;
+  z-index: -1;
+}
+
+
+/* =============================================================== 
+Homepage
+*/
+/* Hide Title */
+h1.homepage {
+  display: none;
+}
+
+/*
+ Introductory paragraph 
 */
 .introduction {
-  font-size: 1.2em;
-  padding: .7em;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
 }
 
-.introduction > img {
-  max-width: 7em;
-  margin: 0.2em 0.2em 0.2em 0.7em;
+/* Text */
+.introduction > :first-child {
+  flex-basis: 85%;
+  font-size: 1.5rem;
+}
+.introduction > :first-child > :first-child {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
+/* Logo */
+.introduction > :last-child {
+  flex-basis: 15%;
+  align-self: center;
+}
+
+.introduction > :last-child > img {
+  max-height: 5rem;
+  padding: 0;
+}
+
+/* 
+  Buttons After introductory paragraph
+*/
+.card-container.homepage-buttons {
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.2em
+}
+
+.card-container.homepage-buttons > * {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.card-container.homepage-buttons > .vertical-card > :first-child {
+  color: var(--md-default-fg-color);
+  flex-basis: 35%;
+  margin: 1% 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-container.homepage-buttons > .vertical-card > :last-child {
+  flex-basis: 65%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.2em;
+}
+
+.acknowledgement-img {
+  height: 10em !important;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-container.homepage-navigation {
+  justify-content: center;
+  gap: 1.2em;
+}
+
+.card-container.homepage-navigation > * {
+  max-width: 22%;
+}
 
 /* =============================================================== 
   Back to top button
@@ -260,23 +356,64 @@ h3 {
 /* =============================================================== 
   Footer
 */
-
-.partners-logo {
+.md-footer-meta.md-typeset.md-grid {
+  color: var(--md-footer-fg-color--light);
   display: flex;
-}
-.partners-logo > a {
-  display: flex;
-  align-self: center;
-  justify-self: center;
-}
-.partners-logo img {
-  align-self: center;
-  justify-self: center;
-  width: auto;
-  height: 2.5rem;
-  padding: 0.4rem 0.6rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
+.md-footer-meta.md-typeset.md-grid > * {
+  color: var(--tab-text);
+  display: inline-flex;
+  flex-direction: column;
+}
+/* Funding */
+.md-footer-meta.md-typeset.md-grid :first-child {
+  flex-basis: 15%;
+}
+/* Partners */
+.md-footer-meta.md-typeset.md-grid :last-child {
+  flex-basis: 80%;
+}
+
+/* Text */
+.md-footer-meta.md-typeset.md-grid > * > :first-child {
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.2rem;
+  margin: 0.3rem 0;
+}
+
+/* Logos */
+.md-footer-meta.md-typeset.md-grid > * > :last-child {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.md-footer-meta.md-typeset.md-grid > * > :last-child a {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+  padding: 0.2rem;
+}
+
+.md-footer-meta.md-typeset.md-grid > :last-child > :last-child a {
+  padding: 0.5rem;
+}
+
+.md-footer-meta.md-typeset.md-grid > * > :last-child img {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+}
 
 /* =============================================================== 
   Header 
@@ -298,7 +435,6 @@ h3 {
 
 /* Unselected tab */
 .md-tabs__item {
-  /* display: inline-block; */
   text-align: center;
   height: min-content;
   transition: background-color 0.5s;
@@ -372,56 +508,6 @@ h3 {
 }
 
 /* =============================================================== 
-  Support icons
-*/
-/* heart animation */
-@keyframes heart {
-  0%, 40%, 80%, 100% {
-    transform: scale(1);
-  }
-  20%, 60% {
-    transform: scale(1.15);
-  }
-}
-
-.heart {
-  animation: heart 1000ms infinite;
-  color: #F82464;
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.heart:hover {
-  color: #f82464c9;
-}
-
-.icon-supported {
-  color: var(--nri-green);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-supported:hover {
-  color: var(--nri-green);
-}
-
-.icon-recommended {
-  color: var(--nri-orange);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-recommended:hover {
-  color: var(--nri-orange);
-}
-
-/* Vertically center the icons */
-.center-icons {
-  vertical-align: middle;
-}
-
-
-/* =============================================================== 
   How to contribute image
 */
 .rectangular-img {
@@ -431,13 +517,13 @@ h3 {
 }
 
 /* =============================================================== 
-  Cards for ACCESS-Hive navigation, model components and model tabs
+  Cards for ACCESS-Hive navigation, model components, model tabs, MED stuff
 */
 /* Flexbox container for cards*/
 .card-container {
   margin: 1em 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
@@ -452,10 +538,7 @@ h3 {
   border: 1.3px solid var(--card-borders);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
-}
-
-.card-container > * > * {
-  flex-grow: 1;
+  overflow: hidden;
 }
 
 /* Single card hover */
@@ -466,62 +549,49 @@ h3 {
   transition-duration: 0.4s;
 }
 
-.aspect1to2-card {
+.vertical-card {
   flex-direction: column;
   max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 2;
+  min-height: 0;
 }
 
-.squared-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 1;
-}
-
-.aspect1to2-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-width: 20%;
-  aspect-ratio: 2;
-}
-
-.squared-card-image-container {
-  height: 75%;
+.vertical-card-image-container {
+  flex-basis: 80%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.6em 0.6em 0 0.6em;
+  padding: 0.6em 0.6em 0.3em 0.6em;
   overflow: hidden;
   border-radius: 8px;
 }
 
-.squared-card-image-container > img {
+.vertical-card-image-container > img {
   width: 100%;
   height: 100%;
 }
 
-.squared-card-text-container {
-  height: 25%;
+.vertical-card-text-container {
+  color: var(--md-default-fg-color);
+  flex-basis: 20%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0.3em 0.6em 0.6em 0.6em;
 }
 
-.rectangular-card {
+.horizontal-card {
   flex-direction: row;
   width: 100%;
   height: 10em;
-  overflow: hidden;
   align-items: stretch;
 }
 
-.rectangular-card-image-container {
-  width: 35%;
+.horizontal-card-image-container {
+  flex-basis: 35%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -531,38 +601,32 @@ h3 {
   border-radius: 8px;
 }
 
-.rectangular-card-image-container > img {
+.horizontal-card-image-container > img {
   height: 100%;
   width: 100%;
 }
 
-.rectangular-card-text-container {
-  padding: 0 1em;
+.horizontal-card-text-container {
+  color: var(--md-default-fg-color);
   height: 100%;
-  width: 65%;
+  flex-basis: 65%;
   display: flex;
   flex-direction: column;
+  padding: 0 1em;
   justify-content: space-around;
   align-items: center;
 }
 
-.rectangular-card-image-container > img, 
-.squared-card-image-container > img {
+.horizontal-card-image-container > img, 
+.vertical-card-image-container > img {
   border-radius: 8px;
-}
-
-.card-container:has(.component-card) {
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 0.8em;
 }
 
 a.component-card {
   border: unset;
   box-shadow: unset;
   max-width: 22%;
+  min-height: 0;
 }
 
 .component-card:hover {
@@ -570,6 +634,18 @@ a.component-card {
   box-shadow: unset;
 }
 
+
+.aspect-ratio1to1 {
+  aspect-ratio: 1/1;
+}
+
+.aspect-ratio2to1 {
+  aspect-ratio: 2/1;
+}
+
+.aspect-ratio3to1 {
+  aspect-ratio: 3/1;
+}
 /* =============================================================== 
   References
 */
@@ -621,28 +697,28 @@ pre:has(code):hover > button {
 /* =============================================================== 
   Terminal animations
 */
-::part(terminal-container) {
-  background-color: var(--md-code-bg-color);
-  color: var(--md-code-fg-color);
+::part(terminal-window) {
+  background-color: var(--animated-terminal-background);
+  color: var(--animated-terminal-text);
   font-family: var(--md-code-font-family);
   font-weight: unset;
 }
 
 ::part(input-character) {
-  color: var(--terminal-animation-buttons);
+  color: var(--animated-terminal-buttons);
 }
 
 ::part(directory) {
-  color: var(--terminal-animation-directory);
+  color: var(--animated-terminal-directory);
 }
 
-::part(fast-button), ::part(restart-button) {
-  color: var(--terminal-animation-buttons);
+::part(fast-button), ::part(restart-button), ::part(img-icon) {
+  color: var(--animated-terminal-buttons);
   font-weight: 700;
 }
 
-::part(fast-button):hover, ::part(restart-button):hover {
-  color: var(--terminal-animation-buttons-hover);
+::part(fast-button):hover, ::part(restart-button):hover, ::part(img-icon):hover {
+  color: var(--animated-terminal-buttons-hover);
 }
 
 /* Try to format like the output of `ls` command */
@@ -651,6 +727,15 @@ pre:has(code):hover > button {
   word-break: normal;
 }
 
+#terminalSwitch {
+  float: right;
+  height: 1.1rem;
+  margin: 0.5rem 0.2rem;
+}
+
+#terminalSwitch:hover {
+  cursor: pointer;
+}
 /* =============================================================== 
   General styling for html tabs
 */
@@ -659,7 +744,6 @@ pre:has(code):hover > button {
   box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
   display: flex;
   width: fit-content;
-  /* max-width: 100%; */
   overflow: auto;
   margin-top: 1em;
 }
@@ -689,8 +773,10 @@ pre:has(code):hover > button {
 /* Create an active/current tablink class */
 .tabLabels button.activeTab {
   color: var(--md-primary-fg-color--dark);
-  border-bottom: solid 2px var(--md-primary-fg-color--dark);
+  border-bottom: solid 2px currentColor;
   transition: border-bottom .2s;
+  background-color: var(--md-accent-fg-color--transparent);
+  border-radius: 8px 8px 0 0;
 }
 
 /* Style the tab content */
@@ -757,9 +843,7 @@ pre:has(code):hover > button {
   background-color: var(--md-primary-fg-color--dark);
   color: var(--tab-text);
   padding: 0.2em 0.6em;
-  margin: 0.6em 0;
   width: fit-content;
-  height: fit-content;
   border-radius: 0.3em;
 }
 
