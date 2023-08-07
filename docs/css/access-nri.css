@@ -206,25 +206,25 @@ Homepage
 h1.homepage {
   display: none;
 }
-/* Introductory paragraph */
+
+/*
+ Introductory paragraph 
+*/
 .introduction {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
   margin-bottom: 1rem;
   width: 100%;
-  max-height: 4rem;
+  text-align: center;
 }
 
 /* Text */
 .introduction > :first-child {
-  text-align: center;
-  flex-basis: 80%;
+  flex-basis: 85%;
   font-size: 1.5rem;
 }
-
 .introduction > :first-child > :first-child {
   font-weight: 600;
   font-size: 2rem;
@@ -232,12 +232,61 @@ h1.homepage {
 
 /* Logo */
 .introduction > :last-child {
-  flex-basis: 20%;
+  flex-basis: 15%;
+  align-self: center;
 }
 
 .introduction > :last-child > img {
   max-height: 5rem;
   padding: 0;
+}
+
+/* 
+  Buttons After introductory paragraph
+*/
+.card-container.homepage-buttons {
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.2em
+}
+
+.card-container.homepage-buttons > * {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.card-container.homepage-buttons > .vertical-card > :first-child {
+  color: var(--md-default-fg-color);
+  flex-basis: 35%;
+  margin: 1% 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-container.homepage-buttons > .vertical-card > :last-child {
+  flex-basis: 65%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.2em;
+}
+
+.acknowledgement-img {
+  height: 10em !important;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-container.homepage-navigation {
+  justify-content: center;
+  gap: 1.2em;
+}
+
+.card-container.homepage-navigation > * {
+  max-width: 22%;
 }
 
 /* =============================================================== 
@@ -386,7 +435,6 @@ h1.homepage {
 
 /* Unselected tab */
 .md-tabs__item {
-  /* display: inline-block; */
   text-align: center;
   height: min-content;
   transition: background-color 0.5s;
@@ -458,56 +506,6 @@ h1.homepage {
   height: 1.3em;
   width: auto;
 }
-
-/* =============================================================== 
-  Support icons
-*/
-/* heart animation */
-@keyframes heart {
-  0%, 40%, 80%, 100% {
-    transform: scale(1);
-  }
-  20%, 60% {
-    transform: scale(1.15);
-  }
-}
-
-.heart {
-  animation: heart 1000ms infinite;
-  color: #F82464;
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.heart:hover {
-  color: #f82464c9;
-}
-
-.icon-supported {
-  color: var(--nri-green);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-supported:hover {
-  color: var(--nri-green);
-}
-
-.icon-recommended {
-  color: var(--nri-orange);
-  font-size: medium;
-  margin: 0 0.2em;
-}
-
-.icon-recommended:hover {
-  color: var(--nri-orange);
-}
-
-/* Vertically center the icons */
-.center-icons {
-  vertical-align: middle;
-}
-
 
 /* =============================================================== 
   How to contribute image
@@ -636,14 +634,18 @@ a.component-card {
   box-shadow: unset;
 }
 
-.aspect-ratio2to1 {
-  aspect-ratio: 2/1;
-}
 
 .aspect-ratio1to1 {
   aspect-ratio: 1/1;
 }
 
+.aspect-ratio2to1 {
+  aspect-ratio: 2/1;
+}
+
+.aspect-ratio3to1 {
+  aspect-ratio: 3/1;
+}
 /* =============================================================== 
   References
 */
@@ -771,8 +773,10 @@ pre:has(code):hover > button {
 /* Create an active/current tablink class */
 .tabLabels button.activeTab {
   color: var(--md-primary-fg-color--dark);
-  border-bottom: solid 2px var(--nri-orange);
+  border-bottom: solid 2px currentColor;
   transition: border-bottom .2s;
+  background-color: var(--md-accent-fg-color--transparent);
+  border-radius: 8px 8px 0 0;
 }
 
 /* Style the tab content */
