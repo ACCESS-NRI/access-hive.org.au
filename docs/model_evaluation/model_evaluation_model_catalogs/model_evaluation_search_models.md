@@ -2,7 +2,7 @@
 
 To have the huge amount of data from different experiments on the NCI storage at the palm of your hand, we provide a ("meta") catalog for you to query via python as part of the `#!python intake` package with our curated catalog plugin `#!python intake.cat.access_nri` .
 
-To use this catalog, you need access to NCI's Gadi. Check out our [Get Started with ACCESS at NCI](../model_evaluation_getting_started/index.md)   guide on how to get access.
+To use this catalog, you need access to NCI's Gadi. Check out our [Getting Started with ACCESS at NCI](../model_evaluation_getting_started/index.md)   guide on how to get access.
 
 Once logged in to Gadi, you will need to add the `#!python access-nri-catalog` to your `#!python conda` environments and start an [ARE JupyterLab Session](https://are.nci.org.au/pun/sys/dashboard). Check out our [ACCESS-NRI Intake Catalog](https://github.com/ACCESS-NRI/access-nri-intake-catalog/blob/main/docs/getting_started/index.rst) guide  for the specific setup (note that you can only read in data from specific experiments if they are loaded through the *Storage* keyword).
 

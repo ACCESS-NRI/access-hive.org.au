@@ -4,7 +4,7 @@
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
 
 ### General requirements
-For the general requirements needed to run all ACCESS models, please refer to the <a href="TO DO">Getting Started (TO DO check link)</a> page.
+For the general requirements needed to run all ACCESS models, please refer to the <a href="../../../getting_started">Getting Started</a> page.
 
 ### Model-specific requirements
 <ul>
@@ -61,7 +61,7 @@ In order to get it, on <i>Gadi</i>, create a directory where to keep the model c
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, we can run:
+First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, from inside the cloned repo we can run:
 <pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
@@ -114,7 +114,7 @@ This file controls the general model configuration and if we open it in a text e
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="">(TO DO reference projects)</a>.
+            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="../../../getting_started#join-relevant-nci-projects">how to join NCI projects</a>.
         </div>
     </li>
     <li>
