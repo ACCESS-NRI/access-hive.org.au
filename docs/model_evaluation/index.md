@@ -6,7 +6,7 @@ ACCESS-NRI's "Model Evaluation and Diagnostics" work is a critical facet of clim
 
 If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
-    <a href="../get_started" class="vertical-card aspect-ratio1to1">
+    <a href="../getting_started" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>

@@ -4,7 +4,7 @@
 Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions. 
 
 ### General requirements
-For the general requirements needed to run all ACCESS models, please refer to the <a href="../../../get_started">Get Started</a> page.
+For the general requirements needed to run all ACCESS models, please refer to the <a href="../../../getting_started">Getting Started</a> page.
 
 ### Model-specific requirements
 <ul>
@@ -114,7 +114,7 @@ This file controls the general model configuration and if we open it in a text e
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="../../../get_started#join-relevant-nci-projects">how to join NCI projects</a>.
+            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="../../../getting_started#join-relevant-nci-projects">how to join NCI projects</a>.
         </div>
     </li>
     <li>

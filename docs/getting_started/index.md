@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# Get Started
+# Getting Started
 
 If you are new to climate science or <a href="../models/">ACCESS models</a>, and you want to:
 
@@ -98,58 +98,58 @@ You will be asked for your NCI password and then you will get connected to <i>Ga
 ### Automate the log in step
 To simplify the log in step and avoid having to always insert your NCI password, there are a few steps we suggest you to follow:
 
-<!-- Tab labels -->
-<div class="tabLabels" label="systems">
-  <button>MacOS</button>
-  <button>Linux / Windows</button>
-</div>
-<!-- Tab content -->
-<div class="tabContents" label="systems">
-  <!-- MacOS -->
-  <div>
-    <ol>
-      <li>
-        <b>Create an SSH key</b>
-        <br>
-        To create an SSH key, in your terminal, run:
-        <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
-        You will be asked to create a passphrase linked to the SSH key, and insert it twice:
-        <terminal-animation>
-          <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
-          <terminal-line>Generating public/private rsa key pair.</terminal-line>
-          <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
-          <terminal-line lineDelay=3000>Enter same passphrase again:</terminal-line>
-          <terminal-line lineDelay=3000>Your identification has been saved in &lt;$HOME&gt;/.ssh/id_gadi</terminal-line>
-          <terminal-line>Your public key has been saved in /Users/davide/.ssh/id_gadi.pub</terminal-line>
-          <terminal-line lineDelay=0>The key fingerprint is:</terminal-line>
-          <terminal-line lineDelay=0>SHA256:&lt;fingerprint-code&gt; &lt;$USER@hostname&gt;</terminal-line>
-          <terminal-line lineDelay=0>The key's randomart image is:</terminal-line>
-          <terminal-line lineDelay=0>+---[RSA 4096]----+</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
-        </terminal-animation>
-        <div class="note">
-          We suggest you don't leave the passphrase empty for security reason.
-          <br>
-          As you will see in the next step, you will not need to insert the passphrase every time you log in to <i>Gadi</i>.
-        </div>
-      </li>
-      <li>
-        <b>Add the SSH key to the ssh-agent</b>
-        <br>
-        An ssh-agent is an SSH key manager that avoids you having to type a passphrase every time you connect to a server.
-        <br>
-        To add the SSH key to the ssh-agent:
+<ol>
+  <li>
+    <b>Create an SSH key</b>
+    <br>
+    To create an SSH key, in your machine's local terminal, run:
+    <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
+    You will be asked to create a passphrase linked to the SSH key, and insert it twice:
+    <terminal-animation>
+      <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
+      <terminal-line>Generating public/private rsa key pair.</terminal-line>
+      <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
+      <terminal-line lineDelay=3000>Enter same passphrase again:</terminal-line>
+      <terminal-line lineDelay=3000>Your identification has been saved in &lt;$HOME&gt;/.ssh/id_gadi</terminal-line>
+      <terminal-line>Your public key has been saved in /Users/davide/.ssh/id_gadi.pub</terminal-line>
+      <terminal-line lineDelay=0>The key fingerprint is:</terminal-line>
+      <terminal-line lineDelay=0>SHA256:&lt;fingerprint-code&gt; &lt;$USER@hostname&gt;</terminal-line>
+      <terminal-line lineDelay=0>The key's randomart image is:</terminal-line>
+      <terminal-line lineDelay=0>+---[RSA 4096]----+</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
+      <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
+    </terminal-animation>
+    <div class="note">
+      We suggest you don't leave the passphrase empty for security reason.
+      <br>
+      As you will see in the next step, you will not need to insert the passphrase every time you log in to <i>Gadi</i>.
+    </div>
+  </li>
+  <li>
+    <b>Add the SSH key to the ssh-agent</b>
+    <br>
+    An ssh-agent is an SSH key manager that avoids you having to type a passphrase every time you connect to a server.
+    <br>
+    To add the SSH key to the ssh-agent:
+    <!-- Tab labels -->
+    <div class="tabLabels" label="systems">
+      <button>MacOS</button>
+      <button>Linux / Windows</button>
+    </div>
+    <!-- Tab content -->
+    <div class="tabContents" label="systems">
+      <!-- MacOS -->
+      <div>
         <ol>
           <li>
-            In your terminal, start the ssh-agent by running:
+            In your machine's local terminal, start the ssh-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
             <terminal-animation>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
@@ -170,75 +170,12 @@ To simplify the log in step and avoid having to always insert your NCI password,
             </div>
           </li>
         </ol>
-      </li>
-      <li>
-        <b>Create/Update the SSH config file</b>
-        <br>
-        The <code>~/.ssh/config</code> file is a file where you can store labelled SSH configurations for different servers so you don’t have to remember them.
-        <br>
-        To create your ssh config file, in your terminal, run:
-        <pre><code>touch ~/.ssh/config</code></pre>
-        <div class="note">
-          If you already have an existing <code>~/.ssh/config</code> file, the command above will not have any effect.
-        </div>
-        To store the SSH configurations for <i>Gadi</i> in the SSH config file, you can add the following lines to your <code>~/.ssh/config</code> file:
-        <pre><code>Host gadi
-          &emsp;Hostname gadi.nci.org.au
-          &emsp;User &lt;your-NCI-username&gt;
-          &emsp;ForwardX11 true
-          &emsp;ForwardX11Trusted yes
-          &emsp;IdentityFile ~/.ssh/id_gadi
-          &emsp;AddKeysToAgent yes
-          &emsp;UseKeychain yes
-        </code></pre>
-      </li>
-    </ol>
-  </div>
-  <!-- Linux/Windows -->
-  <div>
-    <ol>
-      <li>
-        <b>Create an SSH key</b>
-        <br>
-        To create an SSH key, in your terminal, run:
-        <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
-        You will be asked to create a passphrase linked to the SSH key, and insert it twice:
-        <terminal-animation>
-          <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
-          <terminal-line>Generating public/private rsa key pair.</terminal-line>
-          <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
-          <terminal-line lineDelay=3000>Enter same passphrase again:</terminal-line>
-          <terminal-line lineDelay=3000>Your identification has been saved in &lt;$HOME&gt;/.ssh/id_gadi</terminal-line>
-          <terminal-line>Your public key has been saved in /Users/davide/.ssh/id_gadi.pub</terminal-line>
-          <terminal-line lineDelay=0>The key fingerprint is:</terminal-line>
-          <terminal-line lineDelay=0>SHA256:&lt;fingerprint-code&gt; &lt;$USER@hostname&gt;</terminal-line>
-          <terminal-line lineDelay=0>The key's randomart image is:</terminal-line>
-          <terminal-line lineDelay=0>+---[RSA 4096]----+</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-          <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
-        </terminal-animation>
-        <div class="note">
-          We suggest you don't leave the passphrase empty for security reason.
-          <br>
-          As you will see in the next step, you will not need to insert the passphrase every time you log in to <i>Gadi</i>.
-        </div>
-      </li>
-      <li>
-        <b>Add the SSH key to the ssh-agent</b>
-        <br>
-        An ssh-agent is an SSH key manager that avoids you having to type a passphrase every time you connect to a server.
-        <br>
-        To add the SSH key to the ssh-agent:
+      </div>
+      <!-- Linux/Windows -->
+      <div>
         <ol>
           <li>
-            In your terminal, start the ssh-agent by running:
+            In your machine's local terminal, start the ssh-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
             <terminal-animation>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
@@ -256,31 +193,43 @@ To simplify the log in step and avoid having to always insert your NCI password,
             </terminal-animation>
           </li>
         </ol>
-      </li>
-      <li>
-        <b>Create/Update the SSH config file</b>
-        <br>
-        The <code>~/.ssh/config</code> file is a file where you can store the SSH configurations for different servers, labeled so you don't have to remember them.
-        <br>
-        To create your ssh config file, in your terminal, run:
-        <pre><code>touch ~/.ssh/config</code></pre>
-        <div class="note">
-          If you already have an existing <code>~/.ssh/config</code> file, the command above will not have any effect.
-        </div>
-        To store the SSH configurations for <i>Gadi</i> in the SSH config file, you can add the following lines to your <code>~/.ssh/config</code> file:
-        <pre><code>Host gadi
-          &emsp;Hostname gadi.nci.org.au
-          &emsp;User &lt;your-NCI-username&gt;
-          &emsp;ForwardX11 true
-          &emsp;ForwardX11Trusted yes
-          &emsp;IdentityFile ~/.ssh/id_gadi
-          &emsp;AddKeysToAgent yes
-        </code></pre>
-      </li>
-    </ol>
-  </div>
-</div>
-<!-- End of tab -->
+      </div>
+    </div>
+  </li>
+  <li>
+    <b>Create/Update the SSH config file</b>
+    <br>
+    The <code>~/.ssh/config</code> file is a file where you can store labelled SSH configurations for different servers so you don’t have to remember them.
+    <br>
+    To create your ssh config file, in your machine's local terminal, run:
+    <pre><code>touch ~/.ssh/config</code></pre>
+    <div class="note">
+      If you already have an existing <code>~/.ssh/config</code> file, the command above will not have any effect.
+    </div>
+    To store the SSH configurations for <i>Gadi</i> in the SSH config file, you can add the following lines to your <code>~/.ssh/config</code> file:
+    <pre><code>Host gadi
+      &emsp;Hostname gadi.nci.org.au
+      &emsp;User &lt;your-NCI-username&gt;
+      &emsp;ForwardX11 true
+      &emsp;ForwardX11Trusted yes
+      &emsp;IdentityFile ~/.ssh/id_gadi
+      &emsp;AddKeysToAgent yes
+      &emsp;UseKeychain yes
+    </code></pre>
+  </li>
+  <li>
+    <b>Add the SSH key to the Authorized Keys</b>
+    <br>
+    To enable automatic connection to a server, that server needs to recognise the SSH key as an <i>authorized</i> one. The list of authorised keys for a certain server, is stored inside the file <code>~/.ssh/authorized_keys</code>.
+    <br>
+    To add the newly created SSH key as an <i>authorized</i> key for Gadi, in your local machine's terminal, run:
+    <pre><code>var=$( cat ~/.ssh/id_gadi.pub ) && ssh gadi "echo $var >> .ssh/authorized_keys"</code></pre>
+    <div class="note">
+      Make sure you use double quotes (") in the previous command.
+    </div>
+    You will be asked for your password, and if you did all the previous steps correctly, this will be the last time you will have to insert it.
+  </li>
+</ol>
 Once you complete all the above steps, you will be able to connect to <i>Gadi</i> simply by running:
 <pre><code>ssh gadi</code></pre>
 

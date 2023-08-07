@@ -13,7 +13,7 @@ Welcome to Model Evaluation and Diagnostics!
 Here, we provide you the important information to give you access to the large data that we curate at NCI's storage and show you how you can use it to figure out how fit for purpose specific models are, in particular when you compare them to osbervational data:
 
 <div class="card-container">
-    <a href="../../get_started" class="vertical-card aspect-ratio1to1">
+    <a href="../../getting_started" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img src="../../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>

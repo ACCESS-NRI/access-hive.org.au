@@ -1,6 +1,6 @@
 # Model Evaluation Environment at NCI's Gadi
 
-At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to NCI's Gadi](../../get_started/index.md).
+At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to NCI's Gadi](../../getting_started/index.md).
 
 Here we describe the additional information to get started with model evaluation that is supported by ACCESS-NRI.
 
@@ -30,7 +30,7 @@ You are now able to use the scripts of our currated environment, including `pyth
 
 ## 3 Interactive computing on NCI via the Australian Research Environment (ARE)
 
-NCI also supports an interactive coding environment called the Australian Research Environment (ARE). It's use is quite similar to submitting a computing job via `qsub -I`, but it comes with dedicated graphical user interfaces for jupyter notebooks. To use it, you need an NCI account and be part of a project that gives you computing resources (see our [getting started](../../get_started/index.md)).
+NCI also supports an interactive coding environment called the Australian Research Environment (ARE). It's use is quite similar to submitting a computing job via `qsub -I`, but it comes with dedicated graphical user interfaces for jupyter notebooks. To use it, you need an NCI account and be part of a project that gives you computing resources (see our [getting started](../../getting_started/index.md)).
 
 You can then easily go to [https://are.nci.org.au](https://are.nci.org.au) and login. After you are logged in, you can click on the featured app button "JupyterLab" to start a JupyterLab instance. This will progress you to a window with many input fields. You need to at least fill in the following (we show default values, but you need to adjust them for your given use case and projects):  
 
