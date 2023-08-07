@@ -1,4 +1,4 @@
-# Model Evaluation Environment at NIC's Gadi
+# Model Evaluation on Gadi
 
 At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi. If this is not the case, please go to our instructions on how to get [access to NCI's Gadi](../../get_started/index.md).
 

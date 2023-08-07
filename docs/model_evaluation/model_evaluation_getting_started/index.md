@@ -21,9 +21,9 @@ Here, we provide you the important information to give you access to the large d
     </a>
     <a href="model_evaluation_getting_started" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img src="../../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment"></img>
+            <img src="../../assets/model_evaluation/model_evaluation_conda.png" alt="Model Evaluation on Gadi"></img>
         </div>
-        <div class="squared-card-text-container bold">MED Conda Environment</div>
+        <div class="squared-card-text-container bold">Model Evaluation on Gadi</div>
     </a>
     <a href="model_variables" class="squared-card default-text-color">
         <div class="squared-card-image-container">

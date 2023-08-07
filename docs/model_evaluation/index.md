@@ -4,6 +4,14 @@
 
 ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of climate modeling, encompassing various tasks designed to ensure the model's reliability and accuracy.
 
+## What is MED about?
+
+**Evaluation** involves scrutinizing the model through Model/Observation confrontations, checking its performance against real-world observations. It also includes experiment comparisons, testing the model under different scenarios, and inter-model comparisons like the Coupled Model Intercomparison Project (CMIP), assessing how the ACCESS-NRI model fares when compared with other climate models.
+
+**Diagnostics** involves constant monitoring of model runs to detect any anomalies or inconsistencies and a thorough analysis of outputs to verify the model's accuracy over time.
+
+## Getting Started with MED
+
 If you are new to model evaluation and diagnostics, we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
 <div class="card-container">
     <a href="../get_started" class="squared-card default-text-color">
@@ -14,9 +22,9 @@ If you are new to model evaluation and diagnostics, we recommend you read our [G
     </a>
     <a href="model_evaluation_getting_started/model_evaluation_getting_started" class="squared-card default-text-color">
         <div class="squared-card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="MED Conda Environment"></img>
+            <img src="../assets/model_evaluation/model_evaluation_conda.png" alt="Model Evaluation on Gadi"></img>
         </div>
-        <div class="squared-card-text-container bold">MED Conda Environment</div>
+        <div class="squared-card-text-container bold">Model Evaluation on Gadi</div>
     </a>
     <a href="model_evaluation_getting_started/model_variables" class="squared-card default-text-color">
         <div class="squared-card-image-container">
@@ -88,7 +96,7 @@ We are currently setting up a range of tools that will help you to better evalua
 
 While we are working on these, we have collected a number of links to existing tools in our [community tab](../community_resources/index.md) (note that we are not currating them).  
 
-{% include "call_contribute.md" %}
+<!-- {% include "call_contribute.md" %} -->
 
 <!-- 
 
@@ -124,9 +132,3 @@ TBD: Tools to check if data is CMOR-compliant (raise issue)
 TBD: Discuss with Dougie: How can we identify what is CMORized and what is not?
 
 -->
-
-## What is MED about?
-
-**Evaluation** involves scrutinizing the model through Model/Observation confrontations, checking its performance against real-world observations. It also includes experiment comparisons, testing the model under different scenarios, and inter-model comparisons like the Coupled Model Intercomparison Project (CMIP), assessing how the ACCESS-NRI model fares when compared with other climate models.
-
-**Diagnostics** involves constant monitoring of model runs to detect any anomalies or inconsistencies and a thorough analysis of outputs to verify the model's accuracy over time.
