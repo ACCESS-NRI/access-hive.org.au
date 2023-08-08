@@ -23,7 +23,8 @@ module use /g/data/xp65/public/modules
 module load conda/access-med
 ```
 
-This will load the latest version of `access-med` (in this tutorial `0.3`). To check you are using the correct conda version, you can run `which python`:
+This will load the latest version of `access-med` (in this tutorial `0.3`). To check which conda version you are using, you can run `which python`:
+
 
 <terminal-window>
     <terminal-line data="input">module use /g/data/xp65/public/modules</terminal-line>
