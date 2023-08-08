@@ -2,7 +2,7 @@
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
-ACCESS-NRI's Model Evaluation and Diagnostics (MED) work is a critical facet of climate modeling that includes the comparison of different models and their confrontation with real-world data to test a model's reliability and accuracy in order to draw scientific conclusions.
+Model evaluation in climate science is the process of assessing the performance and reliability of computational models that simulate Earth's climate system. It involves comparing model predictions to observed data to determine the model's accuracy and usefulness. This process helps understand how well a model represents real-world climate processes and predict future climate trends. Through rigorous evaluation, scientists can identify model strengths, weaknesses, and uncertainties, refining models to enhance their predictive capabilities.
 
 ## Getting Started with MED
 
