@@ -6,6 +6,15 @@ function sortTables() {
   tables.forEach(table => new Tablesort(table));
 }
 
+/*
+  Remove 'edit' and 'view' icons from homepage
+*/
+function removeIconsFromHomepage() {
+  if (location.pathname.match('^(/|/development_site/|/pr-preview/pr-[0-9]*/)$')) {
+    let icons=document.querySelectorAll(".md-content__button.md-icon");
+    icons.forEach(icon=>icon.style.display="none");
+  }
+}
 
 /*
   Adjust the scrolling so that the paragraph's titles is not 
@@ -150,6 +159,7 @@ function toggleTerminalAnimations() {
 // Join all functions
 function main() {
   sortTables();
+  removeIconsFromHomepage();
   adjustScrollingToId();
   tabFunctionality();
   addExternalLinkIcon();
