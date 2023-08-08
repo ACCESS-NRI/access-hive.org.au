@@ -59,7 +59,8 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - macros
   - bibtex:
       bib_file: "references.bib"
@@ -167,6 +168,8 @@ nav:
 
   - About:
     - Contact: about/contact.md
+    - User support: about/user_support.md
+    - How to contribute: about/how_to_contribute.md
     - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
