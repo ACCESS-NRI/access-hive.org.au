@@ -49,7 +49,8 @@ print(intake.__version__)
 print(esmvaltool.__version__)
 ```
 
-If you are planning to run your code on Gadi with a Portable Batch System (`PBS`) job, you will need need to add it the `module use` and `module load` commands to your PBS script as well. You could for example create an `example_pbs.sh` file with the content
+If you are planning to run your code on Gadi with a Portable Batch System (`PBS`) job, you will need to add in the `module use` and `module load` commands to your PBS script as well. You could for example create an `example_pbs.sh` file with the content:
+
 
 ```
 #!/bin/bash
