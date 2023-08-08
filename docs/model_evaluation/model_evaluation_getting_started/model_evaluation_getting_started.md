@@ -76,7 +76,6 @@ qsub example_pbs.sh
 
 If you are not familiar with PBS jobs on NCI, you can find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) `iq82` with a [normal queue](https://opus.nci.org.au/display/Help/Queue+Limits) (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`), a walltime of 10 minutes (`#PBS -l walltime=00:10:00`) and data storage access to projects `xp65`. Note that for this example to work, you have to be [member of the NCI project](https://my.nci.org.au/mancini/project-search) `xp65` and `iq82`. Adjust the `#PBS -P` option to match your compute project. Upon starting the job, it will change into to the working directory that you submitted the job from (`#PBS -l wd`) and load the access-med conda environment.
 
-If you are planning to run your code through JupyterLab on [NCI's ARE](https://are.nci.org.au), you need to use `/g/data/xp65/public/modules` as **Module directories** and `conda/are` as **Modules** when launching a JupyterLab session.
 
 ## Running our `access-med` environment on NCI's Interactive ARE (JupyterLab)
 
