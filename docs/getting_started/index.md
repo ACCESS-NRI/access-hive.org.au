@@ -7,7 +7,7 @@ hide:
 The steps in this section are aimed at new users of <a href="../models/">ACCESS models</a> who would like to do any of the following:
 
 - Run your own experiment
-- Obtain model outputs
+- Get model outputs
 - Evaluate model performance
 - Perform other tasks involving ACCESS Models
 <hr>
@@ -17,7 +17,7 @@ Most of the data and models you will need are available at the <a href="https://
 <br>
 To access these, you need an <a href="https://opus.nci.org.au/display/Help/How+to+create+an+NCI+user+account" target="_blank">NCI account</a>. If you do not have one, <a href="https://my.nci.org.au/mancini/signup/0" target="_blank">sign up here</a>.
 <div class="note">
-You need an institutional email address with an organisation that allows access to NCI (e.g. an Australian university, ACCESS-NRI, CSIRO, BoM, CLEX, etc.).
+You will need an institutional email address with an organisation that allows access to NCI (e.g., an Australian university, ACCESS-NRI, CSIRO, BoM, CLEX, etc.).
 </div>
 Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
 <hr>
@@ -26,24 +26,26 @@ Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
 
 NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. Access to this storage, as well as to computing resources to run models and evaluate them, is organised in *projects*.
 
-To run your simulations on <i>Gadi</i>, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
+To perform computations on <i>Gadi</i>, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
 
-To <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">join a project</a>, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
+To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
 
 Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actually refers to.
 <br>
-<i>Note:</i> The first project you join will become your default one. If you would like to change this, read <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
+<div class="note">
+  The first project you join will become your default one. If you would like to change this, check out <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
+</div> 
 
 There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out. 
 <br>
-For models supported by ACCESS-NRI, you can find a list of relevant projects to join under each respective model in <a href="../models/run-a-model/">Run a Model</a> (e.g., <a href="../models/run-a-model/run-access-om/#model-specific-requirements">Run Access-OM </a>).
- 
+For tasks supported by ACCESS-NRI (e.g., running a supported model configuration, using a supported model evaluation tool, etc.), you will find a list of relevant projects to join in the pages relative to each respective task.
+
 <hr>
 
 ## Login to Gadi
 Operations such as model runs and output data I/O take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
 
-Before you login to <i>Gadi</i>, you need to fulfil the following prerequisites:
+Before you login to <i>Gadi</i>, you need to possess the following prerequisites:
 <ul>
   <li><b>Internet connection</b></li>
   <li>
@@ -52,10 +54,15 @@ Before you login to <i>Gadi</i>, you need to fulfil the following prerequisites:
     Linux and MacOS operative systems already have a built-in UNIX-like terminal.
     <br>
     Windows users can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>. 
+    <div class="note">
+      Alternatively, you can login through the <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE Gadi Terminal</a>. 
+      <br>
+      However, it is recommended that you connect to <i>Gadi</i> from your local machine's terminal without using ARE. 
+    </div>
   </li>
 </ul>
 
-To login to <i>Gadi</i> using <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH</a>, run the following command replacing <code>&lt;your-NCI-username&gt;</code> with your NCI <i>username</i> (e.g., <code>ab1234</code>):
+To login to <i>Gadi</i> using <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH</a>, on your **local machine's terminal** run the following command, replacing <code>&lt;your-NCI-username&gt;</code> with your NCI <i>username</i> (e.g., <code>ab1234</code>):
 <pre><code>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</code></pre>
 You will be prompted to enter your NCI password, and then you will be connected to <i>Gadi</i>:
 <terminal-window lineDelay=0>
@@ -76,12 +83,6 @@ You will be prompted to enter your NCI password, and then you will be connected 
   <terminal-line data="input" lineDelay=200></terminal-line>
 </terminal-window>
 
-
-<div class="note">
-      Alternatively, you can login through the <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE Gadi Terminal</a>. 
-      <br>
-      However, it is recommended that you connect to <i>Gadi</i> from your local machine's terminal without using ARE. 
-</div>
 ### Auto login
 To simplify the login and avoid being prompted every time to enter your NCI password, follow these steps:
 <ol>
@@ -115,7 +116,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     <div class="note">
       For security reasons, it is recommended to enter a passphrase rather than leave it empty.
       <br>
-      As you will see in the next step, you do not need to enter the passphrase every time you login to <i>Gadi</i>.
+      As you will see in the next step, you will not need to enter the passphrase every time you login to <i>Gadi</i>.
     </div>
   </li>
   <li>
@@ -145,7 +146,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
           <li>
             Add your SSH key to the SSH-agent by running:
             <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
-            You will be prompted to enter a SSH key passphrase, which will be stored inside the SSH-agent:
+            You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
               <terminal-line data="input">ssh-add --apple-use-keychain ~/.ssh/id_gadi</terminal-line>
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
@@ -161,7 +162,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
       <div>
         <ol>
           <li>
-            On your </b>local machine</b>, start the SSH-agent by running:
+            On your <b>local machine</b>, start the SSH-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
             <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
@@ -171,7 +172,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
           <li>
             Add your SSH key to the SSH-agent by running:
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
-            You will be prompted to enter a SSH key passphrase, which will be stored inside the SSH-agent:
+            You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
               <terminal-line data="input">ssh-add ~/.ssh/id_gadi</terminal-line>
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
@@ -186,14 +187,13 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
   <li>
     <b>Create/Update the SSH config file</b>
     <br>
-   The <code>~/.ssh/config</code> configuration file is where you store different SSH options for each remote server you regularly connect to, so you do not have to remember them all.
+    The <code>~/.ssh/config</code>  is a file where you can store labelled SSH configurations for different remote servers you regularly connect to, so you do not have to remember them all.
     <br>
     To create an SSH config file, run the following command on your <b>local machine</b>:
     <pre><code>touch ~/.ssh/config</code></pre>
     <div class="note">
       If you already have an existing <code>~/.ssh/config</code> file, the above command will not have any effect.
     </div>
-    <br>
     The following lines should be added to your <code>~/.ssh/config</code> to describe the SSH configuration for <i>Gadi</i> (replace <code>&lt;your-NCI-username&gt;</code> with your NCI <i>username</i>, e.g., <code>ab1234</code>):
     <pre><code>Host gadi
       &emsp;Hostname gadi.nci.org.au
@@ -204,9 +204,13 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
       &emsp;AddKeysToAgent yes
       &emsp;UseKeychain yes
     </code></pre>
+    <div class="note">
+      If you already have an existing <code>~/.ssh/config</code> file which contains configurations for every <code>Host</code> (e.g., by using <code>Host *</code>), make sure you delete any of the keywords present in that SSH configuration from the <i>Gadi</i> configuration above.
+      <br>
+    </div>
   </li>
   <li>
-    <b>Add the SSH key to the Authorised Keys</b>
+    <b>Add the SSH key to the authorised keys</b>
     <br>
     To enable automatic connection to a server, that server needs to recognise the SSH key as <i>authorised</i>. The list of authorised keys for a certain server is stored in the file <code>~/.ssh/authorized_keys</code>.
     <br>
@@ -218,19 +222,19 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     You will be prompted to enter your NCI password. If you did all of the above steps correctly, this should be the last time you need to do so.
   </li>
 </ol>
-Now you should be able to connect to <i>Gadi</i> simply by running from your local machine's terminal:
+Once you complete all the above steps, you should be able to connect to <i>Gadi</i> from your **local machine's terminal** simply by running:
 <pre><code>ssh gadi</code></pre>
 
 ### Change default project on Gadi
-It is recommended that you check what your default project on <i>Gadi</i> is set to. The default project should be set to the computational project you will most likely use to run simulations/forecasts and store data.
+It is recommended that you check what your default project on <i>Gadi</i> is set to. The default project should be set to the computational project you will most likely use to run simulations/evaluations and store data.
 <br>
 You can check which is your default project by logging into <i>Gadi</i> and running:
 <pre><code>echo $PROJECT</code></pre>
-To change your default project on <i>Gadi</i>, you need to manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file. Once this is done, exit from <i>Gadi</i> and log back in.
+To change your default project on <i>Gadi</i>, you need to manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file.
 <br>
-Alternatively, you can run the following command on <i>Gadi</i>:
+Alternatively, you can run the following command <b>on <i>Gadi</i>'s terminal</b>:
 <pre><code>sed "s/\(PROJECT \).*/\1&lt;new-default-project&gt;/" ~/.config/gadi-login.conf</code></pre>
-For these changes to take effect, you need to exit your session on <i>Gadi</i> and then log back in.
+Once this is done, exit from <i>Gadi</i> and log back in.
 <br>
 For example, if you want to change your default project to `tm70` on <i>Gadi</i>:
 <terminal-window>
