@@ -2,37 +2,27 @@
 {% set model = "ACCESS-OM" %}
 # Run {{ model }}
 ## Requirements
-
-Before running {{ model }}, you need to make sure to possess the right tools and to have an account with specific institutions.
-
 ### General requirements
-For the general requirements needed to run all ACCESS models, please refer to the <a href="../../../getting_started">Getting Started</a> page.
-
+Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
 ### Model-specific requirements
 <ul>
     <li>
         <b>Join the <i>hh5</i>, <i>qv56</i>, <i>ua8</i> and <i>ik11</i> projects at NCI</i></b>
         <br>
-        The <i>hh5</i> project hosts the conda environment that supports most workflows for climate science on <i>Gadi</i>.
-        <br>
-        The <i>qv56</i>, <i>ua8</i> and <i>ik11</i> projects, instead, store some of the input data for {{ model }}.
-        <br>
-        To join these projects at NCI, request membership for them on the respective <a href="https://my.nci.org.au/mancini/project/hh5/join" target="_blank">hh5</a>, <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a>, <a href="https://my.nci.org.au/mancini/project/ua8/join" target="_blank">ua8</a> and <a href="https://my.nci.org.au/mancini/project/ik11/join" target="_blank">ik11</a> NCI project pages.
+        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/hh5/join" target="_blank">hh5</a>, <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a>, <a href="https://my.nci.org.au/mancini/project/ua8/join" target="_blank">ua8</a> and <a href="https://my.nci.org.au/mancini/project/ik11/join" target="_blank">ik11</a> NCI project pages.
         <br>
         For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
     <li>
         <b>Payu</b>
         <br>
-        <i>payu</i> on <i>Gadi</i> is available through the <code>conda/analysis3</code> environment in the <i>hh5</i> project.
+        <i>Payu</i> on <i>Gadi</i> is available through the <code>conda/analysis3</code> environment in the <i>hh5</i> project.
         <br>
-        After getting access to the <i>hh5</i> project, load the <code>conda/analysis3</code> environment by running:
+        After obtaining <i>hh5</i> project membership, load the <code>conda/analysis3</code> environment to automatically retrieve <i>payu</i> as follows:
         <pre><code>module use /g/data/hh5/public/modules
             module load conda/analysis3
-        </code></pre>
-        to automatically get <i>payu</i>. 
-        <br>
-        To check that payu is effectively available, you can run:
+        </code></pre> 
+        To check that <i>payu</i> is available, run:
         <pre><code>payu --version</code></pre>
         <terminal-window>
             <terminal-line data="input">payu --version</terminal-line>
@@ -44,11 +34,11 @@ For the general requirements needed to run all ACCESS models, please refer to th
 
 ## Get {{ model }} configuration
 
-A standard {{ model }} configuration is avaible on the <a href = "https://github.com/COSIMA/1deg_jra55_iaf/" target="_blank">COSIMA GitHub</a>.
+A standard {{ model }} configuration is available on the <a href = "https://github.com/COSIMA/1deg_jra55_iaf/" target="_blank">COSIMA GitHub</a>.
 <br>
-This is a 1° horizontal resolution configuration, with interannual forcing from 1 Jan 1958 to 31 Dec 2018.
+This is a 1° horizontal resolution configuration with interannual forcing from 1 Jan 1958 to 31 Dec 2018.
 <br>
-In order to get it, on <i>Gadi</i>, create a directory where to keep the model configuration, and clone the GitHub repo in it by running: 
+To get it on <i>Gadi</i>, create a directory to store the model configuration.Navigate to this directory and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/COSIMA/1deg_jra55_iaf.git</code></pre>
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
@@ -63,12 +53,14 @@ In order to get it, on <i>Gadi</i>, create a directory where to keep the model c
     <terminal-line>Resolving deltas: 100% (10707/10707), done.</terminal-line>
 </terminal-window>
 <div class="note">
-    Some modules might interfere with the <code>git</code> commands (for example matlab/R2018a). If you are running into issues during the cloning of the repository, it might be a good idea to run <pre><code>module purge</code></pre> first, before trying again.
+   Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
 </div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-First, is good practice to create another git branch where to keep all modifications we put in place for our run, and to keep the <i>reference</i> configuration unmodified. If we call the local branch <i>"example_run"</i>, from inside the cloned repo we can run:
+It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the reference configuration. 
+
+To create a local branch called <i>"example_run"</i>, from within the cloned repo execute:
 <pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
@@ -77,22 +69,22 @@ First, is good practice to create another git branch where to keep all modificat
 The general layout of a <i>payu</i>-supported model run consists of two main directories:
 <ul>
     <li>
-        The <b>laboratory</b> is the directory where all parts of the model are kept. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-om2</code>.
+        The <b>laboratory</b> directory, where all the model components reside. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-om2</code>.
     </li>
     <li>
-        The <b>control</b> directory, where the model configuration is kept and from where the model is run (in our case is the cloned directory <code>~/access-om/1deg_jra55_iaf</code>).
+        The <b>control</b> directory, where the model configuration resides and from where the model is run (in this example, the cloned directory <code>~/access-om/1deg_jra55_iaf</code>.
     </li>
 </ul>
-This distinction of directories keeps the small-size configuration files separated from the larger binary outputs and inputs. In this way, we can place the configuration files in the <code>$HOME</code> directory (being the only filesystem on <i>Gadi</i> that is actively backed up), without overloading it with too much data.
+This distinction of directories separates the small-size configuration files from the larger binary outputs and inputs. In this way, the configuration files can be placed in the <code>$HOME</code> directory (as it is the only filesystem actively backed-up on <i>Gadi</i>), without overloading it with too much data.
+Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 <br>
-Moreover, this separation allows to run multiple self-resubmitting experiments simultaneously that might share common executables and input data.
 <br>
-To proceed with the setup of the <i>laboratory</i> directory, from the <i>control</i> directory run:
+To setup the <i>laboratory</i> directory, run the following command from the <i>control</i> directory:
 <pre><code>payu init</code></pre> 
-This will create the <i>laboratory</i> directory, along with other subdirectories (depending on the configuration). The main subdirectories we are interested in are: 
+This creates the <i>laboratory</i> directory, together with relevant subdirectories, depending on the configuration. The main subdirectories of interest are: 
 <ul>
-    <li><code>work</code> &rarr; temporary directory where the model is actually run. It gets cleaned after each run.</li>
-    <li><code>archive</code> &rarr; directory where the output is placed after each run.</li>
+    <li><code>work</code> &rarr; a temporary directory where the model is run. It gets cleaned after each run.</li>
+    <li><code>archive</code> &rarr; the directory where output is stored after each run.</li>
     <terminal-window>
         <terminal-line data="input">cd ~/access-om/1deg_jra55_iaf</terminal-line>
         <terminal-line data="input" directory="~/access-om/1deg_jra55_iaf">payu init</terminal-line>
@@ -104,10 +96,10 @@ This will create the <i>laboratory</i> directory, along with other subdirectorie
     </terminal-window>
 </ul>
 
-### Edit the Master Configuration file
-The <code>config.yaml</code> file, located in the <i>control</i> directory, is the Master Configuration file. 
+### Edit the <i>Master Configuration</i> file
+The <code>config.yaml</code> file located in the <i>control</i> directory, is the <i>Master Configuration</i> file. 
 <br>
-This file controls the general model configuration and if we open it in a text editor, we can see different parts:
+This file, which controls the general model configuration, contains several parts:
 <ul>
     <li>
         <b>PBS resources</b>
@@ -117,23 +109,24 @@ This file controls the general model configuration and if we open it in a text e
             jobname: 1deg_jra55_iaf
             mem: 1000GB
         </code></pre>
-        These are settings for the PBS scheduler. Edit lines in this section to change any of the PBS resources. 
+        These lines can be edited to change the settings for the PBS scheduler.
         <br>
-        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line to this section:
+        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            You should be part of a project with allocated <i>Service Units</i> (SU) to be able to run {{ model }}. For more information please check <a href="../../../getting_started#join-relevant-nci-projects">how to join NCI projects</a>.
+            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="../../../get_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
         </div>
     </li>
     <li>
         <b>Model configuration</b>
+        <br>
         <pre><code>name: common
             model: access-om2
             input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
         </code></pre>
-        The main model configuration. This tells <i>payu</i> which driver to use (<i>access-om</i>).
+        These lines let <i>payu</i> know which driver to use for the main model configuration (<i>access-om</i>).
         <br>
-        The <code>name</code> field here is not actually used for the configuration run and you can safely disregard it.
+        The <code>name</code> field here is not actually used for the configuration run so you can safely ignore it.
     </li>
     <li>
         <b>Submodels</b>
@@ -167,9 +160,10 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;&nbsp;&nbsp;input: /g/data/ik11/inputs/access-om2/input_20201102/cice_1deg
             &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 24
         </code></pre>
-        {{ model }} is a coupled model, which means it has multiple submodels (i.e. model components). 
+        {{ model }} is a coupled model deploying multiple submodels (i.e. model components).
+        This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
-        This section specifies the submodels and contains configuration options (for example the directories of input files) that are required to ensure the model can execute correctly. Each submodel also has additional configuration options that are read in when the submodel is running. These specific configuration options are found in the subdirectory of the <i>control</i> directory having the <i>name</i> of the submodel (e.g. in our case the configuration for the atmosphere submodel will be in the directory <code>~/access-om/1deg_jra55_iaf/atmosphere</code>).
+        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <i>name</i> (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-om/1deg_jra55_iaf/atmosphere</code> directory).
     </li>
     <li>
         <b>Collate</b>
@@ -182,40 +176,44 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;queue: normal
             &nbsp;&nbsp;exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine
         </code></pre>
-        The <i>collate</i> process joins a number of smaller files, which contain different parts of the model grid, together into target output files. The restart files are typically tiled in the same way and will also be joined together if the <i>restart</i> option is set to <code>true</code>.
+        The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
     </li>
     <li>
         <b>Runlog</b>
         <br>
         <pre><code>runlog: true</code></pre>
-        When running a new configuration, <i>payu</i> automatically commits changes in git if <i>runlog</i> is set to true.
+        When running a new configuration, <i>payu</i> automatically commits changes in git if <code>runlog</code> is set to <code>true</code>.
+        <br>
+        Should not be changed to avoid losing track of the current experiment.
     </li>
     <li>
         <b>Stack size</b>
         <br>
         <pre><code>stacksize: unlimited</code></pre>
-        The stack size is the maximum size of the per-thread resources allocated for each process (in KiB).
-        <i>unlimited</i> works without any issues, but explicit stacksize values may not be correctly communicated across <i>Gadi</i> nodes.
+        The <code>stacksize</code> is the maximum size (in KiB) of the per-thread resources allocated for each process. This is often set to <code>unlimited</code> as explicit stacksize values may not be correctly communicated across <i>Gadi</i> nodes.
     </li>
     <li>
         <b>Restart frequency</b>
         <br>
         <pre><code>restart_freq: 1</code></pre>
-        The restart frequency specifies the rate of saved restart files. For example, if <code>restart_freq: 5</code>, we keep the restart files for every fifth run (restart004, restart009, restart014, etc.). Intermediate restarts are not deleted until a permanently archived restart has been produced. For example, if we have just completed run 11, then we keep restart004, restart009, restart010, and restart011. Restarts 10 through 13 are not deleted until restart014 has been saved.
+        The restart frequency specifies the rate of saved restart files. 
         <br>
-        <code>restart_freq: 1</code> saves all restart files.
+        For example, to save restart files every fifth run (i.e. restart004, restart009, restart014, etc.), you need to set <code>restart_freq: 5</code>. 
+        <br>
+        Intermediate restarts are still temporarily saved and deleted only after a permanently archived restart has been produced.
+        <br>
     </li>
     <li>
         <b><i>mpirun</i> arguments</b>
         <br>
         <pre><code>mpirun: --mca io ompio --mca io_ompio_num_aggregators 1</code></pre>
-        Append mpirun arguments to the mpirun call of the model.
+        Line to append mpirun arguments to the <code>mpirun</code> call of the model.
     </li>
     <li>
         <b><i>qsub</i> flags</b>
         <br>
         <pre><code>qsub_flags: -W umask=027</code></pre>
-        Configuration marker for any additional <i>qsub</i> flags.
+        This line is the configuration marker for any additional <i>qsub</i> flags.
     </li>
     <li>
         <b>Environment variables</b>
@@ -223,17 +221,17 @@ This file controls the general model configuration and if we open it in a text e
         <pre><code>env:
             &nbsp;&nbsp;UCX_LOG_LEVEL: 'error'
         </code></pre>
-        Add the specified variables to the run environment.
+        Line to add the specified variables to the run environment.
     </li>
     <li>
-        <b>Platform specific defaults</b>
+        <b>Platform-specific defaults</b>
         <br>
         <pre><code>platform: 
             &nbsp;&nbsp;nodesize: 48
         </code></pre>
-        Set platform specific defaults.
+        Lines to control the platform-specific default parameters.
         <br>
-        <i>nodesize</i> sets the default number of cpus per node to fully utilise nodes regardless of requested number of cpus.
+        <code>nodesize: 48</code> sets the default number of cpus per node to 48, to fully utilise nodes regardless of the requested number of cpus.
     </li>
     <li>
         <b>User scripts</b>
@@ -242,15 +240,15 @@ This file controls the general model configuration and if we open it in a text e
             &nbsp;&nbsp;error: resub.sh
             &nbsp;&nbsp;run: rm -f resubmit.count
         </code></pre>
-        Namelist to include separate userscripts or subcommands at various stages of a <i>payu</i> submission.
+        A namelist to include separate user scripts or subcommands at various stages of a <i>payu</i> submission.
         <br>
         <code>error</code> gets called if the model does not run correctly and returns an error code;
         <br>
-        <code>run</code> gets called after model execution but prior to model output archive.
+        <code>run</code> gets called after the model execution, but prior to model output archive.
     </li>
 </ul>
 <br>
-To know more about other configuration settings for the <code>config.yaml</code> file, please check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
+To find out more about other configuration settings for the <code>config.yaml</code> file, check out <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
 
 ### Change run length
 To change the internal run length, edit the <code>restart_period</code> field in the <code>&date_manager_nml</code> section of the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file:
@@ -261,19 +259,19 @@ To change the internal run length, edit the <code>restart_period</code> field in
     &nbsp;&nbsp;! two of which must be zero.
     &nbsp;&nbsp;restart_period = 5, 0, 0
 </code></pre>
-<div class=note>
-    The internal run length (controlled by <code>restart_period</code>) can be different from the total run length. Also, the <code>restart_period</code> value can be lowered, but should not be increased to a total of more than 5 years, to avoid errors. If you want to know more about the difference between internal run and total run lenghts, or if you want to run the model for more than 1 year, check <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
+<div class="note">
+    The internal run length (controlled by <code>restart_period</code>) can be different from the total run length. Also, while <code>restart_period</code> can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
 </div>
 
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
-After editing the configuration, we are ready to run {{ model }}. 
+After editing the configuration, you are ready to run {{ model }}. 
 <br>
 {{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>Gadi</i></a> through a PBS job submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
-As a first step, from the control directory, is good practice to run:
+As a first step, from within the <i>control</i> directory, it is good practice to run:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
 <terminal-window>
@@ -297,16 +295,16 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-window>
 <div class="note">
-    You can skip this step as it is included also in the run command. However, runnning it explicitly helps to check for errors and make sure executable and restart directories are accessible.
+    This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
 ### Run configuration
-To run {{ model }} configuration for one internal run length (controlled by <code>restart_period</code> in the <code>config.yaml</code> file), run:
+To run {{ model }} configuration for one internal run length (controlled by <code>restart_period</code> in the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file), execute:
 <pre><code>payu run -f</code></pre>
 This will submit a single job to the queue with a total run length of <code>restart_period</code>.
 <br>
 <div class="note">
-    The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory, which happens if a run crashes.
+    The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory created from a previous failed run.
 </div>
 <terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>
@@ -321,20 +319,19 @@ This will submit a single job to the queue with a total run length of <code>rest
 </terminal-window>
 
 ### Run configuration for multiple years
-If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>restart_period</code> in the <code>config.yaml</code> file), you can use the option <code>-n</code>:
+If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>restart_period</code> in the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file), use the option <code>-n</code>:
 <pre><code>payu run -f -n &lt;number-of-runs&gt;</code></pre>
-This will run the configuration <code>number-of-runs</code> times with a total run length of <code>restart_period * number-of-runs</code>.
+This will run the configuration <code>number-of-runs</code> times with a total run length of <code>restart_period * number-of-runs</code>. 
 <br>
-For example, if you want to run the configuration for a total of 50 years and you set <code>restart_period = 5, 0, 0</code> (5 years), you will have to set the <code>number-of-runs</code> to 10:
+For example, to run the configuration for a total of 50 years with <code>restart_period = 5, 0, 0</code> (5 years), the <code>number-of-runs</code> should be set to <code>10</code>:
 <pre><code>payu run -f -n 10</code></pre>
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
-One way to check the status of our run is running:
+You can execute the following command to show the status of all your submitted PBS jobs:
 <pre><code>qstat -u $USER</code></pre>
-This will show the status of all your PBS jobs (if there is any PBS job submitted):
 <terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
@@ -343,34 +340,36 @@ This will show the status of all your PBS jobs (if there is any PBS job submitte
     <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
-If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file">Master Configuration file</a>, that will be your job's <i>Name</i> instead of <code>1deg_jra55_iaf</code>.
+If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file"><i>Master Configuration</i> file</a>, that will appear as your job's <i>Name</i> instead of <code>1deg_jra55_iaf</code>.
 <br>
-<i>S</i> indicates the status of your run:
+<i>S</i> indicates the status of your run, where:
 <ul>
     <li>Q &rarr; Job waiting in the queue to start</li>
     <li>R &rarr; Job running</li>
     <li>E &rarr; Job ending</li>
 </ul>
-If there is no listed job with your <code>jobname</code> (or if there is no job submitted at all), your run might have successfully completed, or might have been terminated due to an error.
+If there are no jobs listed with your <code>jobname</code> (or if no job is listed), your run either successfully completed or was terminated due to an error.
 
 ### Stop a run
-If you want to manually terminate a run, you can do it by running:
+If you want to manually terminate a run, you can do so by executing:
 <pre><code>qdel &lt;job-ID&gt;</code></pre>
 
 ### Error and output log files
-While the model is running, <i>payu</i> saves the standard output and standard error into the files <code>access-om2.out</code> and <code>access-om2.err</code> in the <i>control</i> directory. You can examine these files, as the run progresses, to check on it's status.
+While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access-om2.out</code> and <code>access-om2.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
 <br>
-After the model has completed its run, or if it crashed, the output and error log files, respectively, are renamed by default into <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>.
+When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
+
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-While the configuration is running, output files (as well as restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory, under <code>/scratch/$PROJECT/$USER/access-om2/archive</code> (also symlinked in the <i>control</i> directory under <code>~/access-om/1deg_jra55_iaf/archive</code>).
+While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-om2/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-om/1deg_jra55_iaf/archive</code>.
 <br>
-Both outputs and restarts are stored into subfolders for each different configuration (<code>1deg_jra55_iaf</code> in our case), and inside the configuration folder, they are subdivided for each internal run.
+Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>1deg_jra55_iaf</code>). Inside the configuration folder, they are further subdivided for each internal run.
 <br>
-The format of a typical output folder is <code>outputXXX</code>, whereas the typical restart folder is usually formatted as <code>restartXXX</code>, with <i>XXX</i> being the number of internal run, starting from <code>000</code>.
+The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
 <br>
-In the respective folders, outputs and restarts are separated for each model component.
+Outputs and restarts are separated in the respective folders for each model component.
+<br>
 <terminal-window>
     <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf">ls</terminal-line>
