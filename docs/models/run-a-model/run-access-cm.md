@@ -1,7 +1,7 @@
 {% set model = "ACCESS-CM" %}
-# <span class="highlight-bg"> Run {{ model }} </span>
+# Run {{ model }}
 ## Requirements
-### <span>General requirements</span>
+### General requirements
 Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
 
 ### <span>Model-specific requirements</span>
@@ -55,7 +55,7 @@ To copy an existing suite on <i>accessdev</i> you need to follow two main steps:
         <terminal-window>
             <terminal-line data="input">mosrs-auth</terminal-line>
             <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
-            <terminal-line>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
+            <terminal-line lineDelay=1000>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
         </terminal-window>
     </li>
     <li>
@@ -79,7 +79,7 @@ To copy an existing suite on <i>accessdev</i> you need to follow two main steps:
                 <br> 
                 Alternatively, to create a new copy of an existing <code>&lt;suite-ID&gt;</code> both <i>locally and remotely</i> in the UKMO repository, run: 
                 <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
-                <terminal-window class="termynal">
+                <terminal-window>
                     <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
                     <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
                     <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>

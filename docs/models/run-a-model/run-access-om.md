@@ -1,8 +1,8 @@
 
 {% set model = "ACCESS-OM" %}
-# <span class="highlight-bg"> Run {{ model }} </span>
+# Run {{ model }}
 ## Requirements
-### <span>General requirements</span>
+### General requirements
 Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
 ### Model-specific requirements
 <ul>
@@ -42,7 +42,7 @@ To get it on <i>Gadi</i>, create a directory to store the model configuration.Na
 <pre><code>git clone https://github.com/COSIMA/1deg_jra55_iaf.git</code></pre>
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
-    <terminal-line data="input">cd ~/access-eom</terminal-line>
+    <terminal-line data="input">cd ~/access-om</terminal-line>
     <terminal-line data="input" directory="~/access-om">git clone https://github.com/COSIMA/1deg_jra55_iaf.git</terminal-line>
     <terminal-line>Cloning into '1deg_jra55_iaf'...</terminal-line>
     <terminal-line lineDelay=1000>remote: Enumerating objects: 14715, done.</terminal-line>

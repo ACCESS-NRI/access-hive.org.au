@@ -1,4 +1,4 @@
-# <div class="highlight-bg"> Contact </div>
+#  Contact 
 
 <img src = "../../assets/contact-img.jpg" class="rectangular-img img-cover with-border"></img>
 

@@ -1,8 +1,7 @@
 {% set model = "ACCESS-ESM" %}
-# <span class="highlight-bg"> Run {{ model }} </span>
+# Run {{ model }}
 ## Requirements
-
-### <span>General requirements</span>
+### General requirements
 Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
 
 ### Model-specific requirements
