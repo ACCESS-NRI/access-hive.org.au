@@ -1,17 +1,16 @@
 {% set model = "ACCESS-ESM" %}
 # <span class="highlight-bg"> Run {{ model }} </span>
 ## Requirements
-Before running {{ model }}, you need to fulfil general requirements outlined in the [Get Started](../../../get_started) section, e.g. obtain an NCI account, etc.
 
-### General requirements
+### <span>General requirements</span>
+Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
+
 ### Model-specific requirements
 <ul>
     <li>
-        <b>Join the <i>hh5</i> project at NCI</i></b>
+        <b>Join the <i>access</i> and <i>hh5</i> projects at NCI</i></b>
         <br>
-        The <i>hh5</i> project hosts the conda environment that supports most workflows for climate science on <i>Gadi</i>.
-        <br>
-        You need to request membership of the <i>hh5</i> project on the <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access NCI project</a> page.
+        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access</a> and <a href="https://my.nci.org.au/mancini/project/hh5/join" target="_blank">hh5</a> NCI project pages.
         <br>
         For more information on joining specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
@@ -26,10 +25,10 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
         </code></pre> 
         To check that <i>payu</i> is available, run:
         <pre><code>payu --version</code></pre>
-        <terminal-animation>
+        <terminal-window>
             <terminal-line data="input">payu --version</terminal-line>
             <terminal-line lineDelay="1000">1.0.19</terminal-line>
-        </terminal-animation>
+        </terminal-window>
     </li>
 </ul>
 ----------------------------------------------------------------------------------------
@@ -37,9 +36,9 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
 ## Get {{ model }} configuration
 A pre-industrial configuration of {{ model }} is available on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
 <br>
-To run this on <i>Gadi</i>, create a directory to store the configuration and clone the GitHub repo (from within this directory) by running: 
+To get it on <i>Gadi</i>, create a directory to store the model configuration and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/coecms/esm-pre-industrial.git</code></pre>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
     <terminal-line data="input">cd ~/access-esm</terminal-line>
     <terminal-line data="input" directory="~/access-esm">git clone https://github.com/coecms/esm-pre-industrial</terminal-line>
@@ -50,30 +49,30 @@ To run this on <i>Gadi</i>, create a directory to store the configuration and cl
     <terminal-line>remote: Total 767 (delta 173), reused 274 (delta 157), pack-reused 472</terminal-line>
     <terminal-line>Receiving objects: 100% (767/767), 461.57 KiB | 5.24 MiB/s, done.</terminal-line>
     <terminal-line>Resolving deltas: 100% (450/450), done.</terminal-line>
-</terminal-animation>
+</terminal-window>
 <div class="note">
     Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
 </div>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the <i>reference</i> configuration. 
+It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the reference configuration. 
 
-To create a local branch called <i>"example_run"</i>, execute:
+To create a local branch called <i>"example_run"</i>, from within the cloned repo execute:
 <pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
-The general layout of a <i>payu</i>-supported model run comprises two main directories:
-<ol>
+The general layout of a <i>payu</i>-supported model run consists of two main directories:
+<ul>
     <li>
         The <b>laboratory</b> directory, where all the model components reside. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
     </li>
     <li>
-        The <b>control</b> directory, where the model configuration resides and from where the model is run, e.g., the cloned directory <code>~/access-esm/esm-pre-industrial</code>.
+        The <b>control</b> directory, where the model configuration resides and from where the model is run (in this example, the cloned directory <code>~/access-esm/esm-pre-industrial</code>).
     </li>
-</ol>
+</ul>
 This distinction of directories separates the small-size configuration files from the larger binary outputs and inputs. In this way, the configuration files can be placed in the <code>$HOME</code> directory (as it is the only filesystem actively backed-up on <i>Gadi</i>), without overloading it with too much data.
 Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 <br>
@@ -84,7 +83,7 @@ This creates the <i>laboratory</i> directory, together with relevant subdirector
 <ul>
     <li><code>work</code> &rarr; a temporary directory where the model is run. It gets cleaned after each run.</li>
     <li><code>archive</code> &rarr; the directory where output is stored after each run.</li>
-    <terminal-animation>
+    <terminal-window>
         <terminal-line data="input">cd ~/access-esm/esm-pre-industrial</terminal-line>
         <terminal-line data="input" directory="~/access-esm/esm-pre-industrial">payu init</terminal-line>
         <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
@@ -92,50 +91,45 @@ This creates the <i>laboratory</i> directory, together with relevant subdirector
         <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
         <terminal-line>work path:  /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
         <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
-    </terminal-animation>
+    </terminal-window>
 </ul>
 
 ### Edit Master Configuration file
-The <code>config.yaml</code> file located in the <i>control</i> directory, is the Master Configuration file. 
+The <code>config.yaml</code> file located in the <i>control</i> directory, is the <i>Master Configuration</i> file. 
 <br>
-This file, which controls the general model configuration, comprises several parts:
+This file, which controls the general model configuration, contains several parts:
 <ul>
     <li>
         <b>PBS resources</b>
         <br>
-        The following lines describe the settings for the PBS scheduler: 
         <pre><code>jobname: pre-industrial
             queue: normal
             walltime: 20:00:00
         </code></pre>
-       These PBS resources can be edited for a particular run.
-       <br>
-       E.g., to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
+        These lines can be edited to change the settings for the PBS scheduler.
+        <br>
+        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">how to connect to a project</a> and <a href="../../../get_started/#join-relevant-nci-projects">Join relevant NCI projects</a>.
-        </div>
+            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="../../../get_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+        </div>  
     </li>
     <li>
         <b>Link to the laboratory directory</b>
         <br>
-        The following line sets the laboratory directory path, which unless otherwise specified is relative to <code>/scratch/$PROJECT/$USER</code>: 
-
         <pre><code># note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
             laboratory: access-esm
         </code></pre>
-        Absolute paths can also be specified.
+        These lines set the laboratory directory path, which is relative to <code>/scratch/$PROJECT/$USER</code>. Absolute paths can also be specified.
     </li>
     <li>
         <b>Model</b>
          <br>
-       This line tells <i>payu</i> which driver to use for the main model (<code>access</code> refers to {{ model }}):
         <pre><code>model: access</code></pre>
+        This line tells <i>payu</i> which driver to use for the main model (<code>access</code> refers to {{ model }}).
     </li>
     <li>
         <b>Submodels</b>
-        <br>
-        The following section specifies the submodels and configuration options (e.g., directories of input files) required to execute the model correctly: 
         <br>
         <pre><code>submodels:
             &nbsp;&nbsp;- name: atmosphere
@@ -164,33 +158,31 @@ This file, which controls the general model configuration, comprises several par
             &nbsp;&nbsp;&nbsp;&nbsp;input:
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
         </code></pre>
-        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the corresponding submodel's <i>name</i> directory, which resides in the parent <i>control</i> directory.
+        {{ model }} is a coupled model, deploying multiple submodels (i.e. model components).
+        This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
-        E.g., configuration options for the <code>atmosphere</code> submodel (i.e. the UM) are in the directory <code>~/access-esm/esm-pre-industrial/atmosphere</code>.
+        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <i>name</i> (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-esm/esm-pre-industrial/atmosphere</code> directory).
         <br>
     </li>
-      
     <li>
         <b>Collate</b>
         <br>
-        The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
-
         <pre><code>collate:
             &nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/mppnccombine
             &nbsp;&nbsp;restart: true
             &nbsp;&nbsp;mem: 4GB
         </code></pre>
+        The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
     </li>
     <li>
         <b>Restart</b>
         <br>
-        This is the location of the files used for a warm restart:
         <pre><code>restart: /g/data/access/payu/access-esm/restart/pre-industrial</code></pre>
+        This is the location of the files used for a warm restart.
     </li>
     <li>
         <b>Start date and internal run length</b>
         <br>
-        This section specifies the start date and internal run length:
         <pre><code>calendar:
             &nbsp;&nbsp;start:
             &nbsp;&nbsp;&nbsp;&nbsp;year: 101
@@ -201,24 +193,23 @@ This file, which controls the general model configuration, comprises several par
             &nbsp;&nbsp;&nbsp;&nbsp;months: 0
             &nbsp;&nbsp;&nbsp;&nbsp;days: 0
         </code></pre>
-        <br>
+        This section specifies the start date and internal run length.
         <div class="note">
-            The internal run length (controlled by <code>runtime</code>) can be different from the total run length. While the <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
+            The <i>internal run length</i> (controlled by <code>runtime</code>) can be different from the <i>total run length</i>. Also, while <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between <i>internal run</i> and <i>total run</i> lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
         </div>
     </li>
     <li>
         <b>Number of runs per PBS submission</b>
         <br>
-        {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <pre><code>runspersub: 5</code></pre>
-        <br>
+        {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
         <div class="note">
             If you increase <code>runspersub</code>, you may need to increase the <i>walltime</i> in the PBS resources.
         </div>
     </li>
 </ul>
 <br>
-To find out more about other configuration settings for the <code>config.yaml</code> file, check out <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
+To find out more about other configuration settings for the <code>config.yaml</code> file, check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
@@ -230,7 +221,7 @@ After editing the configuration, you are ready to run {{ model }}.
 As a first step, it is good practice to run from the <i>control</i> directory:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">payu setup</terminal-line>
     <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
     <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
@@ -250,7 +241,7 @@ This will prepare the model run, based on the experiment configuration.
     <terminal-line>Updating full hashes for 30 files in manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/exe.yaml</terminal-line>
-</terminal-animation>
+</terminal-window>
 <div class="note">
     This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
@@ -263,7 +254,7 @@ This will submit a single job to the queue with a total run length of <code>runt
 <div class="note">
     The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory created from a previous failed run.
 </div>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
@@ -271,7 +262,7 @@ This will submit a single job to the queue with a total run length of <code>runt
     <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line>qsub -q normal -P &lt;project&gt; -l walltime=11400 -l ncpus=384 -l mem=1536GB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/access+gdata/hh5 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
     <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
-</terminal-animation>
+</terminal-window>
 
 ### Run configuration for multiple years
 If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), use the option <code>-n</code>:
@@ -279,7 +270,7 @@ If you want to run {{ model }} configuration for multiple internal run lengths (
 This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive PBS jobs submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
 
 ### Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters
-With the correct use of <code>runtime</code>, <code>runspersub</code> and <code>-n</code> parameters, you can have full control of your run. To recap:
+With the correct use of <code>runtime</code>, <code>runspersub</code> and <code>-n</code> parameters, you can have full control of your run.
 <br>
 <ul>
     <li>
@@ -297,14 +288,14 @@ Now some practical examples:
     <li>
         <b>Run 20 years of simulation with resubmission every 5 years</b>
         <br>
-        To have a total run length of 20 years with a 5-year resubmission cycle, leave <code>runtime</code> as the default value of <code>1 year</code> and set <code>runspersub</code> to <code>5</code>. Then run the configuration using <code>-n 20</code>:
+        To have a total run length of 20 years with a 5-year resubmission cycle, leave <code>runtime</code> as the default value of <code>1 year</code> and set <code>runspersub</code> to <code>5</code>. Then, run the configuration with <code>-n</code> set to <code>20</code>:
         <pre><code>payu run-f -n 20</code></pre>
         This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20, which is a total of 4 PBS jobs.
     </li>
     <li>
         <b>Run 7 years of simulation with resubmission every 3 years</b>
         <br>
-        To have a total run length of 7 years with a 3-year resubmission cycle, leave <code>runtime</code> as the default value of <code>1 year</code> and set <code>runspersub</code> to <code>3</code>. Then run the configuration with <code>-n 7</code>:
+        To have a total run length of 7 years with a 3-year resubmission cycle, leave <code>runtime</code> as the default value of <code>1 year</code> and set <code>runspersub</code> to <code>3</code>. Then, run the configuration with <code>-n</code> set to <code>7</code>:
         <pre><code>payu run -f -n 7</code></pre>
         This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
     </li>
@@ -322,12 +313,12 @@ Now some practical examples:
     <li>
         <b>Run 1 year and 4 months of simulation with resubmission every 4 months</b>
         <br>
-        To have a total run length of 1 year and 4 months (16 months), you need to split it into multiple internal runs, e.g., 4 internal runs, each 4 months. For this case, set the <code>runtime</code> as follows:
+        To have a total run length of 1 year and 4 months (16 months), you need to split it into multiple internal runs. For example, 4 internal runs of 4 months each. In this case, set the <code>runtime</code> as follows:
         <pre><code>years: 0
             months: 4
             days: 0
         </code></pre>
-        Since the internal run length is set to 4 months, set <code>runspersub</code> to <code>1</code> to resubmit your jobs every 4 months (i.e. every internal run). Then run the configuration with <code>-n 4</code>:
+        Since the internal run length is set to 4 months, set <code>runspersub</code> to <code>1</code> to resubmit your jobs every 4 months (i.e. every internal run). Then, run the configuration with <code>-n</code> set to <code>4</code>:
         <pre><code>payu run -f -n 4</code></pre>
     </li>
 </ul>
@@ -336,17 +327,17 @@ Now some practical examples:
 ## Monitor {{ model }} runs
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
-To check the status of your run, execute the following command to show the status of all your submitted PBS jobs:
+You can execute the following command to show the status of all your submitted PBS jobs:
 <pre><code>qstat -u $USER</code></pre>
-<terminal-animation>
+<terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-</terminal-animation>
-If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file">Master Configuration file</a>, this will appear as your job's <i>Name</i> instead of <code>pre-industrial</code>.
+</terminal-window>
+If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-master-configuration-file">Master Configuration file</a>, that will appear as your job's <i>Name</i> instead of <code>pre-industrial</code>.
 <br>
 <i>S</i> indicates the status of your run, where:
 <ul>
@@ -354,7 +345,7 @@ If you changed the <code>jobname</code> in the PBS resources of the <a href="#ed
     <li>R &rarr; Job running</li>
     <li>E &rarr; Job ending</li>
 </ul>
-If there are no jobs listed with your <code>jobname</code> (or if no job was submitted), your run either successfully completed or was terminated due to an error.
+If there are no jobs listed with your <code>jobname</code> (or if no job is listed), your run either successfully completed or was terminated due to an error.
 
 ### Stop a run
 If you want to manually terminate a run, you can do so by executing:
@@ -375,14 +366,14 @@ The naming format for a typical output folder is <code>outputXXX</code> and for 
 <br>
 Outputs and restarts are separated in the respective folders for each model component.
 <br>
-For the atmospheric output data, the files are usually <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a> format, e.g., <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
-<terminal-animation>
+For the atmospheric output data, the files are usually <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
+<terminal-window>
     <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls</terminal-line>
     <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
     <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-esm/archive/esm-pre-industrial">ls output000/atmosphere</terminal-line>
     <terminal-line class="ls-output-format">aiihca.daa1210 aiihca.daa1810 aiihca.paa1apr aiihca.paa1jun aiihca.pea1apr aiihca.pea1jun aiihca.pga1apr aiihca.pga1jun atm.fort6.pe0 exstat ihist prefix.CNTLGEN UAFLDS_A aiihca.daa1310  aiihca.daa1910  aiihca.paa1aug aiihca.paa1mar aiihca.pea1aug aiihca.pea1mar aiihca.pga1aug aiihca.pga1mar cable.nml fort.57 INITHIS prefix.PRESM_A um_env.py aiihca.daa1410 aiihca.daa1a10 aiihca.paa1dec aiihca.paa1may aiihca.pea1dec aiihca.pea1may aiihca.pga1dec aiihca.pga1may CNTLALL ftxx input_atm.nml SIZES xhist aiihca.daa1510 aiihca.daa1b10 aiihca.paa1feb aiihca.paa1nov aiihca.pea1feb aiihca.pea1nov aiihca.pga1feb aiihca.pga1nov CONTCNTL ftxx.new namelists STASHC aiihca.daa1610 aiihca.daa1c10 aiihca.paa1jan aiihca.paa1oct aiihca.pea1jan aiihca.pea1oct aiihca.pga1jan aiihca.pga1oct debug.root.01 ftxx.vars nout.000000 thist aiihca.daa1710 aiihca.daa2110 aiihca.paa1jul aiihca.paa1sep aiihca.pea1jul aiihca.pea1sep aiihca.pga1jul aiihca.pga1sep errflag hnlist prefix.CNTLATM UAFILES_A</terminal-line>
-</terminal-animation>
+</terminal-window>
 ----------------------------------------------------------------------------------------
 <!-- References -->
 <h6>References</h6>
