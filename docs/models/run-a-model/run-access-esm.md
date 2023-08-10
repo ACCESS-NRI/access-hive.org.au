@@ -36,7 +36,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
 ## Get {{ model }} configuration
 A pre-industrial configuration of {{ model }} is available on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
 <br>
-To get it on <i>Gadi</i>, create a directory to store the model configuration and clone the GitHub repo in it by running: 
+To get it on <i>Gadi</i>, create a directory to store the model configuration.Navigate to this directory and clone the GitHub repo in it by running: 
 <pre><code>git clone https://github.com/coecms/esm-pre-industrial.git</code></pre>
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
@@ -94,7 +94,7 @@ This creates the <i>laboratory</i> directory, together with relevant subdirector
     </terminal-window>
 </ul>
 
-### Edit Master Configuration file
+### Edit the <i>Master Configuration</i> file
 The <code>config.yaml</code> file located in the <i>control</i> directory, is the <i>Master Configuration</i> file. 
 <br>
 This file, which controls the general model configuration, contains several parts:
@@ -158,11 +158,10 @@ This file, which controls the general model configuration, contains several part
             &nbsp;&nbsp;&nbsp;&nbsp;input:
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
         </code></pre>
-        {{ model }} is a coupled model, deploying multiple submodels (i.e. model components).
+        {{ model }} is a coupled model deploying multiple submodels (i.e. model components).
         This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
         Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <i>name</i> (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-esm/esm-pre-industrial/atmosphere</code> directory).
-        <br>
     </li>
     <li>
         <b>Collate</b>
@@ -195,7 +194,7 @@ This file, which controls the general model configuration, contains several part
         </code></pre>
         This section specifies the start date and internal run length.
         <div class="note">
-            The <i>internal run length</i> (controlled by <code>runtime</code>) can be different from the <i>total run length</i>. Also, while <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between <i>internal run</i> and <i>total run</i> lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
+            The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, while <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
         </div>
     </li>
     <li>
@@ -209,7 +208,7 @@ This file, which controls the general model configuration, contains several part
     </li>
 </ul>
 <br>
-To find out more about other configuration settings for the <code>config.yaml</code> file, check <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
+To find out more about other configuration settings for the <code>config.yaml</code> file, check out <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
@@ -218,7 +217,7 @@ After editing the configuration, you are ready to run {{ model }}.
 {{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
-As a first step, it is good practice to run from the <i>control</i> directory:
+As a first step, from within the <i>control</i> directory, it is good practice to run:
 <pre><code>payu setup</code></pre>
 This will prepare the model run, based on the experiment configuration.
 <terminal-window>
@@ -337,7 +336,7 @@ You can execute the following command to show the status of all your submitted P
     <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
-If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-master-configuration-file">Master Configuration file</a>, that will appear as your job's <i>Name</i> instead of <code>pre-industrial</code>.
+If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file"><i>Master Configuration</i> file</a>, that will appear as your job's <i>Name</i> instead of <code>pre-industrial</code>.
 <br>
 <i>S</i> indicates the status of your run, where:
 <ul>
@@ -358,7 +357,7 @@ When the model completes its run, or if it crashes, the output and error log fil
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory in <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/esm-pre-industrial/archive</code>.
+While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/esm-pre-industrial/archive</code>.
 <br>
 Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>esm-pre-industrial</code>). Inside the configuration folder, they are further subdivided for each internal run.
 <br>
