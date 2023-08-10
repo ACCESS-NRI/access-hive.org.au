@@ -26,7 +26,7 @@ Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
 
 NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. Access to this storage, as well as to computing resources to run models and evaluate them, is organised in *projects*.
 
-To run your simulations on Gadi, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
+To run your simulations on <i>Gadi</i>, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
 
 To <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">join a project</a>, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
 
@@ -84,12 +84,11 @@ You will be prompted to enter your NCI password, and then you will be connected 
 </div>
 ### Auto login
 To simplify the login and avoid being prompted every time to enter your NCI password, follow these steps:
-
 <ol>
   <li>
     <b>Create an SSH key</b>
     <br>
-    To create an SSH key on your local machine, run:
+    To create an SSH key on your <b>local machine</b>, run:
     <pre><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</code></pre>
     You will be prompted to create a passphrase linked to the SSH key, which you will enter twice:
     <terminal-window>
@@ -136,7 +135,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
       <div>
         <ol>
           <li>
-            In your local machine's terminal, start the SSH-agent by running:
+            On your <b>local machine</b>, start the SSH-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
             <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
@@ -162,7 +161,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
       <div>
         <ol>
           <li>
-            In your local machine's terminal, start the SSH-agent by running:
+            On your </b>local machine</b>, start the SSH-agent by running:
             <pre><code>eval "$(ssh-agent -s)"</code></pre>
             <terminal-window>
               <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
@@ -170,7 +169,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
             </terminal-window>
           </li>
           <li>
-            Add your SSH key to the ssh-agent by running:
+            Add your SSH key to the SSH-agent by running:
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter a SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
@@ -189,7 +188,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     <br>
    The <code>~/.ssh/config</code> configuration file is where you store different SSH options for each remote server you regularly connect to, so you do not have to remember them all.
     <br>
-    To create an SSH config file, run the following command in your local machine's terminal:
+    To create an SSH config file, run the following command on your <b>local machine</b>:
     <pre><code>touch ~/.ssh/config</code></pre>
     <div class="note">
       If you already have an existing <code>~/.ssh/config</code> file, the above command will not have any effect.
@@ -211,29 +210,29 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     <br>
     To enable automatic connection to a server, that server needs to recognise the SSH key as <i>authorised</i>. The list of authorised keys for a certain server is stored in the file <code>~/.ssh/authorized_keys</code>.
     <br>
-    To add the newly created SSH key as an <i>authorised</i> key for Gadi, run the following command from your local machine's terminal:
+    To add the newly created SSH key as an <i>authorised</i> key for <i>Gadi</i>, run the following command from your <b>local machine</b>:
     <pre><code>var=$( cat ~/.ssh/id_gadi.pub ) && ssh gadi "echo $var >> .ssh/authorized_keys"</code></pre>
     <div class="note">
-      Make sure to use double quotes <code>"</code> in the previous command.
+      Make sure to use double quotes <code>"</code> in the above command.
     </div>
-    You will be prompted for your NCI password. If you did all of the above steps correctly, it should be the last time you need to enter it.
+    You will be prompted to enter your NCI password. If you did all of the above steps correctly, this should be the last time you need to do so.
   </li>
 </ol>
-Now you should be able to connect to <i>Gadi</i> simply by running:
+Now you should be able to connect to <i>Gadi</i> simply by running from your local machine's terminal:
 <pre><code>ssh gadi</code></pre>
 
 ### Change default project on Gadi
 It is recommended that you check what your default project on <i>Gadi</i> is set to. The default project should be set to the computational project you will most likely use to run simulations/forecasts and store data.
 <br>
-To check which is your default project, on <i>Gadi</i>, run:
+You can check which is your default project by logging into <i>Gadi</i> and running:
 <pre><code>echo $PROJECT</code></pre>
-If you want to change your default project, on <i>Gadi</i> you should manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file, exit from <i>Gadi</i>, and log back in.
+To change your default project on <i>Gadi</i>, you need to manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file. Once this is done, exit from <i>Gadi</i> and log back in.
 <br>
-Alternatively, on <i>Gadi</i> you can run:
+Alternatively, you can run the following command on <i>Gadi</i>:
 <pre><code>sed "s/\(PROJECT \).*/\1&lt;new-default-project&gt;/" ~/.config/gadi-login.conf</code></pre>
-exit from <i>Gadi</i>, and log back in.
+For these changes to take effect, you need to exit your session on <i>Gadi</i> and then log back in.
 <br>
-For example, if you want to change your default project to `tm70`, on <i>Gadi</i>, run:
+For example, if you want to change your default project to `tm70` on <i>Gadi</i>:
 <terminal-window>
   <terminal-line data="input">echo $PROJECT</terminal-line>
   <terminal-line>&lt;old-default-project&gt;</terminal-line>
