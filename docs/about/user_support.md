@@ -1,6 +1,20 @@
 #  User support 
 
-## How to get help
+## Frequently Asked Questions
+
+???+ info "Question: 1"
+    ANSWER
+
+???+ info "Question: 2"
+    ANSWER
+
+???+ info "Question: 3"
+    ANSWER
+
+???+ info "Question: 4"
+    ANSWER
+
+## Still need help?
 
 For resources developed by another party that ACCESS-Hive links to, there should be information on how to get help on the linked site. If there are no obvious channels for help, or the help is not adequate consider asking for assistance from fellow members of your community on the <a href="https://forum.access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
 

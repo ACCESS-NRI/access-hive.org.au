@@ -22,7 +22,7 @@ hide:
     </a>
     <a href="about/user_support/" class="vertical-card aspect-ratio3to1">
         <div class="bold">Need help?</div>
-        <div class="highlight-bg bold">Get Support!</div>
+        <div class="highlight-bg bold">FAQ / Get Support!</div>
     </a>
     <a href="about/how_to_contribute" class="vertical-card aspect-ratio3to1">
         <div class="bold">Want to contribute?</div>
