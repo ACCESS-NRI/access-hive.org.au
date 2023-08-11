@@ -200,7 +200,7 @@ h3 {
 
 
 /* =============================================================== 
-Homepage
+ Homepage
 */
 /* Hide Title */
 h1.homepage {
@@ -469,10 +469,29 @@ h1.homepage {
 */
 .flex-container {
   display: flex;
+  gap: 0.6em;
+}
+
+.center-flex-items {
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.vertical-flex-align-bottom {
+  align-content: flex-end;
+}
+
+.flex-gap {
   gap: 0.6em;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+.vertical-flex-container {
+  flex-direction: column;
 }
 
 .header-btn {
@@ -480,7 +499,7 @@ h1.homepage {
   border: 0.1em solid;
   padding: 0.5em 1em;
   font-weight: 500;
-  margin: 0 0.5em 0 0.5em;
+  margin: 0 0 0 1em;
   height: 1.7rem;
 }
 
@@ -490,8 +509,19 @@ h1.homepage {
   transition-property: all;
 }
 
+/* 
+  Used in the header buttons at the top-right
+  "Hive Forum", "ACCESS-NRI", "Contribute"
+*/
 .large-text {
   font-size: 1.4em;
+}
+
+/* 
+  Used to formats "ACCESS-Hive" heading at top-left 
+*/
+.extra-large-text {
+  font-size: 1.8em;
 }
 
 .nri-orange-border {

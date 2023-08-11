@@ -34,14 +34,22 @@
       <label class="md-header__button md-icon" for="__drawer">
         {% include ".icons/material/menu" ~ ".svg" %}
       </label>
-      <div class="md-header__title" data-md-component="header-title">
-        <div class="md-header__ellipsis">
-          <div class="md-header__topic">
-            <span class="md-ellipsis">
-              {{ config.site_name }}
-            </span>
+      <!-- <div class="md-header__title" data-md-component="header-title"> -->
+        <!-- <div class="md-header__ellipsis">   -->
+          <div class="flex-container vertical-flex-container flex-grow-2 vertical-flex-align-bottom">
+            <!-- <div class="md-header__topic">
+              <span class="md-ellipsis">
+                {{ config.site_name }}
+              </span>
+            </div> -->
+            <div class="extra-large-text bold">ACCESS-Hive</div>
+            <div>Hosted by ACCESS-NRI</div>
           </div>
-          <div class="md-header__topic" data-md-component="header-topic">
+          <!-- 
+            Uncomment the following code block to allow changes to the top-left 
+            header title upon page scrolling.
+          -->
+          <!-- <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               {% if page.meta and page.meta.title %}
                 {{ page.meta.title }}
@@ -49,9 +57,9 @@
                 {{ page.title }}
               {% endif %}
             </span>
-          </div>
-        </div>
-      </div>
+          </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
       {% if config.theme.palette %}
         {% if not config.theme.palette is mapping %}
           <form class="md-header__option" data-md-component="palette">
@@ -97,19 +105,19 @@
         {% include "partials/search.html" %}
       {% endif %}
         <a href="https://forum.access-hive.org.au/" target="_blank">
-            <div class="flex-container header-btn nri-orange-border large-text bold">
+            <div class="flex-container flex-gap header-btn nri-orange-border large-text center-flex-items">
                 <i class="fa fa-earth-americas" style="font-size: 1.3em;"></i>
                 <span>Hive Forum</span>
             </div>
         </a>
         <a href="https://www.access-nri.org.au" target="_blank">
-            <div class="flex-container header-btn nri-blue-border large-text bold">
+            <div class="flex-container flex-gap header-btn nri-blue-border large-text center-flex-items">
                 <img src="../assets/ACCESS-Logo.png" class="icon-image">
                 <span>ACCESS-NRI</span>
             </div>
         </a>
         <a href="https://github.com/ACCESS-Hive/access-hive.github.io" target="_blank">
-          <div class="flex-container header-btn large-text">
+          <div class="flex-container flex-gap header-btn large-text center-flex-items">
             <i class="fa-brands fa-github" style="font-size: 1.3em;"></i>
             <span>Contribute</span>
           </div>
