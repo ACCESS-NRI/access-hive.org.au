@@ -121,7 +121,7 @@ nav:
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
 
-  - Model Evaluation:
+  - Data and Model Evaluation:
     - model_evaluation/index.md
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
