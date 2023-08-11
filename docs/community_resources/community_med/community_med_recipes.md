@@ -5,6 +5,8 @@
 
 We are trying to ingest more and more model evaluation and diagnostics recipes in your currated [recipe gallery on this website](../../model_evaluation/model_evaluation_recipe_gallery.md). While this is a continous effort, this site is intented for a list of model evaluation and diagnostics recipes that are not (yet) ingested but may be interesting for the community:
 
+Please let us know, if we are missing an important tool. See [How To Contribute](../../about/how_to_contribute.md) to get in touch.
+
 <table>
 <tr>
 <td width="25%">
