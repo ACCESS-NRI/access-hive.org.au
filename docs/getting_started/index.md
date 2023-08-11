@@ -196,14 +196,13 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     </div>
     The following lines should be added to your <code>~/.ssh/config</code> to describe the SSH configuration for <i>Gadi</i> (replace <code>&lt;your-NCI-username&gt;</code> with your NCI <i>username</i>, e.g., <code>ab1234</code>):
     <pre><code>Host gadi
-      &emsp;Hostname gadi.nci.org.au
-      &emsp;User &lt;your-NCI-username&gt;
-      &emsp;ForwardX11 true
-      &emsp;ForwardX11Trusted yes
-      &emsp;IdentityFile ~/.ssh/id_gadi
-      &emsp;AddKeysToAgent yes
-      &emsp;UseKeychain yes
-    </code></pre>
+    Hostname gadi.nci.org.au
+    User &lt;your-NCI-username&gt;
+    ForwardX11 true
+    ForwardX11Trusted yes
+    IdentityFile ~/.ssh/id_gadi
+    AddKeysToAgent yes
+    UseKeychain yes</code></pre>
     <div class="note">
       If you already have an existing <code>~/.ssh/config</code> file which contains configurations for every <code>Host</code> (e.g., by using <code>Host *</code>), make sure you delete any of the keywords present in that SSH configuration from the <i>Gadi</i> configuration above.
       <br>
@@ -244,7 +243,7 @@ For example, if you want to change your default project to `tm70` on <i>Gadi</i>
   <terminal-line data="input">exit</terminal-line>
   <terminal-line>logout</terminal-line>
   <terminal-line>Connection to gadi.nci.org.au closed.</terminal-line>
-  <terminal-line data="input" PS1="<span style='color: #897a36;'>(User PC)$ </span>">ssh gadi</terminal-line>
+  <terminal-line data="input" PS1="&lt;span style='color: #9734bb;'&gt;(User PC)$ &lt;/span&gt;">ssh gadi</terminal-line>
   <terminal-line>###############################################################################</terminal-line>
   <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Welcome to the NCI National Facility!&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
   <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;This service is for authorised clients only. It is a criminal&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;#</terminal-line>
