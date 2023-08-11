@@ -56,12 +56,12 @@ You can of course change the path of the directory, but will need to take this i
 
 ### 1.2 ILAMB_ROOT/DATA
 
-An extensive colletion of DATA is provided in the `kj13` project. You need to have [joined the project on NCI](https://my.nci.org.au/mancini/project-search) to get access to this data.
+An extensive colletion of DATA is provided in the `ct11` project. You need to have [joined the project on NCI](https://my.nci.org.au/mancini/project-search) to get access to this data.
 
 To create a symbolic link to this data, use the bash command
 ```
-ln -s /g/data/kj13/datasets/ilamb/DATA/* $ILAMB_ROOT/DATA/
-ln -s /g/data/kj13/datasets/iomb/DATA/* $ILAMB_ROOT/DATA/
+ln -s /g/data/ct11/access-nri/replicas/ILAMB/* $ILAMB_ROOT/DATA/
+ln -s /g/data/ct11/access-nri/replicas/IOMB/* $ILAMB_ROOT/DATA/
 ```
 Note that the directory `WOA2018` is an overlapping catalog (you can ignore the warning that a link already exists).
 For more information on the data sets, please visit the the `ilamb` [dataset website](https://www.ilamb.org/datasets.html).
@@ -221,7 +221,7 @@ The following default PBS file, let's call it `ilamb_test.sh` can help you to se
 #PBS -l mem=32GB           
 #PBS -l jobfs=10GB        
 #PBS -l walltime=00:10:00  
-#PBS -l storage=gdata/xp65+gdata/kj13+gdata/fs38
+#PBS -l storage=gdata/xp65+gdata/ct11+gdata/fs38
 #PBS -l wd
 
 module use /g/data/xp65/public/modules
@@ -233,7 +233,7 @@ export CARTOPY_DATA_DIR=/g/data/xp65/public/apps/cartopy-data
 ilamb-run --config cmip.cfg --model_setup $PWD/modelroute.txt --regions global
 ```
 
-If you are not familiar with PBS jobs on NCI, you could find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script (which you can submit via the bash command `qsub ilamb_test.sh`), will submit a job to Gadi with the job name (`#PBS -N`) *default_ilamb* under project (`#PBS -P`) `tm70` with a normal queue (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 32 GB RAM (`#PBS -l mem=32GB`), with an walltime of 10 hours (`#PBS -l walltime=00:10:00`) and access to 10 GB local disk space (`#PBS -l jobfs=10GB`) as well as data storage access to projects `xp65`, `kj13`, and `fs38` (again, note that you have to be [member of both projects on NCI](https://my.nci.org.au/mancini/project-search). Upon starting the job, it will change into to the working directory that you started the job from (`#PBS -l wd`) and load the access-med conda environment. Finally, it will export the $ILAMB_ROOT as well as $ARTOPY_DATA_DIR paths and start an `ilamb-run`.
+If you are not familiar with PBS jobs on NCI, you could find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script (which you can submit via the bash command `qsub ilamb_test.sh`), will submit a job to Gadi with the job name (`#PBS -N`) *default_ilamb* under project (`#PBS -P`) `tm70` with a normal queue (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 32 GB RAM (`#PBS -l mem=32GB`), with an walltime of 10 hours (`#PBS -l walltime=00:10:00`) and access to 10 GB local disk space (`#PBS -l jobfs=10GB`) as well as data storage access to projects `xp65`, `ct11`, and `fs38` (again, note that you have to be [member of both projects on NCI](https://my.nci.org.au/mancini/project-search). Upon starting the job, it will change into to the working directory that you started the job from (`#PBS -l wd`) and load the access-med conda environment. Finally, it will export the $ILAMB_ROOT as well as $ARTOPY_DATA_DIR paths and start an `ilamb-run`.
 
 In our example, we actually run the `cmip.cfg` file from the `ilamb` [config file github repository](https://github.com/rubisco-sfa/ILAMB/blob/master/src/ILAMB/data/) for files spec
 
