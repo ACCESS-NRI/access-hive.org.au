@@ -228,13 +228,12 @@ After the initial tasks are executed, the <i>Cylc</i> GUI will open. You can now
     <div class="note">
         After running the command <code>rose suite-run</code>, if you get an error similar to the following:
         <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
-            <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
-            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_HOST=accessdev.nci.org.au
-            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_OWNER=&lt;$USER&gt;
-            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PORT=&lt;port&gt;
-            <span style="color: orangered">[FAIL]</span> &emsp;&emsp;CYLC_SUITE_PROCESS=&lt;PID&gt; python2 /usr/local/cylc/cylc-7.8.3/bin/cylc-run &lt;suite-ID&gt;
-            <span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?
-        </code></pre>
+<span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
+<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_HOST=accessdev.nci.org.au
+<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_OWNER=&lt;$USER&gt;
+<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PORT=&lt;port&gt;
+<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PROCESS=&lt;PID&gt; python2 /usr/local/cylc/cylc-7.8.3/bin/cylc-run &lt;suite-ID&gt;
+<span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?</code></pre>
         you should run:
         <pre><code>rm /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact</code></pre>
         before running the <code>rose suite-run</code> command again.

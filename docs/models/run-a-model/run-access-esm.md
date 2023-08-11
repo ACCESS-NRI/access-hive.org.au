@@ -20,8 +20,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
         <br>
         After obtaining <i>hh5</i> project membership, load the <code>conda/analysis3</code> environment to automatically retrieve <i>payu</i> as follows:
         <pre><code>module use /g/data/hh5/public/modules
-            module load conda/analysis3
-        </code></pre> 
+module load conda/analysis3</code></pre> 
         To check that <i>payu</i> is available, run:
         <pre><code>payu --version</code></pre>
         <terminal-window>
@@ -102,9 +101,8 @@ This file, which controls the general model configuration, contains several part
         <b>PBS resources</b>
         <br>
         <pre><code>jobname: pre-industrial
-            queue: normal
-            walltime: 20:00:00
-        </code></pre>
+queue: normal
+walltime: 20:00:00</code></pre>
         These lines can be edited to change the settings for the PBS scheduler.
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
@@ -117,8 +115,7 @@ This file, which controls the general model configuration, contains several part
         <b>Link to the laboratory directory</b>
         <br>
         <pre><code># note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
-            laboratory: access-esm
-        </code></pre>
+laboratory: access-esm</code></pre>
         These lines set the laboratory directory path, which is relative to <code>/scratch/$PROJECT/$USER</code>. Absolute paths can also be specified.
     </li>
     <li>
@@ -131,32 +128,31 @@ This file, which controls the general model configuration, contains several part
         <b>Submodels</b>
         <br>
         <pre><code>submodels:
-            &nbsp;&nbsp;- name: atmosphere
-            &nbsp;&nbsp;&nbsp;&nbsp;model: um
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 192
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
-            &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/start_dump<br>
-            &nbsp;&nbsp;- name: ocean
-            &nbsp;&nbsp;&nbsp;&nbsp;model: mom
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 180
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
-            &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial<br>
-            &nbsp;&nbsp;- name: ice
-            &nbsp;&nbsp;&nbsp;&nbsp;model: cice
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 12
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/coe/cicexx
-            &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/ice<br>
-            &nbsp;&nbsp;- name: coupler
-            &nbsp;&nbsp;&nbsp;&nbsp;model: oasis
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 0
-            &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/access/payu/access-esm/input/pre-industrial/coupler
-        </code></pre>
+    - name: atmosphere
+      model: um
+      ncpus: 192
+      exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
+        - /g/data/access/payu/access-esm/input/pre-industrial/start_dump<br>
+    - name: ocean
+      model: mom
+      ncpus: 180
+      exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
+        - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial<br>
+    - name: ice
+      model: cice
+      ncpus: 12
+      exe: /g/data/access/payu/access-esm/bin/coe/cicexx
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/ice<br>
+    - name: coupler
+      model: oasis
+      ncpus: 0
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/coupler</code></pre>
         {{ model }} is a coupled model deploying multiple submodels (i.e. model components).
         This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
@@ -166,10 +162,9 @@ This file, which controls the general model configuration, contains several part
         <b>Collate</b>
         <br>
         <pre><code>collate:
-            &nbsp;&nbsp;exe: /g/data/access/payu/access-esm/bin/mppnccombine
-            &nbsp;&nbsp;restart: true
-            &nbsp;&nbsp;mem: 4GB
-        </code></pre>
+    exe: /g/data/access/payu/access-esm/bin/mppnccombine
+    restart: true
+    mem: 4GB</code></pre>
         The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
     </li>
     <li>
@@ -182,15 +177,14 @@ This file, which controls the general model configuration, contains several part
         <b>Start date and internal run length</b>
         <br>
         <pre><code>calendar:
-            &nbsp;&nbsp;start:
-            &nbsp;&nbsp;&nbsp;&nbsp;year: 101
-            &nbsp;&nbsp;&nbsp;&nbsp;month: 1
-            &nbsp;&nbsp;&nbsp;&nbsp;days: 1<br>
-            &nbsp;&nbsp;runtime:
-            &nbsp;&nbsp;&nbsp;&nbsp;years: 1
-            &nbsp;&nbsp;&nbsp;&nbsp;months: 0
-            &nbsp;&nbsp;&nbsp;&nbsp;days: 0
-        </code></pre>
+    start:
+        year: 101
+        month: 1
+        days: 1<br>
+    runtime:
+        years: 1
+        months: 0
+        days: 0</code></pre>
         This section specifies the start date and internal run length.
         <div class="note">
             The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, while <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
@@ -302,9 +296,8 @@ Now some practical examples:
         <br>
         To have a total run length of 3 months and 10 days in a single submission, set the <code>runtime</code> as follows:
         <pre><code>years: 0
-            months: 3
-            days: 10
-        </code></pre>
+months: 3
+days: 10</code></pre>
         Set <code>runspersub</code> to <code>1</code> (or any value > 1) and run the configuration without option <code>-n</code> (or with <code>-n</code> set to <code>1</code>):
         <pre><code>payu run -f</code></pre>
     </li>
@@ -313,9 +306,8 @@ Now some practical examples:
         <br>
         To have a total run length of 1 year and 4 months (16 months), you need to split it into multiple internal runs. For example, 4 internal runs of 4 months each. In this case, set the <code>runtime</code> as follows:
         <pre><code>years: 0
-            months: 4
-            days: 0
-        </code></pre>
+months: 4
+days: 0</code></pre>
         Since the internal run length is set to 4 months, set <code>runspersub</code> to <code>1</code> to resubmit your jobs every 4 months (i.e. every internal run). Then, run the configuration with <code>-n</code> set to <code>4</code>:
         <pre><code>payu run -f -n 4</code></pre>
     </li>
