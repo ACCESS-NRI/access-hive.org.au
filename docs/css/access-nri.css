@@ -478,9 +478,9 @@ h1.homepage {
   align-content: center;
 }
 
-.vertical-flex-align-bottom {
+/* .vertical-flex-align-bottom {
   align-content: flex-end;
-}
+} */
 
 .flex-gap {
   gap: 0.6em;
@@ -510,6 +510,13 @@ h1.homepage {
 }
 
 /* 
+  Formatting of "ACCESS-Hive" heading at top-left 
+*/
+.extra-large-text {
+  font-size: 1.8em;
+}
+
+/* 
   Used in the header buttons at the top-right
   "Hive Forum", "ACCESS-NRI", "Contribute"
 */
@@ -518,10 +525,10 @@ h1.homepage {
 }
 
 /* 
-  Used to formats "ACCESS-Hive" heading at top-left 
+  Used in "Hosted by ACCESS-NRI" heading
 */
-.extra-large-text {
-  font-size: 1.8em;
+.med-text {
+  font-size: 1.1em;
 }
 
 .nri-orange-border {
@@ -715,7 +722,7 @@ pre>code {
   word-break: break-all !important;
 }
 
-/* Copy icon turning orange when hovering over it*/
+/* Copy icon turning orange when hovering over it */
 pre > button:is(:hover,:focus).md-clipboard {
   color: var(--md-primary-fg-color--dark) !important;
 }
@@ -911,4 +918,8 @@ pre:has(code):hover > button {
 
 .img-contain {
   object-fit: contain;
+}
+
+.inactive-tab-color {
+  color: var(--tab-text-light);
 }
