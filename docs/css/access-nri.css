@@ -473,7 +473,7 @@ h1.homepage {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: stretch;
   gap: 1em;
   margin: 0 .5rem;
@@ -710,9 +710,8 @@ ul:not([class^='md-']) li ul li ul li {
 pre:has(code) {
   display: flow-root !important;
   text-align: left !important;
-  padding: 0 0 !important;
-  margin-top: 0.5em !important; 
-  margin-bottom: 0.5em !important;
+  padding: 0 !important;
+  margin: 0.5em 0 !important;
 }
 
 pre>code {
@@ -929,6 +928,10 @@ pre:has(code):hover > button {
 
 /* Banner content */
 @media (width <= 770px) {
+  /* Buttons container */
+  .btn-container {
+    flex-grow: 0;
+  }
   /* Forum / ACCESS-NRI / Contribute Buttons */
   .header-btn {
     flex-basis: 0;
