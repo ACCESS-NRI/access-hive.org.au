@@ -469,7 +469,6 @@ h1.homepage {
 */
 .flex-container {
   display: flex;
-  gap: 0.6em;
 }
 
 .center-all-flex-items {
@@ -544,7 +543,7 @@ h1.homepage {
   color: var(--tab-text-light);
 }
 
-.grey-link:hover {
+.inactive-tab-color:hover {
   transition-duration: 0.4s;
   color: var(--tab-text);
 }
