@@ -467,28 +467,56 @@ h1.homepage {
 /* =============================================================== 
   Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
+
+/* 
+  Header buttons are in a flex container, 
+  so we can use flexbox to align them.
+*/
 .flex-container {
   display: flex;
 }
 
+/* 
+  Center all items in the flex container
+  (horizontally and vertically)
+*/
 .center-all-flex-items {
   justify-content: center;
   align-items: center;
   align-content: center;
 }
 
+/* 
+  Add equal "column" and "row" gap inside the 
+  flex container.
+*/
 .flex-gap {
   gap: 0.6em;
 }
 
+/* 
+  Specifies how much the item will grow relative 
+  to the rest. Here, it grows twice the size of 
+  the other flex items.
+*/
 .flex-grow-2 {
   flex-grow: 2;
 }
 
+/* 
+  Defines a flex container whose children are aligned
+  in a "column".
+*/
 .vertical-flex-container {
   flex-direction: column;
 }
 
+/* 
+  For the header buttons at the top-right - 
+  1. "Hive Forum", 
+  2. "ACCCESS NRI" and 
+  3. "Contribute"
+*/
 .header-btn {
   border-radius: 0.3em;
   border: 0.1em solid;
@@ -498,6 +526,9 @@ h1.homepage {
   height: 1.7rem;
 }
 
+/* 
+  Light bg color change upon hovering over the header buttons
+*/
 .header-btn:hover {
   background-color: var(--md-default-fg-color--lightest);
   transition-duration: 0.4s;
@@ -526,23 +557,41 @@ h1.homepage {
   font-size: 1em;
 }
 
+/* 
+  Orange border for "Hive Forum" button
+*/
 .nri-orange-border {
   border-color: var(--nri-orange);
 }
 
+/* 
+  Blue border for "ACCESS-NRI" button
+*/
 .nri-blue-border {
   border-color: var(--nri-blue);
 }
 
+/* 
+  Defines height and width of icons used in 
+  three header buttons at the top right
+*/
 .icon-image {
   height: 1.3em;
   width: auto;
 }
 
+/* 
+  Returns the color of inactive tab color which is 
+  used in the "Hosted by ACCESS-NRI" heading
+*/
 .inactive-tab-color {
   color: var(--tab-text-light);
 }
 
+/* 
+  Hover state for the inactive tab color, turns to 
+  the color of the selected tab
+*/
 .inactive-tab-color:hover {
   transition-duration: 0.4s;
   color: var(--tab-text);
