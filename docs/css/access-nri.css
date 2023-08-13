@@ -472,15 +472,11 @@ h1.homepage {
   gap: 0.6em;
 }
 
-.center-flex-items {
+.center-all-flex-items {
   justify-content: center;
   align-items: center;
   align-content: center;
 }
-
-/* .vertical-flex-align-bottom {
-  align-content: flex-end;
-} */
 
 .flex-gap {
   gap: 0.6em;
@@ -525,10 +521,10 @@ h1.homepage {
 }
 
 /* 
-  Used in "Hosted by ACCESS-NRI" heading
+  Medium font size used in "Hosted by ACCESS-NRI" heading
 */
 .med-text {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .nri-orange-border {
@@ -542,6 +538,15 @@ h1.homepage {
 .icon-image {
   height: 1.3em;
   width: auto;
+}
+
+.inactive-tab-color {
+  color: var(--tab-text-light);
+}
+
+.grey-link:hover {
+  transition-duration: 0.4s;
+  color: var(--tab-text);
 }
 
 /* =============================================================== 
@@ -918,8 +923,4 @@ pre:has(code):hover > button {
 
 .img-contain {
   object-fit: contain;
-}
-
-.inactive-tab-color {
-  color: var(--tab-text-light);
 }
