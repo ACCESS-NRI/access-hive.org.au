@@ -165,6 +165,15 @@
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
 }
 
+
+/* =============================================================== 
+  Main body grid
+*/
+.md-grid {
+  max-width: 70rem;
+}
+
+
 /* =============================================================== 
   Main headings
 */
@@ -770,7 +779,7 @@ pre:has(code) {
 }
 
 pre>code {
-  white-space: pre-line !important;
+  white-space: pre-wrap !important;
   padding: 0.5em 0.8em !important;
   word-break: break-all !important;
 }
