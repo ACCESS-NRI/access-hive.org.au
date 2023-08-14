@@ -1,4 +1,4 @@
-# `ilamb` on Gadi at NCI
+# ILAMB and IOMB on Gadi at NCI
 
 `ilamb` is a Python framework for for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB).
 
@@ -9,7 +9,7 @@
     ACCESS-NRI does not own the code of ILAMB/IOMB, but actively supports the use of ILAMB/IOMB on Gadi.
     ACCESS-NRI provides access to the latest version of ILAMB/IOMB via the `xp65` access-med conda environment deployed on NCI-Gadi.
 
-ACCESS-NRI is maintaining a version of the package `ilamb`  on Gadi at the National Compuational Infrastructure (NCI).
+ACCESS-NRI is maintaining a version of the package `ilamb` on Gadi at the National Compuational Infrastructure (NCI).
 
 Here, we provide a quick tutorial on how use `ilamb` on Gadi. We assume that you already have access to Gadi, logged onto Gadi via secure shell (ssh) and loaded our `access-med` `conda` environment (if not, follow [these instructions](../model_evaluation_getting_started/index.md)).
 
@@ -32,6 +32,12 @@ This command will show you which port the browser is sending output to (for exam
 Clicking on a row of the table will expand it to reveal the underlying datasets used. Clicking on CERES, for example, will take you to another page which presents detailed scores and plots:
 
 <p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_2.png" alt="Detailed output of Surface Upward SW Radiation Benchmarking"></p>  
+
+## Requirements
+
+### General requirements
+
+Before running ACCESS-ESM, you need to fulfil general requirements outlined in the [Getting Started](../../getting_started/index.md) section.
 
 ## 1 Prerequisites
 
