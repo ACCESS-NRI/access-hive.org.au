@@ -165,6 +165,24 @@
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
 }
 
+/* Set rem based on viewport width */
+@media (width > 2000px) {
+  :root {
+    font-size: 24px;
+  }
+}
+@media (500px < width <= 2000px) {
+  :root {
+    font-size: calc(14px + 10 * ((100vw - 500px) / (2000 - 500)));
+  }
+}
+@media (width <= 500px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+
 /* =============================================================== 
   Main headings
 */
@@ -260,7 +278,7 @@ h1.homepage {
   height: 10em !important;
   width: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0.6em;
 }
 
 .card-container.homepage-navigation {
@@ -394,7 +412,7 @@ h1.homepage {
 */
 /* Main title */
 .md-header__title {
-  margin-left: 0.3em !important;
+  margin: 0 0.2em 0 0.3em !important;
   flex-shrink: 1;
   overflow: hidden;
   position: relative;
@@ -404,12 +422,12 @@ h1.homepage {
 .hostedby {
   position: absolute;
   font-size: 0.5em;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--nri-orange);
   line-height: 1em;
   white-space: nowrap;
-  bottom: 6px;
-  left: 30px;
+  bottom: 0.3rem;
+  left: 1.5rem;
 }
 .hostedby:hover {
   opacity: 0.85;
@@ -572,7 +590,7 @@ h1.homepage {
   justify-content: center;
   align-items: center;
   border: 1.3px solid var(--card-borders);
-  border-radius: 15px;
+  border-radius: 0.6em;
   box-shadow: 6px 6px 10px var(--card-shadows);
   overflow: hidden;
 }
@@ -599,7 +617,7 @@ h1.homepage {
   align-items: center;
   padding: 0.6em 0.6em 0.3em 0.6em;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.6em;
 }
 
 .vertical-card-image-container > img {
@@ -634,7 +652,7 @@ h1.homepage {
   align-items: center;
   padding: 0.6em 0 0.6em 0.6em;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.6em;
 }
 
 .horizontal-card-image-container > img {
@@ -655,7 +673,7 @@ h1.homepage {
 
 .horizontal-card-image-container > img, 
 .vertical-card-image-container > img {
-  border-radius: 8px;
+  border-radius: 0.6em;
 }
 
 a.component-card {
@@ -811,7 +829,7 @@ pre:has(code):hover > button {
   border-bottom: solid 2px currentColor;
   transition: border-bottom .2s;
   background-color: var(--md-accent-fg-color--transparent);
-  border-radius: 8px 8px 0 0;
+  border-radius: 0.6em 0.6em 0 0;
 }
 
 /* Style the tab content */
@@ -865,7 +883,7 @@ pre:has(code):hover > button {
 .example-img {
   width: 100% !important;
   height: auto !important;
-  border-radius: 8px;
+  border-radius: 0.6em;
 }
 
 /* Justified text */
@@ -889,7 +907,7 @@ pre:has(code):hover > button {
 
 /* With borders */
 .with-border {
-  border-radius: 7px;
+  border-radius: 0.6em;
   border: 1.3px solid var(--card-borders);
   box-sizing: border-box;
 }
@@ -926,28 +944,42 @@ pre:has(code):hover > button {
   Media queries for website responsiveness
 */
 
-/* Banner content */
-@media (width <= 770px) {
-  /* Buttons container */
+@media (width <= 500px) {
   .btn-container {
     flex-grow: 0;
   }
-  /* Forum / ACCESS-NRI / Contribute Buttons */
   .header-btn {
     flex-basis: 0;
     flex-grow: 0;
     aspect-ratio: 1;
     justify-self: start;
   }
-  /* Hide Button text */
   .header-btn >:last-child {
     display: none;
   }
-}
 
-@media (width <= 420px) {
-/* Hosted by ACCESS-NRI */
   .hostedby {
     left: 0;
   }
+  
+  .introduction > :first-child {
+    font-size: 4vw;
+  }
+  .introduction > :first-child > :first-child {
+    font-size: 6vw;
+  }
 }
+
+/*Alternative implementation*/
+ /* .header-btn {
+  background-color: transparent !important;
+  color: var(--md-primary-bg-color);
+}
+.hostedby {
+  color: var(--tab-text-light);
+  left: 8px;
+}
+.hostedby:hover {
+  opacity: 1;
+  filter: brightness(130%);
+} */
