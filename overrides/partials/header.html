@@ -34,37 +34,15 @@
       <label class="md-header__button md-icon" for="__drawer">
         {% include ".icons/material/menu" ~ ".svg" %}
       </label>
-      <!-- <div class="md-header__title" data-md-component="header-title">
-        <div class="md-header__ellipsis">   -->
-          <div class="flex-container vertical-flex-container flex-grow-2 flex-gap">
-            <!-- <div class="md-header__topic">
-              <span class="md-ellipsis">
-                {{ config.site_name }}
-              </span>
-            </div> -->
-            <div class="extra-large-text bold">ACCESS-Hive</div>
-            <div class="inactive-tab-color med-text">
-              <a href="https://www.access-nri.org.au/" target="_blank">
-                Hosted by 
-                <span class="bold">ACCESS-NRI</span>
-              </a>
-            </div>
-          </div>
-          <!-- 
-            Uncomment the following code block to allow changes to the top-left 
-            header title upon page scrolling.
-          -->
-          <!-- <div class="md-header__topic" data-md-component="header-topic">
-            <span class="md-ellipsis">
-              {% if page.meta and page.meta.title %}
-                {{ page.meta.title }}
-              {% else %}
-                {{ page.title }}
-              {% endif %}
-            </span>
-          </div> -->
-        <!-- </div>
-      </div> -->
+      <div class="flex-container vertical-flex-container flex-grow-2 flex-gap">
+        <div class="extra-large-text bold">ACCESS-Hive</div>
+        <div class="inactive-tab-color med-text">
+          <a href="https://www.access-nri.org.au/" target="_blank">
+            Hosted by 
+            <span class="bold">ACCESS-NRI</span>
+          </a>
+        </div>
+      </div>
       {% if config.theme.palette %}
         {% if not config.theme.palette is mapping %}
           <form class="md-header__option" data-md-component="palette">
