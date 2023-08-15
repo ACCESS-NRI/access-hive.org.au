@@ -27,9 +27,9 @@ Click on the questions to unfold the answers.
 
     So **experiment** and **run** can sometimes be used as synonyms, but at other times an experiment consists of many runs that are linked by passing model state from one run to the next.
 
-??? abstract "How do model runs and model evaluation work together?"
+??? abstract "How do model experiments and model evaluation work together?"
 
-    Climate science - like all science - is based on the comparison of different models and hypothesis with observational data. We provide or support the frameworks to perform such comparisons as part of the **model evaluation**. The different model hypotheses, or more practically speaking *model runs*, are created by executing different model configurations with different setups; for example by perturbing initial conditions or by adding new physical prescriptions to the models.
+    Climate science - like all science - is based on the comparison of different models and hypothesis with observational data. We provide or support the frameworks to perform such comparisons as part of the **model evaluation**. The different model hypotheses, or more practically speaking *model experiments*, are created by executing different model configurations with different setups; for example by perturbing initial conditions or by adding new physical prescriptions to the models.
 
     <p align="center"><img align="center" width="75%" src="../../assets/how_does_it_work_together.png" alt="Diagram showing how running ACCESS model configurations with different setups create different experiments. These are then compared with each other and observational data as part of the model evaluation. These comparisons are what informs climate science."></p>
 
