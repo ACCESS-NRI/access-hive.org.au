@@ -10,45 +10,8 @@ Contributions are encouraged from any member of the community regarding any aspe
 
 Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal**. There are multiple avenues which you can take to contribute to this **ACCESS-Hive** portal, depending on your interests and skill sets. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the ACCESS-Hive!
 
-<div class="card-container">
-    <a href="access-cm/" class="vertical-card">
-        <!-- <div class="vertical-card-image-container"> -->
-            <!-- <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img>  -->
-        <!-- </div> -->
-        <div class="vertical-card-text-container">
-            <i class="fa-solid fa-circle-question fa-shake"></i>
-            <span class="bold">Have a question or need help?</span>
-            <span>
-                Use the Hive-Forum to ask any questions you have and get in touch with our community!
-            </span>
-        </div>
-    </a>
-    <a href="access-cm/" class="vertical-card">
-        <div class="vertical-card-image-container">
-            <!-- <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img>  -->
-            <i class="fa-solid fa-circle-question fa-2xl"></i>
-        </div>
-        <div class="vertical-card-text-container">
-            <span class="bold">Have a question or need help?</span>
-            <hr>
-            <span>
-                Use the Hive-Forum to ask any questions you have and get in touch with our community!
-            </span>
-        </div>
-    </a>
-    <a href="access-cm/" class="vertical-card">
-        <!-- <div class="vertical-card-image-container">
-            <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
-        </div> -->
-        <div class="vertical-card-text-container">
-            <span class="bold">Have a question or need help?</span>
-            <hr>
-            <span>
-                Use the Hive-Forum to ask any questions you have and get in touch with our community!
-            </span>
-        </div>
-    </a>
-</div>
+### <i class="fa-solid fa-circle-question"></i> Have a question or need help 
+
 <div class="card-container vertical-card">Have a question or need help?</div>
 <div>Contribute on GitHub!</div>
 
