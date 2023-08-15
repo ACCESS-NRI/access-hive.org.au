@@ -14,12 +14,11 @@ ACCESS-NRI is maintaining a version of the package `ilamb` on Gadi at the Nation
 Here, we provide a quick tutorial on how use `ilamb` on Gadi. We assume that you already have access to Gadi, logged onto Gadi via secure shell (ssh) and loaded our `access-med` `conda` environment (if not, follow [these instructions](../model_evaluation_getting_started/index.md)).
 
 All you need are configuration files and paths for models and data (we show you how to set up all necessary steps and options below). You should then be able to execute `ilamb` with the following command:
-
 ```py
-ilamb-run --config config.cfg --model_root $ILAMB_ROOT/MODELS --regions global
+ilamb-run --config config.cfg --model_setup model_route.txt --regions global
 ```
 
-This will create output files that you can load as a html website via the prompt
+Running `ilamb-run` will create output files that you can load as a html website via the prompt
 
 ```
 python -m http.server
@@ -33,50 +32,95 @@ Clicking on a row of the table will expand it to reveal the underlying datasets 
 
 <p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_2.png" alt="Detailed output of Surface Upward SW Radiation Benchmarking"></p>  
 
-## Requirements
+In the text below, we describe how to achieve excatly the comparison shown above and how to adjust the setup for your own use.
 
-### General requirements
+## 1 Requirements
 
-Before running ACCESS-ESM, you need to fulfil general requirements outlined in the [Getting Started](../../getting_started/index.md) section.
+### 1.1 General requirements
 
-## 1 Prerequisites
+Before running `ilamb`, you need to fulfil general requirements outlined in the [Getting Started](../../getting_started/index.md) section.
 
-In this tutorial, we are specifically explaining how to use `ilamb` on NCI's Gadi. If you want to install and adjust `ilamb` locally, please follow the official installation instructions at [https://www.ilamb.org/doc/install.html](https://www.ilamb.org/doc/install.html).
+To run `ilamb` in our supported framework on NCI's Gadi computing cluster, you need to join projects `xp65` and `ct11` as well as an NCI project that provides you with computing power. To run this particular tutorial, you also need to be part of project `fs38`, which provides model output for an example comparison.
 
-### 1.1 $ILAMB_ROOT
+If you want to install and adjust `ilamb` locally, please follow the official installation instructions on the <a href="https://www.ilamb.org/doc/install.html" target="_blank">ILAMB website</a>.
 
-In our default setup, we will place ILAMB_ROOT and the shapefiles for cartopy directly in the home directory. After logging onto Gadi, you have to create the ILAMB_ROOT directory
+As outlined in the [Getting Started with MED Guide](), you should load the ACCESS-NRI modules that include `ilamb`:
 ```
-mkdir $PWD/ILAMB_ROOT
-mkdir $ILAMB_ROOT/DATA
-mkdir $ILAMB_ROOT/MODELS
-```
-
-You can then simply export their paths after login as:
-```
-export ILAMB_ROOT=$PWD/ILAMB_ROOT
-export CARTOPY_DATA_DIR=/g/data/xp65/public/apps/cartopy-data
+module use /g/data/xp65/public/modules
+module load conda/access-med
 ```
 
-You can of course change the path of the directory, but will need to take this into account for the PBS job by adding a command to change into the $ILAMB_ROOT directory (see [PBS setup comments](https://github.com/svenbuder/ILAMB-workflow/edit/main/ilamb_note.md#52-portable-batch-system-pbs-jobs-on-nci)).
+### 1.2 Directory structures on Gadi
 
-### 1.2 ILAMB_ROOT/DATA
+`ilamb` is best setup by creating a root directory with data and models directories as subdirectories.
 
-An extensive colletion of DATA is provided in the `kj13` project. You need to have [joined the project on NCI](https://my.nci.org.au/mancini/project-search) to get access to this data.
+#### 1.2.1 ILAMB_ROOT Directory
+
+In our default setup, we will place ILAMB_ROOT directly in the home directory. After logging onto Gadi, you move to the home directory and create, export, and move to the ILAMB_ROOT directory before printing its absolute path:
+<pre><code>cd ~/
+mkdir ILAMB_ROOT
+export ILAMB_ROOT=~/ILAMB_ROOT
+cd ILAMB_ROOT
+pwd</code></pre>
+<terminal-window>
+    <terminal-line data="input">cd ~/</terminal-line>
+    <terminal-line data="input">mkdir ILAMB_ROOT</terminal-line>
+    <terminal-line data="input">cd ILAMB_ROOT</terminal-line>
+    <terminal-line data="input">pwd</terminal-line>
+    <terminal-line lineDelay="1000">/home/directory/$USER/ILAMB_ROOT</terminal-line>
+</terminal-window>
+
+You can then add this absolute path (adjust based on what is printed above) permanently to your login details by adding the following two lines to your `~/.bashrc` or `~/.bash_profile`:
+<pre><code>export ILAMB_ROOT=/home/directory/$USER/ILAMB_ROOT
+export CARTOPY_DATA_DIR=/g/data/xp65/public/apps/cartopy-data</code></pre>
+
+You can of course change the path of the $ILAMB_ROOT directory, but will need to take this into account for the PBS job by adding a command to change into the $ILAMB_ROOT directory.
+
+#### 1.2.2 Observational DATA
+
+An extensive colletion of observational DATA for both land (ILAMB) and ocean (IOMB) are provided on Gadi in the `ct11` project. 
 
 To create a symbolic link to this data, use the bash command
 ```
-ln -s /g/data/kj13/datasets/ilamb/DATA/* $ILAMB_ROOT/DATA/
-ln -s /g/data/kj13/datasets/iomb/DATA/* $ILAMB_ROOT/DATA/
+mkdir $ILAMB_ROOT/DATA
+ln -s /g/data/ct11/access-nri/replicas/ILAMB/* $ILAMB_ROOT/DATA/
+ln -s /g/data/ct11/access-nri/replicas/IOMB/* $ILAMB_ROOT/DATA/
 ```
-Note that the directory `WOA2018` is an overlapping catalogue (you can ignore the warning that a link already exists).
+Please ignore the warning of an overlapping catalogue `WOA2018` which will fail the creation of a second symbolic link.
+
 For more information on the data sets, please visit the the `ilamb` [dataset website](https://www.ilamb.org/datasets.html).
 
-### 1.3 ILMAB_ROOT/MODEL
+#### 1.2.3 MODELS data
+
+<`ilamb` is setup with an expectation for model data to be stored under `$ILAMB_ROOT/MDOELS` unless defined otherwise.
+
+Because of the large amount of model data that could be used, we rather recommend to 
+
+##### Option 1: MODELS in a model route file
+
+To limit the number of models that are compared by `ilamb`, we recommend to use a model route file. If you call your model route file `modelroute.txt`, you can then use `ilamb-run` with the keywords 
+
+```
+# Model Name           , ABOSLUTE/PATH/TO/MODELS , EXTRA COMMANDS 
+ACCESS_ESM1-5-r1i1p1f1 , MODELS/r1i1p1f1         , CMIP6
+```
+
+##### Option 2: MODELS in the $ILAMB_ROOT/MODELS
+
+You could create such a directory via
+```
+mkdir $ILAMB_ROOT/MODELS
+```
+
+You could then link or copy your models into this directory and use the argument `--model_root $ILAMB_ROOT/MODELS/`. This way, `ilamb` wil automatically compare all models in this directory.
+
+<!-- 
+
+
 
 Similar to the observational data, we recommend to create symbolic link to model data within the $ILAMB_ROOT/MODEL directory. You can find models by searching our currated `intake` catalog [here](../model_evaluation_model_catalogs/index.md). To add model data (in our example models of the ACCESS-ESM1.5) for the analysis with `ilamb`, you need to do the following:
 ```
-ln -s /g/data/fs38/publications/CMIP6/CMIP/CSIRO/ACCESS-ESM1-5/historical/r* $ILAMB_ROOT/MODELS
+ln -s /g/data/fs38/publications/CMIP6/CMIP/CSIRO/ACCESS-ESM1-5/historical/r1i1p1f1 $ILAMB_ROOT/MODELS
 ```
 
 This will allow you, to simply use the `--model_root $ILAMB_ROOT/MODELS` keyword when using `ilamb`.
@@ -90,7 +134,7 @@ or shorter
 source = $ILAMB_ROOT/MODELS/r1i1p1f1/Amon/rsus/gn/files/d20191115/rsus_Amon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.nc
 ```
 
-## 2 Setup Files
+## 1.3 Setup Files
 
 At the beginning, we showed you the default call of `ilamb` via
 ```
@@ -99,7 +143,7 @@ ilamb-run --config config.cfg --model_setup modelroute.txt --regions regions.txt
 
 Here, we explain how you can setup all these files that are called via `--config`, `--model_setup`, and `--regions`.
 
-### 2.1 `config` files
+### 1.3.1 `config` files
 
 Now that we have the data, we need to setup a `config` file which the `ilamb` package will use to initiate a benchmark study.  
 
@@ -107,7 +151,9 @@ Now that we have the data, we need to setup a `config` file which the `ilamb` pa
 
 Below we explain both which variables you can define, but start by showing you the minimum setup from the [tutorial's](https://www.ilamb.org/doc/first_steps.html). `sample.cfg` [file](https://github.com/rubisco-sfa/ILAMB/blob/master/src/ILAMB/data/sample.cfg):
 
-**Minimum configure file with a direct and a derived variable**
+#### Minimum configure file with a direct and a derived variable
+
+This file will be stored as `$ILAMB_ROOT/sample.cfg`:
 
 ```
 # This configure file specifies the variables
@@ -130,7 +176,9 @@ source   = "DATA/albedo/CERES/albedo_0.5x0.5.nc"
 
 In brief: This file allows you to create different header descriptions of the experiments (`h1`: top level for grouping of variables, `h2`: sub-level for each variable), but most importantly the `variable`s that we will look into and their `source`. In the eaxmple, `rsus` (*Surface Upward Shortwave Radiation*) and `albedo` are the used variables. The latter is actually derived from two variables by dividing the *Surface Upward Shortwave Radiation* by the *Surface Downward Shortwave Radiation*, `derived = rsus/rsds`. Finally, sources are defined as `source` with a text-font header without `h1` or `h2`.
 
-**Changing configure file variables**
+You should now be able 
+
+#### Changing configure file variables
 
 This is the list of all the variables you can modify in config file:
 ```
@@ -187,7 +235,7 @@ weight              = 1
 
 ```
 
-### 2.2 `model_setup` file instead of `model_root`
+### 1.3.2 `model_setup` file instead of `model_root`
 
 If you plan to run only a specific subset of models, you can already define them in a `modelroute.txt` file that is then called via the 
 ```
@@ -309,4 +357,4 @@ reflect that a model is missing a required variable.
 ```
 Here we have run the command on some inputs in our test directory. You will see a list of the confrontations we run and the variables which are required or their synonyms. What is missing in this tutorial is the text coloring which will indicate if a given model has the required variables.
 
-We have finish the introduction of basic `ilamb` usage. We believe you have some understanding of `ilamb` and cont wait to use it. if you still have any question or you want some developer level support, you can find more detail in their [official tutorial](https://www.ilamb.org/doc/tutorial.html).
+We have finish the introduction of basic `ilamb` usage. We believe you have some understanding of `ilamb` and cont wait to use it. if you still have any question or you want some developer level support, you can find more detail in their [official tutorial](https://www.ilamb.org/doc/tutorial.html). -->
