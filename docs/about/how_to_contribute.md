@@ -10,10 +10,32 @@ Contributions are encouraged from any member of the community regarding any aspe
 
 Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal**. There are multiple avenues which you can take to contribute to this **ACCESS-Hive** portal, depending on your interests and skill sets. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the ACCESS-Hive!
 
-### <i class="fa-solid fa-circle-question"></i> Have a question or need help 
+### <i class="fa-solid fa-circle-question"></i> Have a question or need help ?
+Ask a question on the <a href="https://forum.access-hive.org.au" target="_blank">Hive forum</a> and get in touch with our community! The discussion forum is a place for the **ACCESS Community** to come together, share ideas, organise and plan shared activities. Anyone could be a member of the **ACCESS Community** including people who:
+
+- Run ACCESS models.
+- Analyse ACCESS model outputs.
+- Use ACCESS model output data as boundary or forcing conditions in a different model.
+- Use or contribute to one of the models used in ACCESS models with shared interests.
+- Use, or are interested in using the tools that the ACCESS community and ACCESS-NRI develops. 
+
+**Getting ready for the Hive Forum**
+
+
+### <i class="fa-brands fa-github"></i> Contribute to ACCESS-Hive GitHub!
+
+
+
+
+
+
+
+
+
+
 
 <div class="card-container vertical-card">Have a question or need help?</div>
-<div>Contribute on GitHub!</div>
+
 
 If you are still unsure about anything, please don't hesitate to <a href="https://forum.access-hive.org.au" target="_blank">ask for help</a>.
 
