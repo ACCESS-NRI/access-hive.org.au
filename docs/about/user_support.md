@@ -45,7 +45,7 @@ Click on the questions to unfold the answers.
 ??? abstract "What is a perturbation experiment?"
     A perturbation experiment is when a model configuration from a control experiment is altered in some way. The altered configuration is then run, restarting from a point in the control experiment.
 
-    The perturbation experiment is run in the same was as the control, each successive run using the state (restarts) from the previous run. The perturbation experiment can then be compared with the control experiment to see the effect of the perturbation.
+    The perturbation experiment is run in the same way as the control, each successive run using the state (restarts) from the previous run. The perturbation experiment can then be compared with the control experiment to see the effect of the perturbation.
 
     Perturbation experiments are a very important way to try and understand complex earth systems, e.g. to isolate potential climate change signals and try and understand their effects.
 
