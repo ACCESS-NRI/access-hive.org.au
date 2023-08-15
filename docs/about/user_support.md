@@ -1,6 +1,6 @@
 #  User support 
 
-On this page we answer frequently asked questions, but also give additional information for support, in case your question is not yet answered.
+On this page we answer frequently asked questions (FAQs), and also give additional information for support, in case your question is not yet answered.
 
 ## Frequently Asked Questions
 
