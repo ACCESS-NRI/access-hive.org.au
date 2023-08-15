@@ -182,6 +182,13 @@
   }
 }
 
+/* =============================================================== 
+  Main body grid
+*/
+.md-grid {
+  max-width: 70rem;
+}
+
 
 /* =============================================================== 
   Main headings
@@ -484,7 +491,7 @@ h1.homepage {
 /* =============================================================== 
   Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
-.btn-container {
+.header-btn-container {
   flex-grow: 1;
   flex-shrink: 1;
   max-width: 20rem;
@@ -733,7 +740,7 @@ pre:has(code) {
 }
 
 pre>code {
-  white-space: pre-line !important;
+  white-space: pre-wrap !important;
   padding: 0.5em 0.8em !important;
   word-break: break-all !important;
 }
@@ -945,7 +952,7 @@ pre:has(code):hover > button {
 */
 
 @media (width <= 500px) {
-  .btn-container {
+  .header-btn-container {
     flex-grow: 0;
   }
   .header-btn {

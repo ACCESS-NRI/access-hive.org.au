@@ -1,4 +1,4 @@
-# Observational Data Catalog
+# Observational Data Catalogue
 
 We are working in cooperation with NCI to currate observational data collections for you that are being hosted by NCI. ACCESS-NRI and NCI are actively currating the data collections and we are working on including new data collections.
 

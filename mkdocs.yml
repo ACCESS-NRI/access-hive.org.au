@@ -121,7 +121,7 @@ nav:
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
 
-  - Model Evaluation:
+  - Data and Model Evaluation:
     - model_evaluation/index.md
     - Getting Started: 
       - model_evaluation/model_evaluation_getting_started/index.md
@@ -152,8 +152,8 @@ nav:
       #  - Add Event: community_resources/events/add_event.md
     - Model Evaluation Links:
       - community_resources/community_med/index.md
-      - Observational Catalogs: community_resources/community_med/community_observational_catalogs.md
-      - Model Catalogs: community_resources/community_med/community_model_catalogs.md
+      - Observational Catalogues: community_resources/community_med/community_observational_catalogs.md
+      - Model Catalogues: community_resources/community_med/community_model_catalogs.md
       - Data Formatting: community_resources/community_med/community_data_processing.md
       - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
     # - Training: 

@@ -63,7 +63,7 @@ To create a symbolic link to this data, use the bash command
 ln -s /g/data/kj13/datasets/ilamb/DATA/* $ILAMB_ROOT/DATA/
 ln -s /g/data/kj13/datasets/iomb/DATA/* $ILAMB_ROOT/DATA/
 ```
-Note that the directory `WOA2018` is an overlapping catalog (you can ignore the warning that a link already exists).
+Note that the directory `WOA2018` is an overlapping catalogue (you can ignore the warning that a link already exists).
 For more information on the data sets, please visit the the `ilamb` [dataset website](https://www.ilamb.org/datasets.html).
 
 ### 1.3 ILMAB_ROOT/MODEL
