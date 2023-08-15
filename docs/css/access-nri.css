@@ -61,7 +61,7 @@
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
   --navigation-borders: rgba(var(--nri-orange-color),.2); /* Left border on the toc and navigation*/
-  --card-borders: rgba(var(--nri-orange-color),.8); /* Borders of cards */
+  --card-borders: rgba(var(--nri-dark-blue-color),.8); /* Borders of cards */
   --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: transparent; /* Background warnings */
@@ -141,7 +141,7 @@
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
   --navigation-borders: rgba(var(--nri-orange-color),.2); /* Left border on the toc and navigation*/
-  --card-borders: rgba(var(--nri-orange-color),.8); /* Borders of cards */
+  --card-borders: rgba(var(--nri-dark-blue-color),.8); /* Borders of cards */
   --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
   --md-admonition-bg-color: transparent; /* Background warnings */

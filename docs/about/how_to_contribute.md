@@ -4,15 +4,55 @@
 
 ACCESS-Hive is an open, community-driven user portal which hosts the documentation relevant to the **Australian Community Climate and Earth System Simulator (ACCESS)**, and the wider ACCESS community. 
 
-Contributions are encouraged from any member of the community, addressing the improvements regarding any aspect of the **ACCESS-Hive** website (which curates ACCESS documentation and its related resources) or the <a href="https://forum.access-hive.org.au" target="_blank">Hive Forum</a> (used for community discussions).
+Contributions are encouraged from any member of the community regarding any aspect of the **ACCESS-Hive** website (which curates ACCESS documentation and its related resources) or the <a href="https://forum.access-hive.org.au" target="_blank">Hive Forum</a> (used for community discussions).
 
 ## How can I contribute?
 
-There are multiple avenues you can take to contribute to this **ACCESS-Hive** portal, depending on your interests and skill sets. 
+Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal**. There are multiple avenues which you can take to contribute to this **ACCESS-Hive** portal, depending on your interests and skill sets. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the ACCESS-Hive!
 
+<div class="card-container">
+    <a href="access-cm/" class="vertical-card">
+        <!-- <div class="vertical-card-image-container"> -->
+            <!-- <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img>  -->
+        <!-- </div> -->
+        <div class="vertical-card-text-container">
+            <i class="fa-solid fa-circle-question fa-shake"></i>
+            <span class="bold">Have a question or need help?</span>
+            <span>
+                Use the Hive-Forum to ask any questions you have and get in touch with our community!
+            </span>
+        </div>
+    </a>
+    <a href="access-cm/" class="vertical-card">
+        <div class="vertical-card-image-container">
+            <!-- <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img>  -->
+            <i class="fa-solid fa-circle-question fa-2xl"></i>
+        </div>
+        <div class="vertical-card-text-container">
+            <span class="bold">Have a question or need help?</span>
+            <hr>
+            <span>
+                Use the Hive-Forum to ask any questions you have and get in touch with our community!
+            </span>
+        </div>
+    </a>
+    <a href="access-cm/" class="vertical-card">
+        <!-- <div class="vertical-card-image-container">
+            <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
+        </div> -->
+        <div class="vertical-card-text-container">
+            <span class="bold">Have a question or need help?</span>
+            <hr>
+            <span>
+                Use the Hive-Forum to ask any questions you have and get in touch with our community!
+            </span>
+        </div>
+    </a>
+</div>
 <div class="card-container vertical-card">Have a question or need help?</div>
-<div>Something is not working?</div>
-<div>Other GitHub contribution opportunities...</div>
+<div>Contribute on GitHub!</div>
+
+If you are still unsure about anything, please don't hesitate to <a href="https://forum.access-hive.org.au" target="_blank">ask for help</a>.
 
 ACCESS-Hive is an open portal for the ACCESS user community, hosted by <a href="https://www.access-nri.org.au" target="_blank">ACCESS-NRI</a>.
 
