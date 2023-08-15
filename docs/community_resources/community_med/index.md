@@ -6,15 +6,15 @@
 <div class="card-container" style="flex-wrap:nowrap;">
     <a href="community_observational_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img class="img-cover" src="../../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="Observational Catalogs">
+            <img class="img-cover" src="../../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="Observational Catalogues">
         </div>
-        <div class="vertical-card-text-container   bold">Observational Catalogs</div>
+        <div class="vertical-card-text-container   bold">Observational Catalogues</div>
     </a>
     <a href="community_model_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
-            <img class="img-cover" src="../../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="Model Catalogs">
+            <img class="img-cover" src="../../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="Model Catalogues">
         </div>
-        <div class="vertical-card-text-container   bold">Model Catalogs</div>
+        <div class="vertical-card-text-container   bold">Model Catalogues</div>
     </a>
 </div>
 <div class="card-container" style="flex-wrap:nowrap;">

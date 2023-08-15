@@ -3,7 +3,7 @@
 ???+ danger "Support Level: NOT supported by ACCESS-NRI"
     Here, we collate lists of useful tools for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
 
-Please let us know, if we are missing an important tool. See [How To Contribute](../../contribute/index.md) to get in touch.
+Please let us know, if we are missing an important tool. See [How To Contribute](../../about/how_to_contribute.md) to get in touch.
 
 <table>
 <tr>

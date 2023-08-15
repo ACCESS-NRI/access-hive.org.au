@@ -1,10 +1,10 @@
-# Community Model Data Catalogs
+# Community Model Data Catalogues
 
 ???+ danger "Support Level: NOT supported by ACCESS-NRI"
     Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
 
 
-Please let us know, if we are missing an important catalogue. See [How To Contribute](../../contribute/index.md) to get in touch.
+Please let us know, if we are missing an important catalogue. See [How To Contribute](../../about/how_to_contribute.md) to get in touch.
 
 <table>
 <tr>
@@ -28,7 +28,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 </td>
 <td width="75%">
     <div align='center' width="100%" >
-        NCI has an extensive catalog of datasets of interest to the weather and climate community. These datasets are directly available on the NCI supercomputer and the <a href="https://opus.nci.org.au/display/Help/ARE+User+Guide" target="_blank">Australian Research Environment</a>.
+        NCI has an extensive catalogue of datasets of interest to the weather and climate community. These datasets are directly available on the NCI supercomputer and the <a href="https://opus.nci.org.au/display/Help/ARE+User+Guide" target="_blank">Australian Research Environment</a>.
     </div>
 </td>
 </tr>
@@ -78,12 +78,12 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://github.com/nocollier/intake-ilamb">Intake-Ilamb Catalog</a> 
+    <a href="https://github.com/nocollier/intake-ilamb">Intake-Ilamb Catalogue</a> 
     </div>
 </td>
 <td width="75%">
     <div align='center' width="100%" >
-        The Intake-Ilamb catalog provides an yaml-style intake catalog of the reference data used for ESM model benchmarking in the International Land Model Benchmarking <a href="https://www.ilamb.org/" target="_blank">(ILAMB)</a> effort.
+        The Intake-Ilamb catalog provides an yaml-style intake catalogue of the reference data used for ESM model benchmarking in the International Land Model Benchmarking <a href="https://www.ilamb.org/" target="_blank">(ILAMB)</a> effort.
     </div>
 </td>
 </tr>
