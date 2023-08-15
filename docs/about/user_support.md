@@ -61,9 +61,9 @@ Click on the questions to unfold the answers.
 
 ??? abstract "What is the difference between **TEAMS** and **WORKING GROUPS**?"
 
-    Throughout this documentation, we are using the term **teams** to describe the teams of ACCESS-NRI.
-    
-    By contrast, we refer to **working groups** as the groups of the ACCESS community that work on specific ACCESS components, configurations or research. These are formed by the scientific community itself and ACCESS-NRI liasises with them.
+Throughout this documentation, we use the term **teams** to describe ACCESS-NRI's internal employees.
+
+By contrast, we refer to **working groups** as the groups of the ACCESS community that work on specific ACCESS components, configurations or research topics. These working groups are formed by the scientific community itself, with ACCESS-NRI liaising between them.
 
 ## Still need help?
 
