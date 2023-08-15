@@ -16,7 +16,7 @@ We therefore support projects like the Coupled Model Intercomparison Projects (C
 
 Many organizations and scientific groups in different countries have adopted a data format called <a href="https://www.unidata.ucar.edu/software/netcdf/" target="_blank">NetCDF</a> by the Unidata Community as a standard way to represent some forms of scientific data.
 
-NetCDF (with file extensions `*.nc`) is a set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.
+NetCDF (with file extensions `*.nc`) is a self-describing, machine-independent data format of array-oriented scientific data.
 
 - **Self-describing** means that the `*.nc` files include not only the data itself, but also a *header* with `metadata` that describes the layout of the data.
 - **Machine-independent** means that the  `*.nc` files can be accessed by computers with different ways of storing integers, characters, and floating-point numbers.
@@ -28,7 +28,7 @@ NetCDF (with file extensions `*.nc`) is a set of software libraries and self-des
 
 ### 1.1 NetCDF metadata
 
-Metadata enables users of data from different sources to decide which quantities are comparable, and facilitates building applications with powerful extraction, regridding, and display capabilities.
+Metadata is typically described as *information about the data* and enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding, and display capabilities.
 
 To facilitate this process, there are conventions for CF (Climate and Forecast) metadata. These are designed to promote the processing and sharing of files created with NetCDF. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. Learn more about the CF metadata conventions <a href="http://cfconventions.org" target="_blank">here</a>.
 
@@ -58,7 +58,7 @@ A full list of ERA5 parameters is available on the <a href="https://codes.ecmwf.
 
 Our Model Evaluation and Diagnostics tools are based around the reading and storing of files via the Python package `xarray`. You can find a quick overview <a href="https://docs.xarray.dev/en/stable/getting-started-guide/quick-overview.html" target="_blank">here</a> and tutorials <a href="https://tutorial.xarray.dev/intro.html" target="_blank">here</a>.
 
-We provide `xarray` through out `conda` environment, so you can use it either directly as shown below, or through the dataset capabilities of our catalog [ACCESS-NRI Model Intake Catalog Tool](../../model_evaluation_model_catalogs/index.md</a>.
+We provide `xarray` through our `conda` environment, so you can use it either directly as shown below, or through the dataset capabilities of our catalog [ACCESS-NRI Model Intake Catalog Tool](../../model_evaluation_model_catalogs/index.md</a>.
 
 ```
 import xarray as xr
