@@ -474,17 +474,27 @@ h1.homepage {
   color: var(--tab-text);
 }
 
-/* =============================================================== 
-  Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
+/* ===============================================================
+  Flex container CSS
 */
 .flex-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   gap: 0.6em;
 }
 
+.center-flex-items {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.vertical-flex-container {
+  flex-direction: column;
+}
+
+/* =============================================================== 
+  Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
+*/
 .header-btn {
   border-radius: 0.3em;
   border: 0.1em solid;
