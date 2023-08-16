@@ -13,7 +13,7 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
 <div class="card-container">
     <div class="vertical-card-half-width">
         <div class="vertical-card-image-container white-background">
-           <img class="img-cover" src="/assets/forum-question.jpg">
+           <img class="img-cover" src="/assets/access-nri-support.png">
         </div>
         <div class="vertical-card-text-container">
             <div class="bold">
