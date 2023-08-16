@@ -11,6 +11,33 @@ Contributions are encouraged from any member of the community regarding any aspe
 Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal**. There are multiple avenues which you can take to contribute to this **ACCESS-Hive** portal, depending on your interests and skill sets. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the ACCESS-Hive!
 
 <div class="card-container">
+    <div class="vertical-card-half-width">
+        <div class="vertical-card-image-container white-background">
+           <img class="img-cover" src="/assets/forum-question.jpg">
+        </div>
+        <div class="vertical-card-text-container">
+            <div class="bold">
+                <i class="fa-solid fa-circle-question"></i>
+                Have a question or need help?
+            </div>
+            <span>Ask a question on the <a href="https://forum.access-hive.org.au" target="_blank">Forum</a> and get in touch with our community!</span>
+        </div>
+    </div>
+    <div class="vertical-card-half-width">
+        <div class="vertical-card-image-container white-background">
+            <img class="img-cover" src="/assets/idea-how-to-contribute.jpg">
+        </div>
+        <div class="vertical-card-text-container">
+            <div class="bold">
+                <i class="fa-brands fa-github"></i>
+                Contribute on Github!
+            </div>
+            <span>Suggest a feature request, propose changes and bug fixes!</span>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="card-container">
     <div class="horizontal-card">
         <div class="horizontal-card-image-container white-background">
            <img class="img-cover" src="/assets/forum-question.jpg">
@@ -35,7 +62,7 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
             <span>Have you discovered a bug? Please consider raising a GitHub issue and contribute to the development of <a href="https://github.com/ACCESS-Hive/access-hive.github.io">ACCESS-Hive GitHub repository</a>!</span>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- <div class="flex-container">
     <div class="vertical-flex-container with-border">

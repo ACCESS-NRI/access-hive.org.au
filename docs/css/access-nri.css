@@ -210,7 +210,7 @@ h3 {
 
 
 /* =============================================================== 
-Homepage
+  Homepage
 */
 /* Hide Title */
 h1.homepage {
@@ -573,6 +573,12 @@ h1.homepage {
   flex-direction: column;
   max-width: 30%;
   min-height: 0;
+}
+
+.vertical-card-half-width {
+  flex-direction: column;
+  max-width: 48%;
+  height: 15em;
 }
 
 .vertical-card-image-container {
