@@ -32,7 +32,7 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
                 <i class="fa-brands fa-github"></i>
                 Contribute on Github!
             </div>
-            <span>Suggest a feature request, or propose bug fixes, or other improvements!</span>
+            <span>Suggest a feature request, or propose bug fixes on <a href="https://github.com/ACCESS-Hive/access-hive.github.io" target="_blank">ACCESS-Hive GitHub repository</a></span>
         </div>
     </div>
 </div>
