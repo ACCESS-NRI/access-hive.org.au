@@ -15,7 +15,7 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
         <div class="vertical-card-image-container white-background">
            <img class="img-cover" src="/assets/access-nri-support.png">
         </div>
-        <div class="vertical-card-text-container">
+        <div class="vertical-card-text-container with-padding">
             <div class="bold">
                 <i class="fa-solid fa-circle-question"></i>
                 Have a question or need help?
@@ -27,12 +27,12 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
         <div class="vertical-card-image-container white-background">
             <img class="img-cover" src="/assets/idea-how-to-contribute.jpg">
         </div>
-        <div class="vertical-card-text-container">
+        <div class="vertical-card-text-container with-padding">
             <div class="bold">
                 <i class="fa-brands fa-github"></i>
                 Contribute on Github!
             </div>
-            <span>Suggest a feature request, propose changes and bug fixes!</span>
+            <span>Suggest a feature request, or propose bug fixes, or other improvements!</span>
         </div>
     </div>
 </div>
