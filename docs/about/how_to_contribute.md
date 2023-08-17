@@ -27,7 +27,8 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
     </a>
     <a href="/about/how_to_contribute" class="vertical-card-half-width aspect-ratio1to1">
         <div class="vertical-card-image-container white-background">
-            <img class="img-cover" src="/assets/idea-how-to-contribute.jpg">
+            <img class="img-cover" src="/assets/github-how-to-contribute.jpg">
+            <!-- <img class="img-cover" src="/assets/access-hive-zenhub-board.png"> -->
         </div>
         <div class="vertical-card-text-container with-padding">
             <div class="bold">
