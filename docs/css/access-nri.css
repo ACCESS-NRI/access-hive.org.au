@@ -578,7 +578,7 @@ h1.homepage {
 .vertical-card-half-width {
   flex-direction: column;
   max-width: 48%;
-  height: 15em;
+  height: 20em;
 }
 
 .vertical-card-image-container {
