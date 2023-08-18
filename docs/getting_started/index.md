@@ -8,6 +8,7 @@ The steps in this section are aimed at new users of <a href="../models/">ACCESS 
 
 - Run your own experiment
 - Get model outputs
+- Analysing model outputs
 - Evaluate model performance
 - Perform other tasks involving ACCESS Models
 <hr>
