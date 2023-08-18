@@ -168,8 +168,15 @@ nav:
 
   - About:
     - Contact: about/contact.md
-    - User support: about/user_support.md
-    - How to contribute: about/how_to_contribute.md
+    - User support: about/user_support.md 
+    - Contribute:
+      - about/contribute/index.md
+      - Using the Hive Forum: about/contribute/ask_on_forum.md
+      - Contribute on GitHub: about/contribute/contribute_on_github.md
+    # - Contribute to ACCESS-Hive: 
+    #   - about/how_to_contribute.md
+    #   - Ask on Forum: about/how_to_contribute/ask_on_forum.md
+    #   - Contribute on GitHub: about/how_to_contribute/contribute_on_github.md
     - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md

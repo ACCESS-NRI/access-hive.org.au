@@ -911,3 +911,7 @@ pre:has(code):hover > button {
 .img-contain {
   object-fit: contain;
 }
+
+.nri-light-blue-color {
+  color: var(--nri-light-blue);
+}
