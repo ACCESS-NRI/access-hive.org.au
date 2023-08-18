@@ -47,7 +47,7 @@ hide:
         <div class="vertical-card-image-container">
             <img class="img-cover" src="assets/community_medlinks.jpg" alt="Model Evaluation">
         </div>
-        <div class="vertical-card-text-container highlight-bg bg-color-like-tab bold">Model Evaluation</div>
+        <div class="vertical-card-text-container highlight-bg bg-color-like-tab bold">Data and Model Evaluation</div>
     </a>
     <a href="community_resources" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">

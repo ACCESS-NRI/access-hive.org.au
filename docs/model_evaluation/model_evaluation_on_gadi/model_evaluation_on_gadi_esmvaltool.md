@@ -33,7 +33,7 @@ Our plan is to routinely run benchmarks and comparisons of the ACCESS models CMI
 
 NCI Projects requires to run the set of ESMValTool recipes:
 
-- xp65, kj13, fs38, oi10, rr3, al33, rt52, zz93, qv56
+- xp65, ct11, fs38, oi10, rr3, al33, rt52, zz93, qv56
 
 
 #### Load the `access-med` conda environment
