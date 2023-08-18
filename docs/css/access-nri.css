@@ -851,6 +851,13 @@ pre:has(code):hover > button {
   transform: rotate(-45deg);
 }
 
+/* ================================================================ 
+  Icon checklist in "Using the Hive Forum" section
+*/
+
+.icon-checklist-item:hover {
+  color: var(--md-default-fg-color);
+}
 
 /* =============================================================== 
   Miscellaneous
@@ -914,4 +921,8 @@ pre:has(code):hover > button {
 
 .nri-light-blue-color {
   color: var(--nri-light-blue);
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
 }
