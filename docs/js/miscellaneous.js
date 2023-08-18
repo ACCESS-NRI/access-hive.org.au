@@ -155,6 +155,15 @@ function toggleTerminalAnimations() {
   }
 }
 
+/*
+  Add style equals to number of children to all card containers, used for styling the card gaps in CSS
+*/
+function addCardContainerChildrenNumber() {
+  document.querySelectorAll(".grid-container").forEach(container => {
+    container.setAttribute("style",`--children: ${container.childElementCount}`);
+  })
+}
+
 
 // Join all functions
 function main() {
@@ -164,6 +173,7 @@ function main() {
   tabFunctionality();
   addExternalLinkIcon();
   toggleTerminalAnimations();
+  addCardContainerChildrenNumber();
 }
 
 // Run all functions

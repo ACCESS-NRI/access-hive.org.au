@@ -16,17 +16,17 @@ hide:
 </div>
 
 <div class="card-container large-text homepage-buttons">
-    <a href="getting_started/" class="vertical-card aspect-ratio3to1">
+    <a href="getting_started/" class="vertical-card">
         <div class="bold">New to ACCESS-Hive?</div>
-        <div class="highlight-bg bold">Get Started!</div>
+        <div class="highlight-bg bold">Get Started</div>
     </a>
-    <a href="about/user_support/" class="vertical-card aspect-ratio3to1">
+    <a href="about/user_support/" class="vertical-card">
         <div class="bold">Need help?</div>
-        <div class="highlight-bg bold">Get Support!</div>
+        <div class="highlight-bg bold">FAQ / Support</div>
     </a>
-    <a href="about/how_to_contribute" class="vertical-card aspect-ratio3to1">
-        <div class="bold">Want to contribute?</div>
-        <div class="highlight-bg bold">How to Contribute!</div>
+    <a href="about/how_to_contribute" class="vertical-card">
+        <div class="bold">Want to collaborate?</div>
+        <div class="highlight-bg bold">Contribute</div>
     </a>
 </div>
 
