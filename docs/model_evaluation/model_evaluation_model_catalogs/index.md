@@ -25,6 +25,11 @@ import intake
 catalog = intake.cat.access_nri
 ```
 
+To see all the available catalogs, simply prompt
+```
+catalog
+```
+
 Now we can load and plot available datasets of the variable "temp_global_ave" from the product "HI_CN_05" using
 
 ```python
