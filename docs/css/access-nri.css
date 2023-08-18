@@ -855,8 +855,23 @@ pre:has(code):hover > button {
   Icon checklist in "Using the Hive Forum" section
 */
 
-.icon-checklist-item:hover {
-  color: var(--md-default-fg-color);
+.checklist-item {
+  color: var(--md-default-fg-color) !important;
+  font-weight: bold;
+}
+
+.checklist-item:hover {
+  color: var(--nri-light-blue) !important;
+}
+
+.checklist-item:hover::after {
+  color: var(--nri-light-blue);
+  font-family: "fontawesome";
+  content: '\f178';
+  vertical-align: middle;
+  font-size: 0.7em;
+  margin-left: 0.3em;
+  display: inline-block;
 }
 
 /* =============================================================== 
