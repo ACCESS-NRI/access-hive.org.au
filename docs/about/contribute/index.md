@@ -2,13 +2,17 @@
 
 <img class="rectangular-img img-cover" src="../../assets/how-to-contribute-img.jpg">
 
-ACCESS-Hive is an open, community-driven user portal which hosts the documentation relevant to the **Australian Community Climate and Earth System Simulator (ACCESS)**, and the wider ACCESS community.
+ACCESS-Hive is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
 Contributions are encouraged from any member of the community regarding any aspect of the **ACCESS-Hive** website (which curates ACCESS documentation and its related resources) or the <a href="https://forum.access-hive.org.au" target="_blank">Hive Forum</a> (used for community discussions).
 
 ## How can I contribute?
 
-Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal**. There are multiple avenues which you can take to contribute to this **ACCESS-Hive** portal, depending on your interests and skill sets. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
+Anyone is welcome to contribute towards improving the **ACCESS-Hive** user portal. 
+
+<!-- There are two ways to contribute to this **ACCESS-Hive** portal.  -->
+
+The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
 
 <div class="card-container">
     <a href="/about/contribute/ask_on_forum" class="vertical-card-half-width aspect-ratio2to1">
@@ -35,7 +39,8 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive user portal*
                 Contribute on Github!
             </div>
             <span class="with-padding">
-                Suggest a feature request, or propose bug fixes on <b>ACCESS-Hive GitHub</b>!
+                <!-- Suggest a feature request, propose bug fixes or missing information on **ACCESS-Hive**  -->
+                Suggest an idea, propose bug fixes, or flag missing content on <b>ACCESS-Hive GitHub repo</b>! 
             </span>
         </div>
     </a>

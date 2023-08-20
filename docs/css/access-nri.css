@@ -362,7 +362,6 @@ h1.homepage {
   margin-top: 1.2em;
 }
 
-
 /* =============================================================== 
   Footer
 */
@@ -380,10 +379,12 @@ h1.homepage {
   display: inline-flex;
   flex-direction: column;
 }
+
 /* Funding */
 .md-footer-meta.md-typeset.md-grid :first-child {
   flex-basis: 15%;
 }
+
 /* Partners */
 .md-footer-meta.md-typeset.md-grid :last-child {
   flex-basis: 80%;
@@ -555,7 +556,8 @@ h1.homepage {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1.3px solid var(--card-borders);
+  /* border: 1.3px solid var(--card-borders); */
+  border: 1.8px solid var(--card-borders);
   border-radius: 15px;
   box-shadow: 6px 6px 10px var(--card-shadows);
   overflow: hidden;
@@ -857,7 +859,6 @@ pre:has(code):hover > button {
 
 .checklist-item {
   color: var(--md-default-fg-color) !important;
-  font-weight: bold;
 }
 
 .checklist-item:hover {
@@ -938,6 +939,10 @@ pre:has(code):hover > button {
   color: var(--nri-light-blue);
 }
 
-.vertical-align-middle {
-  vertical-align: middle;
+.nri-orange-color {
+  color: var(--nri-orange);
+}
+
+.nri-unselected-tab-color {
+  color: var(--tab-text-light);
 }
