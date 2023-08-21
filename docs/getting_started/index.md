@@ -25,7 +25,11 @@ Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
 
 ## Join relevant NCI projects
 
-NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. Access to this storage, as well as to computing resources to run models and evaluate them, is organised in *projects*.
+NCI provides multiple services that are necessary for climate computing: <a href="https://nci.org.au/our-services/supercomputing" target="_black">access to supercomputing</a> and <a href="https://nci.org.au/our-services/virtual-research-environments" target="_black">research environments</a> on <i>Gadi</i> as well as <a href="https://nci.org.au/our-services/data-services" target="_black">data services</a> including <a href="https://nci.org.au/our-services/data-storage" target="_blank">data storage</a> and the <a href="https://nci.org.au/our-services/data-collections-management" target="_black">management of data collections</a>.
+
+<div class="note">
+  For technical reasons the access to both data collections, storage, and supercomputing resources is called `project`. Note however, that not all projects come with computing resources. Furthermore, data storage and collections may vary in the amount of support and documentation, for example in the case of managed data collections which are currated and optimised by NCI.
+</div> 
 
 To perform computations on <i>Gadi</i>, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
 
@@ -40,6 +44,8 @@ Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actu
 There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out. 
 <br>
 For tasks supported by ACCESS-NRI (e.g., running a supported model configuration, using a supported model evaluation tool, etc.), you will find a list of relevant projects to join in the pages relative to each respective task.
+
+If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search">NCI Catalogue</a>.
 
 <hr>
 
