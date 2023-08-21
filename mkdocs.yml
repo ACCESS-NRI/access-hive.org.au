@@ -15,16 +15,18 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: custom-light
+      primary: none
+      accent: none
       toggle:
         icon: material/theme-light-dark
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
+      primary: none
+      accent: none
       scheme: custom-dark
       toggle:
         icon: material/theme-light-dark
