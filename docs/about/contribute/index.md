@@ -8,11 +8,7 @@ Contributions are encouraged from any member of the community regarding any aspe
 
 ## How can I contribute?
 
-Anyone is welcome to contribute towards improving the **ACCESS-Hive** user portal. 
-
-<!-- There are two ways to contribute to this **ACCESS-Hive** portal.  -->
-
-The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
+Anyone is welcome to contribute towards improving the **ACCESS-Hive** user portal. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
 
 <div class="card-container">
     <a href="/about/contribute/ask_on_forum" class="vertical-card-half-width aspect-ratio2to1">
