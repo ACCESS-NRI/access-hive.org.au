@@ -45,7 +45,7 @@ There are several NCI projects that may be relevant to you, depending on the tas
 <br>
 For tasks supported by ACCESS-NRI (e.g., running a supported model configuration, using a supported model evaluation tool, etc.), you will find a list of relevant projects to join in the pages relative to each respective task.
 
-If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search">NCI Catalogue</a>.
+If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search">NCI Data Catalogue</a> and follow the <a href="https://opus.nci.org.au/display/Help/Data+Catalogue+User+Guide" target="_blank">NCI Data Catalogue User Guide</a>.
 
 <hr>
 
