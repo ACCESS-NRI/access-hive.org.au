@@ -24,6 +24,7 @@
   --tab-text-color: 235, 235, 235; /* Color for text of top tab and back to top button */
   --tab-text: rgb(var(--tab-text-color)); /*  Main text in navigation tab */
   --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
+  --tab-text-lightest: rgba(var(--tab-text-color),.4);
   --default-bg-color: 53, 54, 58; /* Color for main background */
   --md-default-bg-color: rgb(var(--default-bg-color)); /*  Main background */
   --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
@@ -104,6 +105,7 @@
   --tab-text-color: 235, 235, 235; /* Color for text of top tab and back to top button */
   --tab-text: rgb(var(--tab-text-color)); /*  Main text in navigation tab */
   --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
+  --tab-text-lightest: rgba(var(--tab-text-color),.4);
   --default-bg-color: 255, 255, 255; /* Color for main background */
   --md-default-bg-color: rgb(var(--default-bg-color)); /*  Main background */
   --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
@@ -953,4 +955,14 @@ pre:has(code):hover > button {
 
 .med-text {
   font-size: 1.2em;
+}
+
+/* 
+  For formatting a `> Note:` markdown syntax in html 
+*/
+.markdown-notes {
+  color: var(--tab-text-light);
+  border-left: 0.2em solid var(--tab-text-lightest);
+  padding: 0.3em 0.9em;
+  margin: 0 0.6em;
 }
