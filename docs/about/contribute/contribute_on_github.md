@@ -8,11 +8,16 @@
         <br>
         <br>
         <div class="markdown-notes">
-        <b>Note:</b> Please consider that you do not need to complete all these learning courses before making your first contribution. 
+        <b>Note:</b> Please note that you do not need to complete all these learning courses before making your first contribution. 
         <b>"Introduction to Github"</b> course should make you well-equipped for following this section.
         </div>
     </div>
 </div>
+
+<terminal-window>
+    <terminal-line data="input">git commit -m "Let's 'git' started!!!"</terminal-line>
+    <terminal-line data="progress"></terminal-line>
+</terminal-window>
 
 ## Additional GitHub learning resources 
 
