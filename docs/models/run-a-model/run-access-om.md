@@ -20,8 +20,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
         <br>
         After obtaining <i>hh5</i> project membership, load the <code>conda/analysis3</code> environment to automatically retrieve <i>payu</i> as follows:
         <pre><code>module use /g/data/hh5/public/modules
-            module load conda/analysis3
-        </code></pre> 
+module load conda/analysis3</code></pre> 
         To check that <i>payu</i> is available, run:
         <pre><code>payu --version</code></pre>
         <terminal-window>
@@ -105,10 +104,9 @@ This file, which controls the general model configuration, contains several part
         <b>PBS resources</b>
         <br>
         <pre><code>queue: normal
-            walltime: 3:00:00
-            jobname: 1deg_jra55_iaf
-            mem: 1000GB
-        </code></pre>
+walltime: 3:00:00
+jobname: 1deg_jra55_iaf
+mem: 1000GB</code></pre>
         These lines can be edited to change the settings for the PBS scheduler.
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
@@ -121,9 +119,8 @@ This file, which controls the general model configuration, contains several part
         <b>Model configuration</b>
         <br>
         <pre><code>name: common
-            model: access-om2
-            input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
-        </code></pre>
+model: access-om2
+input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55</code></pre>
         These lines let <i>payu</i> know which driver to use for the main model configuration (<i>access-om</i>).
         <br>
         The <code>name</code> field here is not actually used for the configuration run so you can safely ignore it.
@@ -132,34 +129,33 @@ This file, which controls the general model configuration, contains several part
         <b>Submodels</b>
         <br>
         <pre><code>submodels:
-            &nbsp;&nbsp;- name: atmosphere
-            &nbsp;&nbsp;&nbsp;&nbsp;model: yatm
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/access/payu/access-om2/bin/coe/um7.3x
-            &nbsp;&nbsp;&nbsp;&nbsp;input:
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/ik11/inputs/access-om2/input_20201102/yatm_1deg
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rsds/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rlds/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prra/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prsn/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/psl/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/land/day/friver/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/tas/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/huss/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/uas/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/vas/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/landIce/day/licalvf/gr/v20190429
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 1<br>
-            &nbsp;&nbsp;- name: ocean
-            &nbsp;&nbsp;&nbsp;&nbsp;model: mom
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/ik11/inputs/access-om2/bin/fms_ACCESS-OM_730f0bf_libaccessom2_d750b4b.x
-            &nbsp;&nbsp;&nbsp;&nbsp;input: /g/data/ik11/inputs/access-om2/input_20201102/mom_1deg
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 216<br>
-            &nbsp;&nbsp;- name: ice
-            &nbsp;&nbsp;&nbsp;&nbsp;model: cice
-            &nbsp;&nbsp;&nbsp;&nbsp;exe: /g/data/ik11/inputs/access-om2/bin/cice_auscom_360x300_24p_edcfa6f_libaccessom2_d750b4b.exe
-            &nbsp;&nbsp;&nbsp;&nbsp;input: /g/data/ik11/inputs/access-om2/input_20201102/cice_1deg
-            &nbsp;&nbsp;&nbsp;&nbsp;ncpus: 24
-        </code></pre>
+    - name: atmosphere
+      model: yatm
+      exe: /g/data/access/payu/access-om2/bin/coe/um7.3x
+      input:
+            - /g/data/ik11/inputs/access-om2/input_20201102/yatm_1deg
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rsds/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rlds/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prra/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prsn/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/psl/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/land/day/friver/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/tas/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/huss/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/uas/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/vas/gr/v20190429
+            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/landIce/day/licalvf/gr/v20190429
+      ncpus: 1<br>
+    - name: ocean
+      model: mom
+      exe: /g/data/ik11/inputs/access-om2/bin/fms_ACCESS-OM_730f0bf_libaccessom2_d750b4b.x
+      input: /g/data/ik11/inputs/access-om2/input_20201102/mom_1deg
+      ncpus: 216<br>
+    - name: ice
+      model: cice
+      exe: /g/data/ik11/inputs/access-om2/bin/cice_auscom_360x300_24p_edcfa6f_libaccessom2_d750b4b.exe
+      input: /g/data/ik11/inputs/access-om2/input_20201102/cice_1deg
+      ncpus: 24</code></pre>
         {{ model }} is a coupled model deploying multiple submodels (i.e. model components).
         This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
@@ -169,13 +165,12 @@ This file, which controls the general model configuration, contains several part
         <b>Collate</b>
         <br>
         <pre><code>collate:
-            &nbsp;&nbsp;restart: true
-            &nbsp;&nbsp;walltime: 1:00:00
-            &nbsp;&nbsp;mem: 30GB
-            &nbsp;&nbsp;ncpus: 4
-            &nbsp;&nbsp;queue: normal
-            &nbsp;&nbsp;exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine
-        </code></pre>
+    restart: true
+    walltime: 1:00:00
+    mem: 30GB
+    ncpus: 4
+    queue: normal
+    exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine</code></pre>
         The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
     </li>
     <li>
@@ -219,16 +214,14 @@ This file, which controls the general model configuration, contains several part
         <b>Environment variables</b>
         <br>
         <pre><code>env:
-            &nbsp;&nbsp;UCX_LOG_LEVEL: 'error'
-        </code></pre>
+    UCX_LOG_LEVEL: 'error'</code></pre>
         Line to add the specified variables to the run environment.
     </li>
     <li>
         <b>Platform-specific defaults</b>
         <br>
         <pre><code>platform: 
-            &nbsp;&nbsp;nodesize: 48
-        </code></pre>
+    nodesize: 48</code></pre>
         Lines to control the platform-specific default parameters.
         <br>
         <code>nodesize: 48</code> sets the default number of cpus per node to 48, to fully utilise nodes regardless of the requested number of cpus.
@@ -237,9 +230,8 @@ This file, which controls the general model configuration, contains several part
         <b>User scripts</b>
         <br>
         <pre><code>userscripts:
-            &nbsp;&nbsp;error: resub.sh
-            &nbsp;&nbsp;run: rm -f resubmit.count
-        </code></pre>
+    error: resub.sh
+    run: rm -f resubmit.count</code></pre>
         A namelist to include separate user scripts or subcommands at various stages of a <i>payu</i> submission.
         <br>
         <code>error</code> gets called if the model does not run correctly and returns an error code;
@@ -253,12 +245,12 @@ To find out more about other configuration settings for the <code>config.yaml</c
 ### Change run length
 To change the internal run length, edit the <code>restart_period</code> field in the <code>&date_manager_nml</code> section of the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file:
 <pre><code>&date_manager_nml
-    &nbsp;&nbsp;forcing_start_date = '1958-01-01T00:00:00'
-    &nbsp;&nbsp;forcing_end_date = '2019-01-01T00:00:00'<br>
-    &nbsp;&nbsp;! Runtime for a single segment/job/submit, format is years, months, seconds,
-    &nbsp;&nbsp;! two of which must be zero.
-    &nbsp;&nbsp;restart_period = 5, 0, 0
-</code></pre>
+    forcing_start_date = '1958-01-01T00:00:00'
+    forcing_end_date = '2019-01-01T00:00:00'<br>
+    ! Runtime for a single segment/job/submit, format is years, months, seconds,
+    ! two of which must be zero.
+    restart_period = 5, 0, 0
+&end</code></pre>
 <div class="note">
     The internal run length (controlled by <code>restart_period</code>) can be different from the total run length. Also, while <code>restart_period</code> can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
 </div>
