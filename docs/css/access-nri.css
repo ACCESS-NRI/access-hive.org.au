@@ -935,8 +935,8 @@ pre:has(code):hover > button {
   object-fit: contain;
 }
 
-.nri-light-blue-color {
-  color: var(--nri-light-blue);
+.nri-link-color {
+  color: var(--md-typeset-a-color);
 }
 
 .nri-orange-color {
