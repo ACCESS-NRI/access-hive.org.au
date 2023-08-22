@@ -359,10 +359,7 @@ h1.homepage {
 /* Navigation cards in homepage */
 .homepage-navigation {
   justify-content: space-around;
-}
-
-.homepage-navigation > * {
-  width: 21%;
+  flex-wrap: nowrap;
 }
 
 .acknowledgement-img {
@@ -956,6 +953,10 @@ pre:has(code):hover > button {
 @media screen and (width <= 550px) {
   .vertical-card {
     width: 40%;
+  }
+  
+  .homepage-navigation { 
+    flex-wrap: wrap;
   }
 
   /* Forum, ACCESS-NRI and Github buttons */
