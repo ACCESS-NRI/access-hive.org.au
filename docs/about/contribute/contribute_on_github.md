@@ -19,6 +19,10 @@
     <terminal-line data="progress"></terminal-line>
 </terminal-window>
 
+## Raise a GitHub Issue
+
+For all additions or modifications to the ACCESS-Hive site, it is recommended to start by opening an <a href="https://github.com/ACCESS-Hive/access-hive.github.io/issues">issue</a> in the ACCESS-Hive GitHub repository. 
+
 ## Additional GitHub learning resources 
 
 - <a href="https://github.com/skills/introduction-to-github" target="_blank">Introduction to GitHub</a>
