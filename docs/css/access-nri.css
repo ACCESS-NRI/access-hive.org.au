@@ -182,8 +182,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 30%;
+  width: clamp(100px,30%,250px);
   min-height: 0;
+  container-type: inline-size;
 }
 
 .horizontal-card {
@@ -203,8 +204,10 @@
   justify-content: center;
   text-align: center;
   padding: 0.4rem;
+  line-height: 1.1em;
   width: 100%;
   height: 100%;
+  word-break: normal;
 }
 
 .card-image-container {
@@ -218,10 +221,13 @@
 }
 
 .vertical-card > .card-image-container {
-  flex-basis: 75%;
+  flex-basis: 70%;
 }
 .vertical-card > .card-text-container {
-  flex-basis: 25%;
+  height: 30%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 12cqi;
 }
 
 .horizontal-card > .card-image-container {
@@ -237,6 +243,12 @@
   border-radius: 0.35rem;
 }
 
+.card-text-container:last-child {
+  padding-top: 0;
+}
+.card-text-container:first-child {
+  padding-bottom: 0;
+}
 
 /* =============================================================== 
   Main body
@@ -308,27 +320,10 @@ h1.homepage {
   margin-left: 0.5rem;
 }
 
-/* 
-  Buttons After introductory paragraph
-*/
-.homepage-buttons {
-  justify-content: space-around;
-  align-items: stretch;
-  gap: 10%;
-  flex-wrap: nowrap;
-  margin-bottom: 1.5rem;
-}
-.homepage-buttons > * {
-  width: 100%;
-}
 
-/* Upper Text */
-.homepage-buttons > .vertical-card > :first-child {
-  color: var(--md-default-fg-color);
-}
-/* Lower text */
+/* Lower text on all homepage cards*/
 :is(.homepage-buttons,.homepage-navigation) .card-text-container {
-  padding-top: 0;
+  color: var(--tab-text);
 }
 :is(.homepage-buttons,.homepage-navigation) .card-text-container > * {
   border-radius: 0.4rem;
@@ -340,13 +335,34 @@ h1.homepage {
   justify-content: center;
 }
 
+/* Buttons After introductory paragraph */
+.homepage-buttons {
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 10%;
+  flex-wrap: nowrap;
+  margin-bottom: 1.5rem;
+}
+.homepage-buttons > * {
+  width: 100%;
+}
+
+.homepage-buttons > .vertical-card > :first-child {
+  color: var(--md-default-fg-color);
+  font-size: 1.2em;
+}
+.homepage-buttons .card-text-container {
+  height: 1.8em;
+  font-size: 2em;
+}
+
+/* Navigation cards in homepage */
 .homepage-navigation {
-  justify-content: center;
-  gap: 1.2em;
+  justify-content: space-around;
 }
 
 .homepage-navigation > * {
-  max-width: 22%;
+  width: 21%;
 }
 
 .acknowledgement-img {
@@ -885,7 +901,6 @@ pre:has(code):hover > button {
   font-size: 1.4em;
 }
 
-
 /* =============================================================== 
   Media queries for website responsiveness
 */
@@ -925,7 +940,7 @@ pre:has(code):hover > button {
   }
   /* Lower text in homepage buttons */
   .homepage-buttons > .vertical-card > :last-child {
-    font-size: 3.5vw;
+    font-size: calc(2.9vw + 0.15rem);
   }
   /* Homepage buttons Cards */
   .homepage-buttons > .vertical-card {
@@ -939,6 +954,10 @@ pre:has(code):hover > button {
 }
 
 @media screen and (width <= 550px) {
+  .vertical-card {
+    width: 40%;
+  }
+
   /* Forum, ACCESS-NRI and Github buttons */
   .header-btn-container {
     flex-grow: 0;
@@ -963,11 +982,11 @@ pre:has(code):hover > button {
   /* Homepage introduction paragraph */
   /* Upper text */
   .introduction > :first-child > :first-child {
-    font-size: 5.5vw;
+    font-size: calc(4.9vw + 0.15rem);
   }
   /* Lower text */
   .introduction > :first-child > :last-child {
-    font-size: 3.5vw;
-  }
+    font-size: calc(2.9vw + 0.15rem);
+   }
   
 }

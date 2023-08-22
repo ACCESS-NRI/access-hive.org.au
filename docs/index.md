@@ -15,7 +15,7 @@ hide:
     </div>
 </div>
 
-<div class="card-container large-text homepage-buttons">
+<div class="card-container homepage-buttons">
     <a href="getting_started/" class="vertical-card">
         <div class="bold">New to ACCESS-Hive?</div>
         <div class="card-text-container">
@@ -36,7 +36,7 @@ hide:
     </a>
 </div>
 
-<div class="card-container large-text homepage-navigation">
+<div class="card-container homepage-navigation">
     <a href="models" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-cover" src="assets/ACCESS-MODEL.png" alt="Models">

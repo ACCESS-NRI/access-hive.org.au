@@ -160,7 +160,7 @@ function toggleTerminalAnimations() {
 */
 function addCardContainerChildrenNumber() {
   document.querySelectorAll(".card-container").forEach(container => {
-    container.setAttribute("style",`--children: ${container.childElementCount}`);
+    container.setAttribute("style",`--num-children: ${container.childElementCount}`);
   })
 }
 
