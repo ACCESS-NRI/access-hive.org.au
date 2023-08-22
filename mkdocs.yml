@@ -134,6 +134,8 @@ nav:
         # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
         # - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
         # - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Model Live Diagnostics:
+      - model_evaluation/model_diagnostics/index.md
     - Evaluation Tools: 
       - model_evaluation/model_evaluation_on_gadi/index.md
       # - Frameworks on Gadi:

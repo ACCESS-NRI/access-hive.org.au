@@ -1,4 +1,4 @@
-#  Model Evaluation and Diagnostics (MED) 
+#  Data, Model Evaluation and Diagnostics (MED) 
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
@@ -47,6 +47,16 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
     </a>
 </div>
 
+### Model Live Diagnostics
+<div class="card-container">
+    <a href="model_diagnostics" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Diagnostic plot of total liquid seawater mass over time of a currently running model calculation." class="img-cover"></img>
+        </div>
+        <div class="vertical-card-text-container bold ">Model Live Diagnostics</div>
+    </a>
+</div>
+
 ### Supported Community Frameworks on Gadi
 
 <div class="card-container">
@@ -81,7 +91,6 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
 
 We are currently setting up a range of tools that will help you to better evaluate and diagnose climate models:  
 
-* Model Diagnostics for on-the-fly analysis of your models at different snapshots  
 * Data format processing tools like APP4  
 * An Evaluation Recipe Gallery with searching functionality  
 
