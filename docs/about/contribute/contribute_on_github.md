@@ -8,16 +8,24 @@
         <br>
         <br>
         <div class="markdown-notes">
-        <b>Note:</b> Please note that you do not need to complete all these learning courses before making your first contribution. 
+        <b>Note:</b> Please note that you <i>do not</i> need to complete all these learning courses before making your first contribution. 
         <b>"Introduction to Github"</b> course should make you well-equipped for following this section.
         </div>
     </div>
 </div>
 
+## Let's get started! 
+
 <terminal-window>
     <terminal-line data="input">git commit -m "Let's 'git' started!!!"</terminal-line>
     <terminal-line data="progress"></terminal-line>
 </terminal-window>
+
+This documentation is based on the <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> documentation framework, which is built on top of <a href="https://www.mkdocs.org" target="_blank">MkDocs</a> static site generator. This documentation is written in Markdown format. Please refer to this <a href="https://www.markdownguide.org/cheat-sheet/">cheatsheet</a> for a quick reference to basic markdown syntax, which is used by <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> theme used in this website.
+
+<div class="markdown-notes">
+    <b>Note:</b> The ACCESS-Hive portal includes content that is not curated and hosted by ACCESS-NRI, as we collate useful resources together for making comprehensive step-by-step guides for the ACCESS community.
+</div>
 
 ## Raise a GitHub Issue
 
