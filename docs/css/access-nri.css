@@ -360,6 +360,7 @@ h1.homepage {
 .homepage-buttons .card-text-container {
   height: 1.8em;
   font-size: 2em;
+  padding: 2.5%;
 }
 
 /* Navigation cards in homepage */
