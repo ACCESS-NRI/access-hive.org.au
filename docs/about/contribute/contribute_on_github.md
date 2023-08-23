@@ -18,14 +18,19 @@
 
 <terminal-window>
     <terminal-line data="input">git commit -m "Let's 'git' started!!!"</terminal-line>
+    <terminal-line></terminal-line>
     <terminal-line data="progress"></terminal-line>
 </terminal-window>
 
-This documentation is based on the <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> documentation framework, which is built on top of <a href="https://www.mkdocs.org" target="_blank">MkDocs</a> static site generator. This documentation is written in Markdown format. Please refer to this <a href="https://www.markdownguide.org/cheat-sheet/">cheatsheet</a> for a quick reference to basic markdown syntax, which is used by <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> theme used in this website.
+This documentation is written in Markdown format and is based on the <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> documentation framework, which is built on top of <a href="https://www.mkdocs.org" target="_blank">MkDocs</a> static site generator. Please refer to this <a href="https://www.markdownguide.org/cheat-sheet/">cheatsheet</a> for a quick reference to basic markdown syntax, which is used by <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> theme used in this website.
 
 <div class="markdown-notes">
-    <b>Note:</b> The ACCESS-Hive portal includes content that is not curated and hosted by ACCESS-NRI, as we collate useful resources together for making comprehensive step-by-step guides for the ACCESS community.
+    <b>Note:</b> The ACCESS-Hive portal includes content that is not curated and hosted by ACCESS-NRI. This is because the respective content is identified as a necessary step for making comprehensive guides to be referenced by the ACCESS community.
 </div>
+
+## Become a member of the ACCESS-Hive GitHub repo
+
+The <b>ACCESS-Hive user portal</b> is open to receiving contributions from anyone relating to any aspect of the website, including bug fixes, content additions, and any other enhancement suggestions.  
 
 ## Raise a GitHub Issue
 
