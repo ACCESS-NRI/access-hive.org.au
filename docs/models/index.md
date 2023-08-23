@@ -10,7 +10,7 @@ ACCESS models are computer codes comprising complex mathematical representations
 
 ## Supported ACCESS Model Configurations
 <div class="card-container" style="flex-direction: column">
-    <a href="configurations/access-cm/" class="horizontal-card" style="height: 10em;">
+    <a href="configurations/access-cm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
         </div>
@@ -21,7 +21,7 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-esm/" class="horizontal-card" style="height: 10em;">
+    <a href="configurations/access-esm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-cover"></img> 
         </div>
@@ -32,7 +32,7 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
-    <a href="configurations/access-om/" class="horizontal-card" style="height: 10em;">
+    <a href="configurations/access-om/" class="horizontal-card">
         <div class="card-image-container">
             <img src="../assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-cover"></img> 
         </div>

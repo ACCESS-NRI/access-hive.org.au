@@ -193,6 +193,7 @@
   justify-content: center;
   align-items: stretch;
   width: 100%;
+  height: 8rem;
 }
 
 .card-text-container {
@@ -217,7 +218,6 @@
   padding: 0.4rem;
   overflow: hidden;
   width: 100%;
-  height: 100%;
 }
 
 .vertical-card > .card-image-container {
@@ -243,11 +243,15 @@
   border-radius: 0.35rem;
 }
 
-.card-text-container:last-child {
+.vertical-card > .card-text-container:last-child {
   padding-top: 0;
 }
-.card-text-container:first-child {
+.vertical-card > .card-text-container:first-child {
   padding-bottom: 0;
+}
+
+.horizontal-card > .card-text-container > *:first-child:not(:only-child) {
+  margin-bottom: 0.5em;
 }
 
 /* =============================================================== 
@@ -763,13 +767,14 @@ pre:has(code):hover > button {
   width: fit-content;
   overflow: auto;
   margin-top: 1em;
+  gap: 1px;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tabLabels button {
   color: var(--md-default-fg-color--light);
   border-bottom: 0.1rem solid transparent;
-  border-radius: 0.1rem 0.1rem 0 0;
+  border-radius: 0.6rem 0.6rem 0 0;
   cursor: pointer;
   flex-shrink: 0;
   font-size: .64rem;
@@ -784,7 +789,7 @@ pre:has(code):hover > button {
 
 /* Change background color of buttons on hover */
 .tabLabels button:hover {
-  color: var(--active-version-tab);
+  background-color: var(--active-version-tab-background);
 }
 
 /* Create an active/current tablink class */
@@ -793,7 +798,6 @@ pre:has(code):hover > button {
   border-bottom: solid 2px currentColor;
   transition: border-bottom .2s;
   background-color: var(--active-version-tab-background);
-  border-radius: 0.6rem 0.6rem 0 0;
 }
 
 /* Style the tab content */
@@ -955,7 +959,36 @@ pre:has(code):hover > button {
     width: 40%;
   }
   
-  .homepage-navigation { 
+  /* Change the horizontal card to be rendered as a vertical one with aspect-ratio 1 */
+  .horizontal-card {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 40%;
+    min-height: 0;
+    aspect-ratio: 1;
+    container-type: inline-size;
+  }
+  .horizontal-card > .card-text-container {
+    height: 30%;
+    flex: 0 0 auto;
+    font-size: 12cqi;
+    font-weight: 600;
+  }
+  .horizontal-card > .card-text-container:last-child {
+    padding-top: 0;
+  }
+  .horizontal-card > .card-text-container > *:last-child:not(:only-child) {
+    display: none;
+  }
+  .horizontal-card > .card-text-container > *:first-child:not(:only-child) {
+    margin-bottom: 0;
+  }
+  .horizontal-card > .card-image-container {
+    flex-basis: 70%;
+  }
+  /* Wrap homepage navigation cards */
+  .homepage-navigation {
     flex-wrap: wrap;
   }
 
