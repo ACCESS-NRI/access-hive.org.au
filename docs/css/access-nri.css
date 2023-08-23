@@ -204,7 +204,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0.4rem;
   line-height: 1.1em;
   width: 100%;
   height: 100%;
@@ -215,26 +214,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.4rem;
   overflow: hidden;
   width: 100%;
 }
 
 .vertical-card > .card-image-container {
   flex-basis: 70%;
+  padding: 3.5%;
 }
 .vertical-card > .card-text-container {
   height: 30%;
   flex-grow: 0;
   flex-shrink: 0;
   font-size: 12cqi;
+  padding: 3.5%;
 }
 
 .horizontal-card > .card-image-container {
   flex-basis: 25%;
+  padding: 0.4rem;
 }
 .horizontal-card > .card-text-container {
   flex-basis: 75%;
+  padding: 0.4rem;
 }
 
 .card-image-container > img {
@@ -1000,6 +1002,10 @@ pre:has(code):hover > button {
     flex: 0 0 auto;
     font-size: 12cqi;
     font-weight: 600;
+    padding: 3.5%;
+  }
+  .horizontal-card > .card-image-container {
+    padding: 3.5%;
   }
   .horizontal-card > .card-text-container:last-child {
     padding-top: 0;

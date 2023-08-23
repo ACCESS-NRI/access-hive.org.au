@@ -8,25 +8,25 @@ At the moment, we are providing support for an the following model evaluation fr
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB" class="img-cover"></img>
         </div>
-        <div class="card-text-container bold fitText">ILAMB</div>
+        <div class="card-text-container bold">ILAMB</div>
     </a>
     <a href="model_evaluation_on_gadi_esmvaltool" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
-        <div class="card-text-container bold fitText">ESMValTool</div>
+        <div class="card-text-container bold">ESMValTool</div>
     </a>
     <a href="model_evaluation_on_gadi_pangeo_cosima" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA" class="img-cover"></img>
         </div>
-        <div class="card-text-container bold fitText">COSIMA cookbook</div>
+        <div class="card-text-container bold">COSIMA cookbook</div>
     </a>
     <a href="model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
         </div>
-        <div class="card-text-container bold fitText">METplus</div>
+        <div class="card-text-container bold">METplus</div>
     </a>
 </div>
 

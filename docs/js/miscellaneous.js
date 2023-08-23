@@ -165,12 +165,12 @@ function addCardContainerChildrenNumber() {
 }
 
 /*
-  Fit Text to div if overflowing
+  Fit text to div if overflowing (for 'card-text-container' class)
 */
 function fitText() {
   const coeff = 0.98;
   function isOverflowing(el) {
-    return el.scrollHeight >= el.clientHeight || el.scrollWidth >= el.clientWidth;
+    return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
   }
   function fit(el) {
     el.style.fontSize = null;
@@ -181,7 +181,7 @@ function fitText() {
   const observer = new ResizeObserver(entries => {
     entries.forEach(entry => fit(entry.target));
   })
-  document.querySelectorAll('.fitText').forEach(el => {
+  document.querySelectorAll('.card-text-container').forEach(el => {
     observer.observe(el);
   })
 }
