@@ -164,6 +164,27 @@ function addCardContainerChildrenNumber() {
   })
 }
 
+/*
+  Fit Text to div if overflowing
+*/
+function fitText() {
+  const coeff = 0.98;
+  function isOverflowing(el) {
+    return el.scrollHeight >= el.clientHeight || el.scrollWidth >= el.clientWidth;
+  }
+  function fit(el) {
+    el.style.fontSize = null;
+    while (isOverflowing(el)) {
+      el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * coeff}px`;
+    }
+  }
+  const observer = new ResizeObserver(entries => {
+    entries.forEach(entry => fit(entry.target));
+  })
+  document.querySelectorAll('.fitText').forEach(el => {
+    observer.observe(el);
+  })
+}
 
 // Join all functions
 function main() {
@@ -174,6 +195,7 @@ function main() {
   addExternalLinkIcon();
   toggleTerminalAnimations();
   addCardContainerChildrenNumber();
+  fitText();
 }
 
 // Run all functions
