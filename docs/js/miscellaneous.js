@@ -165,7 +165,7 @@ function addCardContainerChildrenNumber() {
 }
 
 /*
-  Fit text to div if overflowing (for 'card-text-container' class)
+  Fit text to div if overflowing (for 'card-text-container' and 'fitText' class)
 */
 function fitText() {
   const coeff = 0.98;
@@ -181,7 +181,7 @@ function fitText() {
   const observer = new ResizeObserver(entries => {
     entries.forEach(entry => fit(entry.target));
   })
-  document.querySelectorAll('.card-text-container').forEach(el => {
+  document.querySelectorAll('.card-text-container,.fitText').forEach(el => {
     observer.observe(el);
   })
 }
