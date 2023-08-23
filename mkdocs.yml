@@ -60,7 +60,7 @@ copyright: Copyright &copy; 2022 ACCESS-NRI
 plugins:
   - git-revision-date-localized:
       type: date
-      enable_creation_date: true
+      enable_creation_date: false
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - macros
