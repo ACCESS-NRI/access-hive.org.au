@@ -36,7 +36,7 @@ ilamb-run --config config.cfg --model_setup model_setup.txt --regions regions.tx
 
 - `config.cfg` defines which observables and observational datasets will be compared
 - `model_setup.txt` defines the paths of the models that will be compared
-- `regions.txt` defines the regions (like `global` or `australia`) that will be compared.
+- `regions.txt` defines the regions (like `global`, `aust` for Australia, or your own region definition) that will be compared.
 
 While you can define these files yourself, ACCESS-NRI is providing the files and tools to get your model paths sorted and perform computations on Gadi.
 
