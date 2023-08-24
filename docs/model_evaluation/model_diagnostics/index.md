@@ -20,11 +20,11 @@ For detailed information, tutorials and more, please go to the
 
 In our showcase, we will monitor the progress of an [ACCESS Coupled Model 2 (CM2)](../../models/run-a-model/run-access-cm.md) run.
 
-We first start a session (for details on the paths and package see the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">documentation</a>):
+We first start a session (for details on the paths and package see the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">documentation</a>) to automatically check for new model output with a given period (here: 20 minutes):
 
 ```
 import med_diagnostics
-session = med_diagnostics.session.CreateModelDiagnosticsSession(model_type='CM2', model_path='path/to/your/live/model/data/output', period=5)
+session = med_diagnostics.session.CreateModelDiagnosticsSession(model_type='CM2', model_path='path/to/your/live/model/data/output', period=20)
 ```
 
 Once a session is started, you will see the following sesion summary and blue status message while the new intake catalogue is being built from the live model data. Depending on the size of the model data, this can take a number of minutes.
