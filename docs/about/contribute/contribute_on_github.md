@@ -4,7 +4,7 @@
         <i class="fa-regular fa-square-check nri-green-color with-padding"></i> If are new to GitHub, you will first need to <a href="https://github.com">sign up</a> for a GitHub account.
         <br>
         <i class="fa-regular fa-lightbulb nri-orange-color with-padding"></i> 
-        We'd also encourage you to complete <a href="#additional-github-learning-resources">self-paced GitHub learning courses</a> for brushing up basic GitHub skills. 
+        For learning GitHub, We'd also encourage you to complete <a href="#additional-github-learning-resources">self-paced GitHub learning courses</a> for brushing up basic GitHub skills. 
         <br>
         <br>
         <div class="markdown-notes">
@@ -28,7 +28,7 @@ This documentation is written in Markdown format and is based on the <a href="ht
     <b>Note:</b> Since, ACCESS-Hive curates useful resources for making comprehensive guides for the ACCESS community, it includes content that is not curated and hosted by ACCESS-NRI. 
 </div>
 
-## Become a member of the ACCESS-Hive GitHub repository ?? -- confirm
+## Become a member of the ACCESS-Hive GitHub repository
 
 The <b>ACCESS-Hive user portal</b> is open to receiving contributions from anyone relating to different aspects of the website, including <i>bug fixes</i>, <i>content additions</i>, and <i>enhancement suggestions</i>. The <a href="https://github.com/ACCESS-Hive" target="_blank">ACCESS-Hive GitHub organisation</a> members would have write access to the <a href="https://github.com/ACCESS-Hive/access-hive.github.io/" target="_blank">ACCESS-Hive repository</a>, and they can contribute by creating their own branches instead of maintaining their individual forks.
 
@@ -46,7 +46,7 @@ Once you are a member of the <a href="https://github.com/ACCESS-Hive" target="_b
 
 For cloning this repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
 
-To start with, if you have an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys" target="_blank">existing SSH key</a>, then simply <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">add this key to your github account</a>, and you are all set to clone the repository. In case you don't have the SSH keys set up on your local computer, it's easy to <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">create a new SSH key locally</a>, and then <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">link this key to your github account</a>. 
+To start with, if you have an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys" target="_blank">existing SSH key</a>, then simply <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">add this key to your github account</a>, and you are all set to clone the repository. In case you don't have the SSH keys set up on your local computer, it's easy to <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">create a new SSH key locally</a>, and then <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">feel free to link this key to your github account</a>. 
 
 <terminal-window>
     <terminal-line data="input">git clone git@github.com:ACCESS-Hive/access-hive.github.io.git</terminal-line>
@@ -59,6 +59,23 @@ To start with, if you have an <a href="https://docs.github.com/en/authentication
 <terminal-line>Receiving objects: 100% (54754/54754), 103.15 MiB | 6.97 MiB/s, done.</terminal-line>
 <terminal-line>Resolving deltas: 100% (28610/28610), done.</terminal-line>
 </terminal-window>
+
+## Make changes locally
+After cloning the repository locally, create a new branch to make your local changes and then push it to GitHub respectively: 
+
+<terminal-window>
+    <terminal-line data="input">git checkout -b spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line></terminal-line>
+    <terminal-line>Cloning into 'access-hive.github.io'...</terminal-line>
+<terminal-line>remote: Enumerating objects: 54754, done.</terminal-line>
+<terminal-line>remote: Counting objects: 100% (4096/4096), done.</terminal-line>
+<terminal-line>remote: Compressing objects: 100% (560/560), done.</terminal-line>
+<terminal-line>remote: Total 54754 (delta 2178), reused 4053 (delta 2155), pack-reused 50658</terminal-line>
+<terminal-line>Receiving objects: 100% (54754/54754), 103.15 MiB | 6.97 MiB/s, done.</terminal-line>
+<terminal-line>Resolving deltas: 100% (28610/28610), done.</terminal-line>
+</terminal-window>
+
+## Deploying Website Preview
 
 ## Additional GitHub learning resources 
 
