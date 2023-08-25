@@ -61,18 +61,21 @@ To start with, if you have an <a href="https://docs.github.com/en/authentication
 </terminal-window>
 
 ## Make changes locally
-After cloning the repository locally, create a new branch to make your local changes and then push it to GitHub respectively: 
+After cloning the repository locally, create a new branch to make your local changes and then push it to GitHub: 
 
 <terminal-window>
     <terminal-line data="input">git checkout -b spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line>Switched to a new branch 'spongebob/fix-hive-title-issue-234'</terminal-line>
     <terminal-line></terminal-line>
-    <terminal-line>Cloning into 'access-hive.github.io'...</terminal-line>
-<terminal-line>remote: Enumerating objects: 54754, done.</terminal-line>
-<terminal-line>remote: Counting objects: 100% (4096/4096), done.</terminal-line>
-<terminal-line>remote: Compressing objects: 100% (560/560), done.</terminal-line>
-<terminal-line>remote: Total 54754 (delta 2178), reused 4053 (delta 2155), pack-reused 50658</terminal-line>
-<terminal-line>Receiving objects: 100% (54754/54754), 103.15 MiB | 6.97 MiB/s, done.</terminal-line>
-<terminal-line>Resolving deltas: 100% (28610/28610), done.</terminal-line>
+    <terminal-line data="input">git push --set-upstream origin spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</terminal-line>
+    <terminal-line>remote: </terminal-line>
+    <terminal-line>remote: Create a pull request for 'spongebob/fix-hive-title-issue-234' on GitHub by visiting:</terminal-line>
+    <terminal-line>remote:      https://github.com/ACCESS-Hive/access-hive.github.io/pull/new/spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line>remote: </terminal-line>
+    <terminal-line>To github.com:ACCESS-Hive/access-hive.github.io.git</terminal-line>
+    <terminal-line>* [new branch]        spongebob/fix-hive-title-issue-234 -> spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line>branch 'spongebob/fix-hive-title-issue-234' set up to track 'origin/spongebob/fix-hive-title-issue-234'.</terminal-line>
 </terminal-window>
 
 ## Deploying Website Preview
