@@ -864,15 +864,12 @@ pre:has(code):hover > button {
 */
 .external-link::after {
   font-family: "fontello";
-  content: '\e803';
+  content: '\e804';
   vertical-align: super;
   font-size: 0.5em;
   margin-left: 0.3em;
-  display: inline-flex;
+  display: inline;
   transform: rotate(-45deg);
-  /* word-break: keep-all;
-  line-break: strict;
-  white-space: nowrap; */
 }
 
 /* =============================================================== 
