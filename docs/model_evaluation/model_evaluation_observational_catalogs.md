@@ -6,10 +6,10 @@ You can browse and search the available data collections on the NCI Data Collect
 
 <div class="card-container">
     <a href="https://geonetwork.nci.org.au/" target="_blank" class="vertical-card aspect-ratio2to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold ">Search for data here</div>
+        <div class="card-text-container bold">Search for data here</div>
     </a>
 </div>
 

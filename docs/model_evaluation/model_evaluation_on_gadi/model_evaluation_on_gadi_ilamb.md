@@ -1,58 +1,69 @@
-# `ilamb` on Gadi at NCI
+# ILAMB and IOMB on Gadi at NCI
 
-`ilamb` is a Python framework for for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB).
+## What are ILAMB and IOMB?
 
-???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+`ilamb` is a Python framework for International Land Model Benchmarking (ILAMB) and International Ocean Model Benchmark (IOMB). In brief, `ilamb` can be used to quantitatively compare a defined set of observable variables with a number of land and ocean models.
+
+???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
     ILAMB/IOMB is a community-developed climate model diagnostics and evaluation software package.
     <!-- Code ownership and support -->
-    ACCESS-NRI does not own the code of ILAMB/IOMB, but actively supports the use of ILAMB/IOMB on Gadi.
-    ACCESS-NRI provides access to the latest version of ILAMB/IOMB via the `xp65` access-med conda environment deployed on NCI-Gadi.
+    ACCESS-NRI does not own the code of ILAMB/IOMB, but actively supports the use of ILAMB/IOMB on <i>Gadi</i>.
+    ILAMB development is primarily performed by the <a href="https://www.bgc-feedbacks.org/" target="_blank">RUBISCO</a> Science Focus Area and supported by the <a href="https://climatemodeling.science.energy.gov/program-area/regional-global-model-analysis" target="_blank">RGMA</a> Activity of the <a href="https://science.osti.gov/ber/Research/eessd" target="_blank">EESSD</a> division of the <a href="https://science.osti.gov/ber" target="_blank">BER</a> program in the United States Department of Energy’s Office of Science.
+    ACCESS-NRI provides access to the latest version of ILAMB/IOMB via the `xp65` access-med conda environment deployed on <i>Gadi</i>.
 
-ACCESS-NRI is maintaining a version of the package `ilamb`  on Gadi at the National Compuational Infrastructure (NCI).
+This documentation is tailored to using the tool within the NCI infrastructure and designed to supplement, rather than replace, the official documentation. We encourage users to read the <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and its <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">Tutorials</a>.
 
-Here, we provide a quick tutorial on how use `ilamb` on Gadi. We assume that you already have access to Gadi, logged onto Gadi via secure shell (ssh) and loaded our `access-med` `conda` environment (if not, follow [these instructions](../model_evaluation_getting_started/index.md)).
+## Using ILAMB and IOMB on Gadi
 
-All you need are configuration files and paths for models and data (we show you how to set up all necessary steps and options below). You should then be able to execute `ilamb` with the following command:
+`ilamb` is provided through both the `xp65` and `hh5` code projects on <i>Gadi</i> at the National Computational Infrastructure. To use `ilamb` through this infrastructure, you need to have an NCI account and join the projects. See our [Getting Started Guide](../../getting_started/index.md).
 
+You will find the information needed to run ILAMB and IOMB on Gadi in our documentation:
+
+<div class="card-container">
+    <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio1to1" target="_blank">
+        <div class="vertical-card-image-container">
+            <img src="../../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-contain"></img>
+        </div>
+        <div class="vertical-card-text-container bold ">Documentation for ILAMB on Gadi</div>
+    </a>
+</div>
+
+To run `ilamb`, you need to execute the command `ilamb-run` with a number of arguments/files:
 ```py
-ilamb-run --config config.cfg --model_root $ILAMB_ROOT/MODELS --regions global
+ilamb-run --config config.cfg --model_setup model_setup.txt --regions regions.txt
 ```
 
-This will create output files that you can load as a html website via the prompt
+- `config.cfg` defines which observables and observational datasets will be compared
+- `model_setup.txt` defines the paths of the models that will be compared
+- `regions.txt` defines the regions (like `global`, `aust` for Australia, or your own region definition) that will be compared.
 
-```
-python -m http.server
-```
+While you can define these files yourself, ACCESS-NRI is providing the files and tools to get your model paths sorted and perform computations on Gadi.
 
-This command will show you which port the browser is sending output to (for example http://0.0.0.0:8000/). Opening this link in your browser will show a summary table of the `ilamb` runs in the center, which will look similar to this minimum example:
+All you need to do is figure out which observations and models you would like to compare: ACCESS-NRI, and NCI as the host, are providing replicas of the ILAMB and IOMB observational data sets through the NCI project `ct11`. Thanks to NCI as national data repository, you can easily get access to a large amount of model outputs on <i>Gadi</i>, including ACCESS mdoel output, and compare it to observations. You can read on how to find more observational data in our [Observational Data Section](../model_evaluation_observational_catalogs.md) and how to find model outputs in our [Model Data Section](../model_evaluation_model_catalogs/index.md).
 
-<p align="center"><img align="center" width="30%" src="../../../assets/model_evaluation/ilamb_output_1.png" alt="Starting side of ilamb output"></p>  
+If you want to learn how to adjust the `ilamb` setup, you can also read the official <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and its <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">Tutorial</a>.
 
-Clicking on a row of the table will expand it to reveal the underlying datasets used. Clicking on CERES, for example, will take you to another page which presents detailed scores and plots:
+## Showcases: CMIP6 comparisons and ACCESS ESM1.5 benchmarking
 
-<p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_2.png" alt="Detailed output of Surface Upward SW Radiation Benchmarking"></p>  
+ACCESS-NRI is maintaining a collection of benchmark comparisons for the community, such as the comparison of Coupled Model Intercomparison Project (CMIP) like
 
-## 1 Prerequisites
+- <a href="http://130.56.247.78/build_oi10_2/index.html" target="_blank">CMIP5 and CMIP6 Land Models</a>,  
+- <a href="http://130.56.247.78/build_al33/index.html" target="_blank">CMIP6 Land Models</a>,  
+- <a href="http://130.56.247.78/build_rr3/index.html" target="_blank">Offline CMIP6 Models</a>, and  
+- <a href="http://130.56.247.78/build_iomb/index.html" target="_blank">CMIP5 and CMIP6 Ocean Models</a>.
 
-In this tutorial, we are specifically explaining how to use `ilamb` on NCI's Gadi. If you want to install and adjust `ilamb` locally, please follow the official installation instructions at [https://www.ilamb.org/doc/install.html](https://www.ilamb.org/doc/install.html).
+For our showcase, however, we are comparing the ACCESS Earth System Model version 1.5 that is supported by ACCESS-NRI with two other Earth System Models:
 
-### 1.1 $ILAMB_ROOT
+- <a href="https://research.csiro.au/access/about/esm1-5/" target="_blank">ACCESS-ESM1.5 (ACCESS Earth System Model version 1.5)</a>,
+- <a href="https://gmd.copernicus.org/articles/13/977/2020/" target="_blank">BCC ESM1 (Beijing Climate Center Earth System Model version 1)</a>, and
+- <a href="https://gmd.copernicus.org/articles/12/4823/2019/gmd-12-4823-2019.html" target="_blank">CanESM5 (Canadian Earth System Model version 5)</a>
 
-In our default setup, we will place ILAMB_ROOT and the shapefiles for cartopy directly in the home directory. After logging onto Gadi, you have to create the ILAMB_ROOT directory
-```
-mkdir $PWD/ILAMB_ROOT
-mkdir $ILAMB_ROOT/DATA
-mkdir $ILAMB_ROOT/MODELS
-```
+We have performed a large amount of benchmark comparisons that were defined in the configuration file. We have organised the comparison of variables under different sections, like the <i>Hydrology Cycle</i>. For different variables, like the gross primary productivity `gpp`, we can compare to one or more datasets, like the gross primary productivity measurements of <a href="https://fluxnet.org/data/fluxnet2015-dataset/" target="_blank">FLUXNET2015</a>. Clicking on a row of the table will expand it to reveal the underlying datasets used. In the below table, the colormap extends from best values in purple to worse data in orange.
 
-You can then simply export their paths after login as:
-```
-export ILAMB_ROOT=$PWD/ILAMB_ROOT
-export CARTOPY_DATA_DIR=/g/data/xp65/public/apps/cartopy-data
-```
+<p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_3.png" alt="Starting side of ilamb output"></p>  
 
-You can of course change the path of the directory, but will need to take this into account for the PBS job by adding a command to change into the $ILAMB_ROOT directory (see [PBS setup comments](https://github.com/svenbuder/ILAMB-workflow/edit/main/ilamb_note.md#52-portable-batch-system-pbs-jobs-on-nci)).
+Clicking on one of these datasets, for example CERESed4.1, will take you to an interactive and quantitative comparison page for Albedo measurements of the <a href="https://ceres.larc.nasa.gov" target="_blank">Clouds and the Earth’s Radiant Energy System (CERES) project</a>:
 
 ### 1.2 ILAMB_ROOT/DATA
 

@@ -5,172 +5,262 @@
 /* Import medium-weight Roboto font for tabs */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-[data-md-color-scheme="custom-dark"] {
-  --nri-green-color: 166, 206, 57; 
-  --nri-orange-color: 250, 166, 25; 
-  --nri-dark-blue-color: 17, 93, 151;
-  --nri-blue-color: 6, 174, 239;
+:root {
+  --nri-green-color: 165, 205, 58; 
+  --nri-orange-color: 249, 166, 28; 
+  --nri-dark-blue-color: 0, 91, 148;
+  --nri-blue-color: 1, 173, 238;
   --nri-light-blue-color: 142, 215, 248;
   --nri-green: rgb(var(--nri-green-color)); /* rgb(166, 206, 57) */
   --nri-orange: rgb(var(--nri-orange-color)); /* rgb(250, 166, 25) */
   --nri-dark-blue: rgb(var(--nri-dark-blue-color)); /* rgb(17, 93, 151) */
   --nri-blue: rgb(var(--nri-blue-color)); /* rgb(6, 174, 239) */
   --nri-light-blue: rgb(var(--nri-light-blue-color)); /* rgb(142, 215, 248) */
+  --tab-text-color: 235, 235, 235; /* Color for text of top tab and back to top button */
+  --tab-text: rgb(var(--tab-text-color)); /*  Main text in navigation tab */
+  --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
+  --md-primary-fg-color: rgb(29, 29, 29); /* top banner background */
+  --md-primary-fg-color--dark: var(--nri-dark-blue); /*  top tab background */
+  --primary-bg-color: var(--tab-text-color); /* Color for top banner text */
+  --md-primary-bg-color: rgb(var(--primary-bg-color)); /*  top banner text */
+  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
+  --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* navigation bar little arrows hover */
+  --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
+  --md-code-hl-color: rgba(255,255,0,.5);
+  --md-code-hl-number-color: #d52a2a;
+  --md-code-hl-special-color: #db1457;
+  --md-code-hl-function-color: #a846b9;
+  --md-code-hl-constant-color: #6e59d9;
+  --md-code-hl-keyword-color: #3f6ec6;
+  --md-code-hl-string-color: #1c7d4d;
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-default-fg-color--light);
+  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+  --md-code-hl-comment-color: var(--md-default-fg-color--light);
+  --md-code-hl-generic-color: var(--md-default-fg-color--light);
+  --md-code-hl-variable-color: var(--md-default-fg-color--light);
+  --md-typeset-mark-color: rgba(var(--nri-orange-color),.4); /* marked text (<mark> tag)*/
+  --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
+  --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
+  --navigation-borders: rgba(var(--nri-orange-color),.2); /* Left border on the toc and navigation*/
+  --card-borders: rgba(var(--nri-green-color),.75); /* Borders of cards */
+  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
+  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
+  --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
+  --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
+  --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
+  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
+  --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
+  --card-shadows: #00000075; /* Shadows on cards and other elements */
+  --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
+  --white-background: rgb(255, 255, 255); /* Background for transparent images */
+  --animated-terminal-background: var(--md-primary-fg-color);
+  --animated-terminal-directory: var(--nri-green);
+  --animated-terminal-buttons: var(--nri-orange);
+  --animated-terminal-buttons-hover: var(--nri-blue);
+  --animated-terminal-text: rgb(235, 235, 235);
+  --note: var(--nri-orange); /* Note border and icon */
+  --border-width: 0.1rem;
+  --not-supported-color: 255, 23, 23; /* Color for not supported warnings */
+  --not-supported: rgb(var(--not-supported-color)); /* Not supported warnings */
+  --not-owned-color: var(--nri-orange-color); /* Color for not owned warnings */
+  --not-owned: rgb(var(--not-owned-color)); /* Not supported warnings */
+  --info-color: var(--nri-light-blue-color); /* Color for info warnings */
+  --info: rgb(var(--info-color)); /* Info warnings */
+}
+
+[data-md-color-scheme="custom-dark"] {
   --default-fg-color: 235, 235, 235;  /* Color for main text in body, navigation, table of content*/
   --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
   --md-default-fg-color--light: rgba(var(--default-fg-color),.7); /* Back to top button text, inactive tab text */
   --md-default-fg-color--lighter: rgba(var(--default-fg-color),.4); /* pencil for editing page, passed toc items text */
   --md-default-fg-color--lightest: rgba(var(--default-fg-color),.07);
-  --tab-text-color: 235, 235, 235; /* Color for text of top tab and back to top button */
-  --tab-text: rgb(var(--tab-text-color)); /*  Main text in navigation tab */
-  --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
+  --md-typeset-color: var(--md-default-fg-color); /* Color for main text */
   --default-bg-color: 53, 54, 58; /* Color for main background */
   --md-default-bg-color: rgb(var(--default-bg-color)); /*  Main background */
   --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
   --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3);
   --md-default-bg-color--lightest: rgba(var(--default-bg-color),.12);
-  --md-primary-fg-color: rgb(29, 29, 29); /* top banner background */
-  --md-primary-fg-color--dark: var(--nri-dark-blue); /*  top tab background */
-  --primary-bg-color: var(--tab-text-color); /* Color for top banner text */
-  --md-primary-bg-color: rgb(var(--primary-bg-color)); /*  top banner text */
-  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
   --md-typeset-a-color: var(--nri-light-blue); /* link text */
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
-  --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* navigation bar little arrows hover */
-  --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
   --md-code-fg-color: var(--md-default-fg-color); /* code element text */
   --md-code-bg-color: rgb(41, 41, 41); /* code element background */
-  --md-code-hl-color: rgba(255,255,0,.5);
-  --md-code-hl-number-color: #d52a2a;
-  --md-code-hl-special-color: #db1457;
-  --md-code-hl-function-color: #a846b9;
-  --md-code-hl-constant-color: #6e59d9;
-  --md-code-hl-keyword-color: #3f6ec6;
-  --md-code-hl-string-color: #1c7d4d;
-  --md-code-hl-name-color: var(--md-code-fg-color);
-  --md-code-hl-operator-color: var(--md-default-fg-color--light);
-  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-  --md-code-hl-comment-color: var(--md-default-fg-color--light);
-  --md-code-hl-generic-color: var(--md-default-fg-color--light);
-  --md-code-hl-variable-color: var(--md-default-fg-color--light);
-  --md-typeset-color: var(--md-default-fg-color); /* Color for text warnings */
-  --md-typeset-mark-color: rgba(var(--nri-orange-color),.4); /* marked text (<mark> tag)*/
-  --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
-  --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: rgba(var(--nri-orange-color),.2); /* Left border on the toc and navigation*/
-  --card-borders: rgba(var(--nri-orange-color),.8); /* Borders of cards */
-  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
-  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
-  --md-admonition-bg-color: transparent; /* Background warnings */
-  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
-  --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
-  --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
-  --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
-  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
-  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
-  --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
-  --card-shadows: #00000075; /* Shadows on cards and other elements */
-  --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
-  --white-background: rgb(255, 255, 255); /* Background for transparent images */
-  --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
-  --animated-terminal-directory: var(--nri-green);
-  --animated-terminal-buttons: var(--nri-orange);
-  --animated-terminal-buttons-hover: var(--nri-blue);
-  --animated-terminal-text: rgb(235, 235, 235);
-  --animated-terminal-background: var(--md-primary-fg-color);
-  --note: var(--card-borders); /* Note border and icon */
+  --active-version-tab-color: var(--nri-green-color); /* Color for the Text and underline of active HTML tab */
+  --active-version-tab: rgb(var(--active-version-tab-color)); /* Text and underline of active HTML tab */
+  --active-version-tab-background: rgba(var(--active-version-tab-color),0.05); /* Text and underline of active HTML tab */
   --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
+  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
+  --not-supported-background: rgba(var(--not-supported-color),0.05); /* Not supported warnings background */
+  --not-owned-background: rgba(var(--not-owned-color),0.05); /* Not owned warnings background */
+  --info-background: rgba(var(--info-color),0.05); /* Info warnings background */
 }
 
 [data-md-color-scheme="custom-light"] {
-  --nri-green-color: 166, 206, 57; 
-  --nri-orange-color: 250, 166, 25; 
-  --nri-dark-blue-color: 17, 93, 151;
-  --nri-blue-color: 6, 174, 239;
-  --nri-light-blue-color: 142, 215, 248;
-  --nri-green: rgb(var(--nri-green-color)); /* rgb(166, 206, 57) */
-  --nri-orange: rgb(var(--nri-orange-color)); /* rgb(250, 166, 25) */
-  --nri-dark-blue: rgb(var(--nri-dark-blue-color)); /* rgb(17, 93, 151) */
-  --nri-blue: rgb(var(--nri-blue-color)); /* rgb(6, 174, 239) */
-  --nri-light-blue: rgb(var(--nri-light-blue-color)); /* rgb(142, 215, 248) */
   --default-fg-color: 10, 10, 10;  /* Color for main text in body, navigation, table of content*/
   --md-default-fg-color: rgb(var(--default-fg-color)); /* Main text in body, navigation, table of content*/ 
   --md-default-fg-color--light: rgba(var(--default-fg-color),.7); /* Back to top button text, inactive tab text */
   --md-default-fg-color--lighter: rgba(var(--default-fg-color),.4); /* pencil for editing page, passed toc items text */
   --md-default-fg-color--lightest: rgba(var(--default-fg-color),.07);
-  --tab-text-color: 235, 235, 235; /* Color for text of top tab and back to top button */
-  --tab-text: rgb(var(--tab-text-color)); /*  Main text in navigation tab */
-  --tab-text-light: rgba(var(--tab-text-color),.7); /* Main text in navigation tab inactive */
+  --md-typeset-color: var(--md-default-fg-color); /* Color for main text */
   --default-bg-color: 255, 255, 255; /* Color for main background */
   --md-default-bg-color: rgb(var(--default-bg-color)); /*  Main background */
   --md-default-bg-color--light: rgba(var(--default-bg-color),.7);
   --md-default-bg-color--lighter: rgba(var(--default-bg-color),.3);
   --md-default-bg-color--lightest: rgba(var(--default-bg-color),.12);
-  --md-primary-fg-color: rgb(29, 29, 29); /* top banner background */
-  --md-primary-fg-color--dark: var(--nri-dark-blue); /*  top tab background */
-  --primary-bg-color: var(--tab-text-color); /* Color for top banner text */
-  --md-primary-bg-color: rgb(var(--primary-bg-color)); /*  top banner text */
-  --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
   --md-typeset-a-color: var(--nri-dark-blue); /* link text */
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
-  --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* navigation bar little arrows hover */
-  --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
   --md-code-fg-color: rgb(33, 36, 44); /* code element text */
   --md-code-bg-color: #dedede; /* code element background */
-  --md-code-hl-color: rgba(255,255,0,.5);
-  --md-code-hl-number-color: #d52a2a;
-  --md-code-hl-special-color: #db1457;
-  --md-code-hl-function-color: #a846b9;
-  --md-code-hl-constant-color: #6e59d9;
-  --md-code-hl-keyword-color: #3f6ec6;
-  --md-code-hl-string-color: #1c7d4d;
-  --md-code-hl-name-color: var(--md-code-fg-color);
-  --md-code-hl-operator-color: var(--md-default-fg-color--light);
-  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-  --md-code-hl-comment-color: var(--md-default-fg-color--light);
-  --md-code-hl-generic-color: var(--md-default-fg-color--light);
-  --md-code-hl-variable-color: var(--md-default-fg-color--light);
-  --md-typeset-color: var(--md-default-fg-color); /* Color for text warnings */
-  --md-typeset-mark-color: rgba(var(--nri-orange-color),.4); /* marked text (<mark> tag)*/
-  --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
-  --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
   --md-typeset-kbd-color: rgb(226, 226, 226); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
-  --navigation-borders: rgba(var(--nri-orange-color),.2); /* Left border on the toc and navigation*/
-  --card-borders: rgba(var(--nri-orange-color),.8); /* Borders of cards */
-  --md-typeset-table-color: var(--card-borders); /* table borders (<table> tag) */
+  --active-version-tab-color: var(--nri-dark-blue-color); /* Color for the Text and underline of active HTML tab */
+  --active-version-tab: rgb(var(--active-version-tab-color)); /* Text and underline of active HTML tab */
+  --active-version-tab-background: rgba(var(--active-version-tab-color),0.05); /* Text and underline of active HTML tab */
+  --note-bg: rgba(var(--nri-orange-color),.1); /* Note background */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
-  --md-admonition-bg-color: transparent; /* Background warnings */
-  --md-footer-fg-color: var(--md-primary-bg-color); /* footer link icon (social) */
-  --md-footer-fg-color--light: var(--md-primary-bg-color); /* Footer copyright text and social icons fill */
-  --md-footer-bg-color: var(--md-primary-fg-color); /* footer background color */
-  --md-footer-bg-color--dark: rgba(0,0,0,0); /* footer background color (on top of the --md-footer-bg-color) */
-  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,.05),0 0 0.05rem rgba(0,0,0,.1);
-  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,.1),0 0 0.05rem rgba(0,0,0,.25);
-  --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
-  --card-shadows: #00000075; /* Shadows on cards and other elements */
-  --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
-  --white-background: rgb(255, 255, 255); /* Background for transparent images */
-  --darker-background-hover: rgba(28, 28, 28, 0.185); /* Darker background on hover */
-  --animated-terminal-directory: var(--nri-dark-blue);
-  --animated-terminal-buttons: var(--nri-orange);
-  --animated-terminal-buttons-hover: var(--nri-blue);
-  --animated-terminal-text: rgb(235, 235, 235);
-  --animated-terminal-background: var(--md-primary-fg-color);
-  --note: var(--card-borders); /* Note border and icon */
-  --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
+  --not-supported-background: rgba(var(--not-supported-color),0.1); /* Not supported warnings background */
+  --not-owned-background: rgba(var(--not-owned-color),0.1); /* Not owned warnings background */
+  --info-background: rgba(var(--info-color),0.1); /* Info warnings background */
+}
+
+/* Set rem based on viewport width */
+@media (width > 500px) {
+  :root {
+    font-size: calc(16px + 9 * ((100vw - 500px) / (2000 - 500)));
+  }
+}
+@media (width <= 500px) {
+  :root {
+    font-size: 16px;
+  }
 }
 
 
 /* =============================================================== 
-  Main body grid
+  Cards for ACCESS-Hive navigation, model components, model tabs, MED stuff
 */
+/* Flexbox container for cards*/
+.card-container {
+  margin: 1em 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 0.8rem;
+}
+
+/* Single card */
+.card-container > * {
+  border: var(--border-width) solid var(--card-borders);
+  border-radius: 0.6rem;
+  box-shadow: 6px 6px 10px var(--card-shadows);
+  overflow: hidden;
+}
+
+/* Single card hover */
+.card-container > *:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 10px 10px 10px var(--card-shadows-hover);
+  transition-property: all;
+  transition-duration: 0.4s;
+}
+
+.vertical-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(100px,30%,250px);
+  min-height: 0;
+  container-type: inline-size;
+}
+
+.horizontal-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 8rem;
+}
+
+.card-text-container {
+  color: var(--md-default-fg-color);
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1em;
+  width: 100%;
+  height: 100%;
+  word-break: normal;
+}
+
+.card-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.vertical-card > .card-image-container {
+  flex-basis: 70%;
+  padding: 3.5%;
+}
+.vertical-card > .card-text-container {
+  height: 30%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 12cqi;
+  padding: 3.5%;
+}
+
+.horizontal-card > .card-image-container {
+  flex-basis: 25%;
+  padding: 0.4rem;
+}
+.horizontal-card > .card-text-container {
+  flex-basis: 75%;
+  padding: 0.4rem;
+}
+
+.card-image-container > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.35rem;
+}
+
+.vertical-card > .card-text-container:last-child {
+  padding-top: 0;
+}
+.vertical-card > .card-text-container:first-child {
+  padding-bottom: 0;
+}
+
+.horizontal-card > .card-text-container > *:first-child:not(:only-child) {
+  margin-bottom: 0.5em;
+}
+
+/* =============================================================== 
+  Main body
+*/
+/* Grid */
 .md-grid {
-  max-width: 70rem;
+  max-width: 68rem;
+}
+/* Article */
+.md-content__inner {
+  margin: 0 1.5rem 1rem;
 }
 
 
@@ -192,23 +282,6 @@ h3 {
 
 
 /* =============================================================== 
-  Keep ACCESS-Hive title as it is, without changing when scrolling
-*/
-.md-header__title--active .md-header__topic {
-  opacity: 1;
-  transform: none;
-  z-index: 0;
-  pointer-events: auto;
-  transition: none;
-}
-
-.md-header__title--active .md-header__topic+.md-header__topic {
-  opacity: 0;
-  z-index: -1;
-}
-
-
-/* =============================================================== 
 Homepage
 */
 /* Hide Title */
@@ -223,79 +296,79 @@ h1.homepage {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+  align-items: stretch;
+  margin-bottom: 0.8rem;
   width: 100%;
   text-align: center;
 }
-
 /* Text */
 .introduction > :first-child {
-  flex-basis: 85%;
-  font-size: 1.5rem;
+  flex-basis: 80%;
+  font-size: 1.3rem;
 }
 .introduction > :first-child > :first-child {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
-
 /* Logo */
 .introduction > :last-child {
-  flex-basis: 15%;
-  align-self: center;
+  flex-basis: 20%;
+  display: flex;
+  align-items: center;
 }
-
 .introduction > :last-child > img {
   max-height: 5rem;
-  padding: 0;
+  margin-left: 0.5rem;
 }
 
-/* 
-  Buttons After introductory paragraph
-*/
-.card-container.homepage-buttons {
-  justify-content: center;
-  align-items: stretch;
-  gap: 1.2em
-}
 
-.card-container.homepage-buttons > * {
+/* Lower text on all homepage cards*/
+:is(.homepage-buttons,.homepage-navigation) .card-text-container {
+  color: var(--tab-text);
+}
+:is(.homepage-buttons,.homepage-navigation) .card-text-container > * {
+  border-radius: 0.4rem;
+  background-color: var(--md-primary-fg-color--dark);
   width: 100%;
-  margin-bottom: 1.5em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.card-container.homepage-buttons > .vertical-card > :first-child {
+/* Buttons After introductory paragraph */
+.homepage-buttons {
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 10%;
+  flex-wrap: nowrap;
+  margin-bottom: 1.5rem;
+}
+.homepage-buttons > * {
+  width: 100%;
+}
+
+.homepage-buttons > .vertical-card > :first-child {
   color: var(--md-default-fg-color);
-  flex-basis: 35%;
-  margin: 1% 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  font-size: 1.2em;
+}
+.homepage-buttons .card-text-container {
+  height: 1.8em;
+  font-size: 2em;
+  padding: 2.5%;
 }
 
-.card-container.homepage-buttons > .vertical-card > :last-child {
-  flex-basis: 65%;
-  margin: 3% 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 1.2em;
+/* Navigation cards in homepage */
+.homepage-navigation {
+  justify-content: space-around;
+  flex-wrap: nowrap;
 }
 
 .acknowledgement-img {
   height: 10em !important;
   width: 100%;
   object-fit: cover;
-  border-radius: 8px;
-}
-
-.card-container.homepage-navigation {
-  justify-content: center;
-  gap: 1.2em;
-}
-
-.card-container.homepage-navigation > * {
-  max-width: 22%;
+  border-radius: 0.5rem;
 }
 
 /* =============================================================== 
@@ -309,13 +382,33 @@ h1.homepage {
 /* =============================================================== 
   Warning windows 
 */
-.warning, 
-.md-typeset :is(.warning,.caution,.attention)>:is(.admonition-title,summary):before {
-  border-color: var(--md-primary-fg-color--dark) !important;
+
+/* Not owned (Supported on gadi) warnings */
+.md-typeset :is(.admonition,details):is(.warning,.caution,.attention) {
+  border-color: var(--not-owned);
+  background-color: var(--not-owned-background);
+}
+.md-typeset :is(.warning,.caution,.attention)>:is(.admonition-title,summary) {
+  background-color: rgba(var(--not-owned-color),0.2);
 }
 
-.md-typeset .warning>summary:after {
-  color: var(--md-primary-fg-color--dark);
+/* Not supported warnings */
+.md-typeset :is(.admonition,details):is(.danger,.error) {
+  border-color: var(--not-supported);
+  background-color: var(--not-supported-background);
+}
+.md-typeset :is(.danger,.error)>:is(.admonition-title,summary) {
+  background-color: rgba(var(--not-supported-color),0.2);
+}
+
+
+/* Info warnings */
+.md-typeset :is(.admonition,details):is(.info,.todo) {
+  border-color: var(--info);
+  background-color: var(--info-background);
+}
+.md-typeset :is(.info,.todo)>:is(.admonition-title,summary) {
+  background-color: rgba(var(--info-color),0.2);
 }
 
 
@@ -344,14 +437,9 @@ h1.homepage {
   margin-top: 1em;
 }
 
-/* =============================================================== 
-  Img, main logo 
-*/
-.md-header__button.md-logo :-webkit-any(img,svg) {
-    fill: currentcolor;
-    display: block;
-    height: 2.5rem;
-    width: auto;
+/* Hide navigation part toggling from burger menu if it has no subpages (e.g. Home) */
+.md-nav__item--active [data-md-level="1"].md-nav:not(:has(li)) {
+  visibility: hidden;
 }
 
 /* =============================================================== 
@@ -367,61 +455,87 @@ h1.homepage {
 */
 .md-footer-meta.md-typeset.md-grid {
   color: var(--md-footer-fg-color--light);
+  padding: 0.2rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: stretch;
+  gap: 0.1rem;
+  height: 7rem;
 }
 
 .md-footer-meta.md-typeset.md-grid > * {
-  color: var(--tab-text);
+  color: var(--md-footer-fg-color--light);
   display: inline-flex;
   flex-direction: column;
 }
 /* Funding */
-.md-footer-meta.md-typeset.md-grid :first-child {
-  flex-basis: 15%;
+.funding {
+  flex-basis: 20%;
 }
 /* Partners */
-.md-footer-meta.md-typeset.md-grid :last-child {
+.partners {
   flex-basis: 80%;
 }
 
 /* Text */
-.md-footer-meta.md-typeset.md-grid > * > :first-child {
+:is(.funding,.partners) > *:first-child {
   font-size: 1.2em;
   font-weight: 500;
-  text-align: center;
-  padding: 0.2rem;
-  margin: 0.3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  height: 20%;
 }
 
 /* Logos */
-.md-footer-meta.md-typeset.md-grid > * > :last-child {
+:is(.funding,.partners) > *:last-child {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 100px;
+  flex-grow: 0;
+  height: 80%;
 }
 
-.md-footer-meta.md-typeset.md-grid > * > :last-child a {
-  max-width: 100px;
-  max-height: 100px;
-  margin: 0 auto;
-  padding: 0.2rem;
-}
-
-.md-footer-meta.md-typeset.md-grid > :last-child > :last-child a {
+:is(.funding,.partners) > *:last-child a {
+  max-width: calc(3vw + 3rem);
+  max-height: 100%;
   padding: 0.5rem;
 }
 
-.md-footer-meta.md-typeset.md-grid > * > :last-child img {
-  object-fit: contain;
-  max-height: 100%;
-  max-width: 100%;
+.md-footer-meta__inner > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 0;
+}
+
+.md-copyright {
+  width: auto;
+}
+
+.md-social > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.md-footer hr {
+  border-bottom: 0.03rem solid rgba(var(--tab-text-color),0.5);
+  display: flow-root;
+  margin: 0 0.2rem;
+}
+
+.separation {
+  height: 80%;
+  width: 0.1rem;
+  border-radius: 1rem;
+  background-color: var(--md-footer-fg-color--light);
+  align-self: center;
 }
 
 /* =============================================================== 
@@ -429,12 +543,30 @@ h1.homepage {
 */
 /* Main title */
 .md-header__title {
-  margin-left: 0.3em !important;
+  margin: 0 0.2em 0 0.3em !important;
+  flex-shrink: 1;
+  overflow: hidden;
+  position: relative;
 }
 
+/* Main logo */
+.md-header__button.md-logo {
+  cursor:default
+}
+.md-header__button:hover {
+  opacity: 1;
+}
+.md-header__button.md-logo :-webkit-any(img,svg) {
+  fill: currentcolor;
+  display: block;
+  height: 2.5rem;
+  width: auto;
+}
 /* Banner */
 .md-header__inner {
   padding: 0.5em 0;
+  min-height: 3.5rem;
+  margin: 0 0.8rem;
 }
 
 /* Tab section */
@@ -476,44 +608,83 @@ h1.homepage {
 /* =============================================================== 
   Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
-.flex-container {
+.header-btn-container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 20rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 0.6em;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 0 .5rem;
 }
 
 .header-btn {
-  border-radius: 0.3em;
-  border: 0.1em solid;
-  padding: 0.5em 1em;
-  font-weight: 500;
-  margin: 0 0.5em 0 0.5em;
-  height: 1.7rem;
+  flex-basis: 33.333%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  padding: 0 0.3em;
+  height: 1.6rem;
+  color: var(--md-primary-bg-color);
 }
-
 .header-btn:hover {
-  background-color: var(--md-default-fg-color--lightest);
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
   transition-property: all;
 }
-
-.large-text {
-  font-size: 1.4em;
-}
-
-.nri-orange-border {
+/* Hive forum btn */
+.header-btn:first-child {
   border-color: var(--nri-orange);
 }
-
-.nri-blue-border {
+.header-btn:first-child:hover {
+  background-color: rgba(var(--nri-orange-color),0.14);
+}
+/* ACCESS-NRI btn */
+.header-btn:nth-child(2) {
   border-color: var(--nri-blue);
 }
+.header-btn:nth-child(2):hover {
+  background-color: rgba(var(--nri-blue-color),0.14);
+}
+/* Contribute btn */
+.header-btn:last-child {
+  border-color: var(--md-primary-bg-color);
+}
+.header-btn:last-child:hover {
+  background-color: rgba(var(--primary-bg-color),0.14);
+}
 
-.icon-image {
-  height: 1.3em;
+/* btn logo wrapper */
+.header-btn >:first-child {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
+
+/* btn logo */
+.header-btn >:first-child > * {
+  font-size: 1.5em;
+}
+
+/* btn logo */
+.header-btn:nth-child(-n + 2) >:first-child > * {
+  height: 1em;
   width: auto;
+}
+
+/* btn text */
+.header-btn >:last-child {
+  flex-basis: 75%;
+  text-align: center;
 }
 
 /* =============================================================== 
@@ -522,139 +693,9 @@ h1.homepage {
 .rectangular-img {
   width: 100%; 
   height: 13em !important;
-  border-radius: 0.6em;
+  border-radius: 0.6rem;
 }
 
-/* =============================================================== 
-  Cards for ACCESS-Hive navigation, model components, model tabs, MED stuff
-*/
-/* Flexbox container for cards*/
-.card-container {
-  margin: 1em 0;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 0.8em;
-}
-
-/* Single card */
-.card-container > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1.3px solid var(--card-borders);
-  border-radius: 15px;
-  box-shadow: 6px 6px 10px var(--card-shadows);
-  overflow: hidden;
-}
-
-/* Single card hover */
-.card-container > *:hover {
-  border-color: var(--md-accent-fg-color);
-  box-shadow: 10px 10px 10px var(--card-shadows-hover);
-  transition-property: all;
-  transition-duration: 0.4s;
-}
-
-.vertical-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-height: 0;
-}
-
-.vertical-card-image-container {
-  flex-basis: 80%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.6em 0.6em 0.3em 0.6em;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.vertical-card-image-container > img {
-  width: 100%;
-  height: 100%;
-}
-
-.vertical-card-text-container {
-  color: var(--md-default-fg-color);
-  flex-basis: 20%;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0.3em 0.6em 0.6em 0.6em;
-}
-
-.horizontal-card {
-  flex-direction: row;
-  width: 100%;
-  height: 10em;
-  align-items: stretch;
-}
-
-.horizontal-card-image-container {
-  flex-basis: 35%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.6em 0 0.6em 0.6em;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.horizontal-card-image-container > img {
-  height: 100%;
-  width: 100%;
-}
-
-.horizontal-card-text-container {
-  color: var(--md-default-fg-color);
-  height: 100%;
-  flex-basis: 65%;
-  display: flex;
-  flex-direction: column;
-  padding: 0 1em;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.horizontal-card-image-container > img, 
-.vertical-card-image-container > img {
-  border-radius: 8px;
-}
-
-a.component-card {
-  border: unset;
-  box-shadow: unset;
-  max-width: 22%;
-  min-height: 0;
-}
-
-.component-card:hover {
-  background-color: var(--darker-background-hover);
-  box-shadow: unset;
-}
-
-
-.aspect-ratio1to1 {
-  aspect-ratio: 1/1;
-}
-
-.aspect-ratio2to1 {
-  aspect-ratio: 2/1;
-}
-
-.aspect-ratio3to1 {
-  aspect-ratio: 3/1;
-}
 /* =============================================================== 
   References
 */
@@ -683,9 +724,8 @@ ul:not([class^='md-']) li ul li ul li {
 pre:has(code) {
   display: flow-root !important;
   text-align: left !important;
-  padding: 0 0 !important;
-  margin-top: 0.5em !important; 
-  margin-bottom: 0.5em !important;
+  padding: 0 !important;
+  margin: 0.5em 0 !important;
 }
 
 pre>code {
@@ -711,6 +751,7 @@ pre:has(code):hover > button {
   color: var(--animated-terminal-text);
   font-family: var(--md-code-font-family);
   font-weight: unset;
+  font-size: .7rem;
 }
 
 ::part(input-character) {
@@ -755,13 +796,14 @@ pre:has(code):hover > button {
   width: fit-content;
   overflow: auto;
   margin-top: 1em;
+  gap: 1px;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tabLabels button {
   color: var(--md-default-fg-color--light);
   border-bottom: 0.1rem solid transparent;
-  border-radius: 0.1rem 0.1rem 0 0;
+  border-radius: 0.6rem 0.6rem 0 0;
   cursor: pointer;
   flex-shrink: 0;
   font-size: .64rem;
@@ -776,16 +818,15 @@ pre:has(code):hover > button {
 
 /* Change background color of buttons on hover */
 .tabLabels button:hover {
-  color: var(--md-primary-fg-color--dark);
+  background-color: var(--active-version-tab-background);
 }
 
 /* Create an active/current tablink class */
 .tabLabels button.activeTab {
-  color: var(--md-primary-fg-color--dark);
+  color: var(--active-version-tab);
   border-bottom: solid 2px currentColor;
   transition: border-bottom .2s;
-  background-color: var(--md-accent-fg-color--transparent);
-  border-radius: 8px 8px 0 0;
+  background-color: var(--active-version-tab-background);
 }
 
 /* Style the tab content */
@@ -805,7 +846,7 @@ pre:has(code):hover > button {
   position: relative;
   border: solid 0.01em var(--note);
   background-color: var(--note-bg);
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
   padding: 0.2em 0.3em 0.2em 1.5em;
   margin-bottom: 0.8em;
 }
@@ -827,34 +868,36 @@ pre:has(code):hover > button {
   vertical-align: super;
   font-size: 0.5em;
   margin-left: 0.3em;
-  display: inline-block;
+  display: inline-flex;
   transform: rotate(-45deg);
+  /* word-break: keep-all;
+  line-break: strict;
+  white-space: nowrap; */
 }
-
 
 /* =============================================================== 
   Miscellaneous
 */
 
+/* Aspect ratios */
+.aspect-ratio1to1 {
+  aspect-ratio: 1/1;
+}
+
+.aspect-ratio2to1 {
+  aspect-ratio: 2/1;
+}
+
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
   width: 100% !important;
   height: auto !important;
-  border-radius: 8px;
+  border-radius: 0.6rem;
 }
 
 /* Justified text */
 .justified {
   text-align: justify;  
-}
-
-/* Highlight the background */
-.highlight-bg {
-  background-color: var(--md-primary-fg-color--dark);
-  color: var(--tab-text);
-  padding: 0.2em 0.6em;
-  width: fit-content;
-  border-radius: 0.3em;
 }
 
 /* Image background */
@@ -864,19 +907,14 @@ pre:has(code):hover > button {
 
 /* With borders */
 .with-border {
-  border-radius: 7px;
-  border: 1.3px solid var(--card-borders);
+  border-radius: 0.6rem;
+  border: var(--border-width) solid var(--card-borders);
   box-sizing: border-box;
 }
 
 /* Add padding to image container */
 .with-padding {
   padding: 0.5em;
-}
-
-/* Typeset text color (even links) */
-.default-text-color {
-  color: var(--md-default-fg-color) !important;
 }
 
 .bold {
@@ -890,4 +928,133 @@ pre:has(code):hover > button {
 
 .img-contain {
   object-fit: contain;
+}
+
+.large-text {
+  font-size: 1.4em;
+}
+
+
+/* =============================================================== 
+  Media queries for website responsiveness
+*/
+
+@media screen and (width < 800px) {
+  /* Make gap scale with viewport width */
+  .homepage-buttons {
+    gap: 5vw;
+  }
+  /* Hide upper text in homepage buttons */
+  .homepage-buttons > .vertical-card > :first-child {
+    display: none;
+  }
+  /* Lower text in homepage buttons */
+  .homepage-buttons > .vertical-card > :last-child {
+    font-size: calc(2.9vw + 0.15rem);
+  }
+  /* Homepage buttons Cards */
+  .homepage-buttons > .vertical-card {
+    background-color: var(--md-primary-fg-color--dark);
+    height: 8vw;
+    border-radius: 2vw;
+  }
+  .homepage-buttons .card-text-container {
+    padding: 0;
+  }
+}
+
+
+@media screen and (width <= 608px) {
+  /* Footer */
+  .md-footer-meta.md-typeset.md-grid {
+    height: 11rem;
+  }
+}
+@media screen and (width <= 550px) {
+  .vertical-card {
+    width: 40%;
+  }
+  
+  /* Change the horizontal card to be rendered as a vertical one with aspect-ratio 1 */
+  .horizontal-card {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 40%;
+    min-height: 0;
+    aspect-ratio: 1;
+    container-type: inline-size;
+  }
+  .horizontal-card > .card-text-container {
+    height: 30%;
+    flex: 0 0 auto;
+    font-size: 12cqi;
+    font-weight: 600;
+    padding: 3.5%;
+  }
+  .horizontal-card > .card-image-container {
+    padding: 3.5%;
+  }
+  .horizontal-card > .card-text-container:last-child {
+    padding-top: 0;
+  }
+  .horizontal-card > .card-text-container > *:last-child:not(:only-child) {
+    display: none;
+  }
+  .horizontal-card > .card-text-container > *:first-child:not(:only-child) {
+    margin-bottom: 0;
+  }
+  .horizontal-card > .card-image-container {
+    flex-basis: 70%;
+  }
+  /* Wrap homepage navigation cards */
+  .homepage-navigation {
+    flex-wrap: wrap;
+  }
+
+  /* Forum, ACCESS-NRI and Github buttons */
+  .header-btn-container {
+    flex-grow: 0;
+  }
+  /* Make squared btn */
+  .header-btn {
+    flex-basis: 0;
+    flex-grow: 0;
+    aspect-ratio: 1;
+    justify-self: start;
+    height: 2rem;
+  }
+  /* Increase btn Logos */
+  .header-btn > :first-child > * {
+    font-size: 1.8em;
+  }
+  /* Hide btn Text */
+  .header-btn >:last-child {
+    display: none;
+  }
+  
+  /* Homepage introduction paragraph */
+  /* Upper text */
+  .introduction > :first-child > :first-child {
+    font-size: calc(4.9vw + 0.15rem);
+  }
+  /* Lower text */
+  .introduction > :first-child > :last-child {
+    font-size: calc(2.9vw + 0.15rem);
+   }
+  
+  /* Footer */
+  :is(.funding,.partners) > *:first-child {
+    font-size: calc(1vw + 0.5rem);
+  }
+  :is(.funding,.partners) > *:last-child a {
+    max-width: calc(6vw + 2rem);
+  }
+
+  .md-footer-meta__inner {
+    flex-direction: column;
+  }
+  .md-footer-meta__inner > * {
+    gap: 1rem;
+  }
 }
