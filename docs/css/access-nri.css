@@ -437,6 +437,10 @@ h1.homepage {
   margin-top: 1em;
 }
 
+/* Hide navigation part toggling from burger menu if it has no subpages (e.g. Home) */
+.md-nav__item--active [data-md-level="1"].md-nav:not(:has(li)) {
+  visibility: hidden;
+}
 
 /* =============================================================== 
   Main body content 
@@ -747,6 +751,7 @@ pre:has(code):hover > button {
   color: var(--animated-terminal-text);
   font-family: var(--md-code-font-family);
   font-weight: unset;
+  font-size: .7rem;
 }
 
 ::part(input-character) {
@@ -926,46 +931,12 @@ pre:has(code):hover > button {
   font-size: 1.4em;
 }
 
+
 /* =============================================================== 
   Media queries for website responsiveness
 */
 
-/* Right table of content */
-@media screen and (width >= 1200px) {
-  .md-sidebar--secondary:not([hidden]) {
-    display: block;
-  }
-}
-@media screen and (width < 1200px) {
-  .md-sidebar--secondary:not([hidden]) {
-    display: none;
-  }
-}
-
-@media screen and (width >= 800px) {
-  /* hide burger menu */
-  /* .md-header__button[for=__drawer] {
-    display: none;
-  } */
-  /* show website logo */
-  /* .md-header__button.md-logo {
-    display: inline-block;
-  } */
-  /* show top tabs */
-  /* .md-tabs {
-    display: block;
-  } */
-}
 @media screen and (width < 800px) {
-  /* show burger menu */
-  /* .md-header__button[for=__drawer] {
-    display: inline-block;
-  } */
-  /* hide website logo and top tabs*/
-  /* .md-header__button.md-logo,
-  .md-tabs {
-    display: none;
-  } */
   /* Make gap scale with viewport width */
   .homepage-buttons {
     gap: 5vw;
