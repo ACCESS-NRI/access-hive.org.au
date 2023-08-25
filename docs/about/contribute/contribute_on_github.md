@@ -8,8 +8,8 @@
         <br>
         <br>
         <div class="markdown-notes">
-        <b>Note:</b> Please note that you <i>do not</i> need to complete all these learning courses before making your first contribution. 
-        <b>"Introduction to Github"</b> course should make you well-equipped for following this section.
+        <b>Note:</b> Please note that you <i>do not</i> need to complete all these learning courses before making your first contribution. The first
+        <b>"Introduction to Github"</b> course should make you well-equipped for making your first contribution to the Hive!
         </div>
     </div>
 </div>
@@ -41,6 +41,24 @@ Hence, we encourage you to become a member of the <a href="https://github.com/AC
 Once you are a member of the <a href="https://github.com/ACCESS-Hive" target="_blank">ACCESS-Hive GitHub organisation</a>, for all additions or modifications to the ACCESS-Hive site, it is recommended to start by opening an <a href="https://github.com/ACCESS-Hive/access-hive.github.io/issues">issue</a> in the ACCESS-Hive GitHub repository. Feel free to <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/">assign that issue</a> to yourself if you intend to work on that issue and . 
 
 <b>TODO: Add GIF</b>
+
+## Clone the ACCESS-Hive GitHub repository
+
+For cloning this repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
+
+To start with, if you have an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys" target="_blank">existing SSH key</a>, then simply <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">add this key to your github account</a>, and you are all set to clone the repository. In case you don't have the SSH keys set up on your local computer, it's easy to <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">create a new SSH key locally</a>, and then <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">link this key to your github account</a>. 
+
+<terminal-window>
+    <terminal-line data="input">git clone git@github.com:ACCESS-Hive/access-hive.github.io.git</terminal-line>
+    <terminal-line></terminal-line>
+    <terminal-line>Cloning into 'access-hive.github.io'...</terminal-line>
+<terminal-line>remote: Enumerating objects: 54754, done.</terminal-line>
+<terminal-line>remote: Counting objects: 100% (4096/4096), done.</terminal-line>
+<terminal-line>remote: Compressing objects: 100% (560/560), done.</terminal-line>
+<terminal-line>remote: Total 54754 (delta 2178), reused 4053 (delta 2155), pack-reused 50658</terminal-line>
+<terminal-line>Receiving objects: 100% (54754/54754), 103.15 MiB | 6.97 MiB/s, done.</terminal-line>
+<terminal-line>Resolving deltas: 100% (28610/28610), done.</terminal-line>
+</terminal-window>
 
 ## Additional GitHub learning resources 
 
