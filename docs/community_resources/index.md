@@ -5,12 +5,19 @@
 In this area of the Hive, we collect content that is not currated by us, but may be helpful for the community. You can [contribute](../contribute/index.md) to this part of the Hive too!
 
 <div class="card-container" style="flex-wrap:nowrap;">
-    <a href="community_working_groups" class="vertical-card aspect-ratio1to1">
+    <a href="glossaries" class="vertical-card aspect-ratio1to1">
+        <div class="vertical-card-image-container">
+            <img class="img-cover" src="../assets/glossary.png" alt="Glossaries">
+        </div>
+        <div class="vertical-card-text-container   bold">Glossaries</div>
+    </a>    <a href="community_working_groups" class="vertical-card aspect-ratio1to1">
         <div class="vertical-card-image-container">
             <img class="img-cover" src="../assets/community_workinggroups.jpg" alt="Working Groups">
         </div>
         <div class="vertical-card-text-container   bold">Working Groups</div>
     </a>
+</div>
+<div class="card-container" style="flex-wrap:nowrap;">
     <a href="https://www.access-nri.org.au/community/events/" class="vertical-card aspect-ratio1to1" target="_blank">
         <div class="vertical-card-image-container">
             <img class="img-cover" src="../assets/events_2.jpg" alt="Events">

@@ -146,6 +146,7 @@ nav:
 
   - Community Resources:
     - community_resources/index.md
+    - Glossaries: community_resources/glossaries.md
     - Working Groups: community_resources/community_working_groups.md
     - Events:
        - community_resources/events/index.md
@@ -170,7 +171,6 @@ nav:
     - Contact: about/contact.md
     - User support: about/user_support.md
     - How to contribute: about/how_to_contribute.md
-    - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md
