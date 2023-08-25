@@ -129,19 +129,14 @@
 }
 
 /* Set rem based on viewport width */
-@media (width > 2000px) {
+@media (width > 500px) {
   :root {
-    font-size: 24px;
-  }
-}
-@media (500px < width <= 2000px) {
-  :root {
-    font-size: calc(14px + 10 * ((100vw - 500px) / (2000 - 500)));
+    font-size: calc(16px + 9 * ((100vw - 500px) / (2000 - 500)));
   }
 }
 @media (width <= 500px) {
   :root {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -935,31 +930,42 @@ pre:has(code):hover > button {
   Media queries for website responsiveness
 */
 
-/* Overwrite mkdocs default options */
-@media screen and (width >= 800px) {
-  /* hide burger menu */
-  .md-header__button[for=__drawer] {
-    display: none;
-  }
-  /* show website logo */
-  .md-header__button.md-logo {
-    display: inline-block;
-  }
-  /* show top tabs */
-  .md-tabs {
+/* Right table of content */
+@media screen and (width >= 1200px) {
+  .md-sidebar--secondary:not([hidden]) {
     display: block;
   }
 }
-@media screen and (width < 800px) {
-  /* show burger menu */
-  .md-header__button[for=__drawer] {
-    display: inline-block;
-  }
-  /* hide website logo and top tabs*/
-  .md-header__button.md-logo,
-  .md-tabs {
+@media screen and (width < 1200px) {
+  .md-sidebar--secondary:not([hidden]) {
     display: none;
   }
+}
+
+@media screen and (width >= 800px) {
+  /* hide burger menu */
+  /* .md-header__button[for=__drawer] {
+    display: none;
+  } */
+  /* show website logo */
+  /* .md-header__button.md-logo {
+    display: inline-block;
+  } */
+  /* show top tabs */
+  /* .md-tabs {
+    display: block;
+  } */
+}
+@media screen and (width < 800px) {
+  /* show burger menu */
+  /* .md-header__button[for=__drawer] {
+    display: inline-block;
+  } */
+  /* hide website logo and top tabs*/
+  /* .md-header__button.md-logo,
+  .md-tabs {
+    display: none;
+  } */
   /* Make gap scale with viewport width */
   .homepage-buttons {
     gap: 5vw;
