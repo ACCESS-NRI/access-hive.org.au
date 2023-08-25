@@ -194,7 +194,7 @@ function main() {
   tabFunctionality();
   addExternalLinkIcon();
   toggleTerminalAnimations();
-  addCardContainerChildrenNumber();
+  // addCardContainerChildrenNumber();
   fitText();
 }
 

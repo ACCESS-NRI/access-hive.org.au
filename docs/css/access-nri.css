@@ -960,6 +960,13 @@ pre:has(code):hover > button {
   }
 }
 
+
+@media screen and (width <= 608px) {
+  /* Footer */
+  .md-footer-meta.md-typeset.md-grid {
+    height: 11rem;
+  }
+}
 @media screen and (width <= 550px) {
   .vertical-card {
     width: 40%;
@@ -1034,9 +1041,6 @@ pre:has(code):hover > button {
    }
   
   /* Footer */
-  .md-footer-meta.md-typeset.md-grid {
-    height: 11rem;
-  }
   :is(.funding,.partners) > *:first-child {
     font-size: calc(1vw + 0.5rem);
   }
