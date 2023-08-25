@@ -66,7 +66,8 @@ After cloning the repository locally, create a new branch to make your local cha
 <terminal-window>
     <terminal-line data="input">git checkout -b spongebob/fix-hive-title-issue-234</terminal-line>
     <terminal-line>Switched to a new branch 'spongebob/fix-hive-title-issue-234'</terminal-line>
-    <terminal-line></terminal-line>
+</terminal-window>
+<terminal-window>
     <terminal-line data="input">git push --set-upstream origin spongebob/fix-hive-title-issue-234</terminal-line>
     <terminal-line>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</terminal-line>
     <terminal-line>remote: </terminal-line>
