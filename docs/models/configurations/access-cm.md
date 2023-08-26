@@ -18,7 +18,7 @@ It produces physical climate simulations.
 
 - <a href="../../model_components/ocean">Ocean</a>: <a href="../../model_components/ocean#mom5">MOM5</a>. Tripolar grid, 1° spatial resolution, 50 vertical levels.
 
-- <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE5.1.2</a>. Same grid as ocean.
+- <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice5">CICE5.1.2</a>. Same grid as ocean.
 
 - <a href="../../model_components/coupler">Coupler</a>: <a href="../../model_components/coupler#oasis3-mct">OASIS3-MCT</a>.
 

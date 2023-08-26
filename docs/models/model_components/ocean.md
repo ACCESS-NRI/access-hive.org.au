@@ -11,8 +11,8 @@ MOM is an open source development by a consortium of scientists across several g
 There are 2 MOM versions currently used in ACCESS models: <a href="https://github.com/mom-ocean/MOM5" target="_blank">MOM5</a> and <a href="https://github.com/mom-ocean/MOM6" target="_blank">MOM6</a>.
 <!-- Tab labels -->
 <div class="tabLabels" label="MOM-versions">
-    <button>MOM5</button>
-    <button>MOM6</button>
+    <button id="mom5">MOM5</button>
+    <button id="mom6">MOM6</button>
 </div>
 <!-- Tab content -->
 <div class="tabContents" label="MOM-versions">

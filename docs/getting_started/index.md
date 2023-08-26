@@ -141,12 +141,15 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
         Add your SSH key to the SSH-agent by running:
         <!-- Tab labels -->
         <div class="tabLabels" label="systems">
-          <button>MacOS</button>
-          <button>Linux / Windows</button>
+          <button id="macos">MacOS</button>
+          <button id="linux-windows">Linux / Windows</button>
         </div>
         <!-- Tab content -->
         <div class="tabContents" label="systems">
-          <!-- MacOS -->
+          <!-- 
+          -
+          -
+          MacOS -->
           <div>        
             <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
@@ -159,7 +162,10 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
               If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
             </div>
           </div>
-          <!-- Linux/Windows -->
+          <!-- 
+          -
+          -
+          Linux/Windows -->
           <div>
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:

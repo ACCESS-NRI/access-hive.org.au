@@ -9,8 +9,8 @@ CICE is a numerical model for simulating the growth, melting and movement of pol
 There are 2 CICE versions currently used in ACCESS models: <a href="https://github.com/CICE-Consortium/CICE-svn-trunk" target="_blank">CICE5</a> and <a href="https://github.com/CICE-Consortium/CICE" target="_blank">CICE6</a>.
 <!-- Tab labels -->
 <div class="tabLabels" label="CICE-versions">
-    <button>CICE5</button>
-    <button>CICE6</button>
+    <button id="cice5">CICE5</button>
+    <button id="cice6">CICE6</button>
 </div>
 <!-- Tab content -->
 <div class="tabContents" label="CICE-versions">

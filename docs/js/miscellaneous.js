@@ -39,9 +39,17 @@ function adjustScrollingToId() {
   Add functionality to tabs
 */
 function tabFunctionality() {
-  // Make first tab and content active 
-  document.querySelectorAll(".tabLabels :nth-child(1)").forEach(label=>label.classList.add("activeTab"));
-  document.querySelectorAll(".tabContents :nth-child(1)").forEach(content=>content.classList.add("activeTabContent"));
+  let activeEl = document.activeElement;
+  // If tab is activeElement (for example if a link points to an ID 
+  // inside the tab content/button), make that tab active
+  if (activeEl.parentElement.classList.contains("tabLabels")) {
+    activeEl.blur();
+    openTab(activeEl);
+  } else {
+    // Otherwise make first tab and content active
+    document.querySelectorAll(".tabLabels :nth-child(1)").forEach(label=>label.classList.add("activeTab"));
+    document.querySelectorAll(".tabContents :nth-child(1)").forEach(content=>content.classList.add("activeTabContent"));
+  }
   // Add click event to tab buttons
   let tabButtons = document.querySelectorAll(".tabLabels > button");
   tabButtons.forEach(button=>{
@@ -49,7 +57,12 @@ function tabFunctionality() {
   })
   
   function openTab(e) {
-    let active = e.currentTarget;
+    let active;
+    if (e.currentTarget) {
+      active = e.currentTarget;
+    } else {
+      active = e;
+    }
     let label = active.parentElement.getAttribute('label');
     let index = Array.from(active.parentElement.children).indexOf(active)+1;
     // Remove active classes from button/content
@@ -199,5 +212,5 @@ function main() {
 }
 
 // Run all functions
-// window.onload = () => document$.subscribe(() => main());
-document$.subscribe(() => main());
+window.onload = () => document$.subscribe(() => main());
+// document$.subscribe(() => main());
