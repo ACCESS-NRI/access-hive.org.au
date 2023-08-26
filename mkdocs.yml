@@ -149,9 +149,6 @@ nav:
   - Community Resources:
     - community_resources/index.md
     - Working Groups: community_resources/community_working_groups.md
-    - Events:
-       - community_resources/events/index.md
-      #  - Add Event: community_resources/events/add_event.md
     - Model Evaluation Links:
       - community_resources/community_med/index.md
       - Observational Catalogues: community_resources/community_med/community_observational_catalogs.md

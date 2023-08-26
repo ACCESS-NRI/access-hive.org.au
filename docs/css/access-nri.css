@@ -160,14 +160,15 @@
 .card-container > * {
   border: var(--border-width) solid var(--card-borders);
   border-radius: 0.6rem;
-  box-shadow: 6px 6px 10px var(--card-shadows);
+  box-shadow: 0.28rem 0.28rem 0.45rem var(--card-shadows);
   overflow: hidden;
 }
 
 /* Single card hover */
 .card-container > *:hover {
   border-color: var(--md-accent-fg-color);
-  box-shadow: 10px 10px 10px var(--card-shadows-hover);
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--card-shadows);
+  box-shadow: 0.35rem 0.35rem 0.45rem 0.07rem var(--card-shadows);
   transition-property: all;
   transition-duration: 0.4s;
 }
@@ -251,6 +252,27 @@
   margin-bottom: 0.5em;
 }
 
+/* Text card */
+.text-card {
+  color: var(--md-default-fg-color) !important;
+  font-size: 1.4em;
+  border: var(--border-width) solid var(--card-borders);
+  border-radius: 0.6rem;
+  box-shadow: 0.28rem 0.28rem 0.45rem var(--card-shadows);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  width: max-content;
+  height: 2.5rem;
+}
+.text-card:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0.35rem 0.35rem 0.45rem 0.07rem var(--card-shadows);
+  transition-property: all;
+  transition-duration: 0.4s;
+}
 /* =============================================================== 
   Main body
 */
@@ -867,14 +889,18 @@ pre:has(code):hover > button {
   content: '\e804';
   vertical-align: super;
   font-size: 0.5em;
-  margin-left: 0.3em;
+  margin-left: 0.2em;
   display: inline;
-  transform: rotate(-45deg);
 }
 
 /* =============================================================== 
   Miscellaneous
 */
+img.intro-img {
+  max-height: 14rem;
+  display: block;
+  margin: 0 auto;
+}
 
 /* Aspect ratios */
 .aspect-ratio1to1 {
@@ -887,8 +913,7 @@ pre:has(code):hover > button {
 
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
   border-radius: 0.6rem;
 }
 
@@ -911,7 +936,7 @@ pre:has(code):hover > button {
 
 /* Add padding to image container */
 .with-padding {
-  padding: 0.5em;
+  padding: 0.4rem;
 }
 
 .bold {
