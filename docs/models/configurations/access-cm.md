@@ -10,7 +10,7 @@ It produces physical climate simulations.
 <a href="https://www.publish.csiro.au/es/ES19040" target="_blank">ACCESS-CM2</a> [@Bi2020-vj] was initially developed by <a href="https://www.csiro.au/" target="_blank">CSIRO</a> and is one of Australia’s contributions to the World Climate Research Programme’s <a href = "https://wcrp-cmip.org/cmip-phase-6-cmip6/" target="_blank">Coupled Model Intercomparison Project Phase 6 (CMIP6)</a>.
 
 ### Model components
-- <a href="../../model_components/atmosphere">Atmoshpere</a>: <a href="../../model_components/atmosphere#the-unified-model-um">UM10.6</a>, GA7.1 science configuration. N96 spatial resolution (1.875° x 1.25°), 85 vertical levels. Physical model only – no carbon cycle.
+- <a href="../../model_components/atmosphere">Atmoshpere</a>: <a href="../../model_components/atmosphere#unified-model-um">UM10.6</a>, GA7.1 science configuration. N96 spatial resolution (1.875° x 1.25°), 85 vertical levels. Physical model only – no carbon cycle.
   
 - <a href="../../model_components/aerosols_atmospheric_chemistry">Aerosols and Atmospheric Chemistry</a>: <a href="../../model_components/aerosols_atmospheric_chemistry#glomap">GLOMAP</a> for the aerosols and <a href="../../model_components/aerosols_atmospheric_chemistry#ukca">UKCA</a> for the atmospheric chemistry.
 
