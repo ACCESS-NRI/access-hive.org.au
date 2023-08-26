@@ -46,7 +46,7 @@ For tasks supported by ACCESS-NRI (e.g., running a supported model configuration
 <hr>
 
 ## Login to Gadi
-Operations such as model runs and output data I/O take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
+Operations involving model runs and data collections take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
 
 Before you login to <i>Gadi</i>, you need to possess the following prerequisites:
 <ul>
