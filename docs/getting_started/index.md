@@ -4,13 +4,13 @@ hide:
 ---
 # Getting Started
 
-The steps in this section are aimed at new users of <a href="../models/">ACCESS models</a> who would like to do any of the following:
+The steps in this section are aimed at new users who would like to do any of the following tasks:
 
-- Run your own experiment
-- Get model outputs
-- Analysing model outputs
+- Run their own experiment
+- Analyse model data outputs
+- Browse observational data catalogues
 - Evaluate model performance
-- Perform other tasks involving ACCESS Models
+- Perform other tasks involving ACCESS models or evaluation tools
 <hr>
 
 ## Create an NCI user account
