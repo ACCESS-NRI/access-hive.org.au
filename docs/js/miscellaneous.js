@@ -30,10 +30,10 @@ function adjustScrollingToId() {
         window.scrollBy(0, offset);
       }
     }
+    document.querySelectorAll(`[href="${location.hash}"].md-nav__link`).forEach(el => el.onclick = () => setTimeout(scrollToId,0));
   }
   scrollToId();
   window.onhashchange = () => scrollToId();
-  document.querySelectorAll(`[href="${location.hash}"].md-nav__link`).forEach(el => el.onclick = () => setTimeout(scrollToId,0));
 }
 
 
