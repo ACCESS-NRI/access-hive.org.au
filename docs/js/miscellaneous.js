@@ -21,17 +21,18 @@ function removeIconsFromHomepage() {
   partially covered by the sticky banner when clicking on a toc link
 */
 function adjustScrollingToId() {
-  let header = document.querySelector('header');
-  let links = document.querySelectorAll("a[href^='#'].md-nav__link,a[href^='#']:not([class])");
-
-  const clickEvent = e => {
-      e.preventDefault();
-      window.scrollTo(0, document.querySelector(e.target.hash).offsetTop - header.offsetHeight);
+  function scrollToId() {
+    if (location.hash) {
+      let header = document.querySelector('header');
+      let el = document.querySelector(location.hash);
+      let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
+      if (offset < 0) {
+        window.scrollBy(0, offset);
+      }
+    }
   }
-  
-  links.forEach(link => {
-    link.addEventListener('click', clickEvent)
-  })
+  scrollToId();
+  window.onhashchange = () => scrollToId();
 }
 
 
@@ -201,9 +202,9 @@ function fitText() {
 
 // Join all functions
 function main() {
+  adjustScrollingToId();
   sortTables();
   removeIconsFromHomepage();
-  adjustScrollingToId();
   tabFunctionality();
   addExternalLinkIcon();
   toggleTerminalAnimations();
