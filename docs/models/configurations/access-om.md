@@ -37,7 +37,7 @@ The ACCESS-OM2 has versions at three different spatial resolutions: <a href="htt
                 <a href="../../model_components/bgc_ocean">Ocean Biogeochemistry</a>: <a href="../../model_components/bgc_ocean#wombat">WOMBAT</a>.
             </li>
             <li>
-                <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE4.1</a>. Same grid as ocean.
+                <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE5.1.2</a>. Same grid as ocean.
             </li>
             <li>
                 <a href="../../model_components/coupler">Coupler</a>: <a href="../../model_components/coupler#oasis3-mct">OASIS3-MCT</a>.
@@ -58,7 +58,7 @@ The ACCESS-OM2 has versions at three different spatial resolutions: <a href="htt
                 <a href="../../model_components/bgc_ocean">Ocean Biogeochemistry</a>: <a href="../../model_components/bgc_ocean#wombat">WOMBAT</a>.
             </li>
             <li>
-                <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE4.1</a>. Same grid as ocean.
+                <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE5.1.2</a>. Same grid as ocean.
             </li>
             <li>
                 <a href="../../model_components/coupler">Coupler</a>: <a href="../../model_components/coupler#oasis3-mct">OASIS3-MCT</a>.
@@ -79,7 +79,7 @@ The ACCESS-OM2 has versions at three different spatial resolutions: <a href="htt
                 <a href="../../model_components/bgc_ocean">Ocean Biogeochemistry</a>: <a href="../../model_components/bgc_ocean#wombat">WOMBAT</a>.
             </li>
             <li>
-                <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE4.1</a>. Same grid as ocean.
+                <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE5.1.2</a>. Same grid as ocean.
             </li>
             <li>
                 <a href="../../model_components/coupler">Coupler</a>: <a href="../../model_components/coupler#oasis3-mct">OASIS3-MCT</a>.
