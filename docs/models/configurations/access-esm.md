@@ -12,7 +12,7 @@ This means it can simulate both the physical climate and global biogeochemical c
 
 
 ### Model components
-- <a href="../../model_components/atmosphere">Atmoshpere</a>: <a href="../../model_components/atmosphere#the-unified-model-um">UM7.3</a>, GA7.1 science configuration. N96 spatial resolution (1.875° x 1.25°), 38 vertical levels.
+- <a href="../../model_components/atmosphere">Atmoshpere</a>: <a href="../../model_components/atmosphere#unified-model-um">UM7.3</a>, GA7.1 science configuration. N96 spatial resolution (1.875° x 1.25°), 38 vertical levels.
 
 - <a href="../../model_components/land">Land</a>: <a href="../../model_components/land#cable">CABLE2.4</a>.
 
