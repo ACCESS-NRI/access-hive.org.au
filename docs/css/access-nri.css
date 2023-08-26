@@ -815,6 +815,7 @@ pre:has(code):hover > button {
   position: relative;
   box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
   display: flex;
+  flex-wrap: wrap;
   width: fit-content;
   overflow: auto;
   margin-top: 1em;
@@ -936,7 +937,7 @@ img.intro-img {
 
 /* Add padding to image container */
 .with-padding {
-  padding: 0.4rem;
+  padding: 0.4rem !important;
 }
 
 .bold {
@@ -945,15 +946,15 @@ img.intro-img {
 
 /* image cover */
 .img-cover {
-  object-fit: cover;
+  object-fit: cover !important;
 }
 
 .img-contain {
-  object-fit: contain;
+  object-fit: contain !important;
 }
 
 .large-text {
-  font-size: 1.4em;
+  font-size: 1.4em !important;
 }
 
 
