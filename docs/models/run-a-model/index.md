@@ -1,5 +1,5 @@
 # Run a Model
-If you are a new user of ACCESS climate models, please refer to the [Getting Started](../../../getting_started) section.
+If you are a new user of ACCESS climate models, please refer to the [First Steps](/getting_started/first_steps) section.
 
 If you are unsure which ACCESS model is the right choice for your experiment, take a look at the overview of [ACCESS Models](../).
 

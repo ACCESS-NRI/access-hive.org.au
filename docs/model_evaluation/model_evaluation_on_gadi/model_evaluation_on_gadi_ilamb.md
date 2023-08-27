@@ -16,7 +16,7 @@ This documentation is tailored to using the tool within the NCI infrastructure a
 
 ## Using ILAMB and IOMB on Gadi
 
-`ilamb` is provided through both the `xp65` and `hh5` code projects on <i>Gadi</i> at the National Computational Infrastructure. To use `ilamb` through this infrastructure, you need to have an NCI account and join the projects. See our [Getting Started Guide](../../getting_started/index.md).
+`ilamb` is provided through both the `xp65` and `hh5` code projects on <i>Gadi</i> at the National Computational Infrastructure. To use `ilamb` through this infrastructure, you need to have an NCI account and join the projects. See our [Getting Started Guide](../../getting_started/first_steps.md).
 
 You will find the information needed to run ILAMB and IOMB on Gadi in our documentation:
 

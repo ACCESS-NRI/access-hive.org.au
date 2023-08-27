@@ -2,7 +2,7 @@
 # Run {{ model }}
 ## Requirements
 ### General requirements
-Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
+Before running {{ model }}, you need to fulfil general requirements outlined in the [First Steps](/getting_started/first_steps) section.
 
 ### <span>Model-specific requirements</span>
 <ul>

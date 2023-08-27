@@ -1,6 +1,6 @@
 # `conda` Environment for Model Evaluation on NIC's Gadi
 
-At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi via `ssh`. If this is not the case, please go to our instructions on [how to get access to NCI's Gadi](../../getting_started/index.md).
+At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi via `ssh`. If this is not the case, please go to our instructions on [how to get access to NCI's Gadi](../../getting_started/first_steps.md).
 
 The instructions below explain how to load our curated `python` environment, with packages and scripts which are supported by ACCESS-NRI. Once these instructions have been followed you will be able to use all pacakges and scripts when running directly on Gadi via `ssh`, in `PBS` scripts, or in JupyterLab.
 
@@ -84,7 +84,7 @@ In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`
 
 ## Running our `access-med` environment on NCI's Interactive ARE (JupyterLab)
 
-NCI also supports an interactive coding environment called the Australian Research Environment (ARE). It's use is quite similar to submitting a computing job via `qsub -I`, but it comes with dedicated graphical user interfaces for jupyter notebooks. To use it, you need an NCI account and be part of a project that gives you computing resources (see our [getting started](../../getting_started/index.md)).
+NCI also supports an interactive coding environment called the Australian Research Environment (ARE). It's use is quite similar to submitting a computing job via `qsub -I`, but it comes with dedicated graphical user interfaces for jupyter notebooks. To use it, you need an NCI account and be part of a project that gives you computing resources (see our [getting started](../../getting_started/first_steps.md)).
 
 You can then go to <a href="https://are.nci.org.au" target="_blank">https://are.nci.org.au</a> to log in. In the "Featured Apps" section, click on "JupyterLab" and to a JupyterLab instance.
 

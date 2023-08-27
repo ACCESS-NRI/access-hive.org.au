@@ -16,7 +16,7 @@ hide:
 </div>
 
 <div class="card-container homepage-buttons">
-    <a href="getting_started/" class="vertical-card">
+    <a href="/getting_started" class="vertical-card">
         <div class="bold">New to ACCESS-Hive?</div>
         <div class="card-text-container">
             <div class="bold">Get Started</div>
