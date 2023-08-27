@@ -8,7 +8,7 @@ This means it can simulate both the physical climate and global biogeochemical c
 
 ## ACCESS-ESM1.5
 
-<a href="https://www.publish.csiro.au/es/ES19035" target="_blank">ACCESS-ESM1.5</a> [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 was developed primarily to enable Australia to participate in the <a href = "https://wcrp-cmip.org/cmip-phase-6-cmip6/" target="_blank">Coupled Model Intercomparison Project Phase 6 (CMIP6)</a> with an ESM version.
+<a href="https://www.publish.csiro.au/es/ES19035" target="_blank">ACCESS-ESM1.5</a> [@Ziehn2020] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 was developed primarily to enable Australia to participate in the <a href = "https://wcrp-cmip.org/cmip-phase-6-cmip6/" target="_blank">Coupled Model Intercomparison Project Phase 6 (CMIP6)</a> with an ESM version.
 
 
 ### Model components

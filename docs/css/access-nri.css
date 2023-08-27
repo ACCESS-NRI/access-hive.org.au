@@ -707,6 +707,7 @@ h1.homepage {
 .header-btn >:last-child {
   flex-basis: 75%;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* =============================================================== 
@@ -993,7 +994,7 @@ img.intro-img {
     height: 11rem;
   }
 }
-@media screen and (width <= 550px) {
+@media screen and (width <= 600px) {
   .vertical-card {
     width: 40%;
   }

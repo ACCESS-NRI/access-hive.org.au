@@ -9,7 +9,7 @@ The atmospheric fields that drive the model are provided by a data source, usual
 
 ## ACCESS-OM2
 
-<a href="https://gmd.copernicus.org/articles/13/401/2020/" target="_blank">ACCESS-OM2</a> [@Kiss2020-gmd] is a suite of coupled ocean-sea ice models developed by the <Consortium href="http://cosima.org.au/" target="_blank">Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)</a>.
+<a href="https://gmd.copernicus.org/articles/13/401/2020/" target="_blank">ACCESS-OM2</a> [@Kiss2020] is a suite of coupled ocean-sea ice models developed by the <Consortium href="http://cosima.org.au/" target="_blank">Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)</a>.
 
 The ACCESS-OM2 has versions at three different spatial resolutions: <a href="http://cosima.org.au/index.php/models/access-om2/" target="_blank">ACCESS-OM2</a>, <a href="http://cosima.org.au/index.php/models/access-om2-025/" target="_blank">ACCESS-OM2-025</a> and <a href="http://cosima.org.au/index.php/models/access-om2-01-2/" target="_blank">ACCESS-OM2-01</a>.
 

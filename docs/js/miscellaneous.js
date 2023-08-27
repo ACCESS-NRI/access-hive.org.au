@@ -24,7 +24,7 @@ function adjustScrollingToId() {
   function scrollToId() {
     if (location.hash) {
       let header = document.querySelector('header');
-      let el = document.querySelector(location.hash);
+      let el = document.getElementById(location.hash.slice(1,));
       let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
       if (offset < 0) {
         window.scrollBy(0, offset);
@@ -201,6 +201,26 @@ function fitText() {
   })
 }
 
+
+/*
+  Make footnote citations link to article
+*/
+function makeCitationLinks() {
+  let match;
+  let href;
+  document.querySelectorAll('.footnote [id^="fn:"] > p').forEach(el => {
+    if (match = el.innerHTML.match('<a\\s*href="https://doi.org/[\\w\./-]*')) { // Assignment to variable NOT AN ERROR!
+      href = match[0].slice(9,);
+      el.outerHTML = `<a href="${href}" target="_blank">${el.innerHTML}</a>`;
+    } else if (match = el.innerHTML.match('URL: <a href="[\\w\./:-]*')) {
+      href = match[0].slice(14,);
+      el.outerHTML = `<a href="${href}" target="_blank">${el.innerHTML}</a>`;
+    }
+  })
+}
+
+
+
 // Join all functions
 function main() {
   adjustScrollingToId();
@@ -208,9 +228,10 @@ function main() {
   removeIconsFromHomepage();
   tabFunctionality();
   addExternalLinkIcon();
-  toggleTerminalAnimations();
-  // addCardContainerChildrenNumber();
   fitText();
+  toggleTerminalAnimations();
+  makeCitationLinks();
+  // addCardContainerChildrenNumber();
 }
 
 // Run all functions
