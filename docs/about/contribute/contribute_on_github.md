@@ -83,15 +83,21 @@ Work locally on the branch `spongebob/fix-hive-title-issue-234`, and push the co
 
 <terminal-window>
     <terminal-line data="input">git add . </terminal-line>
+    <terminal-line></terminal-line>
     <terminal-line data="input">git commit -m "(#234) Fixed Hive title!" </terminal-line>
-    <terminal-line>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</terminal-line>
-    <terminal-line>remote: </terminal-line>
-    <terminal-line>remote: Create a pull request for 'spongebob/fix-hive-title-issue-234' on GitHub by visiting:</terminal-line>
-    <terminal-line>remote:      https://github.com/ACCESS-Hive/access-hive.github.io/pull/new/spongebob/fix-hive-title-issue-234</terminal-line>
-    <terminal-line>remote: </terminal-line>
+    <terminal-line>[spongebob/fix-hive-title-issue-234 7afe8c11] (#234): Fixed Hive title!</terminal-line>
+    <terminal-line>1 file changed, 17 insertions(+)</terminal-line>
+    <terminal-line></terminal-line>
+    <terminal-line data="input">git push</terminal-line>
+    <terminal-line>Enumerating objects: 11, done.</terminal-line>
+    <terminal-line>Counting objects: 100% (11/11), done.</terminal-line>
+    <terminal-line>Delta compression using up to 10 threads</terminal-line>
+    <terminal-line>Compressing objects: 100% (6/6), done.</terminal-line>
+    <terminal-line>Writing objects: 100% (6/6), 637 bytes | 637.00 KiB/s, done.</terminal-line>
+    <terminal-line>Total 6 (delta 5), reused 0 (delta 0), pack-reused 0</terminal-line>
+    <terminal-line>remote: Resolving deltas: 100% (5/5), completed with 5 local objects.</terminal-line>
     <terminal-line>To github.com:ACCESS-Hive/access-hive.github.io.git</terminal-line>
-    <terminal-line>* [new branch]        spongebob/fix-hive-title-issue-234 -> spongebob/fix-hive-title-issue-234</terminal-line>
-    <terminal-line>branch 'spongebob/fix-hive-title-issue-234' set up to track 'origin/spongebob/fix-hive-title-issue-234'.</terminal-line>
+        <terminal-line>7263feb5..7afe8c13  jasmeen/restructure-contribute-tab-462 -> jasmeen/restructure-contribute-tab-462</terminal-line>
 </terminal-window>
 
 
