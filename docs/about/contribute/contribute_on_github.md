@@ -100,6 +100,12 @@ Work locally on the branch `spongebob/fix-hive-title-issue-234`, and push the co
         <terminal-line>7263feb5..7afe8c13  jasmeen/restructure-contribute-tab-462 -> jasmeen/restructure-contribute-tab-462</terminal-line>
 </terminal-window>
 
+While working on a local branch, please make sure to regularly pull changes from the remote `main` into your local branch, as follows:
+
+<terminal-window>
+    <terminal-line data="input">git pull origin main</terminal-line>
+</terminal-window>
+
 
 ## Deploying Website Preview
 
