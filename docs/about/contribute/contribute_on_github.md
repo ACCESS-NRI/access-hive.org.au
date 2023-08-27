@@ -79,7 +79,24 @@ After cloning the repository locally, create a new branch to make your local cha
     <terminal-line>branch 'spongebob/fix-hive-title-issue-234' set up to track 'origin/spongebob/fix-hive-title-issue-234'.</terminal-line>
 </terminal-window>
 
+Work locally on the branch `spongebob/fix-hive-title-issue-234`, and push the commits using the commands:
+
+<terminal-window>
+    <terminal-line data="input">git add . </terminal-line>
+    <terminal-line data="input">git commit -m "(#234) Fixed Hive title!" </terminal-line>
+    <terminal-line>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</terminal-line>
+    <terminal-line>remote: </terminal-line>
+    <terminal-line>remote: Create a pull request for 'spongebob/fix-hive-title-issue-234' on GitHub by visiting:</terminal-line>
+    <terminal-line>remote:      https://github.com/ACCESS-Hive/access-hive.github.io/pull/new/spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line>remote: </terminal-line>
+    <terminal-line>To github.com:ACCESS-Hive/access-hive.github.io.git</terminal-line>
+    <terminal-line>* [new branch]        spongebob/fix-hive-title-issue-234 -> spongebob/fix-hive-title-issue-234</terminal-line>
+    <terminal-line>branch 'spongebob/fix-hive-title-issue-234' set up to track 'origin/spongebob/fix-hive-title-issue-234'.</terminal-line>
+</terminal-window>
+
+
 ## Deploying Website Preview
+
 
 ## Additional GitHub learning resources 
 
