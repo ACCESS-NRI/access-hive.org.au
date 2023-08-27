@@ -97,7 +97,7 @@ nav:
   - Getting Started: 
     - getting_started/index.md
     - First Steps: getting_started/first_steps.md
-    - ARE: getting_started/are.md
+    - Australian Research Environment (ARE): getting_started/are.md
 
   - Models: 
     - Models: models/index.md
