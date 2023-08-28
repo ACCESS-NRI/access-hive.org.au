@@ -9,10 +9,9 @@ Click on the questions to unfold the answers.
 ??? abstract "What is the difference between the ACCESS-Hive and the Hive Forum?"
     ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
     The Hive forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
+    <p align="center"><img align="center" width="50%" src="/assets/access_hive_links.png" alt="Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive via the Access-Hive portal for documentation and the Hive Forum for exchange and support."></p>
 
-    <p align="center"><img align="center" width="50%" src="../../assets/access_hive_links.png" alt="Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive via the Access-Hive portal for documentation and the Hive Forum for exchange and support."></p>
-
-??? abstract "What is the difference between MODEL, MODEL COMPONENT, and MODEL CONFIGURATION?"
+??? abstract "What is the difference between _model_, _model component_, and _model configuration_?"
     A **model component** (sometimes referred to simply as component) is a codebase that is typically compiled into a single executable. It usually runs independently and communicates with other components via a coupler.
 
     We refer to **model** as a general descriptive name for a particular combination of model components.
@@ -20,7 +19,7 @@ Click on the questions to unfold the answers.
 
     A **model configuration** is a model (as described above) with a specific configuration (e.g. version, set of parameters) for each of its components.
 
-??? abstract "What are MODEL RUNS and EXPERIMENTS?"
+??? abstract "What are _Model Runs_ and _Experiments_?"
     A **run** is when a model configuration is executed, usually on an HPC system.
 
     An **experiment** typically consists of one or multiple separate sequential **runs**, with each **run** picking up where the previous one finished.
@@ -30,8 +29,7 @@ Click on the questions to unfold the answers.
 ??? abstract "How do model experiments and model evaluation work together?"
 
     Climate science - like all science - is based on the comparison of different models and hypothesis with observational data. We provide or support the frameworks to perform such comparisons as part of the **model evaluation**. The different model hypotheses, or more practically speaking *model experiments*, are created by executing different model configurations with different setups; for example by perturbing initial conditions or by adding new physical prescriptions to the models.
-
-    <p align="center"><img align="center" width="75%" src="../../assets/how_does_it_work_together.png" alt="Diagram showing how running ACCESS model configurations with different setups create different experiments. These are then compared with each other and observational data as part of the model evaluation. These comparisons are what informs climate science."></p>
+    <p align="center"><img align="center" width="75%" src="/assets/how_does_it_work_together.png" alt="Diagram showing how running ACCESS model configurations with different setups create different experiments. These are then compared with each other and observational data as part of the model evaluation. These comparisons are what informs climate science."></p>
 
 ??? abstract "What is a control experiment? Why are they important?"
     A "control experiment" (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
@@ -49,7 +47,7 @@ Click on the questions to unfold the answers.
 
     Perturbation experiments are a very important way to try and understand complex earth systems, e.g. to isolate potential climate change signals and try and understand their effects.
 
-??? abstract "Where can I find OBSERVATIONAL DATA and MODEL DATA?"
+??? abstract "Where can I find _observational data_ and _model data_?"
     
     Both observational and model DATA is hosted by the National Computational Infrastructure (NCI) under different projects. 
 
@@ -59,7 +57,7 @@ Click on the questions to unfold the answers.
 
     In any case, you need to have access to the specific projects and NCI itself in order to read the data. We explain this on our [**Getting Started Pages**](../getting_started/index.md).
 
-??? abstract "What is the difference between **TEAMS** and **WORKING GROUPS**?"
+??? abstract "What is the difference between _teams_ and _working groups_?"
 
     Throughout this documentation, we use the term **teams** to describe ACCESS-NRI's internal employees.
 
@@ -70,3 +68,20 @@ Click on the questions to unfold the answers.
 Consider asking for help on the <a href="https://forum.access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>. For content supported by ACCESS-NRI a team member will provide support. For other content, a fellow member of the community might be able to help.
 
 For further information on what assistance is available on the forum please visit the forum's <a href="https://forum.access-hive.org.au/t/access-help-and-support/908" target="_blank">Help and Support Page</a>. There is also a <a href="https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021" target="_blank">Forum Support FAQ</a> covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
+
+<div class="card-container">
+    <a href="/about/contribute/user_support/ask_on_forum" class="horizontal-card">
+        <div class="card-image-container white-background">
+            <img class="img-cover" src="/assets/access-nri-support.png">
+        </div>
+        <div class="card-text-container with-padding">
+            <div class="bold">
+                <i class="fa-solid fa-circle-question"></i>
+                Have a question or need help?
+            </div>
+            <span class="with-padding">
+                Ask a question on the Forum and get in touch with our community!
+            </span>
+        </div>
+    </a>
+</div>
