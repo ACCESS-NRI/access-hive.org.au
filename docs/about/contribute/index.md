@@ -11,7 +11,7 @@ Contributions are encouraged from any member of the community regarding any aspe
 Anyone is welcome to contribute towards improving the **ACCESS-Hive** user portal. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
 
 <div class="card-container">
-    <a href="/about/contribute/ask_on_forum" class="vertical-card-half-width aspect-ratio2to1">
+    <!-- <a href="/about/contribute/ask_on_forum" class="vertical-card aspect-ratio2to1">
         <div class="vertical-card-image-container white-background">
            <img class="img-cover" src="/assets/access-nri-support.png">
         </div>
@@ -24,18 +24,17 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive** user porta
                 Ask a question on the Forum and get in touch with our community!
             </span>
         </div>
-    </a>
-    <a href="/about/contribute/contribute_on_github" class="vertical-card-half-width aspect-ratio2to1">
-        <div class="vertical-card-image-container white-background">
+    </a> -->
+    <a href="/about/contribute/contribute_on_github" class="horizontal-card aspect-ratio1to1">
+        <div class="card-image-container white-background">
             <img class="img-cover" src="/assets/github-how-to-contribute.jpg">
         </div>
-        <div class="vertical-card-text-container with-padding">
+        <div class="card-text-container with-padding">
             <div class="bold">
                 <i class="fa-brands fa-github"></i>
                 Contribute on Github!
             </div>
             <span class="with-padding">
-                <!-- Suggest a feature request, propose bug fixes or missing information on **ACCESS-Hive**  -->
                 Suggest an idea, propose bug fixes, or flag missing content on <b>ACCESS-Hive GitHub repo</b>! 
             </span>
         </div>
