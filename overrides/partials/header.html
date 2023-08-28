@@ -38,6 +38,9 @@
         <span>{{ config.site_name }}</span>
         <!-- <a href="https://www.access-nri.org.au" target="_blank" class="hostedby">Hosted by <span class="bold">ACCESS-NRI</span></a> -->
       </div>
+      <div class="md-header__img">
+        <img src="../assets/ACCESS_icon_HIVE.png" alt="logo">
+      </div>
       {% if config.theme.palette %}
         {% if not config.theme.palette is mapping %}
           <form class="md-header__option" data-md-component="palette">
@@ -87,7 +90,7 @@
           <div>
             <img src="{{ base_url }}/assets/ACCESS_icon_HIVE.png">
           </div>
-          <div>
+          <div class="fitText">
             Hive Forum
           </div>
         </a>
@@ -95,7 +98,7 @@
           <div>
             <img src="{{ base_url }}/assets/ACCESS-Logo.png">
           </div>
-          <div>
+          <div class="fitText">
             ACCESS-NRI
           </div>
         </a>
@@ -103,7 +106,7 @@
           <div>
             <div class="fa-brands fa-github"></div>
           </div>
-          <div>
+          <div class="fitText">
             Contribute
           </div>
         </a>

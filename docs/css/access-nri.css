@@ -567,8 +567,17 @@ h1.homepage {
 .md-header__title {
   margin: 0 0.2em 0 0.3em !important;
   flex-shrink: 1;
-  overflow: hidden;
   position: relative;
+}
+.md-header__img {
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2em 0 0.3em;
+  flex-shrink: 1;
+  position: relative;
+}
+.md-header__img img {
+  max-height: 2rem;
 }
 
 /* Main logo */
@@ -707,6 +716,7 @@ h1.homepage {
 .header-btn >:last-child {
   flex-basis: 75%;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* =============================================================== 
@@ -1078,5 +1088,23 @@ img.intro-img {
   }
   .md-footer-meta__inner > * {
     gap: 1rem;
+  }
+}
+
+@media screen and (width > 400px) {
+  /* Hide logo in title */
+  .md-header__img {
+    display: none;
+  }
+}
+
+@media screen and (width <= 400px) {
+  /* Show logo in title */
+  .md-header__title {
+    display: none;
+  }
+  /* Hide text in title */
+  .md-header__img {
+    display: flex;
   }
 }
