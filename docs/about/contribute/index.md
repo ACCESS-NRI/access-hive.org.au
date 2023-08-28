@@ -25,7 +25,7 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive** user porta
             </span>
         </div>
     </a> -->
-    <a href="/about/contribute/contribute_on_github" class="horizontal-card aspect-ratio1to1">
+    <a href="/about/contribute/contribute_on_github" class="horizontal-card">
         <div class="card-image-container white-background">
             <img class="img-cover" src="/assets/github-how-to-contribute.jpg">
         </div>

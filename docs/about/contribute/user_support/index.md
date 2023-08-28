@@ -6,7 +6,7 @@ On this page we answer frequently asked questions (FAQs), and also give addition
 
 Click on the questions to unfold the answers.
 
-??? note "What is the difference between the ACCESS-Hive and the Hive Forum?"
+??? abstract "What is the difference between the ACCESS-Hive and the Hive Forum?"
     ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
     The Hive forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
 
@@ -70,3 +70,20 @@ Click on the questions to unfold the answers.
 Consider asking for help on the <a href="https://forum.access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>. For content supported by ACCESS-NRI a team member will provide support. For other content, a fellow member of the community might be able to help.
 
 For further information on what assistance is available on the forum please visit the forum's <a href="https://forum.access-hive.org.au/t/access-help-and-support/908" target="_blank">Help and Support Page</a>. There is also a <a href="https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021" target="_blank">Forum Support FAQ</a> covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
+
+<div class="card-container">
+    <a href="/about/contribute/ask_on_forum" class="horizontal-card">
+        <div class="card-image-container white-background">
+            <img class="img-cover" src="/assets/access-nri-support.png">
+        </div>
+        <div class="card-text-container with-padding">
+            <div class="bold">
+                <i class="fa-solid fa-circle-question"></i>
+                Have a question or need help?
+            </div>
+            <span class="with-padding">
+                Ask a question on the Forum and get in touch with our community!
+            </span>
+        </div>
+    </a>
+</div>

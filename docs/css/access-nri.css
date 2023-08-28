@@ -385,32 +385,32 @@ h1.homepage {
 */
 
 /* Not owned (Supported on gadi) warnings */
-.md-typeset :is(.admonition,details):is(.warning,.caution,.attention) {
+/* .md-typeset :is(.admonition,details):is(.warning,.caution,.attention) {
   border-color: var(--not-owned);
   background-color: var(--not-owned-background);
 }
 .md-typeset :is(.warning,.caution,.attention)>:is(.admonition-title,summary) {
   background-color: rgba(var(--not-owned-color),0.2);
-}
+} */
 
 /* Not supported warnings */
-.md-typeset :is(.admonition,details):is(.danger,.error) {
+/* .md-typeset :is(.admonition,details):is(.danger,.error) {
   border-color: var(--not-supported);
   background-color: var(--not-supported-background);
 }
 .md-typeset :is(.danger,.error)>:is(.admonition-title,summary) {
   background-color: rgba(var(--not-supported-color),0.2);
-}
+} */
 
 
 /* Info warnings */
-.md-typeset :is(.admonition,details):is(.info,.todo) {
+/* .md-typeset :is(.admonition,details):is(.info,.todo) {
   border-color: var(--info);
   background-color: var(--info-background);
 }
 .md-typeset :is(.info,.todo)>:is(.admonition-title,summary) {
   background-color: rgba(var(--info-color),0.2);
-}
+} */
 
 
 /* =============================================================== 
