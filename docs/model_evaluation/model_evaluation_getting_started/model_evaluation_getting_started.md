@@ -20,7 +20,7 @@ The complete list of dependencies for the `access-med` environment can be found 
 
 To avoid running code on <i>Gadi</i> with incompatible packages, a conda environment called `access-med` is provided. 
 <br>
-To change to this curated environment, run the following commands after logging into <i>Gadi</i> and edit your `PBS` script accordingly:
+To change to this curated environment, run the following commands after logging into <i>Gadi</i> and <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">edit</a> your `PBS` script accordingly:
 ```
 module use /g/data/xp65/public/modules
 module load conda/access-med
@@ -81,6 +81,7 @@ To submit this `PBS` job, execute the following command:
 ```
 qsub example_pbs.sh
 ```
+
 
 This will submit a job to <i>Gadi</i> with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) *iq82* with a </i>normalbw</i> <a href="https://opus.nci.org.au/display/Help/Queue+Limits" target="_blank">normal queue</a> (`#PBS -q`). The </i>number of CPUs</i> requested is 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`) and a <i>walltime</i> of 10 minutes (`#PBS -l walltime=00:10:00`). The <i>data storage</i> (`#PBS -l storage=gdata/xp65`) is data storage access to project `xp65`. 
 <br>

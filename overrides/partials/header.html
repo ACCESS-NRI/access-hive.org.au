@@ -28,29 +28,18 @@
   {% endif %}
   <header class="{{ class }}" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-      <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      <div class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
         {% include "partials/logo.html" %}
-      </a>
+      </div>
       <label class="md-header__button md-icon" for="__drawer">
         {% include ".icons/material/menu" ~ ".svg" %}
       </label>
-      <div class="md-header__title" data-md-component="header-title">
-        <div class="md-header__ellipsis">
-          <div class="md-header__topic">
-            <span class="md-ellipsis">
-              {{ config.site_name }}
-            </span>
-          </div>
-          <div class="md-header__topic" data-md-component="header-topic">
-            <span class="md-ellipsis">
-              {% if page.meta and page.meta.title %}
-                {{ page.meta.title }}
-              {% else %}
-                {{ page.title }}
-              {% endif %}
-            </span>
-          </div>
-        </div>
+      <div class="md-header__title bold" data-md-component="header-title">
+        <span>{{ config.site_name }}</span>
+        <!-- <a href="https://www.access-nri.org.au" target="_blank" class="hostedby">Hosted by <span class="bold">ACCESS-NRI</span></a> -->
+      </div>
+      <div class="md-header__img">
+        <img src="../assets/ACCESS_icon_HIVE.png" alt="logo">
       </div>
       {% if config.theme.palette %}
         {% if not config.theme.palette is mapping %}
@@ -96,24 +85,32 @@
         </label>
         {% include "partials/search.html" %}
       {% endif %}
-        <a href="https://forum.access-hive.org.au/" target="_blank">
-            <div class="flex-container header-btn nri-orange-border large-text bold">
-                <i class="fa fa-earth-americas" style="font-size: 1.3em;"></i>
-                <span>Hive Forum</span>
-            </div>
-        </a>
-        <a href="https://www.access-nri.org.au" target="_blank">
-            <div class="flex-container header-btn nri-blue-border large-text bold">
-                <img src="../assets/ACCESS-Logo.png" class="icon-image">
-                <span>ACCESS-NRI</span>
-            </div>
-        </a>
-        <a href="https://github.com/ACCESS-Hive/access-hive.github.io" target="_blank">
-          <div class="flex-container header-btn large-text">
-            <i class="fa-brands fa-github" style="font-size: 1.3em;"></i>
-            <span>Contribute</span>
+      <div class="header-btn-container">
+        <a href="https://forum.access-hive.org.au/" target="_blank" class="header-btn large-text bold">
+          <div>
+            <img src="{{ base_url }}/assets/ACCESS_icon_HIVE.png">
+          </div>
+          <div class="fitText">
+            Hive Forum
           </div>
         </a>
+        <a href="https://www.access-nri.org.au" target="_blank" class="header-btn large-text bold">
+          <div>
+            <img src="{{ base_url }}/assets/ACCESS-Logo.png">
+          </div>
+          <div class="fitText">
+            ACCESS-NRI
+          </div>
+        </a>
+        <a href="https://github.com/ACCESS-Hive/access-hive.github.io" target="_blank" class="header-btn large-text bold">
+          <div>
+            <div class="fa-brands fa-github"></div>
+          </div>
+          <div class="fitText">
+            Contribute
+          </div>
+        </a>
+      </div>
       {% if config.repo_url %}
         <div class="md-header__source">
             {% include "partials/source.html" %}

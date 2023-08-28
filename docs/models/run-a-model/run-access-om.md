@@ -107,7 +107,7 @@ This file, which controls the general model configuration, contains several part
 walltime: 3:00:00
 jobname: 1deg_jra55_iaf
 mem: 1000GB</code></pre>
-        These lines can be edited to change the settings for the PBS scheduler.
+        These lines can be edited to change the <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS directives</a> for the <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a>.
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
@@ -260,7 +260,7 @@ To change the internal run length, edit the <code>restart_period</code> field in
 ## Run {{ model }} configuration
 After editing the configuration, you are ready to run {{ model }}. 
 <br>
-{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>Gadi</i></a> through a PBS job submission managed by <i>payu</i>.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>Gadi</i></a> through a <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
 As a first step, from within the <i>control</i> directory, it is good practice to run:
@@ -322,7 +322,7 @@ For example, to run the configuration for a total of 50 years with <code>restart
 ## Monitor {{ model }} runs
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
-You can execute the following command to show the status of all your submitted PBS jobs:
+You can execute the following command to show the status of all your submitted <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a>:
 <pre><code>qstat -u $USER</code></pre>
 <terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>

@@ -155,6 +155,36 @@ function toggleTerminalAnimations() {
   }
 }
 
+/*
+  Add style equals to number of children to all card containers, used for styling the card gaps in CSS
+*/
+function addCardContainerChildrenNumber() {
+  document.querySelectorAll(".card-container").forEach(container => {
+    container.setAttribute("style",`--num-children: ${container.childElementCount}`);
+  })
+}
+
+/*
+  Fit text to div if overflowing (for 'card-text-container' and 'fitText' class)
+*/
+function fitText() {
+  const coeff = 0.98;
+  function isOverflowing(el) {
+    return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
+  }
+  function fit(el) {
+    el.style.fontSize = null;
+    while (isOverflowing(el)) {
+      el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * coeff}px`;
+    }
+  }
+  const observer = new ResizeObserver(entries => {
+    entries.forEach(entry => fit(entry.target));
+  })
+  document.querySelectorAll('.card-text-container,.fitText').forEach(el => {
+    observer.observe(el);
+  })
+}
 
 // Join all functions
 function main() {
@@ -164,6 +194,8 @@ function main() {
   tabFunctionality();
   addExternalLinkIcon();
   toggleTerminalAnimations();
+  // addCardContainerChildrenNumber();
+  fitText();
 }
 
 // Run all functions

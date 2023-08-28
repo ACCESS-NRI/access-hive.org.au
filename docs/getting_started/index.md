@@ -4,12 +4,13 @@ hide:
 ---
 # Getting Started
 
-The steps in this section are aimed at new users of <a href="../models/">ACCESS models</a> who would like to do any of the following:
+The steps in this section are aimed at new users who would like to do any of the following tasks:
 
-- Run your own experiment
-- Get model outputs
+- Run their own experiment
+- Analyse model data outputs
+- Browse observational data catalogues
 - Evaluate model performance
-- Perform other tasks involving ACCESS Models
+- Perform other tasks involving ACCESS models or evaluation tools
 <hr>
 
 ## Create an NCI user account
@@ -24,14 +25,16 @@ Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
 
 ## Join relevant NCI projects
 
-NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. Access to this storage, as well as to computing resources to run models and evaluate them, is organised in *projects*.
+NCI provides multiple <a href="https://nci.org.au/our-services" target="_blank">services</a> that are necessary for climate research. These include the access to supercomputing resources, data storage, and data collections management.
 
-To perform computations on <i>Gadi</i>, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
+For technical reasons, to access either of these services you need to join a specific `project`.
+Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actually refers to.
+
+If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank">NCI Data Catalogue</a> and follow the <a href="https://opus.nci.org.au/display/Help/Data+Catalogue+User+Guide" target="_blank">NCI Data Catalogue User Guide</a>.
+
+To perform computations on <i>Gadi</i> instead, you need to join a project with computing resources. The project ID will be provided by your supervisor, research project or institution.
 
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
-
-Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actually refers to.
-<br>
 <div class="note">
   The first project you join will become your default one. If you would like to change this, check out <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
 </div> 
@@ -43,7 +46,7 @@ For tasks supported by ACCESS-NRI (e.g., running a supported model configuration
 <hr>
 
 ## Login to Gadi
-Operations such as model runs and output data I/O take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
+Operations involving model runs and data collections take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
 
 Before you login to <i>Gadi</i>, you need to possess the following prerequisites:
 <ul>
@@ -125,26 +128,26 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     An SSH-agent is an SSH key manager that avoids you having to enter your passphrase every time you connect to a server.
     <br>
     To add the SSH key to the SSH-agent:
-    <!-- Tab labels -->
-    <div class="tabLabels" label="systems">
-      <button>MacOS</button>
-      <button>Linux / Windows</button>
-    </div>
-    <!-- Tab content -->
-    <div class="tabContents" label="systems">
-      <!-- MacOS -->
-      <div>
-        <ol>
-          <li>
-            On your <b>local machine</b>, start the SSH-agent by running:
-            <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-window>
-              <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
-              <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-window>
-          </li>
-          <li>
-            Add your SSH key to the SSH-agent by running:
+    <ol>
+      <li>
+        On your <b>local machine</b>, start the SSH-agent by running:
+        <pre><code>eval "$(ssh-agent -s)"</code></pre>
+        <terminal-window>
+          <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
+          <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
+        </terminal-window>
+      </li>
+      <li>
+        Add your SSH key to the SSH-agent by running:
+        <!-- Tab labels -->
+        <div class="tabLabels" label="systems">
+          <button>MacOS</button>
+          <button>Linux / Windows</button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabContents" label="systems">
+          <!-- MacOS -->
+          <div>        
             <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
@@ -155,22 +158,9 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
             <div class="note">
               If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
             </div>
-          </li>
-        </ol>
-      </div>
-      <!-- Linux/Windows -->
-      <div>
-        <ol>
-          <li>
-            On your <b>local machine</b>, start the SSH-agent by running:
-            <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-window>
-              <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
-              <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-window>
-          </li>
-          <li>
-            Add your SSH key to the SSH-agent by running:
+          </div>
+          <!-- Linux/Windows -->
+          <div>
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
@@ -178,11 +168,11 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
             </terminal-window>
-          </li>
-        </ol>
-      </div>
-    </div>
-    <!-- End of tab content -->
+          </div>
+        </div>
+        <!-- End of tab content -->
+      </li>
+    </ol>
   </li>
   <li>
     <b>Create/Update the SSH config file</b>
