@@ -68,6 +68,8 @@
   --not-owned: rgb(var(--not-owned-color)); /* Not supported warnings */
   --info-color: var(--nri-light-blue-color); /* Color for info warnings */
   --info: rgb(var(--info-color)); /* Info warnings */
+  --faq-color: var(--nri-blue-color); /* Color for FAQ warnings */
+  --faq: rgb(var(--faq-color)); /* FAQ warnings */
 }
 
 [data-md-color-scheme="custom-dark"] {
@@ -431,6 +433,16 @@ h1.homepage {
 }
 .md-typeset :is(.info,.todo)>:is(.admonition-title,summary) {
   background-color: rgba(var(--info-color),0.2);
+}
+
+/* Abstract warnings (used for FAQs */
+.md-typeset :is(.admonition,details):is(.abstract) {
+  border-color: var(--faq);
+  background-color: transparent;
+  font-size: 1em;
+}
+.md-typeset :is(.abstract)>:is(.admonition-title,summary) {
+  background-color: rgba(var(--faq-color),0.2);
 }
 
 
