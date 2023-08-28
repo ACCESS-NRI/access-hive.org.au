@@ -165,16 +165,12 @@ nav:
     #   - ACCESS Training: community_resources/training/ACCESS_training.md
     #   - NCI Training: community_resources/training/nci-training.md
     #   - Additional Training: community_resources/training/additional_training.md
-    
-  # - Community Forum: https://forum.access-hive.org.au
-
   - About:
+    - about/index.md
     - Contact: about/contact.md
     - User support: about/user_support.md
     - How to contribute: about/how_to_contribute.md
-    - Code of conduct: about/code_of_conduct.md
-    - Policies: about/policies.md
-    - License: about/License.md
+    - License: about/license.md
     
 # Footer
 extra:
