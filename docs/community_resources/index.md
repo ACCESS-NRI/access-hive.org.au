@@ -4,7 +4,13 @@
 
 In this area of the Hive, we collect content that is not currated by us, but may be helpful for the community. You can [contribute](../contribute/index.md) to this part of the Hive too!
 
-<div class="card-container" style="flex-wrap:nowrap;">
+<div class="card-container">
+    <a href="glossaries" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img class="img-cover" src="../assets/glossary.png" alt="Glossaries">
+        </div>
+        <div class="card-text-container   bold">Glossaries</div>
+    </a>    
     <a href="community_working_groups" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-cover" src="../assets/community_workinggroups.jpg" alt="Working Groups">
