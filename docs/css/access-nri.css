@@ -884,6 +884,11 @@ pre:has(code):hover > button {
   margin-bottom: 1em;
 }
 
+.version-tabs {
+  margin-bottom: 0.3rem;
+  font-size: 1.2em;
+  width: 100%;
+}
 /* =============================================================== 
   Notes (!! icon marks)
 */
@@ -893,7 +898,7 @@ pre:has(code):hover > button {
   background-color: var(--note-bg);
   border-radius: 0.3rem;
   padding: 0.2em 0.3em 0.2em 1.5em;
-  margin: 0.5em 0 0.8em 0;
+  margin: 0.3em 0 0.8em 0;
 }
 
 .note::before {

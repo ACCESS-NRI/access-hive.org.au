@@ -1,10 +1,12 @@
 {% set model = "ACCESS-CM" %}
-# Run {{ model }}
 <!-- Tab labels -->
-<div class="tabLabels large-text" label="workflow">
+<div class="tabLabels version-tabs" label="workflow">
     <button id="are">ARE / <i>Gadi workflow</i></button>
     <button id="accessdev"><i>accessdev workflow</i></button>
 </div>
+
+# Run {{ model }}
+
 <div class="note">
     The workflow to run ACCESS_CM is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
     <br>
@@ -68,12 +70,11 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 <div class="tabContents" label="workflow">
     <!-- ARE/Gadi-->
     <div>
-        <h3>Start an ARE VDI Desktop session</h3>
+        <h2 class="testclass">Start an ARE VDI Desktop session</h2>
     </div>
     <!-- accessdev-->
     <div></div>
 </div>
-
 
 ## Get {{ model }} suite
 {{ model }} comprises the model components <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
