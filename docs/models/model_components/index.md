@@ -59,18 +59,9 @@ ACCESS model components represent different chemical, physical or biological par
 
 Most of these model components have originated from collaborations with international research groups, such as:
 
-- [UK Met Office][met-office-web]: UM atmospheric model.
-- [NOAA/ GFDL][noaa-gfdl-web]: MOM ocean model.
-- [LANL][lanl-web]: CICE sea ice model.
-- [CERFACS][cerfacs-web]: OASIS3-MCT coupling software package.
-- [UKCA][ukca-web]: UKCA atmospheric chemistry-aerosol model.
-- [CSIRO][csiro-web], [COSIMA][cosima-web], [CLEX][clex-web]: CABLE land surface model, WOMBAT ocean biogeochemistry package and CASA land biogeochemistry model; all developed in Australia.
-
-[met-office-web]: https://www.metoffice.gov.uk/
-[noaa-gfdl-web]: https://www.gfdl.noaa.gov/
-[lanl-web]: https://www.lanl.gov/
-[cerfacs-web]: https://cerfacs.fr/en/
-[ukca-web]: https://www.ukca.ac.uk/
-[csiro-web]: https://www.csiro.au/
-[clex-web]: https://www.climateextremes.org.au/
-[cosima-web]: http://www.cosima.org.au/
+- <a href="https://www.metoffice.gov.uk/" target="_blank">UK Met Office</a>: UM atmospheric model.
+- <a href="https://www.gfdl.noaa.gov/" target="_blank">NOAA / GFDL</a>: MOM ocean model.
+- <a href="https://www.lanl.gov/" target="_blank">LANL</a>: CICE sea ice model.
+- <a href="https://cerfacs.fr/en/" target="_blank">CERFACS</a>: OASIS3-MCT coupling software package.
+- <a href="https://www.ukca.ac.uk/" target="_blank">UKCA</a>: UKCA atmospheric chemistry-aerosol model.
+- <a href="https://www.csiro.au/" target="_blank">CSIRO</a>, <a href="https://www.climateextremes.org.au/" target="_blank">CLEX</a> and <a href="http://www.cosima.org.au/" target="_blank">COSIMA</a>: CABLE land surface model, WOMBAT ocean biogeochemistry package and CASA land biogeochemistry model. All developed in Australia.

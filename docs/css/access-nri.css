@@ -160,14 +160,15 @@
 .card-container > * {
   border: var(--border-width) solid var(--card-borders);
   border-radius: 0.6rem;
-  box-shadow: 6px 6px 10px var(--card-shadows);
+  box-shadow: 0.28rem 0.28rem 0.45rem var(--card-shadows);
   overflow: hidden;
 }
 
 /* Single card hover */
 .card-container > *:hover {
   border-color: var(--md-accent-fg-color);
-  box-shadow: 10px 10px 10px var(--card-shadows-hover);
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--card-shadows);
+  box-shadow: 0.35rem 0.35rem 0.45rem 0.07rem var(--card-shadows);
   transition-property: all;
   transition-duration: 0.4s;
 }
@@ -251,6 +252,27 @@
   margin-bottom: 0.5em;
 }
 
+/* Text card */
+.text-card {
+  color: var(--md-default-fg-color) !important;
+  font-size: 1.4em;
+  border: var(--border-width) solid var(--card-borders);
+  border-radius: 0.6rem;
+  box-shadow: 0.28rem 0.28rem 0.45rem var(--card-shadows);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  width: max-content;
+  height: 2.5rem;
+}
+.text-card:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0.35rem 0.35rem 0.45rem 0.07rem var(--card-shadows);
+  transition-property: all;
+  transition-duration: 0.4s;
+}
 /* =============================================================== 
   Main body
 */
@@ -545,8 +567,17 @@ h1.homepage {
 .md-header__title {
   margin: 0 0.2em 0 0.3em !important;
   flex-shrink: 1;
-  overflow: hidden;
   position: relative;
+}
+.md-header__img {
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2em 0 0.3em;
+  flex-shrink: 1;
+  position: relative;
+}
+.md-header__img img {
+  max-height: 2rem;
 }
 
 /* Main logo */
@@ -685,6 +716,7 @@ h1.homepage {
 .header-btn >:last-child {
   flex-basis: 75%;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* =============================================================== 
@@ -864,17 +896,21 @@ pre:has(code):hover > button {
 */
 .external-link::after {
   font-family: "fontello";
-  content: '\e803';
+  content: '\e804';
   vertical-align: super;
   font-size: 0.5em;
-  margin-left: 0.3em;
-  display: inline-block;
-  transform: rotate(-45deg);
+  margin-left: 0.2em;
+  display: inline;
 }
 
 /* =============================================================== 
   Miscellaneous
 */
+img.intro-img {
+  max-height: 14rem;
+  display: block;
+  margin: 0 auto;
+}
 
 /* Aspect ratios */
 .aspect-ratio1to1 {
@@ -887,8 +923,7 @@ pre:has(code):hover > button {
 
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
   border-radius: 0.6rem;
 }
 
@@ -911,7 +946,7 @@ pre:has(code):hover > button {
 
 /* Add padding to image container */
 .with-padding {
-  padding: 0.5em;
+  padding: 0.4rem;
 }
 
 .bold {
@@ -1053,5 +1088,23 @@ pre:has(code):hover > button {
   }
   .md-footer-meta__inner > * {
     gap: 1rem;
+  }
+}
+
+@media screen and (width > 400px) {
+  /* Hide logo in title */
+  .md-header__img {
+    display: none;
+  }
+}
+
+@media screen and (width <= 400px) {
+  /* Show logo in title */
+  .md-header__title {
+    display: none;
+  }
+  /* Hide text in title */
+  .md-header__img {
+    display: flex;
   }
 }

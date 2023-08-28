@@ -148,17 +148,14 @@ nav:
 
   - Community Resources:
     - community_resources/index.md
-    - Glossaries: community_resources/glossaries.md
     - Working Groups: community_resources/community_working_groups.md
-    - Events:
-       - community_resources/events/index.md
-      #  - Add Event: community_resources/events/add_event.md
     - Model Evaluation Links:
       - community_resources/community_med/index.md
       - Observational Catalogues: community_resources/community_med/community_observational_catalogs.md
       - Model Catalogues: community_resources/community_med/community_model_catalogs.md
       - Data Formatting: community_resources/community_med/community_data_processing.md
       - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
+    - Glossaries: community_resources/glossaries.md
     # - Training: 
     #   - Training: community_resources/training/index.md
     #   - Git Version Control: community_resources/training/git-version-control.md

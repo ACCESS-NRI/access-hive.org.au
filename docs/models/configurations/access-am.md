@@ -1,6 +1,5 @@
 #  ACCESS-AM  
 
-<!-- {% include "call_contribute.md" %} -->
 
 <img src="../../../assets/model-config-logos/configurations-without-titles/access-am.png" alt="ACCESS AM model" class="white-background with-border with-padding"></img>
 
@@ -8,7 +7,7 @@ The ACCESS Atmosphere Model (ACCESS-AM) is a global model with atmosphere and la
 
 ACCESS-NRI will release supported ACCESS-AM configurations.  The first release, ACCESS-AM2, will be derived from the [CSIRO ACCESS-CM2 configuration](access-cm.md#access-cm2) and will include [atmosphere] and [land] components.
 
-## <div class="center-icons"> ACCESS-AM2 </div>
+## ACCESS-AM2
 
 This is the model configuration used for the AMIP experiments contributed to the World Climate Research Programme’s Coupled Model Intercomparison Project Phase 6 (CMIP6). Note that the CMIP model naming is the same for both the AM and CM configurations, so the CMIP6 experiments are ACCESS-CM2 AMIP rather than ACCESS-AM2.
 
