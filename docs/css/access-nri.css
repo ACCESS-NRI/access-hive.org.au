@@ -412,9 +412,10 @@ h1.homepage {
   background-color: rgba(var(--info-color),0.2);
 }
 
-/* FAQ warnings */
+/* Transparent background for warnings */
 .md-typeset details {
   background-color: transparent;
+  font-size: 1em;
 }
 
 

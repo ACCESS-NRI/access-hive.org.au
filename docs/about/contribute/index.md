@@ -11,20 +11,6 @@ Contributions are encouraged from any member of the community regarding any aspe
 Anyone is welcome to contribute towards improving the **ACCESS-Hive** user portal. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
 
 <div class="card-container">
-    <!-- <a href="/about/contribute/ask_on_forum" class="vertical-card aspect-ratio2to1">
-        <div class="vertical-card-image-container white-background">
-           <img class="img-cover" src="/assets/access-nri-support.png">
-        </div>
-        <div class="vertical-card-text-container with-padding">
-            <div class="bold">
-                <i class="fa-solid fa-circle-question"></i>
-                Have a question or need help?
-            </div>
-            <span class="with-padding">
-                Ask a question on the Forum and get in touch with our community!
-            </span>
-        </div>
-    </a> -->
     <a href="/about/contribute/contribute_on_github" class="horizontal-card">
         <div class="card-image-container white-background">
             <img class="img-cover" src="/assets/github-how-to-contribute.jpg">

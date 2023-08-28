@@ -1,5 +1,6 @@
-<div class="flex-container vertical-flex-container with-border with-padding">
+<div class="flex-container with-border with-padding">
     <div class="med-text bold">Prerequisites</div>
+    <br>
     <div>
         <i class="fa-regular fa-square-check nri-green-color with-padding"></i> If are new to GitHub, you will first need to <a href="https://github.com" target="_blank">sign up</a> for a GitHub account.
         <br>
