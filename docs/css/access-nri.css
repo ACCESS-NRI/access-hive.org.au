@@ -961,8 +961,9 @@ pre:has(code):hover > button {
   For formatting a `> Note:` markdown syntax in html 
 */
 .markdown-notes {
-  color: var(--tab-text-light);
-  border-left: 0.2em solid var(--tab-text-lightest);
+  /* color: var(--tab-text-light); */
+  color: var(--md-default-fg-color--light);
+  border-left: 0.2em solid var(--md-default-fg-color--lighter);
   padding: 0.3em 0.9em;
   margin: 0 0.6em;
 }
