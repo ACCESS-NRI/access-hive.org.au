@@ -12,8 +12,8 @@ Anyone is welcome to contribute towards improving the **ACCESS-Hive** user porta
 
 <div class="card-container">
     <a href="/about/contribute/contribute_on_github" class="horizontal-card">
-        <div class="card-image-container white-background">
-            <img class="img-cover" src="/assets/github-how-to-contribute.jpg">
+        <div class="card-image-container">
+            <img class="img-contain white-background" src="/assets/github-how-to-contribute.jpg">
         </div>
         <div class="card-text-container with-padding">
             <div class="bold">

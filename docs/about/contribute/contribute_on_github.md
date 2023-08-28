@@ -5,7 +5,7 @@
         <i class="fa-regular fa-square-check nri-green-color with-padding"></i> If are new to GitHub, you will first need to <a href="https://github.com" target="_blank">sign up</a> for a GitHub account.
         <br>
         <i class="fa-regular fa-lightbulb nri-orange-color with-padding"></i> 
-        For learning GitHub, We'd also encourage you to complete <a href="#additional-github-learning-resources" target="_blank">self-paced GitHub learning courses</a> for brushing up basic GitHub skills. 
+        For learning GitHub, we also encourage you to complete <a href="#additional-github-learning-resources" target="_blank">self-paced GitHub learning courses</a> for brushing up basic GitHub skills. 
         <br>
         <br>
         <div class="markdown-notes">
