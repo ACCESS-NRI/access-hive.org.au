@@ -125,26 +125,26 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     An SSH-agent is an SSH key manager that avoids you having to enter your passphrase every time you connect to a server.
     <br>
     To add the SSH key to the SSH-agent:
-    <!-- Tab labels -->
-    <div class="tabLabels" label="systems">
-      <button>MacOS</button>
-      <button>Linux / Windows</button>
-    </div>
-    <!-- Tab content -->
-    <div class="tabContents" label="systems">
-      <!-- MacOS -->
-      <div>
-        <ol>
-          <li>
-            On your <b>local machine</b>, start the SSH-agent by running:
-            <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-window>
-              <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
-              <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-window>
-          </li>
-          <li>
-            Add your SSH key to the SSH-agent by running:
+    <ol>
+      <li>
+        On your <b>local machine</b>, start the SSH-agent by running:
+        <pre><code>eval "$(ssh-agent -s)"</code></pre>
+        <terminal-window>
+          <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
+          <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
+        </terminal-window>
+      </li>
+      <li>
+        Add your SSH key to the SSH-agent by running:
+        <!-- Tab labels -->
+        <div class="tabLabels" label="systems">
+          <button>MacOS</button>
+          <button>Linux / Windows</button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabContents" label="systems">
+          <!-- MacOS -->
+          <div>        
             <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
@@ -155,22 +155,9 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
             <div class="note">
               If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
             </div>
-          </li>
-        </ol>
-      </div>
-      <!-- Linux/Windows -->
-      <div>
-        <ol>
-          <li>
-            On your <b>local machine</b>, start the SSH-agent by running:
-            <pre><code>eval "$(ssh-agent -s)"</code></pre>
-            <terminal-window>
-              <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
-              <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-            </terminal-window>
-          </li>
-          <li>
-            Add your SSH key to the SSH-agent by running:
+          </div>
+          <!-- Linux/Windows -->
+          <div>
             <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
             You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
             <terminal-window>
@@ -178,11 +165,11 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
             </terminal-window>
-          </li>
-        </ol>
-      </div>
-    </div>
-    <!-- End of tab content -->
+          </div>
+        </div>
+        <!-- End of tab content -->
+      </li>
+    </ol>
   </li>
   <li>
     <b>Create/Update the SSH config file</b>
