@@ -608,7 +608,7 @@ h1.homepage {
 }
 
 /* ===============================================================
-  Flex container CSS
+  Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
 .header-btn-container {
   flex-grow: 1;
@@ -678,16 +678,10 @@ h1.homepage {
   font-size: 1.5em;
 }
 
-.vertical-card {
-  flex-direction: column;
-  max-width: 30%;
-  min-height: 0;
-}
-
-.vertical-card-half-width {
-  flex-direction: column;
-  max-width: 48%;
-  height: 20em;
+/* btn logo */
+.header-btn:nth-child(-n + 2) >:first-child > * {
+  height: 1em;
+  width: auto;
 }
 
 /* btn text */
@@ -981,6 +975,13 @@ pre:has(code):hover > button {
 .med-text {
   font-size: 1.2em;
 }
+
+.vertical-card-half-width {
+  flex-direction: column;
+  max-width: 48%;
+  height: 20em;
+}
+
 
 /* 
   For formatting a `> Note:` markdown syntax in html 
