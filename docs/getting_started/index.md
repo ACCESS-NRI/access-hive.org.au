@@ -4,12 +4,13 @@ hide:
 ---
 # Getting Started
 
-The steps in this section are aimed at new users of <a href="../models/">ACCESS models</a> who would like to do any of the following:
+The steps in this section are aimed at new users who would like to do any of the following tasks:
 
-- Run your own experiment
-- Get model outputs
+- Run their own experiment
+- Analyse model data outputs
+- Browse observational data catalogues
 - Evaluate model performance
-- Perform other tasks involving ACCESS Models
+- Perform other tasks involving ACCESS models or evaluation tools
 <hr>
 
 ## Create an NCI user account
@@ -24,14 +25,16 @@ Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
 
 ## Join relevant NCI projects
 
-NCI is hosting a large amount of data for the climate community on its supercomputer <i>Gadi</i>. Access to this storage, as well as to computing resources to run models and evaluate them, is organised in *projects*.
+NCI provides multiple <a href="https://nci.org.au/our-services" target="_blank">services</a> that are necessary for climate research. These include the access to supercomputing resources, data storage, and data collections management.
 
-To perform computations on <i>Gadi</i>, you need to join a project with computing resources. This project code will be provided by your supervisor, research project or institution.
+For technical reasons, to access either of these services you need to join a specific `project`.
+Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actually refers to.
+
+If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank">NCI Data Catalogue</a> and follow the <a href="https://opus.nci.org.au/display/Help/Data+Catalogue+User+Guide" target="_blank">NCI Data Catalogue User Guide</a>.
+
+To perform computations on <i>Gadi</i> instead, you need to join a project with computing resources. The project ID will be provided by your supervisor, research project or institution.
 
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
-
-Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actually refers to.
-<br>
 <div class="note">
   The first project you join will become your default one. If you would like to change this, check out <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
 </div> 
@@ -43,7 +46,7 @@ For tasks supported by ACCESS-NRI (e.g., running a supported model configuration
 <hr>
 
 ## Login to Gadi
-Operations such as model runs and output data I/O take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
+Operations involving model runs and data collections take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
 
 Before you login to <i>Gadi</i>, you need to possess the following prerequisites:
 <ul>

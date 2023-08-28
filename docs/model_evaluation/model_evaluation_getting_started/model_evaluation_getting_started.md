@@ -17,7 +17,7 @@ The complete list of dependencies can be found in the [`environment.yml`](https:
 ## Running our `access-med` environment on Gadi
 
 To avoid running code on Gadi with incompatible packages we provide you with a conda environment called access-med.
-In order to change to this curated environment, please run the following commands everytime after you log into Gadi (and as part of your PBS scripts):
+In order to change to this curated environment, please run the following commands everytime after you log into Gadi (and as part of a <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS scripts</a>):
 ```
 module use /g/data/xp65/public/modules
 module load conda/access-med
@@ -49,8 +49,13 @@ print(intake.__version__)
 print(esmvaltool.__version__)
 ```
 
-If you are planning to run your code on Gadi with a Portable Batch System (`PBS`) job, you will need to add in the `module use` and `module load` commands to your PBS script as well. You could for example create an `example_pbs.sh` file with the content:
+If you are planning to run your code on Gadi with a Portable Batch System (`PBS`) job, you will need to add in the `module use` and `module load` commands to your PBS script as well.
 
+<div class="note">
+If you are not familiar with PBS jobs on NCI, you can find NCI's guide <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">here</a>.
+</div>
+
+You could for example create an `example_pbs.sh` file with the content:
 
 ```
 #!/bin/bash
@@ -74,14 +79,20 @@ The content of `your_code.py` could be as simple as the import and version print
 qsub example_pbs.sh
 ```
 
-If you are not familiar with PBS jobs on NCI, you can find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) `iq82` with a [normal queue](https://opus.nci.org.au/display/Help/Queue+Limits) (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`), a walltime of 10 minutes (`#PBS -l walltime=00:10:00`) and data storage access to projects `xp65`. Note that for this example to work, you have to be [member of the NCI project](https://my.nci.org.au/mancini/project-search) `xp65` and `iq82`. Adjust the `#PBS -P` option to match your compute project. Upon starting the job, it will change into to the working directory that you submitted the job from (`#PBS -l wd`) and load the access-med conda environment.
+In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) `iq82` with a [normal queue](https://opus.nci.org.au/display/Help/Queue+Limits) (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`), a walltime of 10 minutes (`#PBS -l walltime=00:10:00`) and data storage access to projects `xp65`. Note that for this example to work, you have to be [member of the NCI project](https://my.nci.org.au/mancini/project-search) `xp65` and `iq82`. Adjust the `#PBS -P` option to match your compute project. Upon starting the job, it will change into to the working directory that you submitted the job from (`#PBS -l wd`) and load the access-med conda environment.
 
 
 ## Running our `access-med` environment on NCI's Interactive ARE (JupyterLab)
 
 NCI also supports an interactive coding environment called the Australian Research Environment (ARE). It's use is quite similar to submitting a computing job via `qsub -I`, but it comes with dedicated graphical user interfaces for jupyter notebooks. To use it, you need an NCI account and be part of a project that gives you computing resources (see our [getting started](../../getting_started/index.md)).
 
-You can then go to [https://are.nci.org.au](https://are.nci.org.au) to log in. In the "Featured Apps" section, click on "JupyterLab" and to a JupyterLab instance. Below we have provided example values, however you must change these values to match your project and use case:
+You can then go to <a href="https://are.nci.org.au" target="_blank">https://are.nci.org.au</a> to log in. In the "Featured Apps" section, click on "JupyterLab" and to a JupyterLab instance.
+
+<div class="note">
+If you are not familiar with ARE at NCI, you can find NCI's guide <a href="https://opus.nci.org.au/display/Help/3.1+Starting+JupyterLab+App" target="_blank">here</a>.
+</div>
+
+Below we have provided example values, however you must change these values to match your project and use case:
 
 - **Walltime (hours)** `1` 
 - **Queue** `normalbw` 

@@ -1,49 +1,31 @@
 # ACCESS-ESM
 
-<!-- {% include "call_contribute.md" %} -->
+<img src="../../../assets/model-config-logos/configurations-without-titles/access-esm.png" alt="ACCESS ESM model" class="img-contain white-background with-border with-padding intro-img"></img>
 
-<img src="../../../assets/model-config-logos/configurations-without-titles/access-esm.png" alt="ACCESS ESM model" class="white-background with-border with-padding"></img>
+The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate model that includes <a href="../../model_components/atmosphere">atmoshpere</a>, <a href="../../model_components/land">land</a>, <a href="../../model_components/ocean">ocean</a>, <a href="../../model_components/sea-ice">sea ice</a>, as well as <a href="../../model_components/bgc_ocean">ocean biogeochemistry</a> and <a href="../../model_components/bgc_land">land biogeochemistry</a> components, linked together by a <a href="../../model_components/coupler">coupler</a>.
+<br>
+This means it can simulate both the physical climate and global biogeochemical cycles, in particular the carbon cycle.
 
-The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate model that also includes representations of land and ocean biogeochemisty. This means it can simulate both the physical climate and global biogeochemical cycles (the carbon cycle in particular).
+## ACCESS-ESM1.5
 
-ACCESS-NRI will release an ACCESS-ESM model configuration. The first release of ACCESS-ESM will be derived from the [CSIRO ACCESS-ESM1.5 configuration](#access-esm15) and will include [atmosphere], [land] and [land biogeochemistry], [ocean] and [ocean biogeochemistry], and [sea ice] components.
+<a href="https://www.publish.csiro.au/es/ES19035" target="_blank">ACCESS-ESM1.5</a> [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 was developed primarily to enable Australia to participate in the <a href = "https://wcrp-cmip.org/cmip-phase-6-cmip6/" target="_blank">Coupled Model Intercomparison Project Phase 6 (CMIP6)</a> with an ESM version.
 
-## [ACCESS-ESM1.5]
 
-ACCESS-ESM1.5 [@Ziehn2020-fq] is a fully-coupled climate model with land and ocean carbon cycle components. ACCESS-ESM1.5 was developed primarily to enable Australia to participate in the Coupled Model Intercomparison Project Phase 6 (CMIP6) with an ESM version.
+### Model components
+- <a href="../../model_components/atmosphere">Atmoshpere</a>: <a href="../../model_components/atmosphere#unified-model-um">UM7.3</a>, GA7.1 science configuration. N96 spatial resolution (1.875° x 1.25°), 38 vertical levels.
 
-The model component are:
+- <a href="../../model_components/land">Land</a>: <a href="../../model_components/land#cable">CABLE2.4</a>.
 
-- Atmosphere model (UM vn7.3, GA7.1): N96 resolution (1.875° x 1.25°, 38 levels).
+- <a href="../../model_components/bgc_land">Land Biogeochemistry</a>: <a href="../../model_components/bgc_land#casa-cnp">CASA-CNP</a>.
 
-- Land surface model (CABLE2.4)
+- <a href="../../model_components/ocean">Ocean</a>: <a href="../../model_components/ocean#mom5">MOM5</a>. Tripolar grid, 1° spatial resolution, 50 vertical levels.
+  
+- <a href="../../model_components/bgc_ocean">Ocean Biogeochemistry</a>: <a href="../../model_components/bgc_ocean#wombat">WOMBAT</a>.
 
-- Land biogeochemistry (CASA-CNP)
+- <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice">CICE5.1.2</a>. Same grid as ocean.
 
-- Ocean model (MOM5): Tripolar grid, 1° resolution, 50 levels.
-
-- Ocean biogeochemistry (WOMBAT)
-
-- Sea ice model (CICE4.1): Same grid as the ocean.
-
-- Coupler (OASIS3-MCT)
+- <a href="../../model_components/coupler">Coupler</a>: <a href="../../model_components/coupler#oasis3-mct">OASIS3-MCT</a>.
 
 ACCESS-ESM1.5 has an equilibrium climate sensitivity of 3.87°C for doubled CO<sub>2</sub> concentration.
 
-[**Citation** [@Ziehn2020-fq]][ACCESS-ESM1.5-cite]
-
-[**ACCESS Training Workshop (AMOS 2021)**][ACCESS-AMOS-Workshop]
-
-[**Webinar: *Getting Started with ACCESS-CM2 and ACCESS-ESM1.5* **][ACCESS-ESM1.5-tute]
-
-[atmosphere]: ../model_components/atmosphere.md
-[land]: ../model_components/land.md
-[land biogeochemistry]: ../model_components/bgc_land.md
-[ocean]: ../model_components/ocean.md
-[ocean biogeochemistry]: ../model_components/bgc_ocean.md
-[sea ice]: ../model_components/sea-ice.md
-
-[ACCESS-ESM1.5]: https://research.csiro.au/access/about/esm1-5/
-[ACCESS-ESM1.5-cite]: https://www.publish.csiro.au/es/ES19035
-[ACCESS-ESM1.5-tute]: https://nespclimate.com.au/wp-content/uploads/2020/10/Webinar-slides-Getting_started_with_ACCESS.pdf
-[ACCESS-AMOS-Workshop]: https://confluence.csiro.au/display/ACCESS/Setting+up+for+ACCESS-ESM1.5
+<a href="../../run-a-model/run-access-esm" class="text-card">Run ACCESS-ESM</a>
