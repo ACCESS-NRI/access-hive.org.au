@@ -145,6 +145,8 @@ Once the changes on your local branch `spongebob/fix-hive-title-issue-234` are r
     If you open the preview and it looks completely broken or if it hasn't updated from additional modifications in the pull reuqest, it probably means the site hasn't finished building yet. If you wait a couple of minutes and refresh the page, it should fix itself. 
 </div>
 
+After a PR is created and tested, feel free to ask for reviews by tagging the ACCESS-Hive/reviewers team and reply if any changes are being requested in the PR. 
+
 ## Additional GitHub learning resources 
 
 - <a href="https://github.com/skills/introduction-to-github" target="_blank">Introduction to GitHub</a>
