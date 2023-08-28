@@ -122,7 +122,7 @@
   --active-version-tab: rgb(var(--active-version-tab-color)); /* Text and underline of active HTML tab */
   --active-version-tab-background: rgba(var(--active-version-tab-color),0.05); /* Text and underline of active HTML tab */
   --note-bg: rgba(var(--nri-orange-color),.1); /* Note background */
-  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
+  --md-admonition-fg-color: var(--md-typeset-color);  /* Main text warnings */
   --not-supported-background: rgba(var(--not-supported-color),0.1); /* Not supported warnings background */
   --not-owned-background: rgba(var(--not-owned-color),0.1); /* Not owned warnings background */
   --info-background: rgba(var(--info-color),0.1); /* Info warnings background */

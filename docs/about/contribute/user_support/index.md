@@ -6,7 +6,7 @@ On this page we answer frequently asked questions (FAQs), and also give addition
 
 Click on the questions to unfold the answers.
 
-??? abstract "What is the difference between the ACCESS-Hive and the Hive Forum?"
+??? note "What is the difference between the ACCESS-Hive and the Hive Forum?"
     ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
     The Hive forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
 
