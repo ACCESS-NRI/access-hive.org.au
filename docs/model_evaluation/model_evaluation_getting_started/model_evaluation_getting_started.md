@@ -1,30 +1,37 @@
-# `conda` Environment for Model Evaluation on NIC's Gadi
+# `conda` Environment for Model Evaluation on Gadi
 
-At this stage of *Getting Started*, we assume that you already have access to NCI's Gadi via `ssh`. If this is not the case, please go to our instructions on [how to get access to NCI's Gadi](../../getting_started/index.md).
+If you do not yet have `ssh` access to <i>Gadi</i>, refer to instructions on how to <a href="../../getting_started/index.md/#login-to-gadi">login to Gadi</a>.
 
-The instructions below explain how to load our curated `python` environment, with packages and scripts which are supported by ACCESS-NRI. Once these instructions have been followed you will be able to use all pacakges and scripts when running directly on Gadi via `ssh`, in `PBS` scripts, or in JupyterLab.
+The following instructions explain how to load the curated `python` environment on NCI, which includes packages and scripts supported by ACCESS-NRI. Once loaded, these can be run directly on <i>Gadi</i> via `ssh`, `PBS` scripts, or in `JupyterLab`.
 
-???+ warning "ACCESS-NRI provides code and support, but not computing resources"
-    As mentioned in the [Getting Started pages](../../get_started), you do not automatically have access to all of Gadi's storage at `/g/data/`, but need to be part of a `$PROJECT` to see files at `/g/data/$PROJECT`. For model evaluation and diagnostics, you need to be part of projects `xp65` and `hh5` for code access and a project with compute resources.
+???+ warning "ACCESS-NRI can provide code and support, but not computing resources"
+    You do not automatically have access to all `/g/data/` storage on <i>Gadi</i>. You need to <a href="../../getting_started/#join-relevant-nci-projects">join an NCI project</a> to view files on `/g/data/$PROJECT`. 
+    <br>
+    For model evaluation and diagnostics, you need to join projects `xp65` and `hh5` for code access and a `$PROJECT` with sufficient compute resources.
 
-## What is part of the `access-med` enrivonment?
+## What is the `access-med` environment?
 
-The complete list of dependencies can be found in the [`environment.yml`](https://github.com/ACCESS-NRI/MED-condaenv/blob/main/scripts/environment.yml) file of our [GitHub repository](https://github.com/ACCESS-NRI/MED-condaenv) and includes `intake`, `esmvaltool`, and `ilamb`:
+The complete list of dependencies for the `access-med` environment can be found in the [`environment.yml`](https://github.com/ACCESS-NRI/MED-condaenv/blob/main/scripts/environment.yml) file of the [ACCESS-NRI GitHub repository](https://github.com/ACCESS-NRI/MED-condaenv). These include `intake`, `esmvaltool` and `ilamb`:
 <div style="text-align: center;">
     <img src="../../../assets/model_evaluation/condaenv_list.png" alt="List of packages that are provided as part of the xp65 access-med environment" width="75%"/>
 </div>
 
-## Running our `access-med` environment on Gadi
+## Running the `access-med` environment on Gadi
 
-To avoid running code on Gadi with incompatible packages we provide you with a conda environment called access-med.
-In order to change to this curated environment, please run the following commands everytime after you log into Gadi (and as part of your PBS scripts):
+To avoid running code on <i>Gadi</i> with incompatible packages, a conda environment called `access-med` is provided. 
+<br>
+To change to this curated environment, run the following commands after logging into <i>Gadi</i> and edit your `PBS` script accordingly:
 ```
 module use /g/data/xp65/public/modules
 module load conda/access-med
 ```
 
-This will load the latest version of `access-med` (in this tutorial `0.3`). To check which conda version you are using, you can run `which python`:
-
+This will load the latest version of `access-med`, e.g. version `access-med-0.3`. 
+<br>
+To check which `conda` version you are using, run the following command:
+```
+which python
+```
 
 <terminal-window>
     <terminal-line data="input">module use /g/data/xp65/public/modules</terminal-line>
@@ -36,7 +43,7 @@ This will load the latest version of `access-med` (in this tutorial `0.3`). To c
     <terminal-line>/g/data/xp65/public/apps/med_conda_scripts/access-med-0.3.d/bin/python</terminal-line>
 </terminal-window>
 
-To test everything is working correctly, import the packages in `python3`:
+To test everything is working correctly, import the packages in `python3` as follows:
 
 ```python
 import numpy as np
@@ -49,8 +56,7 @@ print(intake.__version__)
 print(esmvaltool.__version__)
 ```
 
-If you are planning to run your code on Gadi with a Portable Batch System (`PBS`) job, you will need to add in the `module use` and `module load` commands to your PBS script as well. You could for example create an `example_pbs.sh` file with the content:
-
+If you want to run your code on <i>Gadi</i> using a Portable Batch System (`PBS`) job, add the `module use` and `module load` commands to your `PBS` script as shown in the `example_pbs.sh` `PBS` script below:
 
 ```
 #!/bin/bash
@@ -69,38 +75,59 @@ module load conda/access-med
 python3 your_code.py
 ```
 
-The content of `your_code.py` could be as simple as the import and version print from our example above. submit this job, you then only need to execute
+The content of `your_code.py` could simply comprise the `import` and `which version` lines from our above example. 
+<br>
+To submit this `PBS` job, execute the following command:
 ```
 qsub example_pbs.sh
 ```
 
-If you are not familiar with PBS jobs on NCI, you can find the guide [here](https://opus.nci.org.au/display/Help/4.+PBS+Jobs). In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) `iq82` with a [normal queue](https://opus.nci.org.au/display/Help/Queue+Limits) (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`), a walltime of 10 minutes (`#PBS -l walltime=00:10:00`) and data storage access to projects `xp65`. Note that for this example to work, you have to be [member of the NCI project](https://my.nci.org.au/mancini/project-search) `xp65` and `iq82`. Adjust the `#PBS -P` option to match your compute project. Upon starting the job, it will change into to the working directory that you submitted the job from (`#PBS -l wd`) and load the access-med conda environment.
+This will submit a job to <i>Gadi</i> with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) *iq82* with a </i>normalbw</i> <a href="https://opus.nci.org.au/display/Help/Queue+Limits" target="_blank">normal queue</a> (`#PBS -q`). The </i>number of CPUs</i> requested is 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`) and a <i>walltime</i> of 10 minutes (`#PBS -l walltime=00:10:00`). The <i>data storage</i> (`#PBS -l storage=gdata/xp65`) is data storage access to project `xp65`. 
+<br>
+<br>
+<i>Note</i>: to run this example, you need to be a <a href="https://my.nci.org.au/mancini/project-search" target="_blank">member of an NCI project</a>, in this case `xp65` and `iq82` projects. 
+<br>
+Adjust the `#PBS -P` option to match your compute project. 
+<br>
+When the job starts, it will change to the working directory from where you submitted the job (`#PBS -l wd`) and load the access-med `conda` environment.
+<br>
+<br>
+For more information on running `PBS` jobs on NCI, refer to <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS Jobs</a>. 
 
+## Running the `access-med` environment on ARE 
 
-## Running our `access-med` environment on NCI's Interactive ARE (JupyterLab)
+NCI also supports an interactive coding environment called the Australian Research Environment (<i>ARE</i>). Its use is similar to that for submitting a `PBS` job via `qsub -I`, but with an added bonus of a dedicated graphical user interface for `Jupyter` notebooks. 
+<br>
+<br>
+To use <i>ARE</i>, you must have an NCI account and be a member of a project with computing resources (see section on [getting started](../../getting_started/index.md)).
 
-NCI also supports an interactive coding environment called the Australian Research Environment (ARE). It's use is quite similar to submitting a computing job via `qsub -I`, but it comes with dedicated graphical user interfaces for jupyter notebooks. To use it, you need an NCI account and be part of a project that gives you computing resources (see our [getting started](../../getting_started/index.md)).
-
-You can then go to [https://are.nci.org.au](https://are.nci.org.au) to log in. In the "Featured Apps" section, click on "JupyterLab" and to a JupyterLab instance. Below we have provided example values, however you must change these values to match your project and use case:
+Once you <a href="https://are.nci.org.au" target="_blank">login to <i>ARE</i></a>, click on <i>JupyterLab</i> in the <i>Featured Apps</i> section to launch a `JupyterLab` instance. 
+<br>
+Below are some example values that you should change to match your `$PROJECT` and use case:
 
 - **Walltime (hours)** `1` 
 - **Queue** `normalbw` 
 - **Compute Size** `tiny` 
-- **Project** `iq82` (This should match your project with computing resources)
-- **Storage** `gdata/xp65+gdata/hh5` (Select all which match your project's gdata storage)
+- **Project** `iq82` (This should match your `$PROJECT` with compute resources)
+- **Storage** `gdata/xp65+gdata/hh5` (Select all that match your project's `/g/data` storage)
 - *Advanced Options ...* (click button to expand) 
 - **Module directories** `/g/data/xp65/public/modules`
 - **Modules** `conda/are`
 - *Launch* (click to submit) 
 
-This will launch a JupyterLab session with a Session ID and display it in the list of interactive sessions (you can also find it under **My Interactive Sessions** in the top left of the ARE website).
-The session appears blue while it is loading, yellow or red in case of warnings or errors, and green when it is successfully running, as in the following example:
+This will launch a `JupyterLab` session with a <i>Session ID</i>, which will appear in the list of interactive sessions. (You can also find it under <i>My Interactive Sessions</i> at the top-left of the ARE window).
+<br>
+The session appears blue while it is loading, yellow or red in case of warnings or errors, and green when it is successfully running:
 
 <div style="text-align: center;">
     <img src="../../../assets/getting_started/are_1.png" alt="Example of a successfully started ARE Session" width="75%"/>
 </div>
 
-You can then **Open JupyterLab** via a button at the bottom of the session. This will bring you to a window with a directory structure to the left and a jupyter notebook to the right (see the example below). If you have loaded the modules from `hh5` or `xp65`, you should then be able to import python packes like `numpy`, `xarray` or `intake`, as shown in the screenshot below.
+You can then <i>Open JupyterLab</i> by clicking on the button at the bottom of the session. 
+<br>
+This will open a window which contains a directory structure on the left and a `Jupyter` notebook on the right, as shown below. 
+<br>
+If you loaded the modules from `hh5` or `xp65`, you should be able to import python packages such as `numpy`, `xarray` or `intake`, as shown below:
 
 <div style="text-align: center;">
     <img src="../../../assets/getting_started/are_2.png" alt="Example of a JupyterLab session with directory tree to the left and jupyter notebook to the right, showing successfully imported python packages." width="75%" />
