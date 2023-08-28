@@ -15,45 +15,59 @@ hide:
     </div>
 </div>
 
-<div class="card-container large-text homepage-buttons">
-    <a href="getting_started/" class="vertical-card aspect-ratio3to1">
+<div class="card-container homepage-buttons">
+    <a href="getting_started/" class="vertical-card">
         <div class="bold">New to ACCESS-Hive?</div>
-        <div class="highlight-bg bold">Get Started!</div>
+        <div class="card-text-container">
+            <div class="bold">Get Started</div>
+        </div>
     </a>
-    <a href="about/user_support/" class="vertical-card aspect-ratio3to1">
+    <a href="about/user_support/" class="vertical-card">
         <div class="bold">Need help?</div>
-        <div class="highlight-bg bold">FAQ / Get Support!</div>
+        <div class="card-text-container">
+            <div class="bold">FAQ / Support</div>
+        </div>
     </a>
-    <a href="about/how_to_contribute" class="vertical-card aspect-ratio3to1">
-        <div class="bold">Want to contribute?</div>
-        <div class="highlight-bg bold">How to Contribute!</div>
+    <a href="about/how_to_contribute" class="vertical-card">
+        <div class="bold">Want to collaborate?</div>
+        <div class="card-text-container">
+            <div class="bold">Contribute</div>
+        </div>
     </a>
 </div>
 
-<div class="card-container homepage-navigation large-text">
+<div class="card-container homepage-navigation">
     <a href="models" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img class="img-cover" src="assets/ACCESS-MODEL.png" alt="Models">
         </div>
-        <div class="vertical-card-text-container highlight-bg bg-color-like-tab bold">Models</div>
+        <div class="card-text-container">
+            <div class="bold">Models</div>
+        </div>
     </a>
     <a href="models/run-a-model" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img class="img-cover" src="assets/get_started_example.png" alt="Run a Model">
         </div>
-        <div class="vertical-card-text-container highlight-bg bg-color-like-tab bold">Run a Model</div>
+        <div class="card-text-container">
+            <div class="bold">Run a Model</div>
+        </div>
     </a>
     <a href="model_evaluation" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img class="img-cover" src="assets/community_medlinks.jpg" alt="Model Evaluation">
         </div>
-        <div class="vertical-card-text-container highlight-bg bg-color-like-tab bold">Data and Model Evaluation</div>
+        <div class="card-text-container">
+            <div class="bold">Data and Model Evaluation</div>
+        </div>
     </a>
     <a href="community_resources" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img class="img-cover" src="assets/community_workinggroups.jpg" alt="Community Resources">
         </div>
-        <div class="vertical-card-text-container highlight-bg bg-color-like-tab bold">Community Resources</div>
+        <div class="card-text-container">
+            <div class="bold">Community Resources</div>
+        </div>
     </a>
 </div>
 

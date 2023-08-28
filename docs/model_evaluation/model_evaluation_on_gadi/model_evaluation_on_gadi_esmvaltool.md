@@ -11,10 +11,10 @@
 
 <div class="card-container">
     <a href="https://docs.esmvaltool.org/en/latest/" target="_blank" class="vertical-card aspect-ratio2to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold">ESMValTool</div>
+        <div class="card-text-container bold">ESMValTool</div>
     </a>
 </div>
 
@@ -92,22 +92,22 @@ Below we showcase example recipes from `esmvaltool` that we are providing to run
 
 <div class="card-container">
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_ipccwg1ar5ch9.html" target="_blank" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../../../assets/model_evaluation/esmvaltool/fig-9-3.png" alt="Computing Access"></img>
         </div>
-        <div class="vertical-card-text-container bold">recipe_flato13ipcc.yml</div>
+        <div class="card-text-container bold">recipe_flato13ipcc.yml</div>
     </a>
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_perfmetrics.html" target="_blank" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../../../assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" alt="MED Conda Environment"></img>
         </div>
-        <div class="vertical-card-text-container bold">recipe_perfmetrics_CMIP5.yml</div>
+        <div class="card-text-container bold">recipe_perfmetrics_CMIP5.yml</div>
     </a>
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_emergent_constraints.html" target="_blank" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../../../assets/model_evaluation/esmvaltool/ltmi1_1.png" alt="Model Variables"></img>
         </div>
-        <div class="vertical-card-text-container bold">recipe_ecs_scatter.yml</div>
+        <div class="card-text-container bold">recipe_ecs_scatter.yml</div>
     </a>
 </div>
 
