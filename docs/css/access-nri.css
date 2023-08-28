@@ -842,6 +842,7 @@ pre:has(code):hover > button {
   overflow: auto;
   margin-top: 1em;
   gap: 1px;
+  font-size: 0.65rem;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -851,7 +852,6 @@ pre:has(code):hover > button {
   border-radius: 0.6rem 0.6rem 0 0;
   cursor: pointer;
   flex-shrink: 0;
-  font-size: .64rem;
   font-weight: 700;
   padding: 0.78125em 1.25em 0.625em;
   scroll-margin-inline-start: 1rem;
@@ -893,7 +893,7 @@ pre:has(code):hover > button {
   background-color: var(--note-bg);
   border-radius: 0.3rem;
   padding: 0.2em 0.3em 0.2em 1.5em;
-  margin-bottom: 0.8em;
+  margin: 0.5em 0 0.8em 0;
 }
 
 .note::before {

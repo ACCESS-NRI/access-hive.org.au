@@ -1,10 +1,10 @@
 {% set model = "ACCESS-ESM" %}
 # Run {{ model }}
-## Requirements
-### General requirements
-Before running {{ model }}, you need to fulfil general requirements outlined in the [First Steps](/getting_started/first_steps) section.
+## Prerequisites
+### General prerequisites
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
 
-### Model-specific requirements
+### Model-specific prerequisites
 <ul>
     <li>
         <b>Join the <i>access</i> and <i>hh5</i> projects at NCI</i></b>

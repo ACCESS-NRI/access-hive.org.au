@@ -1,13 +1,28 @@
 {% set model = "ACCESS-CM" %}
 # Run {{ model }}
-## Requirements
-### General requirements
-Before running {{ model }}, you need to fulfil general requirements outlined in the [First Steps](/getting_started/first_steps) section.
+<!-- Tab labels -->
+<div class="tabLabels large-text" label="workflow">
+    <button id="are">ARE / <i>Gadi workflow</i></button>
+    <button id="accessdev"><i>accessdev workflow</i></button>
+</div>
+<div class="note">
+    The workflow to run ACCESS_CM is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
+    <br>
+    The tabs above let you choose the type of workflow you would like to follow.
+    <br>
+    <br>
+    If you are new to ACCESS-CM, we <b>strongly</b> suggest you follow the <b>ARE/<i>Gadi</i></b> workflow, as the <i>accessdev</i> workflow will soon be interrupted.
+</div>
 
-### <span>Model-specific requirements</span>
+## Prerequisites
+
+### General prerequisites
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+
+### <span>Model-specific prerequisites</span>
 <ul>
     <li>
-        <b>Get a <i>MOSRS</i> account</i></b>
+        <b><i>MOSRS</i> account</i></b>
         <br>
         The <a href="https://code.metoffice.gov.uk">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
         <br>
@@ -22,18 +37,44 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
         </div>
         For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
-    <li>
-        <b>Connect to <i>accessdev</i></b>
-        <br>
-        To run {{ model }}, you need to connect to <a href="https://accessdev.nci.org.au/trac/wiki" target="_blank"><i>accessdev</i></a>. This is an NCI server providing configuration and run control for {{ model }}.
-        <br>
-        You also need to ensure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
-        <br>
-        To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
-    </li>
+    <!-- Tab content -->
+    <div class="tabContents" label="workflow">
+        <!-- ARE/Gadi-->
+        <div>
+            <li>
+            <b>Connection to an ARE VDI Desktop</b>
+                <br>
+                To run {{ model }}, you need to be able to start an <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">Australian Research Environment (ARE) VDI Desktop</a> session.
+                <br>
+                If u are not familiar with ARE, please check the <a href="/getting_started/are">Getting Started on ARE</a> section.
+            </li>
+        </div>
+        <!-- accessdev -->
+        <div>     
+            <li>
+                <b>Connection to <i>accessdev</i></b>
+                <br>
+                To run {{ model }}, you need to be able to connect to <a href="https://accessdev.nci.org.au/trac/wiki" target="_blank"><i>accessdev</i></a>. This is an NCI server providing configuration and run control for {{ model }}.
+                <br>
+                You also need to ensure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
+                <br>
+                To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
+            </li>
+        </div>
+    </div>
 </ul>
 
 --------------------------------------------
+<div class="tabContents" label="workflow">
+    <!-- ARE/Gadi-->
+    <div>
+        <h3>Start an ARE VDI Desktop session</h3>
+    </div>
+    <!-- accessdev-->
+    <div></div>
+</div>
+
+
 ## Get {{ model }} suite
 {{ model }} comprises the model components <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
 <br>
