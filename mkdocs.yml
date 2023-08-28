@@ -157,6 +157,7 @@ nav:
       - Model Catalogues: community_resources/community_med/community_model_catalogs.md
       - Data Formatting: community_resources/community_med/community_data_processing.md
       - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
+    - Glossaries: community_resources/glossaries.md
     # - Training: 
     #   - Training: community_resources/training/index.md
     #   - Git Version Control: community_resources/training/git-version-control.md
@@ -171,7 +172,6 @@ nav:
     - Contact: about/contact.md
     - User support: about/user_support.md
     - How to contribute: about/how_to_contribute.md
-    - Glossaries: about/glossaries.md
     - Code of conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md
