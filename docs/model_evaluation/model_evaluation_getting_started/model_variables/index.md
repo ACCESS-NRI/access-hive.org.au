@@ -2,43 +2,53 @@
 
 <!-- For this content, I have used a lot of text from this website: https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/fundamentals-of-netcdf-data-storage.htm -->
 
-For climate modelling, we need to store multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed, and direction.
+For climate modelling, we need to store multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed and direction.
 
 <div style="text-align: center;">
      <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Example of a three-dimensional data array" width="25%"/>
  </div>
 
-ACCESS-NRI strives for comparable model outputs for easily model evaluation.
+As comparable model outputs simplify Model evaluation, ACCESS-NRI supports Coupled Model Intercomparison Projects (CMIP) and the use of common data formats and variables.
 
-We therefore support projects like the Coupled Model Intercomparison Projects (CMIP) and the use of common data formats and variables.
+## Network Common Data Format (NetCDF)
 
-## 1 Network Common Data Format (NetCDF)
+Numerous organisations and scientific groups worldwide have adopted a file format called <i><a href="https://www.unidata.ucar.edu/software/netcdf/" target="_blank">NetCDF</a></i> as a standard way to store multidimensional scientific data.
 
-Many organizations and scientific groups in different countries have adopted a data format called <a href="https://www.unidata.ucar.edu/software/netcdf/" target="_blank">NetCDF</a> by the Unidata Community as a standard way to represent some forms of scientific data.
+<i>NetCDF</i>, which has the file extension `*.nc`, is a self-describing, machine-independent data format of array-oriented scientific data.
 
-NetCDF (with file extensions `*.nc`) is a self-describing, machine-independent data format of array-oriented scientific data.
+<ul>
+<li><b>Self-describing</b>
+    <br>
+    <code>*.nc</code> files include not only the data itself, but also a <i>header</i> with <i>metadata</i> that describes the data layout.
 
-- **Self-describing** means that the `*.nc` files include not only the data itself, but also a *header* with `metadata` that describes the layout of the data.
-- **Machine-independent** means that the  `*.nc` files can be accessed by computers with different ways of storing integers, characters, and floating-point numbers.
-- **Array-oriented** means that the `*.nc` data is typically spanning multiple dimensions with the same lengths (like latitude and longitude or time) and variables (like temperature or humidity) which are stored in arrays.
+<li><b>Machine-independent</b>
+    <br>
+    <code>*.nc</code> files can be accessed by computers with different ways of storing integers, characters and floating-point numbers.
 
-<div style="text-align: center;">
-     <img src="../../../assets/model_evaluation/netcdf_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" width="75%"/>
- </div>
+<li><b>Array-oriented</b>
+    <br>
+    <code>*.nc</code> data typically spans multiple dimensions with the same lengths (e.g., latitude, longitude and time) and variables such as temperature or humidity, which are stored in arrays.
+    <br>
+    <div style="text-align: center;">
+        <img src="../../../assets/model_evaluation/netcdf_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" width="75%"/>
+    </div>
+</ul>
 
-### 1.1 NetCDF metadata
+### NetCDF metadata
 
-Metadata is typically described as *information about the data* and enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding, and display capabilities.
+<i>Metadata</i>, which is typically described as <i>information about the data</i>, enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding and display capabilities.
 
-To facilitate this process, there are conventions for CF (Climate and Forecast) metadata. These are designed to promote the processing and sharing of files created with NetCDF. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. Learn more about the CF metadata conventions <a href="http://cfconventions.org" target="_blank">here</a>.
+To facilitate this process, there are <a href="http://cfconventions.org" target="_blank">conventions for Climate and Forecast metadata</a>. These are designed to promote the processing and sharing of <i>NetCDF</i> files. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. 
 
-### 1.2 NetCDF data and variables
+### NetCDF data and variables
 
-The data in a netCDF file is stored in the form of arrays. For example, temperature varying over time at a location is stored as a one-dimensional array. Temperature over an area for a given time is stored as a two-dimensional array. Three-dimensional (3D) data, like temperature over an area varying with time, or four-dimensional (4D) data, like temperature over an area varying with time and altitude, is stored as a series of two-dimensional arrays.
+Data in a <i>netCDF</i> file is stored in the form of arrays, where each <i>netCDF</i> dimension has a name and a length.
+<br>
+For example, temperature variation over time at a fixed location is stored as a one-dimensional array, whereas temperature over a region (i.e. varying location) at a fixed time is stored as a two-dimensional array. Thus, three-dimensional (3D) data would be temperature varying with time over a region, and four-dimensional (4D) data would be temperature varying with time over a region with varying altitude.
 
-## 2 Common Variables
+## Common variables
 
-Using common variables is key for a united climate modelling community. While we are trying to bring together modellers from different communities, we understand that the variables used for climate modelling may differ for historical reasons. Here, we are collating lists of different widely used variable formats.
+Variables used in climate modelling can differ in terms of naming conventions, units, etc. While this may be for historical reasons, the use of common variables is key not only for ease and compatibilty when working with the data, but also to unite the climate modelling community. Hence, there are collated lists of different widely used variable formats, such as:
 
 <!-- We have created a prototype of markdown files with variable tables that can be queried via jquery -->
 <!-- Because they were not ready for quick searches (jquery with extended html tables is slow), we did not include them in the Legacy Relase (July/August 2023). -->
