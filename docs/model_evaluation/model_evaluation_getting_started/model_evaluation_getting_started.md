@@ -5,11 +5,11 @@ At this stage of *Getting Started*, we assume that you already have access to NC
 The instructions below explain how to load our curated `python` environment, with packages and scripts which are supported by ACCESS-NRI. Once these instructions have been followed you will be able to use all pacakges and scripts when running directly on Gadi via `ssh`, in `PBS` scripts, or in JupyterLab.
 
 ???+ warning "ACCESS-NRI provides code and support, but not computing resources"
-    As mentioned in the [Getting Started pages](../../get_started), you do not automatically have access to all of Gadi's storage at `/g/data/`, but need to be part of a `$PROJECT` to see files at `/g/data/$PROJECT`. For model evaluation and diagnostics, you need to be part of projects `xp65` and `hh5` for code access and a project with compute resources.
+    As mentioned in the [Getting Started pages](../../../getting_started), you do not automatically have access to all of Gadi's storage at `/g/data/`, but need to be part of a `$PROJECT` to see files at `/g/data/$PROJECT`. For model evaluation and diagnostics, you need to be part of projects `xp65` and `hh5` for code access and a project with compute resources.
 
 ## What is part of the `access-med` enrivonment?
 
-The complete list of dependencies can be found in the [`environment.yml`](https://github.com/ACCESS-NRI/MED-condaenv/blob/main/scripts/environment.yml) file of our [GitHub repository](https://github.com/ACCESS-NRI/MED-condaenv) and includes `intake`, `esmvaltool`, and `ilamb`:
+The complete list of dependencies can be found in <a href="https://github.com/ACCESS-NRI/MED-condaenv/blob/main/scripts/environment.yml" target="_blank">this</a> `environment.yml` file of our <a href="https://github.com/ACCESS-NRI/MED-condaenv" target="_blank">GitHub repository</a> and includes `intake`, `esmvaltool`, and `ilamb`:
 <div style="text-align: center;">
     <img src="../../../assets/model_evaluation/condaenv_list.png" alt="List of packages that are provided as part of the xp65 access-med environment" width="75%"/>
 </div>
@@ -79,7 +79,7 @@ The content of `your_code.py` could be as simple as the import and version print
 qsub example_pbs.sh
 ```
 
-In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) `iq82` with a [normal queue](https://opus.nci.org.au/display/Help/Queue+Limits) (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`), a walltime of 10 minutes (`#PBS -l walltime=00:10:00`) and data storage access to projects `xp65`. Note that for this example to work, you have to be [member of the NCI project](https://my.nci.org.au/mancini/project-search) `xp65` and `iq82`. Adjust the `#PBS -P` option to match your compute project. Upon starting the job, it will change into to the working directory that you submitted the job from (`#PBS -l wd`) and load the access-med conda environment.
+In brief: this PBS script will submit a job to Gadi with the job name (`#PBS -N`) *example_pbs* under compute project (`#PBS -P`) `iq82` with a <a href="https://opus.nci.org.au/display/Help/Queue+Limits" target="_blank">normal queue</a> (`#PBS -q normalbw`), for 1 CPU (`#PBS -l ncpus=1`) with 2 GB RAM (`#PBS -l mem=2GB`), a walltime of 10 minutes (`#PBS -l walltime=00:10:00`) and data storage access to projects `xp65`. Note that for this example to work, you have to be <a href="https://my.nci.org.au/mancini/project-search" target="_blank">member of the NCI project</a> `xp65` and `iq82`. Adjust the `#PBS -P` option to match your compute project. Upon starting the job, it will change into to the working directory that you submitted the job from (`#PBS -l wd`) and load the access-med conda environment.
 
 
 ## Running our `access-med` environment on NCI's Interactive ARE (JupyterLab)
