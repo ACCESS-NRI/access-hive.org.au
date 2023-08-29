@@ -9,7 +9,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
     <li>
         <b>Get a <i>MOSRS</i> account</i></b>
         <br>
-        The <a href="https://code.metoffice.gov.uk">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
+        The <a href="https://code.metoffice.gov.uk" target="_blank">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
         <br>
         To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
     </li>
@@ -29,7 +29,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
         <br>
         You also need to ensure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
         <br>
-        To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
+        To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected" target="_blank">Getting Connected to Accessdev</i></a> guide.
     </li>
 </ul>
 
@@ -137,7 +137,7 @@ For example, to run an {{ model }} suite under the <code>tm70</code> project (AC
 
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
 <div class="note">
-    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="../../../get_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/get_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
 </div>
 
 ### Change run length and cycling frequency
@@ -296,6 +296,13 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
         </terminal-window>
     </li>
 </ol>
+
+### Model Live Diagnostics
+
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
+
 ----------------------------------------------------------------------------------------
 
 ## Stop, restart and reload suites

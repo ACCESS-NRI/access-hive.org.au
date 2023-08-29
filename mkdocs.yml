@@ -136,6 +136,8 @@ nav:
         # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
         # - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
         # - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
+    - Model Live Diagnostics:
+      - model_evaluation/model_diagnostics/index.md
     - Evaluation Tools: 
       - model_evaluation/model_evaluation_on_gadi/index.md
       # - Frameworks on Gadi:
@@ -169,12 +171,11 @@ nav:
   - About:
     - Contact: about/contact.md
     - User Support: 
-      - about/contribute/user_support/index.md 
-      - Using the Hive Forum: about/contribute/user_support/ask_on_forum.md
+      - about/user_support/index.md 
+      - Using the Hive Forum: about/user_support/ask_on_forum.md
     - Contribute:
       - about/contribute/index.md
       - Contribute on GitHub: about/contribute/contribute_on_github.md
-    - Glossaries: about/glossaries.md
     - Code of Conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md

@@ -1,4 +1,4 @@
-#  Model Evaluation and Diagnostics (MED) 
+#  Data, Model Evaluation and Diagnostics (MED) 
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
@@ -41,9 +41,19 @@ Model evaluation in climate science is the process of assessing the performance 
     </a>
     <a href="model_evaluation_model_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-cover"></img>
+            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Model Data Catalogue</div>
+    </a>
+</div>
+
+### Model Live Diagnostics
+<div class="card-container">
+    <a href="model_diagnostics" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Diagnostic plot of total liquid seawater mass over time of a currently running model calculation." class="img-cover"></img>
+        </div>
+        <div class="card-text-container bold ">Model Live Diagnostics</div>
     </a>
 </div>
 
@@ -68,9 +78,9 @@ Model evaluation in climate science is the process of assessing the performance 
         </div>
         <div class="card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
-            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
+            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">METplus</div>
     </a>
@@ -81,7 +91,6 @@ Model evaluation in climate science is the process of assessing the performance 
 
 For the evaluation and diagnosis of ACCESS climate models, the following tools are currently being setup:  
 
-* Model Diagnostics for on-the-fly analysis of your models at different snapshots  
 * Data format processing tools like APP4  
 * An Evaluation Recipe Gallery with searching functionality  
 

@@ -7,7 +7,7 @@ Here, you can browse and search the available NCI data collections:
 <div class="card-container">
     <a href="https://geonetwork.nci.org.au/" target="_blank" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
-            <img src="../../assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections" class="img-cover"></img>
+            <img src="/assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">Search for data here</div>
     </a>
@@ -24,6 +24,9 @@ Some examples of NCI data collections include:
     <br>
 </ul>
 
+- Data of the <a href="https://esgf.llnl.gov/" target="_blank">Earth Systems Grid Federation</a> hosted at the <a href="https://esgf.nci.org.au/projects/esgf-nci/" target="_blank">NCI ESGF Node</a>  
+- Data of the <a href="https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5" target="_blank">fifth generation of ECMWF atmospheric reanalyses (ERA5)</a> with more information on the <a href="https://opus.nci.org.au/display/ERA5/ERA5+Community+Home" target="_blank">NCI ERA5 Community Page</a>  
+- Data of the European Space Agency’s multi-petabyte Sentinel satellite data via the <a href="https://copernicus.nci.org.au/sara.client/#/home" target="_blank">Sentinel Australasia Regional Access (SARA)</a> 
 
 NCI also has a <a href="https://opus.nci.org.au/display/NDP/Data+Catalogue" target="_blank">user guide</a> for finding, accessing and citing data.
 
