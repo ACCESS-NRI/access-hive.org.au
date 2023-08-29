@@ -5,14 +5,14 @@ ACCESS models are computer codes comprising complex mathematical representations
 <!-- See also specific phrasing of components / configurations / experiments -->
 <!-- https://access-nri.github.io/procedures-and-practices/pr-preview/pr-19/release/release_specification/ -->
 
-![Overview of models](../assets/models_flow_diagram.png)
+![Overview of models](/assets/models_flow_diagram.png)
 <!-- <img src="Assets/icon.png" width="200"> -->
 
 ## Supported ACCESS Model Configurations
 <div class="card-container">
     <a href="configurations/access-cm/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-CM</span>
@@ -23,7 +23,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-esm/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-cover"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-ESM</span>
@@ -34,7 +34,7 @@ ACCESS models are computer codes comprising complex mathematical representations
     </a>
     <a href="configurations/access-om/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="../assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-cover"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-OM</span>
@@ -49,55 +49,55 @@ ACCESS models are computer codes comprising complex mathematical representations
 <div class="card-container">
     <a href="model_components/atmosphere" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></img>
         </div>
         <div class="card-text-container bold">Atmosphere</div>
     </a>
     <a href="model_components/land" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"></img>
         </div>
         <div class="card-text-container bold">Land</div>
     </a>
     <a href="model_components/ocean" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" alt="Ocean"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" alt="Ocean"></img>
         </div>
         <div class="card-text-container bold">Ocean</div>
     </a>
     <a href="model_components/sea-ice" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></img>
         </div>
         <div class="card-text-container bold">Sea Ice</div>
     </a>
     <a href="model_components/aerosols_atmospheric_chemistry" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"></img>
         </div>
         <div class="card-text-container bold">Aerosols</div>
     </a>
     <a href="model_components/aerosols_atmospheric_chemistry" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Atmospheric Chemistry"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Atmospheric Chemistry"></img>
         </div>
         <div class="card-text-container bold">Atmospheric Chemistry</div>
     </a>
     <a href="model_components/bgc_land" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry Land"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry Land"></img>
         </div>
         <div class="card-text-container bold">Biogeochemistry Land</div>
     </a>
     <a href="model_components/bgc_ocean" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry Ocean"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry Ocean"></img>
         </div>
         <div class="card-text-container bold">Biogeochemistry Ocean</div>
     </a>
     <a href="model_components/coupler" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain" src="../assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
+            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
         </div>
         <div class="card-text-container bold">Coupler</div>
     </a>

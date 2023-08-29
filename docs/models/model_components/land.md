@@ -1,6 +1,6 @@
 #  Land Surface component
 
-<img src = "../../../assets/component-logos/component-maps/land-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
+<img src = "/assets/component-logos/component-maps/land-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
 
 ## CABLE
 

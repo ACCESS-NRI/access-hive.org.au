@@ -112,7 +112,7 @@ mem: 1000GB</code></pre>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="../../../get_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/get_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
         </div>
     </li>
     <li>
@@ -350,6 +350,13 @@ If you want to manually terminate a run, you can do so by executing:
 While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access-om2.out</code> and <code>access-om2.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
 <br>
 When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
+
+
+### Model Live Diagnostics
+
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
 
 ----------------------------------------------------------------------------------------
 

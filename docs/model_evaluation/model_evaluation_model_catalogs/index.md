@@ -1,22 +1,30 @@
-# ACCESS-NRI intake Model Catalog
+# ACCESS-NRI Intake catalog
 
-The ACCESS-NRI intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on the Australian NCI supercomputer Gadi. For detailed information, tutorials and more, please go to the
+The ACCESS-NRI Intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on <i>Gadi</i>. 
+
+For detailed information, tutorials and more, please go to:
 <div class="card-container">
     <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
         <div class="card-image-container">
-            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain"></img>
+            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Documentation</div>
     </a>
 </div>
 
-## What is the ACCESS-NRI intake Model Catalog?
+## What is the ACCESS-NRI Intake catalog?
 
-The ACCESS-NRI catalog is essentially a table of climate data products that exist on Gadi. Each entry in the table corresponds to a different product, and the columns contain attributes associated with each product–things like the models, frequencies and variables available. Users can search on the attributes to find the products that might be useful to them. For example, a user might want to know which data products contain variables X, Y and Z at monthly frequency. The ACCESS-NRI catalog enables users to find products that satisfy their query and to subsequently load their data without having to know the location and structure of the underlying files.
+The ACCESS-NRI Intake catalog is essentially a table of climate data products available on <i>Gadi</i>. 
 
-## Showcase: use intake to easily find, load and plot data
+Each entry in the table corresponds to a different product, where the columns contain attributes associated with that product (e.g., available models, frequencies and data variables). Users can search on the attributes to find the products that might be useful to them. For example, a user may want to know which data products contain variables X, Y and Z at monthly frequency. 
 
-In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an ACCESS-ESM1-5 run called "HI_CN_05", which is an historical run using same configuration as CMIP6 ACCESS-ESM1-5 historical r1i1p1f1, but with phosphorus limitation disabled within CASA-CNP.
+The ACCESS-NRI Intake catalog enables users to find products that satisfy their query and to subsequently load their data without having to know the location and structure of the underlying files.
+
+## Showcase: use ACCESS-NRI Intake to find, load and plot data
+
+A simple use case of the ACCESS-NRI Intake catalog is a user wants to plot a timeseries of a variable from a specific data product. 
+<br>
+For example, the user is interested in plotting a scalar ocean variable called <i>temp_global_ave</i> for an [ACCESS-ESM1-5(/models/configurations/access-esm)] run called `HI_CN_05` (data product), which is an historical run using the same configuration as CMIP6 ACCESS-ESM1.5 historical `r1i1p1f1`, but with phosphorus limitation disabled within CASA-CNP.
 
 First we load the catalog using
 

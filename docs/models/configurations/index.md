@@ -3,7 +3,7 @@
 <div class="card-container">
     <a href="access-cm/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="../../assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-cover"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-CM</span>
@@ -14,7 +14,7 @@
     </a>
     <a href="access-esm/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="../../assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-cover"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-ESM</span>
@@ -25,7 +25,7 @@
     </a>
     <a href="access-om/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="../../assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-cover"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-OM</span>

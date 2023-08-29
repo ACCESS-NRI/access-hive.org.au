@@ -124,7 +124,7 @@
   --active-version-tab: rgb(var(--active-version-tab-color)); /* Text and underline of active HTML tab */
   --active-version-tab-background: rgba(var(--active-version-tab-color),0.05); /* Text and underline of active HTML tab */
   --note-bg: rgba(var(--nri-orange-color),.1); /* Note background */
-  --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
+  --md-admonition-fg-color: var(--md-typeset-color);  /* Main text warnings */
   --not-supported-background: rgba(var(--not-supported-color),0.1); /* Not supported warnings background */
   --not-owned-background: rgba(var(--not-owned-color),0.1); /* Not owned warnings background */
   --info-background: rgba(var(--info-color),0.1); /* Info warnings background */
@@ -301,12 +301,13 @@ h2 {
 }
 
 h3 {
+  font-weight: 500 !important;
   margin: 1.3em 0 0.4em !important;
 }
 
 
 /* =============================================================== 
-Homepage
+  Homepage
 */
 /* Hide Title */
 h1.homepage {
@@ -483,7 +484,6 @@ h1.homepage {
   margin-top: 1.2em;
 }
 
-
 /* =============================================================== 
   Footer
 */
@@ -504,10 +504,12 @@ h1.homepage {
   display: inline-flex;
   flex-direction: column;
 }
+
 /* Funding */
 .funding {
   flex-basis: 20%;
 }
+
 /* Partners */
 .partners {
   flex-basis: 80%;
@@ -648,7 +650,7 @@ h1.homepage {
   color: var(--tab-text);
 }
 
-/* =============================================================== 
+/* ===============================================================
   Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
 .header-btn-container {
@@ -678,6 +680,7 @@ h1.homepage {
   height: 1.6rem;
   color: var(--md-primary-bg-color);
 }
+
 .header-btn:hover {
   transition-duration: 0.3s;
   transition-property: all;
@@ -921,6 +924,28 @@ pre:has(code):hover > button {
   display: inline;
 }
 
+/* ================================================================ 
+  Icon checklist in "Using the Hive Forum" section
+*/
+
+.checklist-item {
+  color: var(--md-default-fg-color) !important;
+}
+
+.checklist-item:hover {
+  color: var(--md-typeset-a-color) !important;
+}
+
+.checklist-item:hover::after {
+  color: var(--nri-light-blue);
+  font-family: "fontawesome";
+  content: '\f178';
+  vertical-align: middle;
+  font-size: 0.7em;
+  margin-left: 0.3em;
+  display: inline-block;
+}
+
 /* =============================================================== 
   Miscellaneous
 */
@@ -984,6 +1009,169 @@ img.intro-img {
   font-size: 1.4em !important;
 }
 
+.nri-link-color {
+  color: var(--md-typeset-a-color);
+}
+
+.nri-orange-color {
+  color: var(--nri-orange);
+}
+
+.nri-green-color {
+  color: var(--nri-green);
+}
+
+.small-txt {
+  font-size: 0.92em;
+}
+
+.med-text {
+  font-size: 1.2em;
+}
+
+.vertical-card-half-width {
+  flex-direction: column;
+  max-width: 48%;
+  height: 20em;
+}
+
+
+/* 
+  For formatting a `> Note:` markdown syntax in html 
+*/
+.markdown-notes {
+  /* color: var(--tab-text-light); */
+  color: var(--md-default-fg-color--light);
+  border-left: 0.2em solid var(--md-default-fg-color--lighter);
+  padding: 0.3em 0.9em;
+  margin: 0 0.6em;
+}
+
+
+
+/* =============================================================== 
+  Media queries for website responsiveness
+*/
+
+@media screen and (width < 800px) {
+  /* Make gap scale with viewport width */
+  .homepage-buttons {
+    gap: 5vw;
+  }
+  /* Hide upper text in homepage buttons */
+  .homepage-buttons > .vertical-card > :first-child {
+    display: none;
+  }
+  /* Lower text in homepage buttons */
+  .homepage-buttons > .vertical-card > :last-child {
+    font-size: calc(2.9vw + 0.15rem);
+  }
+  /* Homepage buttons Cards */
+  .homepage-buttons > .vertical-card {
+    background-color: var(--md-primary-fg-color--dark);
+    height: 8vw;
+    border-radius: 2vw;
+  }
+  .homepage-buttons .card-text-container {
+    padding: 0;
+  }
+}
+
+
+@media screen and (width <= 608px) {
+  /* Footer */
+  .md-footer-meta.md-typeset.md-grid {
+    height: 11rem;
+  }
+}
+@media screen and (width <= 550px) {
+  .vertical-card {
+    width: 40%;
+  }
+  
+  /* Change the horizontal card to be rendered as a vertical one with aspect-ratio 1 */
+  .horizontal-card {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 40%;
+    min-height: 0;
+    aspect-ratio: 1;
+    container-type: inline-size;
+  }
+  .horizontal-card > .card-text-container {
+    height: 30%;
+    flex: 0 0 auto;
+    font-size: 12cqi;
+    font-weight: 600;
+    padding: 3.5%;
+  }
+  .horizontal-card > .card-image-container {
+    padding: 3.5%;
+  }
+  .horizontal-card > .card-text-container:last-child {
+    padding-top: 0;
+  }
+  .horizontal-card > .card-text-container > *:last-child:not(:only-child) {
+    display: none;
+  }
+  .horizontal-card > .card-text-container > *:first-child:not(:only-child) {
+    margin-bottom: 0;
+  }
+  .horizontal-card > .card-image-container {
+    flex-basis: 70%;
+  }
+  /* Wrap homepage navigation cards */
+  .homepage-navigation {
+    flex-wrap: wrap;
+  }
+
+  /* Forum, ACCESS-NRI and Github buttons */
+  .header-btn-container {
+    flex-grow: 0;
+  }
+  /* Make squared btn */
+  .header-btn {
+    flex-basis: 0;
+    flex-grow: 0;
+    aspect-ratio: 1;
+    justify-self: start;
+    height: 2rem;
+  }
+  /* Increase btn Logos */
+  .header-btn > :first-child > * {
+    font-size: 1.8em;
+  }
+  /* Hide btn Text */
+  .header-btn >:last-child {
+    display: none;
+  }
+  
+  /* Homepage introduction paragraph */
+  /* Upper text */
+  .introduction > :first-child > :first-child {
+    font-size: calc(4.9vw + 0.15rem);
+  }
+  /* Lower text */
+  .introduction > :first-child > :last-child {
+    font-size: calc(2.9vw + 0.15rem);
+   }
+  
+  /* Footer */
+  :is(.funding,.partners) > *:first-child {
+    font-size: calc(1vw + 0.5rem);
+  }
+  :is(.funding,.partners) > *:last-child a {
+    max-width: calc(6vw + 2rem);
+  }
+
+  .md-footer-meta__inner {
+    flex-direction: column;
+  }
+  .md-footer-meta__inner > * {
+    gap: 1rem;
+  }
+}
 
 /* =============================================================== 
   Media queries for website responsiveness
