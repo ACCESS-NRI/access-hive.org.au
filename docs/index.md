@@ -28,7 +28,7 @@ hide:
             <div class="bold">FAQ / Support</div>
         </div>
     </a>
-    <a href="about/how_to_contribute" class="vertical-card">
+    <a href="about/contribute" class="vertical-card">
         <div class="bold">Want to collaborate?</div>
         <div class="card-text-container">
             <div class="bold">Contribute</div>

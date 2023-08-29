@@ -1,10 +1,10 @@
 # Community Model Data Catalogues
 
 ???+ danger "Support Level: NOT supported by ACCESS-NRI"
-    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
+    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](/model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
 
 
-Please let us know, if we are missing an important catalogue. See [How To Contribute](../../about/how_to_contribute.md) to get in touch.
+Please let us know, if we are missing an important catalogue. Check [How To Contribute](/about/contribute) to get in touch.
 
 <table>
 <tr>
@@ -23,7 +23,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home">NCI datasets</a> 
+    <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home" target="_blank">NCI datasets</a> 
     </div>
 </td>
 <td width="75%">
@@ -36,7 +36,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://github.com/coecms/nci-intake-catalogue">CLEX NCI Data Collection Intake Catalogue</a> 
+    <a href="https://github.com/coecms/nci-intake-catalogue" target="_blank">CLEX NCI Data Collection Intake Catalogue</a> 
     </div>
 </td>
 <td width="75%">
@@ -52,7 +52,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://oneclimate.dmponline.cloud.edu.au/">Australia Climate Data Guide Catalogue</a> 
+    <a href="https://oneclimate.dmponline.cloud.edu.au/" target="_blank">Australia Climate Data Guide Catalogue</a> 
     </div>
 </td>
 <td width="75%">
@@ -65,7 +65,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://imos.org.au/facilities/aodn">Australian Ocean Data Network</a> 
+    <a href="https://imos.org.au/facilities/aodn" target="_blank">Australian Ocean Data Network</a> 
     </div>
 </td>
 <td width="75%">
@@ -78,7 +78,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://github.com/nocollier/intake-ilamb">Intake-Ilamb Catalogue</a> 
+    <a href="https://github.com/nocollier/intake-ilamb" target="_blank">Intake-Ilamb Catalogue</a> 
     </div>
 </td>
 <td width="75%">
@@ -91,7 +91,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://fluxnet.org/">FLUXNET</a> 
+    <a href="https://fluxnet.org/" target="_blank">FLUXNET</a> 
     </div>
 </td>
 <td width="75%">
@@ -104,7 +104,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html">Australian Community Reference Climate Data Collection</a> 
+    <a href="https://aus-ref-clim-data-nci.github.io/aus-ref-clim-data-nci/intro.html" target="_blank">Australian Community Reference Climate Data Collection</a> 
     </div>
 </td>
 <td width="75%">

@@ -3,7 +3,7 @@
 ???+ danger "Support Level: NOT supported by ACCESS-NRI"
     Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
 
-Please let us know, if we are missing an important catalogue. See [How To Contribute](../../about/how_to_contribute.md) to get in touch.
+Please let us know if we are missing an important catalogue. Check [How To Contribute](/about/contribute) to get in touch.
 
 <table>
 <tr>
@@ -22,7 +22,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://cds.climate.copernicus.eu/">Copernicus Climate Change Service (C3S) Data Store (CDS)</a> 
+    <a href="https://cds.climate.copernicus.eu/"  target="_blank">Copernicus Climate Change Service (C3S) Data Store (CDS)</a> 
     </div>
 </td>
 <td width="75%">
@@ -37,7 +37,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://catalogue.ceda.ac.uk">Catalogue Search at CEDA (Centre for Environmental Data Analysis) </a> 
+    <a href="https://catalogue.ceda.ac.uk" target="_blank">Catalogue Search at CEDA (Centre for Environmental Data Analysis) </a> 
     </div>
 </td>
 <td width="75%">
@@ -52,7 +52,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://eds.ukri.org/services/find-data">NERC's Environmental Data Service (EDS)</a> 
+    <a href="https://eds.ukri.org/services/find-data" target="_blank">NERC's Environmental Data Service (EDS)</a> 
     </div>
 </td>
 <td width="75%">
@@ -65,7 +65,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://archive.ceda.ac.uk/">CEDA Archive</a> 
+    <a href="https://archive.ceda.ac.uk/" target="_blank">CEDA Archive</a> 
     </div>
 </td>
 <td width="75%">
@@ -78,7 +78,7 @@ Please let us know, if we are missing an important catalogue. See [How To Contri
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://www.ozflux.org.au">OZFlux</a> 
+    <a href="https://www.ozflux.org.au" target="_blank">OZFlux</a> 
     </div>
 </td>
 <td width="75%">
