@@ -2,16 +2,16 @@
 
 <!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
 
-Model evaluation in climate science is the process of assessing the performance and reliability of computational models that simulate Earth's climate system. It involves comparing model predictions to observed data to determine the model's accuracy and usefulness. This process helps understand how well a model represents real-world climate processes and predict future climate trends. Through rigorous evaluation, scientists can identify model strengths, weaknesses, and uncertainties, refining models to enhance their predictive capabilities.
+Model evaluation in climate science is the process of assessing the performance and reliability of computational models that simulate the Earth's climate system. It involves comparing model predictions to observed data to determine the model's accuracy and usefulness. In doing so, we can understand how well a model represents real-world climate processes and make predictions about future climate trends. Such rigorous model evaluation allows scientists to identify model strengths, weaknesses and uncertainties, as well as refine models to enhance their predictive capabilities.
 
 ## Getting Started with MED
 
-If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md):
+<!--If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md): -->
 
 <div class="card-container">
     <a href="../getting_started" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
+        <div class="vertical-card-image-container">
+            <img src="../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>
         <div class="card-text-container bold ">Computing Access</div>
     </a>
@@ -89,12 +89,12 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
 
 ### Tools in development
 
-We are currently setting up a range of tools that will help you to better evaluate and diagnose climate models:  
+For the evaluation and diagnosis of ACCESS climate models, the following tools are currently being setup:  
 
 * Data format processing tools like APP4  
 * An Evaluation Recipe Gallery with searching functionality  
 
-While we are working on these, we have collected a number of links to existing tools in our [community tab](../community_resources/index.md) (note that we are not currating them).  
+While this work is in progress, you can refer to a collection of links to existing tools (not curated by ACCESS-NRI) in the [community tab](../community_resources/index.md). 
 
 <!-- {% include "call_contribute.md" %} -->
 

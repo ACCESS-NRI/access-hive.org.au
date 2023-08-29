@@ -1,16 +1,25 @@
 # Getting Started with Model Evaluation at NCI
 
-Welcome to Model Evaluation and Diagnostics!
+<!--Welcome to Model Evaluation and Diagnostics! -->
 
-## What is MED about?
+## What is MED?
 
-**Evaluation** involves scrutinizing the model through Model/Observation confrontations, checking its performance against real-world observations. It also includes experiment comparisons, testing the model under different scenarios, and inter-model comparisons like the Coupled Model Intercomparison Project (CMIP), assessing how the ACCESS-NRI model fares when compared with other climate models.
+Model Evaluation and Diagnostics (MED) of ACCESS models includes:
 
-**Diagnostics** involves constant monitoring of model runs to detect any anomalies or inconsistencies and a thorough analysis of outputs to verify the model's accuracy over time.
+<ul>
+  <li><b>Evaluation</b>
+    <br>
+    Model evaluation involves scrutinising a model's performance by comparing its output with observations and through Model/Observation confrontations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as the Coupled Model Intercomparison Project (CMIP).
+  <li>
+    <b>Diagnostics</b>
+    <br>
+    Model diagnostics is essentially constant monitoring of model runs to detect any anomalies or inconsistencies. Thorough analysis of outputs are used to verify the model's accuracy over time.
+    <br>
+</ul>
 
-## How can you get started with MED?
+## How to get started with MED?
 
-Here, we provide you the important information to give you access to the large data that we curate at NCI's storage and show you how you can use it to figure out how fit for purpose specific models are, in particular when you compare them to osbervational data:
+Here you can find information on how to access curated data stored at NCI and how to use it to evaluate specific models, such as comparing model output with observational data.
 
 <div class="card-container">
     <a href="../../getting_started" class="vertical-card aspect-ratio1to1">
