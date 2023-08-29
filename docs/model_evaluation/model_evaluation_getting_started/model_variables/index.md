@@ -5,7 +5,7 @@
 For climate modelling, we need to store multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed, and direction.
 
 <div style="text-align: center;">
-     <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Example of a three-dimensional data array" width="25%"/>
+     <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Example of a three-dimensional data array" title="Picture from https://pro.arcgis.com/en/pro-app/latest/tool-reference/geostatistical-analyst/ga-layer-3d-to-netcdf.htm" width="25%"/>
  </div>
 
 ACCESS-NRI strives for comparable model outputs for easily model evaluation.
@@ -23,7 +23,7 @@ NetCDF (with file extensions `*.nc`) is a self-describing, machine-independent d
 - **Array-oriented** means that the `*.nc` data is typically spanning multiple dimensions with the same lengths (like latitude and longitude or time) and variables (like temperature or humidity) which are stored in arrays.
 
 <div style="text-align: center;">
-     <img src="../../../assets/model_evaluation/netcdf_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" width="75%"/>
+     <img src="../../../assets/model_evaluation/netcdf_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata." title="Picture from https://web.itu.edu.tr/~tokerem/netcdf.html" width="75%"/>
  </div>
 
 ### 1.1 NetCDF metadata
@@ -67,5 +67,5 @@ dataset
 ```
 
 <div style="text-align: center;">
-     <img src="../../../assets/model_evaluation/netcdf_example.jpg" alt="Example of an actual NetCDF file with data (precipitation/rainfall over the dimensions latitude, longitude, and time) and metadata. Picture from https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/fundamentals-of-netcdf-data-storage.html" width="60%"/>
+     <img src="../../../assets/model_evaluation/netcdf_example.jpg" alt="Example of an actual NetCDF file with data (precipitation/rainfall over the dimensions latitude, longitude, and time) and metadata." title="Picture from https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/fundamentals-of-netcdf-data-storage.html" width="60%"/>
  </div>
