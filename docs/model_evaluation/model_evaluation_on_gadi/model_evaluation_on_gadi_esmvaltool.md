@@ -22,9 +22,9 @@
 
 The Earth System Model Evaluation Tool (ESMValTool) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool mainly focus on evaluating results from the Coupled Model Intercomparison Project (CMIP) ensemble. The goal is to build a common framework for the evaluation of Earth System Models (ESMs) against observations available through the Earth System Grid Federation (ESGF) in standard formats (obs4MIPs) or made available at ESGF nodes.
 
-More information on ESMValTool scope is available in the extensive [ESMValTool documentation][esmvaltool-doc].
+More information on ESMValTool scope is available in the extensive <a href="https://docs.esmvaltool.org/en/latest" target="_blank">ESMValTool documentation</a>.
 
-ACCESS-NRI provides access to the latest version of ESMValTool via the xp65 access-med conda environment deployed on NCI-Gadi.
+ACCESS-NRI provides access to the latest version of ESMValTool via the `xp65` access-med conda environment deployed on NCI-Gadi.
 Our plan is to routinely run benchmarks and comparisons of the ACCESS models CMIP submissions. We will also provide support for running recipes on NCI-Gadi.
 
 ## Running `esmvaltool` on Gadi
@@ -61,15 +61,15 @@ esmvaltool run examples/recipe_python.yml --search_esgf=when_missing
 
 ## Support
 
-ACCESS and NCI-Gadi users can get help from ACCESS-NRI for running their recipe on Gadi via Github Issue on the [ESMValTool-Workflow][esmvaltool-workflow-repository] github repository or by opening a thread on the [ACCESS-Hive Forum][access-hive].
+ACCESS and NCI-Gadi users can get help from ACCESS-NRI for running their recipe on Gadi via Github Issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> github repository or by opening a thread on the <a href="https://access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
 
-General support for ESMValTool (non-specific to NCI-Gadi) can be found in [ESMValTool Discussions page][esmvaltool-discussions] where users can open an issue and a member of the User Engagement Team of ESMValTool will reply as soon as possible. This is open for all general and technical questions on the ESMValTool: installation, application, development, or any other question or comment you may have.
+General support for ESMValTool (non-specific to NCI-Gadi) can be found in <a href="https://github.com/ESMValGroup/ESMValTool/discussions" target="_blank">ESMValTool Discussions page</a> where users can open an issue and a member of the User Engagement Team of ESMValTool will reply as soon as possible. This is open for all general and technical questions on the ESMValTool: installation, application, development, or any other question or comment you may have.
 
 ### Recipes and diagnostics
 
-Contacts for specific diagnostic sets are the respective authors, as listed in the corresponding [recipe and diagnostic documentation][esmvaltool-recipe-list] and in the source code.
+Contacts for specific diagnostic sets are the respective authors, as listed in the corresponding <a href="https://docs.esmvaltool.org/en/latest/recipes/index.html#recipes" target="_blank">recipe and diagnostic documentation</a> and in the source code.
 
-The current status of ESMValTool recipes for the xp64 conda environment is available [here][esmvaltool-workflow-repository]
+The current status of ESMValTool recipes for the `xp65` conda environment is available <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">here</a>
 
 ## License
 
@@ -79,12 +79,11 @@ The ESMValTool is released under the Apache License, version 2.0. Citation of th
 
 Besides the above citation, users are kindly asked to register any journal articles (or other scientific documents) that use the software at the ESMValTool webpage (http://www.esmvaltool.org/). Citing the Software Documentation Paper and registering your paper(s) will serve to document the scientific impact of the Software, which is of vital importance for securing future funding. You should consider this an obligation if you have taken advantage of the ESMValTool, which represents the end product of considerable effort by the development team.
 
-
 ## ESMValTool recipe examples
 
 <!-- Explain what the Tiers mean: Tier3 not to be distributed / license issue, Tier2: some restrictions, but can be redistributed while citing papers etc., Tier1: open for everyone -->
 
-To find the available recipes, please go see the [ACCESS ESMValTool Worflow recipe status][esmvaltool-workflow-repository]
+To find the available recipes, please go see the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ACCESS ESMValTool Worflow recipe status</a>
 
 Below we showcase example recipes from `esmvaltool` that we are providing to run on Gadi:
 
@@ -217,12 +216,11 @@ Below we showcase example recipes from `esmvaltool` that we are providing to run
 </tr> -->
 
 </table>
-
-[esmvaltool-web]: https://www.esmvaltool.org/
-[esmvaltool-doc]: https://docs.esmvaltool.org/en/latest
+<!-- 
 [esmvaltool-tutorial]: https://esmvalgroup.github.io/ESMValTool_Tutorial/index.html
 [esmvaltool-source]: https://github.com/ESMValGroup/ESMValTool#readme
 [esmvaltool-workflow-repository]: https://github.com/ACCESS-NRI/ESMValTool-workflow.git
 [esmvaltool-discussions]: https://github.com/ESMValGroup/ESMValTool/discussions
 [access-hive]: https://access-hive.org.au
 [esmvaltool-recipe-list]: https://docs.esmvaltool.org/en/latest/recipes/index.html#recipes
+-->

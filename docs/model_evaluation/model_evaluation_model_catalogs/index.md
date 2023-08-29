@@ -16,7 +16,7 @@ The ACCESS-NRI catalog is essentially a table of climate data products that exis
 
 ## Showcase: use intake to easily find, load and plot data
 
-In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an ACCESS-ESM1-5 run called "HI_CN_05", which is an historical run using same configuration as CMIP6 ACCESS-ESM1-5 historical r1i1p1f1, but with phosphorus limitation disabled within CASA-CNP.
+In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an [ACCESS-ESM1-5](../../models/configurations/access-esm) run called "HI_CN_05", which is an historical run using same configuration as CMIP6 ACCESS-ESM1-5 historical r1i1p1f1, but with phosphorus limitation disabled within CASA-CNP.
 
 First we load the catalog using
 

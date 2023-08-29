@@ -68,7 +68,7 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
         </div>
         <div class="card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
+    <a href="model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain white-background"></img>
         </div>
