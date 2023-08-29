@@ -179,7 +179,7 @@ For example, to run an {{ model }} suite under the <code>tm70</code> project (AC
 
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
 <div class="note">
-    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/get_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
 </div>
 
 ### Change run length and cycling frequency
