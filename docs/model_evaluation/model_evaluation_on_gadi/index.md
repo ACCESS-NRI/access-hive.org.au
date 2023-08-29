@@ -24,7 +24,7 @@ At the moment, we are providing support for an the following model evaluation fr
     </a>
     <a href="model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
-            <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
+            <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">METplus</div>
     </a>

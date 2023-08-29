@@ -93,21 +93,21 @@ Below we showcase example recipes from `esmvaltool` that we are providing to run
 <div class="card-container">
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_ipccwg1ar5ch9.html" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/esmvaltool/fig-9-3.png" alt="Computing Access"></img>
+            <img src="/assets/model_evaluation/esmvaltool/fig-9-3.png" alt="Computing Access"></img>
         </div>
-        <div class="card-text-container bold">recipe_flato13ipcc.yml</div>
+        <div class="card-text-container bold">Example 1</div>
     </a>
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_perfmetrics.html" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" alt="MED Conda Environment"></img>
+            <img src="/assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" alt="MED Conda Environment"></img>
         </div>
-        <div class="card-text-container bold">recipe_perfmetrics_CMIP5.yml</div>
+        <div class="card-text-container bold">Example 2</div>
     </a>
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_emergent_constraints.html" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/esmvaltool/ltmi1_1.png" alt="Model Variables"></img>
+            <img src="/assets/model_evaluation/esmvaltool/ltmi1_1.png" alt="Model Variables"></img>
         </div>
-        <div class="card-text-container bold">recipe_ecs_scatter.yml</div>
+        <div class="card-text-container bold">Example 3</div>
     </a>
 </div>
 

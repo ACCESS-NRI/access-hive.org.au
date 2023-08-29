@@ -39,7 +39,7 @@ hide:
 <div class="card-container homepage-navigation">
     <a href="models" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-cover" src="assets/ACCESS-MODEL.png" alt="Models">
+            <img class="img-contain white-background with-padding" src="assets/ACCESS-MODEL.png" alt="Models">
         </div>
         <div class="card-text-container">
             <div class="bold">Models</div>
@@ -47,7 +47,7 @@ hide:
     </a>
     <a href="models/run-a-model" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-cover" src="assets/get_started_example.png" alt="Run a Model">
+            <img class="img-cover" src="/assets/get_started_example.png" alt="Run a Model">
         </div>
         <div class="card-text-container">
             <div class="bold">Run a Model</div>
@@ -63,7 +63,7 @@ hide:
     </a>
     <a href="community_resources" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-cover" src="assets/community_workinggroups.jpg" alt="Community Resources">
+            <img class="img-contain white-background" src="assets/community_workinggroups.jpg" alt="Community Resources">
         </div>
         <div class="card-text-container">
             <div class="bold">Community Resources</div>

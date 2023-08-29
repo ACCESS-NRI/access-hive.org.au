@@ -3,7 +3,7 @@
 <div class="card-container">
     <a href="https://forum.access-hive.org.au/" class="vertical-card aspect-ratio1to1" target="_blank">
         <div class="card-image-container">
-            <img class="img-cover" src="../assets/forum_screenshot.png" alt="ACCESS-Hive Forum">
+            <img class="img-contain white-background" src="/assets/access_hive_forum_icon.png" alt="ACCESS-Hive Forum">
         </div>
         <div class="card-text-container   bold">ACCESS-Hive Forum</div>
     </a>

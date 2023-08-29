@@ -41,7 +41,7 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
     </a>
     <a href="model_evaluation_model_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-cover"></img>
+            <img src="../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Model Data Catalogue</div>
     </a>
@@ -70,7 +70,7 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
     </a>
     <a href="../model_evaluation_on_gadi/model_evaluation_on_gadi_metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
-            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain"></img>
+            <img src="../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">METplus</div>
     </a>

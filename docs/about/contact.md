@@ -26,8 +26,11 @@ ACCESS-Hive is an open community supported effort. The underpinning infrastructu
     
 :fontawesome-brands-slack:{ .slack}: [access-nri.slack.com](https://access-nri.slack.com)
 
+[^1]: _"Contact" image source_: <a href="https://www.freepik.com/free-vector/contact-concept-landing-page_5155590.htm#page=5&query=contact%20cartoon&position=6&from_view=search&track=ais">Image by pch.vector</a> on Freepik
+
 [access-about]: https://www.access-nri.org.au/about/what-is-access-nri/
 [access-contact]: https://www.access-nri.org.au/contact/
 [issues]: https://github.com/ACCESS-Hive/access-hive.github.io/issues
 [support]: user_support.md
 [access-hive-forum]: https://forum.access-hive.org.au
+
