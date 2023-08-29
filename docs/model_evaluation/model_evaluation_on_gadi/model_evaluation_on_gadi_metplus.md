@@ -13,7 +13,7 @@ For detailed information, tutorials and more of [METplus](https://metplus.readth
  <div class="card-container">
      <a href="https://metplus.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1">
          <div class="card-image-container">
-             <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation" class="img-contain"></img>
+             <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation" class="img-contain white-background"></img>
          </div>
          <div class="card-text-container bold">Documentation</div>
      </a>

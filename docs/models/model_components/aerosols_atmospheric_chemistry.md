@@ -1,6 +1,6 @@
 #  Aerosol and Atmospheric Chemistry components 
 
-<img src = "../../../assets/component-logos/component-maps/aerosol-chemistry-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
+<img src = "/assets/component-logos/component-maps/aerosol-chemistry-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
 
 ## UKCA
 

@@ -21,16 +21,16 @@ This documentation is tailored to using the tool within the NCI infrastructure a
 You will find the information needed to run ILAMB and IOMB on Gadi in our documentation:
 
 <div class="card-container">
-    <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio1to1" target="_blank">
-        <div class="vertical-card-image-container">
-            <img src="../../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-contain"></img>
+    <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio2to1" target="_blank">
+        <div class="card-image-container">
+            <img src="/assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-cover white-background"></img>
         </div>
-        <div class="vertical-card-text-container bold ">Documentation for ILAMB on Gadi</div>
+        <div class="card-text-container bold ">Documentation for ILAMB on Gadi</div>
     </a>
 </div>
 
 To run `ilamb`, you need to execute the command `ilamb-run` with a number of arguments/files:
-```py
+```
 ilamb-run --config config.cfg --model_setup model_setup.txt --regions regions.txt
 ```
 
