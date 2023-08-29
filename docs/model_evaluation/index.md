@@ -10,7 +10,7 @@ Model evaluation in climate science is the process of assessing the performance 
 
 <div class="card-container">
     <a href="../getting_started" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>
         <div class="card-text-container bold ">Computing Access</div>
