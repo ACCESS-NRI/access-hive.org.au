@@ -297,9 +297,11 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
     </li>
 </ol>
 
-### ACCESS-NRI Model Live Diagnostics on <i>Gadi</i>
+### Model Live Diagnostics
 
-ACCESS-NRI is also providing a framework for [Model Live Diagnostics](../../../model_evaluation/model_diagnostics) to check, monitor, visualise, and evaluate model behaviour and progress on currently running ACCESS models on <i>Gadi</i>. You can get a first impression of the framework on [this Hive page](../../../model_evaluation/model_diagnostics) and go to the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics Documentation</a> for more information.
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
 
 ----------------------------------------------------------------------------------------
 

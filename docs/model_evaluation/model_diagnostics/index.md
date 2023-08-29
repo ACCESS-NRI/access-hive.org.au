@@ -9,16 +9,16 @@ In addition to monitoring a live model, the package provides the functionality t
 For detailed information, tutorials and more, please go to the
 <div class="card-container">
     <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
-        <div class="vertical-card-image-container">
-            <img src="../../../assets/access_logo_rgb.svg" alt="ACCESS-NRI Model Diagnostics Documentation" class="img-contain"></img>
+        <div class="card-image-container">
+            <img src="../../../assets/access_logo_rgb.svg" alt="ACCESS-NRI Model Diagnostics Documentation" class="img-contain white-background with-padding"></img>
         </div>
-        <div class="vertical-card-text-container bold ">Model Diagnostics Documentation</div>
+        <div class="card-text-container bold ">Model Diagnostics Documentation</div>
     </a>
 </div>
 
 ## Showcase: Monitoring total seawater mass of an ACCESS CM2 run
 
-In our showcase, we will monitor the progress of an [ACCESS Coupled Model 2 (CM2)](../../models/run-a-model/run-access-cm.md) run.
+In our showcase, we will monitor the progress of an [ACCESS Coupled Model 2 (ACCESS-CM2)](/models/run-a-model/run-access-cm) run.
 
 We first start a session (for details on the paths and package see the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">documentation</a>) to automatically check for new model output with a given period (here: 20 minutes):
 

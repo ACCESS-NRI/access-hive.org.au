@@ -50,10 +50,10 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
 ### Model Live Diagnostics
 <div class="card-container">
     <a href="model_diagnostics" class="vertical-card aspect-ratio1to1">
-        <div class="vertical-card-image-container">
+        <div class="card-image-container">
             <img src="../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Diagnostic plot of total liquid seawater mass over time of a currently running model calculation." class="img-cover"></img>
         </div>
-        <div class="vertical-card-text-container bold ">Model Live Diagnostics</div>
+        <div class="card-text-container bold ">Model Live Diagnostics</div>
     </a>
 </div>
 
