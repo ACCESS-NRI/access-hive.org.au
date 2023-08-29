@@ -26,14 +26,13 @@ function adjustScrollingToId() {
       let header = document.querySelector('header');
       let el = document.getElementById(location.hash.slice(1,));
       let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
-      if (offset < 0) {
+      if (offset != 0) {
         window.scrollBy(0, offset);
       }
     }
-    document.querySelectorAll(`[href="${location.hash}"].md-nav__link`).forEach(el => el.onclick = () => setTimeout(scrollToId,0));
   }
+  document.querySelectorAll(`[href^="#"]`).forEach(el => el.addEventListener("click",(e) => setTimeout(scrollToId,0), false));
   scrollToId();
-  window.onhashchange = () => scrollToId();
 }
 
 
@@ -41,6 +40,13 @@ function adjustScrollingToId() {
   Add functionality to tabs
 */
 function tabFunctionality() {
+  document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
+    let href = el.getAttribute('href');
+    let tabEl = document.querySelector(href)
+    if (tabEl.parentElement.classList.contains("tabLabels")) {
+      el.addEventListener("click",(e) => openTab(tabEl), false);
+    }
+  })
   let activeEl = document.activeElement;
   // If tab is activeElement (for example if a link points to an ID 
   // inside the tab content/button), make that tab active
@@ -216,9 +222,9 @@ function makeCitationLinks() {
 // Join all functions
 function main() {
   adjustScrollingToId();
+  tabFunctionality();
   sortTables();
   removeIconsFromHomepage();
-  tabFunctionality();
   addExternalLinkIcon();
   fitText();
   toggleTerminalAnimations();

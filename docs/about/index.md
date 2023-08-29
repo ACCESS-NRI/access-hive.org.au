@@ -13,7 +13,7 @@
         </div>
         <div class="card-text-container bold">User support</div>
     </a>
-    <a href="how_to_contribute" class="vertical-card aspect-ratio1to1">
+    <a href="contribute" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="bubbi" alt="find img"></img>
         </div>
