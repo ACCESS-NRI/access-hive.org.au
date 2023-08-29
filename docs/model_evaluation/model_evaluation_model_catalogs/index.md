@@ -3,10 +3,10 @@
 The ACCESS-NRI intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on the Australian NCI supercomputer Gadi. For detailed information, tutorials and more, please go to the
 <div class="card-container">
     <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
-        <div class="vertical-card-image-container">
-            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain"></img>
+        <div class="card-image-container">
+            <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain white-background with-padding"></img>
         </div>
-        <div class="vertical-card-text-container bold ">Documentation</div>
+        <div class="card-text-container bold ">Documentation</div>
     </a>
 </div>
 
@@ -16,13 +16,18 @@ The ACCESS-NRI catalog is essentially a table of climate data products that exis
 
 ## Showcase: use intake to easily find, load and plot data
 
-In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an ACCESS-ESM1-5 run called "HI_CN_05", which is an historical run using same configuration as CMIP6 ACCESS-ESM1-5 historical r1i1p1f1, but with phosphorus limitation disabled within CASA-CNP.
+In this showcase, we'll demonstrate one of the simplest use-cases of the ACCESS-NRI intake catalog: a user wants to plot a timeseries of a variable from a specific data product. Here, the variable is a scalar ocean variable called "temp_global_ave" and the product is an [ACCESS-ESM1-5](../../models/configurations/access-esm) run called "HI_CN_05", which is an historical run using same configuration as CMIP6 ACCESS-ESM1-5 historical r1i1p1f1, but with phosphorus limitation disabled within CASA-CNP.
 
 First we load the catalog using
 
 ```python
 import intake
 catalog = intake.cat.access_nri
+```
+
+To see all the available catalogs, simply prompt
+```
+catalog
 ```
 
 Now we can load and plot available datasets of the variable "temp_global_ave" from the product "HI_CN_05" using

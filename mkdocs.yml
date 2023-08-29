@@ -15,16 +15,18 @@ theme:
   name: material
   custom_dir: overrides
   palette:
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: custom-light
+      primary: none
+      accent: none
       toggle:
         icon: material/theme-light-dark
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
+      primary: none
+      accent: none
       scheme: custom-dark
       toggle:
         icon: material/theme-light-dark
@@ -58,7 +60,7 @@ copyright: Copyright &copy; 2022 ACCESS-NRI
 plugins:
   - git-revision-date-localized:
       type: date
-      enable_creation_date: true
+      enable_creation_date: false
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - macros
@@ -149,15 +151,13 @@ nav:
   - Community Resources:
     - community_resources/index.md
     - Working Groups: community_resources/community_working_groups.md
-    - Events:
-       - community_resources/events/index.md
-      #  - Add Event: community_resources/events/add_event.md
     - Model Evaluation Links:
       - community_resources/community_med/index.md
       - Observational Catalogues: community_resources/community_med/community_observational_catalogs.md
       - Model Catalogues: community_resources/community_med/community_model_catalogs.md
       - Data Formatting: community_resources/community_med/community_data_processing.md
       - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
+    - Glossaries: community_resources/glossaries.md
     # - Training: 
     #   - Training: community_resources/training/index.md
     #   - Git Version Control: community_resources/training/git-version-control.md
@@ -170,10 +170,13 @@ nav:
 
   - About:
     - Contact: about/contact.md
-    - User support: about/user_support.md
-    - How to contribute: about/how_to_contribute.md
-    - Glossaries: about/glossaries.md
-    - Code of conduct: about/code_of_conduct.md
+    - User Support: 
+      - about/user_support/index.md 
+      - Using the Hive Forum: about/user_support/ask_on_forum.md
+    - Contribute:
+      - about/contribute/index.md
+      - Contribute on GitHub: about/contribute/contribute_on_github.md
+    - Code of Conduct: about/code_of_conduct.md
     - Policies: about/policies.md
     - License: about/License.md
     
@@ -205,5 +208,5 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js
+  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js # Terminal animations
   - js/miscellaneous.js

@@ -1,19 +1,33 @@
-#  Sea-Ice Model Component 
+#  Sea-Ice component 
 
-<!-- {% include "call_contribute.md" %} -->
-
-<!-- ![Sea-Ice Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png){align=right width=40%} -->
-
-<img src = "../../../assets/component-logos/component-maps/sea-ice-component-map.png" class="white-background"></img>
+<img src = "/assets/component-logos/component-maps/sea-ice-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
 
 ## CICE
-CICE is a numerical model for simulating the growth, melting and movement of polar sea ice. This software package was developed by researchers at [Los Alamos National Laboratory team][lanl-web] and is currently managed by the [CICE Consortium][cice-web], an international group of institutions formed to maintain and develop CICE in the public domain.
+CICE is a numerical model for simulating the growth, melting and movement of polar sea ice. This software package was developed by researchers at <a href="https://www.lanl.gov" target="_blank">Los Alamos National Laboratory team</a> and is currently managed by the <a href="https://github.com/CICE-Consortium/About-Us/wiki" target="_blank">CICE Consortium</a>, an international group of institutions formed to maintain and develop CICE in the public domain.
 
-[CICE5][cice5-wiki] is the current version used in ACCESS model configurations.
-
-[CICE6][cice6-wiki] is currently under development.
-
-[lanl-web]: https://www.lanl.gov/
-[cice-web]: https://github.com/CICE-Consortium/About-Us/wiki
-[cice5-wiki]: https://github.com/CICE-Consortium/CICE-svn-trunk/wiki
-[cice6-wiki]: https://github.com/CICE-Consortium/CICE/wiki
+### Configurations that use CICE
+There are 2 CICE versions currently used in ACCESS models: <a href="https://github.com/CICE-Consortium/CICE-svn-trunk" target="_blank">CICE5</a> and <a href="https://github.com/CICE-Consortium/CICE" target="_blank">CICE6</a>.
+<!-- Tab labels -->
+<div class="tabLabels" label="CICE-versions">
+    <button>CICE5</button>
+    <button>CICE6</button>
+</div>
+<!-- Tab content -->
+<div class="tabContents" label="CICE-versions">
+    <!-- 
+    -
+    -
+    -
+    CICE5 -->
+    <div>
+        <p>CICE5 is used in <a href="../../configurations/access-cm#access-cm2">ACCESS-CM2</a>, <a href="../../configurations/access-esm#access-esm15">ACCESS-ESM1.5</a> and <a href="../../configurations/access-om#access-om2">ACCESS-OM2</a>.</p>
+    </div>
+    <!-- 
+    -
+    -
+    -
+    CICE6 -->
+    <div>
+        <p>CICE6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.</p>
+    </div>
+</div>

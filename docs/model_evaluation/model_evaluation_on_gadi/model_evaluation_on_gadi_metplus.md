@@ -1,6 +1,6 @@
 # `METplus` on Gadi at NCI
 
-[METplus](https://dtcenter.org/community-code/metplus) is the enhanced Model Evaluation Tools (METplus) verification system. 
+<a href="https://dtcenter.org/community-code/metplus" target="_blank">METplus</a> is the enhanced Model Evaluation Tools (METplus) verification system. 
 
 ???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
@@ -9,19 +9,19 @@
     ACCESS-NRI does not own the code of METplus, but actively supports the use of METplus on Gadi.
     ACCESS-NRI provides access to the latest version of ESMValTool via the `access` conda environment deployed on NCI-Gadi.
 
-For detailed information, tutorials and more of [METplus](https://metplus.readthedocs.io/en/latest/index.html), please go to the
+For detailed information, tutorials and more of <a href="https://metplus.readthedocs.io/en/latest/index.html" target="_blank">METplus</a>, please go to the
  <div class="card-container">
      <a href="https://metplus.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1">
-         <div class="vertical-card-image-container">
-             <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation" class="img-contain"></img>
+         <div class="card-image-container">
+             <img src="../../../assets/model_evaluation/METplus_logo.png" alt="METplus documentation" class="img-contain white-background"></img>
          </div>
-         <div class="vertical-card-text-container bold">Documentation</div>
+         <div class="card-text-container bold">Documentation</div>
      </a>
  </div>
 
 ## What is METplus?
 
-[METplus](https://dtcenter.org/community-code/metplus) is a verification framework that spans a wide range of temporal (warn-on-forecast to climate) and spatial (storm to global) scales. It is intended to be extensible through additional capability developed by the community The core components of the framework include the [Model Evaluation Tools (MET)](https://met.readthedocs.io/en/latest/), the associated database and display systems called METviewer and METexpress, and a suite of Python wrappers to provide low-level automation and examples, also called use-cases. METplus will be a component of NOAA's Unified Forecast System (UFS) cross-cutting infrastructure as well as NCAR's System for Integrated Modeling of the Atmosphere (SIMA).
+<a href="https://dtcenter.org/community-code/metplus" target="_blank">METplus</a> is a verification framework that spans a wide range of temporal (warn-on-forecast to climate) and spatial (storm to global) scales. It is intended to be extensible through additional capability developed by the community The core components of the framework include the <a href="https://met.readthedocs.io/en/latest/" target="_blank">Model Evaluation Tools (MET)</a>, the associated database and display systems called METviewer and METexpress, and a suite of Python wrappers to provide low-level automation and examples, also called use-cases. METplus will be a component of NOAA's Unified Forecast System (UFS) cross-cutting infrastructure as well as NCAR's System for Integrated Modeling of the Atmosphere (SIMA).
 
 ## Showcase of METplus 5.0
 
@@ -31,7 +31,7 @@ module use /g/data/access/ngm/modules
 module load envs/metplus/5.0
 ```
 
-1. Download the sample data from [https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz](https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz) and untar into a directory on Gadi, for example `~/METplus`.
+1. Download the sample data from <a href="https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz" target="_blank">https://dtcenter.ucar.edu/dfiles/code/METplus/METplus_Data/v5.0/sample_data-met_tool_wrapper-5.0.tgz</a> and untar into a directory on Gadi, for example `~/METplus`.
 
 2. Create a configuration file `local.conf` containing the input and output paths, for example `INPUT_BASE=~/METplus`.
 
@@ -41,7 +41,7 @@ INPUT_BASE=/path/to/metplus_inputs
 OUTPUT_BASE=/path/to/outputs
 ```
 
-3. Save the demo configuration (e.g. `ASCII2NC.conf` from [this METPlus example](https://metplus.readthedocs.io/en/latest/generated/met_tool_wrapper/ASCII2NC/ASCII2NC.html#sphx-glr-generated-met-tool-wrapper-ascii2nc-ascii2nc-py)) to a local file
+3. Save the demo configuration (e.g. `ASCII2NC.conf` from <a href="https://metplus.readthedocs.io/en/latest/generated/met_tool_wrapper/ASCII2NC/ASCII2NC.html#sphx-glr-generated-met-tool-wrapper-ascii2nc-ascii2nc-py" target="_blank">this METPlus example</a> to a local file
 
 4. Run METplus passing it both local.conf and the demo configuration
 

@@ -103,12 +103,12 @@ This file, which controls the general model configuration, contains several part
         <pre><code>jobname: pre-industrial
 queue: normal
 walltime: 20:00:00</code></pre>
-        These lines can be edited to change the settings for the PBS scheduler.
+        These lines can be edited to change the <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS directives</a> for the <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a>.
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="../../../get_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/get_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
         </div>  
     </li>
     <li>
@@ -194,7 +194,7 @@ laboratory: access-esm</code></pre>
         <b>Number of runs per PBS submission</b>
         <br>
         <pre><code>runspersub: 5</code></pre>
-        {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every PBS job submission.
+        {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission.
         <div class="note">
             If you increase <code>runspersub</code>, you may need to increase the <i>walltime</i> in the PBS resources.
         </div>
@@ -207,7 +207,7 @@ To find out more about other configuration settings for the <code>config.yaml</c
 ## Run {{ model }} configuration
 After editing the configuration, you are ready to run {{ model }}. 
 <br>
-{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission managed by <i>payu</i>.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
 As a first step, from within the <i>control</i> directory, it is good practice to run:
@@ -259,7 +259,7 @@ This will submit a single job to the queue with a total run length of <code>runt
 ### Run configuration for multiple years
 If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), use the option <code>-n</code>:
 <pre><code>payu run -f -n &lt;number-of-runs&gt;</code></pre>
-This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive PBS jobs submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
+This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a> submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
 
 ### Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters
 With the correct use of <code>runtime</code>, <code>runspersub</code> and <code>-n</code> parameters, you can have full control of your run.
@@ -269,7 +269,7 @@ With the correct use of <code>runtime</code>, <code>runspersub</code> and <code>
         <code>runtime</code> defines the internal run length.
     </li>
     <li>
-        <code>runspersub</code> defines the maximum number of internal runs for every PBS job submission.
+        <code>runspersub</code> defines the maximum number of internal runs for every <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission.
     </li>
     <li>
         <code>-n</code> sets the number of internal runs to be performed.
@@ -317,7 +317,7 @@ days: 0</code></pre>
 ## Monitor {{ model }} runs
 Currently, there is no specific tool to monitor {{ model }} runs. 
 <br>
-You can execute the following command to show the status of all your submitted PBS jobs:
+You can execute the following command to show the status of all your submitted <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a>:
 <pre><code>qstat -u $USER</code></pre>
 <terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>

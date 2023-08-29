@@ -1,27 +1,17 @@
-#  Aerosol and Atmospheric Chemistry Components 
+#  Aerosol and Atmospheric Chemistry components 
 
-<!-- {% include "call_contribute.md" %} -->
+<img src = "/assets/component-logos/component-maps/aerosol-chemistry-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
 
-<!-- ![Atmospheric Component Logo](../../assets/component-logos/components-without-titles/ACCESS%20icon%20AEROSOLS.png){align=right width=40%} -->
+## UKCA
 
-<img src = "../../../assets/component-logos/component-maps/aerosol-chemistry-component-map.png" class="white-background"></img>
+The <a href="https://www.ukca.ac.uk/wiki/index.php/UKCA" target="_blank">UK Chemistry-Aerosol model (UKCA)</a> is a community atmospheric chemistry-aerosol global model  developed in the United Kingdom. It is suitable for a range of topics in climate and environmental change research.
 
-## [UKCA][ukca-wiki]
+### Configurations that use UKCA
+UKCA chemistry model can be enabled in <a href="../../configurations/access-cm#access-cm2">ACCESS-CM2</a>, to create the configuration called ACCESS-CM2-Chem.
 
-The [UK Chemistry-Aerosol model (UKCA)][ukca-wiki] is a community atmospheric chemistry-aerosol global model  developed in the United Kingdom. It is suitable for a range of topics in climate and environmental change research.
+## GLOMAP
 
-### How is UKCA used?
-UKCA chemistry model is enabled in ACCESS-CM2-Chem.
+UKCA contains the <a href="https://www.ukca.ac.uk/wiki/index.php/Aerosol_Subproject" target="_blank">GLObal Model of Aerosol Processes (GLOMAP)</a> aerosol scheme, that can also be used independently. The multi-component, multi-modal GLOMAP model allows simulation of aerosol number, size and concentrations of individual components such as sulphate,sea salt and different types of carbon.
 
-<!-- 
-![Atmospheric Component Logo](../../assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png){align=right width=40%} -->
-
-## [GLOMAP][glomap-wiki]
-
-UKCA contains an aerosol scheme [GLObal Model of Aerosol Processes (GLOMAP)][glomap-wiki] that can be used independently. The multi-component, multi-modal GLOMAP model allows simulation of aerosol number, size and concentrations of individual components such as sulphate,sea salt and different types of carbon.
-
-### How is GLOMAP used?
-GLOMAP is used in ACCESS-CM2 and ACCESS-CM2-Chem.
-
-[ukca-wiki]: https://www.ukca.ac.uk/wiki/index.php/UKCA
-[glomap-wiki]: https://www.ukca.ac.uk/wiki/index.php/Aerosol_Subproject
+### Configurations that use GLOMAP
+GLOMAP is used in <a href="../../configurations/access-cm#access-cm2">ACCESS-CM2</a> and ACCESS-CM2-Chem.

@@ -21,16 +21,16 @@ This documentation is tailored to using the tool within the NCI infrastructure a
 You will find the information needed to run ILAMB and IOMB on Gadi in our documentation:
 
 <div class="card-container">
-    <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio1to1" target="_blank">
-        <div class="vertical-card-image-container">
-            <img src="../../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-contain"></img>
+    <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio2to1" target="_blank">
+        <div class="card-image-container">
+            <img src="/assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-cover white-background"></img>
         </div>
-        <div class="vertical-card-text-container bold ">Documentation for ILAMB on Gadi</div>
+        <div class="card-text-container bold ">Documentation for ILAMB on Gadi</div>
     </a>
 </div>
 
 To run `ilamb`, you need to execute the command `ilamb-run` with a number of arguments/files:
-```py
+```
 ilamb-run --config config.cfg --model_setup model_setup.txt --regions regions.txt
 ```
 
@@ -61,8 +61,8 @@ For our showcase, however, we are comparing the ACCESS Earth System Model versio
 
 We have performed a large amount of benchmark comparisons that were defined in the configuration file. We have organised the comparison of variables under different sections, like the <i>Hydrology Cycle</i>. For different variables, like the gross primary productivity `gpp`, we can compare to one or more datasets, like the gross primary productivity measurements of <a href="https://fluxnet.org/data/fluxnet2015-dataset/" target="_blank">FLUXNET2015</a>. Clicking on a row of the table will expand it to reveal the underlying datasets used. In the below table, the colormap extends from best values in purple to worse data in orange.
 
-<p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_3.png" alt="Starting side of ilamb output"></p>  
+<p align="center"><img align="center" width="50%" src="../../../assets/model_evaluation/ilamb_output_3.png" alt="Starting side of ILAMB output"></p>  
 
 Clicking on one of these datasets, for example CERESed4.1, will take you to an interactive and quantitative comparison page for Albedo measurements of the <a href="https://ceres.larc.nasa.gov" target="_blank">Clouds and the Earth’s Radiant Energy System (CERES) project</a>:
 
-<p align="center"><img align="center" width="100%" src="../../../assets/model_evaluation/ilamb_loop.gif" alt="Comparison of CERES Albedo measurements with model output from ACCESS ESM1.5, BBC ESM1, and CanESM5"></p>
+<p align="center"><img align="center" width="100%" src="../../../assets/model_evaluation/ilamb_loop.gif" alt="Comparison of different ILAMB outputs"></p>  

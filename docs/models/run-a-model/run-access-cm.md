@@ -9,7 +9,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
     <li>
         <b>Get a <i>MOSRS</i> account</i></b>
         <br>
-        The <a href="https://code.metoffice.gov.uk">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
+        The <a href="https://code.metoffice.gov.uk" target="_blank">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
         <br>
         To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
     </li>
@@ -29,7 +29,7 @@ Before running {{ model }}, you need to fulfil general requirements outlined in 
         <br>
         You also need to ensure there is correct communication between <i>accessdev</i> and <i>Gadi</i>.
         <br>
-        To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
+        To complete these steps, refer to the <i>SSH & SSH Agent</i> section in the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected" target="_blank">Getting Connected to Accessdev</i></a> guide.
     </li>
 </ul>
 
@@ -137,7 +137,7 @@ For example, to run an {{ model }} suite under the <code>tm70</code> project (AC
 
 <img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
 <div class="note">
-    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="../../../get_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/get_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
 </div>
 
 ### Change run length and cycling frequency
@@ -153,7 +153,7 @@ For example, to run a suite for a total of 50 years with a 1-year job resubmissi
 
 
 ### Change wallclock time
-The <i>Wallclock time</i> is the time requested by the PBS job<!-- TO DO <a href="../getting-started/#pbs-jobs" target="_blank">PBS job</a> --> to run a single cycle. If this time is insufficient for the suite to complete a cycle, your job will be terminated before completing the run. Hence, if you change the <i>Cycling frequency</i>, you may also need to change the <i>Wallclock time</i> accordingly. While the time required for a suite to complete a cycle depends on several factors, a good estimation is 4 hours per simulated year.
+The <i>Wallclock time</i> is the time requested by the <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> to run a single cycle. If this time is insufficient for the suite to complete a cycle, your job will be terminated before completing the run. Hence, if you change the <i>Cycling frequency</i>, you may also need to change the <i>Wallclock time</i> accordingly. While the time required for a suite to complete a cycle depends on several factors, a good estimation is 4 hours per simulated year.
 <br>
 <br>
 To modify the <i>Wallclock time</i>, edit the respective field in <i>suite conf &rarr; Run Initialisation and Cycling</i> (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
@@ -162,7 +162,7 @@ To modify the <i>Wallclock time</i>, edit the respective field in <i>suite conf 
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} suite
-{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a PBS job submission.
+{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission.
 <br>
 When the suite runs, its configuration files are copied on <i>Gadi</i> inside <code>/scratch/$PROJECT/$USER/cylc-run/&lt;suite-ID&gt;</code> and a symbolic link to this directory is also created in the <code>$USER</code>'s home directory under <code>~/cylc-run/&lt;suite-ID&gt;</code>.
 <br>
