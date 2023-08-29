@@ -296,6 +296,13 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
         </terminal-window>
     </li>
 </ol>
+
+### Model Live Diagnostics
+
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
+
 ----------------------------------------------------------------------------------------
 
 ## Stop, restart and reload suites

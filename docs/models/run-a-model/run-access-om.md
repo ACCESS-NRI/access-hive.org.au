@@ -351,6 +351,13 @@ While the model is running, <i>payu</i> saves the standard output and standard e
 <br>
 When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
 
+
+### Model Live Diagnostics
+
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
+
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
