@@ -175,7 +175,7 @@ function addCardContainerChildrenNumber() {
   Fit text to div if overflowing (for 'card-text-container' and 'fitText' class)
 */
 function fitText() {
-  const coeff = 0.98;
+  const coeff = 0.9;
   function isOverflowing(el) {
     return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
   }
