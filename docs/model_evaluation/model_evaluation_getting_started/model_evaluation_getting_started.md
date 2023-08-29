@@ -5,7 +5,7 @@ If you do not yet have `ssh` access to <i>Gadi</i>, refer to instructions on how
 The following instructions explain how to load the curated `python` environment on NCI, which includes packages and scripts supported by ACCESS-NRI. Once loaded, these can be run directly on <i>Gadi</i> via `ssh`, `PBS` scripts, or in `JupyterLab`.
 
 ???+ warning "ACCESS-NRI can provide code and support, but not computing resources"
-    You do not automatically have access to all `/g/data/` storage on <i>Gadi</i>. You need to <a href="/getting_started#join-relevant-nci-projects">join an NCI project</a> to view files on `/g/data/$PROJECT`.
+    You do not automatically have access to all `/g/data/` storage on <i>Gadi</i>. You need to <a href="/getting_started/first_steps#join-relevant-nci-projects">join an NCI project</a> to view files on `/g/data/$PROJECT`.
     <br>
     For model evaluation and diagnostics, you need to join projects `xp65` and `hh5` for code access and a `$PROJECT` with sufficient compute resources.
 
