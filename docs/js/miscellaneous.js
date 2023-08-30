@@ -42,7 +42,7 @@ function adjustScrollingToId() {
 function tabFunctionality() {
   document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
     let href = el.getAttribute('href');
-    let tabEl = document.querySelector(href)
+    let tabEl = document.getElementById(href.slice(1,))
     if (tabEl.parentElement.classList.contains("tabLabels")) {
       el.addEventListener("click",(e) => openTab(tabEl), false);
     }
