@@ -1184,32 +1184,54 @@ img.intro-img {
 */
 
 /* Homepage button */
-.card-container.workshop {
+.card-container.homepage-buttons.workshop {
   max-width: 60%;
   margin: 1.5rem auto;
 }
-.card-container.workshop > .horizontal-card {
+.card-container.homepage-buttons.workshop > .horizontal-card {
   max-height: 5rem;
 }
-.card-container.workshop .card-text-container {
+.card-container.homepage-buttons.workshop .card-text-container {
   height: 100%;
   padding: 0.4rem 0.4rem 0.4rem 0;
 }
-.card-container.workshop .card-text-container > span {
+.card-container.homepage-buttons.workshop .card-text-container > span {
   background-color: var(--nri-orange);
   color: rgb(10,10,10);
 }
+
+/* Workshop page */
+.card-container.workshop-page {
+  justify-content: space-around;
+}
+
+/* Training materials page */
+.workshop-training {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.workshop-training > * {
+  width: fit-content;
+}
+
+@media screen and (width > 550px) {
+  .card-container.workshop-page > .horizontal-card {
+    max-width: 40%;
+    max-height: 5rem;
+  }
+}
 @media screen and (width < 800px) {
-  .card-container.workshop > .horizontal-card > :first-child {
+  .card-container.homepage-buttons.workshop > .horizontal-card > :first-child {
     display: none;
   }
-  .card-container.workshop .card-text-container {
+  .card-container.homepage-buttons.workshop .card-text-container {
     flex-basis: 100%;
     padding: 0;
   }
 }
 @media screen and (width <= 550px) {
-  .workshop > .horizontal-card {
+  .homepage-buttons.workshop > .horizontal-card {
     flex-direction: row;
     height: 15vw;
     width: 100%;
@@ -1218,8 +1240,11 @@ img.intro-img {
     aspect-ratio: unset;
     container-type: inline-size;
   }
-  .workshop > .horizontal-card > .card-text-container {
+  .homepage-buttons.workshop > .horizontal-card > .card-text-container {
     font-size: 10cqi;
     font-weight: 600;
+  }
+  .card-container.workshop-page img {
+    padding: 0.4rem;
   }
 }

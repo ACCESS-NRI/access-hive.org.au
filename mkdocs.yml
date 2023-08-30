@@ -151,7 +151,18 @@ nav:
   - Community Resources:
     - community_resources/index.md
     # TEMPORARY for Workshop
-    - ACCESS Community Workshop 2023: community_resources/workshop.md
+    - ACCESS Community Workshop 2023: 
+      - Overwview: community_resources/access_workshop_2023/index.md
+      - Training materials: 
+        - community_resources/access_workshop_2023/training/index.md
+        - Ex. 1 - Launch ARE: community_resources/access_workshop_2023/training/ex_1.md
+        - Ex. 2 - Running ACCESS in ARE: community_resources/access_workshop_2023/training/ex_2.md
+        - Ex. 3 - Working with an ACCESS suite: community_resources/access_workshop_2023/training/ex_3.md
+        - Ex. 4 - How to modify suites: community_resources/access_workshop_2023/training/ex_4.md
+        - Ex. 5 - Using the ACCESS-NRI intake catalogue: community_resources/access_workshop_2023/training/ex_5.md
+        - Ex. 6 - Working with ILAMB: community_resources/access_workshop_2023/training/ex_6.md
+        - Ex. 7 - Working with ESMValTOOL: community_resources/access_workshop_2023/training/ex_7.md
+
     # TEMPORARY for Workshop
     - Working Groups: community_resources/community_working_groups.md
     - Model Evaluation Links:

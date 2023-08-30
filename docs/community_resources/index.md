@@ -2,7 +2,7 @@
 
 <div class="card-container">
     <!-- TEMPORARY for Workshop -->
-    <a href="workshop" class="vertical-card aspect-ratio1to1">
+    <a href="access_workshop_2023" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain white-background" src="/assets/ACCESS_logo_rgb.png" alt="ACCESS Workshop 2023">
         </div>
