@@ -218,7 +218,6 @@ function makeCitationLinks() {
 }
 
 
-
 // Join all functions
 function main() {
   adjustScrollingToId();
@@ -234,4 +233,3 @@ function main() {
 
 // Run all functions
 window.onload = () => document$.subscribe(() => main());
-// document$.subscribe(() => main());

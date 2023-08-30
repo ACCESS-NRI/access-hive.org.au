@@ -15,13 +15,7 @@
     </div>
 </div>
 
-## Let's get started! 
-
-<terminal-window>
-    <terminal-line data="input">git commit -m "Let's 'git' started!!!"</terminal-line>
-    <terminal-line></terminal-line>
-    <terminal-line data="progress"></terminal-line>
-</terminal-window>
+## Let's get started!
 
 This documentation is written in Markdown format and is based on the <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> documentation framework, which is built on top of <a href="https://www.mkdocs.org" target="_blank">MkDocs</a> static site generator. Please refer to this <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">cheatsheet</a> for a quick reference to basic markdown syntax, which is used by <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> theme used in this website.
 
