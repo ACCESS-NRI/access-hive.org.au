@@ -43,7 +43,7 @@ To facilitate this process, there are <a href="http://cfconventions.org" target=
 
 ### NetCDF data and variables
 
-Data in a <i>netCDF</i> file is stored in the form of arrays, where each <i>netCDF</i> dimension has a name and a length.
+Data in a <i>NetCDF</i> file is stored in the form of arrays, where each <i>NetCDF</i> dimension has a name and a length.
 <br>
 For example, temperature variation over time at a fixed location is stored as a one-dimensional array, whereas temperature over a region (i.e. varying location) at a fixed time is stored as a two-dimensional array. Thus, three-dimensional (3D) data would be temperature varying with time over a region, and four-dimensional (4D) data would be temperature varying with time over a region with varying altitude.
 
