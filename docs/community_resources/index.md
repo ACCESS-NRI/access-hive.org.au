@@ -1,6 +1,14 @@
 # Community Resources
 
 <div class="card-container">
+    <!-- TEMPORARY for Workshop -->
+    <a href="workshop" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img class="img-contain white-background" src="/assets/ACCESS_logo_rgb.png" alt="ACCESS Workshop 2023">
+        </div>
+        <div class="card-text-container   bold">ACCESS Community Workshop 2023</div>
+    </a>
+    <!-- TEMPORARY for Workshop -->
     <a href="https://forum.access-hive.org.au/" class="vertical-card aspect-ratio1to1" target="_blank">
         <div class="card-image-container">
             <img class="img-contain white-background" src="/assets/access_hive_forum_icon.png" alt="ACCESS-Hive Forum">
