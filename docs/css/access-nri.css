@@ -768,7 +768,7 @@ ul:not([class^='md-']) li ul li ul li {
 /* =============================================================== 
   Code block
 */
-pre:has(code) {
+pre {
   display: flow-root !important;
   text-align: left !important;
   padding: 0 !important;
@@ -784,10 +784,6 @@ pre>code {
 /* Copy icon turning orange when hovering over it*/
 pre > button:is(:hover,:focus).md-clipboard {
   color: var(--md-primary-fg-color--dark) !important;
-}
-/* Copy icon not getting white when hovering over the code element */
-pre:has(code):hover > button {
-  color: var(--md-default-fg-color--lightest) !important;
 }
 
 /* =============================================================== 
