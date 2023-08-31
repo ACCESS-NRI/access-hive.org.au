@@ -19,7 +19,7 @@ Numerous organisations and scientific groups worldwide have adopted a file forma
 <ul>
 <li><b>Self-describing</b>
     <br>
-    <code>*.nc</code> files include not only the data itself, but also a <i>header</i> with <i>metadata</i> that describes the data layout.
+    <code>*.nc</code> files include not only the data, but also a header with metadata that describes the data layout.
 
 <li><b>Machine-independent</b>
     <br>
@@ -27,7 +27,7 @@ Numerous organisations and scientific groups worldwide have adopted a file forma
 
 <li><b>Array-oriented</b>
     <br>
-    <code>*.nc</code> data typically spans multiple dimensions with the same lengths (e.g., latitude, longitude and time) and variables, such as temperature or humidity, which are stored in arrays.
+    <code>*.nc</code> data typically spans multiple dimensions with the same lengths (e.g., latitude, longitude and time) and variables (e.g., temperature and humidity), which are stored in arrays.
     <br>
     <br>
     <div style="text-align: center;">
@@ -37,7 +37,7 @@ Numerous organisations and scientific groups worldwide have adopted a file forma
 
 ### NetCDF metadata
 
-<i>Metadata</i>, which is typically described as <i>information about the data</i>, enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding and display capabilities.
+Metadata, which is typically described as information about the data, enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding and display capabilities.
 
 To facilitate this process, there are <a href="http://cfconventions.org" target="_blank">conventions for Climate and Forecast metadata</a>. These are designed to promote the processing and sharing of <i>NetCDF</i> files. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. 
 
@@ -70,7 +70,7 @@ Our Model Evaluation and Diagnostics tools are based on the reading and storing 
 <br>
 For more information, refer to a <a href="https://docs.xarray.dev/en/stable/getting-started-guide/quick-overview.html" target="_blank">quick overview of xarray</a> and <a href="https://tutorial.xarray.dev/intro.html" target="_blank">xarray tutorials</a>.
 
-`xarray` is a python package avaliable through the `conda` environment on NCI. 
+`xarray` is a python package avaliable through the conda environment on NCI. 
 <br>
 Hence, you can either use it directly (as shown below) or through the dataset capabilities of the [ACCESS-NRI Model Intake Catalog Tool](../../model_evaluation_model_catalogs/index.md).
 
