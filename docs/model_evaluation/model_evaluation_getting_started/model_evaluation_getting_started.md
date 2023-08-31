@@ -1,6 +1,6 @@
 # `conda` Environment for Model Evaluation on Gadi
 
-If you do not yet have `ssh` access to <i>Gadi</i>, refer to instructions on how to <a href="/getting_started#login-to-gadi">login to Gadi</a>.
+If you do not have `ssh` access to <i>Gadi</i>, refer to instructions on how to <a href="/getting_started#login-to-gadi">login to Gadi</a>.
 
 The following instructions explain how to load the curated `python` environment on NCI, which includes packages and scripts supported by ACCESS-NRI. Once loaded, these can be run directly on <i>Gadi</i> via `ssh`, `PBS` scripts, or in `JupyterLab`.
 

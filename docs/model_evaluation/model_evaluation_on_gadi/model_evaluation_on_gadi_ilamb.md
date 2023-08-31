@@ -4,7 +4,7 @@
 
 The <a href="https://www.ilamb.org/" target="_blank">International Land Model Benchmarking (<i>ILAMB</i>)</a> benchmarking system is a python framework used to quantitatively compare a defined set of observable variables with a number of land models.
 
-???+ warning "Support Level: supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
+???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
     <i>ILAMB</i> is a community-developed climate model diagnostics and evaluation software package.
     <!-- Code ownership and support -->

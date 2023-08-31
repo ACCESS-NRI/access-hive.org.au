@@ -5,7 +5,7 @@ The Earth System Model Evaluation Tool (<i>ESMValTool</i>) is a climate model di
 
 ???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Code ownership and support -->
-    <i>ESMValTool</i> is a community-developed climate model diagnostics and evaluation software package. While ACCESS-NRI does not own the code, it actively supports the use of <i>ESMValTool</i> software on Gadi. ACCESS-NRI provides access to the latest version of <i>ESMValTool</i> via the `xp65` <i>access-med conda environment</i> deployed on <i>Gadi</i>.
+    <i>ESMValTool</i> is a community-developed climate model diagnostics and evaluation software package. While ACCESS-NRI does not own the code, it actively supports the use of <i>ESMValTool</i> software on <i>Gadi</i>. ACCESS-NRI provides access to the latest version of <i>ESMValTool</i> via the `xp65` <i>access-med conda environment</i> deployed on <i>Gadi</i>.
 
 
 The <i>ESMValTool</i> mainly focuses on evaluating results from the Coupled Model Intercomparison Project (CMIP) ensemble. 
@@ -25,7 +25,7 @@ For more information, refer to the official <a href="https://docs.esmvaltool.org
 
 <i>ESMValTool</i> is provided through the `xp65` <i>access-med</i> conda environment deployed on <i>Gadi</i>. 
 <br>
-ACCESS-NRI plans to routinely run benchmarks and comparisons of CMIP submissions for ACCESS models, as well as providing support to run <i>ESMValTool</i> recipes on Gadi.
+ACCESS-NRI plans to routinely run benchmarks and comparisons of CMIP submissions for ACCESS models, as well as providing support to run <i>ESMValTool</i> recipes on <i>Gadi</i>.
 
 ### Pre-requisites
 
@@ -41,7 +41,7 @@ To load the the `access-med` conda environment, execute the following commands:
     module load conda/access-med
 ```
 
-To list which <i>ESMValTool</i> recipes are available on Gadi, run:
+To list which <i>ESMValTool</i> recipes are available on <i>Gadi</i>, run:
 ```
     esmvaltool recipes list
 ```
