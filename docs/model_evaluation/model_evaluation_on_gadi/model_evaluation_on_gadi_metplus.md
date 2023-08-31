@@ -2,7 +2,8 @@
 
 <i><a href="https://dtcenter.org/community-code/metplus" target="_blank">METplus</a></i> is the enhanced Model Evaluation Tools verification framework that spans a wide range of temporal (warn-on-forecast to climate) and spatial (storm to global) scales. 
 <br>
-The core components of the framework include the <a href="https://met.readthedocs.io/en/latest/" target="_blank">Model Evaluation Tools (MET)</a>, the associated database and display systems called <i>METviewer</i> and <i>METexpress</i>, and a suite of Python wrappers to provide low-level automation and examples, also called use-cases. 
+<br>
+The core components of the framework include the <a href="https://met.readthedocs.io/en/latest/" target="_blank">Model Evaluation Tools (MET)</a>, the associated database and display systems (<i>METviewer</i> and <i>METexpress</i>), and a suite of Python wrappers to provide low-level automation and examples. 
 
 ???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
