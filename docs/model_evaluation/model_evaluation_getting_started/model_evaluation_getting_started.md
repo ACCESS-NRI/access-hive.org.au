@@ -3,7 +3,7 @@
 
 If you do not have `ssh` access to <i>Gadi</i>, refer to instructions on how to <a href="/getting_started#login-to-gadi">login to Gadi</a>.
 
-The following instructions explain how to load the curated NCI Python environment, which includes packages and scripts supported by ACCESS-NRI. Once loaded, these can be run directly on <i>Gadi</i> via `ssh`, Portable Batch System (PBS) scripts, or in JupyterLab.
+The following instructions explain how to load the curated python environment on NCI, which includes packages and scripts supported by ACCESS-NRI. Once loaded, these can be run directly on <i>Gadi</i> via `ssh`, Portable Batch System (PBS) scripts, or in JupyterLab.
 
 ???+ warning "ACCESS-NRI provides code and support, but not computing resources"
     You do not automatically have access to all `/g/data/` storage on <i>Gadi</i>. You need to <a href="/getting_started#join-relevant-nci-projects">join an NCI project</a> to view files on `/g/data/$PROJECT`.
@@ -29,10 +29,15 @@ module load conda/access-med
 
 This will load the latest version of `access-med`, e.g. version `access-med-0.3`. 
 <br>
-To check which conda version you are using, run the following command:
+To check which python version you are using, run the following command:
 ```
 which python
 ```
+<!-- For details about the conda environment you are using, run the following command:
+```
+conda info --envs
+```
+-->
 
 <terminal-window>
     <terminal-line data="input">module use /g/data/xp65/public/modules</terminal-line>
