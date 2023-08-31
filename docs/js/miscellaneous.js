@@ -40,13 +40,6 @@ function adjustScrollingToId() {
   Add functionality to tabs
 */
 function tabFunctionality() {
-  document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
-    let href = el.getAttribute('href');
-    let tabEl = document.getElementById(href.slice(1,))
-    if (tabEl.parentElement.classList.contains("tabLabels")) {
-      el.addEventListener("click",(e) => openTab(tabEl), false);
-    }
-  })
   let activeEl = document.activeElement;
   // If tab is activeElement (for example if a link points to an ID 
   // inside the tab content/button), make that tab active
@@ -54,14 +47,34 @@ function tabFunctionality() {
     activeEl.blur();
     openTab(activeEl);
   } else {
-    // Otherwise make first tab and content active
-    document.querySelectorAll(".tabLabels :nth-child(1)").forEach(label=>label.classList.add("activeTab"));
-    document.querySelectorAll(".tabContents :nth-child(1)").forEach(content=>content.classList.add("activeTabContent"));
+    // Otherwise first check if a tab was open and a page reloaded, and open the same tab, 
+    // otherwise open first tab
+    document.querySelectorAll(".tabLabels").forEach(tabs => {
+      let label = tabs.getAttribute("label");
+      let index;
+      if (sessionStorage.getItem(`tabs-label=${label}`)) {
+        index = sessionStorage.getItem(`tabs-label=${label}`);
+      } else {
+        index = '1';
+      }
+      // tabs.querySelector(`:nth-child(${index})`).classList.add("activeTab");
+      // document.querySelectorAll(`.tabContents[label="${label}"] > :nth-child(${index})`).forEach(content => content.classList.add("activeTabContent"));
+      openTab(tabs.querySelector(`:nth-child(${index})`));
+    })
   }
   // Add click event to tab buttons
   let tabButtons = document.querySelectorAll(".tabLabels > button");
   tabButtons.forEach(button=>{
     button.addEventListener('click', openTab);
+  })
+
+  // Add click event for links to tab IDs on the same page
+  document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
+    let href = el.getAttribute('href');
+    let tabEl = document.getElementById(href.slice(1,))
+    if (tabEl.parentElement.classList.contains("tabLabels")) {
+      el.addEventListener("click",(e) => openTab(tabEl), false);
+    }
   })
   
   function openTab(e) {
@@ -74,24 +87,20 @@ function tabFunctionality() {
     let label = active.parentElement.getAttribute('label');
     let index = Array.from(active.parentElement.children).indexOf(active)+1;
     // Remove active classes from button/content
-    document.querySelectorAll(`.tabContents[label=${label}]`).forEach(tabContent => {
-      for (let content of tabContent.children) {
-        content.classList.remove('activeTabContent');
-      }
+    document.querySelectorAll(`.tabContents[label=${label}] > *`).forEach(content => {
+      content.classList.remove('activeTabContent');
     })
-    document.querySelectorAll(`.tabLabels[label=${label}]`).forEach(tabLabel => {
-      for (let button of tabLabel.children) {
-        button.classList.remove('activeTab');
-      }
+    document.querySelectorAll(`.tabLabels[label=${label}] > *`).forEach(button => {
+      button.classList.remove('activeTab');
     })
     // Add active classes to button/content and add focus
     document.querySelectorAll(`.tabContents[label=${label}] :nth-child(${index})`).forEach(content => {
-      content.classList.add('activeTabContent')
+      content.classList.add('activeTabContent');
     })
-    document.querySelectorAll(`.tabLabels[label=${label}] :nth-child(${index})`).forEach(label => {
-      label.classList.add('activeTab')
+    document.querySelectorAll(`.tabLabels[label=${label}] :nth-child(${index})`).forEach(button => {
+      button.classList.add('activeTab');
     })
-
+    sessionStorage.setItem(`tabs-label=${label}`,`${index}`);
   }
 }
 
@@ -110,6 +119,7 @@ function addExternalLinkIcon() {
 /*
   Add button to toggle terminal-animations for the whole page (next to the page title)
 */
+// Change it to be using "localStorage" once animated-terminal.js has been updated to set/remove "static" attribute dynamically.
 function toggleTerminalAnimations() {
   if (document.querySelector('terminal-window')) {
     let state;
@@ -135,7 +145,7 @@ function toggleTerminalAnimations() {
     }
 
     function setCookie() {
-      document.cookie = `terminalState=${state};path=/;max-age=2592000;samesite=lax`; // Expires after 1 month
+      document.cookie = `terminalState=${state};path=/;max-age=604800;samesite=lax`; // Expires after 1 week
     }
 
     function toggleState(e) {

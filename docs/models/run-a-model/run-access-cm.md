@@ -66,13 +66,25 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 </ul>
 
 --------------------------------------------
+## Login to chosen workflow server/platform
 <div class="tabContents" label="workflow">
     <!-- ARE/Gadi-->
     <div>
-        <h2 class="testclass">Start an ARE VDI Desktop session</h2>
+        <div class="note">
+            Your chosen workflow is ARE / <i>Gadi</i>. If you want to run {{ model }} on <i>accessdev</i> instead, please select <a href="#accessdev"><i>accessdev</i> workflow</a>.
+        </div>
     </div>
     <!-- accessdev-->
-    <div></div>
+    <div>
+        <div class="note">
+            Your chosen workflow is <i>accessdev</i>. If you want to run {{ model }} on ARE / <i>Gadi</i> instead, please select <a href="#are">ARE / <i>Gadi</i> workflow</a>.
+        </div>
+        Login to <i>accessdev</i> by runnning:
+        <pre><code>ssh accessdev</code></pre>
+        <div class="note">
+            If you have not yet set up your <i>accessdev</i> connection through `ssh`, please check the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
+        </div>
+    </div>
 </div>
 
 ## Get {{ model }} suite
