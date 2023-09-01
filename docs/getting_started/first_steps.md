@@ -28,7 +28,7 @@ Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actu
 
 If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank">NCI Data Catalogue</a> and follow the <a href="https://opus.nci.org.au/display/Help/Data+Catalogue+User+Guide" target="_blank">NCI Data Catalogue User Guide</a>.
 
-To perform computations on <i>Gadi</i> instead, you need to join a project with computing resources. The project ID will be provided by your supervisor, research project or institution.
+To perform computations on <i>Gadi</i> instead, you need to join a project with computing resources, also called <i>Service Units (SU)</i>. The project ID will be provided by your supervisor, research project or institution.
 
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
 <div class="note">

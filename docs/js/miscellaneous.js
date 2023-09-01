@@ -87,17 +87,17 @@ function tabFunctionality() {
     let label = active.parentElement.getAttribute('label');
     let index = Array.from(active.parentElement.children).indexOf(active)+1;
     // Remove active classes from button/content
-    document.querySelectorAll(`.tabContents[label=${label}] > *`).forEach(content => {
+    document.querySelectorAll(`.tabContents[label=${label}] > .activeTabContent`).forEach(content => {
       content.classList.remove('activeTabContent');
     })
-    document.querySelectorAll(`.tabLabels[label=${label}] > *`).forEach(button => {
+    document.querySelectorAll(`.tabLabels[label=${label}] > .activeTab`).forEach(button => {
       button.classList.remove('activeTab');
     })
     // Add active classes to button/content and add focus
-    document.querySelectorAll(`.tabContents[label=${label}] :nth-child(${index})`).forEach(content => {
+    document.querySelectorAll(`.tabContents[label=${label}] > :nth-child(${index})`).forEach(content => {
       content.classList.add('activeTabContent');
     })
-    document.querySelectorAll(`.tabLabels[label=${label}] :nth-child(${index})`).forEach(button => {
+    document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`).forEach(button => {
       button.classList.add('activeTab');
     })
     sessionStorage.setItem(`tabs-label=${label}`,`${index}`);

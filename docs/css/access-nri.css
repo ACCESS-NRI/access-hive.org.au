@@ -880,7 +880,6 @@ pre > button:is(:hover,:focus).md-clipboard {
 
 .tabContents > .activeTabContent {
   display: block;
-  margin-bottom: 1em;
 }
 
 .version-tabs {
@@ -962,6 +961,7 @@ img.intro-img {
 
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
+  display: block;
   width: 100%;
   border-radius: 0.6rem;
 }

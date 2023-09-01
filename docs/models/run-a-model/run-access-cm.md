@@ -63,16 +63,74 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
             </li>
         </div>
     </div>
+    <!-- End of tab content -->
 </ul>
 
 --------------------------------------------
-## Login to chosen workflow server/platform
+## Setup for your chosen workflow
 <div class="tabContents" label="workflow">
     <!-- ARE/Gadi-->
     <div>
         <div class="note">
             Your chosen workflow is ARE / <i>Gadi</i>. If you want to run {{ model }} on <i>accessdev</i> instead, please select <a href="#accessdev"><i>accessdev</i> workflow</a>.
         </div>
+        <h3>Launch ARE VDI Session</h3>
+        Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following directives:
+        <ul>
+            <li>
+                <b>Walltime (hours)</b> &rarr; &thickapprox; <code>4</code> per simulated year
+                <br>
+                With the current state of the ARE/Gadi workflow, <b>the ARE VDI session needs to remain active and running for the entirety of the {{ model }} simulation</b>. If the ARE VDI session expires before the end of the simulation, the simulation itself will be terminated as well.
+                <br>
+                <br>
+                This means that <code>walltime</code> needs to be set according to the simulation length.
+                <br>
+                A good estimate to calculate the <code>walltime</code> needed is <b>4 hours per simulated year</b>.
+                <div class="note">
+                    ARE VDI Session cannot be spun up for more than 48 consecutive hours. This means that {{ model }} simulations that need more than 48 hours to complete, at the current state, need to be broken down into multiple chunks running for up to 48 hours.
+                    <br>
+                    <br>
+                    In the near future this will not be necessary anymore, as there will be long running servers in place for runnning {{ model }} simulations.
+                </div>
+            </li>
+            <li>
+                <b>Queue</b> &rarr; <code>normalbw</code>
+            </li>
+            <li>
+                <b>Compute Size</b> &rarr; <code>tiny</code> (1 CPU)
+                <br>
+                {{ model }} runs on a different Gadi node with respect to the one where the ARE VDI session is launched.
+                <br>
+                This means that the ARE VDI session only needs to carry out setup steps as well as starting the run itself. All these tasks can be easily done with only 1 CPU.
+            </li>
+            <li>
+                <b>Project</b> &rarr; a project you belong, with allocated SU
+                <br>
+                The project, with allocated <i>Service Units</i> (SU), under which you want to run your simulation. Usually (but not always) this corresponds to your <code>$PROJECT</code>.
+                <div class="note">
+                    For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+                </div>
+            </li>
+            <li>
+                <b>Storage</b> &rarr; <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32</code> (minimum)
+                <br>
+                This is the list (joined by <code>+</code> signs) of project data storage needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access these data from within a VDI instance.
+                <br>
+                Since every {{ model }} simulation can be unique and input data can come from various sources, if your specific simulation requires data coming from projects other than <code>access</code>, <code>hh5</code>, <code>hr22</code> or <code>ki32</code>, you need to add those projects to the storage path.
+                <br>
+                For example, if your {{ model }} simulation requires data coming from <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
+            </li>
+        </ul>
+        Launch the session and, after the session starts, click on <i>Launch VDI Session</i>.
+        <img src="/assets/run_access_cm/launch_are_vdi.gif" alt="Launch ARE VDI session" class="example-img" loading="lazy"/>
+        <br>
+        <h3>Open the terminal</h3>
+        After the new tab opens you will see a Desktop with a few folders on the left.
+        <br>
+        To open the terminal click on the black terminal icon at the top of the window.
+        <br>
+        As you can see from your terminal, you are now connected to a <i>Gadi</i> computing node.
+        <img src="/assets/run_access_cm/open_are_vdi_terminal.gif" alt="Open ARE VDI terminal" class="example-img" loading="lazy"/>
     </div>
     <!-- accessdev-->
     <div>
@@ -86,70 +144,159 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
         </div>
     </div>
 </div>
+<!-- End of tab content -->
 
 ## Get {{ model }} suite
 {{ model }} comprises the model components <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
 <br>
-Each {{ model }} suite has an ID in the format <code>u-&lt;suite-name&gt;</code>, where <code>&lt;suite-name&gt;</code> is a unique identifier. For example, <code>u-br565</code> is the CMIP6-release preindustrial experiment suite.
+Each {{ model }} suite has a <code>suite-ID</code> in the format <code>u-&lt;suite-name&gt;</code>, where <code>&lt;suite-name&gt;</code> is a unique identifier.
 <br>
-Typically, an existing suite is copied and then edited as needed for a particular run.
+<div class="tabContents" label="workflow">
+    <!-- ARE/Gadi-->
+    <div>
+        For this example you can use <code>u-cy339</code>, which is a preindustrial experiment suite.
+        <br>
+        Typically, an existing suite is copied and then edited as needed for a particular run.
+    </div>
+    <!-- accessdev -->
+    <div>
+        For this example you can use <code>u-br565</code>, which is the CMIP6-release preindustrial experiment suite.
+        <br>
+        Typically, an existing suite is copied and then edited as needed for a particular run.
+    </div>
+</div>
+<!-- End of tab content -->
 
 ### Copy {{ model }} suite with Rosie
 <a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options specific for {{ model }} suites.
 <br>
-<br>
-To copy an existing suite on <i>accessdev</i> you need to follow two main steps:
-<ol>
-    <li>
-        <b>MOSRS authentication</b>
-        <br>
-        To authenticate using your <i>MOSRS</i> credentials, run:
-        <pre><code>mosrs-auth</code></pre> 
-        <terminal-window>
-            <terminal-line data="input">mosrs-auth</terminal-line>
-            <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
-            <terminal-line lineDelay=1000>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
-        </terminal-window>
-    </li>
-    <li>
-        <b>Copy a suite</b>
-        <br>
-        <ul>
-            <li>
-                <i>Local-only copy</i>
-                <br>
-                To create a <i>local copy</i> of the <code>&lt;suite-ID&gt;</code> from the UKMO repository, run:
-                <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
-                <terminal-window>
-                    <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
-                    <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
-                    <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
-                </terminal-window>
-                This option is mostly used for testing and examining existing suites.
-            </li>
-            <li>
-                <i>Remote and local copy</i>
-                <br> 
-                Alternatively, to create a new copy of an existing <code>&lt;suite-ID&gt;</code> both <i>locally and remotely</i> in the UKMO repository, run: 
-                <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
-                <terminal-window>
-                    <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
-                    <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
-                    <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
-                    <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
-                    <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
-                </terminal-window>
-                When a new suite is created in this way, a <i>unique</i> <code>&lt;suite-ID&gt;</code> is generated within the repository and populated with descriptive information about the suite and its initial configuration.
-            </li>
-        </ul>
-    </li>
-</ol>
 
-For additional <code>rosie</code> options, run:
-<pre><code>rosie help</code></pre>
-<br>
-Suites are created in the user's home directory on <i>accessdev</i> under <code>~/roses/&lt;suite-ID&gt;</code>.
-<br>
+<div class="tabContents" label="workflow">
+    <!-- ARE/Gadi -->
+    <div>
+        To copy an existing suite on <i>Gadi</i> you need to follow three main steps:
+        <ol>
+            <li>
+                <b>Get Cylc7 setup</b>
+                <br>
+                To get the Cylc7 setup required to run {{ model }}, execute the following commands:
+                <pre><code>module use /g/data/hr22/modulefiles
+module load cylc7</code></pre>
+                <terminal-window data="input">
+                    <terminal-line>module use /g/data/hr22/modulefiles</terminal-line>
+                    <terminal-line>module load cylc7</terminal-line>
+                    <terminal-line data="output">Loading cylc7/23.03</terminal-line>
+                    <terminal-line data="output">&emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
+                </terminal-window>
+            </li>
+            <li>
+                <b>MOSRS authentication</b>
+                <br>
+                To authenticate using your <i>MOSRS</i> credentials, run:
+                <pre><code>mosrs-auth</code></pre> 
+                <terminal-window>
+                    <terminal-line data="input">mosrs-auth</terminal-line>
+                    <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: You need to enter your MOSRS credentials here so that GPG can cache your password.</terminal-line>
+                    <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
+                    <terminal-line lineDelay=1500><span style="color: #559cd5;">INFO</span>: Checking your credentials using Subversion. Please wait.</terminal-line>
+                    <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: Successfully accessed Subversion with your credentials.</terminal-line>
+                    <terminal-line lineDelay=100><span style="color: #559cd5;">INFO</span>: Checking your credentials using rosie. Please wait.</terminal-line>
+                    <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: Successfully accessed rosie with your credentials.</terminal-line>
+                </terminal-window>
+            </li>
+            <li>
+                <b>Copy a suite</b>
+                <br>
+                <ul>
+                    <li>
+                        <i>Local-only copy</i>
+                        <br>
+                        To create a <i>local copy</i> of the <code>&lt;suite-ID&gt;</code> from the UKMO repository, run:
+                        <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
+                        <terminal-window>
+                            <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
+                            <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
+                            <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
+                        </terminal-window>
+                        This option is mostly used for testing and examining existing suites.
+                    </li>
+                    <li>
+                        <i>Remote and local copy</i>
+                        <br> 
+                        Alternatively, to create a new copy of an existing <code>&lt;suite-ID&gt;</code> both <i>locally and remotely</i> in the UKMO repository, run: 
+                        <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
+                        <terminal-window>
+                            <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
+                            <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
+                            <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
+                            <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
+                            <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
+                        </terminal-window>
+                        When a new suite is created in this way, a <i>unique</i> <code>&lt;suite-ID&gt;</code> is generated within the repository and populated with descriptive information about the suite and its initial configuration.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        For additional <code>rosie</code> options, run:
+        <pre><code>rosie help</code></pre>
+        <br>
+        Suites are created in the user's home directory on <i>Gadi</i> under <code>~/roses/&lt;suite-ID&gt;</code>.
+    </div>
+    <!-- accessdev -->
+    <div>
+        To copy an existing suite on <i>accessdev</i> you need to follow two main steps:
+        <ol>
+            <li>
+                <b>MOSRS authentication</b>
+                <br>
+                To authenticate using your <i>MOSRS</i> credentials, run:
+                <pre><code>mosrs-auth</code></pre> 
+                <terminal-window>
+                    <terminal-line data="input">mosrs-auth</terminal-line>
+                    <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
+                    <terminal-line lineDelay=1000>Successfully authenticated with MOSRS as &lt;MOSRS-username&gt;</terminal-line>
+                </terminal-window>
+            </li>
+            <li>
+                <b>Copy a suite</b>
+                <br>
+                <ul>
+                    <li>
+                        <i>Local-only copy</i>
+                        <br>
+                        To create a <i>local copy</i> of the <code>&lt;suite-ID&gt;</code> from the UKMO repository, run:
+                        <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
+                        <terminal-window>
+                            <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
+                            <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
+                            <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
+                        </terminal-window>
+                        This option is mostly used for testing and examining existing suites.
+                    </li>
+                    <li>
+                        <i>Remote and local copy</i>
+                        <br> 
+                        Alternatively, to create a new copy of an existing <code>&lt;suite-ID&gt;</code> both <i>locally and remotely</i> in the UKMO repository, run: 
+                        <pre><code>rosie copy &lt;suite-ID&gt;</code></pre>
+                        <terminal-window>
+                            <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
+                            <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
+                            <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
+                            <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
+                            <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
+                        </terminal-window>
+                        When a new suite is created in this way, a <i>unique</i> <code>&lt;suite-ID&gt;</code> is generated within the repository and populated with descriptive information about the suite and its initial configuration.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        For additional <code>rosie</code> options, run:
+        <pre><code>rosie help</code></pre>
+        <br>
+        Suites are created in the user's home directory on <i>accessdev</i> under <code>~/roses/&lt;suite-ID&gt;</code>.
+    </div>
+</div>
+<!-- End of Tab Content -->
 Each suite directory usually contains two subdirectories and three files:
 <ul>
     <li><code>app</code> &rarr; directory containing the configuration files for various tasks within the suite.</li>
@@ -170,25 +317,51 @@ Each suite directory usually contains two subdirectories and three files:
 <a href = "http://metomi.github.io/rose/doc/html/index.html" target="_blank">Rose</a> is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
 <br> 
 <br>
-To edit a suite configuration on <i>accessdev</i>, run the following command from within the suite directory (e.g., <code>~/roses/&lt;suite-ID&gt;</code>) to open the <i>Rose</i> GUI:
+To edit a suite configuration, run the following command from within the suite directory (e.g., <code>~/roses/&lt;suite-ID&gt;</code>) to open the <i>Rose</i> GUI:
 <pre><code>rose edit &</code></pre> 
 <div class="note">
     The <code>&</code> is optional. It allows the terminal prompt to remain active while running the <i>Rose</i> GUI as a separate process in the background.
 </div>
-<terminal-window>
-    <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
-    <terminal-line class="ls-output-format">[&lt;N&gt;] &lt;PID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
-    <img src="../../../assets/run_access_cm/Rose GUI.png" alt="Rose GUI">
-</terminal-window>
+<div class="tabContents" label="workflow">
+    <!-- ARE/Gadi -->
+    <div>
+        <terminal-window>
+            <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
+            <terminal-line class="ls-output-format">[&lt;N&gt;] &lt;PID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
+            <img src="/assets/run_access_cm/Rose_GUI_are.png" alt="Rose GUI" imageTime="inf" loading="lazy">
+        </terminal-window>
+    </div>
+    <!-- accessdev -->
+    <div>
+        <terminal-window>
+            <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
+            <terminal-line class="ls-output-format">[&lt;N&gt;] &lt;PID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
+            <img src="/assets/run_access_cm/Rose GUI.png" alt="Rose GUI" imageTime="inf" loading="lazy">
+        </terminal-window>
+    </div>
+</div>
+<!-- End of tab content -->
 
 ### Change NCI project
-To ensure that your suite is run under the correct NCI project for which you are a member, edit the <i>Compute project</i> field in <i>suite conf &rarr; Machine and Runtime Options</i>, and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
+To ensure that your suite is run under the correct NCI project for which you are a member, edit the <i>Compute project</i> field in <i>suite conf &rarr; Machine and Runtime Options</i>, and click the <i>Save</i> button <img src="/assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
 <br> <br>
 For example, to run an {{ model }} suite under the <code>tm70</code> project (ACCESS-NRI), enter <code>tm70</code> in the <i>Compute project</i> field:
 
-<img src="../../../assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img"/>
+<div class="tabContents" label="workflow">
+    <!-- ARE / Gadi -->
+    <div>
+        <img src="/assets/run_access_cm/rose_change_project_are.gif" alt="Rose change project" class="example-img" loading="lazy"/>
+    </div>
+    <!-- accessdev -->
+    <div>
+        <img src="/assets/run_access_cm/rose_change_project.gif" alt="Rose change project" class="example-img" loading="lazy"/>
+    </div>
+</div>
+<!-- End of tab content -->
 <div class="note">
     To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
 </div>
@@ -197,19 +370,29 @@ For example, to run an {{ model }} suite under the <code>tm70</code> project (AC
 {{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen <i>Cycling frequency</i> until the <i>Total Run length</i> is reached. 
 <br>
 <br>
-To modify these parameters, navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective fields (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>.
+To modify these parameters, navigate to <i>suite conf &rarr; Run Initialisation and Cycling</i>, edit the respective fields (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="/assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>.
 <br> 
 <br>
 For example, to run a suite for a total of 50 years with a 1-year job resubmission, change <i>Total Run length</i> to <code>P50Y</code> and <i>Cycling frequency</i> to <code>P1Y</code> (the maximum <i>Cycling frequency</i> is currently two years):
 
-<img src="../../../assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img"/>
 
+<div class="tabContents" label="workflow">
+    <!-- ARE / Gadi -->
+    <div>
+        <img src="/assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img" loading="lazy"/>
+    </div>
+    <!-- accessdev -->
+    <div>
+        <img src="/assets/run_access_cm/rose_change_run_length_are.gif" alt="Rose change run length" class="example-img" loading="lazy"/>
+    </div>
+</div>
+<!-- End of tab content -->
 
 ### Change wallclock time
 The <i>Wallclock time</i> is the time requested by the <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> to run a single cycle. If this time is insufficient for the suite to complete a cycle, your job will be terminated before completing the run. Hence, if you change the <i>Cycling frequency</i>, you may also need to change the <i>Wallclock time</i> accordingly. While the time required for a suite to complete a cycle depends on several factors, a good estimation is 4 hours per simulated year.
 <br>
 <br>
-To modify the <i>Wallclock time</i>, edit the respective field in <i>suite conf &rarr; Run Initialisation and Cycling</i> (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="../../../assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
+To modify the <i>Wallclock time</i>, edit the respective field in <i>suite conf &rarr; Run Initialisation and Cycling</i> (using <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601 Duration</a> format) and click the <i>Save</i> button <img src="/assets/run_access_cm/save_button.png" alt="Save button" style="height:1em"/>. 
 
 <!-- TO DO For more details on how to edit other suite parameters using Rose GUI, such as component configurations, output variables (STASH), or science settings, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide</a>. -->
 ----------------------------------------------------------------------------------------
@@ -225,62 +408,119 @@ An {{ model }} suite comprises several tasks, such as checking out code reposito
 <a href="https://cylc.github.io/cylc-doc/7.8.8/html/index.html" target="_blank">Cylc</a> (pronounced ‘silk’) is a workflow manager that automatically executes tasks according to the model's main cycle script <code>suite.rc</code>. <i>Cylc</i> controls how the job will be run and manages the time steps of each submodel. It also monitors all tasks, reporting any errors that may occur.
 <br>
 <br>
-To run an {{ model }} suite on <i>accessdev</i>, run the following command from within the suite directory:
+To run an {{ model }} suite run the following command from within the suite directory:
 <pre><code>rose suite-run</code></pre>
 
 After the initial tasks are executed, the <i>Cylc</i> GUI will open. You can now view and control the different tasks in the suite as they are run:
-<ol>
-    <terminal-window lineDelay="50">
-        <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-        <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run</terminal-line>
-        <terminal-line>[INFO] export CYLC_VERSION=7.8.3</terminal-line>
-        <terminal-line>[INFO] export ROSE_ORIG_HOST=accessdev.nci.org.au</terminal-line>
-        <terminal-line>[INFO] export ROSE_SITE=</terminal-line>
-        <terminal-line>[INFO] export ROSE_VERSION=2019.01.2</terminal-line>
-        <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
-        <terminal-line>[INFO] create: log.&lt;timestamp&gt;</terminal-line>
-        <terminal-line>[INFO] symlink: log.&lt;timestamp&gt; <= log</terminal-line>
-        <terminal-line>[INFO] create: log/suite</terminal-line>
-        <terminal-line>[INFO] create: log/rose-conf</terminal-line>
-        <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.conf <= log/rose-suite-run.conf</terminal-line>
-        <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.version <= log/rose-suite-run.version</terminal-line>
-        <terminal-line>[INFO] install: rose-suite.info</terminal-line>
-        <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/rose-suite.info</terminal-line>
-        <terminal-line>[INFO] create: app</terminal-line>
-        <terminal-line>[INFO] install: app</terminal-line>
-        <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/app</terminal-line>
-        <terminal-line>[INFO] create: meta</terminal-line>
-        <terminal-line>[INFO] install: meta</terminal-line>
-        <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/meta</terminal-line>
-        <terminal-line>[INFO] install: suite.rc</terminal-line>
-        <terminal-line>[INFO] REGISTERED &lt;suite-ID&gt; -> /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
-        <terminal-line>[INFO] create: share</terminal-line>
-        <terminal-line>[INFO] install: share</terminal-line>
-        <terminal-line>[INFO] create: work</terminal-line>
-        <terminal-line>[INFO] chdir: log/</terminal-line>
-        <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
-        <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.8.3]</terminal-line>
-        <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-        <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-        <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
-        <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-        <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-        <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
-        <terminal-line>[INFO]</terminal-line>
-        <terminal-line>[INFO] *** listening on https://accessdev.nci.org.au:&lt;port&gt;/ ***</terminal-line>
-        <terminal-line>[INFO]</terminal-line>
-        <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
-        <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
-        <terminal-line>[INFO]</terminal-line>
-        <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
-        <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' accessdev.nci.org.au</terminal-line>
-        <terminal-line>[INFO]  $ cylc ping -v --host=accessdev.nci.org.au &lt;suite-ID&gt;</terminal-line>
-        <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
-        <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
-    </terminal-window>
-    <div class="note">
-        After running the command <code>rose suite-run</code>, if you get an error similar to the following:
-        <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
+
+<div class="tabContents" label="workflow">
+    <!-- ARE / Gadi -->
+    <div>
+        <terminal-window lineDelay="50">
+            <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run</terminal-line>
+            <terminal-line>[INFO] export CYLC_VERSION=7.9.7</terminal-line>
+            <terminal-line>export ROSE_ORIG_HOST=&lt;gadi-cpu&gt;.gadi.nci.org.au</terminal-line>
+            <terminal-line>[INFO] export ROSE_SITE=nci</terminal-line>
+            <terminal-line>[INFO] export ROSE_VERSION=2019.01.7</terminal-line>
+            <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO] create: log.&lt;timestamp&gt;</terminal-line>
+            <terminal-line>[INFO] symlink: log.&lt;timestamp&gt; <= log</terminal-line>
+            <terminal-line>[INFO] create: log/suite</terminal-line>
+            <terminal-line>[INFO] create: log/rose-conf</terminal-line>
+            <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.conf <= log/rose-suite-run.conf</terminal-line>
+            <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.version <= log/rose-suite-run.version</terminal-line>
+            <terminal-line>[INFO] create: meta</terminal-line>
+            <terminal-line>[INFO] install: meta</terminal-line>
+            <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/meta</terminal-line>
+            <terminal-line>[INFO] install: rose-suite.info</terminal-line>
+            <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/rose-suite.info</terminal-line>
+            <terminal-line>[INFO] create: app</terminal-line>
+            <terminal-line>[INFO] install: app</terminal-line>
+            <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/app</terminal-line>
+            <terminal-line>[INFO] install: suite.rc</terminal-line>
+            <terminal-line>[INFO] REGISTERED &lt;suite-ID&gt; -> /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO] create: share</terminal-line>
+            <terminal-line>[INFO] create: share/cycle</terminal-line>
+            <terminal-line>[INFO] create: work</terminal-line>
+            <terminal-line>[INFO] chdir: log/</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
+            <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
+            <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
+            <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
+            <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+            <terminal-line>[INFO]</terminal-line>
+            <terminal-line>[INFO] *** listening on https://&lt;gadi-cpu&gt;.gadi.nci.org.au:&lt;port&gt;/ ***</terminal-line>
+            <terminal-line>[INFO]</terminal-line>
+            <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
+            <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO]</terminal-line>
+            <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
+            <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;gadi-cpu&gt;.gadi.nci.org.au</terminal-line>
+            <terminal-line>[INFO]  $ cylc ping -v --host=&lt;gadi-cpu&gt;.nci.org.au &lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;gadi-cpu&gt;.nci.org.au</terminal-line>
+            <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+        </terminal-window>
+    </div>
+    <!-- accessdev -->
+    <div>
+        <terminal-window lineDelay="50">
+            <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run</terminal-line>
+            <terminal-line>[INFO] export CYLC_VERSION=7.8.3</terminal-line>
+            <terminal-line>[INFO] export ROSE_ORIG_HOST=accessdev.nci.org.au</terminal-line>
+            <terminal-line>[INFO] export ROSE_SITE=</terminal-line>
+            <terminal-line>[INFO] export ROSE_VERSION=2019.01.2</terminal-line>
+            <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO] create: log.&lt;timestamp&gt;</terminal-line>
+            <terminal-line>[INFO] symlink: log.&lt;timestamp&gt; <= log</terminal-line>
+            <terminal-line>[INFO] create: log/suite</terminal-line>
+            <terminal-line>[INFO] create: log/rose-conf</terminal-line>
+            <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.conf <= log/rose-suite-run.conf</terminal-line>
+            <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.version <= log/rose-suite-run.version</terminal-line>
+            <terminal-line>[INFO] install: rose-suite.info</terminal-line>
+            <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/rose-suite.info</terminal-line>
+            <terminal-line>[INFO] create: app</terminal-line>
+            <terminal-line>[INFO] install: app</terminal-line>
+            <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/app</terminal-line>
+            <terminal-line>[INFO] create: meta</terminal-line>
+            <terminal-line>[INFO] install: meta</terminal-line>
+            <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/meta</terminal-line>
+            <terminal-line>[INFO] install: suite.rc</terminal-line>
+            <terminal-line>[INFO] REGISTERED &lt;suite-ID&gt; -> /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO] create: share</terminal-line>
+            <terminal-line>[INFO] install: share</terminal-line>
+            <terminal-line>[INFO] create: work</terminal-line>
+            <terminal-line>[INFO] chdir: log/</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.8.3]</terminal-line>
+            <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
+            <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
+            <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
+            <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
+            <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+            <terminal-line>[INFO]</terminal-line>
+            <terminal-line>[INFO] *** listening on https://accessdev.nci.org.au:&lt;port&gt;/ ***</terminal-line>
+            <terminal-line>[INFO]</terminal-line>
+            <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
+            <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO]</terminal-line>
+            <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
+            <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' accessdev.nci.org.au</terminal-line>
+            <terminal-line>[INFO]  $ cylc ping -v --host=accessdev.nci.org.au &lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
+            <img src="/assets/run_access_cm/Cylc_GUI.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+        </terminal-window>
+    </div>
+</div>
+<!-- End of tab content -->
+<div class="note">
+    After running the command <code>rose suite-run</code>, if you get an error similar to the following:
+    <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
 <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
 <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_HOST=accessdev.nci.org.au
 <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_OWNER=&lt;$USER&gt;
@@ -290,8 +530,7 @@ After the initial tasks are executed, the <i>Cylc</i> GUI will open. You can now
         you should run:
         <pre><code>rm /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact</code></pre>
         before running the <code>rose suite-run</code> command again.
-    </div>
-</ol>
+</div>
 You are done!!
 <br>
 <br>
@@ -314,7 +553,17 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
         <br>
         To access a specific task, click on the arrow next to the task to extend the drop-down menu with all the subtasks.
         <br>
-        <img src="../../../assets/run_access_cm/investigate_error_gui.gif" alt="Investigate Error GUI" class="example-img"/>
+        <div class="tabContents" label="workflow">
+            <!-- ARE / Gadi -->
+            <div>
+                <img src="/assets/run_access_cm/investigate_error_gui_are.gif" alt="Investigate Error GUI" class="example-img" loading="lazy"/>
+            </div>
+            <!-- accessdev -->
+            <div>
+                <img src="/assets/run_access_cm/investigate_error_gui.gif" alt="Investigate Error GUI" class="example-img" loading="lazy"/>
+            </div>
+        </div>
+        <!-- End of tab content -->
     </li>
     <li>
         <b>Through the suite directory</b>
@@ -349,7 +598,6 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
         </terminal-window>
     </li>
 </ol>
-<a href="#accessdev">BUBBI</a>
 
 ### Model Live Diagnostics
 
@@ -368,13 +616,29 @@ To scan for active suites, run:
 <pre><code>cylc scan</code></pre>
 To reopen the <i>Cylc</i> GUI, run the following command from within the suite directory:
 <pre><code>rose suite-gcontrol</code></pre>
-<terminal-window>
-    <terminal-line data="input">cylc scan</terminal-line>
-    <terminal-line>&lt;suite-ID&gt; &lt;$USER&gt;@accessdev.nci.org.au:&lt;port&gt;</terminal-line>
-    <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</terminal-line>
-    <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
-</terminal-window>
+<div class="tabContents" label="workflow">
+    <!-- ARE / Gadi -->
+    <div>
+        <terminal-window>
+            <terminal-line data="input">cylc scan</terminal-line>
+            <terminal-line>&lt;suite-ID&gt; &lt;$USER&gt;@&lt;gadi-cpu&gt;.nci.org.au:&lt;port&gt;</terminal-line>
+            <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</terminal-line>
+            <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+        </terminal-window>
+    </div>
+    <!-- accessdev -->
+    <div>
+        <terminal-window>
+            <terminal-line data="input">cylc scan</terminal-line>
+            <terminal-line>&lt;suite-ID&gt; &lt;$USER&gt;@accessdev.nci.org.au:&lt;port&gt;</terminal-line>
+            <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</terminal-line>
+            <img src="/assets/run_access_cm/Cylc_GUI.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+        </terminal-window>
+    </div>
+</div>
+<!-- End of tab content -->
 
 ### STOP a suite
 To shutdown a suite in a safe manner, run the following command from within the suite directory:
@@ -402,39 +666,81 @@ There are two main ways to restart a suite:
         <div class="note">
             You may need to manually trigger failed tasks from the <i>Cylc</i> GUI.
         </div>
-        <terminal-window lineDelay="50">
-            <terminal-line data="input" lineDelay="300">cylc</terminal-line>
-            <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-            <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run --restart</terminal-line>
-            <terminal-line>[INFO] export CYLC_VERSION=7.8.3</terminal-line>
-            <terminal-line>[INFO] export ROSE_ORIG_HOST=accessdev.nci.org.au</terminal-line>
-            <terminal-line>[INFO] export ROSE_SITE=</terminal-line>
-            <terminal-line>[INFO] export ROSE_VERSION=2019.01.2</terminal-line>
-            <terminal-line>[INFO] delete: log/rose-suite-run.conf</terminal-line>
-            <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.conf <= log/rose-suite-run.conf</terminal-line>
-            <terminal-line>[INFO] delete: log/rose-suite-run.version</terminal-line>
-            <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.version <= log/rose-suite-run.version</terminal-line>
-            <terminal-line>[INFO] chdir: log/</terminal-line>
-            <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
-            <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.8.3]</terminal-line>
-            <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-            <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-            <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
-            <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-            <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-            <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
-            <terminal-line>[INFO]</terminal-line>
-            <terminal-line>[INFO] *** listening on https://accessdev.nci.org.au:&lt;port&gt;/ ***</terminal-line>
-            <terminal-line>[INFO]</terminal-line>
-            <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
-            <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
-            <terminal-line>[INFO]</terminal-line>
-            <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
-            <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' accessdev.nci.org.au</terminal-line>
-            <terminal-line>[INFO]  $ cylc ping -v --host=accessdev.nci.org.au &lt;suite-ID&gt;</terminal-line>
-            <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
-            <img src="../../../assets/run_access_cm/Cylc GUI.png" alt="Cylc GUI">
-        </terminal-window>
+        <div class="tabContents" label="workflow">
+            <!-- ARE / Gadi -->
+            <div>
+                <terminal-window lineDelay="50">
+                    <terminal-line data="input" lineDelay="300">cylc</terminal-line>
+                    <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+                    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run --restart</terminal-line>
+                    <terminal-line>[INFO] export CYLC_VERSION=7.9.7</terminal-line>
+                    <terminal-line>[INFO] export ROSE_ORIG_HOST=&lt;gadi-cpu&gt;.nci.org.au</terminal-line>
+                    <terminal-line>[INFO] export ROSE_SITE=nci</terminal-line>
+                    <terminal-line>[INFO] export ROSE_VERSION=2019.01.2</terminal-line>
+                    <terminal-line>[INFO] delete: log/rose-suite-run.conf</terminal-line>
+                    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.conf <= log/rose-suite-run.conf</terminal-line>
+                    <terminal-line>[INFO] delete: log/rose-suite-run.version</terminal-line>
+                    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.version <= log/rose-suite-run.version</terminal-line>
+                    <terminal-line>[INFO] chdir: log/</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
+                    <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
+                    <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
+                    <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
+                    <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+                    <terminal-line>[INFO]</terminal-line>
+                    <terminal-line>[INFO] *** listening on https://&lt;gadi-cpu&gt;.nci.org.au:&lt;port&gt;/ ***</terminal-line>
+                    <terminal-line>[INFO]</terminal-line>
+                    <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
+                    <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
+                    <terminal-line>[INFO]</terminal-line>
+                    <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
+                    <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;gadi-cpu&gt;.nci.org.au</terminal-line>
+                    <terminal-line>[INFO]  $ cylc ping -v --host=&lt;gadi-cpu&gt;.nci.org.au &lt;suite-ID&gt;</terminal-line>
+                    <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;gadi-cpu&gt;.nci.org.au</terminal-line>
+                    <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+                </terminal-window>
+            </div>
+            <!-- accessdev -->
+            <div>
+                <terminal-window lineDelay="50">
+                    <terminal-line data="input" lineDelay="300">cylc</terminal-line>
+                    <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
+                    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run --restart</terminal-line>
+                    <terminal-line>[INFO] export CYLC_VERSION=7.8.3</terminal-line>
+                    <terminal-line>[INFO] export ROSE_ORIG_HOST=accessdev.nci.org.au</terminal-line>
+                    <terminal-line>[INFO] export ROSE_SITE=</terminal-line>
+                    <terminal-line>[INFO] export ROSE_VERSION=2019.01.2</terminal-line>
+                    <terminal-line>[INFO] delete: log/rose-suite-run.conf</terminal-line>
+                    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.conf <= log/rose-suite-run.conf</terminal-line>
+                    <terminal-line>[INFO] delete: log/rose-suite-run.version</terminal-line>
+                    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.version <= log/rose-suite-run.version</terminal-line>
+                    <terminal-line>[INFO] chdir: log/</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.8.3]</terminal-line>
+                    <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
+                    <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
+                    <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
+                    <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
+                    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+                    <terminal-line>[INFO]</terminal-line>
+                    <terminal-line>[INFO] *** listening on https://accessdev.nci.org.au:&lt;port&gt;/ ***</terminal-line>
+                    <terminal-line>[INFO]</terminal-line>
+                    <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
+                    <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
+                    <terminal-line>[INFO]</terminal-line>
+                    <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
+                    <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' accessdev.nci.org.au</terminal-line>
+                    <terminal-line>[INFO]  $ cylc ping -v --host=accessdev.nci.org.au &lt;suite-ID&gt;</terminal-line>
+                    <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on accessdev.nci.org.au</terminal-line>
+                    <img src="/assets/run_access_cm/Cylc_GUI.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+                </terminal-window>
+            </div>
+        </div>
+        <!-- End of tab content -->
     </li>
     <br>  
     <li>
@@ -487,31 +793,61 @@ This directory contains two subdirectories:
 </ul>
 For the atmospheric output data, the files are typically a <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a> or netCDF file, formatted as <code>&lt;suite-name&gt;a.p&lt;output-stream-identifier&gt;&lt;year&gt;&lt;month-string&gt;</code>.
 <br>
-For the <code>u-br565</code> suite in this example, the <code>atm</code> directory contains:
-<terminal-window>
-    <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
-    <terminal-line class="ls-output-format">br565 &lt;other-suite-name&gt; &lt;other-suite-name&gt;</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">cd br565</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565">ls</terminal-line>
-    <terminal-line class="ls-output-format">history restart</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565">ls history/atm</terminal-line>
-    <terminal-line class="ls-output-format">br565a.pd0950apr.nc br565a.pd0950aug.nc br565a.pd0950dec.nc br565a.pd0950feb.nc br565a.pd0950jan.nc br565a.pd0950jul.nc br565a.pd0950jun.nc br565a.pd0950mar.nc br565a.pd0950may.nc br565a.pd0950nov.nc br565a.pd0950oct.nc br565a.pd0950sep.nc br565a.pd0951apr.nc br565a.pd0951aug.nc br565a.pd0951dec.nc br565a.pm0950apr.nc br565a.pm0950aug.nc br565a.pm0950dec.nc br565a.pm0950feb.nc br565a.pm0950jan.nc br565a.pm0950jul.nc br565a.pm0950jun.nc br565a.pm0950mar.nc br565a.pm0950may.nc br565a.pm0950nov.nc br565a.pm0950oct.nc br565a.pm0950sep.nc br565a.pm0951apr.nc br565a.pm0951aug.nc br565a.pm0951dec.nc netCDF</terminal-line>
-</terminal-window>
-<!-- <br>
-For more details on how to control different output variables (STASH), and output streams, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
+<div class="tabContents" label="workflow">
+    <!-- ARE / Gadi -->
+    <div>
+        For the <code>u-cy339</code> suite in this example, the <code>atm</code> directory contains:
+        <terminal-window>
+            <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
+            <terminal-line class="ls-output-format">cy339 &lt;other-suite-name&gt; &lt;other-suite-name&gt;</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">cd cy339</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339">ls</terminal-line>
+            <terminal-line class="ls-output-format">history restart</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339">ls history/atm</terminal-line>
+            <terminal-line class="ls-output-format">cy339a.pd0950apr.nc cy339a.pd0950aug.nc cy339a.pd0950dec.nc cy339a.pd0950feb.nc cy339a.pd0950jan.nc cy339a.pd0950jul.nc cy339a.pd0950jun.nc cy339a.pd0950mar.nc cy339a.pd0950may.nc cy339a.pd0950nov.nc cy339a.pd0950oct.nc cy339a.pd0950sep.nc cy339a.pd0951apr.nc cy339a.pd0951aug.nc cy339a.pd0951dec.nc cy339a.pm0950apr.nc cy339a.pm0950aug.nc cy339a.pm0950dec.nc cy339a.pm0950feb.nc cy339a.pm0950jan.nc cy339a.pm0950jul.nc cy339a.pm0950jun.nc cy339a.pm0950mar.nc cy339a.pm0950may.nc cy339a.pm0950nov.nc cy339a.pm0950oct.nc cy339a.pm0950sep.nc cy339a.pm0951apr.nc cy339a.pm0951aug.nc cy339a.pm0951dec.nc netCDF</terminal-line>
+        </terminal-window>
+    </div>
+    <!-- accessdev -->
+    <div>
+        For the <code>u-br565</code> suite in this example, the <code>atm</code> directory contains:
+        <terminal-window>
+            <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
+            <terminal-line class="ls-output-format">br565 &lt;other-suite-name&gt; &lt;other-suite-name&gt;</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">cd br565</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565">ls</terminal-line>
+            <terminal-line class="ls-output-format">history restart</terminal-line>
+            <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565">ls history/atm</terminal-line>
+            <terminal-line class="ls-output-format">br565a.pd0950apr.nc br565a.pd0950aug.nc br565a.pd0950dec.nc br565a.pd0950feb.nc br565a.pd0950jan.nc br565a.pd0950jul.nc br565a.pd0950jun.nc br565a.pd0950mar.nc br565a.pd0950may.nc br565a.pd0950nov.nc br565a.pd0950oct.nc br565a.pd0950sep.nc br565a.pd0951apr.nc br565a.pd0951aug.nc br565a.pd0951dec.nc br565a.pm0950apr.nc br565a.pm0950aug.nc br565a.pm0950dec.nc br565a.pm0950feb.nc br565a.pm0950jan.nc br565a.pm0950jul.nc br565a.pm0950jun.nc br565a.pm0950mar.nc br565a.pm0950may.nc br565a.pm0950nov.nc br565a.pm0950oct.nc br565a.pm0950sep.nc br565a.pm0951apr.nc br565a.pm0951aug.nc br565a.pm0951dec.nc netCDF</terminal-line>
+        </terminal-window>
+    </div>
+</div>
+<!-- End of tab content -->
 
 ### Restart files
 The restart files can be found in the <code>/scratch/$PROJECT/$USER/archive/&lt;suite-name&gt;/restart</code> directory, where they are categorised according to model components (similar to the <code>history</code> folder above).
 <br>
-The atmospheric restart files, which are <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfiles</a>, are formatted as <code>&lt;suite-name&gt;a.da&lt;year&gt;&lt;month&gt;&lt;day&gt;_00</code>. 
-<!-- <br>
-For more details on how to control the frequency and formatting of restart dumps, check <a href="../rose_gui_user_guide" target="_blank">Rose GUI user guide (TO CHECK)</a>. -->
-For the <code>u-br565</code> suite in this example, the <code>atm</code> directory contains:
-<terminal-window>
-    <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565/restart/atm</terminal-line>
-    <terminal-line class="ls-output-format">br565a.da09500201_00 br565a.da09510101_00 br565.xhist-09500131 br565.xhist-09501231 </terminal-line>
-</terminal-window>
+The atmospheric restart files, which are <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfiles</a>, are formatted as <code>&lt;suite-name&gt;a.da&lt;year&gt;&lt;month&gt;&lt;day&gt;_00</code>.
+<div class="tabContents" label="workflow">
+    <!-- ARE / Gadi -->
+    <div>
+        For the <code>u-cy339</code> suite in this example, the <code>atm</code> directory contains:
+        <terminal-window>
+            <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339/restart/atm</terminal-line>
+            <terminal-line class="ls-output-format">cy339a.da09500201_00 cy339a.da09510101_00 cy339.xhist-09500131 cy339.xhist-09501231 </terminal-line>
+        </terminal-window>
+    </div>
+    <!-- accessdev -->
+    <div>
+        For the <code>u-br565</code> suite in this example, the <code>atm</code> directory contains:
+        <terminal-window>
+            <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/br565/restart/atm</terminal-line>
+            <terminal-line class="ls-output-format">br565a.da09500201_00 br565a.da09510101_00 br565.xhist-09500131 br565.xhist-09501231 </terminal-line>
+        </terminal-window>
+    </div>
+</div>
+<!-- End of the tab content -->
 Files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;day&gt;</code> contain metadata information.
 
 <br>
