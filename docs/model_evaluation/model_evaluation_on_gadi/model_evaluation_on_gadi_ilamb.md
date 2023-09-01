@@ -11,8 +11,8 @@ The <a href="https://www.ilamb.org/" target="_blank">International Land Model Be
     While ACCESS-NRI does not own the code, it actively supports the use of <i>ILAMB</i> software on <i>Gadi</i>.
     <br>
      <!--ILAMB development is primarily performed by the <a href="https://www.bgc-feedbacks.org/" target="_blank">RUBISCO</a> Science Focus Area and supported by the <a href="https://climatemodeling.science.energy.gov/program-area/regional-global-model-analysis" target="_blank">RGMA</a> Activity of the <a href="https://science.osti.gov/ber/Research/eessd" target="_blank">EESSD</a> division of the <a href="https://science.osti.gov/ber" target="_blank">BER</a> program in the United States Department of Energy’s Office of Science. -->
-    ACCESS-NRI provides access to the latest version of <i>ILAMB</i> via the `xp65` <i>access-med conda environment</i> deployed on <i>Gadi</i>.
-
+    ACCESS-NRI provides access to the latest version of <i>ILAMB</i> via the `xp65` `access-med` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>.
+    
 This documentation is tailored to using <i>ILAMB</i> on <i>Gadi</i> and, hence, it supplements rather than replaces the official documentation. Users are encouraged to read the <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and relevant <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">tutorials</a>.
 
 ## Using ILAMB on Gadi
@@ -72,7 +72,7 @@ In the following example, the supported ACCESS Earth System Model (ESM) <a href=
 
 Numerous benchmark comparisons have been defined in the configuration file. The comparison of variables have been organised under different sections, such as the <i>Hydrology Cycle</i>. 
 <br>
-For other variables, such as the <i>gross primary productivity</i> `gpp`, one or more datasets are available. For example, the gross primary productivity measurements of <a href="https://fluxnet.org/data/fluxnet2015-dataset/" target="_blank">FLUXNET2015</a>. 
+For other variables, such as the <i>git Gross Primary Productivity</i> `gpp`, one or more datasets are available. For example, the gross primary productivity measurements of <a href="https://fluxnet.org/data/fluxnet2015-dataset/" target="_blank">FLUXNET2015</a>. 
 <br>
 <br>
 By clicking on a row in the table, you can expand it to see the underlying datasets used. The table's colourmap extends from best values in purple to worse data in orange.

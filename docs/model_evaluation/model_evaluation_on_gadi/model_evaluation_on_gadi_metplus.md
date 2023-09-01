@@ -10,7 +10,7 @@ The core components of the framework include the <a href="https://met.readthedoc
      <!-- METplus was developed by the Developmental Testbed Center (DTC) and is being actively developed by NCAR/Research Applications Laboratory (RAL), NOAA/Earth Systems Research Laboratories (ESRL), NOAA/Environmental Modeling Center (EMC), and is open to community contributions. -->
     <!-- Code ownership and support -->
     While ACCESS-NRI does not own the code, it actively supports the use of the <i>METplus</i> on <i>Gadi</i>. 
-    ACCESS-NRI provides access to the latest version of <i>METplus</i> via the `access` conda environment deployed on <i>Gadi</i>.
+    ACCESS-NRI provides access to the latest version of <i>METplus</i> via the `access` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>.
 
 For more information and tutorials, refer to the official <a href="https://metplus.readthedocs.io/en/latest/index.html" target="_blank">METplus documentation</a>:
  <div class="card-container">
