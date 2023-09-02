@@ -379,11 +379,11 @@ For example, to run a suite for a total of 50 years with a 1-year job resubmissi
 <div class="tabContents" label="workflow">
     <!-- ARE / Gadi -->
     <div>
-        <img src="/assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img" loading="lazy"/>
+        <img src="/assets/run_access_cm/rose_change_run_length_are.gif" alt="Rose change run length" class="example-img" loading="lazy"/>
     </div>
     <!-- accessdev -->
     <div>
-        <img src="/assets/run_access_cm/rose_change_run_length_are.gif" alt="Rose change run length" class="example-img" loading="lazy"/>
+        <img src="/assets/run_access_cm/rose_change_run_length.gif" alt="Rose change run length" class="example-img" loading="lazy"/>
     </div>
 </div>
 <!-- End of tab content -->
