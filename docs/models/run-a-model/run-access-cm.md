@@ -118,21 +118,20 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 <b>Project</b> &rarr; a project you belong, with allocated SU
                 <br>
                 The project, with allocated <i>Service Units</i> (SU), under which you want to run your simulation. Usually (but not always) this corresponds to your <code>$PROJECT</code>.
-                <div class="note">
-                    For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
-                </div>
+                <br>
+                For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
             </li>
             <li>
                 <b>Storage</b> &rarr; <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32</code> (minimum)
                 <br>
-                This is the list (joined by <code>+</code> signs) of project data storage needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access these data from within a VDI instance.
+                This is the list (joined by <code>+</code> signs) of project data storage needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access data from within a VDI instance.
                 <br>
                 Since every {{ model }} simulation can be unique and input data can come from various sources, if your specific simulation requires data coming from projects other than <code>access</code>, <code>hh5</code>, <code>hr22</code> or <code>ki32</code>, you need to add those projects to the storage path.
                 <br>
                 For example, if your {{ model }} simulation requires data coming from <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
             </li>
         </ul>
-        Launch the session and, after the session starts, click on <i>Launch VDI Session</i>.
+        Launch the session and, after the session starts, click on <i>Launch VDI Desktop</i>.
         <img src="/assets/run_access_cm/launch_are_vdi.gif" alt="Launch ARE VDI session" class="example-img" loading="lazy"/>
         <br>
         <h3>Open the terminal</h3>

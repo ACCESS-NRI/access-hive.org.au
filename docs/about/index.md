@@ -27,7 +27,7 @@
     </a>
     <a href="https://www.access-nri.org.au/community/access-nri-code-of-conduct/" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="/assets/code_of_conduct.jpeg" alt="Code of conduct" class="img-contain"></img>
+            <img src="/assets/code_of_conduct.jpeg" alt="Code of conduct" class="img-cover"></img>
         </div>
         <div class="card-text-container bold">Code of conduct</div>
     </a>

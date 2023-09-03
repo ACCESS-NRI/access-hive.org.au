@@ -1,6 +1,6 @@
 #  Contact 
 
-<img src = "../../assets/contact-img.jpg" class="rectangular-img img-cover with-border"></img>
+<img src = "../../assets/contact-img.jpg" class="rectangular-img img-cover with-border" loading="lazy"/>
 
 ACCESS-Hive is an initiative of the <a href="https://www.access-nri.org.au/about/what-is-access-nri/" target="_blank">Australian Earth-System Simulator (ACCESS-NRI)</a>.
 
