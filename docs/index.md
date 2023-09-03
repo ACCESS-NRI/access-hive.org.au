@@ -3,7 +3,6 @@ hide:
   - navigation
   - toc
 ---
-
 <h1 class="homepage"></h1>
 <div class="introduction">
     <div>
@@ -15,8 +14,22 @@ hide:
     </div>
 </div>
 
+<!-- TEMPORARY for workshop -->
+<div class="card-container homepage-buttons workshop">
+    <a href="/community_resources/access_workshop_2023" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/assets/ACCESS_logo_rgb.png" class="white-background img-contain"></img>
+        </div>
+        <div class="card-text-container">
+            <span class="bold">
+                ACCESS Community Workshop 2023</span>
+        </div>
+    </a>
+</div>
+<!-- TEMPORARY for workshop -->
+
 <div class="card-container homepage-buttons">
-    <a href="getting_started/" class="vertical-card">
+    <a href="/getting_started" class="vertical-card">
         <div class="bold">New to ACCESS-Hive?</div>
         <div class="card-text-container">
             <div class="bold">Get Started</div>
@@ -75,4 +88,4 @@ hide:
 
 We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
 
-<img src = "assets/acknowledgement_unsplash_david_clode_Bark_Cairns.png"  class="acknowledgement-img">
+<img src = "assets/acknowledgement_unsplash_david_clode_Bark_Cairns.png"  class="acknowledgement-img" loading="lazy">

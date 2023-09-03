@@ -1,10 +1,38 @@
 #  Glossary and Useful Terms 
 
-Here you can find a compilation of common terms and acronyms used by the Australian Community Climate and Earth System Simulator (ACCESS)  community:
 
-
- [ACCESS-NRI Glossary](https://www.access-nri.org.au/community/access-glossary/): This includes common terms and acronyms used by the ACCESS community in research and modelling of past, present and future climate, weather and Earth-Systems.
-
- [IPCC Acronyms](https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SR15_AnnexI.pdf): Contains a comprehensive list of acronyms published in the scientific report SR15 of the Intergovernmental Panel on Climate Change (IPCC). The IPCC is the United Nations body for assessing the science related to climate change.
-
- [CSSR Acronyms and Units](https://science2017.globalchange.gov/chapter/appendix-d/): The Climate Science Special Report (CSSR) is an assessment of the science of climate change with particular focus on the United States.
+<div class="card-container">
+    <a href="https://www.access-nri.org.au/community/access-glossary/" target="_blank" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/bubbi" alt="Find img"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >ACCESS-NRI Glossary</span>
+            <span>
+                Common terms and acronyms used by the Australian Community Climate and Earth System Simulator (ACCESS)  community.
+            </span>
+        </div>
+    </a>
+    <a href="https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SR15_AnnexI.pdf" target="_blank" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/bubbi" alt="Find img"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >IPCC Glossary</span>
+            <span>
+                List of terms and acronyms published in the latest Intergovernmental Panel on Climate Change (IPCC) report "SR15". The IPCC is the United Nations body for assessing the science related to climate change.
+            </span>
+        </div>
+    </a>
+    <a href="https://science2017.globalchange.gov/chapter/appendix-d/" target="_blank" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/bubbi" alt="Find img"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >CSSR Acronyms and Units</span>
+            <span>
+                The Climate Science Special Report (CSSR) is an assessment of the science of climate change with particular focus on the United States.
+            </span>
+        </div>
+    </a>
+</div>

@@ -9,7 +9,7 @@ ACCESS models are computer codes comprising complex mathematical representations
 <!-- <img src="Assets/icon.png" width="200"> -->
 
 ## Supported ACCESS Model Configurations
-<div class="card-container" style="flex-direction: column">
+<div class="card-container">
     <a href="configurations/access-cm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 

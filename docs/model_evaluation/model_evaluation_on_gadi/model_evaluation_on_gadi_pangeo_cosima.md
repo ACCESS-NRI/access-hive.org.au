@@ -1,37 +1,41 @@
-# COSIMA Cookbook on NCI's Gadi
+# COSIMA Cookbook on Gadi
 
-???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
+
+COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings together Australian researchers involved in global ocean and sea ice modelling. The <i>COSIMA Cookbook</i> is a collection of `cosima-recipes` curated on <i>Gadi</i> for analysing output from ocean-sea ice models.
+
+???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
-    The COSIMA Cookbook is developed and maintained by the Consortium for Ocean-Sea Ice Modelling in Australia.
-    <!-- Code ownership and support -->
-    ACCESS-NRI does not own the code of the COSIMA Cookbook, but actively supports the use of the COSIMA Cookbook and its collection of `cosima-recipes` on Gadi.
-    ACCESS-NRI provides access to the latest version of the COSIMA Cookbook via the `hh5` access-med conda environment deployed on NCI-Gadi.
+    The <i>COSIMA Cookbook</i> is developed and maintained by COSIMA. While ACCESS-NRI does not own the code, it actively supports the use of the <i>COSIMA Cookbook</i> and its collection of `cosima-recipes` on <i>Gadi</i>. 
+    ACCESS-NRI provides access to the latest version of <i>COSIMA Cookbook</i> via the `hh5` `access-med` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>.
 
-COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings together Australian researchers involved in global ocean and sea ice modelling. The consortium provides a collection of `cosima-recipes` for the evaluation of ocean-sea ice modelling that are currated for you on Gadi.
-
-The COSIMA Cookbook is a framework for analysing output from ocean-sea ice models. The focus is on the [ACCESS-OM2](../../models/configurations/access-om.md) suite of models being developed and run by members of <a href="http://cosima.org.au/" target="_blank">COSIMA</a>. But this framework is suited to analysing any MOM5/MOM6 output, as well as output from other models.
+ The <i>COSIMA Cookbook</i> framework focuses on the [ACCESS-OM2](../../models/configurations/access-om.md) suite of models being developed and run by members of <a href="http://cosima.org.au/" target="_blank">COSIMA</a>. Nevertheless, this framework is suited to analysing any MOM5/ MOM6 output as well as output from other models.
 
 ## Getting Started
 
-The easiest way to use the COSIMA Cookbook is through the <a href="https://are.nci.org.au" target="_blank">Australian Research Environment (ARE)</a> access of the <a href="https://nci.org.au" target="_blank">National Computational Infrastructure</a>. Here, we assume that you already [got started](../../../getting_started), that is, you have an NCI account and can log onto Gadi via secure shell (ssh).
+The easiest way to use the <i>COSIMA Cookbook</i> is through the <a href="https://are.nci.org.au" target="_blank">Australian Research Environment (ARE)</a> on <i>Gadi</i>.<br>
+You need to have an NCI account and be able to `ssh` login to <i>Gadi</i> (see section on [first steps](../../getting_started/first_steps.md)).
 
-To use the COSIMA Cookbook that is preinstalled in the `conda/analysis3` of NCI proejct `hh5`, you need to <a href="https://my.nci.org.au/mancini/project/hh5" target="_blank">join NCI project `hh5`</a>.
+To use the <i>COSIMA Cookbook</i> that is pre-installed in the `conda/analysis3` environment of `hh5`, you need to <a href="https://my.nci.org.au/mancini/project/hh5" target="_blank">join NCI project `hh5`</a>.
 
-1. Log onto Gadi via secure shell (ssh) and clone the <a href="https://github.com/COSIMA/cosima-recipes" target="_blank"><code>cosima-recipes</code></a> repository to your local file space.  
-2. Check out the recipes that you want to run, and make sure that you have access to the specific projects and their storage (e.g. project `ik11` to get access to `/g/data/ik11`).
-3. Start an <a href="https://are.nci.org.au" target="_blank">ARE JupyterLab session on NCI</a>:  
-  **Storage**: gdata/hh5 (add the specific storage that you need for the recipes you want to run)
-  **Module directories**: /g/data/hh5/public/modules  
-  **Modules**: conda/analysis3
-  You can check out our [Getting Started with ARE](../model_evaluation_getting_started/model_evaluation_getting_started.md) instructions if you have not used ARE before.
+1. Login  via `ssh` to <i>Gadi</i> and clone the <a href="https://github.com/COSIMA/cosima-recipes" target="_blank"><code>cosima-recipes</code></a> repository to your local directory.  
+
+2. Find the recipes that you want to run and make sure you have access to the specific projects and their storage (e.g., project `ik11` to get access to `/g/data/ik11`).
+
+3. Start an <a href="https://are.nci.org.au" target="_blank">ARE JupyterLab</a> session on NCI:  
+  <b>Storage</b>: `gdata/hh5` (add the specific storage you need for the recipe you want to run)
+  <br>
+  <b>Module directories</b>: `/g/data/hh5/public/modules`  
+  <b>Modules</b>: `conda/analysis3`
+  <br>
+  If you are new to ARE, refer to instructions on [Getting Started with ARE](../model_evaluation_getting_started/model_evaluation_getting_started.md).
 4. Within the ARE environment, navigate to one of the COSIMA recipes and run the analysis.
 
-## More information about the Cookbook
+## COSIMA Cookbook information
 
-For more information, we refer to the <a href="https://github.com/COSIMA/cosima-cookbook" target="_blank">Cookbook github repository</a> as well as a list of recipes:
+For more information on the <i>COSIMA Cookbook</i>, refer to the <a href="https://github.com/COSIMA/cosima-cookbook" target="_blank">cosima-cookbook</a> GitHub repository, as well as the following lists of recipes:
 
-- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/Tutorials" target="_blank">Tutorials</a>,
-- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/ACCESS-OM2-GMD-Paper-Figs" target="_blank">Notebooks</a> to reproduce figures of the <a href="https://gmd.copernicus.org/articles/13/401/2020/" target="_blank">ACCESS-OM2 announcement paper</a>,
-- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/DocumentedExamples" target="_blank">Documented Example</a>, and
+- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/Tutorials" target="_blank">Tutorials</a>
+- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/ACCESS-OM2-GMD-Paper-Figs" target="_blank">Notebooks</a> to reproduce figures of the <a href="https://gmd.copernicus.org/articles/13/401/2020/" target="_blank">ACCESS-OM2 announcement paper</a>
+- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/DocumentedExamples" target="_blank">Documented Example</a>
 - <a href="https://github.com/COSIMA/cosima-recipes/tree/main/ContributedExamples" target="_blank">Contributed Examples</a>
 
