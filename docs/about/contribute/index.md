@@ -1,6 +1,6 @@
 # Contribute to ACCESS-Hive
 
-<img class="rectangular-img img-cover with-border" src="/assets/github-how-to-contribute.jpg" loading="lazy"/ style="object-position: ">
+<img class="intro-img img-cover with-border" src="/assets/github-how-to-contribute.jpg" loading="lazy"/ style="object-position: ">
 
 ACCESS-Hive is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
