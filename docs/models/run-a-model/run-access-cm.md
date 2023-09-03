@@ -865,4 +865,7 @@ Files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;
     <li>
         <a href = "https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html" target="_blank">https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html</a>
     </li>
+    <li>
+        <a href = "https://opus.nci.org.au/display/DAE/Cylc+7+on+ARE" target="_blank">https://opus.nci.org.au/display/DAE/Cylc+7+on+ARE</a>
+    </li>
 </ul>

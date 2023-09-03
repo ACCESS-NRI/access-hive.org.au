@@ -9,19 +9,18 @@
     </a>
     <a href="user_support" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="bubbi" alt="find img"></img>
+            <img src="/assets/user_support_image.png" alt="ACCESS-NRI Support" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">User support</div>
     </a>
     <a href="contribute" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="bubbi" alt="find img"></img>
+            <img src="/assets/contribute_image.png" alt="Contribute" class="img-cover white-background"></img>
         </div>
         <div class="card-text-container bold">How to contribute</div>
     </a>
     <a href="license" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container" style="container-type:size;">
-            <!-- <img src="bubbi" alt="find img"></img> -->
             <div class="icon-cc white-background" style="font-size: 85cqh; color: black; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 0.35rem;"></div>
         </div>
         <div class="card-text-container bold">License</div>
