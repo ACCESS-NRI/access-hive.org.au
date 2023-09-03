@@ -1,27 +1,38 @@
 # Contribute to ACCESS-Hive
 
-<img class="rectangular-img img-cover with-border" src="../../assets/how-to-contribute-img.jpg" loading="lazy"/>
+<img class="rectangular-img img-cover with-border" src="/assets/github-how-to-contribute.jpg" loading="lazy"/ style="object-position: ">
 
 ACCESS-Hive is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
-Contributions are encouraged from any member of the community regarding any aspect of the **ACCESS-Hive** website (which curates ACCESS documentation and its related resources) or the <a href="https://forum.access-hive.org.au" target="_blank">Hive Forum</a> (used for community discussions).
+Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive user portal.
 
 ## How can I contribute?
 
-Anyone is welcome to contribute towards improving the **ACCESS-Hive** user portal. The following section lists the contribution tasks that we are most interested in receiving community help with. Please consider helping with one or more tasks below, and we are looking towards receiving your very first contribution for the **ACCESS-Hive**!
 
 <div class="card-container">
-    <a href="/about/contribute/contribute_on_github" class="horizontal-card">
+    <a href="https://github.com/ACCESS-Hive/access-hive.github.io/issues/new?assignees=&labels=External&projects=&template=simple-issue-template.md&title=" class="horizontal-card" target="_blank">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/github-how-to-contribute.jpg">
+            <img class="img-contain white-background" src="/assets/how-to-contribute-img.jpg">
         </div>
         <div class="card-text-container with-padding">
             <div class="bold">
-                <i class="fa-brands fa-github"></i>
-                Contribute on Github!
+                Quick Contribution
             </div>
             <span class="with-padding">
-                Suggest an idea, propose bug fixes, or flag missing content on <b>ACCESS-Hive GitHub repo</b>! 
+                Suggest an idea, propose bug fixes, or flag missing content by raising a GitHub issue. 
+            </span>
+        </div>
+    </a>
+    <a href="/about/contribute/contribute_on_github" class="horizontal-card">
+        <div class="card-image-container" style="container-type:size;">
+            <div class="fa-brands fa-github white-background" style="font-size: 85cqh; color: black; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 0.35rem;"></div>
+        </div>
+        <div class="card-text-container with-padding">
+            <div class="bold">
+                Write your own content
+            </div>
+            <span class="with-padding">
+                Contribute to the ACCESS-Hive user portal by adding content to the ACCESS-Hive Github repository yourself.
             </span>
         </div>
     </a>

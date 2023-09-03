@@ -17,11 +17,9 @@
 
 ## Let's get started!
 
-This documentation is written in Markdown format and is based on the <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> documentation framework, which is built on top of <a href="https://www.mkdocs.org" target="_blank">MkDocs</a> static site generator. Please refer to this <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">cheatsheet</a> for a quick reference to basic markdown syntax, which is used by <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> theme used in this website.
-
-<div class="markdown-notes">
-    <b>Note:</b> Since, ACCESS-Hive curates useful resources for making comprehensive guides for the ACCESS community, it includes content that is not curated and hosted by ACCESS-NRI. 
-</div>
+This documentation is written in Markdown format and is based on the <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a> theme, which is built on top of <a href="https://www.mkdocs.org" target="_blank">MkDocs</a> static site generator.
+<br>
+For a quick reference on how to use Markdown syntax you can refer to the <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">Markdown Cheat Sheet</a>.
 
 ## Raise a GitHub Issue
 
@@ -31,10 +29,10 @@ To raise an issue, create a New Issue in the <a href="https://github.com/ACCESS-
 
 ## Fork the ACCESS-Hive GitHub repository
 
-After raising a Github issue about your contribution, you need to <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui" target="_blank">fork</a> ACCESS-Hive's Github repository.
+After raising a Github issue about your contribution, you need to <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui" target="_blank">fork</a> the <a href="https://github.com/ACCESS-Hive/access-hive.github.io" target="_blank">ACCESS-Hive Github repository</a>.
 
-
-For cloning this repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
+## Clone the forked ACCESS-Hive GitHub repository locally
+For cloning the forked repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
 
 To start with, if you have an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys" target="_blank">existing SSH key</a>, then simply <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">add this key to your github account</a>, and you are all set to clone the repository. In case you don't have the SSH keys set up on your local computer, it's easy to <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank">create a new SSH key locally</a>, and then <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">feel free to link this key to your github account</a>. 
 
