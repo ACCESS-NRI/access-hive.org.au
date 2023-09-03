@@ -4,9 +4,10 @@
 <br>
 ARE can give you access to NCI’s <i>Gadi</i> supercomputer and data collections.
 
-
 There are multiple applications included in ARE, but the two most used for ACCESS-related activities are <a href="#vdi">Virtual Desktop (VDI)</a> and <a href="#jupyterlab">JupyterLab</a>.
 
+## Prerequisites
+To use ARE, you must have an NCI account and be a member of a project with computing resources (SU). If you are new to ACCESS, follow the <a href="/getting_started/first_steps">First Steps</a>.
 ## Start an ARE session
 <!-- Tab labels -->
 <div class="tabLabels" label="are-apps" style="margin-bottom: 0.5rem;">

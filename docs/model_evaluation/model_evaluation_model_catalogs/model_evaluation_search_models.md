@@ -1,4 +1,4 @@
-# Search for a model in the ACCESS-NRI intake Catalog
+# Search for a model in the ACCESS-NRI Intake catalog
 
 To have the huge amount of data from different experiments on the NCI storage at the palm of your hand, we provide a ("meta") catalog for you to query via python as part of the `#!python intake` package with our curated catalog plugin `#!python intake.cat.access_nri` .
 

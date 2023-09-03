@@ -1,13 +1,16 @@
-# Tutorial for using `esmvaltool` on Gadi@NCI
+# Tutorial for using ESMValTool on Gadi
 
-`esmvaltool` is the Earth System Model Evaluation Tool.
+## What is ESMValTool?
+The Earth System Model Evaluation Tool (<i>ESMValTool</i>) is a climate model diagnostics and evaluation software package to better understand the causes and effects of model biases and inter-model spread. 
 
-???+ warning "Support Level: Supported on Gadi, but not owned by ACCESS-NRI"
-    <!-- Who develped the tool? -->
-    ESMValTool is a community-developed climate model diagnostics and evaluation software package.
+???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Code ownership and support -->
-    ACCESS-NRI does not own the code of ESMValTool, but actively supports the use of ESMValTool on Gadi.
-    ACCESS-NRI provides access to the latest version of ESMValTool via the `xp65` access-med conda environment deployed on NCI-Gadi.
+    <i>ESMValTool</i> is a community-developed climate model diagnostics and evaluation software package. While ACCESS-NRI does not own the code, it actively supports the use of <i>ESMValTool</i> software on <i>Gadi</i>. ACCESS-NRI provides access to the latest version of <i>ESMValTool</i> via the `xp65` `access-med` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>.
+
+
+The <i>ESMValTool</i> mainly focuses on evaluating results from the Coupled Model Intercomparison Project (CMIP) ensemble. 
+<!-- The goal is to build a common framework for the evaluation of Earth System Models (ESMs) against observations available through the Earth System Grid Federation (ESGF) in standard formats (obs4MIPs) or made available at ESGF nodes. -->
+For more information, refer to the official <a href="https://docs.esmvaltool.org/en/latest" target="_blank">ESMValTool documentation</a>.
 
 <div class="card-container">
     <a href="https://docs.esmvaltool.org/en/latest/" target="_blank" class="vertical-card aspect-ratio2to1">
@@ -18,74 +21,49 @@
     </a>
 </div>
 
-## About ESMValTool
+## Using ESMValTool on Gadi
 
-The Earth System Model Evaluation Tool (ESMValTool) is a community-development that aims at improving diagnosing and understanding of the causes and effects of model biases and inter-model spread. The ESMValTool mainly focus on evaluating results from the Coupled Model Intercomparison Project (CMIP) ensemble. The goal is to build a common framework for the evaluation of Earth System Models (ESMs) against observations available through the Earth System Grid Federation (ESGF) in standard formats (obs4MIPs) or made available at ESGF nodes.
+<i>ESMValTool</i> is provided through the `xp65` `access-med` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>. 
+<br>
+ACCESS-NRI plans to routinely run benchmarks and comparisons of CMIP submissions for ACCESS models, as well as providing support to run <i>ESMValTool</i> recipes on <i>Gadi</i>.
 
-More information on ESMValTool scope is available in the extensive <a href="https://docs.esmvaltool.org/en/latest" target="_blank">ESMValTool documentation</a>.
+### Pre-requisites
 
-ACCESS-NRI provides access to the latest version of ESMValTool via the `xp65` access-med conda environment deployed on NCI-Gadi.
-Our plan is to routinely run benchmarks and comparisons of the ACCESS models CMIP submissions. We will also provide support for running recipes on NCI-Gadi.
+To run <i>ESMValTool</i> recipes, you need to be a member of the following NCI projects:
 
-## Running `esmvaltool` on Gadi
+- `xp65`, `ct11`, `fs38`, `oi10`, `rr3`, `al33`, `rt52`, `zz93` and `qv56`.
 
-#### Pre-requisites
-
-NCI Projects requires to run the set of ESMValTool recipes:
-
-- xp65, ct11, fs38, oi10, rr3, al33, rt52, zz93, qv56
-
-
-#### Load the `access-med` conda environment
-
+### Running ESMValTool recipes
+ <!-- #### Load the `access-med` conda environment -->
+To load the the `access-med` conda environment, execute the following commands:
 ```
     module use /g/data/xp65/public/modules
     module load conda/access-med
 ```
 
-#### What recipes are available?
+To list which <i>ESMValTool</i> recipes are available on <i>Gadi</i>, run:
 ```
     esmvaltool recipes list
 ```
 
-#### Details of a recipe
+To find out details of a specific `recipe_name.yml`, execute:
 ```
 esmvaltool recipes show recipe_name.yml
 ```
 
-#### Running an recipe yourself
+To execute `recipe_name.yml` and automatically download the required climate data to the default directory, run:
 
 ```
 esmvaltool run examples/recipe_python.yml --search_esgf=when_missing
 ```
-
-## Support
-
-ACCESS and NCI-Gadi users can get help from ACCESS-NRI for running their recipe on Gadi via Github Issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> github repository or by opening a thread on the <a href="https://access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
-
-General support for ESMValTool (non-specific to NCI-Gadi) can be found in <a href="https://github.com/ESMValGroup/ESMValTool/discussions" target="_blank">ESMValTool Discussions page</a> where users can open an issue and a member of the User Engagement Team of ESMValTool will reply as soon as possible. This is open for all general and technical questions on the ESMValTool: installation, application, development, or any other question or comment you may have.
-
-### Recipes and diagnostics
-
-Contacts for specific diagnostic sets are the respective authors, as listed in the corresponding <a href="https://docs.esmvaltool.org/en/latest/recipes/index.html#recipes" target="_blank">recipe and diagnostic documentation</a> and in the source code.
-
-The current status of ESMValTool recipes for the `xp65` conda environment is available <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">here</a>
-
-## License
-
-The ESMValTool is released under the Apache License, version 2.0. Citation of the ESMValTool paper (“Software Documentation Paper”) is kindly requested upon use, alongside with the software DOI for ESMValTool (doi:10.5281/zenodo.3401363) and ESMValCore (doi:10.5281/zenodo.3387139) and version number:
-
-> Righi, M., Andela, B., Eyring, V., Lauer, A., Predoi, V., Schlund, M., Vegas-Regidor, J., Bock, L., Brötz, B., de Mora, L., Diblen, F., Dreyer, L., Drost, N., Earnshaw, P., Hassler, B., Koldunov, N., Little, B., Loosveldt Tomas, S., and Zimmermann, K.: Earth System Model Evaluation Tool (ESMValTool) v2.0 – technical overview, Geosci. Model Dev., 13, 1179–1199, https://doi.org/10.5194/gmd-13-1179-2020, 2020.
-
-Besides the above citation, users are kindly asked to register any journal articles (or other scientific documents) that use the software at the ESMValTool webpage (http://www.esmvaltool.org/). Citing the Software Documentation Paper and registering your paper(s) will serve to document the scientific impact of the Software, which is of vital importance for securing future funding. You should consider this an obligation if you have taken advantage of the ESMValTool, which represents the end product of considerable effort by the development team.
+The `--search_esgf=when_missing` option tells <i>ESMValTool</i> to search for and download the necessary climate data files from Earth System Grid Federation (ESGF), if they cannot be found locally.
 
 ## ESMValTool recipe examples
 
 <!-- Explain what the Tiers mean: Tier3 not to be distributed / license issue, Tier2: some restrictions, but can be redistributed while citing papers etc., Tier1: open for everyone -->
 
-To find the available recipes, please go see the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ACCESS ESMValTool Worflow recipe status</a>
+A list of <i>ESMValTool</i> recipes available on <i>Gadi</i> can be found on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ACCESS-NRI MED ESMValTool Workflow</a> GitHub repository. Some example recipes are provided below:
 
-Below we showcase example recipes from `esmvaltool` that we are providing to run on Gadi:
 
 <!-- Compare to list from https://github.com/ACCESS-NRI/ESMValTool-workflow/issues/103 -->
 
@@ -109,6 +87,27 @@ Below we showcase example recipes from `esmvaltool` that we are providing to run
         <div class="card-text-container bold">Example 3</div>
     </a>
 </div>
+
+## Support
+
+To get help running your <i>ESMValTool</i> recipe on <i>Gadi</i>, you can submit an issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> GitHub repository or ask for help on the <a href="https://access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
+
+General <i>ESMValTool</i> support (i.e. non-specific to <i>Gadi</i>) can be found on the <a href="https://github.com/ESMValGroup/ESMValTool/discussions" target="_blank">ESMValTool Discussions</a> page, where users can also post technical questions on the <i>ESMValTool</i> installation, application and development.
+
+### Recipes and diagnostics
+
+Contacts for specific diagnostic sets are the authors listed in the source code and corresponding <a href="https://docs.esmvaltool.org/en/latest/recipes/index.html#recipes" target="_blank">recipe and diagnostic documentation</a>.
+
+The current status of <i>ESMValTool</i> recipes for the `xp65` conda environment on <i>Gadi</i> is available <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">here</a>
+
+### License
+
+The <i>ESMValTool</i> is released under the Apache License, version 2.0. Citation of the <i>ESMValTool</i> paper (“Software Documentation Paper”) is requested upon use, along with the software DOI for <i>ESMValTool</i> (doi:10.5281/zenodo.3401363) and <i>ESMValCore</i> (doi:10.5281/zenodo.3387139) together with the version:
+
+> Righi, M., Andela, B., Eyring, V., Lauer, A., Predoi, V., Schlund, M., Vegas-Regidor, J., Bock, L., Brötz, B., de Mora, L., Diblen, F., Dreyer, L., Drost, N., Earnshaw, P., Hassler, B., Koldunov, N., Little, B., Loosveldt Tomas, S., and Zimmermann, K.: Earth System Model Evaluation Tool (ESMValTool) v2.0 – technical overview, Geosci. Model Dev., 13, 1179–1199, https://doi.org/10.5194/gmd-13-1179-2020, 2020.
+
+Besides the above citation, users are asked to register any journal articles (or other scientific documents) that use the software at the ESMValTool webpage (http://www.esmvaltool.org/). Citing the Software Documentation Paper and registering your paper(s) will serve to document the scientific impact of the Software, which is important for securing future funding. You should consider this an obligation if you have taken advantage of the <i>ESMValTool</i>, which represents the end product of considerable effort by the development team.
+
 
 <!-- <tr>
   <td><a href="/assets/model_evaluation/esmvaltool/fig-9-8.png"><img src="/assets/model_evaluation/esmvaltool/fig-9-8.png" title="Global average 2m temperature anomalies; resembling Flato et al. (2013), Fig. 9.8." /></a></td>
