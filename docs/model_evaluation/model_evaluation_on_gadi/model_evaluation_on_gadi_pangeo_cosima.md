@@ -13,7 +13,7 @@ The COSIMA Cookbook is a framework for analysing output from ocean-sea ice model
 
 ## Getting Started
 
-The easiest way to use the COSIMA Cookbook is through the <a href="https://are.nci.org.au" target="_blank">Australian Research Environment (ARE)</a> access of the <a href="https://nci.org.au" target="_blank">National Computational Infrastructure</a>. Here, we assume that you already [got started](../../../getting_started), that is, you have an NCI account and can log onto Gadi via secure shell (ssh).
+The easiest way to use the COSIMA Cookbook is through the <a href="https://are.nci.org.au" target="_blank">Australian Research Environment (ARE)</a> access of the <a href="https://nci.org.au" target="_blank">National Computational Infrastructure</a>. Here, we assume that you already [got started](/getting_started/first_steps), that is, you have an NCI account and can log onto Gadi via secure shell (ssh).
 
 To use the COSIMA Cookbook that is preinstalled in the `conda/analysis3` of NCI proejct `hh5`, you need to <a href="https://my.nci.org.au/mancini/project/hh5" target="_blank">join NCI project `hh5`</a>.
 
@@ -24,7 +24,7 @@ To use the COSIMA Cookbook that is preinstalled in the `conda/analysis3` of NCI 
   **Module directories**: /g/data/hh5/public/modules  
   **Modules**: conda/analysis3
   You can check out our [Getting Started with ARE](../model_evaluation_getting_started/model_evaluation_getting_started.md) instructions if you have not used ARE before.
-4. Within the ARE environment, navigate to one of the COSIMA recipes and run the analysis.
+1. Within the ARE environment, navigate to one of the COSIMA recipes and run the analysis.
 
 ## More information about the Cookbook
 

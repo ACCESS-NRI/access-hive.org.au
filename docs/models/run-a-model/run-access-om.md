@@ -1,10 +1,10 @@
 
 {% set model = "ACCESS-OM" %}
 # Run {{ model }}
-## Requirements
-### General requirements
-Before running {{ model }}, you need to fulfil general requirements outlined in the [Getting Started](../../../getting_started) section.
-### Model-specific requirements
+## Prerequisites
+### General prerequisites
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+### Model-specific prerequisites
 <ul>
     <li>
         <b>Join the <i>hh5</i>, <i>qv56</i>, <i>ua8</i> and <i>ik11</i> projects at NCI</i></b>
@@ -112,7 +112,7 @@ mem: 1000GB</code></pre>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
         </div>
     </li>
     <li>

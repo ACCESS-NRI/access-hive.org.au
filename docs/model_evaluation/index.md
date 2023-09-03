@@ -9,7 +9,7 @@ Model evaluation in climate science is the process of assessing the performance 
 <!--If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md): -->
 
 <div class="card-container">
-    <a href="../getting_started" class="vertical-card aspect-ratio1to1">
+    <a href="/getting_started/first_steps" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>
