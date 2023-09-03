@@ -20,7 +20,7 @@ This documentation is tailored to using <i>ILAMB</i> on <i>Gadi</i> and, hence, 
 <i>ILAMB</i> is provided through both the `xp65` and `hh5` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of these projects to use it. 
 
 <div class="note">
-         To obtain an NCI account and join NCI projects, refer to <a href="\getting_started" target="_blank">Getting Started</a>.
+    To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
 </div>
 
 For ACCESS-NRI documentation on how to run <i>ILAMB</i> on <i>Gadi</i>, visit:

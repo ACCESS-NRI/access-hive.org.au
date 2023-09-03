@@ -17,7 +17,7 @@ The component models are the same as ACCESS-CM2:
 
 - Land surface model (CABLE2.5)
 
-[**Citation** [@Bi2020-vj]][ACCESS-CM2-cite]
+[**Citation** [@Bi2020]][ACCESS-CM2-cite]
 
 ### Other configurations
 

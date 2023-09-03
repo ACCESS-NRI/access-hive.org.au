@@ -31,5 +31,3 @@ After a discussion topic is posted on the forum, the ACCESS-NRI and community ex
 <i class="fa-regular fa-circle-check nri-green-color with-padding fa-sm"></i> Request is solved. 
 
 <img class="white-background with-border" src="/assets/access-nri-support.png">
-
-We highly appreciate any contributions received from our community and do our best to engage the wider community through shared <a href="https://forum.access-hive.org.au" target="_blank">Hive Forum</a> activities. Additionally, if you would like to make contributions on GitHub, please consider following <a href="/about/contribute/contribute_on_github">these</a> guidelines before submitting a new feature request, improvement ideas or bug reports. We would love to have your contributions onboard for the <a href="https://github.com/ACCESS-Hive/access-hive.github.io/">ACCESS-Hive GitHub repo</a>!  

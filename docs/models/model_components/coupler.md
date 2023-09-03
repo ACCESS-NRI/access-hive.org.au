@@ -15,5 +15,5 @@ OASIS3-MCT is the coupler used in <a href="../../configurations/access-cm#access
 
 The <a href="https://earthsystemmodeling.org/nuopc/" target="_blank">National Unified Operational Prediction Capability (NUOPC)</a> interoperability layer defines conventions and a set of generic components for building coupled models using the Earth System Modeling Framework (ESMF).
 
-### Configurations that use OASIS3-MCT
-OASIS3-MCT is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
+### Configurations that use NUOPC
+NUOPC is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
