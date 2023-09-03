@@ -2,7 +2,7 @@
 
 On this page we answer frequently asked questions (FAQs), and also give additional information for support, in case your question is not yet answered.
 
-## Frequently Asked Questions
+## Frequently Asked Questions (FAQ)
 
 Click on the questions to unfold the answers.
 
@@ -55,7 +55,7 @@ Click on the questions to unfold the answers.
 
     Go to our [**Model Data**](../model_evaluation/model_evaluation_model_catalogs/index.md) section on the ACCESS-Hive to learn how to find and access model data.
 
-    In any case, you need to have access to the specific projects and NCI itself in order to read the data. We explain this on our [**Getting Started Pages**](../getting_started/index.md).
+    In any case, you need to have access to the specific projects and NCI itself in order to read the data. We explain this on our [**Getting Started Pages**](../getting_started/first_steps.md).
 
 ??? abstract "What is the difference between _teams_ and _working groups_?"
 

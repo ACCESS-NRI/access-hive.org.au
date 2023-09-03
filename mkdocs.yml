@@ -96,6 +96,8 @@ nav:
 
   - Getting Started: 
     - getting_started/index.md
+    - First Steps: getting_started/first_steps.md
+    - Australian Research Environment (ARE): getting_started/are.md
 
   - Models: 
     - Models: models/index.md
@@ -179,10 +181,8 @@ nav:
     #   - ACCESS Training: community_resources/training/ACCESS_training.md
     #   - NCI Training: community_resources/training/nci-training.md
     #   - Additional Training: community_resources/training/additional_training.md
-    
-  # - Community Forum: https://forum.access-hive.org.au
-
   - About:
+    - about/index.md
     - Contact: about/contact.md
     - User Support: 
       - about/user_support/index.md 
@@ -190,9 +190,7 @@ nav:
     - Contribute:
       - about/contribute/index.md
       - Contribute on GitHub: about/contribute/contribute_on_github.md
-    - Code of Conduct: about/code_of_conduct.md
-    - Policies: about/policies.md
-    - License: about/License.md
+    - License: about/license.md
     
 # Footer
 extra:

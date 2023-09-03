@@ -1,7 +1,6 @@
-# Model Evaluation on Gadi/NCI
+# Model Evaluation on Gadi
 
-At the moment, we are providing support for an the following model evaluation frameworks on Gadi/NCI:
-
+ACCESS-NRI currently provides support for the following model evaluation frameworks on <i>Gadi</i>:
 
 <div class="card-container">
     <a href="model_evaluation_on_gadi_ilamb" class="vertical-card aspect-ratio2to1">
@@ -30,6 +29,6 @@ At the moment, we are providing support for an the following model evaluation fr
     </a>
 </div>
 
-The best way to get our help is by raising an issue on the <a href="https://forum.access-hive.org.au/" target="_blank">community forum</a> with tags `help` and another tag for the specific framework.
-
-In the future, we are also aiming to support a broader range of frameworks and recipes which are currently not supported (see [our community resource lists](../../community_resources/community_med/index.md) for this collection).
+<!-- The best way to get our help is by raising an issue on the <a href="https://forum.access-hive.org.au/" target="_blank">community forum</a> with tags `help` and another tag for the specific framework. -->
+<br>
+In future, ACCESS-NRI aims to support a broader range of frameworks and recipes that are currently not supported, but are listed in <a href="\community_resources/community_med">Community Resources</a>.

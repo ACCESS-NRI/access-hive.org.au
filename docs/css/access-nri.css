@@ -26,19 +26,12 @@
   --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
   --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* navigation bar little arrows hover */
   --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
-  --md-code-hl-color: rgba(255,255,0,.5);
-  --md-code-hl-number-color: #d52a2a;
-  --md-code-hl-special-color: #db1457;
-  --md-code-hl-function-color: #a846b9;
-  --md-code-hl-constant-color: #6e59d9;
-  --md-code-hl-keyword-color: #3f6ec6;
+  --md-code-hl-color: purple;
   --md-code-hl-string-color: #1c7d4d;
-  --md-code-hl-name-color: var(--md-code-fg-color);
-  --md-code-hl-operator-color: var(--md-default-fg-color--light);
-  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-  --md-code-hl-comment-color: var(--md-default-fg-color--light);
-  --md-code-hl-generic-color: var(--md-default-fg-color--light);
-  --md-code-hl-variable-color: var(--md-default-fg-color--light);
+  --md-code-hl-keyword-color: #ff6fb2;
+  --md-code-hl-special-color: #db1457;
+  --md-code-hl-function-color: var(--nri-blue);
+  --md-code-hl-constant-color: #6e59d9;
   --md-typeset-mark-color: rgba(var(--nri-orange-color),.4); /* marked text (<mark> tag)*/
   --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
   --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
@@ -68,6 +61,8 @@
   --not-owned: rgb(var(--not-owned-color)); /* Not supported warnings */
   --info-color: var(--nri-light-blue-color); /* Color for info warnings */
   --info: rgb(var(--info-color)); /* Info warnings */
+  --faq-color: var(--nri-blue-color); /* Color for FAQ warnings */
+  --faq: rgb(var(--faq-color)); /* FAQ warnings */
 }
 
 [data-md-color-scheme="custom-dark"] {
@@ -86,6 +81,13 @@
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
   --md-code-fg-color: var(--md-default-fg-color); /* code element text */
   --md-code-bg-color: rgb(41, 41, 41); /* code element background */
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-code-fg-color);
+  --md-code-hl-punctuation-color: var(--md-code-fg-color);
+  --md-code-hl-comment-color: rgba(var(--default-fg-color), 0.5);
+  --md-code-hl-number-color: var(--nri-orange);
+  --md-code-hl-generic-color: var(--md-code-fg-color);
+  --md-code-hl-variable-color: var(--md-code-fg-color);
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
@@ -115,6 +117,13 @@
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
   --md-code-fg-color: rgb(33, 36, 44); /* code element text */
   --md-code-bg-color: #dedede; /* code element background */
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-code-fg-color);
+  --md-code-hl-punctuation-color: var(--md-code-fg-color);
+  --md-code-hl-comment-color: rgba(var(--default-fg-color), 0.5);
+  --md-code-hl-number-color: #d58d15;
+  --md-code-hl-generic-color: var(--md-code-fg-color);
+  --md-code-hl-variable-color: var(--md-code-fg-color);
   --md-typeset-kbd-color: rgb(226, 226, 226); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
@@ -194,7 +203,7 @@
 
 .card-text-container {
   color: var(--md-default-fg-color);
-  font-size: 1.4em;
+  font-size: 1.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,7 +231,7 @@
   height: 30%;
   flex-grow: 0;
   flex-shrink: 0;
-  font-size: 12cqi;
+  font-size: 10cqi;
   padding: 3.5%;
 }
 
@@ -348,6 +357,7 @@ h1.homepage {
 /* Lower text on all homepage cards*/
 :is(.homepage-buttons,.homepage-navigation) .card-text-container {
   color: var(--tab-text);
+  font-size: 12cqi;
 }
 :is(.homepage-buttons,.homepage-navigation) .card-text-container > * {
   border-radius: 0.4rem;
@@ -434,10 +444,14 @@ h1.homepage {
   background-color: rgba(var(--info-color),0.2);
 }
 
-/* Transparent background for warnings */
-.md-typeset details {
+/* Abstract warnings (used for FAQs */
+.md-typeset :is(.admonition,details):is(.abstract) {
+  border-color: var(--faq);
   background-color: transparent;
   font-size: 1em;
+}
+.md-typeset :is(.abstract)>:is(.admonition-title,summary) {
+  background-color: rgba(var(--faq-color),0.2);
 }
 
 
@@ -762,7 +776,7 @@ ul:not([class^='md-']) li ul li ul li {
 /* =============================================================== 
   Code block
 */
-pre:has(code) {
+pre {
   display: flow-root !important;
   text-align: left !important;
   padding: 0 !important;
@@ -778,10 +792,6 @@ pre>code {
 /* Copy icon turning orange when hovering over it*/
 pre > button:is(:hover,:focus).md-clipboard {
   color: var(--md-primary-fg-color--dark) !important;
-}
-/* Copy icon not getting white when hovering over the code element */
-pre:has(code):hover > button {
-  color: var(--md-default-fg-color--lightest) !important;
 }
 
 /* =============================================================== 
@@ -834,10 +844,12 @@ pre:has(code):hover > button {
   position: relative;
   box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
   display: flex;
+  flex-wrap: wrap;
   width: fit-content;
   overflow: auto;
   margin-top: 1em;
   gap: 1px;
+  font-size: 0.9em;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -847,7 +859,6 @@ pre:has(code):hover > button {
   border-radius: 0.6rem 0.6rem 0 0;
   cursor: pointer;
   flex-shrink: 0;
-  font-size: .64rem;
   font-weight: 700;
   padding: 0.78125em 1.25em 0.625em;
   scroll-margin-inline-start: 1rem;
@@ -877,9 +888,13 @@ pre:has(code):hover > button {
 
 .tabContents > .activeTabContent {
   display: block;
-  margin-bottom: 1em;
 }
 
+.version-tabs {
+  margin-bottom: 0.3rem;
+  font-size: 1.2em;
+  width: 100%;
+}
 /* =============================================================== 
   Notes (!! icon marks)
 */
@@ -889,7 +904,7 @@ pre:has(code):hover > button {
   background-color: var(--note-bg);
   border-radius: 0.3rem;
   padding: 0.2em 0.3em 0.2em 1.5em;
-  margin-bottom: 0.8em;
+  margin: 0.3em 0 0.8em 0;
 }
 
 .note::before {
@@ -954,6 +969,7 @@ img.intro-img {
 
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
+  display: block;
   width: 100%;
   border-radius: 0.6rem;
 }
@@ -977,7 +993,7 @@ img.intro-img {
 
 /* Add padding to image container */
 .with-padding {
-  padding: 0.4rem;
+  padding: 0.4rem !important;
 }
 
 .bold {
@@ -986,15 +1002,15 @@ img.intro-img {
 
 /* image cover */
 .img-cover {
-  object-fit: cover;
+  object-fit: cover !important;
 }
 
 .img-contain {
-  object-fit: contain;
+  object-fit: contain !important;
 }
 
 .large-text {
-  font-size: 1.4em;
+  font-size: 1.4em !important;
 }
 
 .nri-link-color {
@@ -1071,7 +1087,7 @@ img.intro-img {
     height: 11rem;
   }
 }
-@media screen and (width <= 550px) {
+@media screen and (width <= 600px) {
   .vertical-card {
     width: 40%;
   }
@@ -1089,7 +1105,7 @@ img.intro-img {
   .horizontal-card > .card-text-container {
     height: 30%;
     flex: 0 0 auto;
-    font-size: 12cqi;
+    font-size: 10cqi;
     font-weight: 600;
     padding: 3.5%;
   }
