@@ -207,7 +207,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
 </ol>
 
 ## Delete an ARE session
-You can delete a session before its automatic expiration (based on the specified <a href="#walltime-option">Walltime</a>) by clicking on the session's <i>Delete</i> button <img src="/assets/session_delete_button.png" alt="Session Delete button" style="height:1em"/> in the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sessions" target="blank">Interactive Sessions</a> page.
+You can delete a session before its automatic expiration (based on the specified <a href="#walltime-option">Walltime</a>) by clicking on the session's <i>Delete</i> button <img src="/assets/session_delete_button.png" alt="Session Delete button" style="height:1em"/> in the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sessions" target="_blank">Interactive Sessions</a> page.
 
 <br>
 <h6>References</h6>

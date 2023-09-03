@@ -743,15 +743,6 @@ h1.homepage {
 }
 
 /* =============================================================== 
-  How to contribute image
-*/
-.rectangular-img {
-  width: 100%; 
-  height: 13em !important;
-  border-radius: 0.6rem;
-}
-
-/* =============================================================== 
   References
 */
 .references {
