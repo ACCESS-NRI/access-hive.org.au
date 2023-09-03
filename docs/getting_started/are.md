@@ -5,14 +5,37 @@
 ARE can give you access to NCI’s <i>Gadi</i> supercomputer and data collections.
 
 
-There are three main applications included in ARE: <a href="#vdi">Virtual Desktop (VDI)</a>, <a href="#jupyterlab">JupyterLab</a>, <a href="#gadi-terminal">Gadi Terminal</a>.
+There are multiple applications included in ARE, but the two most used for ACCESS-related activities are <a href="#vdi">Virtual Desktop (VDI)</a> and <a href="#jupyterlab">JupyterLab</a>.
 
 <!-- Tab labels -->
 <div class="tabLabels" label="are-apps">
     <button id="vdi">Virtual Desktop (VDI)</i></button>
     <button id="jupyterlab"><i>JupyterLab</i></button>
-    <button id="gadi-terminal"><i>Gadi Terminal</i></button>
 </div>
+
+## Launch the ARE session
+<!-- Tab contents -->
+<div class="tabContents" label="are-apps">
+    <!-- 
+    --
+    --
+    VDI
+    --
+    --
+     -->
+    <div>
+    </div>
+    <!-- 
+    --
+    --
+    Jupyterlab
+    --
+    --
+     -->
+    <div>
+    </div>
+</div>
+<!-- End of tab contents -->
 
 
 <br>

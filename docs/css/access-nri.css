@@ -26,19 +26,12 @@
   --md-primary-bg-color--light: rgba(var(--primary-bg-color),0.5); /* search bar 'Search' text */
   --md-accent-fg-color--transparent: rgba(var(--nri-blue-color),.05);  /* navigation bar little arrows hover */
   --md-accent-bg-color: rgb(var(--tab-text-color)); /* back to top button text hover */
-  --md-code-hl-color: rgba(255,255,0,.5);
-  --md-code-hl-number-color: #d52a2a;
-  --md-code-hl-special-color: #db1457;
-  --md-code-hl-function-color: #a846b9;
-  --md-code-hl-constant-color: #6e59d9;
-  --md-code-hl-keyword-color: #3f6ec6;
+  --md-code-hl-color: purple;
   --md-code-hl-string-color: #1c7d4d;
-  --md-code-hl-name-color: var(--md-code-fg-color);
-  --md-code-hl-operator-color: var(--md-default-fg-color--light);
-  --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-  --md-code-hl-comment-color: var(--md-default-fg-color--light);
-  --md-code-hl-generic-color: var(--md-default-fg-color--light);
-  --md-code-hl-variable-color: var(--md-default-fg-color--light);
+  --md-code-hl-keyword-color: #ff6fb2;
+  --md-code-hl-special-color: #db1457;
+  --md-code-hl-function-color: var(--nri-blue);
+  --md-code-hl-constant-color: #6e59d9;
   --md-typeset-mark-color: rgba(var(--nri-orange-color),.4); /* marked text (<mark> tag)*/
   --md-typeset-del-color: rgba(245,80,61,.15); /* deleted text (<del> tag) */
   --md-typeset-ins-color: rgba(11,213,112,.15); /* inserted text (<ins> tag) */
@@ -88,6 +81,13 @@
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
   --md-code-fg-color: var(--md-default-fg-color); /* code element text */
   --md-code-bg-color: rgb(41, 41, 41); /* code element background */
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-code-fg-color);
+  --md-code-hl-punctuation-color: var(--md-code-fg-color);
+  --md-code-hl-comment-color: rgba(var(--default-fg-color), 0.5);
+  --md-code-hl-number-color: var(--nri-orange);
+  --md-code-hl-generic-color: var(--md-code-fg-color);
+  --md-code-hl-variable-color: var(--md-code-fg-color);
   --md-typeset-kbd-color: rgb(39, 39, 39); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(126, 126, 126, .16); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(30, 30, 30); /* text as keyboard outer border (<kbd> tag) */
@@ -117,6 +117,13 @@
   --md-accent-fg-color: var(--nri-blue); /* link text hover */
   --md-code-fg-color: rgb(33, 36, 44); /* code element text */
   --md-code-bg-color: #dedede; /* code element background */
+  --md-code-hl-name-color: var(--md-code-fg-color);
+  --md-code-hl-operator-color: var(--md-code-fg-color);
+  --md-code-hl-punctuation-color: var(--md-code-fg-color);
+  --md-code-hl-comment-color: rgba(var(--default-fg-color), 0.5);
+  --md-code-hl-number-color: #d58d15;
+  --md-code-hl-generic-color: var(--md-code-fg-color);
+  --md-code-hl-variable-color: var(--md-code-fg-color);
   --md-typeset-kbd-color: rgb(226, 226, 226); /* keyboard key background (<kbd> tag) */
   --md-typeset-kbd-accent-color: rgb(255, 255, 255, .78); /* keyboard key inner border (<kbd> tag) */
   --md-typeset-kbd-border-color: rgb(212, 212, 212); /* text as keyboard outer border (<kbd> tag) */
@@ -841,7 +848,7 @@ pre > button:is(:hover,:focus).md-clipboard {
   overflow: auto;
   margin-top: 1em;
   gap: 1px;
-  font-size: 0.65rem;
+  font-size: 0.9em;
 }
 
 /* Style the buttons that are used to open the tab content */
