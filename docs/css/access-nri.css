@@ -203,7 +203,7 @@
 
 .card-text-container {
   color: var(--md-default-fg-color);
-  font-size: 1.4em;
+  font-size: 1.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,7 +231,7 @@
   height: 30%;
   flex-grow: 0;
   flex-shrink: 0;
-  font-size: 12cqi;
+  font-size: 10cqi;
   padding: 3.5%;
 }
 
@@ -357,6 +357,7 @@ h1.homepage {
 /* Lower text on all homepage cards*/
 :is(.homepage-buttons,.homepage-navigation) .card-text-container {
   color: var(--tab-text);
+  font-size: 12cqi;
 }
 :is(.homepage-buttons,.homepage-navigation) .card-text-container > * {
   border-radius: 0.4rem;
@@ -1105,7 +1106,7 @@ img.intro-img {
   .horizontal-card > .card-text-container {
     height: 30%;
     flex: 0 0 auto;
-    font-size: 12cqi;
+    font-size: 10cqi;
     font-weight: 600;
     padding: 3.5%;
   }
@@ -1229,7 +1230,7 @@ img.intro-img {
   .horizontal-card > .card-text-container {
     height: 30%;
     flex: 0 0 auto;
-    font-size: 12cqi;
+    font-size: 10cqi;
     font-weight: 600;
     padding: 3.5%;
   }
