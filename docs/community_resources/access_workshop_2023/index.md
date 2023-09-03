@@ -9,7 +9,7 @@
             <span class="bold" >Training Day Program<br>(4 Sep)</span>
         </div>
     </a>
-    <a href="training" class="horizontal-card">
+    <a href="training_materials" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/ACCESS_icon_training.png" class="img-contain"></img> 
         </div>
