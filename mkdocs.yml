@@ -152,6 +152,11 @@ nav:
 
   - Community Resources:
     - community_resources/index.md
+    # TEMPORARY for Workshop
+    - ACCESS Community Workshop 2023: 
+      - Overwview: community_resources/access_workshop_2023/index.md
+      - Training materials: community_resources/access_workshop_2023/training_materials.md
+    # TEMPORARY for Workshop
     - Working Groups: community_resources/community_working_groups.md
     - Model Evaluation Links:
       - community_resources/community_med/index.md

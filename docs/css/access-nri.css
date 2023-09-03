@@ -1052,131 +1052,6 @@ img.intro-img {
 }
 
 
-
-/* =============================================================== 
-  Media queries for website responsiveness
-*/
-
-@media screen and (width < 800px) {
-  /* Make gap scale with viewport width */
-  .homepage-buttons {
-    gap: 5vw;
-  }
-  /* Hide upper text in homepage buttons */
-  .homepage-buttons > .vertical-card > :first-child {
-    display: none;
-  }
-  /* Lower text in homepage buttons */
-  .homepage-buttons > .vertical-card > :last-child {
-    font-size: calc(2.9vw + 0.15rem);
-  }
-  /* Homepage buttons Cards */
-  .homepage-buttons > .vertical-card {
-    background-color: var(--md-primary-fg-color--dark);
-    height: 8vw;
-    border-radius: 2vw;
-  }
-  .homepage-buttons .card-text-container {
-    padding: 0;
-  }
-}
-
-
-@media screen and (width <= 608px) {
-  /* Footer */
-  .md-footer-meta.md-typeset.md-grid {
-    height: 11rem;
-  }
-}
-@media screen and (width <= 550px) {
-  .vertical-card {
-    width: 40%;
-  }
-  
-  /* Change the horizontal card to be rendered as a vertical one with aspect-ratio 1 */
-  .horizontal-card {
-    flex-direction: column;
-    height: auto;
-    align-items: center;
-    width: 40%;
-    min-height: 0;
-    aspect-ratio: 1;
-    container-type: inline-size;
-  }
-  .horizontal-card > .card-text-container {
-    height: 30%;
-    flex: 0 0 auto;
-    font-size: 10cqi;
-    font-weight: 600;
-    padding: 3.5%;
-  }
-  .horizontal-card > .card-image-container {
-    padding: 3.5%;
-  }
-  .horizontal-card > .card-text-container:last-child {
-    padding-top: 0;
-  }
-  .horizontal-card > .card-text-container > *:last-child:not(:only-child) {
-    display: none;
-  }
-  .horizontal-card > .card-text-container > *:first-child:not(:only-child) {
-    margin-bottom: 0;
-  }
-  .horizontal-card > .card-image-container {
-    flex-basis: 70%;
-  }
-  /* Wrap homepage navigation cards */
-  .homepage-navigation {
-    flex-wrap: wrap;
-  }
-
-  /* Forum, ACCESS-NRI and Github buttons */
-  .header-btn-container {
-    flex-grow: 0;
-  }
-  /* Make squared btn */
-  .header-btn {
-    flex-basis: 0;
-    flex-grow: 0;
-    aspect-ratio: 1;
-    justify-self: start;
-    height: 2rem;
-  }
-  /* Increase btn Logos */
-  .header-btn > :first-child > * {
-    font-size: 1.8em;
-  }
-  /* Hide btn Text */
-  .header-btn >:last-child {
-    display: none;
-  }
-  
-  /* Homepage introduction paragraph */
-  /* Upper text */
-  .introduction > :first-child > :first-child {
-    font-size: calc(4.9vw + 0.15rem);
-  }
-  /* Lower text */
-  .introduction > :first-child > :last-child {
-    font-size: calc(2.9vw + 0.15rem);
-   }
-  
-  /* Footer */
-  :is(.funding,.partners) > *:first-child {
-    font-size: calc(1vw + 0.5rem);
-  }
-  :is(.funding,.partners) > *:last-child a {
-    max-width: calc(6vw + 2rem);
-  }
-
-  .md-footer-meta__inner {
-    flex-direction: column;
-  }
-  .md-footer-meta__inner > * {
-    gap: 1rem;
-  }
-}
-
 /* =============================================================== 
   Media queries for website responsiveness
 */
@@ -1316,5 +1191,76 @@ img.intro-img {
   /* Hide text in title */
   .md-header__img {
     display: flex;
+  }
+}
+
+
+/* =============================================================== 
+  TEMPORARY for workshop
+*/
+
+/* Homepage button */
+.card-container.homepage-buttons.workshop {
+  max-width: 60%;
+  margin: 1.5rem auto;
+}
+.card-container.homepage-buttons.workshop > .horizontal-card {
+  max-height: 5rem;
+}
+.card-container.homepage-buttons.workshop .card-text-container {
+  height: 100%;
+  padding: 0.4rem 0.4rem 0.4rem 0;
+}
+.card-container.homepage-buttons.workshop .card-text-container > span {
+  background-color: var(--nri-orange);
+  color: rgb(10,10,10);
+}
+
+/* Workshop page */
+.card-container.workshop-page {
+  justify-content: space-around;
+}
+
+/* Training materials page */
+.workshop-training {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.workshop-training > * {
+  width: fit-content;
+}
+
+@media screen and (width > 550px) {
+  .card-container.workshop-page > .horizontal-card {
+    max-width: 40%;
+    max-height: 5rem;
+  }
+}
+@media screen and (width < 800px) {
+  .card-container.homepage-buttons.workshop > .horizontal-card > :first-child {
+    display: none;
+  }
+  .card-container.homepage-buttons.workshop .card-text-container {
+    flex-basis: 100%;
+    padding: 0;
+  }
+}
+@media screen and (width <= 550px) {
+  .homepage-buttons.workshop > .horizontal-card {
+    flex-direction: row;
+    height: 15vw;
+    width: 100%;
+    align-items: stretch;
+    min-height: 0;
+    aspect-ratio: unset;
+    container-type: inline-size;
+  }
+  .homepage-buttons.workshop > .horizontal-card > .card-text-container {
+    font-size: 10cqi;
+    font-weight: 600;
+  }
+  .card-container.workshop-page img {
+    padding: 0.4rem;
   }
 }

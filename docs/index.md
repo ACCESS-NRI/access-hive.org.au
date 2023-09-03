@@ -14,6 +14,20 @@ hide:
     </div>
 </div>
 
+<!-- TEMPORARY for workshop -->
+<div class="card-container homepage-buttons workshop">
+    <a href="/community_resources/access_workshop_2023" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/assets/ACCESS_logo_rgb.png" class="white-background img-contain"></img>
+        </div>
+        <div class="card-text-container">
+            <span class="bold">
+                ACCESS Community Workshop 2023</span>
+        </div>
+    </a>
+</div>
+<!-- TEMPORARY for workshop -->
+
 <div class="card-container homepage-buttons">
     <a href="/getting_started" class="vertical-card">
         <div class="bold">New to ACCESS-Hive?</div>
