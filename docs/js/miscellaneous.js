@@ -172,9 +172,12 @@ function toggleTerminalAnimations() {
     let onclick = state == 'active' ? 'disable' : 'enable';
     terminalAnimationsSwitch.setAttribute('title',`Terminal animations ${current}.\nClick to ${onclick} them.`);
     terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
-    let h1 = document.querySelector('h1');
-    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
-    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
+    document.querySelectorAll('h1').forEach(h1 => {
+      let _switch = terminalAnimationsSwitch.cloneNode(true);
+      _switch.addEventListener('click', toggleState, false);
+      h1.parentElement.insertBefore(_switch, h1);
+    })
+    terminalAnimationsSwitch.remove();
   }
 }
 

@@ -4,8 +4,19 @@
     <button id="are">ARE / <i>Gadi workflow</i></button>
     <button id="accessdev"><i>accessdev workflow</i></button>
 </div>
+<!-- Tab content -->
+<div class="tabContents" label="workflow">
+    <!-- ARE/Gadi-->
+    <div>
+        <h1>Run {{ model }} from ARE / <i>Gadi</i></h1>
+    </div>
+    <!-- accessdev -->
+    <div>     
+        <h1>Run {{ model }} from <i>accessdev</i></h1>
+    </div>
+</div>
+<!-- End of tab content -->
 
-# Run {{ model }}
 <div class="note">
     The workflow to run ACCESS_CM is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
     <br>
