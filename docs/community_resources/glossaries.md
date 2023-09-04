@@ -4,7 +4,7 @@
 <div class="card-container">
     <a href="https://www.access-nri.org.au/community/access-glossary/" target="_blank" class="horizontal-card">
         <div class="card-image-container">
-            <img src="/bubbi" alt="Find img"></img> 
+            <img src="/assets/glossary.png" alt="ACCESS-NRI Glossary" class="img-contain white-background"/>
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-NRI Glossary</span>
@@ -15,7 +15,7 @@
     </a>
     <a href="https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SR15_AnnexI.pdf" target="_blank" class="horizontal-card">
         <div class="card-image-container">
-            <img src="/bubbi" alt="Find img"></img> 
+            <img src="/assets/IPCC_logo.png" alt="IPCC Glossary" class="img-cover"/>
         </div>
         <div class="card-text-container">
             <span class="bold" >IPCC Glossary</span>
@@ -26,7 +26,7 @@
     </a>
     <a href="https://science2017.globalchange.gov/chapter/appendix-d/" target="_blank" class="horizontal-card">
         <div class="card-image-container">
-            <img src="/bubbi" alt="Find img"></img> 
+            <img src="/assets/CSSR_logo.png" alt="CSSR" class="img-cover white-background"/> 
         </div>
         <div class="card-text-container">
             <span class="bold" >CSSR Acronyms and Units</span>

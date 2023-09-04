@@ -29,7 +29,7 @@
     </a>
     <a href="glossaries" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-cover" src="../assets/glossary.png" alt="Glossaries">
+            <img class="img-cover" src="/assets/glossary.png" alt="Glossaries">
         </div>
         <div class="card-text-container   bold">Glossaries</div>
     </a>
