@@ -823,13 +823,13 @@ pre > button:is(:hover,:focus).md-clipboard {
   word-break: normal;
 }
 
-#terminalSwitch {
+img.terminalSwitch {
   float: right;
   height: 1.1rem;
   margin: 0.5rem 0.2rem;
 }
 
-#terminalSwitch:hover {
+img.terminalSwitch:hover {
   cursor: pointer;
 }
 /* =============================================================== 
