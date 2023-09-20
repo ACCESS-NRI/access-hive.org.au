@@ -1,8 +1,9 @@
 name: publish
 on:
-  push:
-    branches: 
-      - main
+  #push:
+  #  branches: 
+  #    - main
+  workflow_dispatch:
 
 permissions:
   actions: write
@@ -19,6 +20,8 @@ permissions:
 
 jobs:
   deploy:
+    # Allow workflow_dispatch from main
+    if: github.event_name != 'workflow_dispatch' || github.ref == 'refs/heads/main'
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
