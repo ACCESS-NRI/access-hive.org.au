@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdocs build -f mkdocs.yml -d site
       
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: development
           path: development/
@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p ./development_site
           mv site ./development_site/.
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: development_site
           path: development_site/

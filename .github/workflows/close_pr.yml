@@ -13,7 +13,7 @@ jobs:
         run: |
           mkdir -p ./prnumber
           echo ${{ github.event.number }} > ./prnumber/prnumber.txt
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: prnumber
           path: prnumber/
