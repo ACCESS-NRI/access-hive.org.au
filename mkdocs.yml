@@ -55,7 +55,7 @@ theme:
   icon:
     edit: material/pencil
     view: material/eye
-copyright: Copyright &copy; 2022 ACCESS-NRI
+copyright: Copyright &copy; 2023 ACCESS-NRI
 
 plugins:
   - git-revision-date-localized:
