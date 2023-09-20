@@ -66,8 +66,6 @@ plugins:
   - macros
   - bibtex:
       bib_file: "references.bib"
-  - events:
-      events_dir: community_resources/events/events
 
 # Extensions
 markdown_extensions: 
