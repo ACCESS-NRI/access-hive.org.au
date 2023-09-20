@@ -41,4 +41,3 @@ jobs:
           folder: site
           branch: gh-pages # default
           clean-exclude: pr-preview/ # don't overwrite previews
-          dry-run: true
