@@ -21,6 +21,7 @@ jobs:
         check-modified-files-only: 'yes'
         use-quiet-mode: 'no'
         use-verbose-mode: 'yes'
+        base-branch: 'main'
   full-markdown-link-check:
     if: ${{ github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
@@ -32,4 +33,5 @@ jobs:
         use-verbose-mode: 'yes'
         config-file: '.github/workflows/mlc_config.json'
         folder-path: 'docs'
+        base-branch: 'main'
     
