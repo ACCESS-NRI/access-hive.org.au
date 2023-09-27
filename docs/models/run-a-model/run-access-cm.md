@@ -23,7 +23,7 @@
     The above tabs allow you choose the type of workflow you would prefer to follow.
     <br>
     <br>
-    If you are new to ACCESS-CM, we <b>recommend</b> that you follow the <b>ARE/<i>Gadi</i></b> workflow, as the <i>accessdev</i> workflow will soon be discontinued.
+    If you are new to ACCESS-CM, we <b>strongly recommend</b> that you follow the <b>ARE/<i>Gadi</i></b> workflow, as the <i>accessdev</i> workflow will soon be discontinued.
 </div>
 
 ## Prerequisites
