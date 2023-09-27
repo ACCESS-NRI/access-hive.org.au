@@ -83,7 +83,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
     <!-- ARE/Gadi-->
     <div>
         <div class="note">
-            Your chosen workflow is ARE/<i>Gadi</i>. If you would prefer to run {{ model }} on <i>accessdev</i>, then select the <a href="#accessdev"><i>accessdev</i> workflow</a>.
+            Your chosen workflow is ARE / <i>Gadi</i>. If you would prefer to run {{ model }} on <i>accessdev</i>, then select the <a href="#accessdev"><i>accessdev</i> workflow</a>.
         </div>
         <h3>Launch ARE VDI Session</h3>
         Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following directives:
