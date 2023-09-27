@@ -217,7 +217,7 @@ module load cylc7</code></pre>
                 <br>
                 <ul>
                     <li>
-                        <i>Local copy</i>
+                        <i>Local-only copy</i>
                         <br>
                         To create a <i>local copy</i> of the <code>&lt;suite-ID&gt;</code> from the UKMO repository, run:
                         <pre><code>rosie checkout &lt;suite-ID&gt;</code></pre>
