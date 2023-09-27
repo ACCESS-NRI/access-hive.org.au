@@ -128,7 +128,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 <br>
                 Every {{ model }} simulation can be unique and input data can originate from various sources. Hence, if your simulation requires data stored in project folders other than <code>access</code>, <code>hh5</code>, <code>hr22</code> or <code>ki32</code>, you need to add those projects to the storage path.
                 <br>
-                For example, if your {{ model }} simulation requires data from <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
+                For example, if your {{ model }} simulation requires data stored in <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
             </li>
         </ul>
         Now, launch an ARE session and, once it starts, click on <i>Launch VDI Desktop</i>.
