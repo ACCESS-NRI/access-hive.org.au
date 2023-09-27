@@ -18,7 +18,7 @@
 <!-- End of tab content -->
 
 <div class="note">
-    The workflow to run ACCESS-CM is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
+    The workflow to run {{ model }} is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
     <br>
     The above tabs allow you choose the type of workflow you would prefer to follow.
     <br>
