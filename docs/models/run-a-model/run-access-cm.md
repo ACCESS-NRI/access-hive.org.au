@@ -131,7 +131,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 For example, if your {{ model }} simulation requires data stored in <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
             </li>
         </ul>
-        Now, launch an ARE session and, once it starts, click on <i>Launch VDI Desktop</i>.
+        Launch the ARE session and, once it starts, click on <i>Launch VDI Desktop</i>.
         <img src="/assets/run_access_cm/launch_are_vdi.gif" alt="Launch ARE VDI session" class="example-img" loading="lazy"/>
         <br>
         <h3>Open the terminal</h3>
