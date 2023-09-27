@@ -148,7 +148,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
         Login to <i>accessdev</i> by runnning:
         <pre><code>ssh accessdev</code></pre>
         <div class="note">
-            If you have not yet setup your <i>accessdev</i> connection through `ssh`, please check the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
+            If you have not yet set up your <i>accessdev</i> connection through `ssh`, please check the <a href="https://accessdev.nci.org.au/trac/wiki/GettingConnected">Getting Connected to Accessdev</i></a> guide.
         </div>
     </div>
 </div>
