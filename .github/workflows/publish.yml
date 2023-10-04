@@ -44,7 +44,7 @@ jobs:
         run: |
           mkdocs build -f mkdocs.yml -d site
           
-      - name: Deploy to gh-pagaes
+      - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: site
