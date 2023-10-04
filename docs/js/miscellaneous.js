@@ -123,7 +123,7 @@ function toggleTerminalAnimations() {
   if (document.querySelector('terminal-window')) {
     
     function getState() {
-      return localStorage.getItem('ACCESS-Hive-animated-terminal_state');
+      return localStorage.getItem('ACCESS-Hive-animated-terminal_state') || 'active';
     }
     
     function setState(state) {
