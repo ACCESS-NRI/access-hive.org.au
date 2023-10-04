@@ -119,12 +119,25 @@ function addExternalLinkIcon() {
 /*
   Add button to toggle terminal-animations for the whole page (next to the page title)
 */
-// Change it to be using "localStorage" once animated-terminal.js has been updated to set/remove "static" attribute dynamically.
 function toggleTerminalAnimations() {
   if (document.querySelector('terminal-window')) {
-    let state;
+    
+    function getState() {
+      return localStorage.getItem('ACCESS-Hive-animated-terminal_state');
+    }
+    
+    function setState(state) {
+      localStorage.setItem('ACCESS-Hive-animated-terminal_state', state);
+    }
 
     function applyState() {
+      let state = getState();
+      let current_string = state == 'active' ? 'enabled' : 'disabled';
+      let onclick_string = state == 'active' ? 'disable' : 'enable';
+      document.querySelectorAll('.terminalSwitch').forEach(_switch => {
+        _switch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
+        _switch.setAttribute('title',`Terminal animations ${current_string}.\nClick to ${onclick_string} them.`);
+      })
       let terminalWindows = document.querySelectorAll('terminal-window');
       if (state == 'active') {
         terminalWindows.forEach(t => {
@@ -136,48 +149,25 @@ function toggleTerminalAnimations() {
         })
       }
     }
-    
-    function getCookie() {
-      let cvalue = document.cookie.split(';')
-      .find(c => c.trim().startsWith('terminalState='))
-      ?.split("=")[1];
-      return cvalue;
-    }
-
-    function setCookie() {
-      document.cookie = `terminalState=${state};path=/;max-age=604800;samesite=lax`; // Expires after 1 week
-    }
 
     function toggleState(e) {
-      if (state == 'active') {
-        state='inactive'
+      if (getState() == 'active') {
+        setState('inactive');
       } else {
-        state='active'
+        setState('active');
       }
-      setCookie();
-      location.reload();
+      applyState();
     }
     
-    let terminalStateCookie = getCookie();
-    if (! terminalStateCookie) {
-      state = 'active';
-      setCookie();
-    } else {
-      state = terminalStateCookie;
-    }
-    applyState();
     let terminalAnimationsSwitch = document.createElement('img');
-    terminalAnimationsSwitch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
-    let current = state == 'active' ? 'enabled' : 'disabled';
-    let onclick = state == 'active' ? 'disable' : 'enable';
-    terminalAnimationsSwitch.setAttribute('title',`Terminal animations ${current}.\nClick to ${onclick} them.`);
-    terminalAnimationsSwitch.setAttribute('id','terminalSwitch');
+    terminalAnimationsSwitch.classList.add('terminalSwitch');
     document.querySelectorAll('h1').forEach(h1 => {
       let _switch = terminalAnimationsSwitch.cloneNode(true);
       _switch.addEventListener('click', toggleState, false);
       h1.parentElement.insertBefore(_switch, h1);
     })
     terminalAnimationsSwitch.remove();
+    applyState();
   }
 }
 

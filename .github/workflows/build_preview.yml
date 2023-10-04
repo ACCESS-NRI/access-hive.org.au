@@ -83,7 +83,7 @@ jobs:
           pr-number: ${{ github.event.number }}
 
   close-preview:
-    if: github.event.action == "closed"
+    if: github.event.action == 'closed'
     runs-on: ubuntu-latest
     steps:
 
