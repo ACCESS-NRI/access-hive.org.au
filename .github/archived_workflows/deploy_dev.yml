@@ -1,19 +1,23 @@
-name: Clean PR preview
+name: Deploy Development Website
 
 on:
   workflow_run:
-    workflows: ["Close PR"]
+    workflows: ["Build Development Website"]
     types:
       - completed
 
 jobs:
-  close-preview:
+  deploy-development:
     runs-on: ubuntu-latest
-    if: >
-      github.event.workflow_run.event == 'pull_request' &&
-      github.event.workflow_run.conclusion == 'success'
     steps:
-      - name: "Download PR number"
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: "Download built site"
         uses: actions/github-script@v3.1.0
         with:
           script: |
@@ -23,7 +27,7 @@ jobs:
                run_id: ${{github.event.workflow_run.id }},
             });
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "prnumber"
+              return artifact.name == "development_site"
             })[0];
             var download = await github.actions.downloadArtifact({
                owner: context.repo.owner,
@@ -32,21 +36,15 @@ jobs:
                archive_format: 'zip',
             });
             var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/prnumber.zip', Buffer.from(download.data));
-      - run: |
-          unzip prnumber.zip
-          echo "pr-number=$(cat prnumber.txt)" >> "$GITHUB_ENV"
-        shell: bash
- 
-      - name: Checkout
-        uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
+            fs.writeFileSync('${{github.workspace}}/development_site.zip', Buffer.from(download.data));
+      - run: unzip development_site.zip
 
-      - name: Clean preview
-        uses: access-nri/pr-preview-action@v2.1.1
+      - name: Deploy preview directory
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          action: remove
-          pr-number: ${{ env.pr-number }}
+          branch: gh-pages
+          folder: site
+          target-folder: development_site
+          commit-message: Deploy Development Preview
+          force: false
           

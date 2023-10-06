@@ -55,7 +55,7 @@ theme:
   icon:
     edit: material/pencil
     view: material/eye
-copyright: Copyright &copy; 2022 ACCESS-NRI
+copyright: Copyright &copy; 2023 ACCESS-NRI
 
 plugins:
   - git-revision-date-localized:
@@ -211,5 +211,5 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
-  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js # Terminal animations
+  - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@2.1/animated-terminal.min.js # Terminal animations
   - js/miscellaneous.js

@@ -18,12 +18,12 @@
 <!-- End of tab content -->
 
 <div class="note">
-    The workflow to run ACCESS_CM is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
+    The workflow to run {{ model }} is currently in transition from <i>accessdev</i> to ARE/<i>Gadi</i>.
     <br>
-    The tabs above let you choose the type of workflow you would like to follow.
+    The above tabs allow you choose the type of workflow you would prefer to follow.
     <br>
     <br>
-    If you are new to ACCESS-CM, we <b>strongly</b> suggest you follow the <b>ARE/<i>Gadi</i></b> workflow, as the <i>accessdev</i> workflow will soon be interrupted.
+    If you are new to ACCESS-CM, we <b>strongly recommend</b> that you follow the <b>ARE/<i>Gadi</i></b> workflow, as the <i>accessdev</i> workflow will soon be discontinued.
 </div>
 
 ## Prerequisites
@@ -47,7 +47,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
         <div class="note">
             To request membership for the <i>ki32_mosrs</i> subproject you need to be member of the <i>ki32</i> project first.
         </div>
-        For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+        For more information on how to join specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
     <!-- Tab content -->
     <div class="tabContents" label="workflow">
@@ -58,7 +58,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 <br>
                 To run {{ model }}, you need to be able to start an <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">Australian Research Environment (ARE) VDI Desktop</a> session.
                 <br>
-                If u are not familiar with ARE, please check the <a href="/getting_started/are">Getting Started on ARE</a> section.
+                If you are not familiar with ARE, check out the <a href="/getting_started/are">Getting Started on ARE</a> section.
             </li>
         </div>
         <!-- accessdev -->
@@ -83,13 +83,13 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
     <!-- ARE/Gadi-->
     <div>
         <div class="note">
-            Your chosen workflow is ARE / <i>Gadi</i>. If you want to run {{ model }} on <i>accessdev</i> instead, please select <a href="#accessdev"><i>accessdev</i> workflow</a>.
+            Your chosen workflow is ARE / <i>Gadi</i>. If you would prefer to run {{ model }} on <i>accessdev</i>, then select the <a href="#accessdev"><i>accessdev</i> workflow</a>.
         </div>
         <h3>Launch ARE VDI Session</h3>
         Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following directives:
         <ul>
             <li>
-                <b>Walltime (hours)</b> &rarr; &thickapprox; <code>4</code> per simulated year
+                <b>Walltime (hours)</b> &rarr; &thickapprox; <code>4</code> per simulated year.
                 <br>
                 With the current state of the ARE/Gadi workflow, <b>the ARE VDI session needs to remain active and running for the entirety of the {{ model }} simulation</b>. If the ARE VDI session expires before the end of the simulation, the simulation itself will be terminated as well.
                 <br>
@@ -98,7 +98,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 <br>
                 A good estimate to calculate the <code>walltime</code> needed is <b>4 hours per simulated year</b>.
                 <div class="note">
-                    ARE VDI Session cannot be spun up for more than 48 consecutive hours. This means that {{ model }} simulations that need more than 48 hours to complete, at the current state, need to be broken down into multiple chunks running for up to 48 hours.
+                    ARE VDI session cannot be spun up for more than 48 consecutive hours. This means that {{ model }} simulations that need more than 48 hours to complete, at the current state, need to be broken down into multiple chunks running for up to 48 hours.
                     <br>
                     <br>
                     In the near future this will not be necessary anymore, as there will be long running servers in place for runnning {{ model }} simulations.
@@ -115,37 +115,35 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 This means that the ARE VDI session only needs to carry out setup steps as well as starting the run itself. All these tasks can be easily done with only 1 CPU.
             </li>
             <li>
-                <b>Project</b> &rarr; a project you belong, with allocated SU
+                <b>Project</b> &rarr; a project of which you are a member.
                 <br>
-                The project, with allocated <i>Service Units</i> (SU), under which you want to run your simulation. Usually (but not always) this corresponds to your <code>$PROJECT</code>.
+                The project must have allocated <i>Service Units</i> (SU) to run your simulation. Usually, but not always, this corresponds to your <code>$PROJECT</code>.
                 <br>
-                For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+                For more information, refer to how to <a href="/getting_started/first_steps#join-relevant-nci-projects">Join relevant NCI projects</a>.
             </li>
             <li>
                 <b>Storage</b> &rarr; <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32</code> (minimum)
                 <br>
-                This is the list (joined by <code>+</code> signs) of project data storage needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access data from within a VDI instance.
+                This is a list of all project data storage (joined by <code>+</code> signs) needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access data from within a VDI instance.
                 <br>
-                Since every {{ model }} simulation can be unique and input data can come from various sources, if your specific simulation requires data coming from projects other than <code>access</code>, <code>hh5</code>, <code>hr22</code> or <code>ki32</code>, you need to add those projects to the storage path.
+                Every {{ model }} simulation can be unique and input data can originate from various sources. Hence, if your simulation requires data stored in project folders other than <code>access</code>, <code>hh5</code>, <code>hr22</code> or <code>ki32</code>, you need to add those projects to the storage path.
                 <br>
-                For example, if your {{ model }} simulation requires data coming from <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
+                For example, if your {{ model }} simulation requires data stored in <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
             </li>
         </ul>
-        Launch the session and, after the session starts, click on <i>Launch VDI Desktop</i>.
+        Launch the ARE session and, once it starts, click on <i>Launch VDI Desktop</i>.
         <img src="/assets/run_access_cm/launch_are_vdi.gif" alt="Launch ARE VDI session" class="example-img" loading="lazy"/>
         <br>
         <h3>Open the terminal</h3>
-        After the new tab opens you will see a Desktop with a few folders on the left.
+        Once the new tab opens, you will see a Desktop with a few folders on the left.
         <br>
-        To open the terminal click on the black terminal icon at the top of the window.
-        <br>
-        As you can see from your terminal, you are now connected to a <i>Gadi</i> computing node.
+        To open the terminal, click on the black terminal icon at the top of the window. You should now be connected to a <i>Gadi</i> computing node.
         <img src="/assets/run_access_cm/open_are_vdi_terminal.gif" alt="Open ARE VDI terminal" class="example-img" loading="lazy"/>
     </div>
     <!-- accessdev-->
     <div>
         <div class="note">
-            Your chosen workflow is <i>accessdev</i>. If you want to run {{ model }} on ARE / <i>Gadi</i> instead, please select <a href="#are">ARE / <i>Gadi</i> workflow</a>.
+            Your chosen workflow is <i>accessdev</i>. If you would prefer to run {{ model }} on ARE / <i>Gadi</i>, then select the <a href="#are">ARE / <i>Gadi</i> workflow</a>.
         </div>
         Login to <i>accessdev</i> by runnning:
         <pre><code>ssh accessdev</code></pre>
@@ -373,7 +371,7 @@ For example, to run an {{ model }} suite under the <code>tm70</code> project (AC
 </div>
 <!-- End of tab content -->
 <div class="note">
-    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check how to <a href="/getting_started/first_steps#join-relevant-nci-projects">Join relevant NCI projects</a>.
 </div>
 
 ### Change run length and cycling frequency
