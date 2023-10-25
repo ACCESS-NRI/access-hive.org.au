@@ -6,7 +6,7 @@
             <img src="/assets/ACCESS_icon_case_studies.png" class="img-contain"></img> 
         </div>
         <div class="card-text-container">
-            <span class="bold" >Training Day Program<br>(4 Sep)</span>
+            <span class="bold" >Training Day Program<br>(4 Sep 2023)</span>
         </div>
     </a>
     <a href="training_materials" class="horizontal-card">
@@ -25,7 +25,7 @@
             <img src="/assets/ACCESS_icon_publications.png" class="img-contain"></img> 
         </div>
         <div class="card-text-container">
-            <span class="bold" >Main Workshop Program<br>(5-6 Sep)</span>
+            <span class="bold" >Main Workshop Program<br>(5-6 Sep 2023)</span>
         </div>
     </a>
     <a href="https://forum.access-hive.org.au/c/access-workshop-2023/61/none" class="horizontal-card" target="_blank">

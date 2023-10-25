@@ -10,7 +10,7 @@ You can start a new discussion topic on the <a href="https://forum.access-hive.o
 
 <i class="fa-regular fa-square-plus nri-link-color with-padding"></i> <a href="https://forum.access-hive.org.au/docs?topic=790" class="checklist-item bold"> Create a new topic for your request </a>
 
-&emsp; <i class="fa-regular fa-lightbulb nri-orange-color with-padding"></i> <a href="https://forum.access-hive.org.au/docs?topic=790" class="checklist-item small-txt"> How to write a good help request? </a>
+&emsp; <i class="fa-regular fa-lightbulb nri-orange-color with-padding"></i> <a href="https://forum.access-hive.org.au/docs?topic=790" class="checklist-item small-text"> How to write a good help request? </a>
 
 <i class="fa-solid fa-tag nri-link-color with-padding fa-sm"></i> <a href="https://forum.access-hive.org.au/docs?topic=846" class="checklist-item bold"> Tag the request with the label `help` </a>
 
