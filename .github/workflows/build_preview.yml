@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   build-preview:
-    if: github.event.action != "closed"
+    if: ${{ github.event.action != 'closed' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -12,7 +12,7 @@ https://access-hive.org.au/
 
 If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
-# How to Contribute [Draft TEST]
+# How to Contribute [Draft]
 
 - Pull the latest version of `development` branch locally by using the following commands:
 
