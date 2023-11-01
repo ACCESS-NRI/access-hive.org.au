@@ -57,12 +57,14 @@ jobs:
         uses: actions/github-script@v3.1.0
         with:
           script: |
+            console.log(${{ github.event }});
+            console.log(${{ github.event.workflow_run }});
+            console.log(${{ github.event.workflow_run.id }});
             var artifacts = await github.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
                repo: context.repo.repo,
                run_id: ${{ github.run_id }},
             });
-            console.log('artifacts=',artifacts);
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "pr_site"
             })[0];
