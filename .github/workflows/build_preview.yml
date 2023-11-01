@@ -57,8 +57,30 @@ jobs:
         uses: actions/github-script@v3.1.0
         with:
           script: |
-            console.log('run_id=',${{ github.event.workflow_run.id }});
-          debug: true
+            var artifacts = await github.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: ${{ github.run_id }},
+            });
+            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr_site"
+            })[0];
+            var download = await github.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/pr_site.zip', Buffer.from(download.data));
+      - run: unzip pr_site.zip
+
+      - name: Deploy preview
+        uses: access-nri/pr-preview-action@v2.1.1
+        with:
+          source-dir: site
+          action: deploy
+          pr-number: ${{ github.event.number }}
 
   close-preview:
     if: ${{ github.event.action == 'closed' }}
