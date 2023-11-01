@@ -62,6 +62,7 @@ jobs:
                repo: context.repo.repo,
                run_id: ${{ github.run_id }},
             });
+            console.log('artifacts=',artifacts);
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "pr_site"
             })[0];
