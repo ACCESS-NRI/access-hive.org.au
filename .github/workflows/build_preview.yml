@@ -8,6 +8,9 @@ on:
       - synchronize
       - closed
 
+permissions:
+  actions: read
+  
 concurrency: 
   group: preview-${{ github.ref }}
   cancel-in-progress: true
