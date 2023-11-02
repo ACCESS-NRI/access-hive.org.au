@@ -43,7 +43,7 @@ To load the the `esmvaltool` module, execute the following commands:
 ```
 
 ESMValTool is pre-configured to access CMIP and observation datasets available on Gadi.
-By default, ESMValTool look for the `config_user.yml` file in the home directory, inside the `.esmvaltool` folder.
+By default, ESMValTool looks for the `config_user.yml` file in the home directory, inside the `.esmvaltool` folder.
 You can get a copy by running:
 
 ```
