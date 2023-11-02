@@ -35,20 +35,34 @@ To run <i>ESMValTool</i> recipes, you need to be a member of the following NCI p
 
 ### Running ESMValTool recipes
  <!-- #### Load the `access-med` conda environment -->
-To load the the `access-med` conda environment, execute the following commands:
+
+To load the the `esmvaltool` module, execute the following commands:
 ```
     module use /g/data/xp65/public/modules
-    module load conda/access-med
+    module load esmvaltool
+```
+
+ESMValTool is pre-configured to access CMIP and observation datasets available on Gadi.
+By default, ESMValTool look for the `config_user.yml` file in the home directory, inside the `.esmvaltool` folder.
+You can get a copy by running:
+
+```
+esmvaltool config get_config_user --path=dest
 ```
 
 To list which <i>ESMValTool</i> recipes are available on <i>Gadi</i>, run:
 ```
-    esmvaltool recipes list
+esmvaltool recipes list
 ```
 
 To find out details of a specific `recipe_name.yml`, execute:
 ```
 esmvaltool recipes show recipe_name.yml
+```
+
+To retrieve a recipe (and modify it), execute:
+```
+esmvaltool recipes get recipe_name.yml
 ```
 
 To execute `recipe_name.yml` and automatically download the required climate data to the default directory, run:
