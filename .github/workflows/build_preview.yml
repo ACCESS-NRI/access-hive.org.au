@@ -60,15 +60,11 @@ jobs:
         with:
           name: pr_preview
           path: pr_preview
-      
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: pr_preview
 
       - name: Deploy preview
         uses: access-nri/pr-preview-action@v2.1.1
         with:
-          source-dir: pr_preview/preview
+          source-dir: pr_preview
           action: deploy
           pr-number: ${{ github.event.number }}
 
