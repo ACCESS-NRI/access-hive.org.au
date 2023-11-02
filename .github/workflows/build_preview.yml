@@ -8,8 +8,8 @@ on:
       - synchronize
       - closed
 
-permissions:
-  actions: read
+# permissions:
+#   actions: read
 
 concurrency: 
   group: preview-${{ github.ref }}
