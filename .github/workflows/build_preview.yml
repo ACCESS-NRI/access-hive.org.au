@@ -1,4 +1,4 @@
-name: Build PR preview
+name: PR preview
 
 on:
   pull_request:
@@ -13,83 +13,41 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-preview:
-    if: github.event.action != "closed"
+  build-and-deploy-preview:
+    if: ${{ github.event.action != 'closed' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Python setup
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Build
-        # builds to "site" directory by default
-        run: |
-          mkdocs build -f mkdocs.yml -d site
+      - name: Build preview website
+        run: mkdocs build -f mkdocs.yml -d pr_preview-${{ github.ref }}
       
-      - name: Save built site
-        run: |
-          mkdir -p ./pr_site
-          mv site ./pr_site/.
-      
-      - uses: actions/upload-artifact@v3
-        with:
-          name: pr_site
-          path: pr_site/
-    
-  deploy-preview:
-    needs: build-preview
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-
-      - name: "Download built site"
-        uses: actions/github-script@v3.1.0
-        with:
-          script: |
-            var artifacts = await github.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: ${{github.event.workflow_run.id }},
-            });
-            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "pr_site"
-            })[0];
-            var download = await github.actions.downloadArtifact({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               artifact_id: matchArtifact.id,
-               archive_format: 'zip',
-            });
-            var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/pr_site.zip', Buffer.from(download.data));
-      - run: unzip pr_site.zip
-
       - name: Deploy preview
         uses: access-nri/pr-preview-action@v2.1.1
         with:
-          source-dir: site
+          source-dir: pr_preview-${{ github.ref }}
           action: deploy
           pr-number: ${{ github.event.number }}
 
   close-preview:
-    if: github.event.action == 'closed'
+    if: ${{ github.event.action == 'closed' }}
     runs-on: ubuntu-latest
     steps:
 
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      
+      - name: Python setup
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
@@ -98,4 +56,3 @@ jobs:
         with:
           action: remove
           pr-number: ${{ github.event.number }}
-          
