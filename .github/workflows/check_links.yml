@@ -22,7 +22,8 @@ jobs:
         use-quiet-mode: 'no'
         use-verbose-mode: 'yes'
         base-branch: 'main'
-  full-markdown-link-check:
+  
+  scheduled-markdown-link-check:
     if: ${{ github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
     steps:
