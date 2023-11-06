@@ -42,17 +42,37 @@ jobs:
     if: ${{ github.event.action == 'closed' }}
     runs-on: ubuntu-latest
     steps:
+      - name: TEST1
+        shell: bash
+        run: |
+          echo "TEST before checkout"
+          echo "Home folder:"
+          ls ~
+          echo "PR-PREVIEW folder:"
+          ls pr-preview
 
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: gh-pages
       
-      - name: Python setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
+      - name: Remove pr-preview
+        shell: bash
+        run: |
+          echo "TEST after checkout"
+          echo "Home folder:"
+          ls ~
+          echo "PR-PREVIEW folder:"
+          ls pr-preview
 
-      - name: Clean preview
-        uses: access-nri/pr-preview-action@v2.1.1
-        with:
-          action: remove
-          pr-number: ${{ github.event.number }}
+
+      # - name: Python setup
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: 3.x
+
+      # - name: Clean preview
+      #   uses: access-nri/pr-preview-action@v2.1.1
+      #   with:
+      #     action: remove
+      #     pr-number: ${{ github.event.number }}
