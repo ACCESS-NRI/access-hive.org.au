@@ -50,11 +50,13 @@ jobs:
       - name: Remove pr-preview
         shell: bash
         run: |
-          echo "TEST after checkout"
-          echo "Home folder:"
-          ls ~
-          echo "PR-PREVIEW folder:"
-          ls pr-preview
+          folder=pr-preview/pr-${{ github.event.number }}
+          if [ -z $folder ]
+          then
+            echo "$folder not found!"
+            exit 1
+          fi
+          ls $folder
 
 
       # - name: Python setup
