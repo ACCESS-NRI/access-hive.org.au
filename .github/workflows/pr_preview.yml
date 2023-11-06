@@ -42,15 +42,6 @@ jobs:
     if: ${{ github.event.action == 'closed' }}
     runs-on: ubuntu-latest
     steps:
-      - name: TEST1
-        shell: bash
-        run: |
-          echo "TEST before checkout"
-          echo "Home folder:"
-          ls ~
-          echo "PR-PREVIEW folder:"
-          ls pr-preview
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
