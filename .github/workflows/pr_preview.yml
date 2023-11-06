@@ -56,7 +56,7 @@ jobs:
             echo "$folder not found!"
             exit 1
           fi
-          ls $folder
+          rm -rf $folder
 
 
       # - name: Python setup
