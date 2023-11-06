@@ -3,9 +3,9 @@ name: PR preview
 on:
   pull_request:
     types:
-      - opened
-      - reopened
-      - synchronize
+      # - opened
+      # - reopened
+      # - synchronize
       - closed
 
 concurrency: 
