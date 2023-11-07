@@ -216,7 +216,6 @@ function main() {
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
-  removeIconsFromHomepage();
   addExternalLinkIcon();
   fitText();
   toggleTerminalAnimations();

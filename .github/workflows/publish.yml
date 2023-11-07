@@ -1,4 +1,4 @@
-name: Deploy ACCESS-Hive
+name: Publish main website
 on:
   push:
     branches: 
