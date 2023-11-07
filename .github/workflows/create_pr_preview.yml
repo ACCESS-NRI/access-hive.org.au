@@ -60,7 +60,7 @@ jobs:
             on branch [gh-pages]\
             (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages)
             
-            $DATE
+            ${{ env.DATE }}
             "
 
       # - name: Deploy preview
