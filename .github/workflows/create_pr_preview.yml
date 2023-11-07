@@ -27,15 +27,15 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build preview website
-        run: mkdocs build -f mkdocs.yml -d pr_preview-${{ github.ref }}
+        run: mkdocs build -f mkdocs.yml -d pr_preview
       
       - name: Add preview on gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: pr_preview-${{ github.ref }}
-          target-folder: pr_preview/pr-${{ github.ref }}
-          commit-message: Deploy preview for PR ${{ github.ref }} 🛫
+          folder: pr_preview
+          target-folder: pr_preview/pr-${{ github.event.number }}
+          commit-message: Deploy preview for PR ${{ github.event.number }} 🛫
           force: false
       
       # - name: Deploy to Github pages
@@ -61,10 +61,3 @@ jobs:
             (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages) \
             - ${{ env.DATE }}
             "
-
-      # - name: Deploy preview
-      #   uses: access-nri/pr-preview-action@v2.1.1
-      #   with:
-      #     source-dir: pr_preview-${{ github.ref }}
-      #     action: deploy
-      #     pr-number: ${{ github.event.number }}
