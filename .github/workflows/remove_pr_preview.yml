@@ -57,5 +57,5 @@ jobs:
 
             🛬 Preview removed because the pull request was closed.
 
-            $DATE
+            ${{ env.DATE }}
             "
