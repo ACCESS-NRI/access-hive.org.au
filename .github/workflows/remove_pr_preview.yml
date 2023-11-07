@@ -9,6 +9,11 @@ concurrency:
   group: preview-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  PR: ${{ github.event.number }}
+  TARGET_FOLDER: pr_preview/pr-${{ github.event.number }}
+  TARGET_BRANCH: gh-pages
+
 jobs:
   close-preview:
     runs-on: ubuntu-latest
@@ -16,19 +21,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: gh-pages
+          ref: ${{ env.TARGET_BRANCH }}
       
       - name: Remove pr-preview
         shell: bash
         run: |
-          folder=pr-preview/pr-${{ github.event.number }}
-          if [ ! -d $folder ]
+          if [ ! -d ${{ env.TARGET_FOLDER }} ]
           then
             echo "Nothing to remove!"
             exit 0
           fi
-          rm -rf $folder
-          echo "Deleted $folder folder."
+          rm -rf ${{ env.TARGET_FOLDER }}
+          echo "Removed pr preview for pr-${{ env.PR }}."
       
       - name: Commit to gh-pages
         shell: bash
@@ -36,8 +40,8 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
-          git commit -m "Deleted 'pr-preview/pr-${{ github.event.number }}' folder."
-          git push origin gh-pages
+          git commit -m "Deleted '${{ env.TARGET_FOLDER }}' folder."
+          git push origin ${{ env.TARGET_BRANCH }}
       
       # - name: Deploy to Github-pages
 

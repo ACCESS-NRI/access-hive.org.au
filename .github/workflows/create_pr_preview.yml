@@ -11,6 +11,11 @@ concurrency:
   group: preview-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  PR: ${{ github.event.number }}
+  TARGET_FOLDER: pr_preview/pr-${{ github.event.number }}
+  TARGET_BRANCH: gh-pages
+
 jobs:
   build-and-deploy-preview:
     runs-on: ubuntu-latest
@@ -32,10 +37,10 @@ jobs:
       - name: Add preview on gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          branch: ${{ env.TARGET_BRANCH }}
           folder: pr_preview
-          target-folder: pr_preview/pr-${{ github.event.number }}
-          commit-message: Deploy preview for PR ${{ github.event.number }} 🛫
+          target-folder: ${{ env.TARGET_FOLDER }}
+          commit-message: Deploy preview for PR ${{ env.PR }} 🛫
           force: false
       
       # - name: Deploy to Github pages
@@ -48,16 +53,16 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: pr-preview
-          number: ${{ github.event.number }}
+          number: ${{ env.PR }}
           message: "\
             PR Preview
             
             :---:
 
             🛫 Deployed preview to
-            https://access-hive.org.au/pr_preview/pr-${{ github.event.number }}
+            https://access-hive.org.au/pr_preview/pr-${{ env.PR }}
   
-            on branch [gh-pages]\
-            (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages) \
+            on branch [${{ env.TARGET_BRANCH }}]\
+            (${{ github.server_url }}/${{ github.repository }}/tree/${{ env.TARGET_BRANCH }}) \
             - ${{ env.DATE }}
             "
