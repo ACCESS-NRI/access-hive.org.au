@@ -53,9 +53,9 @@ jobs:
             PR Preview
             
             :---:
-              https://
+
             🛫 Deployed preview to
-            https://access-hive.org.au/pr_preview/pr-${{ github.ref }}
+            https://access-hive.org.au/pr_preview/pr-${{ github.event.number }}
   
             on branch [gh-pages]\
             (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages)
