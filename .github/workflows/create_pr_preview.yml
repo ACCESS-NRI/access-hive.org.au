@@ -8,7 +8,7 @@ on:
       - synchronize
 
 concurrency: 
-  group: preview-${{ github.ref }}
+  group: preview-${{ github.event.number }}
   cancel-in-progress: true
 
 env:
@@ -32,13 +32,13 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build preview website
-        run: mkdocs build -f mkdocs.yml -d pr_preview
+        run: mkdocs build -f mkdocs.yml -d website
       
       - name: Add preview on gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: ${{ env.TARGET_BRANCH }}
-          folder: pr_preview
+          folder: website
           target-folder: ${{ env.TARGET_FOLDER }}
           commit-message: Deploy preview for PR ${{ env.PR }} 🛫
           force: false

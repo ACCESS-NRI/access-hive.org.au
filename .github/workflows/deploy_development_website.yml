@@ -1,0 +1,45 @@
+name: Deploy development website
+
+on:
+  push:
+    branches: 
+      - development
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+concurrency: 
+  group: deploy-development
+  cancel-in-progress: true
+
+env:
+  TARGET_FOLDER: development_website
+  TARGET_BRANCH: gh-pages
+
+jobs:
+  build-and-deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build preview website
+        run: mkdocs build -f mkdocs.yml -d website
+      
+      - name: Add preview on gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: ${{ env.TARGET_BRANCH }}
+          folder: website
+          target-folder: ${{ env.TARGET_FOLDER }}
+          commit-message: Deploy development website. 🛫
+          force: false
+      
+      # - name: Deploy to Github pages

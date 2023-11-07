@@ -12,8 +12,11 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: publish-website
   cancel-in-progress: false
+
+env:
+  TARGET_BRANCH: gh-pages
 
 jobs:
   build-and-deploy:
@@ -36,8 +39,10 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: website
-          branch: gh-pages # default
-          clean-exclude: pr-preview/ # don't overwrite previews
+          branch: ${{ env.TARGET_BRANCH }}
+          clean-exclude: |
+            pr-preview/
+            development_website/
   
   # deploy:
   #   needs: build
