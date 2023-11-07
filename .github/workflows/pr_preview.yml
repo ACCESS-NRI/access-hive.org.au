@@ -51,12 +51,13 @@ jobs:
         shell: bash
         run: |
           folder=pr-preview/pr-${{ github.event.number }}
-          if [ -z $folder ]
+          if [ ! -d $folder ]
           then
             echo "Nothing to remove!"
             exit 0
           fi
           rm -rf $folder
+          echo "Deleted $folder folder."
       
       - name: Commit to gh-pages
         shell: bash
@@ -66,14 +67,3 @@ jobs:
           git add .
           git commit -m "Remove 'pr-preview/pr-${{ github.event.number }}' folder."
           git push origin gh-pages
-    
-      # - name: Python setup
-      #   uses: actions/setup-python@v4
-      #   with:
-      #     python-version: 3.x
-
-      # - name: Clean preview
-      #   uses: access-nri/pr-preview-action@v2.1.1
-      #   with:
-      #     action: remove
-      #     pr-number: ${{ github.event.number }}
