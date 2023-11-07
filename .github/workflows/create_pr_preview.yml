@@ -41,7 +41,7 @@ jobs:
       # - name: Deploy to Github pages
       
       - name: Get date
-        run: echo "DATE=$(date +'%Y-%m-%dT%H:%M')" >> $GITHUB_ENV
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
       - name: Leave a comment after deployment
         # if: env.deployment_status == 'success'
@@ -58,7 +58,7 @@ jobs:
             https://access-hive.org.au/pr_preview/pr-${{ github.event.number }}
   
             on branch [gh-pages]\
-            (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages)\
+            (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages) \
             - ${{ env.DATE }}
             "
 
