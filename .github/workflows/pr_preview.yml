@@ -53,8 +53,8 @@ jobs:
           folder=pr-preview/pr-${{ github.event.number }}
           if [ -z $folder ]
           then
-            echo "$folder not found!"
-            exit 1
+            echo "Nothing to remove!"
+            exit 0
           fi
           rm -rf $folder
       
