@@ -58,9 +58,8 @@ jobs:
             https://access-hive.org.au/pr_preview/pr-${{ github.event.number }}
   
             on branch [gh-pages]\
-            (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages)
-            
-            ${{ env.DATE }}
+            (${{ github.server_url }}/${{ github.repository }}/tree/gh-pages)\
+            - ${{ env.DATE }}
             "
 
       # - name: Deploy preview
