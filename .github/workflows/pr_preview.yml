@@ -61,6 +61,8 @@ jobs:
       - name: Commit to gh-pages
         shell: bash
         run: |
+          git config user.email "${{ github.action.email }}"
+          git config user.name "${{ github.action.name }}"
           git commit -m "Remove 'pr-preview/pr-${{ github.event.number }}' folder."
           git push origin gh-pages
     
