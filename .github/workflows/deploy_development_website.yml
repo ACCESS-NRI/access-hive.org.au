@@ -16,7 +16,7 @@ env:
   TARGET_BRANCH: gh-pages
 
 jobs:
-  build-and-deploy-preview:
+  build-and-deploy-development-website:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
