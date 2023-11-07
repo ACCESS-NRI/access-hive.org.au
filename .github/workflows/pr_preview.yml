@@ -65,5 +65,5 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
-          git commit -m "Remove 'pr-preview/pr-${{ github.event.number }}' folder."
+          git commit -m "Deleted 'pr-preview/pr-${{ github.event.number }}' folder."
           git push origin gh-pages
