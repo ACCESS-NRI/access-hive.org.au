@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  TARGET_FOLDER: development_website
+  TARGET_FOLDER: development-website
   TARGET_BRANCH: gh-pages
 
 jobs:
