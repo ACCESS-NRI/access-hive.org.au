@@ -42,4 +42,10 @@ jobs:
           commit-message: Deploy development website. 🛫
           force: false
       
-      # - name: Deploy to Github pages
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: website
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2

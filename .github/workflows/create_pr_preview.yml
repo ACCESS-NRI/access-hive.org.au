@@ -17,7 +17,7 @@ env:
   TARGET_BRANCH: gh-pages
 
 jobs:
-  build-and-deploy-preview:
+  build-and-deploy-pr-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,7 +43,13 @@ jobs:
           commit-message: Deploy preview for PR ${{ env.PR }} 🛫
           force: false
       
-      # - name: Deploy to Github pages
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: website
+  
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
       
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV

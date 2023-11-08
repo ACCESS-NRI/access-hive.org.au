@@ -43,7 +43,13 @@ jobs:
           git commit -m "Deleted '${{ env.TARGET_FOLDER }}' folder."
           git push origin ${{ env.TARGET_BRANCH }}
       
-      # - name: Deploy to Github-pages
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+  
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
 
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
@@ -53,7 +59,7 @@ jobs:
         with:
           header: pr-preview
           number: ${{ github.event.number }}
-          message: "\
+          message: |
             PR Preview
 
             :---:
@@ -61,4 +67,4 @@ jobs:
             🛬 Preview removed because the pull request was closed.
 
             ${{ env.DATE }}
-            "
+            
