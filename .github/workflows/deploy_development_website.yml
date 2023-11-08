@@ -38,7 +38,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # token: ${{ secrets.ADMIN_TOKEN }}
-          token: ${{ secrets.ACCESS_BOT_PAT }}
+          token: ${{ secrets.ACCESS_PAT }}
           branch: ${{ env.TARGET_BRANCH }}
           folder: website
           target-folder: ${{ env.TARGET_FOLDER }}
