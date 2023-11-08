@@ -41,5 +41,3 @@ jobs:
           target-folder: ${{ env.TARGET_FOLDER }}
           commit-message: Deploy development website. 🛫
           force: false
-      
-      # - name: Deploy to Github pages

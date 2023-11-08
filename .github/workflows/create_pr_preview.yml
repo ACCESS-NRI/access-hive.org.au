@@ -43,8 +43,6 @@ jobs:
           commit-message: Deploy preview for PR ${{ env.PR }} 🛫
           force: false
       
-      # - name: Deploy to Github pages
-      
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 

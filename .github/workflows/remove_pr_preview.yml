@@ -43,8 +43,6 @@ jobs:
           git commit -m "Deleted '${{ env.TARGET_FOLDER }}' folder."
           git push origin ${{ env.TARGET_BRANCH }}
       
-      # - name: Deploy to Github-pages
-
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
