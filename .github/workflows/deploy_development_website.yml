@@ -18,6 +18,7 @@ env:
 jobs:
   build-and-deploy-development-website:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -36,7 +37,8 @@ jobs:
       - name: Add preview on gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.ADMIN_TOKEN }}
+          # token: ${{ secrets.ADMIN_TOKEN }}
+          token: ${{ secrets.ACCESS_BOT_PAT }}
           branch: ${{ env.TARGET_BRANCH }}
           folder: website
           target-folder: ${{ env.TARGET_FOLDER }}
