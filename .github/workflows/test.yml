@@ -20,3 +20,4 @@ jobs:
         shell: bash
         run: |
           ls
+          ls ../
