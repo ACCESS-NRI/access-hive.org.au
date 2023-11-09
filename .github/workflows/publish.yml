@@ -1,8 +1,8 @@
-name: Publish main website
+name: Test
 on:
   push:
     branches: 
-      - main
+      - test
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -15,24 +15,46 @@ concurrency:
   group: publish-website
   cancel-in-progress: false
 
-env:
-  TARGET_BRANCH: gh-pages
-
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v2
+        with:
+          ref: main
+      
+      - name: Create temp branch for full deployment # main, development and PRs
+        shell: bash
+        run: |
+          curl -H 'Authorization: token ${{ secrets.ADMIN_TOKEN }}'
+          tmp_branch=tmp_${RANDOM}
+          git checkout -b $tmp_branch
+          while [ $? != 0 ]; do
+            ((i++))
+            if [ i -gt 5 ]; then
+              echo "Failed to create temp branch."
+              exit 1
+            fi
+            tmp_branch=tmp_${RANDOM}
+            git checkout -b $tmp_branch
+          done
+          mkdir -p pr-preview
+          mkdir -p development_website
+          
+          cp -r . pr-preview
+          cd pr-preview
+          git checkout -b pr-preview
+          git push -u origin pr-preview
+      
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
       - name: Install dependencies
         run:  pip install -r requirements.txt
-      - name: Build
+      
+      - name: Build mkdocs website
         run: mkdocs build -f mkdocs.yml -d website
           
       - name: Deploy to gh-pages

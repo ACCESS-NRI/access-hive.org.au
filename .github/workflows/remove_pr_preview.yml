@@ -1,9 +1,10 @@
 name: Remove PR preview
 
 on:
-  pull_request:
-    types:
-      - closed
+  # pull_request:
+  #   types:
+  #     - closed
+  workflow_dispatch:
 
 concurrency: 
   group: preview-${{ github.ref }}
