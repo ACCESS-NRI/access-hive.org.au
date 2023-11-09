@@ -14,7 +14,9 @@ jobs:
       - name: Test # main, development and PRs
         shell: bash
         run: |
-          curl -H 'Authorization: token ${{ secrets.ADMIN_TOKEN }}'
+          git config user.name ${{ secrets.ADMIN_TOKEN }}
+          git config user.email ${{ secrets.ADMIN_TOKEN }}@users.noreply.github.com
+          # curl -H 'Authorization: token ${{ secrets.ADMIN_TOKEN }}'
           git checkout main
           ls -al
           echo "bubbi"
