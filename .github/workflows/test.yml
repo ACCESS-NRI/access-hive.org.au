@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    branches: 
+      - test
+
+permissions: 
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+      
+      - name: Create temp branch for full deployment # main, development and PRs
+        shell: bash
+        run: |
+          ls
