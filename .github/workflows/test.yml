@@ -16,8 +16,11 @@ jobs:
         with:
           ref: main
       
-      - name: Create temp branch for full deployment # main, development and PRs
+      - name: Test # main, development and PRs
         shell: bash
         run: |
-          ls
-          ls ../
+          curl -H 'Authorization: token ${{ secrets.ADMIN_TOKEN }}'
+          git checkout main
+          ls -al
+          echo "bubbi"
+          ls -al ../
