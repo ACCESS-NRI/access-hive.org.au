@@ -11,13 +11,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          token: ${{ secrets.ADMIN_TOKEN }}
+
       - name: Test # main, development and PRs
         shell: bash
         run: |
-          git config user.name ${{ secrets.ADMIN_TOKEN }}
-          git config user.email ${{ secrets.ADMIN_TOKEN }}@users.noreply.github.com
-          # curl -H 'Authorization: token ${{ secrets.ADMIN_TOKEN }}'
-          git checkout main
           ls -al
           echo "bubbi"
           ls -al ../
