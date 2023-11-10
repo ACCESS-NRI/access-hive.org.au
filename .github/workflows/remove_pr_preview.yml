@@ -1,9 +1,9 @@
 name: Remove PR preview
 
-on:
-  pull_request:
-    types:
-      - closed
+# on:
+#   pull_request:
+#     types:
+#       - closed
 
 concurrency: 
   group: preview-${{ github.ref }}

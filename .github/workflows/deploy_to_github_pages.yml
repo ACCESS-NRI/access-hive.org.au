@@ -1,0 +1,158 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: 
+      - main
+      - development
+  pull_request:
+    types: 
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+jobs:
+  pr-preview-setup:
+    if: ${{github.event_name == 'pull_request'}}
+    concurrency:
+      group: pr-${{github.event.number}}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup pr-preview
+        if: ${{github.event.action != 'closed'}}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          number: ${{github.event.number}}
+          message: "\
+            PR Preview
+
+            :---:
+
+            🛫 Deployment still ongoing.
+            Preview URL will be available at the end of the deployment.
+            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+            "
+  
+  build:
+    concurrency:
+      group: github-pages-deploy
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+      
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+          
+      - name: Build full website # main, development and PRs
+        shell: bash
+        run: |
+          retry() {
+            command="$1"
+            n_tries="$2"
+            wait="$3"
+            exit_msg="$4"
+            eval "$command"
+            until [ $? == 0 ]; do
+              if [ $i -eq $((n_tries - 1)) ]; then
+                echo "$exit_msg"
+                exit 1
+              else
+                ((i++))
+              fi
+              sleep $wait
+              eval "$command"
+            done
+          }
+          
+          git fetch --all
+          echo "Build main website"
+          retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
+          echo "Build development website"
+          retry 'git checkout development' 5 1 "Failed to checkout development branch."
+          retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
+          echo "Build PR websites"
+          command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\") | \"\(.number),\(.head.sha)\"')"
+          retry "$command" 5 1 "Failed to fetch opened PRs."
+          for pr in $pr_list; do
+            n=$(cut -d',' -f1 <<< $pr | tr -d '"')
+            sha=$(cut -d',' -f2 <<< $pr | tr -d '"')
+            retry "git checkout $sha" 5 1 "Failed to checkout git hash $sha."
+            retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-$n" 5 1 "Failed to build pr-$n website."
+          done
+          echo "Giving the right file permissions"
+          chmod -c -R +rX ../website
+      
+      - name: Create artifact for deployment to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ../website
+  
+  deploy:
+    needs: build
+    concurrency:
+      group: github-pages-deploy
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+    
+  pr-preview:
+    needs: deploy
+    if: ${{github.event_name == 'pull_request'}}
+    concurrency:
+      group: pr-${{github.event.number}}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Set pr-preview URL
+        if: ${{github.event.action != 'closed'}}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          number: ${{ github.event.number }}
+          message: "\
+            PR Preview
+              
+            :---:
+
+            🚀 Deployed preview to
+            https://access-hive.org.au/pr-preview/pr-${{github.event.number}}
+            
+            ${{ env.DATE }}
+            "
+      
+      - name: Remove pr-preview URL
+        if: ${{github.event.action == 'closed'}}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          number: ${{ github.event.number }}
+          message: "\
+            PR Preview
+
+            :---:
+
+            🛬 Preview removed because the pull request was closed.
+
+            ${{ env.DATE }}
+            "
