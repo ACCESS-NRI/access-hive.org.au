@@ -13,7 +13,7 @@ on:
 
 jobs:
   pr-preview-setup:
-    if: ${{github.event_name == 'pull_request'}}
+    if: ${{github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development'}}
     concurrency:
       group: pr-${{github.event.number}}
       cancel-in-progress: true
@@ -30,8 +30,9 @@ jobs:
 
             :---:
 
-            🛫 Deployment still ongoing.
+            🛫 Deployment still ongoing.<br>
             Preview URL will be available at the end of the deployment.
+            
             For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
             "
   
