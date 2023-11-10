@@ -1,9 +1,10 @@
 name: Test
 on:
-  push:
-    branches: 
-      - test
-
+  # push:
+  #   branches: 
+  #     - test
+  workflow_dispatch:
+    
 permissions: 
   contents: write
 

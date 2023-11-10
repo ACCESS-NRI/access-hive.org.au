@@ -19,24 +19,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create temp branch for full deployment # main, development and PRs
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          token: ${{ secrets.ADMIN_TOKEN }}
+
+      - name: Create artifact for full deployment # main, development and PRs
         shell: bash
         run: |
+          retry() {
+            $1
+            while [ $? != 0 ]; do
+              if [ i -gt 5 ]; then
+                echo "Failed to fetch opened PRs."
+                exit 1
+              else
+                ((i++))
+              fi
+              pr_list=$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened \
+              | jq '.[] | .head | select(.label!="ACCESS-Hive:development") | "\(.number),\(.head.sha)"'
+            done
+            command, max_attempts=5, wait=5, error
+          }
+          mkdir ../website
+          rsync -av --exclude=".*" . website
           curl -H 'Authorization: token ${{ secrets.ADMIN_TOKEN }}'
-          tmp_branch=tmp_${RANDOM}
-          git branch $tmp_branch
-          while [ $? != 0 ]; do
-            if [ i -gt 5 ]; then
-              echo "Failed to create temp branch."
-              exit 1
-            else
-              ((i++))
-            fi
-            tmp_branch=tmp_${RANDOM}
-            git branch $tmp_branch
-          done
+          git checkout development
+          rsync -av --exclude=".*" . website/development_website
           pr_list=$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened \
-          | jq '.[] | .head | select(.label!="ACCESS-Hive:development").sha')
+            | jq '.[] | .head | select(.label!="ACCESS-Hive:development") | "\(.number),\(.head.sha)"'
           while [ $? != 0 ]; do
             if [ i -gt 5 ]; then
               echo "Failed to fetch opened PRs."
@@ -45,7 +57,11 @@ jobs:
               ((i++))
             fi
             pr_list=$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened \
-            | jq '.[] | .head | select(.label!="ACCESS-Hive:development").sha')
+            | jq '.[] | .head | select(.label!="ACCESS-Hive:development") | "\(.number),\(.head.sha)"'
+          done
+          for i in $pr_list; do
+            git checkout $i
+            rsync -av --exclude=".*" . website/pr-preview/$i
           done
           mkdir -p pr-preview
           cp -r . pr-preview
