@@ -1,6 +1,5 @@
 #!/bin/bash
 #
-# !! CAUTION WHEN YOU USE THIS SCRIPT !! 
 # This script deletes all artifacts from the repo using Github CLI.
 # This will NOT break the deployment of ACCESS-Hive (https://access-hive.org.au/)
 
