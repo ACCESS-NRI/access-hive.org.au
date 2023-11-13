@@ -135,7 +135,6 @@ jobs:
   
   pr-preview:
     needs: [build,deploy]
-    if: ${{github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development'}}
     concurrency:
       group: pr-preview
       cancel-in-progress: true
