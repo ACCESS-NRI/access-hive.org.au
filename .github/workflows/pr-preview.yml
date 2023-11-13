@@ -19,7 +19,9 @@ jobs:
         pr_nums: ${{fromJson(inputs.pr_nums)}}
     steps:
       - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+        run: |
+          echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+          echo ${{ github.event.number }}
 
       - name: Set pr-preview URL
         if: ${{github.event.action != 'closed'}}
