@@ -63,6 +63,11 @@ jobs:
     outputs:
       pr_nums: ${{ steps.build.outputs.pr_nums }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+            ref: main
+
       - name: Build full website # main, development and PRs
         id: build
         shell: bash
