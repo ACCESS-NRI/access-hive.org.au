@@ -23,6 +23,7 @@ jobs:
         if: ${{ github.event.action != 'closed' }}
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          only_create: true
           header: pr-preview
           number: ${{ github.event.number }}
           message: "\
