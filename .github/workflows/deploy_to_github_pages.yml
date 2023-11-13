@@ -108,7 +108,7 @@ jobs:
           retry "$command" 5 1 "Failed to fetch opened PRs."
           pr_nums=($(jq '.number' <<< $pr_list))
           pr_sha=($(jq '.head.sha' <<< $pr_list))
-          echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUTS"
+          echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
           for i in ${!pr_nums[@]}; do
             retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash ${pr_sha[i]}."
             retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
