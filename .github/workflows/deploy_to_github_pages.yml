@@ -1,8 +1,11 @@
 name: Deploy to GitHub Pages
 on:
-  push:
-    branches: 
-      - workflows
+  pull_request:
+    types: 
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
 jobs:
   pr-preview-setup:
