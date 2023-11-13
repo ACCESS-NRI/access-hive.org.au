@@ -135,9 +135,6 @@ jobs:
   
   pr-preview:
     needs: [build,deploy]
-    concurrency:
-      group: pr-preview
-      cancel-in-progress: true
     runs-on: ubuntu-latest
     strategy:
       matrix:
