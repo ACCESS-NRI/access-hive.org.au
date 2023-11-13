@@ -14,9 +14,6 @@ on:
 jobs:
   pr-preview-setup:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
-    concurrency:
-      group: pr-${{ github.event.number }}
-      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: Setup pr-preview
