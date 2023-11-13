@@ -1,15 +1,15 @@
 name: Deploy to GitHub Pages
 on:
-  # push:
-  #   branches:
-  #     - main
-  #     - development
-  # pull_request:
-  #   types: 
-  #     - opened
-  #     - reopened
-  #     - synchronize
-  #     - closed
+  push:
+    branches:
+      - main
+      - development
+  pull_request:
+    types: 
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
 jobs:
   pr-preview-setup:
@@ -138,31 +138,4 @@ jobs:
     needs: [build,deploy]
     uses: ./.github/workflows/pr-preview.yml
     with:
-      pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
-
-  # pr-preview:
-  #   needs: [build,deploy]
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
-  #   steps:
-  #     - name: Get date
-  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
-
-  #     - name: Set pr-preview URL
-  #       if: ${{github.event.action != 'closed'}}
-  #       uses: marocchino/sticky-pull-request-comment@v2
-  #       with:
-  #         header: pr-preview
-  #         number: ${{ matrix.pr_nums }}
-  #         message: "\
-  #           PR Preview
-              
-  #           :---:
-
-  #           🚀 Deployed preview to
-  #           https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
-            
-  #           ${{ env.DATE }}
-  #           "
+      pr_nums: ${{ needs.build.outputs.pr_nums }}
