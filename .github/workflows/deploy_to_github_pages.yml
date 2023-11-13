@@ -9,7 +9,7 @@ on:
 
 jobs:
   pr-preview-setup:
-    if: ${{ github.event_name == 'pull_request' && github.event.action != 'synchronize' && github.event.pull_request.head.ref != 'development' }}
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
     runs-on: ubuntu-latest
     steps:
       - name: Get date
@@ -20,6 +20,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: pr-preview
+          only_create: true
           number: ${{ github.event.number }}
           message: "\
             PR Preview
