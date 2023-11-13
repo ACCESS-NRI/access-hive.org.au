@@ -1,0 +1,39 @@
+name: PR-preview
+on:
+  workflow_call:
+    inputs:
+      pr_nums:
+        description: 'List of PR numbers for the sticky preview'
+        type: string
+        required: true
+
+concurrency:
+  group: pr-preview
+  cancel-in-progress: true
+
+jobs:
+  set-pr-preview:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pr_nums: ${{fromJson(inputs.pr_nums)}}
+    steps:
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Set pr-preview URL
+        if: ${{github.event.action != 'closed'}}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          number: ${{ matrix.pr_nums }}
+          message: "\
+            PR Preview
+              
+            :---:
+
+            🚀 Deployed preview to
+            https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
+            
+            ${{ env.DATE }}
+            "

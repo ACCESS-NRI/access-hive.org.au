@@ -135,11 +135,11 @@ jobs:
         uses: actions/deploy-pages@v2
   
   pr-preview:
-    needs: [build,deploy]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
+    uses: ACCESS-Hive/access-hive.github.io/.github/workflows/pr-preview.yml@main
+    needs: deploy
+    with:
+      pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
+    
     steps:
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
@@ -160,3 +160,30 @@ jobs:
             
             ${{ env.DATE }}
             "
+
+  # pr-preview:
+  #   needs: [build,deploy]
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+  #     - name: Set pr-preview URL
+  #       if: ${{github.event.action != 'closed'}}
+  #       uses: marocchino/sticky-pull-request-comment@v2
+  #       with:
+  #         header: pr-preview
+  #         number: ${{ matrix.pr_nums }}
+  #         message: "\
+  #           PR Preview
+              
+  #           :---:
+
+  #           🚀 Deployed preview to
+  #           https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
+            
+  #           ${{ env.DATE }}
+  #           "
