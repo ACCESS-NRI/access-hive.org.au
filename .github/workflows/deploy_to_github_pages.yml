@@ -13,18 +13,18 @@ on:
 
 jobs:
   pr-preview-setup:
-    if: ${{github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development'}}
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
     concurrency:
-      group: pr-${{github.event.number}}
+      group: pr-${{ github.event.number }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: Setup pr-preview
-        if: ${{github.event.action != 'closed'}}
+        if: ${{ github.event.action != 'closed' }}
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: pr-preview
-          number: ${{github.event.number}}
+          number: ${{ github.event.number }}
           message: "\
             PR Preview
 
@@ -39,7 +39,7 @@ jobs:
   build:
     concurrency:
       group: github-pages-deploy
-      cancel-in-progress: true
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -101,9 +101,6 @@ jobs:
   
   deploy:
     needs: build
-    concurrency:
-      group: github-pages-deploy
-      cancel-in-progress: true
     runs-on: ubuntu-latest
 
     permissions:
@@ -113,7 +110,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
-    
+  
   pr-preview:
     needs: deploy
     if: ${{github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development'}}
