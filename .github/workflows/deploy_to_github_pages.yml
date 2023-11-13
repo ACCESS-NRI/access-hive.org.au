@@ -16,6 +16,9 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
       - name: Setup pr-preview
         if: ${{ github.event.action != 'closed' }}
         uses: marocchino/sticky-pull-request-comment@v2
@@ -31,13 +34,33 @@ jobs:
             Preview URL will be available at the end of the deployment.
             
             For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+
+            ${{ env.DATE }}
+            "
+
+      - name: Remove pr-preview URL
+        if: ${{github.event.action == 'closed'}}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          number: ${{ github.event.number }}
+          message: "\
+            PR Preview
+      
+            :---:
+      
+            🛬 Preview removed because the pull request was closed.
+      
+            ${{ env.DATE }}
             "
   
   build:
     concurrency:
       group: github-pages-deploy
-      cancel-in-progress: false
+      cancel-in-progress: true
     runs-on: ubuntu-latest
+    outputs:
+      pr_nums: ${{ steps.build.outputs.pr_nums }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -53,6 +76,7 @@ jobs:
         run: pip install -r requirements.txt
           
       - name: Build full website # main, development and PRs
+        id: build
         shell: bash
         run: |
           retry() {
@@ -80,13 +104,14 @@ jobs:
           retry 'git checkout development' 5 1 "Failed to checkout development branch."
           retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
           echo "Build PR websites"
-          command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\") | \"\(.number),\(.head.sha)\"')"
+          command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\")')"
           retry "$command" 5 1 "Failed to fetch opened PRs."
-          for pr in $pr_list; do
-            n=$(cut -d',' -f1 <<< $pr | tr -d '"')
-            sha=$(cut -d',' -f2 <<< $pr | tr -d '"')
-            retry "git checkout $sha" 5 1 "Failed to checkout git hash $sha."
-            retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-$n" 5 1 "Failed to build pr-$n website."
+          pr_nums=($(jq '.number' <<< $pr_list))
+          pr_sha=($(jq '.head.sha' <<< $pr_list))
+          echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUTS"
+          for i in ${!pr_nums[@]}; do
+            retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash ${pr_sha[i]}."
+            retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
           done
           echo "Giving the right file permissions"
           chmod -c -R +rX ../website
@@ -109,12 +134,15 @@ jobs:
         uses: actions/deploy-pages@v2
   
   pr-preview:
-    needs: deploy
+    needs: [build,deploy]
     if: ${{github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development'}}
     concurrency:
-      group: pr-${{github.event.number}}
+      group: pr-preview
       cancel-in-progress: true
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
     steps:
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
@@ -124,30 +152,14 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: pr-preview
-          number: ${{ github.event.number }}
+          number: ${{ matrix.pr_nums }}
           message: "\
             PR Preview
               
             :---:
 
             🚀 Deployed preview to
-            https://access-hive.org.au/pr-preview/pr-${{github.event.number}}
+            https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
             
-            ${{ env.DATE }}
-            "
-      
-      - name: Remove pr-preview URL
-        if: ${{github.event.action == 'closed'}}
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: pr-preview
-          number: ${{ github.event.number }}
-          message: "\
-            PR Preview
-
-            :---:
-
-            🛬 Preview removed because the pull request was closed.
-
             ${{ env.DATE }}
             "
