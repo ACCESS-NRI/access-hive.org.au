@@ -1,31 +1,21 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches:
-      - main
-      - development
-  pull_request:
-    types: 
-      - opened
-      - reopened
-      - synchronize
-      - closed
+    branches: 
+      - pr_test
 
 jobs:
   pr-preview-setup:
-    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
     runs-on: ubuntu-latest
     steps:
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
-      - name: Setup pr-preview
-        if: ${{ github.event.action != 'closed' }}
-        uses: marocchino/sticky-pull-request-comment@v2
+      - name: Set pr-preview URL
+        uses: thollander/actions-comment-pull-request@v2.4.3
         with:
-          only_create: true
-          header: pr-preview
-          number: ${{ github.event.number }}
+          comment_tag: pr-preview
+          pr_number: 613
           message: "\
             PR Preview
 
@@ -39,26 +29,7 @@ jobs:
             ${{ env.DATE }}
             "
 
-      - name: Remove pr-preview URL
-        if: ${{github.event.action == 'closed'}}
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: pr-preview
-          number: ${{ github.event.number }}
-          message: "\
-            PR Preview
-      
-            :---:
-      
-            🛬 Preview removed because the pull request was closed.
-      
-            ${{ env.DATE }}
-            "
-  
   build:
-    concurrency:
-      group: github-pages-deploy
-      cancel-in-progress: true
     runs-on: ubuntu-latest
     outputs:
       pr_nums: ${{ steps.build.outputs.pr_nums }}
@@ -67,15 +38,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-      
-      - name: Python setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-          
       - name: Build full website # main, development and PRs
         id: build
         shell: bash
@@ -99,43 +62,42 @@ jobs:
           }
           
           git fetch --all
-          echo "Build main website"
-          retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
-          echo "Build development website"
-          retry 'git checkout development' 5 1 "Failed to checkout development branch."
-          retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
-          echo "Build PR websites"
           command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\")')"
           retry "$command" 5 1 "Failed to fetch opened PRs."
           pr_nums=($(jq '.number' <<< $pr_list))
           pr_sha=($(jq '.head.sha' <<< $pr_list))
-          echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
-          for i in ${!pr_nums[@]}; do
-            retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash ${pr_sha[i]}."
-            retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
-          done
-          echo "Giving the right file permissions"
-          chmod -c -R +rX ../website
       
-      - name: Create artifact for deployment to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ../website
-  
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        shell: bash
+        run: echo ${{ needs.build.outputs.pr_nums }}
   
   pr-preview:
     needs: [build,deploy]
-    uses: ./.github/workflows/pr-preview.yml
-    with:
-      pr_nums: ${{ needs.build.outputs.pr_nums }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
+    steps:
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Set pr-preview URL
+        uses: thollander/actions-comment-pull-request@v2.4.3
+        with:
+          comment_tag: pr-preview
+          pr_number: ${{ matrix.pr_nums }}
+          message: "\
+            PR Preview
+              
+            :---:
+
+            🚀 Deployed preview to
+            https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
+            
+            ${{ env.DATE }}
+            "
