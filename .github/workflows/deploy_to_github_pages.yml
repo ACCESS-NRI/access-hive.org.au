@@ -21,11 +21,10 @@ jobs:
 
       - name: Setup pr-preview
         if: ${{ github.event.action != 'closed' }}
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: thollander/actions-comment-pull-request@v2.4.3
         with:
-          only_create: true
-          header: pr-preview
-          number: ${{ github.event.number }}
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
           message: "\
             PR Preview
 
@@ -41,10 +40,10 @@ jobs:
 
       - name: Remove pr-preview URL
         if: ${{github.event.action == 'closed'}}
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: thollander/actions-comment-pull-request@v2.4.3
         with:
-          header: pr-preview
-          number: ${{ github.event.number }}
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
           message: "\
             PR Preview
       
@@ -146,10 +145,10 @@ jobs:
 
       - name: Set pr-preview URL
         if: ${{github.event.action != 'closed'}}
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: thollander/actions-comment-pull-request@v2.4.3
         with:
-          header: pr-preview
-          number: ${{ matrix.pr_nums }}
+          comment_tag: pr-preview
+          pr_number: ${{ matrix.pr_nums }}
           message: "\
             PR Preview
               
