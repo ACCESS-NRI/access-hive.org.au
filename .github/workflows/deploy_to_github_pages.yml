@@ -1,10 +1,10 @@
 name: Deploy to GitHub Pages
 on:
-  push:
+  push: #Action fires anytime there is a push to the following branches
     branches: 
       - main
       - development
-  pull_request:
+  pull_request: #Action also fires anytime a PR is (re)opened, closed or synchronized
     types: 
       - opened
       - reopened
@@ -13,6 +13,7 @@ on:
 
 jobs:
   pr-preview-setup:
+    # If the action is fired because of a PR, and the PR is not from the development branch, run this job
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
     runs-on: ubuntu-latest
     steps:
@@ -20,7 +21,9 @@ jobs:
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
       - name: Setup pr-preview
-        if: ${{ github.event.action != 'closed' }}
+        # If the PR is new (or has been reopened), setup the message that will
+        # get updated with the URL after deployment
+        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           comment_tag: pr-preview
@@ -38,6 +41,7 @@ jobs:
             ${{ env.DATE }}
             "
 
+      # If the PR is closed, remove the pr-preview URL
       - name: Remove pr-preview URL
         if: ${{github.event.action == 'closed'}}
         uses: thollander/actions-comment-pull-request@v2.4.3
@@ -55,8 +59,9 @@ jobs:
             "
   
   build:
+    # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
     concurrency:
-      group: github-pages-deploy
+      group: build-deploy
       cancel-in-progress: true
     runs-on: ubuntu-latest
     outputs:
@@ -74,8 +79,10 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-          
-      - name: Build full website # main, development and PRs
+      
+      # Build full website using main, development and open PRs head branches
+      # (excluding `development` and `main` as PR head branches)
+      - name: Build full website
         id: build
         shell: bash
         run: |
@@ -104,10 +111,11 @@ jobs:
           retry 'git checkout development' 5 1 "Failed to checkout development branch."
           retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
           echo "Build PR websites"
-          command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\")')"
+          command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened \
+          | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\" and .head.label!=\"ACCESS-Hive:main\")')"
           retry "$command" 5 1 "Failed to fetch opened PRs."
           pr_nums=($(jq '.number' <<< $pr_list))
-          if [[ -n $pr_list ]]; then
+          if [[ -n $pr_nums ]]; then
             echo "Found PR numbers: $(sed 's/\s/, /g' <<< ${pr_nums[@]})."
             pr_sha=($(jq '.head.sha' <<< $pr_list))
             echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
@@ -115,6 +123,9 @@ jobs:
               retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash ${pr_sha[i]}."
               retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
             done
+          else
+            echo "No open PR found."
+          fi
           echo "Give the right file permissions"
           chmod -c -R +rX ../website
       
@@ -126,8 +137,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
     concurrency:
-      group: github-pages-deploy
+      group: build-deploy
       cancel-in-progress: true
     permissions:
       pages: write      # to deploy to Pages
@@ -137,9 +149,13 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
   
+  # Set pr-preview URL
   pr-preview:
     needs: [build,deploy]
+    # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
+    if: ${{ needs.build.outputs.pr_nums }}
     runs-on: ubuntu-latest
+    # Run the same job for each of the open PRs found
     strategy:
       matrix:
         pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
