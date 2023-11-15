@@ -107,6 +107,7 @@ jobs:
           command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\")')"
           retry "$command" 5 1 "Failed to fetch opened PRs."
           pr_nums=($(jq '.number' <<< $pr_list))
+          echo "Found PR numbers: $(sed 's/\s/, /g' <<< ${pr_nums[@]})."
           pr_sha=($(jq '.head.sha' <<< $pr_list))
           echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
           for i in ${!pr_nums[@]}; do
