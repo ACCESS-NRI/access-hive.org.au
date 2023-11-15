@@ -94,9 +94,7 @@ For the evaluation and diagnosis of ACCESS climate models, the following tools a
 * Data format processing tools like APP4  
 * An Evaluation Recipe Gallery with searching functionality  
 
-While this work is in progress, you can refer to a collection of links to existing tools (not curated by ACCESS-NRI) in the [community tab](../community_resources/index.md). 
-
-<!-- {% include "call_contribute.md" %} -->
+While this work is in progress, you can refer to a collection of links to existing tools (not curated by ACCESS-NRI) in the [community tab](../community_resources/index.md).
 
 <!-- 
 

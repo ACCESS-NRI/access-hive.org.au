@@ -7,16 +7,6 @@ function sortTables() {
 }
 
 /*
-  Remove 'edit' and 'view' icons from homepage
-*/
-function removeIconsFromHomepage() {
-  if (location.pathname.match('^(/|/development_site/|/pr-preview/pr-[0-9]*/)$')) {
-    let icons=document.querySelectorAll(".md-content__button.md-icon");
-    icons.forEach(icon=>icon.style.display="none");
-  }
-}
-
-/*
   Adjust the scrolling so that the paragraph's titles is not 
   partially covered by the sticky banner when clicking on a toc link
 */
@@ -226,7 +216,6 @@ function main() {
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
-  removeIconsFromHomepage();
   addExternalLinkIcon();
   fitText();
   toggleTerminalAnimations();

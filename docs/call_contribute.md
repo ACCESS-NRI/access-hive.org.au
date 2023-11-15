@@ -1,2 +1,0 @@
-???+ warning "The documentation on Hive is work in progress!"
-    The ACCESS-Hive is a community resource that is a work in progress. We’d love to receive your contribution. Please see the [contributing guidelines](/contribute/index.md) below for how to make contributions to the **Hive** page content. You can also [open an issue](https://github.com/ACCESS-Hive/access-hive.github.io/issues) highlighting any content you’d like us to provide but aren’t able to contribute yourself.
