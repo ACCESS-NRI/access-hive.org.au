@@ -20,12 +20,10 @@ ACCESS-NRI is releasing an NCI configuration of ILAMB under the name **ILAMB-wor
     To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
 </div>
 
-Depending on your needs, you may want to also joined the following supported data collections:
+Depending on your needs, you may want to also join the following supported data collections:
 
 - CMIP6: `fs38`, `oi10`
 - CMIP5: `rr3`, `al33`
-- ERA5 and ERA5-Land: `rt52`, `zz93`
-- obs4MIPs: `qv56`
 
 ### Loading the ILAMB-workflow modules
  <!-- #### Load the `access-med` conda environment -->
