@@ -1,27 +1,38 @@
-# ILAMB on Gadi
+# ACCESS-NRI ILAMB-workflow at NCI
 
 ## What is ILAMB?
 
 The <a href="https://www.ilamb.org/" target="_blank">International Land Model Benchmarking (<i>ILAMB</i>)</a> benchmarking system is a python framework used to quantitatively compare a defined set of observable variables with a number of land models.
-
-???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
-    <!-- Who develped the tool? -->
-    <i>ILAMB</i> is a community-developed climate model diagnostics and evaluation software package.
-    <!-- Code ownership and support -->
-    While ACCESS-NRI does not own the code, it actively supports the use of <i>ILAMB</i> software on <i>Gadi</i>.
-    <br>
-     <!--ILAMB development is primarily performed by the <a href="https://www.bgc-feedbacks.org/" target="_blank">RUBISCO</a> Science Focus Area and supported by the <a href="https://climatemodeling.science.energy.gov/program-area/regional-global-model-analysis" target="_blank">RGMA</a> Activity of the <a href="https://science.osti.gov/ber/Research/eessd" target="_blank">EESSD</a> division of the <a href="https://science.osti.gov/ber" target="_blank">BER</a> program in the United States Department of Energy’s Office of Science. -->
-    ACCESS-NRI provides access to the latest version of <i>ILAMB</i> via the `xp65` `access-med` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>.
     
 This documentation is tailored to using <i>ILAMB</i> on <i>Gadi</i> and, hence, it supplements rather than replaces the official documentation. Users are encouraged to read the <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and relevant <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">tutorials</a>.
 
+ACCESS-NRI is releasing an NCI configuration of ILAMB under the name **ILAMB-workflow**.  
+
+**ILAMB-workflow** is the ACCESS-NRI software and data infrastructure that enables the ILAMB evaluation framework on NCI Gadi. It includes the **ILAMB Python packages**, a series of **ILAMB outputs for ACCESS model evaluation** and the **ILAMB-Data collection of observational datasets**. ILAMB-workflow is configured to use the existing NCI supported CMIP data collections.
+
 ## Using ILAMB on Gadi
 
-<i>ILAMB</i> is provided through both the `xp65` and `hh5` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of these projects to use it. 
+### Pre-requisites
+
+<i>ILAMB</i> is provided through the `xp65` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
 
 <div class="note">
     To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
 </div>
+
+Depending on your needs, you may want to also join the following supported data collections:
+
+- CMIP6: `fs38`, `oi10`
+- CMIP5: `rr3`, `al33`
+
+### Loading the ILAMB-workflow modules
+ <!-- #### Load the `access-med` conda environment -->
+
+To load the the `ilamb` module, execute the following commands:
+```
+    module use /g/data/xp65/public/modules
+    module load conda/access-med
+```
 
 For ACCESS-NRI documentation on how to run <i>ILAMB</i> on <i>Gadi</i>, visit:
 
@@ -82,4 +93,4 @@ By clicking on a row in the table, you can expand it to see the underlying datas
 <br>
 Clicking on one of these datasets, for example `CERESed4.1`, will take you to an interactive and quantitative comparison page for Albedo measurements of the <a href="https://ceres.larc.nasa.gov" target="_blank">Clouds and the Earth’s Radiant Energy System (CERES)</a> project:
 
-<p align="center"><img align="center" width="100%" src="../../../assets/model_evaluation/ilamb_loop.gif" alt="Comparison of different ILAMB outputs"></p>  
+<p align="center"><img align="center" width="100%" src="../../../assets/model_evaluation/ilamb_loop.gif" alt="Comparison of different ILAMB outputs"></p>
