@@ -27,7 +27,7 @@ ACCESS-NRI is supporting an NCI configuration of ESMValTool under the name **ESM
 
 To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the `xp65` NCI projects:
 
-Depending on your needs, you may want to also joined the following supported data collections:
+Depending on your needs, you may want to also join the following supported data collections:
 
 - CMIP6: `fs38`, `oi10`
 - CMIP5: `rr3`, `al33`
