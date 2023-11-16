@@ -31,7 +31,7 @@ Depending on your needs, you may want to also join the following supported data 
 To load the the `ilamb` module, execute the following commands:
 ```
     module use /g/data/xp65/public/modules
-    module load ilamb
+    module load conda/access-med
 ```
 
 For ACCESS-NRI documentation on how to run <i>ILAMB</i> on <i>Gadi</i>, visit:
