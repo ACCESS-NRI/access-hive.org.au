@@ -33,7 +33,7 @@
         </div>
         <div class="card-text-container   bold">Glossaries</div>
     </a>
-    <a href="https://www.access-nri.org.au/community/events/" class="vertical-card aspect-ratio1to1" target="_blank">
+    <a href="https://www.access-nri.org.au/upcoming-events/" class="vertical-card aspect-ratio1to1" target="_blank">
         <div class="card-image-container">
             <img class="img-cover" src="../assets/events_2.jpg" alt="Events">
         </div>
