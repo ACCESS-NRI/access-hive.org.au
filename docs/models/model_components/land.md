@@ -4,11 +4,11 @@
 
 ## CABLE
 
-<a href="https://trac.nci.org.au/trac/cable/wiki" target="_blank">Community Atmosphere Biosphere Land Exchange (CABLE)</a> is a land surface model used to calculate the fluxes of momentum, energy, water and carbon between the land surface, vegetation canopy and the atmospheric boundary layer. It also includes descriptions of thermal and hydrological processes in the soil and snow, and models the main biogeochemical cycles of the land ecosystem when used in conjunction with the <a href="../bgc_land#casa-cnp">CASA-CNP</a> module.  
+<a href="https://cable.readthedocs.io/en/latest/" target="_blank">Community Atmosphere Biosphere Land Exchange (CABLE)</a> is a land surface model used to calculate the fluxes of momentum, energy, water and carbon between the land surface, vegetation canopy and the atmospheric boundary layer. It also includes descriptions of thermal and hydrological processes in the soil and snow, and models the main biogeochemical cycles of the land ecosystem when used in conjunction with the <a href="../bgc_land#casa-cnp">CASA-CNP</a> module.  
 
-CABLE is an open source model developed by a community of Australian climate science researchers. 
+CABLE is an open source model developed by a community of Australian climate science researchers.
 <br>
-<a href="https://trac.nci.org.au/trac/cable/wiki/CABLE_Registration" target="_blank">Registration</a> is required to access the CABLE code repository.
+Refer to <a href="https://cable.readthedocs.io/en/latest/user_guide/" target="_blank">the documentation</a> to know how to work with the CABLE model.
 
 ### Configurations that use CABLE
 
