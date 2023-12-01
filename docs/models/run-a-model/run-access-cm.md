@@ -36,9 +36,9 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
     <li>
         <b><i>MOSRS</i> account</i></b>
         <br>
-        The <a href="https://code.metoffice.gov.uk" target="_blank">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
+        The <a href="https://code.metoffice.gov.uk" target="_blank">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#unified-model-um">UM</a>).
         <br>
-        To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
+        To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/Prerequisites" target="_blank">local institutional sponsor</a>.
     </li>
     <li>
         <b>Join the <i>access</i>, <i>hr22</i>, <i>ki32</i>, and <i>ki32_mosrs</i> projects at NCI</i></b> 
@@ -155,7 +155,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 <!-- End of tab content -->
 
 ## Get {{ model }} suite
-{{ model }} comprises the model components <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
+{{ model }} comprises the model components <a href="../../model_components/atmosphere/#unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
 <br>
 Each {{ model }} suite has a <code>suite-ID</code> in the format <code>u-&lt;suite-name&gt;</code>, where <code>&lt;suite-name&gt;</code> is a unique identifier.
 <br>
