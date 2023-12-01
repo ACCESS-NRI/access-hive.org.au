@@ -8,7 +8,7 @@
 
 CABLE is an open source model developed by a community of Australian climate science researchers.
 <br>
-Refer to <a href="https://cable.readthedocs.io/en/latest/user_guide/" target="_blank">the documentation</a> to know how to work with the CABLE model.
+Refer to <a href="https://cable.readthedocs.io/en/latest/user_guide/" target="_blank">CABLE documentation</a> to know how to work with the CABLE model.
 
 ### Configurations that use CABLE
 
