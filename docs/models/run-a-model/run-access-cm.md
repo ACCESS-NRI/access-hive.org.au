@@ -29,7 +29,7 @@
 ## Prerequisites
 
 ### General prerequisites
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the <a href="/getting_started/first_steps">First Steps</a> section.
 
 ### <span>Model-specific prerequisites</span>
 <ul>
@@ -609,7 +609,7 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
 
 ### Model Live Diagnostics
 
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+ACCESS-NRI developed the <a href="/model_evaluation/model_diagnostics">Model Live Diagnostics</a> framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
 <br>
 For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
 
