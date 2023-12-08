@@ -29,16 +29,16 @@
 ## Prerequisites
 
 ### General prerequisites
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the <a href="/getting_started/first_steps">First Steps</a> section.
 
 ### <span>Model-specific prerequisites</span>
 <ul>
     <li>
         <b><i>MOSRS</i> account</i></b>
         <br>
-        The <a href="https://code.metoffice.gov.uk" target="_blank">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>).
+        The <a href="https://code.metoffice.gov.uk" target="_blank">Met Office Science Repository Service</a> (MOSRS) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the <a href="../../model_components/atmosphere/#unified-model-um">UM</a>).
         <br>
-        To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/UK+Met+Office+environment+prerequisites" target="_blank">local institutional sponsor</a>.
+        To apply for a <i>MOSRS</i> account, please contact your <a href="https://opus.nci.org.au/display/DAE/Prerequisites" target="_blank">local institutional sponsor</a>.
     </li>
     <li>
         <b>Join the <i>access</i>, <i>hr22</i>, <i>ki32</i>, and <i>ki32_mosrs</i> projects at NCI</i></b> 
@@ -128,7 +128,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
                 <br>
                 Every {{ model }} simulation can be unique and input data can originate from various sources. Hence, if your simulation requires data stored in project folders other than <code>access</code>, <code>hh5</code>, <code>hr22</code> or <code>ki32</code>, you need to add those projects to the storage path.
                 <br>
-                For example, if your {{ model }} simulation requires data stored in <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+/gdata/tm70+scratch/w40</b></code>
+                For example, if your {{ model }} simulation requires data stored in <code>/g/data/tm70</code> and <code>/scratch/w40</code>, your full storage path will be: <code>gdata/access+gdata/hh5+gdata/hr22+gdata/ki32<b>+gdata/tm70+scratch/w40</b></code>
             </li>
         </ul>
         Launch the ARE session and, once it starts, click on <i>Launch VDI Desktop</i>.
@@ -155,7 +155,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 <!-- End of tab content -->
 
 ## Get {{ model }} suite
-{{ model }} comprises the model components <a href="../../model_components/atmosphere/#the-unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
+{{ model }} comprises the model components <a href="../../model_components/atmosphere/#unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
 <br>
 Each {{ model }} suite has a <code>suite-ID</code> in the format <code>u-&lt;suite-name&gt;</code>, where <code>&lt;suite-name&gt;</code> is a unique identifier.
 <br>
@@ -609,7 +609,7 @@ To investigate the cause of a failure, we need to look at the logs <code>job.err
 
 ### Model Live Diagnostics
 
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+ACCESS-NRI developed the <a href="/model_evaluation/model_diagnostics">Model Live Diagnostics</a> framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
 <br>
 For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
 
