@@ -32,32 +32,80 @@ module load conda/analysis3</code></pre>
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
-A pre-industrial configuration of {{ model }} is available on the <a href="https://github.com/coecms/esm-pre-industrial" target="_blank">coecms GitHub</a>.
+{{ model }} configuration is available on the <a href="https://github.com/coecms/access-esm" target="_blank">coecms GitHub</a>.
 <br>
-To get it on <i>Gadi</i>, create a directory to store the model configuration.Navigate to this directory and clone the GitHub repo in it by running: 
-<pre><code>git clone https://github.com/coecms/esm-pre-industrial.git</code></pre>
+To get it on <i>Gadi</i>, clone the {{ model }} GitHub repo by running:
+<pre><code>git clone https://github.com/coecms/access-esm.git</code></pre>
+This will create the <code>access-esm</code> folder.
 <terminal-window>
-    <terminal-line data="input">mkdir -p ~/access-esm</terminal-line>
-    <terminal-line data="input">cd ~/access-esm</terminal-line>
-    <terminal-line data="input" directory="~/access-esm">git clone https://github.com/coecms/esm-pre-industrial</terminal-line>
-    <terminal-line>Cloning into 'esm-pre-industrial'...</terminal-line>
-    <terminal-line lineDelay=1000>remote: Enumerating objects: 767, done.</terminal-line>
-    <terminal-line>remote: Counting objects: 100% (295/295), done.</terminal-line>
-    <terminal-line>remote: Compressing objects: 100% (138/138), done.</terminal-line>
-    <terminal-line>remote: Total 767 (delta 173), reused 274 (delta 157), pack-reused 472</terminal-line>
-    <terminal-line>Receiving objects: 100% (767/767), 461.57 KiB | 5.24 MiB/s, done.</terminal-line>
-    <terminal-line>Resolving deltas: 100% (450/450), done.</terminal-line>
+    <terminal-line data="input">git clone https://github.com/coecms/access-esm.git</terminal-line>
+    <terminal-line>Cloning into 'access-esm'...</terminal-line>
+    <terminal-line lineDelay=1000>remote: Enumerating objects: 1625, done.</terminal-line>
+    <terminal-line>remote: Counting objects: 100% (1625/1625), done.</terminal-line>
+    <terminal-line>remote: Compressing objects: 100% (575/575), done.</terminal-line>
+    <terminal-line>remote: Total 1625 (delta 1042), reused 1621 (delta 1040), pack-reused 0</terminal-line>
+    <terminal-line>Receiving objects: 100% (1625/1625), 2.79 MiB | 11.24 MiB/s, done.</terminal-line>
+    <terminal-line>Resolving deltas: 100% (1042/1042), done.</terminal-line>
+    <terminal-line data="input">ls ~/access-esm</terminal-line>
+    <terminal-line class="ls-output-format">atmosphere config.yaml coupler ice manifests ocean README.md</terminal-line>
 </terminal-window>
 <div class="note">
-    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
+   Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
+   After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
 </div>
+Different {{ model }} configurations are stored in different branches of {{ model }} GitHub repo.
+To check all the available branches on the repo, run the following command inside the newly created <code>access-esm</code> folder:
+<pre><code>git branch -a</code></pre>
+<terminal-window>
+    <terminal-line data="input">cd ~/access-esm</terminal-line>
+    <terminal-line data="input" directory="~/access-esm">git branch -a</terminal-line>
+    <terminal-line>&#1645;&emsp;<span class="green_prompt_output">main</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/82ka</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/HEAD</span> &rarr; origin/main</terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/ccarouge-patch-1</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/historical</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/last-interglacial</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/last-millenium</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/last-millenium-detailed</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/main</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/mid-holocene</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/pre-industrial</span></terminal-line>
+    <terminal-line>&emsp; <span class="red_prompt_output">remotes/origin/ssp585</span></terminal-line>
+</terminal-window>
+The green-coloured branch (preceded by a star sign `*`) indicates the local branch you are currently in.
+<br>
+The red-coloured branches are the available remote branches, formatted as <code>remotes/origin/&lt;branch-name&gt;</code>.
+To switch to a specific branch you can run the following command: 
+<pre><code>git checkout &lt;branch-name&gt;</code></pre>
+For example, the pre-industrial configuration of {{ model }} is available in the <code>pre-industrial</code> branch. To use the pre-industrial configuration we can run:
+<pre><code>git checkout pre-industrial</code></pre>
+<terminal-window>
+    <terminal-line data="input">git checkout pre-industral</terminal-line>
+    <terminal-line>branch 'pre-industrial' set up to track 'origin/pre-industrial'.</terminal-line>
+    <terminal-line>Switched to a new branch 'pre-industrial'</terminal-line>
+    <terminal-line data="input">git branch</terminal-line>
+    <terminal-line>&emsp; main</terminal-line>
+    <terminal-line>&#1645;&emsp;<span class="green_prompt_output">pre-industrial</span></terminal-line>
+</terminal-window>
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
 It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the reference configuration. 
 
-To create a local branch called <i>"example_run"</i>, from within the cloned repo execute:
-<pre><code>git checkout -b example_run</code></pre>
+To create a new branch called <i>"example_run"</i>, as a copy of the <code>pre-industrial</code> branch, from within the <code>access-esm</code> directory execute:
+<pre><code>git checkout -b example_run $(git log pre-industrial -1 --format=%H)</code></pre>
+This command will also switch to the new <code>example_run</code> branch.
+<terminal-window>
+    <terminal-line data="input">git branch</terminal-line>
+    <terminal-line>&emsp; main</terminal-line>
+    <terminal-line>&#1645;&emsp;<span class="green_prompt_output">pre-industrial</span></terminal-line>
+    <terminal-line data="input">git checkout -b example_run $(git log pre-industrial -1 --format=%H)</terminal-line>
+    <terminal-line>Switched to a new branch 'example_run'</terminal-line>
+    <terminal-line data="input">git branch</terminal-line>
+    <terminal-line>&#1645;&emsp;<span class="green_prompt_output">example_run</span></terminal-line>
+    <terminal-line>&emsp; main</terminal-line>
+    <terminal-line>&emsp; pre-industrial</span></terminal-line>
+</terminal-window>
 
 ### Payu
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
@@ -68,7 +116,7 @@ The general layout of a <i>payu</i>-supported model run consists of two main dir
         The <b>laboratory</b> directory, where all the model components reside. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
     </li>
     <li>
-        The <b>control</b> directory, where the model configuration resides and from where the model is run (in this example, the cloned directory <code>~/access-esm/esm-pre-industrial</code>).
+        The <b>control</b> directory, where the model configuration resides and from where the model is run (in this example, the cloned directory <code>~/access-esm</code>).
     </li>
 </ul>
 This distinction of directories separates the small-size configuration files from the larger binary outputs and inputs. In this way, the configuration files can be placed in the <code>$HOME</code> directory (as it is the only filesystem actively backed-up on <i>Gadi</i>), without overloading it with too much data.
@@ -83,7 +131,7 @@ This creates the <i>laboratory</i> directory, together with relevant subdirector
     <li><code>archive</code> &rarr; the directory where output is stored after each run.</li>
     <terminal-window>
         <terminal-line data="input">cd ~/access-esm/esm-pre-industrial</terminal-line>
-        <terminal-line data="input" directory="~/access-esm/esm-pre-industrial">payu init</terminal-line>
+        <terminal-line data="input" directory="~/access-esm">payu init</terminal-line>
         <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
         <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
         <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
@@ -102,7 +150,7 @@ This file, which controls the general model configuration, contains several part
         <br>
         <pre><code>jobname: pre-industrial
 queue: normal
-walltime: 20:00:00</code></pre>
+walltime: 3:10:00</code></pre>
         These lines can be edited to change the <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS directives</a> for the <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a>.
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
@@ -193,7 +241,7 @@ laboratory: access-esm</code></pre>
     <li>
         <b>Number of runs per PBS submission</b>
         <br>
-        <pre><code>runspersub: 5</code></pre>
+        <pre><code>runspersub: 1</code></pre>
         {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission.
         <div class="note">
             If you increase <code>runspersub</code>, you may need to increase the <i>walltime</i> in the PBS resources.
@@ -356,7 +404,7 @@ For a complete documentation on how to use this framework, check the <a href="ht
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/esm-pre-industrial/archive</code>.
+While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>.
 <br>
 Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>esm-pre-industrial</code>). Inside the configuration folder, they are further subdivided for each internal run.
 <br>

@@ -53,6 +53,7 @@ To get it on <i>Gadi</i>, create a directory to store the model configuration.Na
 </terminal-window>
 <div class="note">
    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
+   After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
 </div>
 ----------------------------------------------------------------------------------------
 
