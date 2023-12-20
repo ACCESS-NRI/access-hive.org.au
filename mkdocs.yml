@@ -150,11 +150,12 @@ nav:
 
   - Tutorials:
     - tutorials/index.md
+    - ACCESS-CM2 Model: tutorials/models.md 
+    - ACCESS-NRI intake Catalogue: tutorials/intake.md
     - ESMValTool: tutorials/esmvaltool.md
     - ILAMB: tutorials/ilamb.md
-    - ACCESS-NRI intake Catalogue: tutorials/intake.md
-    - ACCESS Models: tutorials/models.md 
     - Payu: tutorials/payu.md
+    
   - Community Resources:
     - community_resources/index.md
     # TEMPORARY for Workshop
