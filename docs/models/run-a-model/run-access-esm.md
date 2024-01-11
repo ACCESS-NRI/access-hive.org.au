@@ -80,7 +80,7 @@ To switch to a specific branch you can run the following command:
 For example, the pre-industrial configuration of {{ model }} is available in the <code>pre-industrial</code> branch. To use the pre-industrial configuration we can run:
 <pre><code>git checkout pre-industrial</code></pre>
 <terminal-window>
-    <terminal-line data="input">git checkout pre-industral</terminal-line>
+    <terminal-line data="input">git checkout pre-industrial</terminal-line>
     <terminal-line>branch 'pre-industrial' set up to track 'origin/pre-industrial'.</terminal-line>
     <terminal-line>Switched to a new branch 'pre-industrial'</terminal-line>
     <terminal-line data="input">git branch</terminal-line>
@@ -404,12 +404,16 @@ For a complete documentation on how to use this framework, check the <a href="ht
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-esm/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>.
+While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory into the <code>archive</code> directory under <code>/scratch/$PROJECT/$USER/access-esm/archive/access-esm</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>.
 <br>
-Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>esm-pre-industrial</code>). Inside the configuration folder, they are further subdivided for each internal run.
+Here, they are further subdivided for each internal run.
 <br>
 The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
-<br>
+<div class="note">
+    A run with a different {{ model }} configuration (different git branch) counts as a new internal run. 
+    <br>
+    Therefore, if output folders were already present, the new output folder will have its internal number set to the first available <i>XXX</i> number.
+</div>
 Outputs and restarts are separated in the respective folders for each model component.
 <br>
 For the atmospheric output data, the files are usually <a href = "https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf" target="_blank">UM fieldsfile</a>, formatted as <code>&lt;UM-suite-identifier&gt;a.p&lt;output-stream-identifier&gt;&lt;time-identifier&gt;</code>.
