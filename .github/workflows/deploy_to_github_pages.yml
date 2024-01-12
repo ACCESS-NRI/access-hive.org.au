@@ -69,13 +69,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: main
+        # with:
+        #   ref: main
       
       - name: Python setup
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: 3.9.x
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -106,9 +106,10 @@ jobs:
           
           git fetch --all
           echo "Build main website"
+          retry "git checkout main" 5 1 "Failed to checkout 'main'."
           retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
           echo "Build development website"
-          retry 'git checkout development' 5 1 "Failed to checkout development branch."
+          retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
           retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
           echo "Build PR websites"
           command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened \
@@ -120,7 +121,7 @@ jobs:
             pr_sha=($(jq '.head.sha' <<< $pr_list))
             echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
             for i in ${!pr_nums[@]}; do
-              retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash ${pr_sha[i]}."
+              retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
               retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
             done
           else
