@@ -53,8 +53,8 @@ This will create the <code>access-esm</code> folder.
    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
    After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
 </div>
-Different {{ model }} configurations are stored in different branches of {{ model }} GitHub repo.
-To check all the available branches on the repo, run the following command inside the newly created <code>access-esm</code> folder:
+Different {{ model }} configurations are stored in different branches of the {{ model }} GitHub repo.
+To check all the available branches on the repo, run the following command inside the newly-created <code>access-esm</code> folder:
 <pre><code>git branch -a</code></pre>
 <terminal-window>
     <terminal-line data="input">cd ~/access-esm</terminal-line>
@@ -77,7 +77,7 @@ The green-coloured branch (preceded by a star sign `*`) indicates the local bran
 The red-coloured branches are the available remote branches, formatted as <code>remotes/origin/&lt;branch-name&gt;</code>.
 To switch to a specific branch you can run the following command: 
 <pre><code>git checkout &lt;branch-name&gt;</code></pre>
-For example, the pre-industrial configuration of {{ model }} is available in the <code>pre-industrial</code> branch. To use the pre-industrial configuration we can run:
+For example, the pre-industrial configuration of {{ model }} is available in the <code>pre-industrial</code> branch. To use the pre-industrial configuration, run:
 <pre><code>git checkout pre-industrial</code></pre>
 <terminal-window>
     <terminal-line data="input">git checkout pre-industrial</terminal-line>
@@ -90,7 +90,7 @@ For example, the pre-industrial configuration of {{ model }} is available in the
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the reference configuration. 
+It is good practice to create a new git branch to store all your modifications for a particular run, so as not to modify the reference configuration. 
 
 To create a new branch called <i>"example_run"</i>, as a copy of the <code>pre-industrial</code> branch, from within the <code>access-esm</code> directory execute:
 <pre><code>git checkout -b example_run $(git log pre-industrial -1 --format=%H)</code></pre>
