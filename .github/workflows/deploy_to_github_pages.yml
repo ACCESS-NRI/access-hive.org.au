@@ -23,7 +23,7 @@ jobs:
       - name: Setup pr-preview
         # If the PR is not from the development branch and is new (or has been reopened),
         # setup the message that will get updated with the URL after deployment
-        if: ${{ github.event.pull_request.head.ref != 'development' && (github.event.action == 'opened' || github.event.action == 'reopened') }}
+        if: ${{ github.event.pull_request.head.ref != 'development' && github.event.action != 'closed' }}
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           comment_tag: pr-preview
@@ -44,7 +44,7 @@ jobs:
       - name: Setup development preview
         # If the PR is from the development branch and is new (or has been reopened),
         # setup the message that will get updated with the URL after deployment
-        if: ${{ github.event.pull_request.head.ref == 'development' && (github.event.action == 'opened' || github.event.action == 'reopened') }}
+        if: ${{ github.event.pull_request.head.ref == 'development' && github.event.action != 'closed' }}
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           comment_tag: pr-preview
