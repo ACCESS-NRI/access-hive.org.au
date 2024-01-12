@@ -107,8 +107,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        # with:
-        #   ref: main
       
       - name: Python setup
         uses: actions/setup-python@v5
