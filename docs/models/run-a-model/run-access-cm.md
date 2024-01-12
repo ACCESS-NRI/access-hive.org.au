@@ -31,7 +31,9 @@
 ### General prerequisites
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the <a href="/getting_started/first_steps">First Steps</a> section.
 
-### <span>Model-specific prerequisites</span>
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+
+### Model-specific prerequisites
 <ul>
     <li>
         <b><i>MOSRS</i> account</i></b>
