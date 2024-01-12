@@ -240,7 +240,50 @@ jobs:
             :---:
 
             🚀 Development website deployed to
-            https://access-hive.org.au/development
+            https://access-hive.org.au/development-website
+            
+            ${{ env.DATE }}
+            "
+  
+  # Change preview message if deployment fails
+  failed-preview:
+    # If the action failed (but was not cancelled) and was fired because of a pull request (not closed)
+    if: ${{ failure() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Change development-preview message
+        if: ${{ github.event.pull_request.head.ref == 'development' }}
+        uses: thollander/actions-comment-pull-request@v2.4.3
+        with:
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
+          message: "\
+            Development Preview
+              
+            :---:
+
+            ⚠️ There was an error in the deployment of the development website.
+            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+            
+            ${{ env.DATE }}
+            "
+      
+      - name: Change pr-preview message
+        if: ${{ github.event.pull_request.head.ref != 'development' }}
+        uses: thollander/actions-comment-pull-request@v2.4.3
+        with:
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
+          message: "\
+            PR Preview
+              
+            :---:
+
+            ⚠️ There was an error in the pr-preview deployment.
+            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
             
             ${{ env.DATE }}
             "
