@@ -29,7 +29,7 @@ jobs:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
-            PR Preview
+            PR preview
 
             :---:
 
@@ -50,7 +50,7 @@ jobs:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
-            Development Preview
+            Development website preview
 
             :---:
 
@@ -87,7 +87,7 @@ jobs:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
-            Development Preview
+            Development website preview
       
             :---:
       
@@ -235,7 +235,7 @@ jobs:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
-            Development Preview
+            Development website preview
               
             :---:
 
@@ -261,7 +261,7 @@ jobs:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
-            Development Preview
+            Development website preview
               
             :---:
 
@@ -278,7 +278,7 @@ jobs:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
-            PR Preview
+            PR preview
               
             :---:
 
