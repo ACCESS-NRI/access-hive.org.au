@@ -13,17 +13,17 @@ on:
 
 jobs:
   pr-preview-setup:
-    # If the action is fired because of a PR, and the PR is not from the development branch, run this job
-    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'development' }}
+    # If the action is fired because of a PR, run this job
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
       - name: Setup pr-preview
-        # If the PR is new (or has been reopened), setup the message that will
-        # get updated with the URL after deployment
-        if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
+        # If the PR is not from the development branch and is new (or has been reopened),
+        # setup the message that will get updated with the URL after deployment
+        if: ${{ github.event.pull_request.head.ref != 'development' && (github.event.action == 'opened' || github.event.action == 'reopened') }}
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           comment_tag: pr-preview
@@ -40,16 +40,54 @@ jobs:
 
             ${{ env.DATE }}
             "
+      
+      - name: Setup development preview
+        # If the PR is from the development branch and is new (or has been reopened),
+        # setup the message that will get updated with the URL after deployment
+        if: ${{ github.event.pull_request.head.ref == 'development' && (github.event.action == 'opened' || github.event.action == 'reopened') }}
+        uses: thollander/actions-comment-pull-request@v2.4.3
+        with:
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
+          message: "\
+            Development Preview
+
+            :---:
+
+            🛫 Deployment still ongoing.<br>
+            Preview URL will be available at the end of the deployment.
+
+            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+
+            ${{ env.DATE }}
+            "
 
       # If the PR is closed, remove the pr-preview URL
-      - name: Remove pr-preview URL
-        if: ${{github.event.action == 'closed'}}
+      - name: Remove pr-preview URL link
+        if: ${{github.event.action == 'closed' && github.event.pull_request.head.ref != 'development' }}
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
             PR Preview
+      
+            :---:
+      
+            🛬 Link removed because the pull request was closed.
+      
+            ${{ env.DATE }}
+            "
+      
+      # If the PR is closed, remove the development URL
+      - name: Remove development URL
+        if: ${{github.event.action == 'closed' && github.event.pull_request.head.ref == 'development' }}
+        uses: thollander/actions-comment-pull-request@v2.4.3
+        with:
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
+          message: "\
+            Development Preview
       
             :---:
       
@@ -177,6 +215,32 @@ jobs:
 
             🚀 Deployed preview to
             https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
+            
+            ${{ env.DATE }}
+            "
+  # Add development URL
+  development-preview:
+    needs: [build,deploy]
+    # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
+    if: ${{ github.event.pull_request.head.ref == 'development' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Add development-preview URL
+        if: ${{github.event.action != 'closed'}}
+        uses: thollander/actions-comment-pull-request@v2.4.3
+        with:
+          comment_tag: pr-preview
+          pr_number: ${{ github.event.number }}
+          message: "\
+            Development Preview
+              
+            :---:
+
+            🚀 Development website deployed to
+            https://access-hive.org.au/development
             
             ${{ env.DATE }}
             "
