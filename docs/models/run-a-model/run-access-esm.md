@@ -404,15 +404,13 @@ For a complete documentation on how to use this framework, check the <a href="ht
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} outputs
-While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory into the <code>archive</code> directory under <code>/scratch/$PROJECT/$USER/access-esm/archive/access-esm</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>.
-<br>
-Here, they are further subdivided for each internal run.
+While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory into the <code>archive</code> directory under <code>/scratch/$PROJECT/$USER/access-esm/archive/access-esm</code>, where they are further subdivided for each internal run. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>
 <br>
 The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
 <div class="note">
     A run with a different {{ model }} configuration (different git branch) counts as a new internal run. 
     <br>
-    Therefore, if output folders were already present, the new output folder will have its internal number set to the first available <i>XXX</i> number.
+    Thus, if output folders already exist, the internal number of the new output folder will be set to the first available <i>XXX</i> number.
 </div>
 Outputs and restarts are separated in the respective folders for each model component.
 <br>
