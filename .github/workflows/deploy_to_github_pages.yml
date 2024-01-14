@@ -178,6 +178,8 @@ jobs:
     concurrency:
       group: build-deploy
       cancel-in-progress: true
+    outputs:
+      success: ${{ steps.success.outputs.success }}
     permissions:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
@@ -185,7 +187,12 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
-  
+      
+      - name: Output success status
+        id: success
+        run: |
+          echo "success=1" >> "$GITHUB_OUTPUT"
+        
   # Set pr-preview URL
   pr-preview:
     needs: [build,deploy]
@@ -245,8 +252,9 @@ jobs:
   
   # Change preview message if deployment fails
   failed-preview:
+    needs: deploy
     # If the action failed (but was not cancelled) and was fired because of a pull request (not closed)
-    if: ${{ failure() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed'}}
+    if: ${{ always() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed' && needs.deploy.outputs.success != '1' }}
     runs-on: ubuntu-latest
     steps:
       - name: Get date
