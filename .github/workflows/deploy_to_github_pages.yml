@@ -170,7 +170,11 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ../website
-  
+      
+      - name: Fail job
+        run: exit 1
+      
+      
   deploy:
     needs: build
     runs-on: ubuntu-latest
