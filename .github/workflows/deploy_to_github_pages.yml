@@ -115,7 +115,10 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
+            
+      - name: Fail job
+      run: exit 1
+
       # Build full website using main, development and open PRs head branches
       # (excluding `development` and `main` as PR head branches)
       - name: Build full website
@@ -169,11 +172,7 @@ jobs:
       - name: Create artifact for deployment to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ../website
-      
-      - name: Fail job
-        run: exit 1
-      
+          path: ../website      
       
   deploy:
     needs: build
