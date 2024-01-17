@@ -189,7 +189,7 @@ nav:
     - Contribute:
       - about/contribute/index.md
       - Contribute on GitHub: about/contribute/contribute_on_github.md
-    - License: about/license.md
+    - License: about/License.md
     
 # Footer
 extra:
