@@ -7,10 +7,4 @@ The training material can be directly relevant to ACCESS and its model component
 - using configurations
 - using model evaluation tools and workflows
 
-It is also intended for training material around more peripheral topics that are essential for the community, such as:
-
-- HPC
-- version control
-- essential software packages
-
-ACCESS-NRI encourages the members of the community to [contact us](mailto:access.nri@anu.edu.au) to share their suggestions.
+ACCESS-NRI encourages the members of the community to <a href="/about/contact.md">contact us</a> to share their suggestions.
