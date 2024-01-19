@@ -112,191 +112,195 @@ jobs:
       - name: Get URL
         id: url
         run: |
+          ls
+          ls docs
+          ls docs/CNAME
+          cat docs/CNAME
           echo "url=$(cat docs/CNAME)" >> "$GITHUB_OUTPUT"
           echo ${{ env.URL }}
 
-      - name: Python setup
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.9.x
+  #     - name: Python setup
+  #       uses: actions/setup-python@v5
+  #       with:
+  #         python-version: 3.9.x
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+  #     - name: Install dependencies
+  #       run: pip install -r requirements.txt
 
-      # Build full website using main, development and open PRs head branches
-      # (excluding `development` and `main` as PR head branches)
-      - name: Build full website
-        id: build
-        shell: bash
-        run: |
-          retry() {
-            command="$1"
-            n_tries="$2"
-            wait="$3"
-            exit_msg="$4"
-            eval "$command"
-            until [ $? == 0 ]; do
-              if [ $i -eq $((n_tries - 1)) ]; then
-                echo "$exit_msg"
-                exit 1
-              else
-                ((i++))
-              fi
-              sleep $wait
-              eval "$command"
-            done
-          }
+  #     # Build full website using main, development and open PRs head branches
+  #     # (excluding `development` and `main` as PR head branches)
+  #     - name: Build full website
+  #       id: build
+  #       shell: bash
+  #       run: |
+  #         retry() {
+  #           command="$1"
+  #           n_tries="$2"
+  #           wait="$3"
+  #           exit_msg="$4"
+  #           eval "$command"
+  #           until [ $? == 0 ]; do
+  #             if [ $i -eq $((n_tries - 1)) ]; then
+  #               echo "$exit_msg"
+  #               exit 1
+  #             else
+  #               ((i++))
+  #             fi
+  #             sleep $wait
+  #             eval "$command"
+  #           done
+  #         }
 
-          git fetch --all
-          echo "Build main website"
-          retry "git checkout main" 5 1 "Failed to checkout 'main'."
-          retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
-          echo "Build development website"
-          retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
-          retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
-          echo "Build PR websites"
-          command="pr_list=\$(curl -s https://api.github.com/repos/${{github.repository}}/pulls?state=opened \
-          | jq '.[] | select(.head.label!=\"${{ github.repository_owner }}:development\" and .head.label!=\"${{ github.repository_owner }}:main\")')"
-          retry "$command" 5 1 "Failed to fetch opened PRs."
-          pr_nums=($(jq '.number' <<< $pr_list))
-          if [[ -n $pr_nums ]]; then
-            echo "Found PR numbers: $(sed 's/\s/, /g' <<< ${pr_nums[@]})."
-            pr_sha=($(jq '.head.sha' <<< $pr_list))
-            echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
-            for i in ${!pr_nums[@]}; do
-              retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
-              retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
-            done
-          else
-            echo "No open PR found."
-          fi
-          echo "Give the right file permissions"
-          chmod -c -R +rX ../website
+  #         git fetch --all
+  #         echo "Build main website"
+  #         retry "git checkout main" 5 1 "Failed to checkout 'main'."
+  #         retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
+  #         echo "Build development website"
+  #         retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
+  #         retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
+  #         echo "Build PR websites"
+  #         command="pr_list=\$(curl -s https://api.github.com/repos/${{github.repository}}/pulls?state=opened \
+  #         | jq '.[] | select(.head.label!=\"${{ github.repository_owner }}:development\" and .head.label!=\"${{ github.repository_owner }}:main\")')"
+  #         retry "$command" 5 1 "Failed to fetch opened PRs."
+  #         pr_nums=($(jq '.number' <<< $pr_list))
+  #         if [[ -n $pr_nums ]]; then
+  #           echo "Found PR numbers: $(sed 's/\s/, /g' <<< ${pr_nums[@]})."
+  #           pr_sha=($(jq '.head.sha' <<< $pr_list))
+  #           echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
+  #           for i in ${!pr_nums[@]}; do
+  #             retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
+  #             retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
+  #           done
+  #         else
+  #           echo "No open PR found."
+  #         fi
+  #         echo "Give the right file permissions"
+  #         chmod -c -R +rX ../website
 
-      - name: Create artifact for deployment to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ../website
+  #     - name: Create artifact for deployment to GitHub Pages
+  #       uses: actions/upload-pages-artifact@v2
+  #       with:
+  #         path: ../website
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
-    concurrency:
-      group: build-deploy
-      cancel-in-progress: true
-    outputs:
-      success: ${{ steps.success.outputs.success }}
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
+  #   concurrency:
+  #     group: build-deploy
+  #     cancel-in-progress: true
+  #   outputs:
+  #     success: ${{ steps.success.outputs.success }}
+  #   permissions:
+  #     pages: write # to deploy to Pages
+  #     id-token: write # to verify the deployment originates from an appropriate source
 
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       uses: actions/deploy-pages@v2
 
-      - name: Output success status
-        id: success
-        run: |
-          echo "success=1" >> "$GITHUB_OUTPUT"
+  #     - name: Output success status
+  #       id: success
+  #       run: |
+  #         echo "success=1" >> "$GITHUB_OUTPUT"
 
-  # Set pr-preview URL
-  pr-preview:
-    needs: [build, deploy]
-    # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
-    if: ${{ needs.build.outputs.pr_nums }}
-    runs-on: ubuntu-latest
-    # Run the same job for each of the open PRs found
-    strategy:
-      matrix:
-        pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
-    steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+  # # Set pr-preview URL
+  # pr-preview:
+  #   needs: [build, deploy]
+  #   # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
+  #   if: ${{ needs.build.outputs.pr_nums }}
+  #   runs-on: ubuntu-latest
+  #   # Run the same job for each of the open PRs found
+  #   strategy:
+  #     matrix:
+  #       pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
-      - name: Set pr-preview URL
-        if: ${{github.event.action != 'closed'}}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          comment_tag: pr-preview
-          pr_number: ${{ matrix.pr_nums }}
-          message: "\
-            PR Preview
+  #     - name: Set pr-preview URL
+  #       if: ${{github.event.action != 'closed'}}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ matrix.pr_nums }}
+  #         message: "\
+  #           PR Preview
 
-            :---:
+  #           :---:
 
-            🚀 Deployed preview to
-            https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
+  #           🚀 Deployed preview to
+  #           https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
 
-            ${{ env.DATE }}
-            "
-  # Add development URL
-  development-preview:
-    needs: [build, deploy]
-    # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
-    if: ${{ github.event.pull_request.head.ref == 'development' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+  #           ${{ env.DATE }}
+  #           "
+  # # Add development URL
+  # development-preview:
+  #   needs: [build, deploy]
+  #   # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
+  #   if: ${{ github.event.pull_request.head.ref == 'development' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
-      - name: Add development-preview URL
-        if: ${{github.event.action != 'closed'}}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            Development website preview
+  #     - name: Add development-preview URL
+  #       if: ${{github.event.action != 'closed'}}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ github.event.number }}
+  #         message: "\
+  #           Development website preview
 
-            :---:
+  #           :---:
 
-            🚀 Development website deployed to
-            https://${{ needs.build.outputs.url }}/development-website
+  #           🚀 Development website deployed to
+  #           https://${{ needs.build.outputs.url }}/development-website
 
-            ${{ env.DATE }}
-            "
+  #           ${{ env.DATE }}
+  #           "
 
-  # Change preview message if deployment fails
-  failed-preview:
-    needs: deploy
-    # If the action failed (but was not cancelled) and was fired because of a pull request (not closed)
-    if: ${{ always() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed' && needs.deploy.outputs.success != '1' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+  # # Change preview message if deployment fails
+  # failed-preview:
+  #   needs: deploy
+  #   # If the action failed (but was not cancelled) and was fired because of a pull request (not closed)
+  #   if: ${{ always() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed' && needs.deploy.outputs.success != '1' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
-      - name: Change development-preview message
-        if: ${{ github.event.pull_request.head.ref == 'development' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            Development website preview
+  #     - name: Change development-preview message
+  #       if: ${{ github.event.pull_request.head.ref == 'development' }}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ github.event.number }}
+  #         message: "\
+  #           Development website preview
 
-            :---:
+  #           :---:
 
-            ⚠️ There was an error in the deployment of the development website.
-            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+  #           ⚠️ There was an error in the deployment of the development website.
+  #           For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
 
-            ${{ env.DATE }}
-            "
+  #           ${{ env.DATE }}
+  #           "
 
-      - name: Change pr-preview message
-        if: ${{ github.event.pull_request.head.ref != 'development' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            PR preview
+  #     - name: Change pr-preview message
+  #       if: ${{ github.event.pull_request.head.ref != 'development' }}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ github.event.number }}
+  #         message: "\
+  #           PR preview
 
-            :---:
+  #           :---:
 
-            ⚠️ There was an error in the pr-preview deployment.
-            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+  #           ⚠️ There was an error in the pr-preview deployment.
+  #           For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
 
-            ${{ env.DATE }}
-            "
+  #           ${{ env.DATE }}
+  #           "
