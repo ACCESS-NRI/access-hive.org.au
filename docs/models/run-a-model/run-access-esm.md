@@ -219,7 +219,7 @@ laboratory: access-esm</code></pre>
       ncpus: 0
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/coupler</code></pre>
-        {{ model }} is a coupled model deploying multiple submodels (i.e. model components).
+        {{ model }} is a coupled model deploying multiple submodels (i.e. <a href="/models/configurations/access-esm/#model-components">model components</a>).
         This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
         Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <i>name</i> (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-esm/esm-pre-industrial/atmosphere</code> directory).
@@ -448,7 +448,7 @@ For a complete documentation on how to use this framework, check the <a href="ht
 
 ## {{ model }} outputs
 
-While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory into the <code>archive</code> directory under <code>/scratch/$PROJECT/$USER/access-esm/archive/access-esm</code>, where they are further subdivided for each internal run. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>
+At the end of the model run, output files (and restart files) are moved from the <code>work</code> directory into the <code>archive</code> directory under <code>/scratch/$PROJECT/$USER/access-esm/archive/access-esm</code>, where they are further subdivided for each internal run. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>
 <br>
 The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
 
