@@ -112,8 +112,7 @@ jobs:
       - name: Get URL
         id: url
         run: |
-          ls
-          echo "url=$(cat CNAME)" >> "$GITHUB_OUTPUT"
+          echo "url=$(cat docs/CNAME)" >> "$GITHUB_OUTPUT"
           echo ${{ env.URL }}
 
       - name: Python setup
