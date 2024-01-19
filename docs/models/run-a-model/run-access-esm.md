@@ -1,10 +1,17 @@
 {% set model = "ACCESS-ESM" %}
+
 # Run {{ model }}
+
 ## Prerequisites
+
 ### General prerequisites
+
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
 
 ### Model-specific prerequisites
+
+{{ model }} is installed on NCI's supercomputer <i>Gadi</i> and uses <a href="#payu"><i>payu</i></a>, a tool for running and managing model experiments. Following these prerequisites ensures you have access to this infrastructure.
+
 <ul>
     <li>
         <b>Join the <i>access</i> and <i>hh5</i> projects at NCI</i></b>
@@ -32,23 +39,27 @@ module load conda/analysis3</code></pre>
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
-{{ model }} configuration is available on the <a href="https://github.com/coecms/access-esm" target="_blank">coecms GitHub</a>.
+
+{{ model }} configurations are available on the <a href="https://github.com/coecms/access-esm" target="_blank">coecms GitHub</a>, collated in a single repository.
 <br>
 To get it on <i>Gadi</i>, clone the {{ model }} GitHub repo by running:
+
 <pre><code>git clone https://github.com/coecms/access-esm.git</code></pre>
+
 This will create the <code>access-esm</code> folder.
 <terminal-window>
-    <terminal-line data="input">git clone https://github.com/coecms/access-esm.git</terminal-line>
-    <terminal-line>Cloning into 'access-esm'...</terminal-line>
-    <terminal-line lineDelay=1000>remote: Enumerating objects: 1625, done.</terminal-line>
-    <terminal-line>remote: Counting objects: 100% (1625/1625), done.</terminal-line>
-    <terminal-line>remote: Compressing objects: 100% (575/575), done.</terminal-line>
-    <terminal-line>remote: Total 1625 (delta 1042), reused 1621 (delta 1040), pack-reused 0</terminal-line>
-    <terminal-line>Receiving objects: 100% (1625/1625), 2.79 MiB | 11.24 MiB/s, done.</terminal-line>
-    <terminal-line>Resolving deltas: 100% (1042/1042), done.</terminal-line>
-    <terminal-line data="input">ls ~/access-esm</terminal-line>
-    <terminal-line class="ls-output-format">atmosphere config.yaml coupler ice manifests ocean README.md</terminal-line>
+<terminal-line data="input">git clone https://github.com/coecms/access-esm.git</terminal-line>
+<terminal-line>Cloning into 'access-esm'...</terminal-line>
+<terminal-line lineDelay=1000>remote: Enumerating objects: 1625, done.</terminal-line>
+<terminal-line>remote: Counting objects: 100% (1625/1625), done.</terminal-line>
+<terminal-line>remote: Compressing objects: 100% (575/575), done.</terminal-line>
+<terminal-line>remote: Total 1625 (delta 1042), reused 1621 (delta 1040), pack-reused 0</terminal-line>
+<terminal-line>Receiving objects: 100% (1625/1625), 2.79 MiB | 11.24 MiB/s, done.</terminal-line>
+<terminal-line>Resolving deltas: 100% (1042/1042), done.</terminal-line>
+<terminal-line data="input">ls ~/access-esm</terminal-line>
+<terminal-line class="ls-output-format">atmosphere config.yaml coupler ice manifests ocean README.md</terminal-line>
 </terminal-window>
+
 <div class="note">
    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
    After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
@@ -90,27 +101,32 @@ For example, the pre-industrial configuration of {{ model }} is available in the
 ----------------------------------------------------------------------------------------
 
 ## Edit {{ model }} configuration
-It is good practice to create a new git branch to store all your modifications for a particular run, so as not to modify the reference configuration. 
+
+It is good practice to create a new git branch to store all your modifications for a particular run, so as not to modify the reference configuration.
 
 To create a new branch called <i>"example_run"</i>, as a copy of the <code>pre-industrial</code> branch, from within the <code>access-esm</code> directory execute:
-<pre><code>git checkout -b example_run $(git log pre-industrial -1 --format=%H)</code></pre>
+
+<pre><code>git checkout -b example_run --no-track origin/pre-industrial</code></pre>
+
 This command will also switch to the new <code>example_run</code> branch.
 <terminal-window>
-    <terminal-line data="input">git branch</terminal-line>
-    <terminal-line>&emsp; main</terminal-line>
-    <terminal-line>&#1645;&emsp;<span class="green_prompt_output">pre-industrial</span></terminal-line>
-    <terminal-line data="input">git checkout -b example_run $(git log pre-industrial -1 --format=%H)</terminal-line>
-    <terminal-line>Switched to a new branch 'example_run'</terminal-line>
-    <terminal-line data="input">git branch</terminal-line>
-    <terminal-line>&#1645;&emsp;<span class="green_prompt_output">example_run</span></terminal-line>
-    <terminal-line>&emsp; main</terminal-line>
-    <terminal-line>&emsp; pre-industrial</span></terminal-line>
+<terminal-line data="input">git branch</terminal-line>
+<terminal-line>&emsp; main</terminal-line>
+<terminal-line>&#1645;&emsp;<span class="green_prompt_output">pre-industrial</span></terminal-line>
+<terminal-line data="input">git checkout -b example_run --no-track origin/pre-industrial</terminal-line>
+<terminal-line>Switched to a new branch 'example_run'</terminal-line>
+<terminal-line data="input">git branch</terminal-line>
+<terminal-line>&#1645;&emsp;<span class="green_prompt_output">example_run</span></terminal-line>
+<terminal-line>&emsp; main</terminal-line>
+<terminal-line>&emsp; pre-industrial</span></terminal-line>
 </terminal-window>
 
 ### Payu
+
 <a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
 <br>
 The general layout of a <i>payu</i>-supported model run consists of two main directories:
+
 <ul>
     <li>
         The <b>laboratory</b> directory, where all the model components reside. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-esm</code>.
@@ -141,9 +157,11 @@ This creates the <i>laboratory</i> directory, together with relevant subdirector
 </ul>
 
 ### Edit the <i>Master Configuration</i> file
-The <code>config.yaml</code> file located in the <i>control</i> directory, is the <i>Master Configuration</i> file. 
+
+The <code>config.yaml</code> file located in the <i>control</i> directory, is the <i>Master Configuration</i> file.
 <br>
 This file, which controls the general model configuration, contains several parts:
+
 <ul>
     <li>
         <b>PBS resources</b>
@@ -156,7 +174,7 @@ walltime: 3:10:00</code></pre>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
         <div class="note">
-            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+            The <code>project</code> entry should always refer to a project with allocated <i>Service Units</i> (SU), that you are a member of. If not set explicitly, {{ model }} will run using your <a href="/getting_started/first_steps#change-default-project-on-gadi">default project</a> (this default project still needs to have allocated SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
         </div>  
     </li>
     <li>
@@ -250,47 +268,63 @@ laboratory: access-esm</code></pre>
 </ul>
 <br>
 To find out more about other configuration settings for the <code>config.yaml</code> file, check out <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
-----------------------------------------------------------------------------------------
+
+### Edit a single {{ model }} component configuration
+
+Each of <a href="/models/configurations/access-esm/#model-components">{{ model }} components</a> contains additional configuration options that are read in when the model component is running. These options are typically useful to modify the physics used in the model or the input data.
+They are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's name as specified in the <code>config.yaml</code> <code>submodel</code> section (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-esm/esm-pre-industrial/atmosphere</code> directory).
+To modify these options please refer to the User Guide of each individual model component.
+
+---
 
 ## Run {{ model }} configuration
-After editing the configuration, you are ready to run {{ model }}. 
+
+After editing the configuration, you are ready to run {{ model }}.
 <br>
 {{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank">Gadi</a> through a <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission managed by <i>payu</i>.
 
 ### Payu setup (optional)
+
 As a first step, from within the <i>control</i> directory, it is good practice to run:
+
 <pre><code>payu setup</code></pre>
+
 This will prepare the model run, based on the experiment configuration.
 <terminal-window>
-    <terminal-line data="input">payu setup</terminal-line>
-    <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-esm</terminal-line>
-    <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
-    <terminal-line>input path:  /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
-    <terminal-line>work path:  /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
-    <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
-    <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
-    <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
-    <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
-    <terminal-line>Setting up atmosphere</terminal-line>
-    <terminal-line>Setting up ocean</terminal-line>
-    <terminal-line>Setting up ice</terminal-line>
-    <terminal-line>Setting up coupler</terminal-line>
-    <terminal-line>Checking exe and input manifests</terminal-line>
-    <terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
-    <terminal-line>Creating restart manifest</terminal-line>
-    <terminal-line>Updating full hashes for 30 files in manifests/restart.yaml</terminal-line>
-    <terminal-line>Writing manifests/restart.yaml</terminal-line>
-    <terminal-line>Writing manifests/exe.yaml</terminal-line>
+<terminal-line data="input">payu setup</terminal-line>
+<terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-esm</terminal-line>
+<terminal-line>binary path: /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
+<terminal-line>input path: /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
+<terminal-line>work path: /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
+<terminal-line>archive path: /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
+<terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
+<terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
+<terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
+<terminal-line>Setting up atmosphere</terminal-line>
+<terminal-line>Setting up ocean</terminal-line>
+<terminal-line>Setting up ice</terminal-line>
+<terminal-line>Setting up coupler</terminal-line>
+<terminal-line>Checking exe and input manifests</terminal-line>
+<terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
+<terminal-line>Creating restart manifest</terminal-line>
+<terminal-line>Updating full hashes for 30 files in manifests/restart.yaml</terminal-line>
+<terminal-line>Writing manifests/restart.yaml</terminal-line>
+<terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-window>
+
 <div class="note">
     This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
 ### Run configuration
+
 To run {{ model }} configuration for one internal run length (controlled by <code>runtime</code> in the <code>config.yaml</code> file), execute:
+
 <pre><code>payu run -f</code></pre>
+
 This will submit a single job to the queue with a total run length of <code>runtime</code>. If there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file. Otherwise, it will perform a warm restart from a previously saved restart file.
 <br>
+
 <div class="note">
     The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory created from a previous failed run.
 </div>
@@ -305,13 +339,18 @@ This will submit a single job to the queue with a total run length of <code>runt
 </terminal-window>
 
 ### Run configuration for multiple years
+
 If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>runtime</code> in the <code>config.yaml</code> file), use the option <code>-n</code>:
+
 <pre><code>payu run -f -n &lt;number-of-runs&gt;</code></pre>
-This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime * number-of-runs</code>. The number of consecutive <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a> submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
+
+This will run the configuration <code>number-of-runs</code> times with a total run length of <code>runtime \* number-of-runs</code>. The number of consecutive <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a> submitted to the queue depends on the <code>runspersub</code> value specified in the <code>config.yaml</code> file.
 
 ### Understand <code>runtime</code>, <code>runspersub</code>, and <code>-n</code> parameters
+
 With the correct use of <code>runtime</code>, <code>runspersub</code> and <code>-n</code> parameters, you can have full control of your run.
 <br>
+
 <ul>
     <li>
         <code>runtime</code> defines the internal run length.
@@ -363,9 +402,11 @@ days: 0</code></pre>
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
-Currently, there is no specific tool to monitor {{ model }} runs. 
+
+Currently, there is no specific tool to monitor {{ model }} runs.
 <br>
 You can execute the following command to show the status of all your submitted <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a>:
+
 <pre><code>qstat -u $USER</code></pre>
 <terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
@@ -386,14 +427,16 @@ If you changed the <code>jobname</code> in the PBS resources of the <a href="#ed
 If there are no jobs listed with your <code>jobname</code> (or if no job is listed), your run either successfully completed or was terminated due to an error.
 
 ### Stop a run
+
 If you want to manually terminate a run, you can do so by executing:
+
 <pre><code>qdel &lt;job-ID&gt;</code></pre>
 
 ### Error and output log files
+
 While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access.out</code> and <code>access.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
 <br>
 When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
-
 
 ### Model Live Diagnostics
 
@@ -401,12 +444,14 @@ ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagno
 <br>
 For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
 
-----------------------------------------------------------------------------------------
+---
 
 ## {{ model }} outputs
+
 While the configuration is running, output files (and restart files) are moved from the <code>work</code> directory into the <code>archive</code> directory under <code>/scratch/$PROJECT/$USER/access-esm/archive/access-esm</code>, where they are further subdivided for each internal run. They are also symlinked in the <i>control</i> directory to <code>~/access-esm/archive</code>
 <br>
 The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
+
 <div class="note">
     A run with a different {{ model }} configuration (different git branch) counts as a new internal run. 
     <br>
