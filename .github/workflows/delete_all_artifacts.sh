@@ -10,7 +10,9 @@ invoke_api() {
 }
 
 list_artifacts() {
-  invoke_api https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/actions/artifacts
+  org=ACCESS-Hive
+  repo=access-hive.github.io
+  invoke_api https://api.github.com/repos/${org}/${repo}/actions/artifacts
 }
 
 list=$(list_artifacts | jq '.artifacts | .[] | .url')
