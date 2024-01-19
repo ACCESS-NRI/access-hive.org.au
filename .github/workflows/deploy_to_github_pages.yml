@@ -104,9 +104,17 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       pr_nums: ${{ steps.build.outputs.pr_nums }}
+      url: ${{ steps.url.outputs.url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Get URL
+        id: url
+        run: |
+          ls
+          echo "url=$(cat CNAME)" >> "$GITHUB_OUTPUT"
+          echo ${{ env.URL }}
 
       - name: Python setup
         uses: actions/setup-python@v5
@@ -204,11 +212,6 @@ jobs:
       matrix:
         pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
     steps:
-      - name: Get URL
-        run: |
-          echo "URL=$(cat CNAME)" >> $GITHUB_ENV
-          echo ${{ env.URL }}
-
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
@@ -224,7 +227,7 @@ jobs:
             :---:
 
             🚀 Deployed preview to
-            https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
+            https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
 
             ${{ env.DATE }}
             "
@@ -250,7 +253,7 @@ jobs:
             :---:
 
             🚀 Development website deployed to
-            https://access-hive.org.au/development-website
+            https://${{ needs.build.outputs.url }}/development-website
 
             ${{ env.DATE }}
             "
