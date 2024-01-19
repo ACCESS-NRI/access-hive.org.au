@@ -204,6 +204,11 @@ jobs:
       matrix:
         pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
     steps:
+      - name: Get URL
+        run: |
+          echo "URL=$(cat CNAME)" >> $GITHUB_ENV
+          echo ${{ env.URL }}
+
       - name: Get date
         run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
