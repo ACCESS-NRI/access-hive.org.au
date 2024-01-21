@@ -38,11 +38,7 @@ jobs:
             🛫 Deployment still ongoing.<br>
             Preview URL will be available at the end of the deployment.
 
-<<<<<<< HEAD
-            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
-=======
             For more information, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.
->>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -115,13 +111,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-<<<<<<< HEAD
-=======
       - name: Get URL
         id: url
         run: echo "url=$(cat docs/CNAME)" >> "$GITHUB_OUTPUT"
 
->>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
       - name: Python setup
         uses: actions/setup-python@v5
         with:
@@ -233,11 +226,7 @@ jobs:
             :---:
 
             🚀 Deployed preview to
-<<<<<<< HEAD
-            https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
-=======
             https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
->>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -263,11 +252,7 @@ jobs:
             :---:
 
             🚀 Development website deployed to
-<<<<<<< HEAD
-            https://access-hive.org.au/development-website
-=======
             https://${{ needs.build.outputs.url }}/development-website
->>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -294,11 +279,7 @@ jobs:
             :---:
 
             ⚠️ There was an error in the deployment of the development website.
-<<<<<<< HEAD
-            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
-=======
             For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
->>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -315,11 +296,7 @@ jobs:
             :---:
 
             ⚠️ There was an error in the pr-preview deployment.
-<<<<<<< HEAD
-            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
-=======
             For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
->>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
