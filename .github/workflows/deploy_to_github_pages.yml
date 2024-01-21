@@ -38,7 +38,11 @@ jobs:
             🛫 Deployment still ongoing.<br>
             Preview URL will be available at the end of the deployment.
 
+<<<<<<< HEAD
             For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+=======
+            For more information, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -59,7 +63,7 @@ jobs:
             🛫 Deployment still ongoing.<br>
             Preview URL will be available at the end of the deployment.
 
-            For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
 
             ${{ env.DATE }}
             "
@@ -106,10 +110,18 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       pr_nums: ${{ steps.build.outputs.pr_nums }}
+      url: ${{ steps.url.outputs.url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+<<<<<<< HEAD
+=======
+      - name: Get URL
+        id: url
+        run: echo "url=$(cat docs/CNAME)" >> "$GITHUB_OUTPUT"
+
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
       - name: Python setup
         uses: actions/setup-python@v5
         with:
@@ -150,8 +162,8 @@ jobs:
           retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
           retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
           echo "Build PR websites"
-          command="pr_list=\$(curl -s https://api.github.com/repos/ACCESS-Hive/access-hive.github.io/pulls?state=opened \
-          | jq '.[] | select(.head.label!=\"ACCESS-Hive:development\" and .head.label!=\"ACCESS-Hive:main\")')"
+          command="pr_list=\$(curl -s https://api.github.com/repos/${{github.repository}}/pulls?state=opened \
+          | jq '.[] | select(.head.label!=\"${{ github.repository_owner }}:development\" and .head.label!=\"${{ github.repository_owner }}:main\")')"
           retry "$command" 5 1 "Failed to fetch opened PRs."
           pr_nums=($(jq '.number' <<< $pr_list))
           if [[ -n $pr_nums ]]; then
@@ -221,7 +233,11 @@ jobs:
             :---:
 
             🚀 Deployed preview to
+<<<<<<< HEAD
             https://access-hive.org.au/pr-preview/pr-${{ matrix.pr_nums }}
+=======
+            https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -247,7 +263,11 @@ jobs:
             :---:
 
             🚀 Development website deployed to
+<<<<<<< HEAD
             https://access-hive.org.au/development-website
+=======
+            https://${{ needs.build.outputs.url }}/development-website
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -274,7 +294,11 @@ jobs:
             :---:
 
             ⚠️ There was an error in the deployment of the development website.
+<<<<<<< HEAD
             For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+=======
+            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
@@ -291,7 +315,11 @@ jobs:
             :---:
 
             ⚠️ There was an error in the pr-preview deployment.
+<<<<<<< HEAD
             For more information, please check the [Actions](https://github.com/ACCESS-Hive/access-hive.github.io/actions) tab.
+=======
+            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 
             ${{ env.DATE }}
             "
