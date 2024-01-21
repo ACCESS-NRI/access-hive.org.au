@@ -8,6 +8,11 @@
 
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
 
+<<<<<<< HEAD
+=======
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+
+>>>>>>> 756883d74b2c392c02f7c0c5ac6f07acd28fb9b8
 ### Model-specific prerequisites
 
 <ul>

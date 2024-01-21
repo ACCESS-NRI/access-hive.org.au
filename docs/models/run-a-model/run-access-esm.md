@@ -8,6 +8,8 @@
 
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
 
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+
 ### Model-specific prerequisites
 
 {{ model }} is installed on NCI's supercomputer <i>Gadi</i> and uses <a href="#payu"><i>payu</i></a>, a tool for running and managing model experiments. Following these prerequisites ensures you have access to this infrastructure.
