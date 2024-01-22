@@ -3,10 +3,11 @@ hide:
   - navigation
   - toc
 ---
+
 <h1 class="homepage"></h1>
 <div class="introduction">
     <div>
-        <div>Welcome to ACCESS-Hive!</div>
+        <div>Welcome to ACCESS-Hive moved!</div>
         <div>The open portal for the ACCESS user community, hosted by <a href="https://www.access-nri.org.au/" target="_blank">ACCESS-NRI</a></div>
     </div>
     <div>
