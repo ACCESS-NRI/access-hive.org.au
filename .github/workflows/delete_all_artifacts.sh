@@ -10,8 +10,8 @@ invoke_api() {
 }
 
 list_artifacts() {
-  org=ACCESS-Hive
-  repo=access-hive.github.io
+  org=ACCESS-NRI
+  repo=access-hive.org.au
   invoke_api https://api.github.com/repos/${org}/${repo}/actions/artifacts
 }
 
