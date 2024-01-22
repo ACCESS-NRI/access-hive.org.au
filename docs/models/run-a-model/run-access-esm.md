@@ -4,6 +4,8 @@
 ### General prerequisites
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
 
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+
 ### Model-specific prerequisites
 <ul>
     <li>
