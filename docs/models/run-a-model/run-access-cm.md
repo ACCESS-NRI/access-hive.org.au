@@ -90,7 +90,7 @@ To open the terminal, click on the black terminal icon at the top of the window.
 <img src="/assets/run_access_cm/open_are_vdi_terminal.gif" alt="Open ARE VDI terminal" class="example-img" loading="lazy"/>
 
 ## Setup {{ model }} persistent session
-To support the use of long-running processes (such as ACCESS models runs), NCI provides a service on <i>Gadi</i> called <a href="https://opus.nci.org.au/display/Help/Persistent+Sessions" target="_blank">persistent sessions</a>.
+To support the use of long-running processes, such as ACCESS models runs, NCI provides a service on <i>Gadi</i> called <a href="https://opus.nci.org.au/display/Help/Persistent+Sessions" target="_blank">persistent sessions</a>.
 
 To run {{ model }}, you need to start a persistent session and set it as the target session for the model run.
 
@@ -104,7 +104,7 @@ If you want to assign a different project to the persistent session, use the opt
 <pre><code>persistent-sessions start -p &lt;project&gt; &lt;name&gt;</code></pre>
 
 <div class="note">
-    The project assigned to a persistent session does not have to be necessarily the same to the project used to run {{ model }} configuration, but needs to have allocated <i>Service Units</i> (SU).
+    While the project assigned to a persistent session does not have to be the same as the project used to run the {{ model }} configuration, it does need to have allocated <i>Service Units</i> (SU).
     <br>
     For more information, check how to <a href="/getting_started/first_steps#join-relevant-nci-projects">Join relevant NCI projects</a>.
 </div>
@@ -114,7 +114,7 @@ If you want to assign a different project to the persistent session, use the opt
     <terminal-line data="output">&emsp;ssh &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</terminal-line>
 </terminal-window>
 
-To list all the active persistent sessions run:
+To list all active persistent sessions run:
 <pre><code>persistent-sessions list</code></pre>
 
 <terminal-window data="input">
@@ -124,7 +124,7 @@ To list all the active persistent sessions run:
 </terminal-window>
 
 
-The full name of a newly created persistent session is formatted as: 
+The label of a newly-created persistent session has the following format: 
 <br>
 <code>&lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</code>.
 
@@ -132,23 +132,23 @@ The full name of a newly created persistent session is formatted as:
 
 After starting the persistent session, it is essential to assign it to the {{ model }} run.
 <br>
-The easiest way to do so, is to insert the persistent session full name into the file <code>~/.persistent-sessions/cylc-session</code>.
+The easiest way to do this, is to insert the persistent session label into the file <code>~/.persistent-sessions/cylc-session</code>.
 <br>
 You can do it manually, or by running the following command:
 
 <pre><code>cat > ~/.persistent-sessions/cylc-session <<< &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</code></pre>
 
-For example, if the user <code>dm5220</code> started a persistent session named <code>cylc</code>, under the project <code>tm70</code>, the command will be:
+For example, if the user <code>abc123</code> started a persistent session named <code>cylc</code>, under the project <code>xy00</code>, the command will be:
 
 <terminal-window data="input">
-    <terminal-line>cat > ~/.persistent-sessions/cylc-session <<< cylc.dm5220.tm70.ps.gadi.nci.org.au</terminal-line>
+    <terminal-line>cat > ~/.persistent-sessions/cylc-session <<< cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
     <terminal-line data="input" linedelay="1000">cat ~/.persistent-sessions/cylc-session</terminal-line>
-    <terminal-line data="output">cylc.dm5220.tm70.ps.gadi.nci.org.au</terminal-line>
+    <terminal-line data="output">cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
 </terminal-window>
 
-For more information on how to specify the target session, check <a href="https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession" target="_blank">Specify Target Session on Cylc7 Suites</a>.
+For more information on how to specify the target session, check <a href="https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession" target="_blank">Specify Target Session with Cylc7 Suites</a>.
 <div class="note">
-    You can concurrently submit multiple {{ model }} runs using the same persistent session, without the need to start another one. Therefore, the process of specifying the target persistent session for {{ model }} can potentially be done only once.
+    You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only need to be done once.
     <br>
     After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just have to make sure to have an active persistent session named like the {{ model }} target persistent session.
 </div>
@@ -191,9 +191,9 @@ module load cylc7/23.09</code></pre>
         </terminal-window>
     </li>
     <div class="note">
-        Make sure to load a version of <i>Cylc</i> >= <code>23.09</code>, as earlier versions do not support the persistent sessions workflow.
+        Make sure to load a version of <i>Cylc</i> >= <code>23.09</code> as earlier versions do not support the persistent sessions workflow.
         <br>
-        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and to have assigned it to the {{ model }} workflow. For more information about these steps, check <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">Setup {{ model }} persistent session</a>.
+        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, check <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">Setup {{ model }} persistent session</a>.
     </div>
     <li>
         <b>MOSRS authentication</b>
@@ -614,7 +614,7 @@ Files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;
 ## Port suites from accessdev
 <i>accessdev</i> was the server used for {{ model }} run submission workflow before the update to persistent sessions.
 <br>
-If you have a suite that was running on <i>accessdev</i>, you can run it on persistent sessions by doing the following steps:
+If you have a suite that was running on accessdev, you can run it using persistent sessions by carrying out the following steps:
 
 <ol>
     <li>
