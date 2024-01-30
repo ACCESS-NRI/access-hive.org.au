@@ -1,5 +1,10 @@
 {% set model = "ACCESS-CM" %}
 # Run {{ model }}
+<div class="note">
+    <b>Important for <i>accessdev</i> users!</b>
+    <br>
+    If you are an <i>accessdev</i> user, make sure you are a member of <a href="https://my.nci.org.au/mancini/project/hr22/join" target="_blank">hr22</a> and <a href="https://my.nci.org.au/mancini/project/ki32/join" target="_blank">ki32</a> projects, and then check the new <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">persistent session worflow for {{ model }}</a>, and how to <a href="#port-suites-from-accessdev">port suites from accessdev</a>.
+</div>
 ## Prerequisites
 ### General prerequisites
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the <a href="/getting_started/first_steps">First Steps</a> section.
@@ -25,34 +30,29 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
         For more information on how to join specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
     <li>
-    <b>Connection to an ARE VDI Desktop</b>
+    <b>Connection to an ARE VDI Desktop (optional)</b>
         <br>
-        To run {{ model }}, you need to be able to start an <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">Australian Research Environment (ARE) VDI Desktop</a> session.
+        To run {{ model }}, it is preferred to start an <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">Australian Research Environment (ARE) VDI Desktop</a> session.
         <br>
         If you are not familiar with ARE, check out the <a href="/getting_started/are">Getting Started on ARE</a> section.
     </li>
 </ul>
 
 --------------------------------------------
-## Setup ARE VDI Desktop
+## Setup ARE VDI Desktop (optional)
+To skip this step and run {{ model }} from <i>Gadi</i> login node instead, check <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">Setup {{ model }} persistent session</a>.
+
 ### Launch ARE VDI Session
 Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following directives:
 <ul>
     <li>
-        <b>Walltime (hours)</b> &rarr; &thickapprox; <code>4</code> per simulated year.
+        <b>Walltime (hours)</b> &rarr; <code>2</code>
         <br>
-        With the current state of the ARE/Gadi workflow, <b>the ARE VDI session needs to remain active and running for the entirety of the {{ model }} simulation</b>. If the ARE VDI session expires before the end of the simulation, the simulation itself will be terminated as well.
+        This is the amount of time the ARE VDI session will stay active for.
         <br>
+        {{ model }} does not run directly on ARE.
         <br>
-        This means that <code>walltime</code> needs to be set according to the simulation length.
-        <br>
-        A good estimate to calculate the <code>walltime</code> needed is <b>4 hours per simulated year</b>.
-        <div class="note">
-            ARE VDI session cannot be spun up for more than 48 consecutive hours. This means that {{ model }} simulations that need more than 48 hours to complete, at the current state, need to be broken down into multiple chunks running for up to 48 hours.
-            <br>
-            <br>
-            In the near future this will not be necessary anymore, as there will be long running servers in place for runnning {{ model }} simulations.
-        </div>
+        This means that the ARE VDI session only needs to carry out setup steps as well as starting the run itself. All these tasks can be done within 2 hours.
     </li>
     <li>
         <b>Queue</b> &rarr; <code>normalbw</code>
@@ -60,9 +60,7 @@ Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/de
     <li>
         <b>Compute Size</b> &rarr; <code>tiny</code> (1 CPU)
         <br>
-        {{ model }} runs on a different Gadi node with respect to the one where the ARE VDI session is launched.
-        <br>
-        This means that the ARE VDI session only needs to carry out setup steps as well as starting the run itself. All these tasks can be easily done with only 1 CPU.
+        As said above, the ARE VDI session is only needed for setup and startup tasks, which can be easily done with only 1 CPU.
     </li>
     <li>
         <b>Project</b> &rarr; a project of which you are a member.
@@ -91,6 +89,78 @@ Once the new tab opens, you will see a Desktop with a few folders on the left.
 To open the terminal, click on the black terminal icon at the top of the window. You should now be connected to a <i>Gadi</i> computing node.
 <img src="/assets/run_access_cm/open_are_vdi_terminal.gif" alt="Open ARE VDI terminal" class="example-img" loading="lazy"/>
 
+## Setup {{ model }} persistent session
+To support the use of long-running processes (such as ACCESS models runs), NCI provides a service on <i>Gadi</i> called <a href="https://opus.nci.org.au/display/Help/Persistent+Sessions" target="_blank">persistent sessions</a>.
+
+To run {{ model }}, you need to start a persistent session and set it as the target session for the model run.
+
+### Start a new persistent session
+To start a new persistent session on <i>Gadi</i> (in a login node, or in an ARE terminal instance), run the following command:
+<pre><code>persistent-sessions start &lt;name&gt;</code></pre>
+
+This will start a persistent session with the given <code>name</code> that runs under your <a href="/getting_started/first_steps#change-default-project-on-gadi">default project</a>. 
+<br>
+If you want to assign a different project to the persistent session, use the option <code>-p</code>:
+<pre><code>persistent-sessions start -p &lt;project&gt; &lt;name&gt;</code></pre>
+
+<div class="note">
+    The project assigned to a persistent session does not have to be necessarily the same to the project used to run {{ model }} configuration, but needs to have allocated <i>Service Units</i> (SU).
+    <br>
+    For more information, check how to <a href="/getting_started/first_steps#join-relevant-nci-projects">Join relevant NCI projects</a>.
+</div>
+<terminal-window data="input">
+    <terminal-line>persistent-sessions start &lt;name&gt;</terminal-line>
+    <terminal-line data="output">session &lt;persistent-session-uuid&gt; running - connect using</terminal-line>
+    <terminal-line data="output">&emsp;ssh &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</terminal-line>
+</terminal-window>
+
+To list all the active persistent sessions run:
+<pre><code>persistent-sessions list</code></pre>
+
+<terminal-window data="input">
+    <terminal-line>persistent-sessions list</terminal-line>
+    <terminal-line data="output">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;UUID&emsp;&emsp;PROJECT&emsp;&ensp;&ensp;ADDRESS&emsp;&emsp;&emsp;&emsp;CPUTIME&emsp;MEMORY</terminal-line>
+    <terminal-line data="output">&lt;persistent-session-uuid&gt;&emsp;&lt;project&gt;&emsp;10.9.0.62&emsp;00:00:05.213&emsp;30.5M</terminal-line>
+</terminal-window>
+
+
+The full name of a newly created persistent session is formatted as: 
+<br>
+<code>&lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</code>.
+
+### Specify {{ model }} target persistent session
+
+After starting the persistent session, it is essential to assign it to the {{ model }} run.
+<br>
+The easiest way to do so, is to insert the persistent session full name into the file <code>~/.persistent-sessions/cylc-session</code>.
+<br>
+You can do it manually, or by running the following command:
+
+<pre><code>cat > ~/.persistent-sessions/cylc-session <<< &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</code></pre>
+
+For example, if the user <code>dm5220</code> started a persistent session named <code>cylc</code>, under the project <code>tm70</code>, the command will be:
+
+<terminal-window data="input">
+    <terminal-line>cat > ~/.persistent-sessions/cylc-session <<< cylc.dm5220.tm70.ps.gadi.nci.org.au</terminal-line>
+    <terminal-line data="input" linedelay="1000">cat ~/.persistent-sessions/cylc-session</terminal-line>
+    <terminal-line data="output">cylc.dm5220.tm70.ps.gadi.nci.org.au</terminal-line>
+</terminal-window>
+
+For more information on how to specify the target session, check <a href="https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession" target="_blank">Specify Target Session on Cylc7 Suites</a>.
+<div class="note">
+    You can concurrently submit multiple {{ model }} runs using the same persistent session, without the need to start another one. Therefore, the process of specifying the target persistent session for {{ model }} can potentially be done only once.
+    <br>
+    After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just have to make sure to have an active persistent session named like the {{ model }} target persistent session.
+</div>
+
+### Terminate a persistent session
+To stop a persistent session, run:
+<pre><code>persistent-sessions kill &lt;persistent-session-uuid&gt;</code></pre>
+<div class="note">
+    When you terminate a persistent session, any model running on that session will stop. Therefore, you should check whether you have any active model runs before terminating a persistent session.
+</div>
+
+
 ## Get {{ model }} suite
 {{ model }} comprises the model components <a href="../../model_components/atmosphere/#unified-model-um">UM</a>, <a href="../../model_components/ocean/#modular-ocean-model-mom">MOM</a>, <a href="../../model_components/sea-ice/#cice">CICE</a>, <a href="../../model_components/land/#cable">CABLE</a> and <a href="../../model_components/coupler/#oasis3-mct">OASIS</a>. These components, which have different model parameters, input data and computer-related information, need to be packaged together as a <i>suite</i> in order to run.
 <br>
@@ -99,7 +169,6 @@ Each {{ model }} suite has a <code>suite-ID</code> in the format <code>u-&lt;sui
 For this example you can use <code>u-cy339</code>, which is a preindustrial experiment suite.
 <br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
-
 
 ### Copy {{ model }} suite with Rosie
 <a href = "http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html" target="_blank">Rosie</a> is an <a href = "https://subversion.apache.org/" target="_blank">SVN</a> repository wrapper with a set of options specific for {{ model }} suites.
@@ -111,14 +180,21 @@ To copy an existing suite on <i>Gadi</i> you need to follow three main steps:
         <br>
         To get the Cylc7 setup required to run {{ model }}, execute the following commands:
         <pre><code>module use /g/data/hr22/modulefiles
-module load cylc7</code></pre>
+module load cylc7/23.09</code></pre>
         <terminal-window data="input">
             <terminal-line>module use /g/data/hr22/modulefiles</terminal-line>
-            <terminal-line>module load cylc7</terminal-line>
-            <terminal-line data="output">Loading cylc7/23.03</terminal-line>
+            <terminal-line>module load cylc7/23.09</terminal-line>
+            <terminal-line data="output">Using the cylc session &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</terminal-line>
+            <terminal-line data="output"></terminal-line>
+            <terminal-line data="output">Loading cylc7/23.09</terminal-line>
             <terminal-line data="output">&emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
         </terminal-window>
     </li>
+    <div class="note">
+        Make sure to load a version of <i>Cylc</i> >= <code>23.09</code>, as earlier versions do not support the persistent sessions workflow.
+        <br>
+        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and to have assigned it to the {{ model }} workflow. For more information about these steps, check <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">Setup {{ model }} persistent session</a>.
+    </div>
     <li>
         <b>MOSRS authentication</b>
         <br>
@@ -274,34 +350,39 @@ After the initial tasks are executed, the <i>Cylc</i> GUI will open. You can now
     <terminal-line>[INFO] create: share/cycle</terminal-line>
     <terminal-line>[INFO] create: work</terminal-line>
     <terminal-line>[INFO] chdir: log/</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
+    <terminal-line>[WARN] Using the cylc session &lt;persistent-session-full-name&gt;</terminal-line>
+    <terminal-line>[WARN]</terminal-line>
+    <terminal-line>[WARN] Loading cylc7/23.09</terminal-line>
+    <terminal-line>[WARN] &emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
+    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;.&UnderBar;.</terminal-line>
     <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
-    <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-    <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-    <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
-    <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+    <terminal-line>[INFO] .&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;.&UnderBar;. .&UnderBar;| |&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
+    <terminal-line>[INFO] | .&UnderBar;&UnderBar;&UnderBar;| | | | | .&UnderBar;&UnderBar;&UnderBar;|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
+    <terminal-line>[INFO] | !&UnderBar;&UnderBar;&UnderBar;| !&UnderBar;! | | !&UnderBar;&UnderBar;&UnderBar;. &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar;</terminal-line>
+    <terminal-line>[INFO] !&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;!&UnderBar;&UnderBar;&UnderBar;. |&UnderBar;!&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.&UnderBar;&UnderBar;&UnderBar;! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
+    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
     <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] *** listening on https://&lt;gadi-cpu&gt;.gadi.nci.org.au:&lt;port&gt;/ ***</terminal-line>
+    <terminal-line>[INFO] *** listening on https://&lt;persistent-session-full-name&gt;:&lt;port&gt;/ ***</terminal-line>
     <terminal-line>[INFO]</terminal-line>
     <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
     <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
     <terminal-line>[INFO]</terminal-line>
     <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
-    <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;gadi-cpu&gt;.gadi.nci.org.au</terminal-line>
-    <terminal-line>[INFO]  $ cylc ping -v --host=&lt;gadi-cpu&gt;.nci.org.au &lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;gadi-cpu&gt;.nci.org.au</terminal-line>
-    <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+    <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;persistent-session-full-name&gt;</terminal-line>
+    <terminal-line>[INFO]  $ cylc ping -v --host=&lt;persistent-session-full-name&gt; &lt;suite-ID&gt;</terminal-line>
+    <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;persistent-session-full-name&gt;</terminal-line>
+    <img src="/assets/run&UnderBar;access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy"> -->
 </terminal-window>
+
 <div class="note">
     After running the command <code>rose suite-run</code>, if you get an error similar to the following:
     <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
 <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
-<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_HOST=gadi.nci.org.au
+<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_HOST=&lt;persistent-session-full-name&gt;
 <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_OWNER=&lt;$USER&gt;
 <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PORT=&lt;port&gt;
-<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PROCESS=&lt;PID&gt; python2 /usr/local/cylc/cylc-7.8.3/bin/cylc-run &lt;suite-ID&gt;
+<span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PROCESS=&lt;PID&gt; /g/data/hr22/apps/cylc7/bin/python -s /g/data/hr22/apps/cylc7/cylc_7.9.7/bin/cylc-run &lt;suite-ID&gt; --host=localhost
 <span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?</code></pre>
         you should run:
         <pre><code>rm /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact</code></pre>
@@ -429,6 +510,10 @@ There are two main ways to restart a suite:
             <terminal-line>[INFO] delete: log/rose-suite-run.version</terminal-line>
             <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.version <= log/rose-suite-run.version</terminal-line>
             <terminal-line>[INFO] chdir: log/</terminal-line>
+            <terminal-line>[WARN] Using the cylc session &lt;persistent-session-full-name&gt;</terminal-line>
+            <terminal-line>[WARN]</terminal-line>
+            <terminal-line>[WARN] Loading cylc7/23.09</terminal-line>
+            <terminal-line>[WARN] &emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
             <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
             <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
             <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
@@ -438,15 +523,15 @@ There are two main ways to restart a suite:
             <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
             <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
             <terminal-line>[INFO]</terminal-line>
-            <terminal-line>[INFO] *** listening on https://&lt;gadi-cpu&gt;.nci.org.au:&lt;port&gt;/ ***</terminal-line>
+            <terminal-line>[INFO] *** listening on https://&lt;persistent-session-full-name&gt;:&lt;port&gt;/ ***</terminal-line>
             <terminal-line>[INFO]</terminal-line>
             <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
             <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
             <terminal-line>[INFO]</terminal-line>
             <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
-            <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;gadi-cpu&gt;.nci.org.au</terminal-line>
-            <terminal-line>[INFO]  $ cylc ping -v --host=&lt;gadi-cpu&gt;.nci.org.au &lt;suite-ID&gt;</terminal-line>
-            <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;gadi-cpu&gt;.nci.org.au</terminal-line>
+            <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;persistent-session-full-name&gt;</terminal-line>
+            <terminal-line>[INFO]  $ cylc ping -v --host=&lt;persistent-session-full-name&gt; &lt;suite-ID&gt;</terminal-line>
+            <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;persistent-session-full-name&gt;</terminal-line>
             <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
         </terminal-window>
     </li>
@@ -526,6 +611,52 @@ For the <code>u-cy339</code> suite in this example, the <code>atm</code> directo
 
 Files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;day&gt;</code> contain metadata information.
 
+## Port suites from accessdev
+<i>accessdev</i> was the server used for {{ model }} run submission workflow before the update to persistent sessions.
+<br>
+If you have a suite that was running on <i>accessdev</i>, you can run it on persistent sessions by doing the following steps:
+
+<ol>
+    <li>
+        <b>Initialisation step</b>
+        <br>
+        To set the correct SSH configuration for <i>Cylc</i>, some SSH keys need to be created in the <code>~/.ssh</code> directory.
+        <br>
+        To create the needed SSH keys, run the following command:
+        <pre><code>/g/data/hr22/bin/gadi-cylc-setup-ps -y</code></pre>
+        <div class="note">
+            You only need to run this initialisation step once.
+        </div>
+    </li>
+    <li>
+        <b>Set host to localhost</b>
+        <br>
+        To enable <i>Cylc</i> to submit PBS jobs directly from the persistent session, the suite configuration should have its <code>host</code> set as <code>localhost</code>.
+        <br>
+        You can manually set all occurrencies of <code>host</code> to <code>localhost</code> in the suite configuration files. 
+        <br>
+        Alternatively, you can run the following command in the suite folder:
+        <pre><code>grep -rl --exclude-dir=.svn "host\s*=" . | xargs sed -i 's/\(host\s*=\s*\).*/\1localhost/g'</code></pre>
+    </li>
+    <li>
+        <b>Add gdata/hr22 and gdata/ki32 in the PBS storage directives</b>
+        <br>
+        The persistent sessions workflow uses files in the <code>hr22</code> and <code>ki32</code> project folders on <i>Gadi</i>. 
+        <br>
+        Therefore, the respective folders need to be added to the <code>storage</code> directive in the suite configuration files.
+        <br>
+        You can do this manually, or run the following command in the suite folder:
+        <pre><code>grep -rl --exclude-dir=.svn "\-l\s*storage\s*=" . | xargs sed -i '/\-l\s*storage\s*=\s*.*gdata\/hr22.*/! s/\(\-l\s*storage\s*=\s*.*\)/\1+gdata\/hr22/g ; /\-l\s*storage\s*=\s*.*gdata\/ki32.*/! s/\(\-l\s*storage\s*=\s*.*\)/\1+gdata\/ki32/g'</code></pre>
+    </li>
+</ol>
+
+
+<div class="note">
+    Some suites might not be ported this way. 
+    <br>
+    If you have a suite that was running on <i>accessdev</i> and, even after following the steps above, the run submission fails, consider <a href="/about/user_support/ask_on_forum">getting help on the Hive Forum</a>.
+</div>
+
 <br>
 <h6>References</h6>
 <ul class="references">
@@ -542,6 +673,9 @@ Files formatted as <code>&lt;suite-name&gt;a.xhist-&lt;year&gt;&lt;month&gt;&lt;
         <a href = "https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html" target="_blank">https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html</a>
     </li>
     <li>
-        <a href = "https://opus.nci.org.au/display/DAE/Cylc+7+on+ARE" target="_blank">https://opus.nci.org.au/display/DAE/Cylc+7+on+ARE</a>
+        <a href = "https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites" target="_blank">https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites</a>
+    </li>
+    <li>
+        <a href = "https://opus.nci.org.au/display/Help/Persistent+Sessions" target="_blank">https://opus.nci.org.au/display/Help/Persistent+Sessions</a>
     </li>
 </ul>
