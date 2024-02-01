@@ -6,7 +6,7 @@
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/model_evaluation_variables.png" alt="Data format and variables" class="img-contain white-background with-padding"></img>
         </div>
-        <div class="card-text-container bold ">Data format and variables</div>
+        <div class="card-text-container bold ">Data Format and Variables</div>
     </a>
     <a href="../model_evaluation_observational_catalogs" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
