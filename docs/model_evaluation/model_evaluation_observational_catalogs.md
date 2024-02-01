@@ -2,16 +2,16 @@
 
 NCI not only hosts numerous datasets for climate research, it also manages and optimises curated data collections.
 
-Here, you can browse and search the available NCI data collections:
+Here, you can browse and search the available <a href="https://geonetwork.nci.org.au/" target="_blank">NCI data collections</a>.
 
-<div class="card-container">
+<!-- <div class="card-container">
     <a href="https://geonetwork.nci.org.au/" target="_blank" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="/assets/model_evaluation/logo_nci_data_catalogs.png" alt="NCI Data Collections" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">Search for data here</div>
     </a>
-</div>
+</div> -->
 
 Some examples of NCI data collections include:
 <ul>

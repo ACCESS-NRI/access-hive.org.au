@@ -6,9 +6,15 @@ The <a href="https://www.ilamb.org/" target="_blank">International Land Model Be
     
 This documentation is tailored to using <i>ILAMB</i> on <i>Gadi</i> and, hence, it supplements rather than replaces the official documentation. Users are encouraged to read the <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and relevant <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">tutorials</a>.
 
-ACCESS-NRI is releasing an NCI configuration of ILAMB under the name **ILAMB-workflow**.  
+ACCESS-NRI is releasing an NCI configuration of ILAMB under the name *ILAMB-workflow*.  
 
-**ILAMB-workflow** is the ACCESS-NRI software and data infrastructure that enables the ILAMB evaluation framework on NCI Gadi. It includes the **ILAMB Python packages**, a series of **ILAMB outputs for ACCESS model evaluation** and the **ILAMB-Data collection of observational datasets**. ILAMB-workflow is configured to use the existing NCI supported CMIP data collections.
+*ILAMB-workflow* is the ACCESS-NRI software and data infrastructure that enables the ILAMB evaluation framework on NCI Gadi. It includes the 
+
+- *ILAMB* Python packages, 
+- a series of *ILAMB* outputs for ACCESS model evaluation,
+- the *ILAMB-Data* collection of observational datasets. 
+
+ILAMB-workflow is configured to use the existing NCI supported CMIP data collections.
 
 ## Using ILAMB on Gadi
 
@@ -28,22 +34,22 @@ Depending on your needs, you may want to also join the following supported data 
 ### Loading the ILAMB-workflow modules
  <!-- #### Load the `access-med` conda environment -->
 
-To load the the `ilamb` module, execute the following commands:
+To load the the *ilamb* module, execute the following commands:
 ```
     module use /g/data/xp65/public/modules
     module load conda/access-med
 ```
 
-For ACCESS-NRI documentation on how to run <i>ILAMB</i> on <i>Gadi</i>, visit:
+Visit <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" target="_blank">ACCESS-NRI documentation</a> on how to run <i>ILAMB</i> on <i>Gadi</i>.
 
-<div class="card-container">
+<!-- <div class="card-container">
     <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio2to1" target="_blank">
         <div class="card-image-container">
             <img src="/assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-cover white-background"></img>
         </div>
         <div class="card-text-container bold ">Documentation for ILAMB on Gadi</div>
     </a>
-</div>
+</div> -->
 
 <br>
 To run <i>ILAMB</i>, you need to execute the command `ilamb-run` with a number of arguments/ files:
@@ -52,11 +58,11 @@ ilamb-run --config config.cfg --model_setup model_setup.txt --regions regions.tx
 ```
 <ul>
     <li>
-    <code>config.cfg</code> defines which observables and observational datasets to be compared.
+    <i>config.cfg</i> defines which observables and observational datasets to be compared.
     <li>
-    <code>model_setup.txt</code> defines the paths of models that to be compared.
+    <i>model_setup.txt</i> defines the paths of models that to be compared.
     <li>
-    <code>regions.txt</code> defines the regions to be compared, e.g., <code>global</code>, <code>aust</code> (Australia), etc.
+    <i>regions.txt</i> defines the regions to be compared, e.g., <i>global</i>, <i>aust</i> (Australia), etc.
 </ul>
 
 While these files can be self-defined, ACCESS-NRI provides the necessary files and tools to set your model paths to run on <i>Gadi</i>. All you need to do is decide which observations and models you wish to compare. 
@@ -83,7 +89,7 @@ In the following example, the supported ACCESS Earth System Model (ESM) <a href=
 
 Numerous benchmark comparisons have been defined in the configuration file. The comparison of variables have been organised under different sections, such as the <i>Hydrology Cycle</i>. 
 <br>
-For other variables, such as the <i>git Gross Primary Productivity</i> `gpp`, one or more datasets are available. For example, the gross primary productivity measurements of <a href="https://fluxnet.org/data/fluxnet2015-dataset/" target="_blank">FLUXNET2015</a>. 
+For other variables, such as the <i>git Gross Primary Productivity</i> (*gpp*), one or more datasets are available. For example, the gross primary productivity measurements of <a href="https://fluxnet.org/data/fluxnet2015-dataset/" target="_blank">FLUXNET2015</a>. 
 <br>
 <br>
 By clicking on a row in the table, you can expand it to see the underlying datasets used. The table's colourmap extends from best values in purple to worse data in orange.

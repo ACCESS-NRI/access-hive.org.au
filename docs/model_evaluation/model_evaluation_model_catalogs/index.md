@@ -2,15 +2,15 @@
 
 The ACCESS-NRI Intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on <i>Gadi</i>. 
 
-For detailed information, tutorials and more, please go to:
-<div class="card-container">
+For detailed information, tutorials and more, please go to <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" target="_blank">ACCESS-NRI intake catalog documentation</a>.
+<!-- <div class="card-container">
     <a href="https://access-nri-intake-catalog.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/accessnri_intake.png" alt="ACCESS-NRI intake catalog documentation" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Documentation</div>
     </a>
-</div>
+</div> -->
 
 ## What is the ACCESS-NRI Intake catalog?
 

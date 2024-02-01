@@ -6,15 +6,15 @@
 
 In addition to monitoring a live model, the package also provides the functionality to load, visualise and compare legacy ACCESS model data with the live model.
 
-For more information and tutorials, please visit:
-<div class="card-container">
+For more information and tutorials, please visit <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics Documentation</a>
+<!-- <div class="card-container">
     <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
         <div class="card-image-container">
             <img src="../../../assets/access_logo_rgb.svg" alt="ACCESS-NRI Model Diagnostics Documentation" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Model Diagnostics Documentation</div>
     </a>
-</div>
+</div> -->
 
 ## Showcase: Monitoring total seawater mass of an ACCESS-CM2 run
 
