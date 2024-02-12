@@ -5,7 +5,7 @@
     <br>
     If you are an <i>accessdev</i> user, make sure you are a member of <a href="https://my.nci.org.au/mancini/project/hr22/join" target="_blank">hr22</a> and <a href="https://my.nci.org.au/mancini/project/ki32/join" target="_blank">ki32</a> projects.
     <br>
-    Then, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">set up persistent session worflow for {{ model }}</a>, and how to <a href="#port-suites-from-accessdev">port suites from accessdev</a>.
+    Then, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">Set up persistent session worflow for {{ model }}</a>, and how to <a href="#port-suites-from-accessdev">port suites from accessdev</a>.
 </div>
 ## Prerequisites
 ### General prerequisites
@@ -42,7 +42,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 --------------------------------------------
 ## Set up an ARE VDI Desktop (optional)
-To skip this step and instead run {{ model }} from <i>Gadi</i> login node, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">set up {{ model }} persistent session</a>.
+To skip this step and instead run {{ model }} from <i>Gadi</i> login node, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">Set up {{ model }} persistent session</a>.
 
 ### Launch ARE VDI Session
 Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following entries:
@@ -134,13 +134,13 @@ The label of a newly-created persistent session has the following format:
 
 After starting the persistent session, it is essential to assign it to the {{ model }} run.
 <br>
-The easiest way to do this, is to insert the persistent session label into the file <code>~/.persistent-sessions/cylc-session</code>.
+The easiest way to do this is to insert the persistent session label into the file <code>~/.persistent-sessions/cylc-session</code>.
 <br>
 You can do it manually, or by running the following command:
 
 <pre><code>cat > ~/.persistent-sessions/cylc-session <<< &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</code></pre>
 
-For example, if the user <code>abc123</code> started a persistent session named <code>cylc</code>, under the project <code>xy00</code>, the command will be:
+For example, if the user <code>abc123</code> started a persistent session named <code>cylc</code> under the project <code>xy00</code>, the command will be:
 
 <terminal-window data="input">
     <terminal-line>cat > ~/.persistent-sessions/cylc-session <<< cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
@@ -148,11 +148,11 @@ For example, if the user <code>abc123</code> started a persistent session named 
     <terminal-line data="output">cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
 </terminal-window>
 
-For more information on how to specify the target session, check <a href="https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession" target="_blank">Specify Target Session with Cylc7 Suites</a>.
+For more information on how to specify the target session, refer to <a href="https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession" target="_blank">Specify Target Session with Cylc7 Suites</a>.
 <div class="note">
     You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only need to be done once.
     <br>
-    After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just have to make sure to have an active persistent session named like the {{ model }} target persistent session.
+    After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just need to make sure to have an active persistent session named like the {{ model }} target persistent session.
 </div>
 
 ### Terminate a persistent session
@@ -168,7 +168,7 @@ To stop a persistent session, run:
 <br>
 Each {{ model }} suite has a <code>suite-ID</code> in the format <code>u-&lt;suite-name&gt;</code>, where <code>&lt;suite-name&gt;</code> is a unique identifier.
 <br>
-For this example you can use <code>u-cy339</code>, which is a preindustrial experiment suite.
+For this example you can use <code>u-cy339</code>, which is a pre-industrial experiment suite.
 <br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
@@ -193,9 +193,9 @@ module load cylc7/23.09</code></pre>
         </terminal-window>
     </li>
     <div class="note">
-        Make sure to load a version of <i>Cylc</i> >= <code>23.09</code> as earlier versions do not support the persistent sessions workflow.
+        Make sure to load <i>Cylc</i> version <code>23.09</code> (or later), as earlier versions do not support the persistent sessions workflow.
         <br>
-        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, check <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">Set up {{ model }} persistent session</a>.
+        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">Set up {{ model }} persistent session</a>.
     </div>
     <li>
         <b>MOSRS authentication</b>
@@ -624,7 +624,7 @@ If you have a suite that was running on accessdev, you can run it using persiste
         <br>
         To set the correct SSH configuration for <i>Cylc</i>, some SSH keys need to be created in the <code>~/.ssh</code> directory.
         <br>
-        To create the needed SSH keys, run the following command:
+        To create the required SSH keys, run the following command:
         <pre><code>/g/data/hr22/bin/gadi-cylc-setup-ps -y</code></pre>
         <div class="note">
             You only need to run this initialisation step once.
@@ -635,7 +635,7 @@ If you have a suite that was running on accessdev, you can run it using persiste
         <br>
         To enable <i>Cylc</i> to submit PBS jobs directly from the persistent session, the suite configuration should have its <code>host</code> set as <code>localhost</code>.
         <br>
-        You can manually set all occurrencies of <code>host</code> to <code>localhost</code> in the suite configuration files. 
+        You can manually set all occurrences of <code>host</code> to <code>localhost</code> in the suite configuration files. 
         <br>
         Alternatively, you can run the following command in the suite folder:
         <pre><code>grep -rl --exclude-dir=.svn "host\s*=" . | xargs sed -i 's/\(host\s*=\s*\).*/\1localhost/g'</code></pre>
@@ -643,11 +643,9 @@ If you have a suite that was running on accessdev, you can run it using persiste
     <li>
         <b>Add gdata/hr22 and gdata/ki32 in the PBS storage directives</b>
         <br>
-        The persistent sessions workflow uses files in the <code>hr22</code> and <code>ki32</code> project folders on <i>Gadi</i>. 
+        As the persistent sessions workflow uses files in the <code>hr22</code> and <code>ki32</code> project folders on <i>Gadi</i>, the respective folders need to be added to the <code>storage</code> directive in the suite configuration files.
         <br>
-        Therefore, the respective folders need to be added to the <code>storage</code> directive in the suite configuration files.
-        <br>
-        You can do this manually, or run the following command in the suite folder:
+        You can do this manually or run the following command from within the suite directory:
         <pre><code>grep -rl --exclude-dir=.svn "\-l\s*storage\s*=" . | xargs sed -i '/\-l\s*storage\s*=\s*.*gdata\/hr22.*/! s/\(\-l\s*storage\s*=\s*.*\)/\1+gdata\/hr22/g ; /\-l\s*storage\s*=\s*.*gdata\/ki32.*/! s/\(\-l\s*storage\s*=\s*.*\)/\1+gdata\/ki32/g'</code></pre>
     </li>
 </ol>
