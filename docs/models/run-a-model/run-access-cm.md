@@ -3,7 +3,9 @@
 <div class="note">
     <b>Important for <i>accessdev</i> users!</b>
     <br>
-    If you are an <i>accessdev</i> user, make sure you are a member of <a href="https://my.nci.org.au/mancini/project/hr22/join" target="_blank">hr22</a> and <a href="https://my.nci.org.au/mancini/project/ki32/join" target="_blank">ki32</a> projects, and then check the new <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">persistent session worflow for {{ model }}</a>, and how to <a href="#port-suites-from-accessdev">port suites from accessdev</a>.
+    If you are an <i>accessdev</i> user, make sure you are a member of <a href="https://my.nci.org.au/mancini/project/hr22/join" target="_blank">hr22</a> and <a href="https://my.nci.org.au/mancini/project/ki32/join" target="_blank">ki32</a> projects.
+    <br>
+    Then, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">set up persistent session worflow for {{ model }}</a>, and how to <a href="#port-suites-from-accessdev">port suites from accessdev</a>.
 </div>
 ## Prerequisites
 ### General prerequisites
@@ -32,18 +34,18 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
     <li>
     <b>Connection to an ARE VDI Desktop (optional)</b>
         <br>
-        To run {{ model }}, it is preferred to start an <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">Australian Research Environment (ARE) VDI Desktop</a> session.
+        To run {{ model }}, start an <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">Australian Research Environment (ARE) VDI Desktop</a> session.
         <br>
         If you are not familiar with ARE, check out the <a href="/getting_started/are">Getting Started on ARE</a> section.
     </li>
 </ul>
 
 --------------------------------------------
-## Setup ARE VDI Desktop (optional)
-To skip this step and run {{ model }} from <i>Gadi</i> login node instead, check <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">Setup {{ model }} persistent session</a>.
+## Set up an ARE VDI Desktop (optional)
+To skip this step and instead run {{ model }} from <i>Gadi</i> login node, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">set up {{ model }} persistent session</a>.
 
 ### Launch ARE VDI Session
-Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following directives:
+Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI</a> page and launch a session with the following entries:
 <ul>
     <li>
         <b>Walltime (hours)</b> &rarr; <code>2</code>
@@ -60,7 +62,7 @@ Go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/de
     <li>
         <b>Compute Size</b> &rarr; <code>tiny</code> (1 CPU)
         <br>
-        As said above, the ARE VDI session is only needed for setup and startup tasks, which can be easily done with only 1 CPU.
+        As mentioned above, the ARE VDI session is only needed for setup and startup tasks, which can be easily accomplished with 1 CPU.
     </li>
     <li>
         <b>Project</b> &rarr; a project of which you are a member.
@@ -89,13 +91,13 @@ Once the new tab opens, you will see a Desktop with a few folders on the left.
 To open the terminal, click on the black terminal icon at the top of the window. You should now be connected to a <i>Gadi</i> computing node.
 <img src="/assets/run_access_cm/open_are_vdi_terminal.gif" alt="Open ARE VDI terminal" class="example-img" loading="lazy"/>
 
-## Setup {{ model }} persistent session
-To support the use of long-running processes, such as ACCESS models runs, NCI provides a service on <i>Gadi</i> called <a href="https://opus.nci.org.au/display/Help/Persistent+Sessions" target="_blank">persistent sessions</a>.
+## Set up {{ model }} persistent session
+To support the use of long-running processes, such as ACCESS model runs, NCI provides a service on <i>Gadi</i> called <a href="https://opus.nci.org.au/display/Help/Persistent+Sessions" target="_blank">persistent sessions</a>.
 
 To run {{ model }}, you need to start a persistent session and set it as the target session for the model run.
 
 ### Start a new persistent session
-To start a new persistent session on <i>Gadi</i> (in a login node, or in an ARE terminal instance), run the following command:
+To start a new persistent session on <i>Gadi</i>, using either a login node or an ARE terminal instance, run the following command:
 <pre><code>persistent-sessions start &lt;name&gt;</code></pre>
 
 This will start a persistent session with the given <code>name</code> that runs under your <a href="/getting_started/first_steps#change-default-project-on-gadi">default project</a>. 
@@ -193,7 +195,7 @@ module load cylc7/23.09</code></pre>
     <div class="note">
         Make sure to load a version of <i>Cylc</i> >= <code>23.09</code> as earlier versions do not support the persistent sessions workflow.
         <br>
-        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, check <a href="{{ '#setup-%s-persistent-session'%model.lower() }}">Setup {{ model }} persistent session</a>.
+        Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, check <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">Set up {{ model }} persistent session</a>.
     </div>
     <li>
         <b>MOSRS authentication</b>
