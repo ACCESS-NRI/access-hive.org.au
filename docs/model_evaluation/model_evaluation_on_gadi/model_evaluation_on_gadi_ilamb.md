@@ -20,7 +20,8 @@ ILAMB-workflow is configured to use the existing NCI supported CMIP data collect
 
 ### Pre-requisites
 
-<i>ILAMB</i> is provided through the `xp65` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
+To use *ILAMB* on *Gadi* ensure you fulfill the [First Steps](/getting_started/first_steps) section.
+<i>ILAMB</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
 
 <div class='admonition warning'>
     To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
@@ -28,8 +29,8 @@ ILAMB-workflow is configured to use the existing NCI supported CMIP data collect
 
 Depending on your needs, you may want to also join the following supported data collections:
 
-- CMIP6: `fs38`, `oi10`
-- CMIP5: `rr3`, `al33`
+- CMIP6: <a href="https://my.nci.org.au/mancini/project/fs38/join" target="_blank">fs38</a>, <a href="https://my.nci.org.au/mancini/project/oi10/join" target="_blank">oi10</a>
+- CMIP5: <a href="https://my.nci.org.au/mancini/project/rr3/join" target="_blank">rr3</a>, <a href="https://my.nci.org.au/mancini/project/al33/join" target="_blank">al33</a>
 
 ### Loading the ILAMB-workflow modules
  <!-- #### Load the `access-med` conda environment -->
@@ -67,7 +68,7 @@ ilamb-run --config config.cfg --model_setup model_setup.txt --regions regions.tx
 
 While these files can be self-defined, ACCESS-NRI provides the necessary files and tools to set your model paths to run on <i>Gadi</i>. All you need to do is decide which observations and models you wish to compare. 
 <br>
-NCI hosts replicas of the <i>ILAMB</i> observational data sets through the NCI project `ct11` as well as a large amount of model outputs are available on <i>Gadi</i>, such as ACCESS model output.
+NCI hosts replicas of the <i>ILAMB</i> observational data sets through the NCI project <a href="https://my.nci.org.au/mancini/project/ct11/join" target="_blank">ct11</a> as well as a large amount of model outputs are available on <i>Gadi</i>, such as ACCESS model output.
 
 For more information, refer to <a href="\model_evaluation/model_evaluation_observational_catalogs" target="_blank">Observational Data Catalogue</a> on how to find observational data on NCI and <a href="\model_evaluation/model_evaluation_model_catalogs" target="_blank">ACCESS-NRI Intake Catalog</a> for how to find model outputs.
 <br>
