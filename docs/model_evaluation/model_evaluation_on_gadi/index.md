@@ -49,7 +49,7 @@ ACCESS-NRI currently provides support for the following model evaluation framewo
     </a>
 </div>
 
-<!-- The best way to get our help is by raising an issue on the <a href="https://forum.access-hive.org.au/" target="_blank">community forum</a> with tags `help` and another tag for the specific framework. -->
+<!-- The best way to get our help is by raising an issue on the <a href="https://forum.access-hive.org.au/" target="_blank">community forum</a> with tags `help` and another tag for the specific framework. 
 
 ### Tools in development
 
@@ -58,4 +58,4 @@ For the evaluation and diagnosis of ACCESS climate models, the following tools a
 * Data format processing tools like APP4  
 * An Evaluation Recipe Gallery with searching functionality  
 
-In future, ACCESS-NRI aims to support a broader range of frameworks and recipes that are currently not supported, but are listed in <a href="\community_resources/community_med">Community Resources</a>.
+In future, ACCESS-NRI aims to support a broader range of frameworks and recipes that are currently not supported, but are listed in <a href="\community_resources/community_med">Community Resources</a>.-->
