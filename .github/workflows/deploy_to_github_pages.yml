@@ -12,6 +12,8 @@ on:
       - closed
 env:
   TZ: Australia/Canberra
+permissions:
+  pull-requests: write # to comment on PRs
 
 jobs:
   pr-preview-setup:

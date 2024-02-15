@@ -3,6 +3,7 @@ hide:
   - navigation
   - toc
 ---
+
 <h1 class="homepage"></h1>
 <div class="introduction">
     <div>
