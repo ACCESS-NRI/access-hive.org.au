@@ -1050,6 +1050,13 @@ img.intro-img {
   margin: 0 0.6em;
 }
 
+.green_prompt_output {
+  color: #00C202
+}
+
+.red_prompt_output {
+  color: #CA1A01;
+}
 
 /* =============================================================== 
   Media queries for website responsiveness

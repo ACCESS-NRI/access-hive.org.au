@@ -10,9 +10,11 @@ The steps in this section are aimed at new users who would like to do any of the
 <hr>
 
 ## Create an NCI user account
+
 Most of the data and models you will need are available at the <a href="https://nci.org.au/about-us/who-we-are" target="_blank">National Computing Infrastructure (NCI) </a>.
 <br>
 To access these, you need an <a href="https://opus.nci.org.au/display/Help/How+to+create+an+NCI+user+account" target="_blank">NCI account</a>. If you do not have one, <a href="https://my.nci.org.au/mancini/signup/0" target="_blank">sign up here</a>.
+
 <div class="note">
 You will need an institutional email address with an organisation that allows access to NCI (e.g., an Australian university, ACCESS-NRI, CSIRO, BoM, CLEX, etc.).
 </div>
@@ -28,23 +30,26 @@ Each project has an ID (e.g. `xp65`), which is what the term <i>project</i> actu
 
 If you are interested in datasets and data collections, you can browse the <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/search" target="_blank">NCI Data Catalogue</a> and follow the <a href="https://opus.nci.org.au/display/Help/Data+Catalogue+User+Guide" target="_blank">NCI Data Catalogue User Guide</a>.
 
-To perform computations on <i>Gadi</i> instead, you need to join a project with computing resources, also called <i>Service Units (SU)</i>. The project ID will be provided by your supervisor, research project or institution.
+To run models on <i>Gadi</i> instead, you need to join a project with computing resources, also called <i>Service Units (SU)</i>. The project ID will be provided by your supervisor, research project or institution.
 
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
+
 <div class="note">
   The first project you join will become your default one. If you would like to change this, check out <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
-</div> 
+</div>
 
-There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out. 
+There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out.
 <br>
 For tasks supported by ACCESS-NRI (e.g., running a supported model configuration, using a supported model evaluation tool, etc.), you will find a list of relevant projects to join in the pages relative to each respective task.
 
 <hr>
 
 ## Login to Gadi
+
 Operations involving model runs and data collections take place on the <a href="https://nci.org.au/our-systems/hpc-systems" target="_blank">Gadi supercomputer</a>.
 
 Before you login to <i>Gadi</i>, you need to possess the following prerequisites:
+
 <ul>
   <li><b>Internet connection</b></li>
   <li>
@@ -62,28 +67,32 @@ Before you login to <i>Gadi</i>, you need to possess the following prerequisites
 </ul>
 
 To login to <i>Gadi</i> using <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH</a>, on your **local machine's terminal** run the following command, replacing <code>&lt;your-NCI-username&gt;</code> with your NCI <i>username</i> (e.g., <code>ab1234</code>):
+
 <pre><code>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</code></pre>
+
 You will be prompted to enter your NCI password, and then you will be connected to <i>Gadi</i>:
 <terminal-window lineDelay=0>
-  <terminal-line data="input" lineDelay=300>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</terminal-line>
-  <terminal-line lineDelay=300>&lt;NCI-username&gt;@gadi.nci.org.au's password: <i class="icon-key" style="display: inline-block; font-size: 0.4em; transform: rotate(-90deg);"></i></terminal-line>
-  <terminal-line lineDelay=3000>###############################################################################</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Welcome to the NCI National Facility!&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;This service is for authorised clients only. It is a criminal&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;#</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;offence to:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Obtain access to data without permission;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;#</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Damage, delete, alter or insert data without permission;&emsp;&nbsp;#</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;Use of this system requires acceptance of the Conditions of Use;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
-  <terminal-line>#&emsp;&emsp;&emsp;&emsp;published at http://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
-  <terminal-line>###############################################################################</terminal-line>
-  <terminal-line>|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster&emsp;&emsp;&nbsp;&nbsp;&nbsp;|</terminal-line>
-  <terminal-line>===============================================================================</terminal-line>
-  <terminal-line>===============================================================================</terminal-line>
-  <terminal-line data="input" lineDelay=200></terminal-line>
+<terminal-line data="input" lineDelay=300>ssh &lt;your-NCI-username&gt;@gadi.nci.org.au</terminal-line>
+<terminal-line lineDelay=300>&lt;NCI-username&gt;@gadi.nci.org.au's password: <i class="icon-key" style="display: inline-block; font-size: 0.4em; transform: rotate(-90deg);"></i></terminal-line>
+<terminal-line lineDelay=3000>###############################################################################</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Welcome to the NCI National Facility!&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;This service is for authorised clients only. It is a criminal&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;offence to:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Obtain access to data without permission;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Damage, delete, alter or insert data without permission;&emsp;&nbsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;Use of this system requires acceptance of the Conditions of Use;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;published at http://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
+<terminal-line>###############################################################################</terminal-line>
+<terminal-line>|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster&emsp;&emsp;&nbsp;&nbsp;&nbsp;|</terminal-line>
+<terminal-line>===============================================================================</terminal-line>
+<terminal-line>===============================================================================</terminal-line>
+<terminal-line data="input" lineDelay=200></terminal-line>
 </terminal-window>
 
 ### Auto login
+
 To simplify the login and avoid being prompted every time to enter your NCI password, follow these steps:
+
 <ol>
   <li>
     <b>Create an SSH key</b>
@@ -217,40 +226,46 @@ Once you complete all the above steps, you should be able to connect to <i>Gadi<
 <pre><code>ssh gadi</code></pre>
 
 ### Change default project on Gadi
+
 It is recommended that you check what your default project on <i>Gadi</i> is set to. The default project should be set to the computational project you will most likely use to run simulations/evaluations and store data.
 <br>
 You can check which is your default project by logging into <i>Gadi</i> and running:
+
 <pre><code>echo $PROJECT</code></pre>
+
 To change your default project on <i>Gadi</i>, you need to manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file.
 <br>
 Alternatively, you can run the following command <b>on <i>Gadi</i>'s terminal</b>:
+
 <pre><code>sed "s/\(PROJECT \).*/\1&lt;new-default-project&gt;/" ~/.config/gadi-login.conf</code></pre>
+
 Once this is done, exit from <i>Gadi</i> and log back in.
 <br>
 For example, if you want to change your default project to `tm70` on <i>Gadi</i>:
 <terminal-window>
-  <terminal-line data="input">echo $PROJECT</terminal-line>
+<terminal-line data="input">echo $PROJECT</terminal-line>
   <terminal-line>&lt;old-default-project&gt;</terminal-line>
   <terminal-line data="input">sed "s/\(PROJECT \).*/\1tm70/" ~/.config/gadi-login.conf</terminal-line>
   <terminal-line data="input">exit</terminal-line>
   <terminal-line>logout</terminal-line>
   <terminal-line>Connection to gadi.nci.org.au closed.</terminal-line>
   <terminal-line data="input" PS1="&lt;span style='color: #9734bb;'&gt;(User PC)$ &lt;/span&gt;">ssh gadi</terminal-line>
-  <terminal-line>###############################################################################</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Welcome to the NCI National Facility!&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;This service is for authorised clients only. It is a criminal&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;#</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;offence to:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Obtain access to data without permission;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;#</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Damage, delete, alter or insert data without permission;&emsp;&nbsp;#</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;Use of this system requires acceptance of the Conditions of Use;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
-  <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;published at http://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
-  <terminal-line lineDelay=0>###############################################################################</terminal-line>
-  <terminal-line lineDelay=0>|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster&emsp;&emsp;&nbsp;&nbsp;&nbsp;|</terminal-line>
-  <terminal-line lineDelay=0>===============================================================================</terminal-line>
-  <terminal-line lineDelay=0>===============================================================================</terminal-line>
-  <terminal-line data="input">echo $PROJECT</terminal-line>
-  <terminal-line>tm70</terminal-line>
+<terminal-line>###############################################################################</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Welcome to the NCI National Facility!&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;This service is for authorised clients only. It is a criminal&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;offence to:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Obtain access to data without permission;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Damage, delete, alter or insert data without permission;&emsp;&nbsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;Use of this system requires acceptance of the Conditions of Use;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;published at http://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
+<terminal-line lineDelay=0>###############################################################################</terminal-line>
+<terminal-line lineDelay=0>|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster&emsp;&emsp;&nbsp;&nbsp;&nbsp;|</terminal-line>
+<terminal-line lineDelay=0>===============================================================================</terminal-line>
+<terminal-line lineDelay=0>===============================================================================</terminal-line>
+<terminal-line data="input">echo $PROJECT</terminal-line>
+<terminal-line>tm70</terminal-line>
 </terminal-window>
+
 <hr>
 
 <h6>References</h6>
