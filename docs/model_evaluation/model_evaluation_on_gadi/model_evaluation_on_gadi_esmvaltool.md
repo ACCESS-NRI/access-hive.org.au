@@ -6,14 +6,14 @@ The Earth System Model Evaluation Tool (ESMValTool) is a tool developed for eval
 
 For more information, refer to the official <a href="https://docs.esmvaltool.org/en/latest" target="_blank">ESMValTool documentation</a>.
 
-<div class="card-container">
+<!--<div class="card-container">
     <a href="https://docs.esmvaltool.org/en/latest/" target="_blank" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
         <div class="card-text-container bold">ESMValTool</div>
     </a>
-</div>
+</div> -->
 
 ACCESS-NRI is supporting an NCI configuration of ESMValTool under the name **ESMValTool-workflow**.  
 
@@ -21,30 +21,33 @@ ACCESS-NRI is supporting an NCI configuration of ESMValTool under the name **ESM
 
 ## Using ESMValTool on Gadi
 
-<i>ESMValTool</i> is provided through the `xp65` project on Gadi.
+<i>ESMValTool</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> project on Gadi.
 
 ### Pre-requisites
 
-To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the `xp65` NCI projects:
+To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the <i>xp65</i> NCI projects:
 
 Depending on your needs, you may want to also join the following supported data collections:
 
-- CMIP6: `fs38`, `oi10`
-- CMIP5: `rr3`, `al33`
-- ERA5 and ERA5-Land: `rt52`, `zz93`
-- obs4MIPs: `qv56`
+- CMIP6: <a href="https://my.nci.org.au/mancini/project/fs38/join" target="_blank">fs38</a>, <a href="https://my.nci.org.au/mancini/project/oi10/join" target="_blank">oi10</a>
+- CMIP5: <a href="https://my.nci.org.au/mancini/project/rr3/join" target="_blank">rr3</a>, <a href="https://my.nci.org.au/mancini/project/al33/join" target="_blank">al33</a>
+- Observation data collection: <a href="https://my.nci.org.au/mancini/project/ct11/join" target="_blank">ct11</a>
+- ERA5 and ERA5-Land: <a href="https://my.nci.org.au/mancini/project/rt52/join" target="_blank">rt52</a>, <a href="https://my.nci.org.au/mancini/project/zz93/join" target="_blank">zz93</a>
+<!-- 
 
+- obs4MIPs: `qv56`
+-->
 ### Loading the ESMValTool-workflow modules
  <!-- #### Load the `access-med` conda environment -->
 
-To load the the `esmvaltool` module, execute the following commands:
+To load the the *esmvaltool* module, execute the following commands:
 ```
     module use /g/data/xp65/public/modules
     module load esmvaltool
 ```
 
 ESMValTool is pre-configured to access CMIP and observation datasets available on Gadi.
-By default, ESMValTool looks for the `config_user.yml` file in the home directory, inside the `.esmvaltool` folder.
+By default, ESMValTool looks for the *config_user.yml* file in the home directory, inside the *.esmvaltool* folder.
 You can get a copy by running:
 
 ```
@@ -56,7 +59,7 @@ To list which <i>ESMValTool</i> recipes are available on <i>Gadi</i>, run:
 esmvaltool recipes list
 ```
 
-To find out details of a specific `recipe_name.yml`, execute:
+To find out details of a specific *recipe_name.yml*, execute:
 ```
 esmvaltool recipes show recipe_name.yml
 ```
@@ -66,7 +69,7 @@ To retrieve a recipe (and modify it), execute:
 esmvaltool recipes get recipe_name.yml
 ```
 
-To execute `recipe_name.yml` and automatically download the required climate data to the default directory, run:
+To execute *recipe_name.yml* and automatically download the required climate data to the default directory, run:
 
 ```
 esmvaltool run examples/recipe_python.yml --search_esgf=when_missing
@@ -113,7 +116,7 @@ General <i>ESMValTool</i> support (i.e. non-specific to <i>Gadi</i>) can be foun
 
 Contacts for specific diagnostic sets are the authors listed in the source code and corresponding <a href="https://docs.esmvaltool.org/en/latest/recipes/index.html#recipes" target="_blank">recipe and diagnostic documentation</a>.
 
-The current status of <i>ESMValTool</i> recipes for the `xp65` conda environment on <i>Gadi</i> is available <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">here</a>
+The current status of <i>ESMValTool</i> recipes for the *xp65* conda environment on <i>Gadi</i> is available <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">here</a>
 
 ### License
 
