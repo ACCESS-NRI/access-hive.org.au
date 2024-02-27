@@ -14,31 +14,38 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 <ul>
     <li>
-        <b>Join the <i>hh5</i>, <i>qv56</i>, <i>ua8</i> and <i>ik11</i> projects at NCI</i></b>
+        <b>Join the <i>vk83</i> and <i>qv56</i> projects at NCI</i></b>
         <br>
-        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/hh5/join" target="_blank">hh5</a>, <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a>, <a href="https://my.nci.org.au/mancini/project/ua8/join" target="_blank">ua8</a> and <a href="https://my.nci.org.au/mancini/project/ik11/join" target="_blank">ik11</a> NCI project pages.
+        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/vk83/join" target="_blank">vk83</a> and <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a> NCI project pages.
         <br>
         For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
     </li>
     <li>
         <b>Payu</b>
         <br>
-        <i>Payu</i> on <i>Gadi</i> is available through the <code>conda/analysis3</code> environment in the <i>hh5</i> project.
+        <i>Payu</i> on <i>Gadi</i> is available through a dedicated <code>conda</code> environment in the <i>vk83</i> project.
         <br>
-        After obtaining <i>hh5</i> project membership, load the <code>conda/analysis3</code> environment to automatically retrieve <i>payu</i> as follows:
-        <pre><code>module use /g/data/hh5/public/modules
-module load conda/analysis3</code></pre> 
+        After obtaining <i>vk83</i> project membership, load the <code>payu</code> environment:
+        <pre><code>module use /g/data/vk83/modules
+module load payu</code></pre> 
         To check that <i>payu</i> is available, run:
         <pre><code>payu --version</code></pre>
         <terminal-window>
             <terminal-line data="input">payu --version</terminal-line>
-            <terminal-line lineDelay="1000">1.0.19</terminal-line>
+            <terminal-line lineDelay="1000">1.1.1</terminal-line>
         </terminal-window>
+        <br>
+        <b>Note:</b> A <code>payu</code> version >=1.1 is required
     </li>
 </ul>
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
+
+All {{ model }} configurations are available from the [ACCESS-OM2 configs] 
+ repository. There are configurations for three global resolutions: 1°, 0.25°, 0.1°. For each resolution there are two options of atmospheric forcing: Repeat Year (RYF) and Interannual (IAF). Each configuration also has a biogeochemical (BGC) configuration if this is required. Note the BGC experiments are slower and so consume more resources, both compute time and generally also disk space.
+
+ACCESS-NRI has adapted all ACCESS-OM2 model configurations from those originally developed by [COSIMA]. 
 
 A standard {{ model }} configuration is available on the <a href = "https://github.com/COSIMA/1deg_jra55_iaf/" target="_blank">COSIMA GitHub</a>.
 <br>
@@ -434,3 +441,6 @@ Outputs and restarts are separated in the respective folders for each model comp
         <a href = "https://payu.readthedocs.io/en/latest/usage.html" target="_blank">https://payu.readthedocs.io/en/latest/usage.html</a>
     </li>
 </ul>
+
+[COSIMA]: https://cosima.org.au
+[ACCESS-OM2 configs]: https://github.com/ACCESS-NRI/access-om2-configs
