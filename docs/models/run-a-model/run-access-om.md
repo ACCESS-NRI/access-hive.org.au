@@ -12,73 +12,218 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 ### Model-specific prerequisites
 
-<ul>
-    <li>
-        <b>Join the <i>vk83</i> and <i>qv56</i> projects at NCI</i></b>
-        <br>
-        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/vk83/join" target="_blank">vk83</a> and <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a> NCI project pages.
-        <br>
-        For more information on how to join specific NCI projects, please refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
-    </li>
-    <li>
-        <b>Payu</b>
-        <br>
-        <i>Payu</i> on <i>Gadi</i> is available through a dedicated <code>conda</code> environment in the <i>vk83</i> project.
-        <br>
-        After obtaining <i>vk83</i> project membership, load the <code>payu</code> environment:
-        <pre><code>module use /g/data/vk83/modules
-module load payu</code></pre> 
-        To check that <i>payu</i> is available, run:
-        <pre><code>payu --version</code></pre>
-        <terminal-window>
-            <terminal-line data="input">payu --version</terminal-line>
-            <terminal-line lineDelay="1000">1.1.1</terminal-line>
-        </terminal-window>
-        <br>
-        <b>Note:</b> A <code>payu</code> version >=1.1 is required
-    </li>
-</ul>
+**Join the _vk83_ and _qv56_ projects at NCI** 
+
+To join these projects request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.
+
+For more information on how to join specific NCI projects, please refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project").
+
+**Payu**
+
+[_Payu_](https://payu.readthedocs.io/en/latest/) is a workflow management tool for running numerical models in supercomputing environments.
+
+_Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.
+
+After joining the _vk83_ project load the _payu_ environment:
+
+    module use /g/data/vk83/modules
+    module load payu
+
+To check that _payu_ is available, run:
+
+    payu --version
+
+<terminal-window>
+<terminal-line data="input">payu --version</terminal-line>
+<terminal-line lineDelay="1000">1.1.1</terminal-line>
+</terminal-window>
+
+**Note:** _payu_ version >=1.1 is required
+
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
 
-All {{ model }} configurations are available from the [ACCESS-OM2 configs] 
- repository. There are configurations for three global resolutions: 1°, 0.25°, 0.1°. For each resolution there are two options of atmospheric forcing: Repeat Year (RYF) and Interannual (IAF). Each configuration also has a biogeochemical (BGC) configuration if this is required. Note the BGC experiments are slower and so consume more resources, both compute time and generally also disk space.
+All {{ model }} configurations are available from the [ACCESS-OM2 configs] repository.  ACCESS-NRI has adapted model configurations from those originally developed by [COSIMA]. 
+ 
+There are global configurations for three resolutions: 1°, 0.25°, 0.1°. For each resolution there are two options of atmospheric forcing: Repeat Year (RYF) and Interannual (IAF). Each configuration also has a biogeochemical (BGC) configuration if this is required. Note the BGC experiments are slower and so consume more resources, both compute time and generally also disk space. 
 
-ACCESS-NRI has adapted all ACCESS-OM2 model configurations from those originally developed by [COSIMA]. 
+Each configuration is stored as a separate specially named branch in the [ACCESS-OM2 configs] repo. They are organised like this for administrative convenience: they are easier to manage and keep grouped for testing. Anyone using a configuration is advised to just clone a single branch and not attempt to keep this structure.
 
-A standard {{ model }} configuration is available on the <a href = "https://github.com/COSIMA/1deg_jra55_iaf/" target="_blank">COSIMA GitHub</a>.
-<br>
-This is a 1° horizontal resolution configuration with interannual forcing from 1 Jan 1958 to 31 Dec 2018.
-<br>
-To get it on <i>Gadi</i>, create a directory to store the model configuration.Navigate to this directory and clone the GitHub repo in it by running:
+The first step is to decide which configuration is required from the twelve available. For example, if the 1° horizontal resolution configuration with repeat-year JRA55 forcing (without bgc) is the required configuration then [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf) branch is the correct configuration.
 
-<pre><code>git clone https://github.com/COSIMA/1deg_jra55_iaf.git</code></pre>
+The next step is to clone this branch to a location on _Gadi_:
+
+    payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf
+
+<div class="note">
+These instructions use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment branch `expt` in a directory named `1deg_jra55_ryf` as an example. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+</div>
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
     <terminal-line data="input">cd ~/access-om</terminal-line>
-    <terminal-line data="input" directory="~/access-om">git clone https://github.com/COSIMA/1deg_jra55_iaf.git</terminal-line>
-    <terminal-line>Cloning into '1deg_jra55_iaf'...</terminal-line>
-    <terminal-line lineDelay=1000>remote: Enumerating objects: 14715, done.</terminal-line>
-    <terminal-line>remote: Counting objects: 100% (3401/3401), done.</terminal-line>
-    <terminal-line>remote: Compressing objects: 100% (24/24), done.</terminal-line>
-    <terminal-line>remote: Total 14715 (delta 3383), reused 3379 (delta 3377), pack-reused 11314</terminal-line>
-    <terminal-line>Receiving objects: 100% (14715/14715), 35.68 MiB | 18.11 MiB/s, done.</terminal-line>
-    <terminal-line>Resolving deltas: 100% (10707/10707), done.</terminal-line>
+    <terminal-line data="input" directory="~/access-om">payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om2-configs.git to directory: .../access-om/1deg_jra55_ryf</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../access-om2</terminal-line>
+    <terminal-line>binary path:  /scratch/.../access-om2/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../access-om2/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../access-om2/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../access-om2/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../access-om2/archive/1deg_jra55_ryf-expt-daeee7ff</terminal-line>
+    <terminal-line>To change directory to control directory run:</terminal-line>
+    <terminal-line>    cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
 <div class="note">
-   Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
-   After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
+   Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module unload matlab</code></pre>
 </div>
 ----------------------------------------------------------------------------------------
 
+## Running an {{ model }} configuration
+
+{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through a [PBS Job][PBS Jobs] submission managed by _payu_.
+
+### Payu setup (optional)
+
+As a first step, from within the _control_ directory, it is good practice to run:
+
+    payu setup
+
+This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration and report some useful information to the user, such as the location of the laboratory where the `work` and `archive` directories are located.
+<terminal-window>
+<terminal-line data="input">payu setup</terminal-line>
+<terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
+<terminal-line>binary path: /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
+<terminal-line>input path: /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
+<terminal-line>work path: /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
+<terminal-line>archive path: /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
+<terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
+<terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
+<terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
+<terminal-line>Setting up atmosphere</terminal-line>
+<terminal-line>Setting up ocean</terminal-line>
+<terminal-line>Setting up ice</terminal-line>
+<terminal-line>Setting up access-om2</terminal-line>
+<terminal-line>Checking exe and input manifests</terminal-line>
+<terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
+<terminal-line>Creating restart manifest</terminal-line>
+<terminal-line>Writing manifests/restart.yaml</terminal-line>
+<terminal-line>Writing manifests/exe.yaml</terminal-line>
+</terminal-window>
+
+<div class="note">
+    This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and ensure executable and restart directories are accessible.
+</div>
+
+### Run configuration
+
+To run {{ model }} configuration for one internal run length (controlled by `restart_period` in the `~/access-om/1deg_jra55_iaf/accessom2.nml` file), execute:
+
+    payu run -f
+
+This will submit a single job to the queue with a total run length of `restart_period`.
+
+<div class="note">
+    The `-f` option ensures that `payu` will run even if there is an existing non-empty `work` directory created from a previous failed run.
+</div>
+<terminal-window>
+    <terminal-line data="input">payu run -f</terminal-line>
+    <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
+    <terminal-line>payu: warning: CPU request increased from 241 to 288</terminal-line>
+    <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
+    <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
+    <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
+    <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
+    <terminal-line>qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_iaf -l wd -j n -v PYTHONPATH=/g/data3/tm70/dm5220/scripts/python_modules/,PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,PAYU_FORCE=True,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/ik11+gdata/qv56 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
+    <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
+</terminal-window>
+
+### Run configuration for multiple years
+
+If you want to run an {{ model }} configuration for multiple internal run lengths (controlled by `restart_period` in the `~/access-om/1deg_jra55_iaf/accessom2.nml` file), use the option `-n`:
+
+    payu run -f -n <number-of-runs>
+
+This will run the configuration `number-of-runs` times with a total run length of `restart_period * number-of-runs`.
+
+For example, to run the configuration for a total of 50 years with `restart_period = 5, 0, 0` (5 years), the `number-of-runs` should be set to `10`:
+
+    payu run -f -n 10
+
+## Monitor {{ model }} runs
+
+Currently, there is no specific tool to monitor {{ model }} runs. However `payu run` reports the PBS `job-ID`, e.g. `110020843.gadi-pbs`, as the last line to the terminal. `qstat` can be used to query the status of the job:
+
+    qstat 110021035
+
+<terminal-window>
+    <terminal-line data="input">qstat 110021035</terminal-line>
+    <terminal-line linedelay=500>qstat 110021035</terminal-line>
+    <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
+    <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
+    <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+</terminal-window>
+
+You can execute the following command to show the status of all your submitted [PBS jobs]:
+
+    qstat -u $USER
+
+<terminal-window>
+    <terminal-line data="input">qstat -u $USER</terminal-line>
+    <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
+    <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_iaf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+</terminal-window>
+If  the `jobname` in the PBS resources of the [_Master Configuration_ file](#edit-the-master-configuration-file), that will appear as your job's _Name_ instead of `1deg_jra55_ryf`.
+
+_S_ indicates the status of your run, where:
+    - Q &rarr; Job waiting in the queue to start
+    - R &rarr; Job running
+    - E &rarr; Job ending
+
+If there are no jobs listed with your <code>jobname</code> (or if no job is listed), your run either successfully completed or was terminated due to an error.
+
+### Stop a run
+
+If you want to manually terminate a run, you can do so by executing:
+
+    qdel job-ID
+
+### Error and output log files
+
+While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access-om2.out</code> and <code>access-om2.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
+<br>
+When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
+
+### Model Live Diagnostics
+
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
+
+---
+
+## {{ model }} outputs
+
+At the end of the model run, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-om2/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-om/1deg_jra55_iaf/archive</code>.
+<br>
+Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>1deg_jra55_iaf</code>). Inside the configuration folder, they are further subdivided for each internal run.
+<br>
+The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
+<br>
+Outputs and restarts are separated in the respective folders for each model component.
+<br>
+<terminal-window>
+<terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf</terminal-line>
+<terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf">ls</terminal-line>
+<terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
+</terminal-window>
+
+
 ## Edit {{ model }} configuration
-
-It is good practice to create a new <i>git branch</i> to store all your modifications for a particular run, so as not to modify the reference configuration.
-
-To create a local branch called <i>"example_run"</i>, from within the cloned repo execute:
-
-<pre><code>git checkout -b example_run</code></pre>
 
 ### Payu
 
@@ -286,142 +431,6 @@ To change the internal run length, edit the <code>restart_period</code> field in
 </div>
 
 ---
-
-## Run {{ model }} configuration
-
-After editing the configuration, you are ready to run {{ model }}.
-<br>
-{{ model }} suites run on <a href="https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview" target="_blank"><i>Gadi</i></a> through a <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission managed by <i>payu</i>.
-
-### Payu setup (optional)
-
-As a first step, from within the <i>control</i> directory, it is good practice to run:
-
-<pre><code>payu setup</code></pre>
-
-This will prepare the model run, based on the experiment configuration.
-<terminal-window>
-<terminal-line data="input">payu setup</terminal-line>
-<terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
-<terminal-line>binary ppath: /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
-<terminal-line>input path: /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
-<terminal-line>work path: /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
-<terminal-line>archive path: /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
-<terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
-<terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
-<terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
-<terminal-line>Setting up atmosphere</terminal-line>
-<terminal-line>Setting up ocean</terminal-line>
-<terminal-line>Setting up ice</terminal-line>
-<terminal-line>Setting up access-om2</terminal-line>
-<terminal-line>Checking exe and input manifests</terminal-line>
-<terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
-<terminal-line>Creating restart manifest</terminal-line>
-<terminal-line>Writing manifests/restart.yaml</terminal-line>
-<terminal-line>Writing manifests/exe.yaml</terminal-line>
-</terminal-window>
-
-<div class="note">
-    This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and make sure executable and restart directories are accessible.
-</div>
-
-### Run configuration
-
-To run {{ model }} configuration for one internal run length (controlled by <code>restart_period</code> in the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file), execute:
-
-<pre><code>payu run -f</code></pre>
-
-This will submit a single job to the queue with a total run length of <code>restart_period</code>.
-<br>
-
-<div class="note">
-    The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory created from a previous failed run.
-</div>
-<terminal-window>
-    <terminal-line data="input">payu run -f</terminal-line>
-    <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
-    <terminal-line>payu: warning: CPU request increased from 241 to 288</terminal-line>
-    <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
-    <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
-    <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
-    <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
-    <terminal-line>qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_iaf -l wd -j n -v PYTHONPATH=/g/data3/tm70/dm5220/scripts/python_modules/,PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin,PAYU_FORCE=True,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data3/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/ik11+gdata/qv56 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/python3.9 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.01/bin/payu-run</terminal-line>
-    <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
-</terminal-window>
-
-### Run configuration for multiple years
-
-If you want to run {{ model }} configuration for multiple internal run lengths (controlled by <code>restart_period</code> in the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file), use the option <code>-n</code>:
-
-<pre><code>payu run -f -n &lt;number-of-runs&gt;</code></pre>
-
-This will run the configuration <code>number-of-runs</code> times with a total run length of <code>restart_period \* number-of-runs</code>.
-<br>
-For example, to run the configuration for a total of 50 years with <code>restart_period = 5, 0, 0</code> (5 years), the <code>number-of-runs</code> should be set to <code>10</code>:
-
-## <pre><code>payu run -f -n 10</code></pre>
-
-## Monitor {{ model }} runs
-
-Currently, there is no specific tool to monitor {{ model }} runs.
-<br>
-You can execute the following command to show the status of all your submitted <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a>:
-
-<pre><code>qstat -u $USER</code></pre>
-<terminal-window>
-    <terminal-line data="input">qstat -u $USER</terminal-line>
-    <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
-    <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_iaf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-</terminal-window>
-If you changed the <code>jobname</code> in the PBS resources of the <a href="#edit-the-master-configuration-file"><i>Master Configuration</i> file</a>, that will appear as your job's <i>Name</i> instead of <code>1deg_jra55_iaf</code>.
-<br>
-<i>S</i> indicates the status of your run, where:
-<ul>
-    <li>Q &rarr; Job waiting in the queue to start</li>
-    <li>R &rarr; Job running</li>
-    <li>E &rarr; Job ending</li>
-</ul>
-If there are no jobs listed with your <code>jobname</code> (or if no job is listed), your run either successfully completed or was terminated due to an error.
-
-### Stop a run
-
-If you want to manually terminate a run, you can do so by executing:
-
-<pre><code>qdel &lt;job-ID&gt;</code></pre>
-
-### Error and output log files
-
-While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access-om2.out</code> and <code>access-om2.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
-<br>
-When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
-
-### Model Live Diagnostics
-
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
-<br>
-For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
-
----
-
-## {{ model }} outputs
-
-At the end of the model run, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-om2/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-om/1deg_jra55_iaf/archive</code>.
-<br>
-Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>1deg_jra55_iaf</code>). Inside the configuration folder, they are further subdivided for each internal run.
-<br>
-The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
-<br>
-Outputs and restarts are separated in the respective folders for each model component.
-<br>
-<terminal-window>
-<terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf</terminal-line>
-<terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf">ls</terminal-line>
-<terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
-</terminal-window>
-
 <br>
 <h6>References</h6>
 <ul class="references">
@@ -444,3 +453,4 @@ Outputs and restarts are separated in the respective folders for each model comp
 
 [COSIMA]: https://cosima.org.au
 [ACCESS-OM2 configs]: https://github.com/ACCESS-NRI/access-om2-configs
+[PBS Jobs]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
