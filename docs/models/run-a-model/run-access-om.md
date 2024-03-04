@@ -126,7 +126,7 @@ To run {{ model }} configuration for one internal run length (controlled by `res
 This will submit a single job to the queue with a total run length of `restart_period`.
 
 <div class="note">
-    The `-f` option ensures that `payu` will run even if there is an existing non-empty `work` directory created from a previous failed run.
+    The `-f` option ensures that `payu` will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
 </div>
 <terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>
@@ -196,36 +196,39 @@ If you want to manually terminate a run, you can do so by executing:
 
 ### Error and output log files
 
-While the model is running, _payu_ saves the standard output and standard error in the respective _access-om2.out_ and _access-om2.err_ files in the _control_ directory. You can examine the contents of these files to check on the status of a run as it progresses.
+While the model is running, _payu_ saves the model standard output and standard error in the _access-om2.out_ and _access-om2.err_ log files in the _control_ directory. You can examine the contents of these files to check on the status of a run as it progresses.
 
-When the model completes its run outputs in the `work` directory 
+At the end of a successful run these log files are archived. If they remain in the `control` directory after the PBS job for a run has completed this is an indication the run has failed.
 
-or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
+### PBS output files
 
-### Model Live Diagnostics
-
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
-<br>
-For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
-
----
+When the model completes PBS writes the standard outout and error streams to two files into the control directory: `jobname.o<job-ID>` and `jobname.e<job-ID>` respectively. This is terminal output that isn't otherwise redirected into model log files.
 
 ## {{ model }} outputs
 
-At the end of the model run, output files (and restart files) are moved from the <code>work</code> directory to the <code>archive</code> directory <code>/scratch/$PROJECT/$USER/access-om2/archive</code>. They are also symlinked in the <i>control</i> directory to <code>~/access-om/1deg_jra55_iaf/archive</code>.
-<br>
-Both outputs and restarts are stored in subfolders for each different configuration (in this case, <code>1deg_jra55_iaf</code>). Inside the configuration folder, they are further subdivided for each internal run.
-<br>
-The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
-<br>
-Outputs and restarts are separated in the respective folders for each model component.
-<br>
+At the end of a successful model run, output files (and restart files) are moved (archived) from the `work` directory to the `archive` directory which is a symbolic link to a directory in the `laboratory` (`/scratch/$PROJECT/$USER/access-om2/archive`). The model log files are also moved to the `archive` directory. 
+
+If a model run is unsuccessful the `work` directory is left untouched to facilitate "run forensics" to determine the cause of the model failure.
+
+Outputs and restarts are stored in subfolders within the `archive`, subdivided for each internal run.
+
+Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is the internal run number starting from `000`.
+
+Model components are separated into subdirectories within the output and restart directories.
+
 <terminal-window>
 <terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf</terminal-line>
 <terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf">ls</terminal-line>
 <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
+### Model Live Diagnostics
+
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/#model-live-diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
+<br>
+For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
+
+---
 
 ## Edit {{ model }} configuration
 
