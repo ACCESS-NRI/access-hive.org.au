@@ -56,9 +56,10 @@ The next step is to clone this branch to a location on _Gadi_:
 
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf
 
-<div class="note">
-These instructions use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment branch `expt` in a directory named `1deg_jra55_ryf` as an example. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
-</div>
+!!! note
+
+    These instructions use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment branch `expt` in a directory named `1deg_jra55_ryf` as an example. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
     <terminal-line data="input">cd ~/access-om</terminal-line>
@@ -118,7 +119,7 @@ This will prepare the model run: create the ephemeral `work` directory based on 
 
 ### Run configuration
 
-To run {{ model }} configuration for one internal run length (controlled by `restart_period` in the `~/access-om/1deg_jra55_iaf/accessom2.nml` file), execute:
+To run {{ model }} configuration for one internal run length (controlled by `restart_period` in the `accessom2.nml` file in the `control directory`), execute:
 
     payu run -f
 
@@ -139,9 +140,9 @@ This will submit a single job to the queue with a total run length of `restart_p
     <terminal-line>&lt;job-ID&gt;.gadi-pbs</terminal-line>
 </terminal-window>
 
-### Run configuration for multiple years
+### Run configuration multiple times
 
-If you want to run an {{ model }} configuration for multiple internal run lengths (controlled by `restart_period` in the `~/access-om/1deg_jra55_iaf/accessom2.nml` file), use the option `-n`:
+If you want to run an {{ model }} configuration for multiple internal run lengths (controlled by `restart_period` in the `accessom2.nml` file), use the option `-n`:
 
     payu run -f -n <number-of-runs>
 
@@ -153,7 +154,7 @@ For example, to run the configuration for a total of 50 years with `restart_peri
 
 ## Monitor {{ model }} runs
 
-Currently, there is no specific tool to monitor {{ model }} runs. However `payu run` reports the PBS `job-ID`, e.g. `110020843.gadi-pbs`, as the last line to the terminal. `qstat` can be used to query the status of the job:
+Currently, there is no specific tool to monitor {{ model }} runs. However `payu run` reports the PBS `job-ID`, e.g. `110020843.gadi-pbs`, as the last line to the terminal. `qstat` can be used to query the status of the job, e.g.
 
     qstat 110021035
 
@@ -162,10 +163,10 @@ Currently, there is no specific tool to monitor {{ model }} runs. However `payu 
     <terminal-line linedelay=500>qstat 110021035</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
-You can execute the following command to show the status of all your submitted [PBS jobs]:
+To show the status of all your submitted [PBS jobs]:
 
     qstat -u $USER
 
@@ -173,18 +174,19 @@ You can execute the following command to show the status of all your submitted [
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_iaf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID-2&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID-3&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
-If  the `jobname` in the PBS resources of the [_Master Configuration_ file](#edit-the-master-configuration-file), that will appear as your job's _Name_ instead of `1deg_jra55_ryf`.
+If  the `jobname` in the PBS resources of the [_Master Configuration_ file](#edit-the-master-configuration-file) is set that will appear as your job's _Name_ instead of the default, which is the name of the control directory, `1deg_jra55_ryf`.
 
 _S_ indicates the status of your run, where:
-    - Q &rarr; Job waiting in the queue to start
-    - R &rarr; Job running
-    - E &rarr; Job ending
 
-If there are no jobs listed with your <code>jobname</code> (or if no job is listed), your run either successfully completed or was terminated due to an error.
+- _Q_ &rarr; Job waiting in the queue to start
+- _R_ &rarr; Job running
+- _E_ &rarr; Job ending
+
+If there are no jobs listed with your `jobname` (or if no job is listed), your run either successfully completed or was terminated due to an error.
 
 ### Stop a run
 
@@ -194,9 +196,11 @@ If you want to manually terminate a run, you can do so by executing:
 
 ### Error and output log files
 
-While the model is running, <i>payu</i> saves the standard output and standard error in the respective <code>access-om2.out</code> and <code>access-om2.err</code> files in the <i>control</i> directory. You can examine the contents of these files to check on the status of a run as it progresses.
-<br>
-When the model completes its run, or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
+While the model is running, _payu_ saves the standard output and standard error in the respective _access-om2.out_ and _access-om2.err_ files in the _control_ directory. You can examine the contents of these files to check on the status of a run as it progresses.
+
+When the model completes its run outputs in the `work` directory 
+
+or if it crashes, the output and error log files are by default renamed as <code>jobname.o&lt;job-ID&gt;</code> and <code>jobname.e&lt;job-ID&gt;</code>, respectively.
 
 ### Model Live Diagnostics
 
