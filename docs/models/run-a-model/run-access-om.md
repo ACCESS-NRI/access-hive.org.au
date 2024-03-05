@@ -85,6 +85,36 @@ The next step is to clone this branch to a location on _Gadi_:
 
 {{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through a [PBS Job][PBS Jobs] submission managed by _payu_.
 
+The general layout of a _payu_-supported model run consists of two main directories:
+
+- The **laboratory** directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
+
+- The **control** directory, where the model configuration resides and from where the model is run (in this example, the cloned directory `~/access-om/1deg_jra55_iaf`).
+
+This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
+
+Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
+
+To setup the _laboratory_ directory, run the following command from the _control_ directory:
+
+    payu init
+
+This creates the _laboratory_ directory, together with relevant subdirectories, depending on the configuration. 
+The main subdirectories of interest are: 
+
+- `work` &rarr; a temporary directory where the model is run. It gets created as part of a run and then removed after the run succeeds.
+- `archive` &rarr; the directory where output is stored after each run.
+
+<terminal-window>
+<terminal-line data="input">cd ~/access-om/1deg_jra55_yaf</terminal-line>
+<terminal-line data="input" directory="~/access-om/1deg_jra55_iaf">payu init</terminal-line>
+<terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
+<terminal-line>binary path:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
+<terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
+<terminal-line>work path:  /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
+<terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
+</terminal-window>
+
 ### Payu setup (optional)
 
 As a first step, from within the _control_ directory, it is good practice to run:
@@ -224,128 +254,118 @@ Model components are separated into subdirectories within the output and restart
 
 ### Model Live Diagnostics
 
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/#model-live-diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on <i>Gadi</i>.
-<br>
-For a complete documentation on how to use this framework, check the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics documentation</a>.
+ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/#model-live-diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on _Gadi_.
+
+For a complete documentation on how to use this framework, check the [Model Diagnostics documentation](https://med-live-diagnostics.readthedocs.io/en/latest/index.html).
 
 ---
 
 ## Edit {{ model }} configuration
 
-### Payu
+Once you are comfortable that you can clone and run an existing configuration it is often the case that you will want to modify the configuration depending on your science goals.
 
-<a href="https://payu.readthedocs.io/en/latest/" target="_blank"><i>Payu</i></a> is a workflow management tool for running numerical models in supercomputing environments.
-<br>
-The general layout of a <i>payu</i>-supported model run consists of two main directories:
+This section describes the model configuration and how to modify it.
 
-<ul>
-    <li>
-        The <b>laboratory</b> directory, where all the model components reside. For {{ model }}, it is typically <code>/scratch/$PROJECT/$USER/access-om2</code>.
-    </li>
-    <li>
-        The <b>control</b> directory, where the model configuration resides and from where the model is run (in this example, the cloned directory <code>~/access-om/1deg_jra55_iaf</code>.
-    </li>
-</ul>
-This distinction of directories separates the small-size configuration files from the larger binary outputs and inputs. In this way, the configuration files can be placed in the <code>$HOME</code> directory (as it is the only filesystem actively backed-up on <i>Gadi</i>), without overloading it with too much data.
-Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
-<br>
-<br>
-To setup the <i>laboratory</i> directory, run the following command from the <i>control</i> directory:
-<pre><code>payu init</code></pre> 
-This creates the <i>laboratory</i> directory, together with relevant subdirectories, depending on the configuration. The main subdirectories of interest are: 
-<ul>
-    <li><code>work</code> &rarr; a temporary directory where the model is run. It gets cleaned after each run.</li>
-    <li><code>archive</code> &rarr; the directory where output is stored after each run.</li>
-    <terminal-window>
-        <terminal-line data="input">cd ~/access-om/1deg_jra55_iaf</terminal-line>
-        <terminal-line data="input" directory="~/access-om/1deg_jra55_iaf">payu init</terminal-line>
-        <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
-        <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
-        <terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
-        <terminal-line>work path:  /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
-        <terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
-    </terminal-window>
-</ul>
+### Edit the _Master Configuration_ file
 
-### Edit the <i>Master Configuration</i> file
-
-The <code>config.yaml</code> file located in the <i>control</i> directory, is the <i>Master Configuration</i> file.
+The `config.yaml` file located in the `control` directory, is the `Master Configuration` file.
 <br>
 This file, which controls the general model configuration, contains several parts:
 
-<ul>
-    <li>
-        <b>PBS resources</b>
-        <br>
-        <pre><code>queue: normal
-walltime: 3:00:00
-jobname: 1deg_jra55_iaf
-mem: 1000GB</code></pre>
-        These lines can be edited to change the <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS directives</a> for the <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a>.
-        <br>
-        For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
-        <pre><code>project: tm70</code></pre>
-        <div class="note">
-            To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
-        </div>
-    </li>
-    <li>
-        <b>Model configuration</b>
-        <br>
-        <pre><code>name: common
+- **PBS resources**
+
+    queue: normal
+    walltime: 3:00:00
+    jobname: 1deg_jra55_ryf
+    mem: 1000GB
+
+These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained") for the [PBS job][PBS jobs]</a>.
+
+For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), add the following line:
+
+```yaml
+    project: ol01
+```
+!!! note
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units_ (SU). For more information, check [how to join relevant NCI projects](https://access-hive.org.au/getting_started/first_steps/#join-relevant-nci-projects)
+
+- **Model configuration**
+
+This tells _payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all the component models, or submodels.
+
+```yaml
+name: common
 model: access-om2
-input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55</code></pre>
-        These lines let <i>payu</i> know which driver to use for the main model configuration (<i>access-om</i>).
-        <br>
-        The <code>name</code> field here is not actually used for the configuration run so you can safely ignore it.
-    </li>
-    <li>
-        <b>Submodels</b>
-        <br>
-        <pre><code>submodels:
-    - name: atmosphere
-      model: yatm
-      exe: /g/data/access/payu/access-om2/bin/coe/um7.3x
-      input:
-            - /g/data/ik11/inputs/access-om2/input_20201102/yatm_1deg
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rsds/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/rlds/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prra/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hr/prsn/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/psl/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/land/day/friver/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/tas/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/huss/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/uas/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/atmos/3hrPt/vas/gr/v20190429
-            - /g/data/qv56/replicas/input4MIPs/CMIP6/OMIP/MRI/MRI-JRA55-do-1-4-0/landIce/day/licalvf/gr/v20190429
-      ncpus: 1<br>
-    - name: ocean
-      model: mom
-      exe: /g/data/ik11/inputs/access-om2/bin/fms_ACCESS-OM_730f0bf_libaccessom2_d750b4b.x
-      input: /g/data/ik11/inputs/access-om2/input_20201102/mom_1deg
-      ncpus: 216<br>
-    - name: ice
-      model: cice
-      exe: /g/data/ik11/inputs/access-om2/bin/cice_auscom_360x300_24p_edcfa6f_libaccessom2_d750b4b.exe
-      input: /g/data/ik11/inputs/access-om2/input_20201102/cice_1deg
-      ncpus: 24</code></pre>
-        {{ model }} is a coupled model deploying multiple submodels (i.e. <a href="/models/configurations/access-om/#model-components">model components</a>).
-        This section specifies the submodels and configuration options required to execute the model correctly.
-        <br>
-        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <i>name</i> (e.g., configuration options for the <code>ocean</code> submodel are in the <code>~/access-om/1deg_jra55_iaf/ocean</code> directory).
-    </li>
-    <li>
-        <b>Collate</b>
-        <br>
-        <pre><code>collate:
+input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
+```
+The `name` field here is not actually used for the configuration run so you can safely ignore it.
+
+- **Submodels
+
+{{ model }} is a coupled model deploying multiple submodels (i.e. [model components](https://access-hive.org.au/models/configurations/access-om/#model-components)).
+
+This section specifies the submodels and configuration options required to execute the model correctly.
+
+Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's _name_ (e.g., configuration options for the `ocean` submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
+
+??? note "Expand for detail"
+
+    ```yaml
+    submodels:
+        - name: atmosphere
+        model: yatm
+        exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/libaccessom2-git.2023.10.26=2023.10.26-ieiy3e7hidn4dzaqly3ly2yu45mecgq4/bin/yatm.exe
+        input:
+                - /g/data/vk83/experiments/inputs/access-om2/remapping_weights/JRA55/global.1deg/2020.05.30/rmp_jrar_to_cict_CONSERV.nc
+                - /g/data/vk83/experiments/inputs/JRA-55/RYF/v1-4/data
+        ncpus: 1
+
+        - name: ocean
+        model: mom
+        exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/mom5-git.2023.11.09=2023.11.09-ewcdbrfukblyjxpkhd3mfkj4yxfolal4/bin/fms_ACCESS-OM.x
+        input:
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/grid_spec.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/ocean_hgrid.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/ocean_mosaic.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/topog.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/ocean_mask.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/vertical/global.1deg/2020.10.22/ocean_vgrid.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/processor_masks/global.1deg/216.16x15/2020.05.30/ocean_mask_table
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/chlorophyll/global.1deg/2020.05.30/chl.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/initial_conditions/global.1deg/2020.10.22/ocean_temp_salt.res.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/tideamp.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/roughness_amp.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/roughness_cdbot.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ocean/surface_salt_restoring/global.1deg/2020.05.30/salt_sfc_restore.nc
+        ncpus: 216
+
+        - name: ice
+        model: cice5
+        exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/cice5-git.2023.10.19=2023.10.19-rh3xfkrgajya3ghtliacuhlx3pgvrzqs/bin/cice_auscom_360x300_24x1_24p.exe
+        input:
+            - /g/data/vk83/experiments/inputs/access-om2/ice/grids/global.1deg/2020.05.30/grid.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ice/grids/global.1deg/2020.10.22/kmt.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/i2o.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/o2i.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/u_star.nc
+            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/monthly_sstsss.nc
+        ncpus: 24
+    ```
+
+
+- **Collate**
+
+The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
+
+```yaml
+collate:
     restart: true
     walltime: 1:00:00
     mem: 30GB
     ncpus: 4
     queue: normal
     exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine</code></pre>
-        The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
+```
     </li>
     <li>
         <b>Runlog</b>
