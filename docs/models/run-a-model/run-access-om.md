@@ -20,7 +20,7 @@ For more information on how to join specific NCI projects, please refer to [How 
 
 **Payu**
 
-[_Payu_](https://payu.readthedocs.io/en/latest/) is a workflow management tool for running numerical models in supercomputing environments.
+[_Payu_](https://github.com/payu-org/payu) is a workflow management tool for running numerical models in supercomputing environments for which there is extensive [documentation](https://payu.readthedocs.io/en/latest/). 
 
 _Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.
 
@@ -44,20 +44,19 @@ To check that _payu_ is available, run:
 
 ## Get {{ model }} configuration
 
-All {{ model }} configurations are available from the [ACCESS-OM2 configs] repository.  ACCESS-NRI has adapted model configurations from those originally developed by [COSIMA]. 
+All {{ model }} configurations are available from the [ACCESS-OM2 configs] GitHub repository.  ACCESS-NRI has adapted model configurations from those originally developed by [COSIMA]. 
  
 There are global configurations for three resolutions: 1°, 0.25°, 0.1°. For each resolution there are two options of atmospheric forcing: Repeat Year (RYF) and Interannual (IAF). Each configuration also has a biogeochemical (BGC) configuration if this is required. Note the BGC experiments are slower and so consume more resources, both compute time and generally also disk space. 
 
-Each configuration is stored as a separate specially named branch in the [ACCESS-OM2 configs] repo. They are organised like this for administrative convenience: they are easier to manage and keep grouped for testing. Anyone using a configuration is advised to just clone a single branch and not attempt to keep this structure.
+Each configuration is stored as a separate specially named branch in the [ACCESS-OM2 configs] GitHub repository. They are organised like this for administrative convenience: they are easier to manage and keep grouped for testing. Anyone using a configuration is advised to just clone a single branch and not attempt to keep this structure.
 
-The first step is to decide which configuration is required from the twelve available. For example, if the 1° horizontal resolution configuration with repeat-year JRA55 forcing (without bgc) is the required configuration then [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf) branch is the correct configuration.
+The first step is to decide which configuration is required from the twelve available. For example, if the 1° horizontal resolution configuration with repeat-year JRA55 forcing (without bgc) is the required configuration then the [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf) branch is the correct configuration.
 
 The next step is to clone this branch to a location on _Gadi_:
 
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf
 
 !!! note
-
     These instructions use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment branch `expt` in a directory named `1deg_jra55_ryf` as an example. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
 
 <terminal-window>
@@ -76,9 +75,9 @@ The next step is to clone this branch to a location on _Gadi_:
     <terminal-line>To change directory to control directory run:</terminal-line>
     <terminal-line>    cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
-<div class="note">
-   Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module unload matlab</code></pre>
-</div>
+!!! note
+   Some modules may interfere with `git` commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: `module unload matlab`
+
 ----------------------------------------------------------------------------------------
 
 ## Running an {{ model }} configuration
@@ -95,7 +94,7 @@ This separates the small text configuration files from the larger binary outputs
 
 Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
-To setup the _laboratory_ directory, run the following command from the _control_ directory:
+To setup the _laboratory_ directory, from the _control_ directory run the:
 
     payu init
 
@@ -143,21 +142,20 @@ This will prepare the model run: create the ephemeral `work` directory based on 
 <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-window>
 
-<div class="note">
+!!! note
     This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and ensure executable and restart directories are accessible.
-</div>
 
 ### Run configuration
 
-To run {{ model }} configuration for one internal run length (controlled by `restart_period` in the `accessom2.nml` file in the `control directory`), execute:
+To run a {{ model }} configuration 
 
     payu run -f
 
-This will submit a single job to the queue with a total run length of `restart_period`.
+This will submit a single job to the queue with a total run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the `control directory`.
 
-<div class="note">
+!!! note
     The `-f` option ensures that `payu` will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
-</div>
+
 <terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>
     <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
@@ -172,13 +170,13 @@ This will submit a single job to the queue with a total run length of `restart_p
 
 ### Run configuration multiple times
 
-If you want to run an {{ model }} configuration for multiple internal run lengths (controlled by `restart_period` in the `accessom2.nml` file), use the option `-n`:
+If you want to run an {{ model }} configuration multiple times automatically use the option `-n`:
 
     payu run -f -n <number-of-runs>
 
-This will run the configuration `number-of-runs` times with a total run length of `restart_period * number-of-runs`.
+This will run `number-of-runs` times with a total run length of `restart_period * number-of-runs`.
 
-For example, to run the configuration for a total of 50 years with `restart_period = 5, 0, 0` (5 years), the `number-of-runs` should be set to `10`:
+For example, to run a configuration for a total of 50 years with `restart_period = 5, 0, 0` (5 years), the `number-of-runs` should be set to `10`:
 
     payu run -f -n 10
 
@@ -204,11 +202,11 @@ To show the status of all your submitted [PBS jobs]:
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
-If  the `jobname` in the PBS resources of the [_Master Configuration_ file](#edit-the-master-configuration-file) is set that will appear as your job's _Name_ instead of the default, which is the name of the control directory, `1deg_jra55_ryf`.
+If  the `jobname` is set in the [_Master Configuration_ file](#edit-the-master-configuration-file) that is what will appear as your job's _Name_ instead of the default, which is the name of the control directory, `1deg_jra55_ryf`.
 
 _S_ indicates the status of your run, where:
 
@@ -223,6 +221,8 @@ If there are no jobs listed with your `jobname` (or if no job is listed), your r
 If you want to manually terminate a run, you can do so by executing:
 
     qdel job-ID
+
+Which will kill the current job without waiting for it to complete. If you have used the `-n` option, but decide you no longer wish to keep running after the current process completes, you can create a file called `stop_run` in the control directory, and this will prevent `payu` from submitting another job.
 
 ### Error and output log files
 
