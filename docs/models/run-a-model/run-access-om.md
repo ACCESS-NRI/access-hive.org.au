@@ -57,7 +57,7 @@ The next step is to clone this branch to a location on _Gadi_:
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf
 
 !!! note
-    These instructions use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment branch `expt` in a directory named `1deg_jra55_ryf` as an example. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+    These instructions as an example use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment, `expt`, in a directory named `1deg_jra55_ryf`. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
 
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
@@ -75,6 +75,7 @@ The next step is to clone this branch to a location on _Gadi_:
     <terminal-line>To change directory to control directory run:</terminal-line>
     <terminal-line>    cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
+
 !!! note
    Some modules may interfere with `git` commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: `module unload matlab`
 
@@ -120,7 +121,7 @@ As a first step, from within the _control_ directory, it is good practice to run
 
     payu setup
 
-This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration and report some useful information to the user, such as the location of the laboratory where the `work` and `archive` directories are located.
+This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration, generate manifests and report some useful information to the user, such as the location of the laboratory where the `work` and `archive` directories are located.
 <terminal-window>
 <terminal-line data="input">payu setup</terminal-line>
 <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
@@ -147,7 +148,7 @@ This will prepare the model run: create the ephemeral `work` directory based on 
 
 ### Run configuration
 
-To run a {{ model }} configuration 
+To run an {{ model }} configuration 
 
     payu run -f
 
@@ -206,7 +207,7 @@ To show the status of all your submitted [PBS jobs]:
     <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
-If  the `jobname` is set in the [_Master Configuration_ file](#edit-the-master-configuration-file) that is what will appear as your job's _Name_ instead of the default, which is the name of the control directory, `1deg_jra55_ryf`.
+If  the `jobname` is set in the [_Master Configuration_ file](#edit-the-master-configuration-file) that is what will appear as your job's _Name_ instead of the default, which is the name of the control directory, in this example `1deg_jra55_ryf`.
 
 _S_ indicates the status of your run, where:
 
@@ -286,6 +287,7 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 ```yaml
     project: ol01
 ```
+
 !!! note
     To run {{ model }}, you need to be a member of a project with allocated _Service Units_ (SU). For more information, check [how to join relevant NCI projects](https://access-hive.org.au/getting_started/first_steps/#join-relevant-nci-projects)
 
@@ -300,9 +302,9 @@ input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
 ```
 The `name` field here is not actually used for the configuration run so you can safely ignore it.
 
-- **Submodels
+- **Submodels**
 
-{{ model }} is a coupled model deploying multiple submodels (i.e. [model components](https://access-hive.org.au/models/configurations/access-om/#model-components)).
+{{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).
 
 This section specifies the submodels and configuration options required to execute the model correctly.
 
@@ -355,7 +357,9 @@ Each submodel contains additional configuration options that are read in when th
 
 - **Collate**
 
-The <code>collate</code> process combines a number of smaller files, which contain different parts of the model grid, into target output files. Restart files are typically tiled in the same way and will also be combined together if the <code>restart</code> option is set to <code>true</code>.
+The MOM model typically outputs model diagnostics as tiles: rather than output a single file it is saved as a number of smaller tiles each of which contain a part of the model grid.
+
+The `collate` process combines a number of these smaller files into a single output file. Restart files are typically tiled in the same way and will also be combined together if the `restart` option is set to `true`.
 
 ```yaml
 collate:
@@ -366,96 +370,111 @@ collate:
     queue: normal
     exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine</code></pre>
 ```
-    </li>
-    <li>
-        <b>Runlog</b>
-        <br>
-        <pre><code>runlog: true</code></pre>
-        When running a new configuration, <i>payu</i> automatically commits changes in git if <code>runlog</code> is set to <code>true</code>.
-        <br>
-        Should not be changed to avoid losing track of the current experiment.
-    </li>
-    <li>
-        <b>Stack size</b>
-        <br>
-        <pre><code>stacksize: unlimited</code></pre>
-        The <code>stacksize</code> is the maximum size (in KiB) of the per-thread resources allocated for each process. This is often set to <code>unlimited</code> as explicit stacksize values may not be correctly communicated across <i>Gadi</i> nodes.
-    </li>
-    <li>
-        <b>Restart frequency</b>
-        <br>
-        <pre><code>restart_freq: 1</code></pre>
-        The restart frequency specifies the rate of saved restart files. 
-        <br>
-        For example, to save restart files every fifth run (i.e. restart004, restart009, restart014, etc.), you need to set <code>restart_freq: 5</code>. 
-        <br>
-        Intermediate restarts are still temporarily saved and deleted only after a permanently archived restart has been produced.
-        <br>
-    </li>
-    <li>
-        <b><i>mpirun</i> arguments</b>
-        <br>
-        <pre><code>mpirun: --mca io ompio --mca io_ompio_num_aggregators 1</code></pre>
-        Line to append mpirun arguments to the <code>mpirun</code> call of the model.
-    </li>
-    <li>
-        <b><i>qsub</i> flags</b>
-        <br>
-        <pre><code>qsub_flags: -W umask=027</code></pre>
-        This line is the configuration marker for any additional <i>qsub</i> flags.
-    </li>
-    <li>
-        <b>Environment variables</b>
-        <br>
-        <pre><code>env:
-    UCX_LOG_LEVEL: 'error'</code></pre>
-        Line to add the specified variables to the run environment.
-    </li>
-    <li>
-        <b>Platform-specific defaults</b>
-        <br>
-        <pre><code>platform: 
-    nodesize: 48</code></pre>
-        Lines to control the platform-specific default parameters.
-        <br>
-        <code>nodesize: 48</code> sets the default number of cpus per node to 48, to fully utilise nodes regardless of the requested number of cpus.
-    </li>
-    <li>
-        <b>User scripts</b>
-        <br>
-        <pre><code>userscripts:
+
+- **Runlog**
+
+
+```yaml
+runlog: true
+```
+When running a new configuration, _payu_ automatically commits changes with `git` if `runlog` is set to `true`.
+
+This should not be changed as it is an essential part of the provenance of an experiment. `payu` updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history.
+
+- **Stack size**
+
+```yaml
+stacksize: unlimited
+```
+
+`stacksize` is the maximum size (in KiB) of the per-thread resources allocated for each process. This is often set to `unlimited` as some Fortran programs can use a large amount of stack memory, and stack memory errors can be difficult to diagnose.
+
+
+- **Restart frequency**
+
+```yaml
+restart_freq: 5Y
+```
+
+The model outputs restart files after every run so the model can then begin from the same saved model state.
+
+Restarts files can occupy a significant amount of disk space and it isn't necessary to be able to restart the model at every  point where the model was stopped during a run.  The restart frequency specifies how many of these restart files are retained. 
+
+This can either be a number, which corresponds to a run number, or a pandas style date-time frequency alias. In the example above the `restart_freq` is set to `5Y`, which means restarts are preserved evert 5 years. See the [documentation for more detail](https://payu.readthedocs.io/en/latest/config.html#model).
+
+The most recent restarts are retained, and only deleted only after a permanently archived restart has been produced.
+
+- **mpirun arguments**
+
+```yaml
+mpirun: --mca io ompio --mca io_ompio_num_aggregators 1
+```
+
+Line to append mpirun arguments to the `mpirun` call of the model.
+
+- **_qsub_ arguments**
+
+```yaml
+qsub_flags: -W umask=027
+```
+
+Additional command line arguments for the _qsub_ command. In this case the argument makes sure PBS output files are produced with group readable permissions. 
+
+- **Environment variables**
+
+```yaml
+env:
+UCX_LOG_LEVEL: 'error'
+```
+
+Sets environment variables within the PBS job.
+
+- **Platform-specific defaults**
+
+```yaml
+platform: 
+nodesize: 48
+```
+
+Set platform-specific default parameters.  In this case it sets the default number of cpus per node to 48.
+
+- **User scripts**
+
+```yaml
+userscripts:
     error: resub.sh
-    run: rm -f resubmit.count</code></pre>
-        A namelist to include separate user scripts or subcommands at various stages of a <i>payu</i> submission.
-        <br>
-        <code>error</code> gets called if the model does not run correctly and returns an error code;
-        <br>
-        <code>run</code> gets called after the model execution, but prior to model output archive.
-    </li>
-</ul>
-<br>
-To find out more about other configuration settings for the <code>config.yaml</code> file, check out <a href="https://payu.readthedocs.io/en/latest/config.html" target="_blank">how to configure your experiment with <i>payu</i></a>.
+    run: rm -f resubmit.count
+```
+
+A dictionary to run scripts or subcommands at various stages of a _payu_ submission.
+
+`error` gets called if the model does not run correctly and returns an error code.  `run` gets called after the model execution, but prior to model output archive
+
+To find out more about other configuration settings for the `config.yaml` file, check out [how to configure your experiment with _payu_](https://payu.readthedocs.io/en/latest/config.html").
 
 ### Edit a single {{ model }} component configuration
 
-Each of <a href="/models/configurations/access-om/#model-components">{{ model }} components</a> contains additional configuration options that are read in when the model component is running. These options are typically useful to modify the physics used in the model or the input data.
-They are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's name as specified in the <code>config.yaml</code> <code>submodel</code> section (e.g., configuration options for the <code>ocean</code> submodel are in the <code>~/access-om/1deg_jra55_iaf/ocean</code> directory).
+Each of the [model components] contains additional configuration options that are read in when the model component is running. These options are typically useful to modify the physics used in the model or the input data.
+They are specified in the subfolder of the _control_ directory, whose name matches the submodel's name as specified in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
 To modify these options please refer to the User Guide of each individual model component.
 
 ### Change run length
 
-To change the internal run length, edit the <code>restart_period</code> field in the <code>&date_manager_nml</code> section of the <code>~/access-om/1deg_jra55_iaf/accessom2.nml</code> file:
+To change the internal run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om/1deg_jra55_iaf/accessom2.nml` file:
 
-<pre><code>&date_manager_nml
+```nml
+&date_manager_nml
     forcing_start_date = '1958-01-01T00:00:00'
     forcing_end_date = '2019-01-01T00:00:00'<br>
     ! Runtime for a single segment/job/submit, format is years, months, seconds,
     ! two of which must be zero.
     restart_period = 5, 0, 0
-&end</code></pre>
-<div class="note">
-    The internal run length (controlled by <code>restart_period</code>) can be different from the total run length. Also, while <code>restart_period</code> can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
-</div>
+&end
+```
+
+!!! note
+
+    The internal run length (controlled by `restart_period`) can be different from the total run length. Also, while `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
 
 ---
 <br>
@@ -478,6 +497,7 @@ To change the internal run length, edit the <code>restart_period</code> field in
     </li>
 </ul>
 
+[model components](https://access-hive.org.au/models/configurations/access-om/#model-components)
 [COSIMA]: https://cosima.org.au
 [ACCESS-OM2 configs]: https://github.com/ACCESS-NRI/access-om2-configs
 [PBS Jobs]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
