@@ -57,6 +57,7 @@ The next step is to clone this branch to a location on _Gadi_:
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf
 
 !!! note
+
     These instructions as an example use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment, `expt`, in a directory named `1deg_jra55_ryf`. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
 
 <terminal-window>
@@ -77,6 +78,7 @@ The next step is to clone this branch to a location on _Gadi_:
 </terminal-window>
 
 !!! note
+
    Some modules may interfere with `git` commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: `module unload matlab`
 
 ----------------------------------------------------------------------------------------
@@ -144,17 +146,19 @@ This will prepare the model run: create the ephemeral `work` directory based on 
 </terminal-window>
 
 !!! note
+
     This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and ensure executable and restart directories are accessible.
 
 ### Run configuration
 
-To run an {{ model }} configuration 
+To run an {{ model }} configuration: 
 
     payu run -f
 
-This will submit a single job to the queue with a total run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the `control directory`.
+This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the `control directory`.
 
 !!! note
+
     The `-f` option ensures that `payu` will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
 
 <terminal-window>
@@ -175,7 +179,7 @@ If you want to run an {{ model }} configuration multiple times automatically use
 
     payu run -f -n <number-of-runs>
 
-This will run `number-of-runs` times with a total run length of `restart_period * number-of-runs`.
+This will run `number-of-runs` times with a total length of `restart_period * number-of-runs`.
 
 For example, to run a configuration for a total of 50 years with `restart_period = 5, 0, 0` (5 years), the `number-of-runs` should be set to `10`:
 
@@ -241,9 +245,9 @@ At the end of a successful model run, output files (and restart files) are moved
 
 If a model run is unsuccessful the `work` directory is left untouched to facilitate "run forensics" to determine the cause of the model failure.
 
-Outputs and restarts are stored in subfolders within the `archive`, subdivided for each internal run.
+Outputs and restarts are stored in subfolders within the `archive`, subdivided for each run of the model.
 
-Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is the internal run number starting from `000`.
+Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is the run number starting from `000`.
 
 Model components are separated into subdirectories within the output and restart directories.
 
@@ -261,37 +265,105 @@ For a complete documentation on how to use this framework, check the [Model Diag
 
 ---
 
-## Edit {{ model }} configuration
+## Modifying an {{ model }} configuration
 
 Once you are comfortable that you can clone and run an existing configuration it is often the case that you will want to modify the configuration depending on your science goals.
 
-This section describes the model configuration and how to modify it.
+This section describes the model configuration and how to modify it. 
 
-### Edit the _Master Configuration_ file
+Modifications can be to the way the model is run by `payu`, or can change the way specific model components are configured, or the coupling between them. Sometimes changes are required to both, if the model component changes require a change to the resources needed for the model to complete.
 
-The `config.yaml` file located in the `control` directory, is the `Master Configuration` file.
-<br>
-This file, which controls the general model configuration, contains several parts:
+The `config.yaml` file located in the `control` directory, is the `Master Configuration` file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others are rarely changed without significant understanding of how the model is configured.
 
-- **PBS resources**
+### Change run length
 
-    queue: normal
-    walltime: 3:00:00
-    jobname: 1deg_jra55_ryf
-    mem: 1000GB
+One of the most common changes is to how long the model runs. For example it is common when debugging changes to a model to want to reduce the run length to reduce the amount of resources wasted and get faster feedback on changes.
 
-These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained") for the [PBS job][PBS jobs]</a>.
+To change the run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om/1deg_jra55_iaf/accessom2.nml` file:
 
-For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), add the following line:
+    &date_manager_nml
+        forcing_start_date = '1958-01-01T00:00:00'
+        forcing_end_date = '2019-01-01T00:00:00'<br>
+        ! Runtime for a single segment/job/submit, format is years, months, seconds,
+        ! two of which must be zero.
+        restart_period = 5, 0, 0
+    &end
 
-```yaml
-    project: ol01
-```
+For example, to make the model run for only 1 month change `restart_period` to
+
+   restart_period = 0, 1, 0
 
 !!! note
+
+    While `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between run length and total experiment length, or how to run the model for more than 5 years, refer to the section [Run configuration for multiple years](#run-configuration-for-multiple-years").
+
+
+### Modify PBS resources
+
+If the model has been altered and needs longer to complete, needs more memory, or you want to change which queue it uses then this is the part of `config.yaml` you need to modify:
+
+```yaml
+# If submitting to a different project to your default, uncomment line below
+# and replace PROJECT_CODE with appropriate code. This may require setting shortpath
+# project: PROJECT_CODE
+
+# Force payu to always find, and save, files in this scratch project directory
+# shortpath: /scratch/PROJECT_CODE
+
+queue: normal
+walltime: 3:00:00
+jobname: 1deg_jra55_ryf
+mem: 1000GB
+```
+
+These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained") for the [PBS job][PBS jobs].
+
+For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`.
+
+```yaml
+project: ol01
+```
+
+If other compute projects will be used to run a configuration then the `shortpath` will also need to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added. Doing this will make sure the same `/scratch` location is used for the _laboratory_ regardless of which project is used to run the experiment.
+
+!!! note
+
     To run {{ model }}, you need to be a member of a project with allocated _Service Units_ (SU). For more information, check [how to join relevant NCI projects](https://access-hive.org.au/getting_started/first_steps/#join-relevant-nci-projects)
 
-- **Model configuration**
+### Syncing output data
+
+As [discussed above](#running-an-access-om-configuration) the _laboratory_ directory is typically in a directory on ephemeral `/scratch` storage where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
+
+_payu_ has in-built support to sync outputs, restarts and a copy of the control repo to another location. To do this modify this section of the `config.yaml`, change `enable` to `True`, and set `path` to a location on `/g/data`. 
+
+```yaml
+# Sync options for automatically copying data from ephemeral scratch space to 
+# longer term storage
+sync:
+    enable: False # set path below and change to true
+    path: none # Set to location on /g/data or a remote server and path (rsync syntax)
+    exclude:
+      - '*.nc.*'
+      - 'iceh.????-??-??.nc'
+```
+
+### Saving model restarts
+
+The model outputs restart files after every run so the model can then begin from the same saved model state.
+
+Restarts files can occupy a significant amount of disk space and it isn't necessary to be able to restart the model at every  point where the model was stopped during a run.  The `restart_freq` specifies a strategy for what restart files are retained. 
+
+This can either be a number, which corresponds to a run number, or a pandas style date-time frequency alias. For example to preserve the ability to restart the model every 50 model run years:
+```yaml
+restart_freq: 50Y
+```
+The most recent restarts are retained, and only deleted only after a permanently archived restart has been produced.
+
+See the [documentation for more detail](https://payu.readthedocs.io/en/latest/config.html#model).
+
+### Other rarely modified configuration options
+
+#### Model configuration
 
 This tells _payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all the component models, or submodels.
 
@@ -302,7 +374,7 @@ input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
 ```
 The `name` field here is not actually used for the configuration run so you can safely ignore it.
 
-- **Submodels**
+#### Submodels
 
 {{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).
 
@@ -355,7 +427,7 @@ Each submodel contains additional configuration options that are read in when th
     ```
 
 
-- **Collate**
+#### Collation
 
 The MOM model typically outputs model diagnostics as tiles: rather than output a single file it is saved as a number of smaller tiles each of which contain a part of the model grid.
 
@@ -371,8 +443,9 @@ collate:
     exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine</code></pre>
 ```
 
-- **Runlog**
+#### Miscellaneous
 
+- **runlog**
 
 ```yaml
 runlog: true
@@ -389,20 +462,6 @@ stacksize: unlimited
 
 `stacksize` is the maximum size (in KiB) of the per-thread resources allocated for each process. This is often set to `unlimited` as some Fortran programs can use a large amount of stack memory, and stack memory errors can be difficult to diagnose.
 
-
-- **Restart frequency**
-
-```yaml
-restart_freq: 5Y
-```
-
-The model outputs restart files after every run so the model can then begin from the same saved model state.
-
-Restarts files can occupy a significant amount of disk space and it isn't necessary to be able to restart the model at every  point where the model was stopped during a run.  The restart frequency specifies how many of these restart files are retained. 
-
-This can either be a number, which corresponds to a run number, or a pandas style date-time frequency alias. In the example above the `restart_freq` is set to `5Y`, which means restarts are preserved evert 5 years. See the [documentation for more detail](https://payu.readthedocs.io/en/latest/config.html#model).
-
-The most recent restarts are retained, and only deleted only after a permanently archived restart has been produced.
 
 - **mpirun arguments**
 
@@ -458,44 +517,15 @@ Each of the [model components] contains additional configuration options that ar
 They are specified in the subfolder of the _control_ directory, whose name matches the submodel's name as specified in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
 To modify these options please refer to the User Guide of each individual model component.
 
-### Change run length
-
-To change the internal run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om/1deg_jra55_iaf/accessom2.nml` file:
-
-```nml
-&date_manager_nml
-    forcing_start_date = '1958-01-01T00:00:00'
-    forcing_end_date = '2019-01-01T00:00:00'<br>
-    ! Runtime for a single segment/job/submit, format is years, months, seconds,
-    ! two of which must be zero.
-    restart_period = 5, 0, 0
-&end
-```
-
-!!! note
-
-    The internal run length (controlled by `restart_period`) can be different from the total run length. Also, while `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
-
 ---
-<br>
-<h6>References</h6>
-<ul class="references">
-    <li>
-        <a href = "http://www.cosima.org.au/" target="_blank">http://www.cosima.org.au</a>
-    </li>
-    <li>
-        <a href = "http://doi.org/10.5194/gmd-13-401-2020" target="_blank">Kiss et al. (2020)</a>
-    </li>
-    <li>
-        <a href = "https://github.com/COSIMA/access-om2/" target="_blank">https://github.com/COSIMA/access-om2</a>
-    </li>
-    <li>
-        <a href = "https://github.com/COSIMA/access-om2/wiki/Getting-started#quick-start" target="_blank">https://github.com/COSIMA/access-om2/wiki/Getting-started#quick-start</a>
-    </li>
-    <li>
-        <a href = "https://payu.readthedocs.io/en/latest/usage.html" target="_blank">https://payu.readthedocs.io/en/latest/usage.html</a>
-    </li>
-</ul>
+
+# References
+
+- [COSIMA]
+- [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020")
+- https://github.com/COSIMA/access-om2/
+- [Payu documentation](https://payu.readthedocs.io/en/latest/usage.html)
+
 
 [model components](https://access-hive.org.au/models/configurations/access-om/#model-components)
 [COSIMA]: https://cosima.org.au
