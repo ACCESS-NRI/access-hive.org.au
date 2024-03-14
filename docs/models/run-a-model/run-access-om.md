@@ -1,4 +1,4 @@
-{% set model = "ACCESS-OM" %}
+{% set model = "ACCESS-OM2" %}
 
 # Run {{ model }}
 
@@ -64,6 +64,11 @@ The next step is to clone this branch to a location on _Gadi_:
 
 !!! note
 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
+!!! note
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
