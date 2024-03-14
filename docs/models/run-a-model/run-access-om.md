@@ -58,7 +58,15 @@ The next step is to clone this branch to a location on _Gadi_:
 
 !!! note
 
-    These instructions as an example use `payu clone` to clone the `release-1deg_jra55_ryf` branch to a new experiment, `expt`, in a directory named `1deg_jra55_ryf`. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+    These instructions as an example use `payu clone` to clone the `release-1deg_jra55_ryf` 
+    branch to a new experiment, `expt`, in a directory named `1deg_jra55_ryf`. 
+    See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+
+!!! note
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
 
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
