@@ -48,7 +48,7 @@ All {{ model }} configurations are available from the [ACCESS-OM2 configs] GitHu
  
 There are global configurations for three resolutions: 1°, 0.25°, 0.1°. For each resolution there are two options of atmospheric forcing: Repeat Year (RYF) and Interannual (IAF). Each configuration also has a biogeochemical (BGC) configuration if this is required. Note the BGC experiments are slower and so consume more resources, both compute time and generally also disk space. 
 
-Each configuration is stored as a separate specially named branch in the [ACCESS-OM2 configs] GitHub repository. They are organised like this for administrative convenience: they are easier to manage and keep grouped for testing. Anyone using a configuration is advised to just clone a single branch and not attempt to keep this structure.
+Each configuration is stored as a separate specially named branch in the [ACCESS-OM2 configs] GitHub repository. They are organised like this for administrative convenience: they are easier to manage and keep grouped for testing. Anyone using a configuration is advised to just clone a single branch and not attempt to keep this structure. The [ACCESS-OM2 configs] repo has more information about the available experiments and the naming scheme of the branches.
 
 The first step is to decide which configuration is required from the twelve available. For example, if the 1° horizontal resolution configuration with repeat-year JRA55 forcing (without bgc) is the required configuration then the [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf) branch is the correct configuration.
 
@@ -56,11 +56,12 @@ The next step is to clone this branch to a location on _Gadi_:
 
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf
 
+In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
+to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`. 
+
 !!! note
 
-    As an example these instructions use `payu clone` to clone the `release-1deg_jra55_ryf` 
-    branch to a new experiment branch, `expt`, in a directory named `1deg_jra55_ryf`. 
-    See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+    `payu` uses branches to differentiate between different experiments the same git repository. So it is recommended to always change the branch name you clone into to something meaningful for the planned experiment. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
 
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
@@ -256,8 +257,8 @@ Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is 
 Model components are separated into subdirectories within the output and restart directories.
 
 <terminal-window>
-<terminal-line data="input">cd /scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf</terminal-line>
-<terminal-line data="input" directory="/scratch/$PROJECT/$USER/access-om2/archive/1deg_jra55_iaf">ls</terminal-line>
+<terminal-line data="input">cd ~/access-om/1deg_jra55_yaf<</terminal-line>
+<terminal-line data="input" directory="~/access-om/1deg_jra55_yaf<">ls</terminal-line>
 <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
@@ -295,7 +296,7 @@ To change the run length, edit the `restart_period` field in the `&date_manager_
 
 For example, to make the model run for only 1 month change `restart_period` to
 
-   restart_period = 0, 1, 0
+    restart_period = 0, 1, 0
 
 !!! note
 
@@ -304,7 +305,7 @@ For example, to make the model run for only 1 month change `restart_period` to
 
 ### Modify PBS resources
 
-If the model has been altered and needs longer to complete, needs more memory, or you want to change which queue it uses then this is the part of `config.yaml` you need to modify:
+If the model has been altered and needs longer to complete, more memory, or you want to change which queue it uses then this is the part of `config.yaml` you need to modify:
 
 ```yaml
 # If submitting to a different project to your default, uncomment line below
@@ -322,7 +323,7 @@ mem: 1000GB
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained") for the [PBS job][PBS jobs].
 
-For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`.
+For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`:
 
 ```yaml
 project: ol01
@@ -336,9 +337,9 @@ If other compute projects will be used to run a configuration then the `shortpat
 
 ### Syncing output data
 
-As [discussed above](#running-an-access-om-configuration) the _laboratory_ directory is typically in a directory on ephemeral `/scratch` storage where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
+As [discussed above](#running-an-access-om2-configuration) the _laboratory_ directory is typically in a directory on ephemeral `/scratch` storage where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
 
-_payu_ has in-built support to sync outputs, restarts and a copy of the _control_ directory git history to another location. To do this modify this section of the `config.yaml`, change `enable` to `True`, and set `path` to a location on `/g/data`. 
+`payu` has in-built support to sync outputs, restarts and a copy of the _control_ directory git history to another location. To do this modify this section of the `config.yaml` shown below: change `enable` to `True`, and set `path` to a location on `/g/data`. 
 
 ```yaml
 # Sync options for automatically copying data from ephemeral scratch space to 
@@ -353,15 +354,15 @@ sync:
 
 ### Saving model restarts
 
-The model outputs restart files after every run so the model can then begin from the same saved model state.
+The model outputs restart files after every run so the model can then run again from the saved model state.
 
-Restarts files can occupy a significant amount of disk space and it isn't necessary to be able to restart the model at every  point where the model was stopped during a run.  The `restart_freq` specifies a strategy for what restart files are retained. 
+Restart files can occupy a significant amount of disk space and it isn't necessary to be able to restart the model at every  point where the model was stopped during a run.  The `restart_freq` specifies a strategy for what restart files are retained. 
 
-This can either be a number, which corresponds to a run number, or a pandas style date-time frequency alias. For example to preserve the ability to restart the model every 50 model run years:
+This can either be a number, which retains every _nth_ numbered restart, or a pandas style date-time frequency alias. For example to preserve the ability to restart the model every 50 model run years:
 ```yaml
 restart_freq: 50Y
 ```
-The most recent restarts are retained, and only deleted only after a permanently archived restart has been produced.
+The most recent sequential restarts are retained, and only deleted only after a permanently archived restart has been produced.
 
 See the [documentation for more detail](https://payu.readthedocs.io/en/latest/config.html#model).
 
@@ -369,7 +370,7 @@ See the [documentation for more detail](https://payu.readthedocs.io/en/latest/co
 
 #### Model configuration
 
-This tells _payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all the component models, or submodels.
+This tells `payu` which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all the component models, or submodels.
 
 ```yaml
 name: common
@@ -456,7 +457,7 @@ runlog: true
 ```
 When running a new configuration, _payu_ automatically commits changes with `git` if `runlog` is set to `true`.
 
-This should not be changed as it is an essential part of the provenance of an experiment. `payu` updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history.
+This should not be changed as it is an essential part of the provenance of an experiment. `payu` updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history so there is a record of all inputs, restarts and executables used in an experiment.
 
 - **Stack size**
 
@@ -481,7 +482,7 @@ Line to append mpirun arguments to the `mpirun` call of the model.
 qsub_flags: -W umask=027
 ```
 
-Additional command line arguments for the _qsub_ command. In this case the argument makes sure PBS output files are produced with group readable permissions. 
+Additional command line arguments for the _qsub_ command. In this case the `umask` setting makes sure PBS output files are produced with group readable permissions. 
 
 - **Environment variables**
 
@@ -517,8 +518,8 @@ To find out more about other configuration settings for the `config.yaml` file, 
 
 ### Edit a single {{ model }} component configuration
 
-Each of the [model components] contains additional configuration options that are read in when the model component is running. These options are typically useful to modify the physics used in the model or the input data.
-They are specified in the subfolder of the _control_ directory, whose name matches the submodel's name as specified in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
+Each of the [model components] contains configuration options specific to that model that are read in when the model component is running. These options are typically useful to modify the physics used in the model or the input data.
+These configuration options are are specified in files in a subfolder of the _control_ directory, named the same as the submodel's name in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
 To modify these options please refer to the User Guide of each individual model component.
 
 ---
