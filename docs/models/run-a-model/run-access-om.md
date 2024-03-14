@@ -29,7 +29,7 @@ After joining the _vk83_ project load the _payu_ environment:
     module use /g/data/vk83/modules
     module load payu
 
-To check that _payu_ is available, run:
+To check that `payu` is available, run:
 
     payu --version
 
@@ -38,7 +38,7 @@ To check that _payu_ is available, run:
 <terminal-line lineDelay="1000">1.1.1</terminal-line>
 </terminal-window>
 
-**Note:** _payu_ version >=1.1 is required
+**Note:** `payu` version >=1.1 is required
 
 ----------------------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ The next step is to clone this branch to a location on _Gadi_:
 !!! note
 
     As an example these instructions use `payu clone` to clone the `release-1deg_jra55_ryf` 
-    branch to a new experiment, `expt`, in a directory named `1deg_jra55_ryf`. 
+    branch to a new experiment branch, `expt`, in a directory named `1deg_jra55_ryf`. 
     See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
 
 <terminal-window>
@@ -81,17 +81,17 @@ The next step is to clone this branch to a location on _Gadi_:
 
 !!! note
 
-   Some modules may interfere with `git` commands (e.g., matlab/R2018a). If you have 
-   trouble cloning the repository, run the following command before trying again: 
-   `module unload matlab`
+    Some modules may interfere with `git` commands (e.g., matlab/R2018a). If you have 
+    trouble cloning the repository, run the following command before trying again: 
+    `module unload matlab`
 
 ----------------------------------------------------------------------------------------
 
 ## Running an {{ model }} configuration
 
-{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through a [PBS Job][PBS Jobs] submission managed by _payu_.
+{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through a [PBS Job][PBS Jobs] submission managed by `payu`.
 
-The general layout of a _payu_-supported model run consists of two main directories:
+The general layout of a `payu`-supported model run consists of two main directories:
 
 - The **laboratory** directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
 
@@ -127,7 +127,7 @@ As a first step, from within the _control_ directory, it is good practice to run
 
     payu setup
 
-This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration, generate manifests and report some useful information to the user, such as the location of the laboratory where the `work` and `archive` directories are located.
+This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration, generate manifests and report some useful information to the user, such as the location of the _laboratory_ where the `work` and `archive` directories are located.
 <terminal-window>
 <terminal-line data="input">payu setup</terminal-line>
 <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
@@ -159,7 +159,7 @@ To run an {{ model }} configuration:
 
     payu run -f
 
-This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the `control directory`.
+This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the _control_ directory.
 
 !!! note
 
@@ -215,7 +215,7 @@ To show the status of all your submitted [PBS jobs]:
     <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;000000000&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
-If  the `jobname` is set in the [_Master Configuration_ file](#edit-the-master-configuration-file) that is what will appear as your job's _Name_ instead of the default, which is the name of the control directory, in this example `1deg_jra55_ryf`.
+ The default name of the your job is the name of the _payu_ _control_ directory, in this example `1deg_jra55_ryf`. This can be changed by altering the `jobname` in [set in the `config.yaml`](#modify-pbs-resources).
 
 _S_ indicates the status of your run, where:
 
@@ -231,21 +231,21 @@ If you want to manually terminate a run, you can do so by executing:
 
     qdel job-ID
 
-Which will kill the current job without waiting for it to complete. If you have used the `-n` option, but decide you no longer wish to keep running after the current process completes, you can create a file called `stop_run` in the control directory, and this will prevent `payu` from submitting another job.
+Which will kill the current job without waiting for it to complete. If you have used the `-n` option, but decide you no longer wish to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory, and this will prevent `payu` from submitting another job.
 
 ### Error and output log files
 
-While the model is running, _payu_ saves the model standard output and standard error in the _access-om2.out_ and _access-om2.err_ log files in the _control_ directory. You can examine the contents of these files to check on the status of a run as it progresses.
+While the model is running, _payu_ saves the model standard output and standard error in the `access-om2.out` and `access-om2.err` log files in the _control_ directory. You can examine the contents of these files to check on the status of a run as it progresses.
 
-At the end of a successful run these log files are archived. If they remain in the `control` directory after the PBS job for a run has completed this is an indication the run has failed.
+At the end of a successful run these log files are archived. If they remain in the _control_ directory after the PBS job for a run has completed this is an indication the run has failed.
 
 ### PBS output files
 
-When the model completes PBS writes the standard outout and error streams to two files into the control directory: `jobname.o<job-ID>` and `jobname.e<job-ID>` respectively. This is terminal output that isn't otherwise redirected into model log files.
+When the model completes PBS writes the standard outout and error streams to two files into the _control_ directory: `jobname.o<job-ID>` and `jobname.e<job-ID>` respectively. This is terminal output that isn't otherwise redirected into model log files.
 
 ## {{ model }} outputs
 
-At the end of a successful model run, output files (and restart files) are moved (archived) from the `work` directory to the `archive` directory which is a symbolic link to a directory in the `laboratory` (`/scratch/$PROJECT/$USER/access-om2/archive`). The model log files are also moved to the `archive` directory. 
+At the end of a successful model run, output files (and restart files) are moved (archived) from the `work` directory to the `archive` directory which is a symbolic link to a directory in the _laboratory_ (`/scratch/$PROJECT/$USER/access-om2/archive`). The model log files are also moved to the `archive` directory. 
 
 If a model run is unsuccessful the `work` directory is left untouched to facilitate "run forensics" to determine the cause of the model failure.
 
@@ -277,7 +277,7 @@ This section describes the model configuration and how to modify it.
 
 Modifications can be to the way the model is run by `payu`, or can change the way specific model components are configured, or the coupling between them. Sometimes changes are required to both, if the model component changes require a change to the resources needed for the model to complete.
 
-The `config.yaml` file located in the `control` directory, is the `Master Configuration` file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others are rarely changed without significant understanding of how the model is configured.
+The `config.yaml` file located in the _control_ directory, is the _Master Configuration_ file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others are rarely changed without significant understanding of how the model is configured.
 
 ### Change run length
 
@@ -338,7 +338,7 @@ If other compute projects will be used to run a configuration then the `shortpat
 
 As [discussed above](#running-an-access-om-configuration) the _laboratory_ directory is typically in a directory on ephemeral `/scratch` storage where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
 
-_payu_ has in-built support to sync outputs, restarts and a copy of the control repo to another location. To do this modify this section of the `config.yaml`, change `enable` to `True`, and set `path` to a location on `/g/data`. 
+_payu_ has in-built support to sync outputs, restarts and a copy of the _control_ directory git history to another location. To do this modify this section of the `config.yaml`, change `enable` to `True`, and set `path` to a location on `/g/data`. 
 
 ```yaml
 # Sync options for automatically copying data from ephemeral scratch space to 
@@ -531,7 +531,7 @@ To modify these options please refer to the User Guide of each individual model 
 - [Payu documentation](https://payu.readthedocs.io/en/latest/usage.html)
 
 
-[model components](https://access-hive.org.au/models/configurations/access-om/#model-components)
+[model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
 [COSIMA]: https://cosima.org.au
 [ACCESS-OM2 configs]: https://github.com/ACCESS-NRI/access-om2-configs
 [PBS Jobs]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
