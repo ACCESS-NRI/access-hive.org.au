@@ -231,7 +231,7 @@ If `payu` doesn't run correctly for some reason a good first step step, from wit
 
 This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration, generate manifests and report some useful information to the user, such as the location of the _laboratory_ where the `work` and `archive` directories are located.
 <terminal-window>
-<terminal-line data="input">payu setup</terminal-line>
+<terminal-line data="input">payu setup -f</terminal-line>
 <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
 <terminal-line>binary path: /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
 <terminal-line>input path: /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
