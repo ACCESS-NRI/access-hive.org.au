@@ -63,7 +63,7 @@ The next step is to clone this branch to a location on _Gadi_:
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
     <terminal-line data="input">cd ~/access-om</terminal-line>
-    <terminal-line data="input" directory="~/access-om">payu clone -b expt -B release-1deg_jra55_ryf https://github.com/COSIMA/1deg_jra55_ryf.git 1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om">payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf</terminal-line>
     <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om2-configs.git to directory: .../access-om/1deg_jra55_ryf</terminal-line>
     <terminal-line>Created and checked out new branch: expt</terminal-line>
     <terminal-line>laboratory path:  /scratch/.../access-om2</terminal-line>
@@ -79,7 +79,8 @@ The next step is to clone this branch to a location on _Gadi_:
 
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`: 
-
+     mkdir -p ~/access-om
+     cd ~/access-om2
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf
 
 !!! note
@@ -511,7 +512,7 @@ To modify these options please refer to the User Guide of each individual model 
 
 - [COSIMA]
 - [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020")
-- https://github.com/COSIMA/access-om2/
+- https://github.com/access-nri/access-om2/
 - [Payu documentation](https://payu.readthedocs.io/en/latest/usage.html)
 
 
