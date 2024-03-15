@@ -198,6 +198,17 @@ While the model is running, _payu_ saves the model standard output and standard 
 
 At the end of a successful run these log files are archived. If they remain in the _control_ directory after the PBS job for a run has completed this is an indication the run has failed.
 
+### Did the model run correctly?
+
+To determine if a model has run correctly it must first be established that it has finished. The `qstat` commands [above](#monitor-access-om2-runs) and the [presence of PBS log files](#pbs-output-files) should be used to determine if the PBS job has ended.
+
+If the model did not run to completion correctly the following will still be in the `control` directory:
+
+    work
+    access-om2.err
+    access-om2.out
+
+This is because `payu` will only run the `archive` step when the model runs without error.
 
 ## {{ model }} outputs
 
