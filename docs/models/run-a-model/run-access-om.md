@@ -511,7 +511,7 @@ To modify these options please refer to the User Guide of each individual model 
 # References
 
 - [COSIMA]
-- [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020")
+- [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020)
 - https://github.com/access-nri/access-om2/
 - [Payu documentation](https://payu.readthedocs.io/en/latest/usage.html)
 
