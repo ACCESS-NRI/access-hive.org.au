@@ -502,7 +502,7 @@ There rest of the configuration settings should never need changing: `stacksize`
     UCX_LOG_LEVEL: 'error'
     ```
 
-To find out more about other configuration settings for the `config.yaml` file, refer to [how to configure your experiment with `payu`](https://payu.readthedocs.io/en/latest/config.html").
+To find out more about other configuration settings for the `config.yaml` file, refer to [how to configure your experiment with `payu`](https://payu.readthedocs.io/en/latest/config.html).
 
 ### Edit a single {{ model }} component configuration
 
