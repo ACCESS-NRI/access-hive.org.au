@@ -10,9 +10,12 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-### Conventions
+!!! note
 
-In this documentation the same code is sometimes shown in a highlight code-block, and also in a simulated terminal. The code-block is useful because it is easy to copy the code example to your clipboard (mouse over the code block and click the icon on the far right of the code block). The simulated terminal is to illustrate what happens when commands are run on a terminal on `Gadi`.
+    In this documentation the same code is sometimes shown in a highlight code-block, and also in 
+    a simulated terminal. The code-block is useful because it is easy to copy the code example to 
+    your clipboard (mouse over the code block and click the icon on the far right of the code block). 
+    The simulated terminal is to illustrate what happens when commands are run on a terminal on `Gadi`.
 
 ### Model-specific prerequisites
 
