@@ -82,6 +82,7 @@ The next step is to clone this branch to a location on _Gadi_:
 
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`: 
+
     mkdir -p ~/access-om
     cd ~/access-om2
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf
