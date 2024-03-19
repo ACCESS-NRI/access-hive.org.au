@@ -79,8 +79,8 @@ The next step is to clone this branch to a location on _Gadi_:
 
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`: 
-     mkdir -p ~/access-om
-     cd ~/access-om2
+    mkdir -p ~/access-om
+    cd ~/access-om2
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf
 
 !!! note
@@ -209,7 +209,7 @@ To determine if a model has run correctly it must first be established that it h
 
 If the model did not run to completion correctly the following will still be in the `control` directory:
 
-    work
+    work/
     access-om2.err
     access-om2.out
 
@@ -228,7 +228,7 @@ Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is 
 Model components are separated into subdirectories within the output and restart directories.
 
 <terminal-window>
-<terminal-line data="input">cd ~/access-om/1deg_jra55_yaf<</terminal-line>
+<terminal-line data="input">cd ~/access-om/1deg_jra55_ryf</terminal-line>
 <terminal-line data="input" directory="~/access-om/1deg_jra55_yaf<">ls</terminal-line>
 <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
