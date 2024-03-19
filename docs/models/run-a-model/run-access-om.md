@@ -502,7 +502,7 @@ To find out more about other configuration settings for the `config.yaml` file, 
 
 ### Edit a single {{ model }} component configuration
 
-Each of the [model components] contains configuration options specific to that model that are read in when the model component is running. These options are typically useful to modify the physics used in the model, the input data or the variables saved in the diagnostic output. 
+Each of the [model components] contains configuration options specific to that model that are read in when the model component is running. These options are typically useful to modify the physics used in the model, the input data or the model variables saved in the output files. 
 These configuration options are are specified in files in a subfolder of the _control_ directory, named the same as the submodel's name in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
 To modify these options please refer to the User Guide of each individual model component.
 
