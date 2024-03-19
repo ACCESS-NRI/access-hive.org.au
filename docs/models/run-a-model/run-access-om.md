@@ -6,9 +6,9 @@
 
 ### General prerequisites
 
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](https://access-hive.org.au/getting_started/first_steps) section.
 
-If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
 
 !!! note
 
@@ -239,7 +239,7 @@ Model components are separated into subdirectories within the output and restart
 
 ### Model Live Diagnostics
 
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/#model-live-diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on _Gadi_.
+ACCESS-NRI developed the [Model Live Diagnostics](https://access-hive.org.au/model_evaluation/#model-live-diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on _Gadi_.
 
 For a complete documentation on how to use this framework, check the [Model Diagnostics documentation](https://med-live-diagnostics.readthedocs.io/en/latest/index.html).
 
