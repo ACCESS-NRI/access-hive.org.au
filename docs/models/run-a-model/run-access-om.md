@@ -115,7 +115,7 @@ This creates the _laboratory_ directory, together with relevant subdirectories, 
 The main subdirectories of interest are: 
 
 - `work` &rarr; a temporary directory where the model is run. It gets created as part of a run and then removed after the run succeeds.
-- `archive` &rarr; the directory where output is stored after each run.
+- `archive` &rarr; the directory where output is stored following each successful run.
 
 <terminal-window>
 <terminal-line data="input" directory="~/access-om/1deg_jra55_ryf">payu init</terminal-line>
