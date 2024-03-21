@@ -101,7 +101,7 @@ The general layout of a `payu`-supported model run consists of two main director
 
 - The **laboratory** directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
 
-- The **control** directory, where the model configuration resides and from where the model is run (in this example, the cloned directory `~/access-om/1deg_jra55_ryf`).
+-  The **control directory** contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om/1deg_jra55_ryf`).
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
@@ -128,27 +128,27 @@ The main subdirectories of interest are:
 
 ### Run configuration
 
-To run an {{ model }} configuration: 
+To run a configuration: 
 
-    payu run -f
+    payu run
 
 This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the _control_ directory.
 
 !!! note
 
-    The `-f` option ensures that `payu` will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
+    You can add the `-f` option to `payu run` and it will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
 
 ### Run configuration multiple times
 
-If you want to run an {{ model }} configuration multiple times automatically use the option `-n`:
+If you want to run a configuration multiple times automatically use the option `-n`:
 
-    payu run -f -n <number-of-runs>
+    payu run -n <number-of-runs>
 
 This will run `number-of-runs` times with a total length of `restart_period * number-of-runs`, where `restart_period` is the length of each model run. 
 
 For example, to run a configuration for a total of 50 years with `restart_period`  of 5 years the `number-of-runs` should be set to `10`:
 
-    payu run -f -n 10
+    payu run -n 10
 
 !!! note
 
@@ -184,8 +184,11 @@ _S_ indicates the status of your run, where:
 - _Q_ &rarr; Job waiting in the queue to start
 - _R_ &rarr; Job running
 - _E_ &rarr; Job ending
+- _H_ &rarr; Job on hold
 
 If there are no jobs listed with your `jobname` (or if no job is listed), your run either successfully completed or was terminated due to an error.
+
+A job can be on hold for a number of reasons, see the [NCI documentation for more information](https://opus.nci.org.au/display/Help/FAQ+1%3A+Why+My+Jobs+are+NOT+Running).
 
 ### PBS output files
 
@@ -199,13 +202,13 @@ If you want to manually terminate a run, you can do so by executing:
 
     qdel job-ID
 
-Which will kill the current job without waiting for it to complete. If you have used the `-n` option, but decide you no longer wish to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory, and this will prevent `payu` from submitting another job.
+Which will kill the current job without waiting for it to complete. If you have used the `-n` option ( e.g., `payu run -n`), but subsequently decide not to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory, and this will prevent `payu` from submitting another job.
 
 ### Error and output log files
 
 While the model is running, _payu_ saves the model standard output and standard error in the `access-om2.out` and `access-om2.err` log files in the _control_ directory. You can examine the contents of these files to check on the status of a run as it progresses.
 
-At the end of a successful run these log files are archived. If they remain in the _control_ directory after the PBS job for a run has completed this is an indication the run has failed.
+At the end of a successful run these log files are archived to the `archive` directory and will not be found in the _control_ directory. If they remain in the _control_ directory after the PBS job for a run has completed this is an indication the run has failed.
 
 ### Did the model run correctly?
 
@@ -247,11 +250,11 @@ For a complete documentation on how to use this framework, check the [Model Diag
 
 If `payu` doesn't run correctly for some reason a good first step step, from within the _control_ directory, is to run:
 
-    payu setup -f
+    payu setup
 
 This will prepare the model run: create the ephemeral `work` directory based on the experiment configuration, generate manifests and report some useful information to the user, such as the location of the _laboratory_ where the `work` and `archive` directories are located.
 <terminal-window>
-<terminal-line data="input">payu setup -f</terminal-line>
+<terminal-line data="input">payu setup</terminal-line>
 <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
 <terminal-line>binary path: /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
 <terminal-line>input path: /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
@@ -291,9 +294,9 @@ The `config.yaml` file located in the _control_ directory, is the _Master Config
 
 ### Change run length
 
-One of the most common changes is to how long the model runs. For example it is common when debugging changes to a model to want to reduce the run length to reduce the amount of resources wasted and get faster feedback on changes.
+One of the most common changes is to adjust the duration of the model run. For example when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-To change the run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om/1deg_jra55_iaf/accessom2.nml` file:
+To change the run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om/1deg_jra55_ryf/accessom2.nml` file:
 
     &date_manager_nml
         forcing_start_date = '1958-01-01T00:00:00'
@@ -394,7 +397,7 @@ The `name` field here is not actually used for the configuration run so you can 
 
 This section specifies the submodels and configuration options required to execute the model correctly.
 
-Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's _name_ (e.g., configuration options for the `ocean` submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
+Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's _name_ (e.g., configuration options for the `ocean` submodel are in the `~/access-om/1deg_jra55_ryf/ocean` directory).
 
 ??? note "Expand for detail"
 
@@ -507,7 +510,7 @@ To find out more about other configuration settings for the `config.yaml` file, 
 ### Edit a single {{ model }} component configuration
 
 Each of the [model components] contains configuration options specific to that model that are read in when the model component is running. These options are typically useful to modify the physics used in the model, the input data or the model variables saved in the output files. 
-These configuration options are are specified in files in a subfolder of the _control_ directory, named the same as the submodel's name in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_iaf/ocean` directory).
+These configuration options are are specified in files in a subfolder of the _control_ directory, named the same as the submodel's name in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_ryf/ocean` directory).
 To modify these options please refer to the User Guide of each individual model component.
 
 ---
