@@ -1,0 +1,13 @@
+# dirs:
+  # - docs
+files:
+  - docs/model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
+excludedDirs:
+  - drafts
+  - docs/css
+  - docs/js
+  - docs/fontello
+  - docs/fontawesome*
+  - docs/assets
+baseUrl: https://access-hive.org.au/development-website/
+useGitIgnore: true
