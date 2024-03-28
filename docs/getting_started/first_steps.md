@@ -53,11 +53,11 @@ Before you login to <i>Gadi</i>, you need to possess the following prerequisites
 <ul>
   <li><b>Internet connection</b></li>
   <li>
-    <b>UNIX-like terminal</b>
+    <b>Terminal with built-in SSH</b>
     <br>
-    Linux and MacOS operative systems already have a built-in UNIX-like terminal.
+    Linux, MacOS and Windows 10 (or later) operative systems already have a terminal with built-in SSH.
     <br>
-    Windows users can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>. 
+    Users of Windows 9 (or earlier) can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>. 
     <div class="note">
       Alternatively, you can login through the <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE Gadi Terminal</a>. 
       <br>
