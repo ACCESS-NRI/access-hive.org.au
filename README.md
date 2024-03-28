@@ -34,7 +34,7 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 |**Link (internal)**|\<a href="https://access-hive.org.au">ACCESS-Hive link\</a>|<a href="https://access-hive.org.au">ACCESS-Hive link</a>|
 |**Link (external)**|\<a href="https://www.google.com" target="_blank">Google link\</a>|<a href="https://www.google.com" target="_blank">Google link</a><span style="display: inline-block; color: #3894FF; margin-left: 1px; font-size: 8px; vertical-align: text-top; rotate: 90deg;">&#9099;</span>|
 |**Warning note**|\<div class="note">this is a warning note\<div>|![warning note](docs/assets/assets_for_readme/warning_note.png)|
-|**Tabs**|\<pre>\<code>this is a code block\</code>\</pre>||
+|**Tabs**|\<div class="tabLabels" label="your-tab-label">\<button>Tab1\</button>\<button>Tab2\</button>\</div>\<div class="tabContents" label="your-tab-label">\<div>Content for tab1\</div>\<div>Content for tab2\</div>\</div>|![tabs](docs/assets/assets_for_readme/tabs.gif)|
 
 <!-- - Pull the latest version of `development` branch locally by using the following commands:
 
