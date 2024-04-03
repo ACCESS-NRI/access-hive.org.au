@@ -21,7 +21,7 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 - Bold can be used to highlight some words (please do not overuse it);
 - Links should be coded using HTML syntax.<br>External links (links that go to a website other than https://access-hive.org.au) need to specify `target="_blank"` (see HTML cheatsheet below);
 - To signal an important note within the text, consider using a "warning note" (see HTML cheatsheet below);
-- Instructions for different versions (for example different operative systems or different model vesrions) can be rendered using tabs (see HTML cheatsheet below);
+- Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see HTML cheatsheet below);
 
 
 ### HTML Cheatsheet for the Hive
