@@ -10,9 +10,6 @@
             "pattern": "linkedin.com"
         },
         {
-            "pattern": "https://opus.nci.org.au/display/Help/ARE+User+Guide"
-        },
-        {
             "pattern": "^http://www.bom.gov.au"
         }
     ],

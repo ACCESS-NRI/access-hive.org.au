@@ -19,7 +19,7 @@
         </div>
         <div class="card-text-container bold">How to contribute</div>
     </a>
-    <a href="license" class="vertical-card aspect-ratio1to1">
+    <a href="License" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container" style="container-type:size;">
             <div class="icon-cc white-background" style="font-size: 85cqh; color: black; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 0.35rem;"></div>
         </div>
