@@ -64,9 +64,9 @@ The first step is to choose a configuration from those available. For example, i
 The next step is to clone this branch to a location on _Gadi_:
 
 <terminal-window>
-    <terminal-line data="input">mkdir -p ~/access-om</terminal-line>
-    <terminal-line data="input">cd ~/access-om</terminal-line>
-    <terminal-line data="input" directory="~/access-om">payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input">mkdir -p ~/access-om2</terminal-line>
+    <terminal-line data="input">cd ~/access-om2</terminal-line>
+    <terminal-line data="input" directory="~/access-om2">payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf</terminal-line>
     <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om2-configs.git to directory: .../access-om/1deg_jra55_ryf</terminal-line>
     <terminal-line>Created and checked out new branch: expt</terminal-line>
     <terminal-line>laboratory path:  /scratch/.../access-om2</terminal-line>
@@ -83,7 +83,7 @@ The next step is to clone this branch to a location on _Gadi_:
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`: 
 
-    mkdir -p ~/access-om
+    mkdir -p ~/access-om2
     cd ~/access-om2
     payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf
 
@@ -101,7 +101,7 @@ The general layout of a `payu`-supported model run consists of two main director
 
 - The **laboratory** directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
 
--  The **control directory** contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om/1deg_jra55_ryf`).
+-  The **control directory** contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~eaccess-om2/1deg_jra55_ryf`).
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
@@ -118,7 +118,7 @@ The main subdirectories of interest are:
 - `archive` &rarr; the directory where output is stored following each successful run.
 
 <terminal-window>
-<terminal-line data="input" directory="~/access-om/1deg_jra55_ryf">payu init</terminal-line>
+<terminal-line data="input" directory="~/access-om2/1deg_jra55_ryf">payu init</terminal-line>
 <terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
 <terminal-line>binary path:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
 <terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
@@ -235,8 +235,8 @@ Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is 
 Model components are separated into subdirectories within the output and restart directories.
 
 <terminal-window>
-<terminal-line data="input">cd ~/access-om/1deg_jra55_ryf</terminal-line>
-<terminal-line data="input" directory="~/access-om/1deg_jra55_yaf<">ls</terminal-line>
+<terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
+<terminal-line data="input" directory="~/access-om2/1deg_jra55_yaf<">ls</terminal-line>
 <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
@@ -296,7 +296,7 @@ The `config.yaml` file located in the _control_ directory, is the _Master Config
 
 One of the most common changes is to adjust the duration of the model run. For example when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-To change the run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om/1deg_jra55_ryf/accessom2.nml` file:
+To change the run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om2/1deg_jra55_ryf/accessom2.nml` file:
 
     &date_manager_nml
         forcing_start_date = '1958-01-01T00:00:00'
@@ -397,7 +397,7 @@ The `name` field here is not actually used for the configuration run so you can 
 
 This section specifies the submodels and configuration options required to execute the model correctly.
 
-Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's _name_ (e.g., configuration options for the `ocean` submodel are in the `~/access-om/1deg_jra55_ryf/ocean` directory).
+Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's _name_ (e.g., configuration options for the `ocean` submodel are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).
 
 ??? note "Expand for detail"
 
@@ -510,7 +510,7 @@ To find out more about other configuration settings for the `config.yaml` file, 
 ### Edit a single {{ model }} component configuration
 
 Each of the [model components] contains configuration options specific to that model that are read in when the model component is running. These options are typically useful to modify the physics used in the model, the input data or the model variables saved in the output files. 
-These configuration options are are specified in files in a subfolder of the _control_ directory, named the same as the submodel's name in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om/1deg_jra55_ryf/ocean` directory).
+These configuration options are are specified in files in a subfolder of the _control_ directory, named the same as the submodel's name in the `config.yaml` `submodel` section (e.g., configuration options for the _ocean_ submodel are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).
 To modify these options please refer to the User Guide of each individual model component.
 
 ---
