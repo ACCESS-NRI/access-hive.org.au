@@ -6,7 +6,7 @@ COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings 
 ???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->
     The <i>COSIMA Cookbook</i> is developed and maintained by COSIMA. While ACCESS-NRI does not own the code, it actively supports the use of the <i>COSIMA Cookbook</i> and its collection of <i>cosima-recipes</i> on <i>Gadi</i>. 
-    ACCESS-NRI provides access to the latest version of <i>COSIMA Cookbook</i> via the `hh5` `access-med` <a href="\model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started">conda environment for Model Evaluation on Gadi</a>.
+    ACCESS-NRI provides access to the latest version of <i>COSIMA Cookbook</i> via the `hh5` `access-med` conda environment for Model Evaluation on Gadi.
 
  The <i>COSIMA Cookbook</i> framework focuses on the <a href="/models/configurations/access-om">ACCESS-OM2</a> suite of models being developed and run by members of <a href="http://cosima.org.au/" target="_blank">COSIMA</a>. Nevertheless, this framework is suited to analysing any MOM5/ MOM6 output as well as output from other models.
 

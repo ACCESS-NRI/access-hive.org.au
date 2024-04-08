@@ -1,4 +1,4 @@
-# ACCESS-NRI ESMValTool-workflow at NCI
+# ESMValTool-workflow on Gadi
 
 ## What is ESMValTool?
 
@@ -15,17 +15,15 @@ For more information, refer to the official <a href="https://docs.esmvaltool.org
     </a>
 </div> -->
 
-ACCESS-NRI is supporting an NCI configuration of ESMValTool under the name **ESMValTool-workflow**.  
+<div class="note">ACCESS-NRI is supporting an NCI configuration of ESMValTool under the name <i>ESMValTool-workflow</i>. </div> 
 
-**ESMValTool-workflow** is the ACCESS-NRI software and data infrastructure that enables the ESMValTool evaluation framework on NCI Gadi. It includes the **ESMValTool/ESMValCore Python packages**, the **ESMValTool collection of recipes and diagnostics** and some **observational datasets**. ESMValTool-workflow is configured to use the existing **NCI supported CMIP data collections**. 
+*ESMValTool-workflow* is the ACCESS-NRI software and data infrastructure that enables the ESMValTool evaluation framework on NCI Gadi. It includes the <a href="https://github.com/ESMValGroup/ESMValTool" target="_blank">ESMValTool</a>/<a href="https://github.com/ESMValGroup/ESMValCore" target="_blank">ESMValCore</a> Python packages, the <a href="https://docs.esmvaltool.org/en/latest/recipes/index.html" target="_blank">ESMValTool collection of recipes and diagnostics</a> and some <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/metadata/f0550_0998_4567_4139" target="_blank">observational datasets</a>. *ESMValTool-workflow* is configured to use the existing NCI supported CMIP data collections. 
 
 ## Using ESMValTool on Gadi
 
-<i>ESMValTool</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> project on Gadi.
-
 ### Pre-requisites
 
-To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the <i>xp65</i> NCI projects:
+<i>ESMValTool</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> project on Gadi.To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the <i>xp65</i> NCI projects.
 
 Depending on your needs, you may want to also join the following supported data collections:
 
@@ -46,8 +44,8 @@ To load the the *esmvaltool* module, execute the following commands:
     module load esmvaltool
 ```
 
-ESMValTool is pre-configured to access CMIP and observation datasets available on Gadi.
-By default, ESMValTool looks for the *config_user.yml* file in the home directory, inside the *.esmvaltool* folder.
+*esmvaltool* is pre-configured to access CMIP and observation datasets available on Gadi.
+By default, *ESMValTool* looks for the *config_user.yml* file in the home directory, inside the *.esmvaltool* folder.
 You can get a copy by running:
 
 ```

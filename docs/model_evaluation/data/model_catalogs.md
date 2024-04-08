@@ -53,5 +53,5 @@ plt.grid()
 ```
 
 <div style="text-align: center;">
-    <img src="../../assets/model_evaluation/intake_example.png" alt="Plot af timeseries of global average temperatures" width="50%"/>
+    <img src="../../../assets/model_evaluation/intake_example.png" alt="Plot af timeseries of global average temperatures" width="50%"/>
 </div>

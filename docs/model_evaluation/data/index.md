@@ -1,0 +1,31 @@
+# Data
+
+
+<div class="card-container">
+    <a href="format_variables" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="../../assets/model_evaluation/model_evaluation_variables.png" alt="Data variables" class="img-contain white-background with-padding"></img>
+        </div>
+        <div class="card-text-container bold ">Data Variables</div>
+    </a>
+    <a href="data_format" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Data format" title="Picture from https://pro.arcgis.com/en/pro-app/latest/tool-reference/geostatistical-analyst/ga-layer-3d-to-netcdf.htm" class="img-contain white-background with-padding"></img>
+        </div>
+        <div class="card-text-container bold ">Data Format</div>
+    </a>
+</div>
+<div class="card-container">
+    <a href="observations" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="../../assets/model_evaluation/model_evaluation_obs_catalog.jpg" alt="A picture of a seismograph recording seismic waves during an earthquake visualises the link to our Observational Data Catalogue. Image credit: Wf Sihardian—EyeEm/Getty Images" title="Image credit: Wf Sihardian—EyeEm/Getty Images" class="img-cover"></img>
+        </div>
+        <div class="card-text-container bold ">Observational Data</div>
+    </a>
+    <a href="model_catalogs" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="../../assets/model_evaluation/model_evaluation_model_catalog.jpg" alt="MED Conda Environment" class="img-contain white-background with-padding"></img>
+        </div>
+        <div class="card-text-container bold ">Model Data</div>
+    </a>
+</div>

@@ -131,22 +131,23 @@ nav:
   - Data and Model Evaluation:
     - model_evaluation/index.md
     - Data: 
-      - model_evaluation/model_evaluation_data/index.md
+      - model_evaluation/data/index.md
       # - model_evaluation/model_evaluation_getting_started/index.md
       # - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-      - Data Format and Variables: model_evaluation/model_evaluation_data/format_variables.md
-      - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
-      - Model Data: model_evaluation/model_evaluation_model_catalogs/index.md
+      - Data Variables: model_evaluation/data/format_variables.md
+      - Data Format: model_evaluation/data/data_format.md
+      - Observational Data: model_evaluation/data/observations.md
+      - Model Data: model_evaluation/data/model_catalogs.md
         # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
 
     - Model Evaluation: 
-      - model_evaluation/model_evaluation_on_gadi/index.md
-      # - Frameworks on Gadi:    
-      - Model Live Diagnostics: model_evaluation/model_diagnostics/index.md
-      - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
-      - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
-      - COSIMA cookbook: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
-      - METplus: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_metplus.md
+      - model_evaluation/evaluation_on_gadi/index.md
+      # - Frameworks on Gadi:
+      - ESMValTool: model_evaluation/evaluation_on_gadi/esmvaltool_workflow.md     
+      - ILAMB: model_evaluation/evaluation_on_gadi/ilamb_workflow.md   
+      - COSIMA cookbook: model_evaluation/evaluation_on_gadi/cosima.md
+      - Model Live Diagnostics: model_evaluation/evaluation_on_gadi/model_live_diagnostics.md
+      - METplus: model_evaluation/evaluation_on_gadi/metplus.md
       # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Tutorials:

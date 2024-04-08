@@ -1,21 +1,22 @@
-#  Data, Model Evaluation and Diagnostics 
+#  Data and Model Evaluation 
 
-<!-- Model evaluation is about measuring how fit for purpose a particular model is.  -->
+<!-- Model evaluation is about measuring how fit for purpose a particular model is. 
 
-Model evaluation in climate science is the process of assessing the performance and reliability of computational models that simulate the Earth's climate system. It involves comparing model predictions to observed data to determine the model's accuracy and usefulness. In doing so, we can understand how well a model represents real-world climate processes and make predictions about future climate trends. Such rigorous model evaluation allows scientists to identify model strengths, weaknesses and uncertainties, as well as refine models to enhance their predictive capabilities.
-
+Model evaluation in climate science is the process of assessing the performance and reliability of computational models that simulate the Earth's climate system. It involves comparing model predictions to observed data to determine the model's accuracy and usefulness. In doing so, we can understand how well a model represents real-world climate processes and make predictions about future climate trends. Such rigorous model evaluation allows scientists to identify model strengths, weaknesses and uncertainties, as well as refine models to enhance their predictive capabilities. 
+-->
+If you are new to using Model Evaluation and Diagnostics tools on Gadi visit [First Steps](/getting_started/first_steps) section.
 <!--## Prerequisites
-To get started on using Model Evaluation and Diagnostics tools on Gadi visit [First Steps](/getting_started/first_steps) section.
+
 If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md): -->
 
 <div class="card-container">
-    <a href="model_evaluation_data" class="vertical-card aspect-ratio1to1">
+    <a href="data" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Data" class="img-cover"></img>
         </div>
         <div class="card-text-container bold ">Data</div>
     </a>  
-    <a href="model_evaluation_on_gadi" class="vertical-card aspect-ratio1to1">
+    <a href="evaluation_on_gadi" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Model Evaluation" class="img-cover" style="object-position: left;"></img>
         </div>
