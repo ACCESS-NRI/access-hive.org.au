@@ -7,9 +7,9 @@ The Earth System Model Evaluation Tool (ESMValTool) is a tool developed for eval
 4. <a href="https://www.youtube.com/watch?v=PvHXr6z3VRU&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=4" target="_blank">Understanding ESMValTool recipes</a>
 5. <a href="https://www.youtube.com/watch?v=2ml231NGnq8&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=5" target="_blank">ESMValTool: Write your own recipes and diagnostics</a>
 6. <a href="https://www.youtube.com/watch?v=NPIJWpLqGjs&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=6" target="_blank">ESMValTool: CMORizing</a>
-7. <a href="https://www.youtube.com/watch?v=NPIJWpLqGjs&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=7" target="_blank">ESMValTool: Data Management</a>
-8. <a href="https://www.youtube.com/watch?v=NPIJWpLqGjs&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=8" target="_blank">ESMValTool: Debugging</a>
-9. <a href="https://www.youtube.com/watch?v=NPIJWpLqGjs&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=9" target="_blank">Visual Studio Code Workflow for Gadi</a>
+7. <a href="https://www.youtube.com/watch?v=efvzi7dUYmk&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=7" target="_blank">ESMValTool: Data Management</a>
+8. <a href="https://www.youtube.com/watch?v=SuQ30YNQ6Cw&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=8" target="_blank">ESMValTool: Debugging</a>
+9. <a href="https://www.youtube.com/watch?v=fSxirzDR3iw&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=9" target="_blank">Visual Studio Code Workflow for Gadi</a>
 
 ## 2023 ACCESS workshop
  - <a href="https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/esmvaltool/ESMValTool_training_VDI.md" target="_blank">Working with ESMValTool</a>
