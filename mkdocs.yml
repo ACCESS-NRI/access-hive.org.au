@@ -134,8 +134,8 @@ nav:
       - model_evaluation/data/index.md
       # - model_evaluation/model_evaluation_getting_started/index.md
       # - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-      - Data Variables: model_evaluation/data/format_variables.md
-      - Data Format: model_evaluation/data/data_format.md
+      - Data Format: model_evaluation/data/data_format.md      
+      - Data Variables: model_evaluation/data/variables.md
       - Observational Data: model_evaluation/data/observations.md
       - Model Data: model_evaluation/data/model_catalogs.md
         # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md

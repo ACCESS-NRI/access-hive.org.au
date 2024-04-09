@@ -2,15 +2,14 @@
 
 <!-- For this content, I have used a lot of text from this website: https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/fundamentals-of-netcdf-data-storage.htm -->
 
-For climate modelling, we need to store multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed and direction.
 As comparable model outputs simplify Model evaluation, ACCESS-NRI supports Coupled Model Intercomparison Projects (CMIP) and the use of common data formats and variables.
 
 ## Data Standards
-CMOR (Climate Model Output Rewriter)
-<!-- Explain CMORize and data standards .. metadata sentences moved up from previous sub heading-->
+Abiding by certain data standards allows for sharing, translating where required and the use in evaluation. To facilitate this, there are <a href="http://cfconventions.org" target="_blank">conventions for Climate and Forecast metadata</a>. These are designed to promote the processing and sharing of <i>NetCDF</i> files. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. 
+
 Metadata, which is typically described as information about the data, enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding and display capabilities.
 
-To facilitate this process, there are <a href="http://cfconventions.org" target="_blank">conventions for Climate and Forecast metadata</a>. These are designed to promote the processing and sharing of <i>NetCDF</i> files. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. 
+The process of translating data to comply with CF conventions is referred to as to <i>CMORize</i> data. CMOR stands for <i>Climate Model Output Rewriter</i> which comes from a software library from <a href="https://pcmdi.llnl.gov/software/" target="_blank">PCMDI (Program for Climate Model Diagnosis & Intercomparison)</a>.
 
 ## Network Common Data Format (NetCDF)
 
