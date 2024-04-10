@@ -1,6 +1,6 @@
 The Earth System Model Evaluation Tool (ESMValTool) is a tool developed for evaluation of Earth System Models in CMIP (Climate Model Intercomparison Projects). See <a href="\model_evaluation\model_evaluation_on_gadi\model_evaluation_on_gadi_esmvaltool.md">here</a> for an introduction and information for usage on Gadi. 
 
-## 2023/24 Video series
+## YouTube Video Series
 1. <a href="https://www.youtube.com/watch?v=YSs6A0H1MwE&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=1" target="_blank">What is ESMValTool?</a>
 2. <a href="https://www.youtube.com/watch?v=LSOzl6_CNy8&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=2" target="_blank">ESMValTool - NCI quickstart guide</a>
 3. <a href="https://www.youtube.com/watch?v=etOW9nZZAeE&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=3" target="_blank">ESMValTool - The config user file</a>
