@@ -99,32 +99,21 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`:
 
 The general layout of a `payu`-supported model run consists of two main directories:
 
-- The **laboratory** directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
-
--  The **control directory** contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~eaccess-om2/1deg_jra55_ryf`).
+- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~eaccess-om2/1deg_jra55_ryf`).
+- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
-Furthermore, this separation allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
+The _laboratory_ directory is a shared space for all `payu` experiments using the same model.  
 
-To setup the _laboratory_ directory, from the _control_ directory run:
+Within the _laboratory_ directory are two subdirectories within which `payu` automatically creates directories named uniquely for the experiment being run:
 
-    payu init
+- `work` &rarr; a temporary directory is created within here when the model is run. It gets created as part of a run and then removed after the run succeeds.
+- `archive` &rarr; the directory within which the output is stored following each successful run.
 
-This creates the _laboratory_ directory, together with relevant subdirectories, depending on the configuration. 
-The main subdirectories of interest are: 
+`payu` creates symbolic links in the _control_ directory called `archive` and `work` that point to the corresponding directories in the _laboratory_ directory.
 
-- `work` &rarr; a temporary directory where the model is run. It gets created as part of a run and then removed after the run succeeds.
-- `archive` &rarr; the directory where output is stored following each successful run.
-
-<terminal-window>
-<terminal-line data="input" directory="~/access-om2/1deg_jra55_ryf">payu init</terminal-line>
-<terminal-line>laboratory path:  /scratch/$PROJECT/$USER/access-om2</terminal-line>
-<terminal-line>binary path:  /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
-<terminal-line>input path:  /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
-<terminal-line>work path:  /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
-<terminal-line>archive path:  /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
-</terminal-window>
+This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
 ### Run configuration
 
