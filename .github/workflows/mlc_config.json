@@ -10,6 +10,9 @@
             "pattern": "linkedin.com"
         },
         {
+            "pattern": "https://opus.nci.org.au"
+        },
+        {
             "pattern": "^http://www.bom.gov.au"
         }
     ],
