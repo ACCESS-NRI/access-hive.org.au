@@ -53,11 +53,11 @@ Before you login to <i>Gadi</i>, you need to possess the following prerequisites
 <ul>
   <li><b>Internet connection</b></li>
   <li>
-    <b>UNIX-like terminal</b>
+    <b>Terminal with built-in SSH</b>
     <br>
-    Linux and MacOS operative systems already have a built-in UNIX-like terminal.
+    Linux, MacOS and Windows 10 (or later) operative systems already have a terminal with built-in SSH.
     <br>
-    Windows users can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>. 
+    Users of Windows 9 (or earlier) can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>. 
     <div class="note">
       Alternatively, you can login through the <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE Gadi Terminal</a>. 
       <br>
@@ -81,7 +81,7 @@ You will be prompted to enter your NCI password, and then you will be connected 
 <terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Obtain access to data without permission;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;#</terminal-line>
 <terminal-line>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Damage, delete, alter or insert data without permission;&emsp;&nbsp;#</terminal-line>
 <terminal-line>#&emsp;&emsp;&emsp;&emsp;Use of this system requires acceptance of the Conditions of Use;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
-<terminal-line>#&emsp;&emsp;&emsp;&emsp;published at http://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
+<terminal-line>#&emsp;&emsp;&emsp;&emsp;published at https://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
 <terminal-line>###############################################################################</terminal-line>
 <terminal-line>|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster&emsp;&emsp;&nbsp;&nbsp;&nbsp;|</terminal-line>
 <terminal-line>===============================================================================</terminal-line>
@@ -257,7 +257,7 @@ For example, if you want to change your default project to `tm70` on <i>Gadi</i>
 <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Obtain access to data without permission;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;#</terminal-line>
 <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- Damage, delete, alter or insert data without permission;&emsp;&nbsp;#</terminal-line>
 <terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;Use of this system requires acceptance of the Conditions of Use;&emsp;&emsp;&emsp;&emsp;#</terminal-line>
-<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;published at http://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
+<terminal-line lineDelay=0>#&emsp;&emsp;&emsp;&emsp;published at https://nci.org.au/users/nci-terms-and-conditions-access;&emsp;#</terminal-line>
 <terminal-line lineDelay=0>###############################################################################</terminal-line>
 <terminal-line lineDelay=0>|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gadi.nci.org.au - 260,760 processor InfiniBand x86_64 cluster&emsp;&emsp;&nbsp;&nbsp;&nbsp;|</terminal-line>
 <terminal-line lineDelay=0>===============================================================================</terminal-line>
