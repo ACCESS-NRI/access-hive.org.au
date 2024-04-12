@@ -42,9 +42,9 @@ module load conda/analysis3</code></pre>
 
 ## Get {{ model }} configuration
 
-{{ model }} configurations are available on the <a href="https://github.com/coecms/access-esm" target="_blank">coecms GitHub</a>, collated in a single repository.
+{{ model }} configurations are available in the <a href="https://github.com/coecms/access-esm" target="_blank">coecms GitHub</a> repository.
 <br>
-To get it on <i>Gadi</i>, clone the {{ model }} GitHub repo by running:
+To get it on <i>Gadi</i>, clone the {{ model }} GitHub repository by running:
 
 <pre><code>git clone https://github.com/coecms/access-esm.git</code></pre>
 
@@ -66,7 +66,7 @@ This will create the <code>access-esm</code> folder.
    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
    After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
 </div>
-Different {{ model }} configurations are stored in different branches of the {{ model }} GitHub repo.
+Each {{ model }} configuration is stored as a specially-named branch in the {{ model }} GitHub repository.
 To check all the available branches on the repo, run the following command inside the newly-created <code>access-esm</code> folder:
 <pre><code>git branch -a</code></pre>
 <terminal-window>

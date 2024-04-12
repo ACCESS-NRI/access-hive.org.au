@@ -1,6 +1,10 @@
 {% set model = "ACCESS-OM2" %}
+{% set access_om2_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
 
 # Run {{ model }}
+<div class="note">
+    In this documentation the same code is sometimes shown in a highlighted code-block, and also in a simulated terminal. The code-block is useful because it is easy to copy the code example to your clipboard (mouse over the code block and click the icon on the far right of the code block). The simulated terminal is to illustrate what happens when commands are run on a terminal on <i>Gadi</i>.
+</div>
 
 ## Prerequisites
 
@@ -10,58 +14,83 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
 
-!!! note
-
-    In this documentation the same code is sometimes shown in a highlight code-block, and also in 
-    a simulated terminal. The code-block is useful because it is easy to copy the code example to 
-    your clipboard (mouse over the code block and click the icon on the far right of the code block). 
-    The simulated terminal is to illustrate what happens when commands are run on a terminal on `Gadi`.
-
 ### Model-specific prerequisites
 
-**Join the _vk83_ and _qv56_ projects at NCI** 
+<ul>
+    <li>
+        <b>Join the <i>vk83</i> and <i>qv56</i> projects at NCI</i></b>
+        <br>
+        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/vk83/join" target="_blank">vk83</a> and <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a> NCI project pages.
+        <br>
+        For more information on joining specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+    </li>
+    <li>
+        <b>Payu</b>
+        <br>
+        <a href="https://github.com/payu-org/payu" target="_blank">Payu</a> is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive <a href="https://payu.readthedocs.io/en/latest/" target="_blank">documentation</a>.
+        <br>
+        <i>Payu</i> on <i>Gadi</i> is available through a dedicated <code>conda</code> environment in the <i>vk83</i> project.
+        <br>
+        After joining the <i>vk83</i> project, load the <code>payu</code> module:
+        <pre><code>module use /g/data/vk83/modules
+module load payu</code></pre>
+        To check that <i>payu</i> is available, run:
+        <pre><code>payu --version</code></pre>
+        <terminal-window>
+            <terminal-line data="input">payu --version</terminal-line>
+            <terminal-line lineDelay="1000">1.1.3</terminal-line>
+        </terminal-window>
+        <div class="note">
+            <i>payu</i> version >=1.1.3 is required
+        </div>
+    </li>
+</ul>
 
-To join these projects request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.
+----------------------------------------------------------------------------------------
 
-For more information on how to join specific NCI projects, please refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
+## {{ model }} configurations
 
-**Payu**
+All released {{ model }} configurations are available from the <a href="{{ access_om2_configs }}" target="_blank">ACCESS-OM2 configs</a> GitHub repository.
+<br>
+Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by <a href="https://cosima.org.au" target="_blank">COSIMA</a>.
 
-[_Payu_](https://github.com/payu-org/payu) is a workflow management tool for running numerical models in supercomputing environments for which there is extensive [documentation](https://payu.readthedocs.io/en/latest/). 
+There are global configurations for <b>three horizontal resolutions</b>: 
 
-_Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.
+- 1°
+- 0.25°
+- 0.1°
 
-After joining the _vk83_ project load the _payu_ environment:
+For each resolution there are <b>two options of atmospheric forcing</b>: 
 
-    module use /g/data/vk83/modules
-    module load payu
+- Repeat Year Forcing (RYF)
+- Interannual Forcing (IAF)
 
-To check that `payu` is available, run:
+Each configuration also has a biogeochemical (BGC) configuration (that uses the <a href="/models/model_components/bgc_ocean">Biogeochemistry Ocean component</a>), if this is required.
+<div class="note">
+    BGC experiments are slower and generally consume more resources (compute time and disk space).
+</div>
 
-    payu --version
-
-<terminal-window>
-<terminal-line data="input">payu --version</terminal-line>
-<terminal-line lineDelay="1000">1.1.3</terminal-line>
-</terminal-window>
-
-**Note:** `payu` version >=1.1.3 is required
+Each {{ model }} configuration is stored as a separate specially-named branch in the <a href="{{ access_om2_configs }}" target="_blank">ACCESS-OM2 configs</a> GitHub repository.
+<br>
+More information about the available experiments and the naming scheme of the branches can be found in the repo.
 
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [ACCESS-OM2 configs] GitHub repository. Released configurations are tested and supported by ACCESS-NRI.  ACCESS-NRI has adapted these model configurations from those originally developed by [COSIMA]. 
- 
-There are global configurations for three resolutions: 1°, 0.25°, 0.1°. For each resolution there are two options of atmospheric forcing: Repeat Year Forcing (RYF) and Interannual Forcing (IAF). Each configuration also has a biogeochemical (BGC) configuration if this is required. Note the BGC experiments are slower and so consume more resources, both compute time and generally also disk space. 
+The first step is to choose a configuration from those available.
+<br>
+For example, if the required configuration is the 1° horizontal resolution with repeat-year <i>JRA55</i> forcing (without BGC), then the branch to select is <a href="https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf" target="_blank"><code>release-1deg_jra55_ryf</code></a>.
 
-Each configuration is stored as a separate specially named branch in the [ACCESS-OM2 configs] GitHub repository.
-Anyone using a configuration is advised to clone only a single branch and not attempt to keep this structure. 
-The [ACCESS-OM2 configs] repo has more information about the available experiments and the naming scheme of the branches.
-
-The first step is to choose a configuration from those available. For example, if the 1° horizontal resolution configuration with repeat-year JRA55 forcing (without bgc) is the required configuration then the [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf) branch is the correct configuration.
-
-The next step is to clone this branch to a location on _Gadi_:
+The clone this branch to a location on <i>Gadi</i>, run:
+<pre><code>mkdir -p ~/access-om2
+cd ~/access-om2
+payu clone -b expt -B release-1deg_jra55_ryf {{ access_om2_configs }} 1deg_jra55_ryf</code></pre>
+In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
+to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
+<div class="note">
+    Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
+</div>
 
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om2</terminal-line>
@@ -80,20 +109,17 @@ The next step is to clone this branch to a location on _Gadi_:
     <terminal-line>    cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
 
-In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
-to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`: 
-
-    mkdir -p ~/access-om2
-    cd ~/access-om2
-    payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf
-
-!!! note
-
-    `payu` uses branches to differentiate between different experiments the same git repository. So it is recommended to always change the branch name you clone into to something meaningful for the planned experiment. See the [`payu` tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12) for more information.
+<div class="note">
+    <i>payu</i> uses branches to differentiate between different experiments in the same local git repository.
+    <br>
+    For this reason, it is recommended to always set the cloned branch name(<code>expt</code> in the example above) to something meaningful for the planned experiment.
+    <br>
+    For more information refer to this <a href="https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12" target="_blank">payu tutorial</a>.
+</div>
 
 ----------------------------------------------------------------------------------------
 
-## Running an {{ model }} configuration
+## Run {{ model }} configuration
 
 {{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through a [PBS Job][PBS Jobs] submission managed by `payu`.
 
@@ -513,6 +539,5 @@ To modify these options please refer to the User Guide of each individual model 
 
 
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
-[COSIMA]: https://cosima.org.au
-[ACCESS-OM2 configs]: https://github.com/ACCESS-NRI/access-om2-configs
+
 [PBS Jobs]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
