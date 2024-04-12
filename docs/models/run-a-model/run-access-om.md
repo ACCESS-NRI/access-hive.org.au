@@ -42,10 +42,10 @@ To check that `payu` is available, run:
 
 <terminal-window>
 <terminal-line data="input">payu --version</terminal-line>
-<terminal-line lineDelay="1000">1.1.1</terminal-line>
+<terminal-line lineDelay="1000">1.1.3</terminal-line>
 </terminal-window>
 
-**Note:** `payu` version >=1.1 is required
+**Note:** `payu` version >=1.1.3 is required
 
 ----------------------------------------------------------------------------------------
 
