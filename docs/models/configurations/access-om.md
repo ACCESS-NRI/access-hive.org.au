@@ -14,7 +14,6 @@ The atmospheric fields that drive the model are provided by a data source, usual
 The ACCESS-OM2 has versions at three different spatial resolutions: <a href="http://cosima.org.au/index.php/models/access-om2/" target="_blank">ACCESS-OM2</a>, <a href="http://cosima.org.au/index.php/models/access-om2-025/" target="_blank">ACCESS-OM2-025</a> and <a href="http://cosima.org.au/index.php/models/access-om2-01-2/" target="_blank">ACCESS-OM2-01</a>.
 
 ### Model Components
-
 <!-- Tab labels -->
 <div class="tabLabels" label="ACCESS-OM-versions">
     <button>ACCESS-OM2</button>

@@ -1,5 +1,6 @@
 {% set model = "ACCESS-CM" %}
 # Run {{ model }}
+
 <div class="note">
     <b>Important for <i>accessdev</i> users!</b>
     <br>
@@ -11,7 +12,7 @@
 ### General prerequisites
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the <a href="/getting_started/first_steps">First Steps</a> section.
 
-If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of <a href="/models">ACCESS Models</a>.
 
 ### Model-specific prerequisites
 <ul>
