@@ -96,12 +96,14 @@ function tabFunctionality() {
 
 
 /*
-  Add the external-link icon to <a> tags with target="_blank"
+  Make links that go to a different website 'external' by adding the
+  target="_blank" attribute, and add an external-link icon to them.
 */
-function addExternalLinkIcon() {
-  let extLinks = document.querySelectorAll("article a[target='_blank']:not(:is(.vertical-card,.horizontal-card))");
+function makeLinksExternal() {
+  let extLinks = document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card))");
   extLinks.forEach(link => {
     link.classList.add('external-link');
+    link.setAttribute('target','_blank');
   })
 }
 
@@ -216,7 +218,7 @@ function main() {
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
-  addExternalLinkIcon();
+  makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
   makeCitationLinks();
