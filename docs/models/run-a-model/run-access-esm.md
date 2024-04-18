@@ -405,8 +405,6 @@ days: 0</code></pre>
 
 ## Monitor {{ model }} runs
 
-Currently, there is no specific tool to monitor {{ model }} runs.
-<br>
 You can execute the following command to show the status of all your submitted <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS jobs</a>:
 
 <pre><code>qstat -u $USER</code></pre>

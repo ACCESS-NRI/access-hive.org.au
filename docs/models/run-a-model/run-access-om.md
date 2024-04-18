@@ -1,9 +1,13 @@
 {% set model = "ACCESS-OM2" %}
 {% set access_om2_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
+[PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
+[payu]: https://github.com/payu-org/payu
 
 # Run {{ model }}
 <div class="note">
-    In this documentation the same code is sometimes shown in a highlighted code-block, and also in a simulated terminal. The code-block is useful because it is easy to copy the code example to your clipboard (mouse over the code block and click the icon on the far right of the code block). The simulated terminal is to illustrate what happens when commands are run on a terminal on <i>Gadi</i>.
+    In this documentation, the same code is sometimes shown in a highlighted code-block and also in a simulated terminal.<br>
+    The code-blocks show the commands to be run in a terminal. They can be easily copied by clicking on the icon over the right side of the code block.<br>
+    The simulated terminals are examples of the output to expect when the commands are run. Sometimes they might slightly differ from the real outputs.
 </div>
 
 ## Prerequisites
@@ -15,6 +19,33 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
 
 ### Model-specific prerequisites
+
+- **Join the _vk83_ and _qv56_ projects at NCI**<br>
+    To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/vk83/join" target="_blank">vk83</a> and <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a> NCI project pages.
+    <br>
+    For more information on joining specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+
+- **Payu**<br>
+    [Payu][payu] is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive <a href="https://payu.readthedocs.io/en/latest/" target="_blank">documentation</a>.
+    <br>
+    _Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.
+    <br>
+    After joining the _vk83_ project, load the `payu` module:
+    ```
+    module use /g/data/vk83/modules
+    module load payu
+    ```
+    To check that _payu_ is available, run:
+    ```
+    payu --version
+    ```
+    <terminal-window>
+        <terminal-line data="input">payu --version</terminal-line>
+        <terminal-line lineDelay="1000">1.1.3</terminal-line>
+    </terminal-window>
+    <div class="note">
+        <i>payu</i> version >=1.1.3 is required
+    </div>
 
 <ul>
     <li>
@@ -82,7 +113,7 @@ The first step is to choose a configuration from those available.
 <br>
 For example, if the required configuration is the 1° horizontal resolution with repeat-year <i>JRA55</i> forcing (without BGC), then the branch to select is <a href="https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf" target="_blank"><code>release-1deg_jra55_ryf</code></a>.
 
-The clone this branch to a location on <i>Gadi</i>, run:
+To clone this branch to a location on <i>Gadi</i>, run:
 <pre><code>mkdir -p ~/access-om2
 cd ~/access-om2
 payu clone -b expt -B release-1deg_jra55_ryf {{ access_om2_configs }} 1deg_jra55_ryf</code></pre>
@@ -119,19 +150,73 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
 
 ----------------------------------------------------------------------------------------
 
+## Run {{ model }} configuration
+
+If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
+
+{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job][PBS job] submission managed by _payu_.
+
+The general layout of a _payu_-supported model run consists of two main directories:
+
+- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~eaccess-om2/1deg_jra55_ryf`).
+- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
+
+This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
+
+The _laboratory_ directory is a shared space for all `payu` experiments using the same model.  
+
+Within the _laboratory_ directory are two subdirectories within which `payu` automatically creates directories named uniquely for the experiment being run:
+
+- `work` &rarr; a temporary directory is created within here when the model is run. It gets created as part of a run and then removed after the run succeeds.
+- `archive` &rarr; the directory within which the output is stored following each successful run.
+
+`payu` creates symbolic links in the _control_ directory called `archive` and `work` that point to the corresponding directories in the _laboratory_ directory.
+
+This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
+
+### Run configuration
+
+To run a configuration: 
+
+    payu run
+
+This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the _control_ directory.
+
+!!! note
+
+    You can add the `-f` option to `payu run` and it will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
+
+### Run configuration for multiple years
+
+If you want to run a configuration multiple times automatically use the option `-n`:
+
+    payu run -n <number-of-runs>
+
+This will run `number-of-runs` times with a total length of `restart_period * number-of-runs`, where `restart_period` is the length of each model run. 
+
+For example, to run a configuration for a total of 50 years with `restart_period`  of 5 years the `number-of-runs` should be set to `10`:
+
+    payu run -n 10
+
+!!! note
+
+    `restart_period` is the configuration option that sets how long the model will run. See [how to change run length](#change-run-length) for a description of where this is set and how to change it. 
+
+
 ## Edit {{ model }} configuration
 
-This section describes how to modify {{ model }} configuration. 
+This section describes how to modify {{ model }} configuration.<br>
+The modifications discussed in this section can change the way {{ model }} is run, or how its specific model components are configured and coupled together.
 
-Modifications can change the way {{ model }} is run, or how specific model components are configured and coupled together. Sometimes changes are required to both, if the model component changes require a change to the resources needed for the model to complete.
-
-The `config.yaml` file located in the _control_ directory, is the _Master Configuration_ file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others are rarely changed without significant understanding of how the model is configured.
+The `config.yaml` file located in the _control_ directory, is the _Master Configuration_ file, which controls the general model configuration.<br>
+It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
 
 ### Change run length
 
-One of the most common changes is to adjust the duration of the model run. For example when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
+One of the most common changes is to adjust the duration of the model run.<br>
+For example, when debugging changes to a model it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-To change the run length, edit the `restart_period` field in the `&date_manager_nml` section of the `~/access-om2/1deg_jra55_ryf/accessom2.nml` file:
+The run length is controlled by the `restart_period` field in the `&date_manager_nml` section of the `~/access-om2/1deg_jra55_ryf/accessom2.nml` file:
 
     &date_manager_nml
         forcing_start_date = '1958-01-01T00:00:00'
@@ -141,18 +226,22 @@ To change the run length, edit the `restart_period` field in the `&date_manager_
         restart_period = 5, 0, 0
     &end
 
+The format is <code>restart_period = number_of_years, number_of_months, number_of_days</code>
+
 For example, to make the model run for only 1 month change `restart_period` to
 
     restart_period = 0, 1, 0
 
-!!! note
-
-    While `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors. For more information about the difference between run length and total experiment length, or how to run the model for more than 5 years, refer to the section [Run configuration for multiple years](#run-configuration-for-multiple-years").
-
+<div class="note">
+    While <code>restart_period</code> can be reduced, it should not be increased to more than 5 years, to avoid errors.
+    <br><br>
+    It is also important to differentiate between <i>run length</i> and <i>total experiment length</i>.<br>
+    For more information about their difference, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
+</div>
 
 ### Modify PBS resources
 
-If the model has been altered and needs longer to complete, more memory, or you want to change which queue it uses then this is the part of `config.yaml` you need to modify:
+If the model has been altered and needs longer time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
 
 ```yaml
 # If submitting to a different project to your default, uncomment line below
@@ -168,7 +257,7 @@ jobname: 1deg_jra55_ryf
 mem: 1000GB
 ```
 
-These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained") for the [PBS job][PBS jobs].
+These lines can be edited to change the <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS directives</a> for the [PBS job][PBS job].
 
 For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`:
 
@@ -176,15 +265,16 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
-If other compute projects will be used to run a configuration then the `shortpath` will also need to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added. Doing this will make sure the same `/scratch` location is used for the _laboratory_ regardless of which project is used to run the experiment.
-
-!!! note
-
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units_ (SU). For more information, check [how to join relevant NCI projects](https://access-hive.org.au/getting_started/first_steps/#join-relevant-nci-projects)
+<div class="note">
+    If projects other than <code>ol01</code> are used to run {{ model }} configuration, then the <code>shortpath</code> field also needs to be uncommented and the path to the desired <code>/scratch/PROJECT_CODE</code> added.<br>
+    Doing this will make sure the same <code>/scratch</code> location is used for the <i>laboratory</i>, regardless of which project is used to run the experiment.
+    <br><br>
+    To run {{ model }}, you need to be a member of a project with allocated <i>Service Units (SU)</i>. For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
+</div>
 
 ### Syncing output data
 
-As [discussed above](#running-an-access-om2-configuration) the _laboratory_ directory is typically in a directory on ephemeral `/scratch` storage where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
+The _laboratory_ directory (more details on it in the section [Run ACCESS-OM2 configuration](#run-access-om2-configuration)) is typically under `/scratch` storage on _Gadi_ where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
 
 `payu` has in-built support to sync outputs, restarts and a copy of the _control_ directory git history to another location. To do this modify this section of the `config.yaml` shown below: change `enable` to `True`, and set `path` to a location on `/g/data`. 
 
@@ -350,56 +440,6 @@ To modify these options please refer to the User Guide of each individual model 
 
 ---------------------------------------------------------------------------------------
 
-## Run {{ model }} configuration
-
-{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project) through a [PBS Job][PBS Jobs] submission managed by `payu`.
-
-The general layout of a `payu`-supported model run consists of two main directories:
-
-- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~eaccess-om2/1deg_jra55_ryf`).
-- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
-
-This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
-
-The _laboratory_ directory is a shared space for all `payu` experiments using the same model.  
-
-Within the _laboratory_ directory are two subdirectories within which `payu` automatically creates directories named uniquely for the experiment being run:
-
-- `work` &rarr; a temporary directory is created within here when the model is run. It gets created as part of a run and then removed after the run succeeds.
-- `archive` &rarr; the directory within which the output is stored following each successful run.
-
-`payu` creates symbolic links in the _control_ directory called `archive` and `work` that point to the corresponding directories in the _laboratory_ directory.
-
-This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
-
-### Run configuration
-
-To run a configuration: 
-
-    payu run
-
-This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the _control_ directory.
-
-!!! note
-
-    You can add the `-f` option to `payu run` and it will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
-
-### Run configuration multiple times
-
-If you want to run a configuration multiple times automatically use the option `-n`:
-
-    payu run -n <number-of-runs>
-
-This will run `number-of-runs` times with a total length of `restart_period * number-of-runs`, where `restart_period` is the length of each model run. 
-
-For example, to run a configuration for a total of 50 years with `restart_period`  of 5 years the `number-of-runs` should be set to `10`:
-
-    payu run -n 10
-
-!!! note
-
-    `restart_period` is the configuration option that sets how long the model will run. See [how to change run length](#change-run-length) for a description of where this is set and how to change it. 
-
 ## Monitor {{ model }} runs
 
 `payu run` reports the PBS `job-ID`, e.g. `110020843.gadi-pbs`, as the last line to the terminal. `qstat` can be used to query the status of the job, e.g.
@@ -412,7 +452,7 @@ For example, to run a configuration for a total of 50 years with `restart_period
     <terminal-line linedelay=0>&lt;110021035&gt;.gadi-pbs&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
-To show the status of all your submitted [PBS jobs]:
+To show the status of all your submitted PBS jobs:
 
 <terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
@@ -542,8 +582,9 @@ This can help to isolate issues such as permissions problems accessing files and
     <li>
         <a href = "https://github.com/access-nri/access-om2/" target="_blank">https://github.com/access-nri/access-om2/</a>
     </li>
+    <li>
+        <a href = "https://opus.nci.org.au/" target="_blank">https://opus.nci.org.au/</a>
+    </li>
 </ul>
 
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
-
-[PBS Jobs]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
