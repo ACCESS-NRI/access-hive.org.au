@@ -47,36 +47,6 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
         <i>payu</i> version >=1.1.3 is required
     </div>
 
-<ul>
-    <li>
-        <b>Join the <i>vk83</i> and <i>qv56</i> projects at NCI</i></b>
-        <br>
-        To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/vk83/join" target="_blank">vk83</a> and <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a> NCI project pages.
-        <br>
-        For more information on joining specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
-    </li>
-    <li>
-        <b>Payu</b>
-        <br>
-        <a href="https://github.com/payu-org/payu" target="_blank">Payu</a> is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive <a href="https://payu.readthedocs.io/en/latest/" target="_blank">documentation</a>.
-        <br>
-        <i>Payu</i> on <i>Gadi</i> is available through a dedicated <code>conda</code> environment in the <i>vk83</i> project.
-        <br>
-        After joining the <i>vk83</i> project, load the <code>payu</code> module:
-        <pre><code>module use /g/data/vk83/modules
-module load payu</code></pre>
-        To check that <i>payu</i> is available, run:
-        <pre><code>payu --version</code></pre>
-        <terminal-window>
-            <terminal-line data="input">payu --version</terminal-line>
-            <terminal-line lineDelay="1000">1.1.3</terminal-line>
-        </terminal-window>
-        <div class="note">
-            <i>payu</i> version >=1.1.3 is required
-        </div>
-    </li>
-</ul>
-
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} configurations
@@ -154,59 +124,72 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
 
 If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
 
-{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job][PBS job] submission managed by _payu_.
+{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job][PBS job] submission managed by [_payu_][payu].
 
 The general layout of a _payu_-supported model run consists of two main directories:
 
-- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~eaccess-om2/1deg_jra55_ryf`).
+- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om2/1deg_jra55_ryf`).
 - The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
-The _laboratory_ directory is a shared space for all `payu` experiments using the same model.  
+The _laboratory_ directory is a shared space for all *payu* experiments using the same model.<br>
+Inside the _laboratory_ directory there are two subdirectories:
 
-Within the _laboratory_ directory are two subdirectories within which `payu` automatically creates directories named uniquely for the experiment being run:
+- `work` &rarr; a directory where *payu* automatically creates a temporary subdirectory while the model is run. The temporary subdirectory gets created as part of a run and then removed after the run succeeds.
+- `archive` &rarr; the directory where the output is stored following each successful run.
 
-- `work` &rarr; a temporary directory is created within here when the model is run. It gets created as part of a run and then removed after the run succeeds.
-- `archive` &rarr; the directory within which the output is stored following each successful run.
-
-`payu` creates symbolic links in the _control_ directory called `archive` and `work` that point to the corresponding directories in the _laboratory_ directory.
+Within each of the above directories *payu* automatically creates subdirectories uniquely named according to the experiment being run.<br>
+*Payu* also creates symbolic links in the _control_ directory pointing to the `archive` and `work` directories.
 
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
 ### Run configuration
 
-To run a configuration: 
+To run {{ model }} configuration execute the following command from within the *control* directory:
 
     payu run
 
-This will submit a single job to the queue with a run length of `restart_period`.  `restart_period` is defined in the `accessom2.nml` file in the _control_ directory.
+This will submit a single job to the queue with a run length of `restart_period`.<br>
+For information about `restart_period`, refer to [Change run length](#change-run-length).
 
-!!! note
+<terminal-window>
+<terminal-line data="input">cd ~/eaccess-om2/1deg_jra55_ryf</terminal-line>
+<terminal-line directory="~/eaccess-om2/1deg_jra55_ryf" data="input">payu run</terminal-line>
+<terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
+<terminal-line lineDelay=50>payu: warning: CPU request increased from 241 to 288</terminal-line>
+<terminal-line lineDelay=50>Loading input manifest: manifests/input.yaml</terminal-line>
+<terminal-line lineDelay=50>Loading restart manifest: manifests/restart.yaml</terminal-line>
+<terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
+<terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
+<terminal-line lineDelay=50>
+    qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_ryf -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/hr22/modulefiles:/g/data/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/vk83 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/python3.10 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/payu-run
+</terminal-line>
+<terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
+</terminal-window>
+<div class="note">
+    You can add the <code>-f</code> option to <code>payu run</code> to let the model run even if there is an existing non-empty <code>work</code> directory, created from a previous failed run or from running <code>payu setup</code>.
+</div>
 
-    You can add the `-f` option to `payu run` and it will run even if there is an existing non-empty `work` directory created from a previous failed run or from running `payu setup`.
+### Run configuration for more than 5 years
 
-### Run configuration for multiple years
-
-If you want to run a configuration multiple times automatically use the option `-n`:
+As mentioned in the [Change run length](#change-run-length) section, you cannot specify more than 5 years as `restart_period`.<br>
+If you want to run a configuration for more than 5 years, you need to use the `-n` option:
 
     payu run -n <number-of-runs>
 
-This will run `number-of-runs` times with a total length of `restart_period * number-of-runs`, where `restart_period` is the length of each model run. 
+This will run {{ model }} `number-of-runs` consecutive times, each with a *run length* equal to `restart_period`.<br>
+This way, the *total experiment length* will be `restart_period * number-of-runs`. 
 
-For example, to run a configuration for a total of 50 years with `restart_period`  of 5 years the `number-of-runs` should be set to `10`:
+For example, to run a configuration for a total of 50 years with a `restart_period` of 5 years, the `number-of-runs` should be set to `10`:
 
     payu run -n 10
-
-!!! note
-
-    `restart_period` is the configuration option that sets how long the model will run. See [how to change run length](#change-run-length) for a description of where this is set and how to change it. 
 
 
 ## Edit {{ model }} configuration
 
 This section describes how to modify {{ model }} configuration.<br>
-The modifications discussed in this section can change the way {{ model }} is run, or how its specific model components are configured and coupled together.
+The modifications discussed in this section can change the way {{ model }} is run by _Payu_, or how its specific model components are configured and coupled together.
 
 The `config.yaml` file located in the _control_ directory, is the _Master Configuration_ file, which controls the general model configuration.<br>
 It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
@@ -226,17 +209,17 @@ The run length is controlled by the `restart_period` field in the `&date_manager
         restart_period = 5, 0, 0
     &end
 
-The format is <code>restart_period = number_of_years, number_of_months, number_of_days</code>
+The format is `restart_period = <number_of_years>, <number_of_months>, <number_of_days>`.
 
-For example, to make the model run for only 1 month change `restart_period` to
+For example, to make the model run for 1 year, 4 months and 10 days, change `restart_period` to:
 
-    restart_period = 0, 1, 0
+    restart_period = 1, 4, 10
 
 <div class="note">
     While <code>restart_period</code> can be reduced, it should not be increased to more than 5 years, to avoid errors.
     <br><br>
     It is also important to differentiate between <i>run length</i> and <i>total experiment length</i>.<br>
-    For more information about their difference, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
+    For more information about their difference, or how to run the model for more than 5 years, refer to the section <a href="#run-configuration-for-more-than-5-years">Run configuration for more than 5 years</a>.
 </div>
 
 ### Modify PBS resources
