@@ -1,14 +1,15 @@
 {% set model = "ACCESS-OM2" %}
 {% set access_om2_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
+{% set cosima = "https://cosima.org.au" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
+[model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
 
 # Run {{ model }}
-<div class="note">
+!!! info
     In this documentation, the same code is sometimes shown in a highlighted code-block and also in a simulated terminal.<br>
     The code-blocks show the commands to be run in a terminal. They can be easily copied by clicking on the icon over the right side of the code block.<br>
     The simulated terminals are examples of the output to expect when the commands are run. Sometimes they might slightly differ from the real outputs.
-</div>
 
 ## Prerequisites
 
@@ -21,39 +22,34 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 ### Model-specific prerequisites
 
 - **Join the _vk83_ and _qv56_ projects at NCI**<br>
-    To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/vk83/join" target="_blank">vk83</a> and <a href="https://my.nci.org.au/mancini/project/qv56/join" target="_blank">qv56</a> NCI project pages.
-    <br>
-    For more information on joining specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
+    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https:nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
+    For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Payu**<br>
-    [Payu][payu] is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive <a href="https://payu.readthedocs.io/en/latest/" target="_blank">documentation</a>.
-    <br>
-    _Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.
-    <br>
+    [Payu][payu] is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive [documentation](https://payu.readthedocs.io/en/latest/).<br>
+    _Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.<br>
     After joining the _vk83_ project, load the `payu` module:
-    ```
-    module use /g/data/vk83/modules
-    module load payu
-    ```
+    
+        module use /g/data/vk83/modules
+        module load payu
+
     To check that _payu_ is available, run:
-    ```
-    payu --version
-    ```
+
+        payu --version
+    
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
         <terminal-line lineDelay="1000">1.1.3</terminal-line>
     </terminal-window>
-    <div class="note">
-        <i>payu</i> version >=1.1.3 is required
-    </div>
+    !!! warning
+        _payu_ version >=1.1.3 is required
 
 ----------------------------------------------------------------------------------------
 
 ## {{ model }} configurations
 
-All released {{ model }} configurations are available from the <a href="{{ access_om2_configs }}" target="_blank">ACCESS-OM2 configs</a> GitHub repository.
-<br>
-Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by <a href="https://cosima.org.au" target="_blank">COSIMA</a>.
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.<br>
+Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA]({{ cosima }}).
 
 There are global configurations for <b>three horizontal resolutions</b>: 
 
@@ -66,30 +62,29 @@ For each resolution there are <b>two options of atmospheric forcing</b>:
 - Repeat Year Forcing (RYF)
 - Interannual Forcing (IAF)
 
-Each configuration also has a biogeochemical (BGC) configuration (that uses the <a href="/models/model_components/bgc_ocean">Biogeochemistry Ocean component</a>), if this is required.
-<div class="note">
+Each configuration also has a biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if this is required.
+<div class='admonition warning'>
     BGC experiments are slower and generally consume more resources (compute time and disk space).
 </div>
 
-Each {{ model }} configuration is stored as a separate specially-named branch in the <a href="{{ access_om2_configs }}" target="_blank">ACCESS-OM2 configs</a> GitHub repository.
-<br>
-More information about the available experiments and the naming scheme of the branches can be found in the repo.
+More information about the available experiments and the naming scheme of the branches can be found in the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.
 
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
 
-The first step is to choose a configuration from those available.
-<br>
-For example, if the required configuration is the 1° horizontal resolution with repeat-year <i>JRA55</i> forcing (without BGC), then the branch to select is <a href="https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf" target="_blank"><code>release-1deg_jra55_ryf</code></a>.
+The first step is to choose a configuration from those available.<br>
+For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf).
 
-To clone this branch to a location on <i>Gadi</i>, run:
-<pre><code>mkdir -p ~/access-om2
-cd ~/access-om2
-payu clone -b expt -B release-1deg_jra55_ryf {{ access_om2_configs }} 1deg_jra55_ryf</code></pre>
+To clone this branch to a location on _Gadi_, run:
+    
+    mkdir -p ~/access-om2
+    cd ~/access-om2
+    payu clone -b expt -B release-1deg_jra55_ryf {{ access_om2_configs }} 1deg_jra55_ryf
+
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
-<div class="note">
+<div class='admonition warning'>
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 </div>
 
@@ -110,7 +105,7 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
     <terminal-line>    cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
 
-<div class="note">
+<div class='admonition warning'>
     <i>payu</i> uses branches to differentiate between different experiments in the same local git repository.
     <br>
     For this reason, it is recommended to always set the cloned branch name(<code>expt</code> in the example above) to something meaningful for the planned experiment.
@@ -140,7 +135,7 @@ Inside the _laboratory_ directory there are two subdirectories:
 - `archive` &rarr; the directory where the output is stored following each successful run.
 
 Within each of the above directories *payu* automatically creates subdirectories uniquely named according to the experiment being run.<br>
-*Payu* also creates symbolic links in the _control_ directory pointing to the `archive` and `work` directories.
+_Payu_ also creates symbolic links in the _control_ directory pointing to the `archive` and `work` directories.
 
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
@@ -154,20 +149,20 @@ This will submit a single job to the queue with a run length of `restart_period`
 For information about `restart_period`, refer to [Change run length](#change-run-length).
 
 <terminal-window>
-<terminal-line data="input">cd ~/eaccess-om2/1deg_jra55_ryf</terminal-line>
-<terminal-line directory="~/eaccess-om2/1deg_jra55_ryf" data="input">payu run</terminal-line>
-<terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
-<terminal-line lineDelay=50>payu: warning: CPU request increased from 241 to 288</terminal-line>
-<terminal-line lineDelay=50>Loading input manifest: manifests/input.yaml</terminal-line>
-<terminal-line lineDelay=50>Loading restart manifest: manifests/restart.yaml</terminal-line>
-<terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
-<terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
-<terminal-line lineDelay=50>
-    qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_ryf -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/hr22/modulefiles:/g/data/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/vk83 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/python3.10 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/payu-run
-</terminal-line>
-<terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
+    <terminal-line data="input">cd ~/eaccess-om2/1deg_jra55_ryf</terminal-line>
+    <terminal-line directory="~/eaccess-om2/1deg_jra55_ryf" data="input">payu run</terminal-line>
+    <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
+    <terminal-line lineDelay=50>payu: warning: CPU request increased from 241 to 288</terminal-line>
+    <terminal-line lineDelay=50>Loading input manifest: manifests/input.yaml</terminal-line>
+    <terminal-line lineDelay=50>Loading restart manifest: manifests/restart.yaml</terminal-line>
+    <terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
+    <terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
+    <terminal-line lineDelay=50>
+        qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_ryf -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/hr22/modulefiles:/g/data/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/vk83 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/python3.10 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/payu-run
+    </terminal-line>
+    <terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
 </terminal-window>
-<div class="note">
+<div class='admonition warning'>
     You can add the <code>-f</code> option to <code>payu run</code> to let the model run even if there is an existing non-empty <code>work</code> directory, created from a previous failed run or from running <code>payu setup</code>.
 </div>
 
@@ -215,7 +210,7 @@ For example, to make the model run for 1 year, 4 months and 10 days, change `res
 
     restart_period = 1, 4, 10
 
-<div class="note">
+<div class='admonition warning'>
     While <code>restart_period</code> can be reduced, it should not be increased to more than 5 years, to avoid errors.
     <br><br>
     It is also important to differentiate between <i>run length</i> and <i>total experiment length</i>.<br>
@@ -240,7 +235,7 @@ jobname: 1deg_jra55_ryf
 mem: 1000GB
 ```
 
-These lines can be edited to change the <a href="https://opus.nci.org.au/display/Help/PBS+Directives+Explained" target="_blank">PBS directives</a> for the [PBS job][PBS job].
+These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
 
 For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`:
 
@@ -248,7 +243,7 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
-<div class="note">
+<div class='admonition warning'>
     If projects other than <code>ol01</code> are used to run {{ model }} configuration, then the <code>shortpath</code> field also needs to be uncommented and the path to the desired <code>/scratch/PROJECT_CODE</code> added.<br>
     Doing this will make sure the same <code>/scratch</code> location is used for the <i>laboratory</i>, regardless of which project is used to run the experiment.
     <br><br>
@@ -257,10 +252,11 @@ project: ol01
 
 ### Syncing output data
 
-The _laboratory_ directory (more details on it in the section [Run ACCESS-OM2 configuration](#run-access-om2-configuration)) is typically under `/scratch` storage on _Gadi_ where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage. On _gadi_ this is typically under a project code on `/g/data`.  
+The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage.<br>
+On _Gadi_, this is typically under a project code on `/g/data`.  
 
-`payu` has in-built support to sync outputs, restarts and a copy of the _control_ directory git history to another location. To do this modify this section of the `config.yaml` shown below: change `enable` to `True`, and set `path` to a location on `/g/data`. 
-
+_Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory git history to another location.<br>
+This feature is controlled by the following section in the `config.yaml` file: 
 ```yaml
 # Sync options for automatically copying data from ephemeral scratch space to 
 # longer term storage
@@ -271,41 +267,47 @@ sync:
       - '*.nc.*'
       - 'iceh.????-??-??.nc'
 ```
+To enable output syncing, change `enable` to `True`, and set `path` to a location on `/g/data`. 
 
 ### Saving model restarts
 
-The model outputs restart files after every run so the model can then run again from the saved model state.
+{{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
+Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
-Restart files can occupy a significant amount of disk space and it isn't necessary to be able to restart the model at every  point where the model was stopped during a run.  The `restart_freq` specifies a strategy for what restart files are retained. 
-
-This can either be a number, which retains every _nth_ numbered restart, or a pandas style date-time frequency alias. For example to preserve the ability to restart the model every 50 model run years:
+The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
+This can either be a number (in which case every _nth_ restart file is retained), or a [pandas-style datetime frequency](https://business-science.github.io/pytimetk/guides/03_pandas_frequency.html).<br>
+For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
 ```yaml
 restart_freq: 50Y
 ```
-The most recent sequential restarts are retained, and only deleted only after a permanently archived restart has been produced.
+The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
 
-See the [documentation for more detail](https://payu.readthedocs.io/en/latest/config.html#model).
+For more information, check [Payu Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
 
-### Other rarely modified configuration options
+### Other configuration options
+
+<div class='admonition warning'>
+    The following sections in the <code>config.yaml</code> file control configuration options that are rarely modified, and often require a deeper understanding of how {{ model }} is structured to be safely changed.
+</div>
 
 #### Model configuration
 
-This tells `payu` which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all the component models, or submodels.
+This section tells _Payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all its model components.
 
 ```yaml
 name: common
 model: access-om2
 input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
 ```
-The `name` field here is not actually used for the configuration run so you can safely ignore it.
+The `name` field is not actually used for the configuration run, so it can be safely ignored.
 
 #### Submodels
 
 {{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).
 
-This section specifies the submodels and configuration options required to execute the model correctly.
+This section specifies the submodels and configuration options required to execute {{ model }} correctly.
 
-Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's _name_ (e.g., configuration options for the `ocean` submodel are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).
+Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory whose name matches the submodel's `name` (e.g., configuration options for the `ocean` submodel are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).
 
 ??? note "Expand for detail"
 
@@ -504,9 +506,9 @@ Output folders are `outputXXX` and restart folders `restartXXX`, where _XXX_ is 
 Model components are separated into subdirectories within the output and restart directories.
 
 <terminal-window>
-<terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
-<terminal-line data="input" directory="~/access-om2/1deg_jra55_yaf<">ls</terminal-line>
-<terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
+    <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om2/1deg_jra55_yaf<">ls</terminal-line>
+    <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
 ### Model Live Diagnostics
@@ -545,10 +547,6 @@ This will prepare the model run: create the ephemeral `work` directory based on 
 
 This can help to isolate issues such as permissions problems accessing files and directories, missing files or malformed/incorrect paths.
 
-!!! note
-
-    By default `payu run` will not proceed if there is an existing `work` directory. So after `payu setup` either `payu sweep` before attempting to run the configuration, or use `payu run -f`
-
 ----------------------------------------------------------------------------------------
 <!-- References -->
 <h6>References</h6>
@@ -569,5 +567,3 @@ This can help to isolate issues such as permissions problems accessing files and
         <a href = "https://opus.nci.org.au/" target="_blank">https://opus.nci.org.au/</a>
     </li>
 </ul>
-
-[model components]: https://access-hive.org.au/models/configurations/access-om/#model-components

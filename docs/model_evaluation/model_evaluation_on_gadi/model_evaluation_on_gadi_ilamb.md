@@ -16,7 +16,7 @@ ACCESS-NRI is releasing an NCI configuration of ILAMB under the name **ILAMB-wor
 
 <i>ILAMB</i> is provided through the `xp65` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
 
-<div class="note">
+<div class='admonition warning'>
     To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
 </div>
 

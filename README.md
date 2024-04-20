@@ -11,30 +11,28 @@ https://access-hive.org.au/
 # How to Contribute
 If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
-## Styling guidelines for contribution
+## Styling guidelines for developers
 Please follow the guidelines below so as to make the Hive consistent among the pages contributed by different people. 
 
-- Always prefer HTML syntax to Markdown when possible;
+- Always prefer Markdown syntax to HTML when possible;
 - Titles/subtitles should NOT include: code lines/blocks, bold (titles are usually already bold), italic, links;
 - Code lines/blocks need to be used for lines/blocks of code and terminal commands;
-- Italic needs to be used when referring to specific proper nouns (for example *Gadi* or *Accessdev*);
+- Italic needs to be used when referring to specific proper nouns (for example *Gadi* or *payu*);
 - Bold can be used to highlight some words (please do not overuse it);
-- Links should be coded using HTML syntax.<br>External links (links that go to a website other than https://access-hive.org.au) need to specify `target="_blank"` (see HTML cheatsheet below);
-- To signal an important note within the text, consider using a "warning note" (see HTML cheatsheet below);
+- All types of admonitions (info, warning, etc.), collapsible and not, can be used as per [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. If you need to use the HTML version of them, please follow the HTML cheatsheet below.
 - Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see HTML cheatsheet below);
 
 
-### HTML Cheatsheet for the Hive
-|Style|HTML Syntax|Rendered example|
-|---|---|---|
-|**Bold**|\<b>bold\</b>|**bold**|
-|**Italic**|\<i>italic\</i>|*italic*|
-|**Code line**|\<code>this is a code line\</code>|`this is a code line`|
-|**Code block**|\<pre>\<code>this is a code block\</code>\</pre>|<pre><code>this is a code block</code></pre>|
-|**Link (internal)**|\<a href="https://access-hive.org.au">ACCESS-Hive link\</a>|<a href="https://access-hive.org.au">ACCESS-Hive link</a>|
-|**Link (external)**|\<a href="https://www.google.com" target="_blank">Google link\</a>|<a href="https://www.google.com" target="_blank">Google link</a><span style="display: inline-block; color: #3894FF; margin-left: 1px; font-size: 8px; vertical-align: text-top; rotate: 90deg;">&#9099;</span>|
-|**Warning note**|\<div class="note">this is a warning note\<div>|![warning note](docs/assets/assets_for_readme/warning_note.png)|
-|**Tabs**|\<div class="tabLabels" label="your-tab-label">\<button>Tab1\</button>\<button>Tab2\</button>\</div>\<div class="tabContents" label="your-tab-label">\<div>Content for tab1\</div>\<div>Content for tab2\</div>\</div>|![tabs](docs/assets/assets_for_readme/tabs.gif)|
+### HTML/Markdown Cheatsheet for the Hive
+|Style|Markdown Syntax|HTML Syntax|Rendered example|
+|---|---|---|---|
+|**Bold**|\*\*bold**|\<b>bold\</b>|**bold**|
+|**Italic**|\_italic_|\<i>italic\</i>|*italic*|
+|**Code line**|\`code line`|\<code>code line\</code>|`code line`|
+|**Code block**|\```<br>&emsp;code block<br>```|\<pre>\<code>code block\</code>\</pre>|<pre><code>code block</code></pre>|
+|**[Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage) (not collapsible)**|!!! warning<br>&emsp;this is a warning<br>&emsp;admonition|\<div class="admonition warning">this is a warning admonition\<div>|![warning admonition](docs/assets/assets_for_readme/warning_admonition.png)|
+|**Collapsible [Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage)|??? warning title<br>&emsp;this is a collapsible<br>&emsp;warning admonition|\<div class="admonition warning collapsible">this is a collapsible warning admonition\<div>|![collapsible warning admonition](docs/assets/assets_for_readme/collapsible_warning_admonition.png)|
+|**Tabs**|N/A|\<div class="tabLabels" label="your-tab-label">\<button>Tab1\</button>\<button>Tab2\</button>\</div>\<div class="tabContents" label="your-tab-label">\<div>Content for tab1\</div>\<div>Content for tab2\</div>\</div>|![tabs](docs/assets/assets_for_readme/tabs.gif)|
 
 <!-- - Pull the latest version of `development` branch locally by using the following commands:
 

@@ -62,7 +62,7 @@ This will create the <code>access-esm</code> folder.
 <terminal-line class="ls-output-format">atmosphere config.yaml coupler ice manifests ocean README.md</terminal-line>
 </terminal-window>
 
-<div class="note">
+<div class='admonition warning'>
    Some modules may interfere with <code>git</code> commands (e.g., matlab/R2018a). If you have trouble cloning the repository, run the following command before trying again: <pre><code>module purge</code></pre>
    After this step, don't forget to reload the <code>conda/analysis3</code> module to retrieve <code>payu</code>, as specified in the <a href="#model-specific-prerequisites">Model-specific prerequisites</a> section.
 </div>
@@ -175,7 +175,7 @@ walltime: 3:10:00</code></pre>
         <br>
         For example, to run {{ model }} under the <code>tm70</code> project (ACCESS-NRI), add the following line:
         <pre><code>project: tm70</code></pre>
-        <div class="note">
+        <div class='admonition warning'>
             The <code>project</code> entry should always refer to a project with allocated <i>Service Units</i> (SU), that you are a member of. If not set explicitly, {{ model }} will run using your <a href="/getting_started/first_steps#change-default-project-on-gadi">default project</a> (this default project still needs to have allocated SU). For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
         </div>  
     </li>
@@ -224,7 +224,7 @@ laboratory: access-esm</code></pre>
         {{ model }} is a coupled model deploying multiple submodels (i.e. <a href="/models/configurations/access-esm/#model-components">model components</a>).
         This section specifies the submodels and configuration options required to execute the model correctly.
         <br>
-        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <i>name</i> (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-esm/esm-pre-industrial/atmosphere</code> directory).
+        Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the <i>control</i> directory, whose name matches the submodel's <code>name</code> (e.g., configuration options for the <code>atmosphere</code> submodel are in the <code>~/access-esm/esm-pre-industrial/atmosphere</code> directory).
     </li>
     <li>
         <b>Collate</b>
@@ -254,7 +254,7 @@ laboratory: access-esm</code></pre>
         months: 0
         days: 0</code></pre>
         This section specifies the start date and internal run length.
-        <div class="note">
+        <div class='admonition warning'>
             The internal run length (controlled by <code>runtime</code>) can be different from the total run length. Also, while <code>runtime</code> can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between internal run and total run lengths, or how to run the model for more than 1 year, refer to the section <a href="#run-configuration-for-multiple-years">Run configuration for multiple years</a>.
         </div>
     </li>
@@ -263,7 +263,7 @@ laboratory: access-esm</code></pre>
         <br>
         <pre><code>runspersub: 1</code></pre>
         {{ model }} configurations are often run in multiple steps (or cycles), with <i>payu</i> running a maximum of <code>runspersub</code> internal runs for every <a href="https://opus.nci.org.au/display/Help/4.+PBS+Jobs" target="_blank">PBS job</a> submission.
-        <div class="note">
+        <div class='admonition warning'>
             If you increase <code>runspersub</code>, you may need to increase the <i>walltime</i> in the PBS resources.
         </div>
     </li>
@@ -314,7 +314,7 @@ This will prepare the model run, based on the experiment configuration.
 <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-window>
 
-<div class="note">
+<div class='admonition warning'>
     This step can be skipped as it is also included in the run command. However, running it explicitly helps to check for errors and make sure executable and restart directories are accessible.
 </div>
 
@@ -327,7 +327,7 @@ To run {{ model }} configuration for one internal run length (controlled by <cod
 This will submit a single job to the queue with a total run length of <code>runtime</code>. If there is no previous run, it will start from the <code>start</code> date indicated in the <code>config.yaml</code> file. Otherwise, it will perform a warm restart from a previously saved restart file.
 <br>
 
-<div class="note">
+<div class='admonition warning'>
     The <code>-f</code> option ensures that <i>payu</i> will run even if there is an existing non-empty <i>work</i> directory created from a previous failed run.
 </div>
 <terminal-window>
@@ -452,7 +452,7 @@ At the end of the model run, output files (and restart files) are moved from the
 <br>
 The naming format for a typical output folder is <code>outputXXX</code> and for a restart folder <code>restartXXX</code>, where <i>XXX</i> is the internal run number starting from <code>000</code>.
 
-<div class="note">
+<div class='admonition warning'>
     A run with a different {{ model }} configuration (different git branch) counts as a new internal run. 
     <br>
     Thus, if output folders already exist, the internal number of the new output folder will be set to the first available <i>XXX</i> number.

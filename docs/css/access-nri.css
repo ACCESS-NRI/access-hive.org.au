@@ -47,22 +47,36 @@
   --md-shadow-z3: 0 0.2rem 0.5rem rgba(0,0,0,.2),0 0 0.05rem rgba(0,0,0,.35);
   --card-shadows: #00000075; /* Shadows on cards and other elements */
   --card-shadows-hover: #00000090; /* Shadows hover on cards and other elements */
-  --white-background: rgb(255, 255, 255); /* Background for transparent images */
   --animated-terminal-background: var(--md-primary-fg-color);
   --animated-terminal-directory: var(--nri-green);
   --animated-terminal-buttons: var(--nri-orange);
   --animated-terminal-buttons-hover: var(--nri-blue);
   --animated-terminal-text: rgb(235, 235, 235);
-  --note: var(--nri-orange); /* Note border and icon */
   --border-width: 0.1rem;
-  --not-supported-color: 255, 23, 23; /* Color for not supported warnings */
-  --not-supported: rgb(var(--not-supported-color)); /* Not supported warnings */
-  --not-owned-color: var(--nri-orange-color); /* Color for not owned warnings */
-  --not-owned: rgb(var(--not-owned-color)); /* Not supported warnings */
-  --info-color: var(--nri-light-blue-color); /* Color for info warnings */
-  --info: rgb(var(--info-color)); /* Info warnings */
-  --faq-color: var(--nri-blue-color); /* Color for FAQ warnings */
-  --faq: rgb(var(--faq-color)); /* FAQ warnings */
+  --note-color: 158, 117, 243; /* Note admonition color */
+  --note: rgb(var(--note-color)); /* Note admonition */
+  --danger-color: 255, 52, 52; /* Danger admonition color */
+  --danger: rgb(var(--danger-color)); /* Danger admonition */
+  --info-color: var(--nri-light-blue-color); /* Info admonition color */
+  --info: rgb(var(--info-color)); /* Info admonition */
+  --abstract-color: var(--nri-dark-blue-color); /* Abstract admonition color */
+  --abstract: rgb(var(--abstract-color)); /* Abstract admonition */
+  --tip-color: 3, 191, 165; /* Tip admonition color */
+  --tip: rgb(var(--tip-color)); /* Tip admonition */
+  --success-color: var(--nri-green-color); /* Success admonition color */
+  --success: rgb(var(--success-color)); /* Success admonition */
+  --warning-color: var(--nri-orange-color); /* Warning admonition color */
+  --warning: rgb(var(--warning-color)); /* Warning admonition */
+  --failure-color: 180, 0, 0; /* Failure admonition color */
+  --failure: rgb(var(--failure-color)); /* Failure admonition */
+  --question-color: var(--nri-blue-color); /* Question admonition color */
+  --question: rgb(var(--question-color)); /* Question admonition */
+  --bug-color: 141, 57, 75; /* Bug admonition color */
+  --bug: rgb(var(--bug-color)); /* Bug admonition */
+  --example-color: 124, 77, 255; /* Example admonition color */
+  --example: rgb(var(--example-color)); /* Example admonition */
+  --quote-color: 158, 158, 158; /* Quote admonition color */
+  --quote: rgb(var(--quote-color)); /* Quote admonition */
 }
 
 [data-md-color-scheme="custom-dark"] {
@@ -94,11 +108,19 @@
   --active-version-tab-color: var(--nri-green-color); /* Color for the Text and underline of active HTML tab */
   --active-version-tab: rgb(var(--active-version-tab-color)); /* Text and underline of active HTML tab */
   --active-version-tab-background: rgba(var(--active-version-tab-color),0.05); /* Text and underline of active HTML tab */
-  --note-bg: rgba(var(--nri-orange-color),.05); /* Note background */
   --md-admonition-fg-color: var(--md-typeset-color); /* Main text warnings */
-  --not-supported-background: rgba(var(--not-supported-color),0.05); /* Not supported warnings background */
-  --not-owned-background: rgba(var(--not-owned-color),0.05); /* Not owned warnings background */
-  --info-background: rgba(var(--info-color),0.05); /* Info warnings background */
+  --note-bg: rgba(var(--note-color),.05); /* Note admonition background */
+  --danger-bg: rgba(var(--danger-color),0.05); /* Danger admonition background */
+  --info-bg: rgba(var(--info-color),0.05); /* Info admonition background */
+  --abstract-bg: rgba(var(--abstract-color),0.05); /* Abstract admonition background */
+  --tip-bg: rgba(var(--tip-color),0.05); /* Tip admonition background */
+  --success-bg: rgba(var(--success-color),0.05); /* Success admonition background */
+  --warning-bg: rgba(var(--warning-color),0.05); /* Warning admonition background */
+  --failure-bg: rgba(var(--failure-color),0.05); /* Failure admonition background */
+  --question-bg: rgba(var(--question-color),0.05); /* Question admonition background */
+  --bug-bg: rgba(var(--bug-color),0.05); /* Bug admonition background */
+  --example-bg: rgba(var(--example-color),0.05); /* Example admonition background */
+  --quote-bg: rgba(var(--quote-color),0.05); /* Quote admonition background */
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -130,11 +152,19 @@
   --active-version-tab-color: var(--nri-dark-blue-color); /* Color for the Text and underline of active HTML tab */
   --active-version-tab: rgb(var(--active-version-tab-color)); /* Text and underline of active HTML tab */
   --active-version-tab-background: rgba(var(--active-version-tab-color),0.05); /* Text and underline of active HTML tab */
-  --note-bg: rgba(var(--nri-orange-color),.1); /* Note background */
   --md-admonition-fg-color: var(--md-typeset-color);  /* Main text warnings */
-  --not-supported-background: rgba(var(--not-supported-color),0.1); /* Not supported warnings background */
-  --not-owned-background: rgba(var(--not-owned-color),0.1); /* Not owned warnings background */
-  --info-background: rgba(var(--info-color),0.1); /* Info warnings background */
+  --note-bg: rgba(var(--note-color),.1); /* Note admonition background */
+  --danger-bg: rgba(var(--danger-color),0.1); /* Danger admonition background */
+  --info-bg: rgba(var(--info-color),0.1); /* Info admonition background */
+  --abstract-bg: rgba(var(--abstract-color),0.1); /* Abstract admonition background */
+  --tip-bg: rgba(var(--tip-color),0.1); /* Tip admonition background */
+  --success-bg: rgba(var(--success-color),0.1); /* Success admonition background */
+  --warning-bg: rgba(var(--warning-color),0.1); /* Warning admonition background */
+  --failure-bg: rgba(var(--failure-color),0.1); /* Failure admonition background */
+  --question-bg: rgba(var(--question-color),0.1); /* Question admonition background */
+  --bug-bg: rgba(var(--bug-color),0.1); /* Bug admonition background */
+  --example-bg: rgba(var(--example-color),0.1); /* Example admonition background */
+  --quote-bg: rgba(var(--quote-color),0.1); /* Quote admonition background */
 }
 
 /* Set rem based on viewport width */
@@ -148,7 +178,6 @@
     font-size: 16px;
   }
 }
-
 
 /* =============================================================== 
   Cards for ACCESS-Hive navigation, model components, model tabs, MED stuff
@@ -413,47 +442,253 @@ h1.homepage {
 
 
 /* =============================================================== 
-  Warning windows 
-*/
+  Admonitions 
+  (https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 
-/* Not owned (Supported on gadi) warnings */
-.md-typeset :is(.admonition,details):is(.warning,.caution,.attention) {
-  border-color: var(--not-owned);
-  background-color: var(--not-owned-background);
+/* General style admonition (In markdown --> `!!! ...`) */
+.admonition {
+  font-size: 1em !important;
+  position: relative !important;
+  padding: 0.3em 0.3em 0.3em 1.8em !important;
+  margin: 0.3em 0 0.8em 0 !important;
+  border-radius: 0.3rem !important;
 }
-.md-typeset :is(.warning,.caution,.attention)>:is(.admonition-title,summary) {
-  background-color: rgba(var(--not-owned-color),0.2);
+.admonition > p {
+  margin: 0 !important;
 }
-
-/* Not supported warnings */
-.md-typeset :is(.admonition,details):is(.danger,.error) {
-  border-color: var(--not-supported);
-  background-color: var(--not-supported-background);
+/* Hide title of non expandable admonitions if present */
+.admonition > p.admonition-title {
+  display: none;
 }
-.md-typeset :is(.danger,.error)>:is(.admonition-title,summary) {
-  background-color: rgba(var(--not-supported-color),0.2);
-}
-
-
-/* Info warnings */
-.md-typeset :is(.admonition,details):is(.info,.todo) {
-  border-color: var(--info);
-  background-color: var(--info-background);
-}
-.md-typeset :is(.info,.todo)>:is(.admonition-title,summary) {
-  background-color: rgba(var(--info-color),0.2);
+.admonition::before {
+  position: absolute;
+  left: 0.4em;
 }
 
-/* Abstract warnings (used for FAQs */
-.md-typeset :is(.admonition,details):is(.abstract) {
-  border-color: var(--faq);
-  background-color: transparent;
-  font-size: 1em;
+/* General style expandable admonitions (In markdown --> `??? ...`) */
+details {
+  font-size: 1em !important;
+  border-radius: 0.3rem !important;
 }
-.md-typeset :is(.abstract)>:is(.admonition-title,summary) {
-  background-color: rgba(var(--faq-color),0.2);
+details > summary {
+  border-radius: 0.3rem !important;
+}
+details[open] > summary {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+details > summary::before {
+  background-color: transparent !important;
+  mask-image: none !important;
+}
+details > p {
+  margin: 0.3em 0 !important;
 }
 
+/* note */
+.note {
+  border: solid 0.01em var(--note) !important;
+  background-color: var(--note-bg) !important;
+}
+.note > summary {
+  background-color: var(--note-bg) !important;
+}
+.note > summary::after {
+  color: var(--note) !important;
+}
+.note:not(details)::before,
+.note > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f303' !important;
+  color: var(--note) !important;
+}
+/* info */
+.info {
+  border: solid 0.01em var(--info) !important;
+  background-color: var(--info-bg) !important;
+}
+.info > summary {
+  background-color: var(--info-bg) !important;
+}
+.info > summary::after {
+  color: var(--info) !important;
+}
+.info:not(details)::before,
+.info > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f05a' !important;
+  color: var(--info) !important;
+}
+/* danger */
+.danger {
+  border: solid 0.01em var(--danger) !important;
+  background-color: var(--danger-bg) !important;
+}
+.danger > summary {
+  background-color: var(--danger-bg) !important;
+}
+.danger > summary::after {
+  color: var(--danger) !important;
+}
+.danger:not(details)::before,
+.danger > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f0e7' !important;
+  color: var(--danger) !important;
+}
+/* abstract */
+.abstract {
+  border: solid 0.01em var(--abstract) !important;
+  background-color: var(--abstract-bg) !important;
+}
+.abstract > summary {
+  background-color: var(--abstract-bg) !important;
+}
+.abstract > summary::after {
+  color: var(--abstract) !important;
+}
+.abstract:not(details)::before,
+.abstract > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f02d' !important;
+  color: var(--abstract) !important;
+}
+/* tip */
+.tip {
+  border: solid 0.01em var(--tip) !important;
+  background-color: var(--tip-bg) !important;
+}
+.tip > summary {
+  background-color: var(--tip-bg) !important;
+}
+.tip > summary::after {
+  color: var(--tip) !important;
+}
+.tip:not(details)::before,
+.tip > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\f0eb" !important;
+  color: var(--tip) !important;
+}
+/* success */
+.success {
+  border: solid 0.01em var(--success) !important;
+  background-color: var(--success-bg) !important;
+}
+.success > summary {
+  background-color: var(--success-bg) !important;
+}
+.success > summary::after {
+  color: var(--success) !important;
+}
+.success:not(details)::before,
+.success > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\f00c" !important;
+  color: var(--success) !important;
+}
+/* warning */
+.warning {
+  border: solid 0.01em var(--warning) !important;
+  background-color: var(--warning-bg) !important;
+}
+.warning > summary {
+  background-color: var(--warning-bg) !important;
+}
+.warning > summary::after {
+  color: var(--warning) !important;
+}
+.warning:not(details)::before,
+.warning > summary::before {
+  font-family: "fontello" !important;
+  content: "\e800" !important;
+  color: var(--warning) !important;
+}
+/* failure */
+.failure {
+  border: solid 0.01em var(--failure) !important;
+  background-color: var(--failure-bg) !important;
+}
+.failure > summary {
+  background-color: var(--failure-bg) !important;
+}
+.failure > summary::after {
+  color: var(--failure) !important;
+}
+.failure:not(details)::before,
+.failure > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\58" !important;
+  color: var(--failure) !important;
+}
+/* question */
+.question {
+  border: solid 0.01em var(--question) !important;
+  background-color: var(--question-bg) !important;
+}
+.question > summary {
+  background-color: var(--question-bg) !important;
+}
+.question > summary::after {
+  color: var(--question) !important;
+}
+.question:not(details)::before,
+.question > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\3f" !important;
+  color: var(--question) !important;
+}
+/* bug */
+.bug {
+  border: solid 0.01em var(--bug) !important;
+  background-color: var(--bug-bg) !important;
+}
+.bug > summary {
+  background-color: var(--bug-bg) !important;
+}
+.bug > summary::after {
+  color: var(--bug) !important;
+}
+.bug:not(details)::before,
+.bug > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\f188" !important;
+  color: var(--bug) !important;
+}
+/* example */
+.example {
+  border: solid 0.01em var(--example) !important;
+  background-color: var(--example-bg) !important;
+}
+.example > summary {
+  background-color: var(--example-bg) !important;
+}
+.example > summary::after {
+  color: var(--example) !important;
+}
+.example:not(details)::before,
+.example > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\f492" !important;
+  color: var(--example) !important;
+}
+/* quote */
+.quote {
+  border: solid 0.01em var(--quote) !important;
+  background-color: var(--quote-bg) !important;
+}
+.quote > summary {
+  background-color: var(--quote-bg) !important;
+}
+.quote > summary::after {
+  color: var(--quote) !important;
+}
+.quote:not(details)::before,
+.quote > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\f10e" !important;
+  color: var(--quote) !important;
+}
 
 /* =============================================================== 
   Left Navigation and right "On this page" navigation 
@@ -890,25 +1125,6 @@ img.terminalSwitch:hover {
   font-size: 1.2em;
   width: 100%;
 }
-/* =============================================================== 
-  Notes (!! icon marks)
-*/
-.note {
-  position: relative;
-  border: solid 0.01em var(--note);
-  background-color: var(--note-bg);
-  border-radius: 0.3rem;
-  padding: 0.2em 0.3em 0.2em 1.5em;
-  margin: 0.3em 0 0.8em 0;
-}
-
-.note::before {
-  position: absolute;
-  left: 0.3em;
-  font-family: "fontello";
-  content: '\e800';
-  color: var(--note);
-}
 
 /* =============================================================== 
   External links
@@ -976,7 +1192,7 @@ img.intro-img {
 
 /* Image background */
 .white-background {
-  background-color: var(--white-background);
+  background-color: #FFFFFF;
 }
 
 /* With borders */
