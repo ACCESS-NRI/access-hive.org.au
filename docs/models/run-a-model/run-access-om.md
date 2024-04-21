@@ -11,6 +11,9 @@
     The code-blocks show the commands to be run in a terminal. They can be easily copied by clicking on the icon over the right side of the code block.<br>
     The simulated terminals are examples of the output to expect when the commands are run. Sometimes they might slightly differ from the real outputs.
 
+<div class="admonition warning" style="width: 200px">
+    this is a warning<br>admonition
+</div>
 ## Prerequisites
 
 ### General prerequisites

@@ -29,52 +29,10 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 |**Bold**|\*\*bold**|\<b>bold\</b>|**bold**|
 |**Italic**|\_italic_|\<i>italic\</i>|*italic*|
 |**Code line**|\`code line`|\<code>code line\</code>|`code line`|
-|**Code block**|\```<br>&emsp;code block<br>```|\<pre>\<code>code block\</code>\</pre>|<pre><code>code block</code></pre>|
-|**[Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage) (not collapsible)**|!!! warning<br>&emsp;this is a warning<br>&emsp;admonition|\<div class="admonition warning">this is a warning admonition\<div>|![warning admonition](docs/assets/assets_for_readme/warning_admonition.png)|
-|**Collapsible [Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage)|??? warning title<br>&emsp;this is a collapsible<br>&emsp;warning admonition|\<details class="warning"><br>&emsp;\<summary><br>&emsp;&emsp;\<p><br>&emsp;&emsp;&emsp;this is a collapsible<br>&emsp;&emsp;&emsp;warning admonition<br>&emsp;&emsp;\</p><br>&emsp;\</summary><br>\</details>|![collapsible warning admonition](docs/assets/assets_for_readme/collapsible_warning_admonition.png)|
-|**Tabs**|N/A|\<div class="tabLabels" label="your-tab-label">\<button>Tab1\</button>\<button>Tab2\</button>\</div>\<div class="tabContents" label="your-tab-label">\<div>Content for tab1\</div>\<div>Content for tab2\</div>\</div>|![tabs](docs/assets/assets_for_readme/tabs.gif)|
-
-<!-- - Pull the latest version of `development` branch locally by using the following commands:
-
-    > Fetch the remote branches from github:
-
-    `git fetch`
-
-    > On terminal, switch to the `development` branch locally using the command:
-
-    `git switch development`     
-
-    > Pull the latest changes from remote `development` branch locally: 
-
-    `git pull`
-
-- Once the latest version of `development` branch is pulled locally, use the following two commands to create the new branch and push it to github respectively:
-
-    `git checkout -b dev/jasmeen/legacy-release`
-
-    `git push --set-upstream origin dev/jasmeen/legacy-release`
-
-- Prefixing the branch name with `dev/jasmeen` might be used as an indicator that this needs to merged in the `development` branch of access-hive (staging branch deployed on https://access-hive.org.au/development-website/), and _**not**_ the main branch.
-
-- Work locally on the branch `dev/jasmeen/legacy-release`, and push the commits using the commands: 
-
-    `git add .`
-
-    `git commit -m "First commit"`
-
-    `git push`
-  
-- While working locally on the branch, please make sure to regularly pull changes from remote `development` branch into your branch, using the command:
-
-    `git pull origin development`
-
-  This would make sure that the local branch `dev/jasmeen/legacy-release` is always in sync with the latest changes in the remote `development` branch. 
-
-- Once the changes on the local branch `dev/jasmeen/legacy-release` is ready to be integrated with the `development` branch, create a pull request on github by changing the `base` to `development`. (Please find the below screenshot). This would create a pr on the `development` branch.
-
-    ![Screenshot 2023-06-02 at 2 05 13 pm](https://github.com/ACCESS-Hive/access-hive.github.io/assets/42607679/ec141fc9-ee00-4a84-ae5a-081761400765)
-
-- When creating a pull request (PR) please also assign a reviewer to avoid delays. For technical content please assign an expert reviewer. -->
+|**Code block**|\```<br>&emsp;code block<br>```|\<pre><br>&emsp;\<code>code block\</code><br>\</pre>|<pre><code>code block</code></pre>|
+|**[Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage) (not collapsible)**|!!! warning<br>&emsp;this is a warning<br>&emsp;admonition|\<div class="admonition warning"><br>&emsp;this is a warning<br>&emsp;admonition<br>\<div>|![warning admonition](docs/assets/assets_for_readme/warning_admonition.png)|
+|**Collapsible [Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage)|??? warning title<br>&emsp;this is a collapsible<br>&emsp;warning admonition|\<details class="warning"><br>&emsp;\<summary><br>&emsp;&emsp;\<p><br>&emsp;&emsp;&emsp;this is a collapsible<br>&emsp;&emsp;&emsp;warning admonition<br>&emsp;&emsp;\</p><br>&emsp;\</summary><br>\</details>|![collapsible warning admonition](docs/assets/assets_for_readme/collapsible_warning_admonition.gif)|
+|**Tabs**|N/A|\<div class="tabLabels" label="your-tab-label"><br>&emsp;\<button>Tab1\</button><br>&emsp;\<button>Tab2\</button><br>\</div><br>\<div class="tabContents" label="your-tab-label"><br>&emsp;\<div><br>&emsp;&emsp;Content for tab1<br>&emsp;\</div><br>&emsp;\<div><br>&emsp;&emsp;Content for tab2<br>&emsp;\</div><br>\</div>|![tabs](docs/assets/assets_for_readme/tabs.gif)|
 
 # License
 The ACCESS-Hive site is covered by the [CC-BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
