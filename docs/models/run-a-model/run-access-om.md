@@ -295,7 +295,7 @@ This can help to isolate issues such as permissions problems accessing files and
 At the end of a successful model run, output files, restart files and log files are moved from the `work` directory to the `archive` directory.<br>
 Symbolic links to these directories are also provided in the _control_ directory for convenience.
 
-If a model run is unsuccessful the `work` directory is left untouched to facilitate the identification of the cause of the model failure.
+If a model run is unsuccessful, the `work` directory is left untouched to facilitate the identification of the cause of the model failure.
 
 Outputs and restarts are stored in subfolders within the `archive` directory, subdivided for each run of the model.<br>
 Output and restart folders are called `outputXXX` and `restartXXX`, respectively, where _XXX_ is the run number starting from `000`.
@@ -315,13 +315,12 @@ Model components are separated into subdirectories within the output and restart
 This section describes how to modify {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _Payu_, or how its specific [model components] are configured and coupled together.
 
-The `config.yaml` file located in the _control_ directory, is the _Master Configuration_ file, which controls the general model configuration.<br>
-It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
+The `config.yaml` file located in the _control_ directory is the _Master Configuration_ file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
 
 ### Change run length
 
 One of the most common changes is to adjust the duration of the model run.<br>
-For example, when debugging changes to a model it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
+For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
 The run length is controlled by the `restart_period` field in the `&date_manager_nml` section of the `~/access-om2/1deg_jra55_ryf/accessom2.nml` file:
 
@@ -340,14 +339,14 @@ For example, to make the model run for 1 year, 4 months and 10 days, change `res
     restart_period = 1, 4, 10
 
 !!! warning
-    While `restart_period` can be reduced, it should not be increased to more than 5 years, to avoid errors.
+    While `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors.
     <br><br>
     It is also important to differentiate between _run length_ and _total experiment length_.<br>
     For more information about their difference, or how to run the model for more than 5 years, refer to the section [Run configuration for more than 5 years](#run-configuration-for-more-than-5-years).
 
 ### Modify PBS resources
 
-If the model has been altered and needs longer time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
+If the model has been altered and needs more time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
 
 ```yaml
 # If submitting to a different project to your default, uncomment line below

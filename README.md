@@ -19,8 +19,8 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 - Code lines/blocks need to be used for lines/blocks of code and terminal commands;
 - Italic needs to be used when referring to specific proper nouns (for example *Gadi* or *payu*);
 - Bold can be used to highlight some words (please do not overuse it);
-- All types of admonitions (info, warning, etc.), collapsible and not, can be used as per [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. If you need to use the HTML version of them, please follow the HTML cheatsheet below.
-- Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see HTML cheatsheet below);
+- All types of admonitions (info, warning, etc.), collapsible and not, can be used as described in the [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. If you need to use the HTML version of them, please refer to the [HTML/Markdown cheatsheet](#HTML/markdown-cheatsheet).
+- Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see [HTML/Markdown cheatsheet](#HTML/markdown-cheatsheet));
 
 
 ### HTML/Markdown Cheatsheet for the Hive
