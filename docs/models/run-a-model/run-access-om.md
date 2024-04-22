@@ -1,6 +1,6 @@
 {% set model = "ACCESS-OM2" %}
 {% set access_om2_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
-[cosima]: "https://cosima.org.au"
+[cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
@@ -537,13 +537,13 @@ For more information about specific `userscripts` fields, check the relevant sec
 
 The following configuration settings should never require changing:
 
-    ```yaml
-    stacksize: unlimited
-    mpirun: --mca io ompio --mca io_ompio_num_aggregators 1
-    qsub_flags: -W umask=027
-    env:
-        UCX_LOG_LEVEL: 'error'
-    ```
+```yaml
+stacksize: unlimited
+mpirun: --mca io ompio --mca io_ompio_num_aggregators 1
+qsub_flags: -W umask=027
+env:
+    UCX_LOG_LEVEL: 'error'
+```
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
@@ -557,22 +557,13 @@ To modify these options please refer to the User Guide of the respective model c
 
 ----------------------------------------------------------------------------------------
 
-<!-- References -->
+<!-- References
+Need HTML heading to avoid showing refeerences in the table of content-->
 <h6>References</h6>
-<ul class="references">
-    <li>
-        <a href="https://cosima.org.au" target="_blank">https://cosima.org.au</a>
-    </li>
-    <li>
-        <a href = "http://doi.org/10.5194/gmd-13-401-2020" target="_blank">Kiss et al. (2020)</a>
-    </li>
-    <li>
-        <a href = "https://payu.readthedocs.io/en/latest/usage.html" target="_blank">https://payu.readthedocs.io/en/latest/usage.html</a>
-    </li>
-    <li>
-        <a href = "https://github.com/access-nri/access-om2/" target="_blank">https://github.com/access-nri/access-om2/</a>
-    </li>
-    <li>
-        <a href = "https://opus.nci.org.au/" target="_blank">https://opus.nci.org.au/</a>
-    </li>
-</ul>
+<div class="references" markdown>
+- [https://cosima.org.au](https://cosima.org.au)
+- [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020)
+- [https://payu.readthedocs.io/en/latest/usage.html](https://payu.readthedocs.io/en/latest/usage.html)
+- [https://github.com/access-nri/access-om2](https://github.com/access-nri/access-om2)
+- [https://opus.nci.org.au/](https://opus.nci.org.au/)
+</div>
