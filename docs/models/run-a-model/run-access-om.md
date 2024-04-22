@@ -1,6 +1,6 @@
 {% set model = "ACCESS-OM2" %}
 {% set access_om2_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
-{% set cosima = "https://cosima.org.au" %}
+[cosima]: "https://cosima.org.au"
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
@@ -49,7 +49,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 ## {{ model }} configurations
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.<br>
-Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA]({{ cosima }}).
+Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
 
 There are global configurations for <b>three horizontal resolutions</b>: 
 
