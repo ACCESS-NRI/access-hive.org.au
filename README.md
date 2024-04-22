@@ -16,7 +16,7 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 
 - Always prefer Markdown syntax to HTML when possible;
 - Titles/subtitles should NOT include: code lines/blocks, bold (titles are usually already bold), italic, links;
-- Code lines/blocks need to be used for lines/blocks of code and terminal commands;
+- Code lines/blocks need to be used for lines/blocks of code, terminal commands and file/directory paths/names;
 - Italic needs to be used when referring to specific proper nouns (for example *Gadi* or *payu*);
 - Bold can be used to highlight some words (please do not overuse it);
 - All types of admonitions (info, warning, etc.), collapsible and not, can be used as described in the [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. For the HTML version of them, please refer to the [HTML/Markdown cheatsheet](#HTML/markdown-cheatsheet).
