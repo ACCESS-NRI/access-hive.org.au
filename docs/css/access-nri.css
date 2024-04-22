@@ -61,7 +61,7 @@
   --info: rgb(var(--info-color)); /* Info admonition */
   --abstract-color: var(--nri-dark-blue-color); /* Abstract admonition color */
   --abstract: rgb(var(--abstract-color)); /* Abstract admonition */
-  --tip-color: 3, 191, 165; /* Tip admonition color */
+  --tip-color: var(--nri-green-color); /* Tip admonition color */
   --tip: rgb(var(--tip-color)); /* Tip admonition */
   --success-color: var(--nri-green-color); /* Success admonition color */
   --success: rgb(var(--success-color)); /* Success admonition */
@@ -77,6 +77,8 @@
   --example: rgb(var(--example-color)); /* Example admonition */
   --quote-color: 158, 158, 158; /* Quote admonition color */
   --quote: rgb(var(--quote-color)); /* Quote admonition */
+  --code-adm-color: 158, 158, 158; /* Code admonition (custom) color */
+  --code-adm: rgb(var(--code-adm-color)); /* Code admonition (custom) */
 }
 
 [data-md-color-scheme="custom-dark"] {
@@ -121,6 +123,7 @@
   --bug-bg: rgba(var(--bug-color),0.05); /* Bug admonition background */
   --example-bg: rgba(var(--example-color),0.05); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.05); /* Quote admonition background */
+  --code-adm-bg: rgba(var(--code-adm-color),0.05); /* Code admonition (custom) background */
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -165,6 +168,7 @@
   --bug-bg: rgba(var(--bug-color),0.1); /* Bug admonition background */
   --example-bg: rgba(var(--example-color),0.1); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.1); /* Quote admonition background */
+  --code-adm-bg: rgba(var(--code-adm-color),0.1); /* Code admonition (custom) background */
 }
 
 /* Set rem based on viewport width */
@@ -566,8 +570,8 @@ details > p {
 }
 .tip:not(details)::before,
 .tip > summary::before {
-  font-family: "fontawesome" !important;
-  content: "\f0eb" !important;
+  font-family: "fontello" !important;
+  content: "\e806" !important;
   color: var(--tip) !important;
 }
 /* success */
@@ -687,6 +691,24 @@ details > p {
 .quote > summary::before {
   font-family: "fontawesome" !important;
   content: "\f10e" !important;
+  color: var(--quote) !important;
+}
+/* code (custom admonition) */
+.admonition.code,
+details.code {
+  border: solid 0.01em var(--code-adm) !important;
+  background-color: var(--code-adm-bg) !important;
+}
+.code > summary {
+  background-color: var(--code-adm-bg) !important;
+}
+.code > summary::after {
+  color: var(--code-adm) !important;
+}
+.code:not(details)::before,
+.code > summary::before {
+  font-family: "fontawesome" !important;
+  content: "\f121" !important;
   color: var(--quote) !important;
 }
 
