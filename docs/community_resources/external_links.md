@@ -1,6 +1,6 @@
 # External Links and Articles
 
-ACCESS-NRI is a constantly growing community. There are many tutorials, references, articles, projects and tools, related to ACCESS-NRI and it's documentation hub, ACCESS-Hive.
+ACCESS-NRI is a constantly growing community. There are many tutorials, references, articles, projects and tools, related to ACCESS-NRI and its documentation hub, ACCESS-Hive.
 
 Here's a list of interesting articles and links, and these are constantly updated as relevant resources are found: 
 
