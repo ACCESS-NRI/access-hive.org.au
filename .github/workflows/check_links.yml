@@ -1,4 +1,4 @@
-name: Check Markdown links
+name: Check HTML and Markdown links
 
 on: 
   push:
@@ -8,31 +8,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  markdown-link-check:
+  link-check:
     if: ${{ github.event_name != 'schedule' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    
+    - name: Link checker
+      uses: lycheeverse/lychee-action@v1.9.0
       with:
-        config-file: '.github/workflows/mlc_config.json'
-        folder-path: 'docs'
-        # Only check links in modified files to reduce false positives
-        check-modified-files-only: 'yes'
-        use-quiet-mode: 'no'
-        use-verbose-mode: 'yes'
-        base-branch: 'main'
+        fail: true
+        format: 'markdown'
+        jobSummary: false
+        args: --config .github/workflows/lychee-config.toml './docs/**/*.md' './docs/**/*.html'
   
-  scheduled-markdown-link-check:
-    if: ${{ github.event_name == 'schedule' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-        use-quiet-mode: 'no'
-        use-verbose-mode: 'yes'
-        config-file: '.github/workflows/mlc_config.json'
-        folder-path: 'docs'
-        base-branch: 'main'
+  # scheduled-link-check:
+  #   if: ${{ github.event_name == 'schedule' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - uses: gaurav-nelson/github-action-markdown-link-check@v1
+  #     with:
+  #       use-quiet-mode: 'no'
+  #       use-verbose-mode: 'yes'
+  #       config-file: '.github/workflows/mlc_config.json'
+  #       folder-path: 'docs'
+  #       base-branch: 'main'
     
