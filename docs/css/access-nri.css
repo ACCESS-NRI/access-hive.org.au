@@ -947,6 +947,13 @@ img.terminalSwitch:hover {
 /* =============================================================== 
   Miscellaneous
 */
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+}
+
 img.intro-img {
   max-height: 14rem;
   display: block;
