@@ -3,16 +3,19 @@
 [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
 
-Documentation hub for the Earth System models, ACCESS, and their community.
-
-This repository uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) to build the website which accessible at this URL:<br>
+This repository is the implementation of the ACCESS-Hive website accessible at the following URL:<br>
 https://access-hive.org.au/
 
+ACCESS-Hive is the documentation hub for the Earth System models, ACCESS, and their community.
+
 # How to Contribute
-If you wish to add documentation to the ACCESS-Hive website see the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
+If you wish to add documentation to the ACCESS-Hive website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
 ## Styling guidelines for developers
-Please follow the guidelines below so as to make the Hive consistent among the pages contributed by different people. 
+The ACCESS-Hive website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
+
+For a detailed guide on Mk
+Please follow the guidelines below to make the Hive consistent among all the pages contributed by different people. 
 
 - Always prefer Markdown syntax to HTML when possible;
 - Titles/subtitles should NOT include: code lines/blocks, bold (titles are usually already bold), italic, links;
@@ -23,7 +26,15 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 - Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see [HTML/Markdown cheatsheet](#HTML/markdown-cheatsheet));
 
 ### Styling Markdown using CSS
-To style Markdown using custom CSS, you can add the markdown content inside a \<div> tag having the `markdown` attribute.<br>You can then style the \<div> tag using CSS (in-line or adding selectors to the `access-nri.css` file).
+#### Attribute lists
+To style Markdown using custom CSS, you can use [attribute lists](https://python-markdown.github.io/extensions/attr_list/#limitations) by adding the desired CSS style (in-line or adding classes as defined in the `access-nri.css` file) inside curly brackets (starting with a comma) right after the markdown syntax.
+
+For example, to make an image 50%-wide and with rounded borders, you can write the following:
+```
+![image text](/image/url/){: style="width: 50%; border-radius: 0.6rem;" }
+```
+#### Markdown in HTML
+You can use [Markdown in HTML](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/?h=md+in+html#markdown-in-html) by adding the `markdown` attribute inside an HTML tag.<br>You can then style the HTML tag using CSS (in-line or adding selectors to the `access-nri.css` file).
 
 For example, to render a markdown section with half font-size, you can write the following:
 ```
