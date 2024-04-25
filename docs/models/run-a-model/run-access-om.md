@@ -123,13 +123,13 @@ The general layout of a _payu_-supported model run consists of two main director
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
-The _laboratory_ directory is a shared space for all *payu* experiments using the same model.<br>
+The _laboratory_ directory is a shared space for all _payu_ experiments using the same model.<br>
 Inside the _laboratory_ directory there are two subdirectories:
 
-- `work` &rarr; a directory where *payu* automatically creates a temporary subdirectory while the model is run. The temporary subdirectory gets created as part of a run and then removed after the run succeeds.
+- `work` &rarr; a directory where _payu_ automatically creates a temporary subdirectory while the model is run. The temporary subdirectory gets created as part of a run and then removed after the run succeeds.
 - `archive` &rarr; the directory where the output is stored following each successful run.
 
-Within each of the above directories *payu* automatically creates subdirectories uniquely named according to the experiment being run.<br>
+Within each of the above directories _payu_ automatically creates subdirectories uniquely named according to the experiment being run.<br>
 _Payu_ also creates symbolic links in the _control_ directory pointing to the `archive` and `work` directories.
 
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
@@ -144,8 +144,8 @@ This will submit a single job to the queue with a run length of `restart_period`
 For information about `restart_period`, refer to [Change run length](#change-run-length).
 
 <terminal-window>
-    <terminal-line data="input">cd ~/eaccess-om2/1deg_jra55_ryf</terminal-line>
-    <terminal-line directory="~/eaccess-om2/1deg_jra55_ryf" data="input">payu run</terminal-line>
+    <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
+    <terminal-line directory="~/access-om2/1deg_jra55_ryf" data="input">payu run</terminal-line>
     <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
     <terminal-line lineDelay=50>payu: warning: CPU request increased from 241 to 288</terminal-line>
     <terminal-line lineDelay=50>Loading input manifest: manifests/input.yaml</terminal-line>
@@ -227,14 +227,14 @@ which kills the specified job without waiting for it to complete.
 
 !!! tip
     If you started an {{ model }} run using the `-n` option (e.g., to [run the model for more than 5 years](#run-configuration-for-more-than-5-years)), but subsequently decide not to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory.<br>
-    This will prevent `payu` from submitting another job.
+    This will prevent _payu_ from submitting another job.
 
 ### Error and output log files
 
 #### PBS output files
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
-These files usually contain logs about `payu` tasks, and give an overview of the resources used by the job.<br>
+These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
 To move these files to the `archive` directory, use the following commmand:
 ```
 payu sweep
@@ -255,7 +255,7 @@ For a complete documentation on how to use this framework, check the [Model Diag
 
 ### Trouble-shooting
 
-If `payu` doesn't run correctly for some reason, a good first step is to run the following command from within the _control_ directory:
+If _payu_ doesn't run correctly for some reason, a good first step is to run the following command from within the _control_ directory:
 
     payu setup
 
@@ -313,7 +313,7 @@ Model components are separated into subdirectories within the output and restart
 ## Edit {{ model }} configuration
 
 This section describes how to modify {{ model }} configuration.<br>
-The modifications discussed in this section can change the way {{ model }} is run by _Payu_, or how its specific [model components] are configured and coupled together.
+The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.
 
 The `config.yaml` file located in the _control_ directory is the _Master Configuration_ file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
 
@@ -404,11 +404,11 @@ The `restart_freq` field in the `config.yaml` file specifies a strategy for reta
 This can either be a number (in which case every _nth_ restart file is retained), or a [pandas-style datetime frequency](https://business-science.github.io/pytimetk/guides/03_pandas_frequency.html).<br>
 For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
 ```yaml
-restart_freq: 50Y
+restart_freq: '50Y'
 ```
 The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
 
-For more information, check [Payu Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+For more information, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
 
 ### Other configuration options
 
@@ -417,7 +417,7 @@ For more information, check [Payu Configuration Settings documentation](https://
 
 #### Model configuration
 
-This section tells _Payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all its [model components].
+This section tells _payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all its [model components].
 
 ```yaml
 name: common
@@ -482,7 +482,7 @@ Each submodel contains additional configuration options that are read in when th
 
 Rather than outputting a single diagnostic file over the whole model horizontal grid, [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans over a portion of the model horizontal grid.
 
-The `collate` section in the `yaml.conf` file controls the process that combines these smaller files into a single output file.<br>
+The `collate` section in the `yaml.conf` file controls the process that combines these smaller files into a single output file.
 ```yaml
 collate:
     restart: true
@@ -520,7 +520,7 @@ In the example above, the default number of cpus per node is set to 48.
 
 ```yaml
 userscripts:
-    error: resub.sh
+    error: tools/resub.sh
     run: rm -f resubmit.count
     sync: /g/data/vk83/apps/om2-scripts/concatenate_ice/concat_ice_daily.sh 
 ```
@@ -531,7 +531,7 @@ A dictionary to run scripts or subcommands at various stages of a _payu_ submiss
 - `run` gets called after the model execution, but prior to model output archive.
 - `sync` gets called at the start of the sync pbs job.
 
-For more information about specific `userscripts` fields, check the relevant section of [Payu Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
+For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
 #### Miscellaneous
 

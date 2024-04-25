@@ -17,7 +17,7 @@ Please follow the guidelines below so as to make the Hive consistent among the p
 - Always prefer Markdown syntax to HTML when possible;
 - Titles/subtitles should NOT include: code lines/blocks, bold (titles are usually already bold), italic, links;
 - Code lines/blocks need to be used for lines/blocks of code, terminal commands and file/directory paths/names;
-- Italic needs to be used when referring to specific proper nouns (for example *Gadi* or *payu*);
+- Italic needs to be used when referring to specific proper nouns (for example _Gadi_ or _payu_);
 - Bold can be used to highlight some words (please do not overuse it);
 - All types of admonitions (info, warning, etc.), collapsible and not, can be used as described in the [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. For the HTML version of them, please refer to the [HTML/Markdown cheatsheet](#HTML/markdown-cheatsheet).
 - Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see [HTML/Markdown cheatsheet](#HTML/markdown-cheatsheet));
@@ -39,7 +39,7 @@ For example, to render a markdown section with half font-size, you can write the
 |Style|Markdown Syntax|HTML Syntax|Rendered example|
 |---|---|---|---|
 |**Bold**|\*\*bold**|\<b>bold\</b>|**bold**|
-|**Italic**|\_italic_|\<i>italic\</i>|*italic*|
+|**Italic**|\_italic_|\<i>italic\</i>|_italic_|
 |**Code line**|\`code line`|\<code>code line\</code>|`code line`|
 |**Code block**|\```<br>&emsp;code block<br>```|\<pre><br>&emsp;\<code>code block\</code><br>\</pre>|<pre><code>code block</code></pre>|
 |**[Admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage) (not collapsible)**|!!! warning<br>&emsp;this is a warning<br>&emsp;admonition|\<div class="admonition warning"><br>&emsp;this is a warning<br>&emsp;admonition<br>\<div>|![warning admonition](docs/assets/assets_for_readme/warning_admonition.png)|
