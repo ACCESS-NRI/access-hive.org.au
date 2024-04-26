@@ -1160,27 +1160,6 @@ img.terminalSwitch:hover {
   display: inline;
 }
 
-/* ================================================================ 
-  Icon checklist in "Using the Hive Forum" section
-*/
-
-.checklist-item {
-  color: var(--md-default-fg-color) !important;
-}
-
-.checklist-item:hover {
-  color: var(--md-typeset-a-color) !important;
-}
-
-.checklist-item:hover::after {
-  color: var(--nri-light-blue);
-  font-family: "fontawesome";
-  content: '\f178';
-  vertical-align: middle;
-  font-size: 0.7em;
-  margin-left: 0.3em;
-  display: inline-block;
-}
 
 /* =============================================================== 
   Miscellaneous
@@ -1246,6 +1225,18 @@ img.intro-img {
   color: var(--md-typeset-a-color);
 }
 
+.nri-blue-color {
+  color: var(--nri-blue);
+}
+
+.nri-light-blue-color {
+  color: var(--nri-light-blue);
+}
+
+.nri-dark-blue-color {
+  color: var(--nri-dark-blue);
+}
+
 .nri-orange-color {
   color: var(--nri-orange);
 }
@@ -1284,6 +1275,10 @@ img.intro-img {
   color: #CA1A01;
 }
 
+/* Style for icons before text (used for example in User Support and Contribute pages) */
+.icon-before-text {
+  margin-right: 0.5em;
+}
 /* =============================================================== 
   Media queries for website responsiveness
 */
