@@ -1276,18 +1276,6 @@ img.intro-img {
   height: 20em;
 }
 
-
-/* 
-  For formatting a `> Note:` markdown syntax in html 
-*/
-.markdown-notes {
-  /* color: var(--tab-text-light); */
-  color: var(--md-default-fg-color--light);
-  border-left: 0.2em solid var(--md-default-fg-color--lighter);
-  padding: 0.3em 0.9em;
-  margin: 0 0.6em;
-}
-
 .green_prompt_output {
   color: #00C202
 }

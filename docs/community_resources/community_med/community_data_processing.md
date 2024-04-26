@@ -1,7 +1,7 @@
 # Community Processing Data Processing Tools
 
 ???+ danger "Support Level: NOT supported by ACCESS-NRI"
-    Here, we collate lists of useful tools for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
+    Here, we collate lists of useful tools for Model Evaluation and Diagnostics (MED). The information below is not supported by ACCESS-NRI unless stated otherwise.
 
 Please let us know, if we are missing an important tool. Check [How To Contribute](/about/contribute) to get in touch.
 
