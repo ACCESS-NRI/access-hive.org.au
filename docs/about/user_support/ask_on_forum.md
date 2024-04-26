@@ -16,7 +16,7 @@ You can start a new discussion topic on the [Hive Forum] in just 3 simple steps:
 
 :material-tag:{: class="twemoji icon-before-text nri-light-blue-color"} [Tag the request with the label `help`](https://forum.access-hive.org.au/docs?topic=846)
 
-![Ask on forum](/assets/ask-on-forum-diagram.png){: class="white-background with-border example-img"}
+![Ask on forum](/assets/ask-on-forum-diagram.png){: class="white-background with-border example-img" loading="lazy"}
 
 ## Next steps...
 
@@ -32,4 +32,4 @@ After a discussion topic is posted on the forum, the ACCESS-NRI and community ex
 
 :fontawesome-regular-circle-check:{: class="twemoji icon-before-text nri-green-color"} Request is solved. 
 
-![ACCESS-NRI Support Model](/assets/access-nri-support.png){: class="white-background with-border example-img"}
+![ACCESS-NRI Support Model](/assets/access-nri-support.png){: class="white-background with-border example-img" loading="lazy"}

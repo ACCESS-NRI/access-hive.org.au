@@ -7,12 +7,12 @@
 
 ## Let's get started!
 
-This documentation is written in Markdown format and is based on the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)</a> theme, which is built on top of [MkDocs](https://www.mkdocs.org) static site generator.<br>
+This documentation is written in Markdown format and is based on the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme, which is built on top of [MkDocs](https://www.mkdocs.org) static site generator.<br>
 For a quick reference on how to use Markdown syntax you can refer to the [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).
 
 ## Raise a GitHub Issue
 
-All contributions need to have an associated [Github issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/)</a> that explains the content and importance of the contribution.<br>
+All contributions need to have an associated [Github issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution.<br>
 To raise an issue, create a New Issue in the [ACCESS-Hive Github repository issue page](https://github.com/ACCESS-NRI/access-hive.org.au/issues). Feel free to assign that issue to yourself if you intend to work on it.
 
 ## Fork the ACCESS-Hive GitHub repository
@@ -118,7 +118,7 @@ Your documentation will be built on http://127.0.0.1:8000. Open this URL in your
 
 Once the changes on your local branch `spongebob/fix-hive-title-issue-234` are ready to be integrated with the `development` branch, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) and GitHub will automatically build a preview of the documentation using [GitHub Actions](https://docs.github.com/en/actions). 
 
-![GitHub preview](/assets/github-preview-link.png){: class="example-img" }
+![GitHub preview](/assets/github-preview-link.png){: class="example-img"  loading="lazy"}
 
 After a PR is created and tested, feel free to ask for reviews by tagging the ACCESS-Hive/reviewers team and reply if any changes are being requested in the PR. 
 
