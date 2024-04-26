@@ -709,7 +709,25 @@ details.code {
 .code > summary::before {
   font-family: "fontawesome" !important;
   content: "\f121" !important;
-  color: var(--quote) !important;
+  color: var(--code-adm) !important;
+}
+
+/* not-supported */
+.not-supported {
+  border: solid 0.01em var(--danger) !important;
+  background-color: var(--danger-bg) !important;
+}
+.not-supported > summary {
+  background-color: var(--danger-bg) !important;
+}
+.not-supported > summary::after {
+  color: var(--danger) !important;
+}
+.not-supported:not(details)::before,
+.not-supported > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f057' !important;
+  color: var(--danger) !important;
 }
 
 /* =============================================================== 

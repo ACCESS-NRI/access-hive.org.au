@@ -1,7 +1,6 @@
 # Community Model Evaluation and Diagnostics Links
 
-???+ danger "Support Level: NOT supported by ACCESS-NRI"
-    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](/model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
+<not-supported/>
 
 <div class="card-container" style="flex-wrap:nowrap;">
     <a href="community_observational_catalogs" class="vertical-card aspect-ratio1to1">
