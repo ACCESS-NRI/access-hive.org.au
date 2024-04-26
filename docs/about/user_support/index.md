@@ -9,7 +9,8 @@ Click on the questions to unfold the answers.
 ??? question "What is the difference between the ACCESS-Hive and the Hive Forum?"
     ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
     The Hive forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
-    <p align="center"><img align="center" width="50%" src="/assets/access_hive_links.png" alt="Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive via the Access-Hive portal for documentation and the Hive Forum for exchange and support."></p>
+
+    ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive and the Hive Forum](/assets/access_hive_links.png){: class="with-border centered" style="width: 50%" loading="lazy"}
 
 ??? question "What is the difference between _model_, _model component_, and _model configuration_?"
     A **model component** (sometimes referred to simply as component) is a codebase that is typically compiled into a single executable. It usually runs independently and communicates with other components via a coupler.
@@ -29,7 +30,8 @@ Click on the questions to unfold the answers.
 ??? question "How do model experiments and model evaluation work together?"
 
     Climate science - like all science - is based on the comparison of different models and hypothesis with observational data. We provide or support the frameworks to perform such comparisons as part of the **model evaluation**. The different model hypotheses, or more practically speaking *model experiments*, are created by executing different model configurations with different setups; for example by perturbing initial conditions or by adding new physical prescriptions to the models.
-    <p align="center"><img align="center" width="75%" src="/assets/how_does_it_work_together.png" alt="Diagram showing how running ACCESS model configurations with different setups create different experiments. These are then compared with each other and observational data as part of the model evaluation. These comparisons are what informs climate science."></p>
+    
+    ![Diagram showing how running ACCESS model configurations with different setups create different experiments](/assets/how_does_it_work_together.png){: class="with-border centered" style="width: 75%" loading="lazy"}
 
 ??? question "What is a control experiment? Why are they important?"
     A "control experiment" (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
