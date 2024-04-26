@@ -1,9 +1,9 @@
 # Contribute on GitHub
 
 ## Prerequisites
-:fontawesome-regular-square-check:{: style="color:var(--nri-green)" } If you are new to GitHub, you will first need to [sign up](https://github.com) for a GitHub account.
+:fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} If you are new to GitHub, you will first need to [sign up](https://github.com) for a GitHub account.
 
-:material-head-lightbulb-outline:{: style="color:var(--nri-orange)" } We also encourage you to complete [self-paced GitHub learning courses](#additional-github-learning-resources) for brushing up basic GitHub skills. 
+:material-head-lightbulb-outline:{: class="twemoji icon-before-text nri-orange-color"} We also encourage you to complete [self-paced GitHub learning courses](#additional-github-learning-resources) for brushing up basic GitHub skills. 
 
 ## Let's get started!
 
