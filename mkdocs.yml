@@ -151,8 +151,8 @@ nav:
 
   - Tutorials:
     - tutorials/index.md
-    - ACCESS-CM2 Model: tutorials/models.md 
-    - ACCESS-NRI intake Catalogue: tutorials/intake.md
+    - ACCESS-CM2: tutorials/models.md 
+    - ACCESS-NRI Intake catalog: tutorials/intake.md
     - ESMValTool: tutorials/esmvaltool.md
     - ILAMB: tutorials/ilamb.md
     - Payu: tutorials/payu.md
