@@ -46,31 +46,14 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 ----------------------------------------------------------------------------------------
 
-## {{ model }} configurations
+## Get {{ model }} configuration
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
 
-There are global configurations for <b>three horizontal resolutions</b>: 
+For more information on {{ model }} configurations, check [ACCESS-OM2](/models/configurations/access-om#access-om2) page.
 
-- 1°
-- 0.25°
-- 0.1°
-
-For each resolution there are <b>two options of atmospheric forcing</b>: 
-
-- Repeat Year Forcing (RYF)
-- Interannual Forcing (IAF)
-
-Each configuration also has a biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if this is required.
-!!! warning
-    BGC experiments are slower and generally consume more resources (compute time and disk space).
-
-More information about the available experiments and the naming scheme of the branches can be found in the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.
-
-----------------------------------------------------------------------------------------
-
-## Get {{ model }} configuration
+More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
 For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf).

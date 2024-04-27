@@ -1,27 +1,30 @@
-#  ACCESS-CM
-<img src="../../../assets/model-config-logos/configurations-without-titles/access-cm.png" alt="ACCESS CM model" class="img-contain white-background with-border with-padding intro-img"></img>
+# ACCESS-CM
 
-The ACCESS Coupled Model (ACCESS-CM) is a fully-coupled global climate model that includes <a href="../../model_components/atmosphere ">atmoshpere</a>, <a href="../../model_components/aerosols_atmospheric_chemistry">aerosols and atmospheric chemistry</a>, <a href="../../model_components/land ">land</a>, <a href="../../model_components/ocean ">ocean</a> and <a href="../../model_components/sea-ice ">sea ice</a> components, linked together by a <a href="../../model_components/coupler">coupler</a>.
-<br>
+![ACCESS CM model](/assets/model-config-logos/configurations-without-titles/access-cm.png){: class="img-contain white-background with-border with-padding intro-img"}
+
+The ACCESS Coupled Model (ACCESS-CM) is a fully-coupled global climate model that includes [atmoshpere](/models/model_components/atmosphere), [aerosols and atmospheric chemistry](/models/model_components/aerosols_atmospheric_chemistry), [land](/models/model_components/land), [ocean](/models/model_components/ocean) and [sea ice](/models/model_components/sea-ice) components, linked together by a [coupler](/models/model_components/coupler).<br>
 It produces physical climate simulations.
 
 ## ACCESS-CM2
 
-<a href="https://www.publish.csiro.au/es/ES19040" target="_blank">ACCESS-CM2</a> [@Bi2020] was initially developed by <a href="https://www.csiro.au/" target="_blank">CSIRO</a> and is one of Australia’s contributions to the World Climate Research Programme’s <a href = "https://wcrp-cmip.org/cmip-phase-6-cmip6/" target="_blank">Coupled Model Intercomparison Project Phase 6 (CMIP6)</a>.
+[ACCESS-CM2](https://www.publish.csiro.au/es/ES19040) [@Bi2020] was initially developed by [CSIRO](https://www.csiro.au/) and is one of Australia’s contributions to the World Climate Research Programme’s [Coupled Model Intercomparison Project Phase 6 (CMIP6)](https://wcrp-cmip.org/cmip-phase-6-cmip6/).
 
 ### Model components
-- <a href="../../model_components/atmosphere">Atmoshpere</a>: <a href="../../model_components/atmosphere#unified-model-um">UM10.6</a>, GA7.1 science configuration. N96 spatial resolution (1.875° x 1.25°), 85 vertical levels. Physical model only – no carbon cycle.
+- **Atmoshpere**: [UM10.6](/models/model_components/atmosphere#unified-model-um), GA7.1 science configuration.<br>
+  N96 spatial resolution (1.875° x 1.25°), 85 vertical levels. Physical model only – no carbon cycle.
   
-- <a href="../../model_components/aerosols_atmospheric_chemistry">Aerosols and Atmospheric Chemistry</a>: <a href="../../model_components/aerosols_atmospheric_chemistry#glomap">GLOMAP</a> for the aerosols and <a href="../../model_components/aerosols_atmospheric_chemistry#ukca">UKCA</a> for the atmospheric chemistry.
+- **Aerosols and Atmospheric Chemistry**: [GLOMAP](/models/model_components/aerosols_atmospheric_chemistry#glomap) for the aerosols and [UKCA](/models/model_components/aerosols_atmospheric_chemistry#ukca) for the atmospheric chemistry.
 
-- <a href="../../model_components/land">Land</a>: <a href="../../model_components/land#cable">CABLE2.5</a>.
+- **Land**: [CABLE2.5](/models/model_components/land#cable).
 
-- <a href="../../model_components/ocean">Ocean</a>: <a href="../../model_components/ocean#mom5">MOM5</a>. Tripolar grid, 1° spatial resolution, 50 vertical levels.
+- **Ocean**: [MOM5](/models/model_components/ocean#mom5).<br>
+  Tripolar grid, 1° spatial resolution, 50 vertical levels.
 
-- <a href="../../model_components/sea-ice">Sea ice</a>: <a href="../../model_components/sea-ice#cice5">CICE5.1.2</a>. Same grid as ocean.
+- **Sea ice**: [CICE5.1.2](/models/model_components/sea-ice#cice5).<br>
+  Same grid as ocean.
 
-- <a href="../../model_components/coupler">Coupler</a>: <a href="../../model_components/coupler#oasis3-mct">OASIS3-MCT</a>.
+- **Coupler**: [OASIS3-MCT](/models/model_components/coupler#oasis3-mct).
 
-Compared to previous model versions, ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean. It does, however, produce a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. ACCESS-CM2 has a relatively high equilibrium climate sensivity of 4.7°C for doubled CO<sub>2</sub> concentration.
+Compared to previous model versions, ACCESS-CM2 shows better global hydrological balance, more realistic ocean water properties (in terms of spatial distribution) and meridional overturning circulation in the Southern Ocean. It does, however, produce a poorer simulation of the Antarctic sea ice and a larger energy imbalance at the top of atmosphere. ACCESS-CM2 has a relatively high equilibrium climate sensivity of 4.7°C for doubled CO~2~ concentration.
 
-<a href="../../run-a-model/run-access-cm" class="text-card">Run ACCESS-CM</a>
+[Run ACCESS-CM](/models/run-a-model/run-access-cm){: class="text-card"}
