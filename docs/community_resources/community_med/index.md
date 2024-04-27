@@ -1,6 +1,6 @@
 # Community Model Evaluation and Diagnostics Links
 
-<not-supported/>
+<custom-not-supported/>
 
 <div class="card-container" style="flex-wrap:nowrap;">
     <a href="community_observational_catalogs" class="vertical-card aspect-ratio1to1">
