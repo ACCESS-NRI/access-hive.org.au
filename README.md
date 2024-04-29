@@ -2,6 +2,7 @@
 [![ACCESS-Hive Badge](docs/assets/badge.svg)][website]
 [![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
+[![link-check](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml/badge.svg)](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml)
 
 This repository is the implementation of the ACCESS-Hive website accessible at the following URL:<br>
 https://access-hive.org.au/
