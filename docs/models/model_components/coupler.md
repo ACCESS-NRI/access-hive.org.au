@@ -1,6 +1,6 @@
 # Coupler
 
-![Coupler component image](/assets/component-logos/component-maps/coupler-component-map.png){: class="img-contain white-background with-border with-padding intro-img" }
+![Coupler component image](/assets/component-logos/component-maps/coupler-component-map.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
 
 A coupler is a software package that allows synchronised exchanges of coupling information between numerical models representing different components of the climate system.
 
