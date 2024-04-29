@@ -1,7 +1,7 @@
 
 # ACCESS-OM
 
-![ACCESS OM model](/assets/model-config-logos/configurations-without-titles/access-om.png){: class="img-contain white-background with-border with-padding intro-img"}
+![ACCESS OM model](/assets/model-config-logos/configurations-without-titles/access-om.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
 
 The ACCESS Ocean Model (ACCESS-OM) is a global coupled ocean model that includes [ocean](/models/model_components/ocean), [ocean biogeochemistry](/models/model_components/bgc_ocean), and [sea ice](/models/model_components/sea-ice) components, linked together by a [coupler](/models/model_components/coupler).<br>
 The atmospheric fields that drive the model are provided by a data source, usually derived from reanalysis.
