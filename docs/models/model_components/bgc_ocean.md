@@ -8,4 +8,4 @@ The World Ocean Model of Biogeochemistry And Trophic-dynamics (WOMBAT) is the oc
 
 ### Configurations that use WOMBAT
 
-WOMBAT is included in <a href="/models/configurations/access-om">ACCESS-OM</a> and <a href="/models/configurations/access-esm">ACCESS-ESM</a> configurations, as a tracer package within <a href="/models/model_components/ocean#modular-ocean-model-mom">MOM</a>.
+WOMBAT is included in [ACCESS-OM](/models/configurations/access-om) and [ACCESS-ESM](/models/configurations/access-esm) configurations, as a tracer package within [MOM](/models/model_components/ocean#modular-ocean-model-mom).
