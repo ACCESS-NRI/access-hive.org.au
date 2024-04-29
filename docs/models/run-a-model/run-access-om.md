@@ -6,10 +6,8 @@
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
 
 # Run {{ model }}
-!!! info
-    In this documentation, the same code is sometimes shown in a highlighted code-block and also in a simulated terminal.<br>
-    The code-blocks show the commands to be run in a terminal. They can be easily copied by clicking on the icon over the right side of the code block.<br>
-    The simulated terminals are examples of the output to expect when the commands are run. Sometimes they might slightly differ from the real outputs.
+
+<custom-simulated-terminal-info/>
 
 ## Prerequisites
 
@@ -547,19 +545,10 @@ These options are typically useful to modify the physics used in the model, the 
 These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
 
-## Get Help
-
-If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
-For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
-----------------------------------------------------------------------------------------
-
-<!-- References
-Need HTML heading to avoid showing refeerences in the table of content-->
-<h6>References</h6>
-<div class="references" markdown>
+<custom-references>
 - [https://cosima.org.au](https://cosima.org.au)
 - [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020)
 - [https://payu.readthedocs.io/en/latest/usage.html](https://payu.readthedocs.io/en/latest/usage.html)
 - [https://github.com/access-nri/access-om2](https://github.com/access-nri/access-om2)
 - [https://opus.nci.org.au/](https://opus.nci.org.au/)
-</div>
+</custom-references>
