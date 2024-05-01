@@ -18,11 +18,19 @@ Directly coupled into the <a href="../atmosphere#unified-model-um">UM</a>, CABLE
 <br>
 CABLE can also be run as a standalone model, for a single location, a region or globally.
 
-### benchcab: evaluation tool for CABLE
+### _Benchcab_: evaluation tool for CABLE
 
-<a href="https://benchcab.readthedocs.io/en/stable/" target="_blank">benchcab</a> is a testing framework tool for CABLE. It allows to test CABLE's scientific performance across a range of model configurations and model versions. The tool currently tests CABLE offline only with flux site simulations, using observed eddy covariance data and with spatial simulations over a region or globally. The output of these simulations can then be uploaded to <a href="https://modelevaluation.org/" target="_blank">modelevaluation.org</a> for a statistical analysis of the scientific performance of the supplied configurations.
+[_Benchcab_](https://benchcab.readthedocs.io/en/stable) is a testing framework tool for CABLE. It allows to test CABLE's scientific performance across a range of model configurations and model versions.<br>
+The tool currently works with the following configurations for CABLE:
 
-We invite you to refer to <a href="https://benchcab.readthedocs.io/en/stable/" target="_blank">the documentation</a> to know how to use the tool and learn about current limitations to the functionalities.
+- **Flux site simulations (offline)**<br>
+  running CABLE forced with observed eddy covariance data at a single site
+- **Global/regional simulations (offline)**<br>
+  running CABLE forced with meteorological fields, globally or over a region
+
+The output of these simulations can then be uploaded to [modelevaluation.org](https://modelevaluation.org/) for a statistical analysis of the scientific performance of the supplied configurations.
+
+To learn more about _benchcab_, its functionalities and limitations, refer to [_benchcab_'s documentation](https://benchcab.readthedocs.io/en/stable/).
 
 ## JULES
 
