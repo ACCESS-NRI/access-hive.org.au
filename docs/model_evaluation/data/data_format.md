@@ -2,14 +2,16 @@
 
 <!-- For this content, I have used a lot of text from this website: https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/fundamentals-of-netcdf-data-storage.htm -->
 
-As comparable model outputs simplify Model evaluation, ACCESS-NRI supports Coupled Model Intercomparison Projects (CMIP) and the use of common data formats and variables.
+Model evaluation often requires comparison across different models, such as for the [Coupled Model Intercomparison Project (CMIP)](https://wcrp-cmip.org). However, comparing output from different models can be tricky due to the multiple data formats and standards used across models. This is why ACCESS-NRI supports and encourages the use of common, community-supported data formats and variables.
 
 ## Data Standards
-Abiding by certain data standards allows for sharing, translating where required and the use in evaluation. To facilitate this, there are <a href="http://cfconventions.org" target="_blank">conventions for Climate and Forecast metadata</a>. These are designed to promote the processing and sharing of <i>NetCDF</i> files. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. 
+Data standards are agreed-upon guidelines for the "representation, format, definition, structuring, tagging, transmission, manipulation, use, and management" of datasets (definition from [Geoscience Australia](https://www.ga.gov.au/data-pubs/datastandards)). Abiding by these standardized guidelines allow for, among other things, easier sharing and combining of data, as well as the ability to better understand which quantities can be compared across datasets - very important for model evaluation.
 
-Metadata, which is typically described as information about the data, enables users of data from different sources to decide which quantities are comparable. This facilitates building applications with powerful extraction, regridding and display capabilities.
+An example data standard in climate models is the use of [Climate and Forecast metadata conventions (CF conventions)](http://cfconventions.org). These are designed to promote the processing and sharing of _NetCDF_ files (described in more detail below). The conventions specify metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. 
 
-The process of translating data to comply with CF conventions is referred to as to <i>CMORize</i> data. CMOR stands for <i>Climate Model Output Rewriter</i> which comes from a software library from <a href="https://pcmdi.llnl.gov/software/" target="_blank">PCMDI (Program for Climate Model Diagnosis & Intercomparison)</a>.
+Metadata is information about the data, which can include variable names, dimension names, units, grid information and many others. Standardized metadata can also be more easily made machine readable, allowing software packages to interpret, for example, variable names automatically and making data analysis more efficient and less error prone. The machine readability of standardized formats thus facilitates building software applications with powerful extraction, regridding and display capabilities.
+
+Currently, many models do not abide by the CF conventions by default. However, there is a software library called [CMOR (Climate Model Output Rewriter)](https://cmor.llnl.gov) that translates native climate model output into output that complies with the CF conventions. The process of CMORizing is specifically designed for model intercomparison projects, like CMIP.
 
 ## Network Common Data Format (NetCDF)
 
@@ -36,9 +38,9 @@ Numerous organisations and scientific groups worldwide have adopted a file forma
     </div>
 </ul>
 
-Data in a <i>NetCDF</i> file is stored in the form of arrays, where each <i>NetCDF</i> dimension has a name and a length.
+Data in a <i>NetCDF</i> file is stored in the form of arrays, where each <i>NetCDF</i> dimension has a name and a length. NetCDF variables and coordinates can also have a different number of dimensions.
 <br>
-For example, temperature variation over time at a fixed location is stored as a one-dimensional array, whereas temperature over a region (i.e. varying location) at a fixed time is stored as a two-dimensional array. Thus, three-dimensional (3D) data would be temperature varying with time over a region, and four-dimensional (4D) data would be temperature varying with time over a region with varying altitude.
+For example, surface temperature variation over time at a fixed location would be stored as a one-dimensional array (with dimension `(time)`), whereas surface temperature that varies over a region at a fixed point in time would be stored as a two-dimensional array (with dimensions `(longitude, latitude)`). An example of three-dimensional (3D) data would be surface temperature varying with time over a region (with dimensions `(longitude, latitude, time)`), and four-dimensional (4D) data would be temperature varying with time over a region with varying altitude (with dimensions `(longitude, latitude, altitude, time)`).
 
 ## Loading NetCDF files
 
