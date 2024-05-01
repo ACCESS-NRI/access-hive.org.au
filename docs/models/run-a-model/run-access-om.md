@@ -100,7 +100,7 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
     <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
     <terminal-line>Added archive symlink to /scratch/.../access-om2/archive/1deg_jra55_ryf-expt-daeee7ff</terminal-line>
     <terminal-line>To change directory to control directory run:</terminal-line>
-    <terminal-line>    cd 1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input">cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
 
 !!! tip
@@ -401,11 +401,20 @@ To enable output syncing, change `enable` to `True`, and set `path` to a locatio
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
 The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
-This can either be a number (in which case every _nth_ restart file is retained), or a [pandas-style datetime frequency](https://business-science.github.io/pytimetk/guides/03_pandas_frequency.html).<br>
+This can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
+
+- `YS` &rarr; start of the year
+- `MS` &rarr; start of the month
+- `D` &rarr; day
+- `H` &rarr; hour
+- `T` &rarr; minute
+- `S` &rarr; second
+
 For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
 ```yaml
-restart_freq: '50Y'
+restart_freq: '50YS'
 ```
+
 The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
 
 For more information, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
@@ -555,6 +564,10 @@ These options are typically useful to modify the physics used in the model, the 
 These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
 
+## Get Help
+
+If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
+For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
 ----------------------------------------------------------------------------------------
 
 <!-- References
