@@ -38,7 +38,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
         Number of hours your VDI session will run for (unless manually ended earlier).
         <br>
         The maximum number of hours an ARE session can run for depends on the selected Queue. For more information, check <a href="https://opus.nci.org.au/display/Help/Queue+Limits" target="_blank">Gadi Queue Limits</a>.
-        <div class="note">
+        <div class='admonition warning'>
             Once the session ends any operation still in progress on the session's computing node(s) will be immediately terminated.
         </div>
     </li>
@@ -60,7 +60,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
         The NCI project the ARE session will be charged to.
         <br>
         You must be a member of the specified project.
-        <div class="note">
+        <div class='admonition warning'>
             The specified project must have allocated <i>Service Units</i> (SU).
             <br>
             For more information, check <a href="/getting_started/first_steps#join-relevant-nci-projects">how to join relevant NCI projects</a>.
@@ -74,7 +74,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
         In ARE, data storage locations need to be explicitly defined. This means that you need to insert any <code>/g/data</code> and <code>/scratch</code> project folders you want to execute data I/O operations from.
         <br>
         Multiple storage projects are separated by a plus (<i>+</i>) (e.g., <i>gdata/tm70+gdata/hh5+scratch/xp65</i>).
-        <div class="note">
+        <div class='admonition warning'>
             Generally, you need to be a member of the specified projects to access their storage data.
             <br>
             If you try to access data from a project folder not included in the session's storage, you will get an error similar to the following:
@@ -108,7 +108,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
                 Include module directories.
                 <br>
                 It is the eqivalent of <code>module use &lt;/path/to/module/directory&gt;</code> run on the command line.
-                <div class="note">
+                <div class='admonition warning'>
                     You also need to include the project directory of each module directory in the <a href="#storage-option"><i>Storage</i></a> option.
                 </div>
             </li>
@@ -117,7 +117,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
                 <br>
                 Include modules.
                 It is the equivalent of <code>module load &lt;module-name&gt;</code> run on the command line.
-                <div class="note">
+                <div class='admonition warning'>
                     If the module is not inside <i>Gadi</i>'s default module directory <code>/apps/Modules/modulefiles</code>, you need to include the module directory in the <a href="#module-directories-option"><i>Module directories</i></a> option.
                 </div>
             </li>
@@ -127,7 +127,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
                 Path to a Python or conda base environment to be activated for the JupyterLab session.
                 <br>
                 It is the equivalent of <code>source &lt;path/to/environment/bin/activate&gt;</code> run on the command line.
-                <div class="note">
+                <div class='admonition warning'>
                     You also need to include the project directory of the virtual environment in the <a href="#storage-option"><i>Storage</i></a> option.
                 </div>
             </li>
@@ -137,7 +137,7 @@ Therefore, there are multiple <a href="https://opus.nci.org.au/display/Help/PBS+
                 Name of a specific conda environment to be activated for the JupyterLab session.
                 <br>
                 It is the equivalent of <code>conda activate &lt;environment-name&gt;</code> run on the command line.
-                <div class="note">
+                <div class='admonition warning'>
                     You need to include the path to the conda base environment in the <a href="#venv-base-option"><i>Python or Conda virtual environment base</i></a> option.
                 </div>
             </li>

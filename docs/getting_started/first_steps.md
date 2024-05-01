@@ -15,7 +15,7 @@ Most of the data and models you will need are available at the <a href="https://
 <br>
 To access these, you need an <a href="https://opus.nci.org.au/display/Help/How+to+create+an+NCI+user+account" target="_blank">NCI account</a>. If you do not have one, <a href="https://my.nci.org.au/mancini/signup/0" target="_blank">sign up here</a>.
 
-<div class="note">
+<div class='admonition warning'>
 You will need an institutional email address with an organisation that allows access to NCI (e.g., an Australian university, ACCESS-NRI, CSIRO, BoM, CLEX, etc.).
 </div>
 Once you sign up, you will be assigned a <i>username</i> (e.g., `ab1234`).
@@ -34,7 +34,7 @@ To run models on <i>Gadi</i> instead, you need to join a project with computing 
 
 To join a project, search for it on <a href="https://my.nci.org.au/mancini/project-search" target="_blank">NCI website</a> and request membership.
 
-<div class="note">
+<div class='admonition warning'>
   The first project you join will become your default one. If you would like to change this, check out <a href="#change-default-project-on-gadi">how to change your default project on Gadi</a>.
 </div>
 
@@ -58,7 +58,7 @@ Before you login to <i>Gadi</i>, you need to possess the following prerequisites
     Linux, MacOS and Windows 10 (or later) operative systems already have a terminal with built-in SSH.
     <br>
     Users of Windows 9 (or earlier) can install <a href="https://learn.microsoft.com/en-us/windows/wsl" target="_blank">Windows Subsystems for Linux (WSL)</a>. 
-    <div class="note">
+    <div class="admonition warning">
       Alternatively, you can login through the <a href="https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au" target="_blank">ARE Gadi Terminal</a>. 
       <br>
       However, it is recommended that you connect to <i>Gadi</i> from your local machine's terminal without using ARE. 
@@ -121,7 +121,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
       <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
       <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
     </terminal-window>
-    <div class="note">
+    <div class='admonition warning'>
       For security reasons, it is recommended to enter a passphrase rather than leave it empty.
       <br>
       As you will see in the next step, you will not need to enter the passphrase every time you login to <i>Gadi</i>.
@@ -163,7 +163,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
               <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
               <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
             </terminal-window>
-            <div class="note">
+            <div class='admonition warning'>
               If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
             </div>
           </div>
@@ -192,7 +192,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     <br>
     To create an SSH config file, run the following command on your <b>local machine</b>:
     <pre><code>touch ~/.ssh/config</code></pre>
-    <div class="note">
+    <div class='admonition warning'>
       If you already have an existing <code>~/.ssh/config</code> file, the above command will not have any effect.
     </div>
     The following lines should be added to your <code>~/.ssh/config</code> to describe the SSH configuration for <i>Gadi</i> (replace <code>&lt;your-NCI-username&gt;</code> with your NCI <i>username</i>, e.g., <code>ab1234</code>):
@@ -204,7 +204,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     IdentityFile ~/.ssh/id_gadi
     AddKeysToAgent yes
     UseKeychain yes</code></pre>
-    <div class="note">
+    <div class='admonition warning'>
       If you already have an existing <code>~/.ssh/config</code> file which contains configurations for every <code>Host</code> (e.g., by using <code>Host *</code>), make sure you delete any of the keywords present in that SSH configuration from the <i>Gadi</i> configuration above.
       <br>
     </div>
@@ -216,7 +216,7 @@ To simplify the login and avoid being prompted every time to enter your NCI pass
     <br>
     To add the newly created SSH key as an <i>authorised</i> key for <i>Gadi</i>, run the following command from your <b>local machine</b>:
     <pre><code>var=$( cat ~/.ssh/id_gadi.pub ) && ssh gadi "echo $var >> .ssh/authorized_keys"</code></pre>
-    <div class="note">
+    <div class='admonition warning'>
       Make sure to use double quotes <code>"</code> in the above command.
     </div>
     You will be prompted to enter your NCI password. If you did all of the above steps correctly, this should be the last time you need to do so.
