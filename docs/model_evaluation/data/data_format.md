@@ -1,4 +1,4 @@
-# Data Format
+# Data Formats and Standards
 
 <!-- For this content, I have used a lot of text from this website: https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/fundamentals-of-netcdf-data-storage.htm -->
 
@@ -15,7 +15,7 @@ Currently, many models do not abide by the CF conventions by default. However, t
 
 ## Network Common Data Format (NetCDF)
 
-Numerous organisations and scientific groups worldwide have adopted a file format called <i><a href="https://www.unidata.ucar.edu/software/netcdf/" target="_blank">NetCDF</a></i> as a standard way to store multidimensional scientific data.
+Numerous organisations and scientific groups worldwide have adopted a file format called [_NetCDF_](https://www.unidata.ucar.edu/software/netcdf/) as a standard way to store multidimensional scientific data.
 
 <i>NetCDF</i>, which has the file extension <i>*.nc</i>, is a self-describing, machine-independent data format of array-oriented scientific data.
 
@@ -34,7 +34,7 @@ Numerous organisations and scientific groups worldwide have adopted a file forma
     <br>
     <br>
     <div style="text-align: center;">
-        <img src="../../../assets/model_evaluation/netcdf_1.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" title="Picture from https://web.itu.edu.tr/~tokerem/netcdf.html" width="75%"/>
+        <img src="../../../assets/model_evaluation/xarray2.png" alt="Schematic of a NetCDF file with data (temperature and pressure as variables stored over the dimensions latitude, longitude, and time) and metadata" title="xarray https://xarray.dev/" width="75%"/>
     </div>
 </ul>
 
@@ -50,7 +50,7 @@ For more information, refer to a <a href="https://docs.xarray.dev/en/stable/gett
 
 *xarray* is a python package avaliable through the conda environment on NCI. 
 <br>
-Hence, you can either use it directly (as shown below) or through the dataset capabilities of the [ACCESS-NRI Model Intake Catalog Tool](../../model_evaluation_model_catalogs/index.md).
+Hence, you can either use it directly (as shown below) or through the dataset capabilities of the [ACCESS-NRI Model Intake Catalog Tool](/model_evaluation/data/model_catalogs).
 
 ```
 import xarray as xr

@@ -4,7 +4,7 @@
 <div class="card-container">
     <a href="data_format" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Data format" title="Picture from https://pro.arcgis.com/en/pro-app/latest/tool-reference/geostatistical-analyst/ga-layer-3d-to-netcdf.htm" class="img-contain white-background with-padding"></img>
+            <img src="../../../assets/model_evaluation/netcdf_example.png" alt="Data format and standards" title="Picture from https://pro.arcgis.com/en/pro-app/latest/tool-reference/geostatistical-analyst/ga-layer-3d-to-netcdf.htm" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Data Format</div>
     </a>

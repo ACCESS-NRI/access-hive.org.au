@@ -4,12 +4,12 @@
 
 For climate modelling, we need to store multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed and direction.
 
-Variables can be stored in multidimensional data formats such as <i>NetCDF</i> as separate dimensions where each dimension can have a name and length.
+Variables can be stored in multidimensional [data formats](/model_evaluation/data/data_format) such as <i>NetCDF</i> as separate dimensions where each dimension can have a name and length.
 
 
 ## Common variables
 
-Variables used in climate modelling can differ in terms of naming conventions, units, etc. While this may be for historical reasons, the use of common variables is key not only for ease and compatibilty when working with the data, but also to unite the climate modelling community. Hence, there are collated lists of different widely used variable formats, such as:
+Variables used in climate modelling can differ in terms of naming conventions, units, etc. While this may be for historical reasons, the use of common variables is key not only for ease and compatibilty when working with the data, but also to unite the climate modelling community. Hence, projects will follow or link to CF conventions. These are current widely used lists.
 
 <!-- We have created a prototype of markdown files with variable tables that can be queried via jquery -->
 <!-- Because they were not ready for quick searches (jquery with extended html tables is slow), we did not include them in the Legacy Relase (July/August 2023). -->
