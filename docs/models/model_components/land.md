@@ -18,6 +18,12 @@ Directly coupled into the <a href="../atmosphere#unified-model-um">UM</a>, CABLE
 <br>
 CABLE can also be run as a standalone model, for a single location, a region or globally.
 
+### benchcab: evaluation tool for CABLE
+
+<a href="https://benchcab.readthedocs.io/en/stable/" target="_blank">benchcab</a> is a testing framework tool for CABLE. It allows to test CABLE's scientific performance across a range of model configurations and model versions. The tool currently tests CABLE offline only with flux site simulations, using observed eddy covariance data and with spatial simulations over a region or globally. The output of these simulations can then be uploaded to <a href="https://modelevaluation.org/" target="_blank">modelevaluation.org</a> for a statistical analysis of the scientific performance of the supplied configurations.
+
+We invite you to refer to <a href="https://benchcab.readthedocs.io/en/stable/" target="_blank">the documentation</a> to know how to use the tool and learn about current limitations to the functionalities.
+
 ## JULES
 
 The <a href="https://jules.jchmr.org/" target="_blank">Joint UK Land Environment System (JULES)</a> is a community land surface model that can be used both as a standalone model and as the land surface component in the UM model. By modelling different land surface processes (surface energy balance, hydrological cycle, carbon cycle, dynamic vegetation, etc.) and their interaction with each other, JULES provides a framework to assess the impact of modifying a particular process on the ecosystem as a whole, for example the impact of climate change on hydrology.
