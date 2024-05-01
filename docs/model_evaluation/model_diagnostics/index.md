@@ -27,7 +27,7 @@ import med_diagnostics
 session = med_diagnostics.session.CreateModelDiagnosticsSession(model_type='CM2', model_path='path/to/your/live/model/data/output', period=20)
 ```
 
-<div class="note">
+<div class='admonition warning'>
          For more details on paths and packages refer to the <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">ACCESS-NRI Model Diagnostics documentation</a>.
 </div>
 
@@ -37,7 +37,7 @@ When the session starts, you will see the following session summary:
     <img src="../../assets/model_evaluation/live_diagnostics/tutorial_image_1.png" alt="Output of the Model Live Diagnostics after a session has been started and a new catalogue is being built." width="75%"/>
 </div>
 
-<div class="note">
+<div class='admonition warning'>
          The blue status message box appears while the new intake catalogue is being built from the live model data. Depending on the size of the model data, this can take several minutes.
 </div>
 

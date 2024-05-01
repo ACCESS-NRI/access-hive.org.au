@@ -1,7 +1,6 @@
 {% set model = "ACCESS-CM" %}
 # Run {{ model }}
-
-<div class="note">
+<div class='admonition warning'>
     <b>Important for <i>accessdev</i> users!</b>
     <br>
     If you are an <i>accessdev</i> user, make sure you are a member of <a href="https://my.nci.org.au/mancini/project/hr22/join" target="_blank">hr22</a> and <a href="https://my.nci.org.au/mancini/project/ki32/join" target="_blank">ki32</a> projects.
@@ -27,7 +26,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
         <b>Join the <i>access</i>, <i>hr22</i>, <i>ki32</i>, and <i>ki32_mosrs</i> projects at NCI</i></b> 
         <br>
         To join these projects, request membership on the respective <a href="https://my.nci.org.au/mancini/project/access/join" target="_blank">access</a>, <a href="https://my.nci.org.au/mancini/project/hr22/join" target="_blank">hr22</a> and <a href="https://my.nci.org.au/mancini/project/ki32/join" target="_blank">ki32</a> and <a href="https://my.nci.org.au/mancini/project/ki32_mosrs/join" target="_blank">ki32_mosrs</a> NCI project pages.
-        <div class="note">
+        <div class='admonition warning'>
             To request membership for the <i>ki32_mosrs</i> subproject you need to be member of the <i>ki32</i> project first.
         </div>
         For more information on how to join specific NCI projects, refer to <a href="https://opus.nci.org.au/display/Help/How+to+connect+to+a+project" target="_blank">How to connect to a project</a>.
@@ -106,7 +105,7 @@ This will start a persistent session with the given <code>name</code> that runs 
 If you want to assign a different project to the persistent session, use the option <code>-p</code>:
 <pre><code>persistent-sessions start -p &lt;project&gt; &lt;name&gt;</code></pre>
 
-<div class="note">
+<div class='admonition warning'>
     While the project assigned to a persistent session does not have to be the same as the project used to run the {{ model }} configuration, it does need to have allocated <i>Service Units</i> (SU).
     <br>
     For more information, check how to <a href="/getting_started/first_steps#join-relevant-nci-projects">Join relevant NCI projects</a>.
@@ -150,7 +149,7 @@ For example, if the user <code>abc123</code> started a persistent session named 
 </terminal-window>
 
 For more information on how to specify the target session, refer to <a href="https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession" target="_blank">Specify Target Session with Cylc7 Suites</a>.
-<div class="note">
+<div class='admonition warning'>
     You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only need to be done once.
     <br>
     After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just need to make sure to have an active persistent session named like the {{ model }} target persistent session.
@@ -159,7 +158,7 @@ For more information on how to specify the target session, refer to <a href="htt
 ### Terminate a persistent session
 To stop a persistent session, run:
 <pre><code>persistent-sessions kill &lt;persistent-session-uuid&gt;</code></pre>
-<div class="note">
+<div class='admonition warning'>
     When you terminate a persistent session, any model running on that session will stop. Therefore, you should check whether you have any active model runs before terminating a persistent session.
 </div>
 
@@ -193,7 +192,7 @@ module load cylc7/23.09</code></pre>
             <terminal-line data="output">&emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
         </terminal-window>
     </li>
-    <div class="note">
+    <div class='admonition warning'>
         Make sure to load <i>Cylc</i> version <code>23.09</code> (or later), as earlier versions do not support the persistent sessions workflow.
         <br>
         Also, before loading the <i>Cylc</i> module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, refer to instructions on how to <a href="{{ '#set-up-%s-persistent-session'%model.lower() }}">Set up {{ model }} persistent session</a>.
@@ -272,7 +271,7 @@ Each suite directory usually contains two subdirectories and three files:
 <br>
 To edit a suite configuration, run the following command from within the suite directory (e.g., <code>~/roses/&lt;suite-ID&gt;</code>) to open the <i>Rose</i> GUI:
 <pre><code>rose edit &</code></pre> 
-<div class="note">
+<div class='admonition warning'>
     The <code>&</code> is optional. It allows the terminal prompt to remain active while running the <i>Rose</i> GUI as a separate process in the background.
 </div>
 <terminal-window>
@@ -288,7 +287,7 @@ To ensure that your suite is run under the correct NCI project for which you are
 <br> <br>
 For example, to run an {{ model }} suite under the <code>tm70</code> project (ACCESS-NRI), enter <code>tm70</code> in the <i>Compute project</i> field:
 <img src="/assets/run_access_cm/rose_change_project_are.gif" alt="Rose change project" class="example-img" loading="lazy"/>
-<div class="note">
+<div class='admonition warning'>
     To run {{ model }}, you need to be a member of a project with allocated <i>Service Units</i> (SU). For more information, check how to <a href="/getting_started/first_steps#join-relevant-nci-projects">Join relevant NCI projects</a>.
 </div>
 
@@ -378,7 +377,7 @@ After the initial tasks are executed, the <i>Cylc</i> GUI will open. You can now
     <img src="/assets/run&UnderBar;access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy"> -->
 </terminal-window>
 
-<div class="note">
+<div class='admonition warning'>
     After running the command <code>rose suite-run</code>, if you get an error similar to the following:
     <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
 <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
@@ -497,7 +496,7 @@ There are two main ways to restart a suite:
         <br>
         To reinstall the suite and reopen <i>Cylc</i> in the same state it was prior to being stopped, run the following command from within the suite directory:
         <pre><code>rose suite-run --restart</code></pre>
-        <div class="note">
+        <div class='admonition warning'>
             You may need to manually trigger failed tasks from the <i>Cylc</i> GUI.
         </div>
         <terminal-window lineDelay="50">
@@ -544,7 +543,7 @@ There are two main ways to restart a suite:
         <br>
         To overwrite any previous runs of the suite and start afresh, run the following command from within the suite directory:
         <pre><code>rose suite-run --new</code></pre>
-        <div class="note">
+        <div class='admonition warning'>
             WARNING!! This will overwrite all existing model output and logs for the same suite.
         </div>
     </li>
@@ -627,7 +626,7 @@ If you have a suite that was running on accessdev, you can run it using persiste
         <br>
         To create the required SSH keys, run the following command:
         <pre><code>/g/data/hr22/bin/gadi-cylc-setup-ps -y</code></pre>
-        <div class="note">
+        <div class='admonition warning'>
             You only need to run this initialisation step once.
         </div>
     </li>
@@ -652,7 +651,7 @@ If you have a suite that was running on accessdev, you can run it using persiste
 </ol>
 
 
-<div class="note">
+<div class='admonition warning'>
     Some suites might not be ported this way. 
     <br>
     If you have a suite that was running on <i>accessdev</i> and, even after following the steps above, the run submission fails, consider <a href="/about/user_support/ask_on_forum">getting help on the Hive Forum</a>.
