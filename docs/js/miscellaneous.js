@@ -9,7 +9,7 @@ function changeAbsoluteUrls() {
     url.startsWith('https://access-hive.org.au/development-website/') ||
     url.startsWith('https://access-hive.org.au/pr-preview/')
   ) {
-    links=document.querySelectorAll('a[href^="/"],img[src^="/"]');
+    let links = document.querySelectorAll('a[href^="/"],img[src^="/"]');
     links.forEach(link => {
       let href = link.getAttribute('href');
       let src = link.getAttribute('src');
