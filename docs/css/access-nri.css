@@ -972,7 +972,7 @@ details.code {
   transition-duration: 0.3s;
   transition-property: all;
 }
-/* Hive forum btn */
+/* Hive Forum btn */
 .header-btn:first-child {
   border-color: var(--nri-orange);
 }
@@ -1374,7 +1374,7 @@ img.intro-img {
     flex-wrap: wrap;
   }
 
-  /* Forum, ACCESS-NRI and Github buttons */
+  /* Forum, ACCESS-NRI and GitHub buttons */
   .header-btn-container {
     flex-grow: 0;
   }

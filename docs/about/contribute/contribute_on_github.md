@@ -3,7 +3,7 @@
 ## Prerequisites
 :fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} If you are new to GitHub, you will first need to [sign up](https://github.com) for a GitHub account.
 
-:material-head-lightbulb-outline:{: class="twemoji icon-before-text nri-orange-color"} We also encourage you to complete [self-paced GitHub learning courses](#additional-github-learning-resources) for brushing up basic GitHub skills. 
+:material-head-lightbulb-outline:{: class="twemoji icon-before-text nri-orange-color"} We also encourage you to complete [self-paced GitHub learning courses](#additional-github-learning-resources) for brushing up on basic GitHub skills. 
 
 ## Let's get started!
 
@@ -12,12 +12,12 @@ For a quick reference on how to use Markdown syntax you can refer to the [Markdo
 
 ## Raise a GitHub Issue
 
-All contributions need to have an associated [Github issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution.<br>
-To raise an issue, create a New Issue in the [ACCESS-Hive Github repository issue page](https://github.com/ACCESS-NRI/access-hive.org.au/issues). Feel free to assign that issue to yourself if you intend to work on it.
+All contributions need to have an associated [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution.<br>
+To raise an issue, create a New Issue in the [ACCESS-Hive GitHub repository issue page](https://github.com/ACCESS-NRI/access-hive.org.au/issues). Feel free to assign that issue to yourself if you intend to work on it.
 
 ## Fork the ACCESS-Hive GitHub repository
 
-After raising a Github issue about your contribution, you need to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui) the [ACCESS-Hive Github repository](https://github.com/ACCESS-NRI/access-hive.org.au).
+After raising a GitHub issue about your contribution, you need to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui) the [ACCESS-Hive GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au).
 
 ## Clone the forked ACCESS-Hive GitHub repository locally
 For cloning the forked repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
@@ -91,7 +91,7 @@ This would make sure that the local branch `spongebob/fix-hive-title-issue-234` 
 ## Deploying Website Preview
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving. 
 
-To build the site locally, you need to install [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and other plugins. You can find a ful list in the `requirements.txt` file (in the root of the [ACCESS-Hive GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au)). Please use `pip` for the installation as some of the packages are not updated or not available on conda:
+To build the site locally, you need to install [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and other plugins. You can find a full list in the `requirements.txt` file (in the root of the [ACCESS-Hive GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au)). Please use `pip` for the installation as some of the packages are not updated or not available on conda:
 
 <terminal-window>
     <terminal-line data="input">pip install -r requirements.txt</terminal-line>

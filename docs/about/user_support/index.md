@@ -8,7 +8,7 @@ Click on the questions to unfold the answers.
 
 ??? question "What is the difference between the ACCESS-Hive and the Hive Forum?"
     ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
-    The Hive forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
+    The Hive Forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
 
     ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive and the Hive Forum](/assets/access_hive_links.png){: class="with-border centered" style="width: 50%" loading="lazy"}
 
@@ -34,7 +34,7 @@ Click on the questions to unfold the answers.
     ![Diagram showing how running ACCESS model configurations with different setups create different experiments](/assets/how_does_it_work_together.png){: class="with-border centered" style="width: 75%" loading="lazy"}
 
 ??? question "What is a control experiment? Why are they important?"
-    A "control experiment" (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
+    A **control experiment** (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
 
     Control experiments are typically designed to represent some neutral climate state. For example, pre-industrial control experiments are designed to represent a modern climate state without significant anthropogenic climate forcing (global warming).
 
@@ -43,7 +43,7 @@ Click on the questions to unfold the answers.
     Control experiments are important because it is an enormous saving in resources if one control experiment can be used by many researchers. It also means researchers can compare their perturbation experiments against not just the control run, but against each other.
 
 ??? question "What is a perturbation experiment?"
-    A perturbation experiment is when a model configuration from a control experiment is altered in some way. The altered configuration is then run, restarting from a point in the control experiment.
+    A **perturbation experiment** is when a model configuration from a control experiment is altered in some way. The altered configuration is then run, restarting from a point in the control experiment.
 
     The perturbation experiment is run in the same way as the control, each successive run using the state (restarts) from the previous run. The perturbation experiment can then be compared with the control experiment to see the effect of the perturbation.
 
@@ -67,7 +67,7 @@ Click on the questions to unfold the answers.
 
 ## Still need help?
 
-Consider asking for help on the <a href="https://forum.access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>. For content supported by ACCESS-NRI a team member will provide support. For other content, a fellow member of the community might be able to help.
+Consider asking for help on the [ACCESS-Hive Forum](https://forum.access-hive.org.au). For content supported by ACCESS-NRI, a team member will provide support. For other content, a fellow member of the community might be able to help.
 
 For further information on what assistance is available on the forum please visit the forum's <a href="https://forum.access-hive.org.au/t/access-help-and-support/908" target="_blank">Help and Support Page</a>. There is also a <a href="https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021" target="_blank">Forum Support FAQ</a> covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
 

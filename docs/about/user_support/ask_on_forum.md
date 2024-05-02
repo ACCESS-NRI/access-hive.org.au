@@ -1,13 +1,13 @@
-[Hive forum]: https://forum.access-hive.org.au
+[Hive Forum]: https://forum.access-hive.org.au
 # Using the Hive Forum
 
-The [Hive forum] is a place for the ACCESS Community to come together, share ideas, organise and plan shared activities.
+The [Hive Forum] is a place for the ACCESS Community to come together, share ideas, organise and plan shared activities.
 
 ## Getting ready
 
 You can start a new discussion topic on the [Hive Forum] in just 3 simple steps:
 
-:fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} [Register to the ACCESS-Hive Forum](https://forum.access-hive.org.au/docs?topic=884)
+:fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} [Register for the ACCESS-Hive Forum](https://forum.access-hive.org.au/docs?topic=884)
 
 :fontawesome-regular-square-plus:{: class="twemoji icon-before-text nri-blue-color"} [Create a new topic for your request](https://forum.access-hive.org.au/docs?topic=790)<br>
 <span markdown class="small-text">
@@ -22,7 +22,7 @@ You can start a new discussion topic on the [Hive Forum] in just 3 simple steps:
 
 After a discussion topic is posted on the forum, the ACCESS-NRI and community experts will respond with the relevant information by following a 5-step process, as below: 
 
-:fontawesome-solid-magnifying-glass:{: class="twemoji icon-before-text nri-orange-color"} ACCESS-NRI monitors the topics tagged with `help` keyword on a regular basis.
+:fontawesome-solid-magnifying-glass:{: class="twemoji icon-before-text nri-orange-color"} ACCESS-NRI monitors the topics tagged with the `help` keyword on a regular basis.
 
 :fontawesome-solid-hourglass-start:{: class="twemoji icon-before-text nri-orange-color"} After a request is received, we will let you know within 1 working day if the request is `in scope`.
 
