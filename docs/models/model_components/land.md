@@ -15,7 +15,7 @@ CABLE provides the land surface component of [ACCESS-CM](/models/configurations/
 Directly coupled into the [UM](/models/model_components/atmosphere#unified-model-um), CABLE replaces relevant parts of the functionality of the UM’s own land surface scheme ([JULES](#jules)).<br>
 CABLE can also be run as a standalone model, for a single location, a region or globally.
 
-### _Benchcab_: evaluation tool for CABLE
+### Benchcab: evaluation tool for CABLE
 
 [_Benchcab_](https://benchcab.readthedocs.io/en/stable) is a testing framework tool for CABLE. It allows to test CABLE's scientific performance across a range of model configurations and model versions.<br>
 The tool currently works with the following configurations for CABLE:
