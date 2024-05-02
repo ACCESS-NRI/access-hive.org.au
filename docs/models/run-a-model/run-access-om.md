@@ -7,8 +7,6 @@
 
 # Run {{ model }}
 
-<custom-simulated-terminal-info/>
-
 ## Prerequisites
 
 ### General prerequisites
