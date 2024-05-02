@@ -1,5 +1,30 @@
 'use strict';
 
+/*
+  Change absolute URLs for development-website and PR-previews (Move to build script)
+*/
+function changeAbsoluteUrls() {
+  let url = window.location.href;
+  if (
+    url.startsWith('https://access-hive.org.au/development-website') ||
+    url.startsWith('https://access-hive.org.au/pr-preview')
+  ) {
+    links=document.querySelectorAll('a[href^="/"],img[src^="/"]');
+    links.forEach(link => {
+      let href = link.getAttribute('href');
+      let src = link.getAttribute('src');
+      let base = url.startsWith('https://access-hive.org.au/development-website') ? 
+        url.split('/').slice(3,4) : url.split('/').slice(3,5);
+      if (href) {
+        link.setAttribute('href',`/${base}${href}`);
+      }
+      if (src) {
+        link.setAttribute('src',`/${base}${src}`);
+      }
+    })
+  }
+}
+
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
@@ -215,6 +240,7 @@ function makeCitationLinks() {
 
 // Join all functions
 function main() {
+  changeAbsoluteUrls();
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
