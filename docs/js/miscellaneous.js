@@ -6,8 +6,8 @@
 function changeAbsoluteUrls() {
   let url = window.location.href;
   if (
-    url.startsWith('https://access-hive.org.au/development-website') ||
-    url.startsWith('https://access-hive.org.au/pr-preview')
+    url.startsWith('https://access-hive.org.au/development-website/') ||
+    url.startsWith('https://access-hive.org.au/pr-preview/')
   ) {
     links=document.querySelectorAll('a[href^="/"],img[src^="/"]');
     links.forEach(link => {
