@@ -19,7 +19,7 @@
 
 ## Cloning the GitHub repository
 
-For the training on Intake, ILAMB and ESMValTool, you will need to clone the [ACCESS-NRI 2023 workshop training Github repo](https://github.com/ACCESS-NRI/workshop-training-2023) to _Gadi_ as follows:
+For the training on Intake, ILAMB and ESMValTool, you will need to clone the [ACCESS-NRI 2023 workshop training GitHub repo](https://github.com/ACCESS-NRI/workshop-training-2023) to _Gadi_ as follows:
 
 1. Log in to _Gadi_
    ```
@@ -27,7 +27,7 @@ For the training on Intake, ILAMB and ESMValTool, you will need to clone the [AC
    ```
    If you don't have an `ssh` connection setup for _Gadi_, you can use [ARE's Gadi Terminal](https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au).
    
-2. Clone the [ACCESS-NRI 2023 workshop training Github repo](https://github.com/ACCESS-NRI/workshop-training-2023) to your user directory within `/scratch/nf33` on _Gadi_. Depending on whether or not you've used the nf33 project before, your user directory may or may not already exist.
+2. Clone the [ACCESS-NRI 2023 workshop training GitHub repo](https://github.com/ACCESS-NRI/workshop-training-2023) to your user directory within `/scratch/nf33` on _Gadi_. Depending on whether or not you've used the nf33 project before, your user directory may or may not already exist.
    ```
    mkdir -p /scratch/nf33/$USER
    cd /scratch/nf33/$USER

@@ -58,7 +58,7 @@ The following custom tags are available:
   The `<custom-not-supported/>` tag renders a preset "Not supported by ACCESS-NRI" admonition.
 
 - **References**<br>
-  The `<custom-references> ... </custom-references>` tag renders references to be used at the bottom of a page. Each new line (created by pressing ++Return++) inside `...` is rendered as a separate bullet point. A hyphen can included at the beginning of a new line (for clarity) but is stripped off at the time of rendering.<br>
+  The `<custom-references> ... </custom-references>` tag renders references to be used at the bottom of a page. Each new line (created by pressing <kbd>return</kbd>/<kbd>Enter</kbd>) inside `...` is rendered as a separate bullet point. A hyphen (`-`) can included at the beginning of a new line (for clarity) but it is stripped off at the time of rendering.<br>
   For example, to reference 2 links you can write:
   ```
   <custom-references>

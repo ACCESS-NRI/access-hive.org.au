@@ -14,7 +14,7 @@ Join the [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/) and fi
 
 :fontawesome-brands-discourse: [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/)
 
-:fontawesome-brands-github: [ACCESS-NRI Github](https://github.com/ACCESS-NRI/)
+:fontawesome-brands-github: [ACCESS-NRI GitHub](https://github.com/ACCESS-NRI/)
 
 :fontawesome-brands-twitter: [ACCESS-NRI Twitter](https://twitter.com/ACCESS_NRI)
 

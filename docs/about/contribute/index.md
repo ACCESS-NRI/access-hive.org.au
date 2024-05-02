@@ -32,7 +32,7 @@ Contributions are encouraged from any member of the community regarding any aspe
                 Write your own content
             </div>
             <span class="with-padding">
-                Contribute to the ACCESS-Hive user portal by adding content to the ACCESS-Hive Github repository yourself.
+                Contribute to the ACCESS-Hive user portal by adding content to the ACCESS-Hive GitHub repository yourself.
             </span>
         </div>
     </a>
