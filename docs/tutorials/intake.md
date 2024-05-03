@@ -1,6 +1,6 @@
 # ACCESS-NRI Intake catalog
 
-The ACCESS-NRI Intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on _Gadi_. For an introduction, check  [ACCESS-NRI Intake catalog](/model_evaluation/model_evaluation_model_catalogs).
+The ACCESS-NRI Intake catalog aims to provide a way for Python users to discover and load data across a broad range of climate data products available on _Gadi_. For an introduction, see [ACCESS-NRI Intake catalog](/model_evaluation/model_evaluation_model_catalogs).
 
 ## 2023 ACCESS workshop
 1. [Getting set up on the ARE](https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/intake/ARE_setup_guide.md)

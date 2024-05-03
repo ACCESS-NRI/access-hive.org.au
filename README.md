@@ -15,7 +15,6 @@ If you wish to add documentation to the ACCESS-Hive website check the [contribut
 ## Styling guidelines for developers
 The ACCESS-Hive website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
 
-For a detailed guide on Mk
 Please follow the guidelines below to make the Hive consistent among all the pages contributed by different people. 
 
 - Always prefer Markdown syntax to HTML when possible;

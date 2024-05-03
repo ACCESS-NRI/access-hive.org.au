@@ -51,13 +51,13 @@ Click on the questions to unfold the answers.
 
 ??? question "Where can I find _observational data_ and _model data_?"
     
-    Both observational and model DATA is hosted by the National Computational Infrastructure (NCI) under different projects. 
+    Both observational and model data is hosted by the National Computational Infrastructure (NCI) under different projects. 
 
-    Go to our [**Observational Data**](../model_evaluation/model_evaluation_observational_catalogs.md) section on the ACCESS-Hive to learn how to find and access observational data.
+    Go to our [**Observational Data**](/model_evaluation/model_evaluation_observational_catalogs) section on the ACCESS-Hive to learn how to find and access observational data.
 
-    Go to our [**Model Data**](../model_evaluation/model_evaluation_model_catalogs/index.md) section on the ACCESS-Hive to learn how to find and access model data.
+    Go to our [**Model Data**](/model_evaluation/model_evaluation_model_catalogs) section on the ACCESS-Hive to learn how to find and access model data.
 
-    In any case, you need to have access to the specific projects and NCI itself in order to read the data. We explain this on our [**Getting Started Pages**](../getting_started/first_steps.md).
+    In both cases, you need to have access to the specific projects at NCI in order to read the data. For more information, check the [**First Steps**](/getting_started/first_steps) page.
 
 ??? question "What is the difference between _teams_ and _working groups_?"
 
@@ -69,7 +69,7 @@ Click on the questions to unfold the answers.
 
 Consider asking for help on the [ACCESS-Hive Forum](https://forum.access-hive.org.au). For content supported by ACCESS-NRI, a team member will provide support. For other content, a fellow member of the community might be able to help.
 
-For further information on what assistance is available on the forum please visit the forum's <a href="https://forum.access-hive.org.au/t/access-help-and-support/908" target="_blank">Help and Support Page</a>. There is also a <a href="https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021" target="_blank">Forum Support FAQ</a> covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
+For further information on what assistance is available on the forum please visit the forum's [Help and Support Page](https://forum.access-hive.org.au/t/access-help-and-support/908). There is also a [Forum Support FAQ](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021) covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
 
 <div class="card-container">
     <a href="/about/user_support/ask_on_forum" class="horizontal-card">

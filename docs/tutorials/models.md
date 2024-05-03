@@ -1,6 +1,6 @@
 # ACCESS-CM2
 
-For an intoduction on how to run ACCESS-CM2 check the [Run ACCESS-CM](/models/run-a-model/run-access-cm).
+For an introduction on how to run ACCESS-CM2, see the [Run ACCESS-CM](/models/run-a-model/run-access-cm).
 
 ## 2023 ACCESS workshop
 1. [Running ACCESS-CM2 from ARE/Gadi](https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/rose_cylc_example.md)

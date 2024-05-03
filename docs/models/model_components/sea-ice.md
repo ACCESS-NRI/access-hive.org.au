@@ -6,7 +6,7 @@
 CICE is a numerical model for simulating the growth, melting and movement of polar sea ice. This software package was developed by researchers at [Los Alamos National Laboratory team](https://www.lanl.gov) and is currently managed by the [CICE Consortium](https://github.com/CICE-Consortium/About-Us/wiki), an international group of institutions formed to maintain and develop CICE in the public domain.
 
 ### Configurations that use CICE
-There are 2 CICE versions currently used in ACCESS models: [CICE5](https://github.com/CICE-Consortium/CICE-svn-trunk) and [CICE6](https://github.com/CICE-Consortium/CICE).
+There are two CICE versions currently used in ACCESS models: [CICE5](https://github.com/CICE-Consortium/CICE-svn-trunk) and [CICE6](https://github.com/CICE-Consortium/CICE).
 <!-- Tab labels -->
 <div class="tabLabels" label="CICE-versions">
     <button id="cice5">CICE5</button>

@@ -8,7 +8,7 @@ The [Modular Ocean Model (MOM)](https://mom-ocean.github.io) is one of the ocean
 MOM is an open source development by a consortium of scientists across several government agencies and academic institutions worldwide. 
 
 ### Configurations that use MOM
-There are 2 MOM versions currently used in ACCESS models: [MOM5](https://github.com/mom-ocean/MOM5) and [MOM6](https://github.com/mom-ocean/MOM6).
+There are two MOM versions currently used in ACCESS models: [MOM5](https://github.com/mom-ocean/MOM5) and [MOM6](https://github.com/mom-ocean/MOM6).
 <!-- Tab labels -->
 <div class="tabLabels" label="MOM-versions">
     <button id="mom5">MOM5</button>
