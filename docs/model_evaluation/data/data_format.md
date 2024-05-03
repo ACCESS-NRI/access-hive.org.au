@@ -64,7 +64,8 @@ dataset
 
 ## Other Data formats
 
-There are of course other formats of data that you might come across including grid, um, pp files for models and txt, ascii, dat, tiff for raw observations. For comparisons and evaluations these would be formatted with various extract, translate, load (ETL) methods.
+NetCDF has been described in detail here as it is the most common format for climate data and then for comparison and optimizing evaluation workflows all data would be in the same format. [Observational data](/model_evaluation/data/observations) can come from different institutions and measured with various instruments. These institutions can manage their data for users other than climate researchers, therefore the data can come in other formats including plain text formats. This data can be [_CMORised_](#data-standards), for evaluation frameworks. Reach out on the [Hive Forum](https://forum.access-hive.org.au) for assistance and suggestions of any datasets that may be missing or could be useful.
+
 
 <h6>References</h6>
 <ul class="references">

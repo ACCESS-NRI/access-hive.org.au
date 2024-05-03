@@ -137,7 +137,7 @@ nav:
       - Data Format and Standards: model_evaluation/data/data_format.md      
       - Data Variables: model_evaluation/data/variables.md
       - Observational Data: model_evaluation/data/observations.md
-      - Model Data: model_evaluation/data/model_catalogs.md
+      - Accessing Model Data: model_evaluation/data/model_catalogs.md
         # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
 
     - Model Evaluation: 

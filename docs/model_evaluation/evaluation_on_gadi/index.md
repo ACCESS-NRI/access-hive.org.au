@@ -6,7 +6,7 @@ Model Evaluation and Diagnostics (MED) of ACCESS models includes:
 <ul>
   <li><b>Evaluation</b>
     <br>
-    Model evaluation involves scrutinising a model's performance by comparing its output with observations and through Model/Observation confrontations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as the Coupled Model Intercomparison Project (CMIP).
+    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions.
   <li>
     <b>Diagnostics</b>
     <br>
