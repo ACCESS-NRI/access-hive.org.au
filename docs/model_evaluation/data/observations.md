@@ -1,6 +1,8 @@
-# Observational Data Catalogue
+# Observational Data on Gadi
 
-NCI not only hosts numerous datasets for climate research, it also manages and optimises curated data collections. ACCESS-NRI has a curated data collection for Climate Model Evaluation in NCI project *ct11*.
+NCI not only hosts numerous datasets for climate research, it also manages and optimises curated data collections. Data collections allow for easier access and use of the numerous datasets created by different organisations, optimising evaluation where numerous datasets are used.
+
+ACCESS-NRI has a curated data collection for Climate Model Evaluation in NCI project [*ct11*](https://my.nci.org.au/mancini/project/ct11/join). This _ACCESS-NRI Replicated Datasets for Climate Model Evaluation_ provides observational datasets in a format that can be ingested by evaluation frameworks ACCESS-NRI supports. More information and updates can be found in this [post](https://forum.access-hive.org.au/t/official-release-of-the-access-nri-replicated-datasets-for-climate-model-evaluation-nci-data-collection/1661).
 
 Here, you can browse and search the available <a href="https://geonetwork.nci.org.au/" target="_blank">NCI data collections</a>.
 
@@ -27,7 +29,7 @@ Some examples of NCI data collections include:
 
 NCI also has a <a href="https://opus.nci.org.au/display/NDP/Data+Catalogue" target="_blank">user guide</a> for finding, accessing and citing data.
 
-For example, the catalogue of ACCESS-NRI Replicated Datasets for Climate Model Evaluation (NCI project *ct11*) shown below can be found by entering *ACCESS-NRI* in the <i>NCI Data Catalogue Search</i> field: 
+For example, the catalogue of above mentioned ACCESS-NRI Replicated Datasets for Climate Model Evaluation can be found by entering *ACCESS-NRI* in the <i>NCI Data Catalogue Search</i> field.  
 
 <div style="text-align: center;">
     <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/metadata/f7199_2480_5432_9703" target="_blank"><img src="../../../assets/model_evaluation/obs_data_ct11.png" alt="Edited Screenshot of NCI Data Catalogue for ACCESS-NRI replicated data" width="75%"/></a>
