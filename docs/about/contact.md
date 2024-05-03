@@ -8,7 +8,7 @@ If you encounter problems/bugs about the content of ACCESS-Hive, or you want to 
 
 Check the [User Support page](/about/user_support) if you need help, and for information on what is supported and by whom.
 
-Join the [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/) and find previous related discussions about the hive or the resources listed here, or start your own and make contacts with your community.
+Join the [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/) and find related discussions about the resources listed here, or start your own and make contacts with your community.
 
 ## Places where you can find the ACCESS-NRI team
 

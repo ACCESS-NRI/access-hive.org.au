@@ -1182,6 +1182,12 @@ img.terminalSwitch:hover {
 /* =============================================================== 
   Miscellaneous
 */
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 img.intro-img {
   max-height: 12rem;
   display: block;

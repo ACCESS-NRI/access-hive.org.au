@@ -30,7 +30,7 @@ If you are new to ACCESS, follow the [First Steps](/getting_started/first_steps)
 
 ### Session options
 Launching an ARE session is similar to submitting an interactive [PBS job](https://opus.nci.org.au/display/Help/4.+PBS+Jobs) that enables you to connect to a _Gadi_ computing node.<br>
-Therefore, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) and other options you can select:
+Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) and other options you can select:
 
 - **<span markdown id="walltime-option">Walltime (hours)</span>**<br>
     Number of hours your VDI session will run for (unless manually ended earlier).<br>

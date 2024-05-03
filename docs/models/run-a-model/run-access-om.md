@@ -543,6 +543,11 @@ These options are typically useful to modify the physics used in the model, the 
 These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
 
+## Get Help
+
+If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
+For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
+
 <custom-references>
 - [https://cosima.org.au](https://cosima.org.au)
 - [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020)

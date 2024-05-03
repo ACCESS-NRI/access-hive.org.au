@@ -324,7 +324,7 @@ payu run -f
 This will submit a single job to the queue with a _total experiment length_ of `runtime`. If there is no previous run, it will start from the [`start`](#runtime) date indicated in the `config.yaml` file. Otherwise, it will perform a warm restart from a previously saved restart file.<br>
 
 !!! tip
-    The option `-f` ensures that _payu_ will run even if there is an existing non-empty `work` directory created from a previous failed run.
+    The `-f` option ensures that _payu_ will run even if there is an existing non-empty `work` directory created from a previous failed run.
 
 <terminal-window>
     <terminal-line data="input">payu run -f</terminal-line>

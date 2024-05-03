@@ -572,7 +572,7 @@ To create the required SSH keys, run the following command:
 
 ### Set host to localhost
 To enable _Cylc_ to submit PBS jobs directly from the persistent session, the suite configuration should have its `host` set as `localhost`.<br>
-You can manually set all occurrences of `host` to `localhost` in the suite configuration files. <br>
+You can manually set all occurrences of `host` to `localhost` in the suite configuration files.<br>
 Alternatively, you can run the following command in the suite folder:
 ```
 grep -rl --exclude-dir=.svn "host\s*=" . | xargs sed -i 's/\(host\s*=\s*\).*/\1localhost/g'
