@@ -5,7 +5,19 @@
 [payu]: https://github.com/payu-org/payu
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
 
+[:fontawesome-brands-github: GitHub](https://github.com/ACCESS-NRI/access-om2-configs){ .md-button }
+
 # Run {{ model }}
+
+## About
+
+{{ model }} is an Ocean Sea-Ice model. More information is available in the [model overview](https://access-hive.org.au/models/configurations/access-om/).
+
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
+
+All Model configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""> and [available on GitHub](https://github.com/ACCESS-NRI/access-om2-configs).
+
+{{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-om2-release-information/1602/) and are updated when new releases are made available.
 
 ## Prerequisites
 
@@ -13,7 +25,12 @@
 
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](https://access-hive.org.au/getting_started/first_steps) section.
 
-If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
+!!! note
+
+    In this documentation the same code is sometimes shown in a highlight code-block, and also in 
+    a simulated terminal. The code-block is useful because it is easy to copy the code example to 
+    your clipboard (mouse over the code block and click the icon on the far right of the code block). 
+    The simulated terminal is to illustrate what happens when commands are run on a terminal on `Gadi`.
 
 ### Model-specific prerequisites
 
