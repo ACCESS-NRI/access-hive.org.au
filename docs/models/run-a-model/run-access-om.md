@@ -25,13 +25,6 @@ All Model configurations are open source, licensed under [CC BY 4.0](https://cre
 
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](https://access-hive.org.au/getting_started/first_steps) section.
 
-!!! note
-
-    In this documentation the same code is sometimes shown in a highlight code-block, and also in 
-    a simulated terminal. The code-block is useful because it is easy to copy the code example to 
-    your clipboard (mouse over the code block and click the icon on the far right of the code block). 
-    The simulated terminal is to illustrate what happens when commands are run on a terminal on `Gadi`.
-
 ### Model-specific prerequisites
 
 - **Join the _vk83_ and _qv56_ projects at NCI**<br>
