@@ -15,7 +15,7 @@ function changeAbsoluteUrls() {
       let href = link.getAttribute('href');
       let src = link.getAttribute('src');
       let base = url.startsWith('https://access-hive.org.au/development-website') ? 
-        url.split('/').slice(3,4) : url.split('/').slice(3,5);
+        url.split('/').slice(3,4) : url.split('/').slice(3,5).join('/');
       if (href) {
         link.setAttribute('href',`/${base}${href}`);
       }
@@ -126,7 +126,7 @@ function tabFunctionality() {
   target="_blank" attribute, and add an external-link icon to them.
 */
 function makeLinksExternal() {
-  let extLinks = document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card))");
+  let extLinks = document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card,.text-card))");
   extLinks.forEach(link => {
     link.classList.add('external-link');
     link.setAttribute('target','_blank');
