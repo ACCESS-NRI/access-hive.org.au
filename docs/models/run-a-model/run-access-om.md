@@ -4,16 +4,29 @@
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
+[gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
+
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations](https://github.com/ACCESS-NRI/access-om2-configs){: class="text-card"}
 
 # Run {{ model }}
+
+## About
+
+{{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview](https://access-hive.org.au/models/configurations/access-om/#access-om2).
+
+The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
+
+All Model configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub](https://github.com/ACCESS-NRI/access-om2-configs).
+
+{{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-om2-release-information/1602/) and are updated when new releases are made available.
 
 ## Prerequisites
 
 ### General prerequisites
 
 Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](https://access-hive.org.au/getting_started/first_steps) section.
-
-If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
 
 ### Model-specific prerequisites
 
@@ -93,7 +106,7 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
 
 If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
 
-{{ model }} configurations run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job][PBS job] submission managed by [_payu_][payu].
+{{ model }} configurations run on [_Gadi_][gadi] through a [PBS job][PBS job] submission managed by [_payu_][payu].
 
 The general layout of a _payu_-supported model run consists of two main directories:
 
