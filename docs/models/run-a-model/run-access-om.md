@@ -6,7 +6,7 @@
 [model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} GitHub](https://github.com/ACCESS-NRI/access-om2-configs){: class="text-card"}
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations](https://github.com/ACCESS-NRI/access-om2-configs){: class="text-card"}
 
 # Run {{ model }}
 
