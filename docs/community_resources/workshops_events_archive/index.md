@@ -1,5 +1,5 @@
 # Workshops and Events Archive
 
-<a href="access_workshop_2023" class="med-text bold display-block">ACCESS Community Workshop 2023</a>
+[ACCESS Community Workshop 2023](/community_resources/workshops_events_archive/access_workshop_2023){: class="med-text bold display-block"}
 
-<a href="https://github.com/ACCESS-NRI/CMIP7-Hackathon" target="_blank" class="med-text bold display-block">CMIP7 Hackathon Resources</a>
+[ACCESS-NRI CMIP7 Hackathon](https://github.com/ACCESS-NRI/CMIP7-Hackathon){: class="med-text bold display-block"}

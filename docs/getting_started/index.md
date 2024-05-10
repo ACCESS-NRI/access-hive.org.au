@@ -1,7 +1,7 @@
 # Getting Started
 
 <div class="card-container">
-    <a href="first_steps" class="vertical-card aspect-ratio1to1">
+    <a href="/getting_started/first_steps" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/first_steps_logo.png" alt="First Steps">
         </div>
@@ -9,7 +9,7 @@
             First Steps
         </div>
     </a>
-    <a href="are" class="vertical-card aspect-ratio1to1">
+    <a href="/getting_started/are" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain white-background with-padding" src="/assets/are_logo.svg" alt="ARE">
         </div>

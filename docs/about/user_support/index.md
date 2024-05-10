@@ -8,8 +8,9 @@ Click on the questions to unfold the answers.
 
 ??? question "What is the difference between the ACCESS-Hive and the Hive Forum?"
     ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
-    The Hive forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
-    <p align="center"><img align="center" width="50%" src="/assets/access_hive_links.png" alt="Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive via the Access-Hive portal for documentation and the Hive Forum for exchange and support."></p>
+    The Hive Forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
+
+    ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive and the Hive Forum](/assets/access_hive_links.png){: class="with-border centered" style="width: 50%" loading="lazy"}
 
 ??? question "What is the difference between _model_, _model component_, and _model configuration_?"
     A **model component** (sometimes referred to simply as component) is a codebase that is typically compiled into a single executable. It usually runs independently and communicates with other components via a coupler.
@@ -29,10 +30,11 @@ Click on the questions to unfold the answers.
 ??? question "How do model experiments and model evaluation work together?"
 
     Climate science - like all science - is based on the comparison of different models and hypothesis with observational data. We provide or support the frameworks to perform such comparisons as part of the **model evaluation**. The different model hypotheses, or more practically speaking *model experiments*, are created by executing different model configurations with different setups; for example by perturbing initial conditions or by adding new physical prescriptions to the models.
-    <p align="center"><img align="center" width="75%" src="/assets/how_does_it_work_together.png" alt="Diagram showing how running ACCESS model configurations with different setups create different experiments. These are then compared with each other and observational data as part of the model evaluation. These comparisons are what informs climate science."></p>
+    
+    ![Diagram showing how running ACCESS model configurations with different setups create different experiments](/assets/how_does_it_work_together.png){: class="with-border centered" style="width: 75%" loading="lazy"}
 
 ??? question "What is a control experiment? Why are they important?"
-    A "control experiment" (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
+    A **control experiment** (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
 
     Control experiments are typically designed to represent some neutral climate state. For example, pre-industrial control experiments are designed to represent a modern climate state without significant anthropogenic climate forcing (global warming).
 
@@ -41,7 +43,7 @@ Click on the questions to unfold the answers.
     Control experiments are important because it is an enormous saving in resources if one control experiment can be used by many researchers. It also means researchers can compare their perturbation experiments against not just the control run, but against each other.
 
 ??? question "What is a perturbation experiment?"
-    A perturbation experiment is when a model configuration from a control experiment is altered in some way. The altered configuration is then run, restarting from a point in the control experiment.
+    A **perturbation experiment** is when a model configuration from a control experiment is altered in some way. The altered configuration is then run, restarting from a point in the control experiment.
 
     The perturbation experiment is run in the same way as the control, each successive run using the state (restarts) from the previous run. The perturbation experiment can then be compared with the control experiment to see the effect of the perturbation.
 
@@ -49,13 +51,13 @@ Click on the questions to unfold the answers.
 
 ??? question "Where can I find _observational data_ and _model data_?"
     
-    Both observational and model DATA is hosted by the National Computational Infrastructure (NCI) under different projects. 
+    Both observational and model data is hosted by the National Computational Infrastructure (NCI) under different projects. 
 
-    Go to our [**Observational Data**](../model_evaluation/model_evaluation_observational_catalogs.md) section on the ACCESS-Hive to learn how to find and access observational data.
+    Go to our [**Observational Data**](/model_evaluation/model_evaluation_observational_catalogs) section on the ACCESS-Hive to learn how to find and access observational data.
 
-    Go to our [**Model Data**](../model_evaluation/model_evaluation_model_catalogs/index.md) section on the ACCESS-Hive to learn how to find and access model data.
+    Go to our [**Model Data**](/model_evaluation/model_evaluation_model_catalogs) section on the ACCESS-Hive to learn how to find and access model data.
 
-    In any case, you need to have access to the specific projects and NCI itself in order to read the data. We explain this on our [**Getting Started Pages**](../getting_started/first_steps.md).
+    In both cases, you need to have access to the specific projects at NCI in order to read the data. For more information, check the [**First Steps**](/getting_started/first_steps) page.
 
 ??? question "What is the difference between _teams_ and _working groups_?"
 
@@ -65,9 +67,9 @@ Click on the questions to unfold the answers.
 
 ## Still need help?
 
-Consider asking for help on the <a href="https://forum.access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>. For content supported by ACCESS-NRI a team member will provide support. For other content, a fellow member of the community might be able to help.
+Consider asking for help on the [ACCESS-Hive Forum](https://forum.access-hive.org.au). For content supported by ACCESS-NRI, a team member will provide support. For other content, a fellow member of the community might be able to help.
 
-For further information on what assistance is available on the forum please visit the forum's <a href="https://forum.access-hive.org.au/t/access-help-and-support/908" target="_blank">Help and Support Page</a>. There is also a <a href="https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021" target="_blank">Forum Support FAQ</a> covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
+For further information on what assistance is available on the forum please visit the forum's [Help and Support Page](https://forum.access-hive.org.au/t/access-help-and-support/908). There is also a [Forum Support FAQ](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021) covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
 
 <div class="card-container">
     <a href="/about/user_support/ask_on_forum" class="horizontal-card">

@@ -1,7 +1,7 @@
 # Supported ACCESS Model Configurations
 
 <div class="card-container">
-    <a href="access-cm/" class="horizontal-card">
+    <a href="/models/configurations/access-cm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
         </div>
@@ -12,7 +12,7 @@
             </span>
         </div>
     </a>
-    <a href="access-esm/" class="horizontal-card">
+    <a href="/models/configurations/access-esm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-contain"></img> 
         </div>
@@ -23,7 +23,7 @@
             </span>
         </div>
     </a>
-    <a href="access-om/" class="horizontal-card">
+    <a href="/models/configurations/access-om/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
         </div>

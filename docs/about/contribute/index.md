@@ -1,6 +1,6 @@
 # Contribute to ACCESS-Hive
 
-<img class="intro-img img-cover with-border" src="/assets/github-how-to-contribute.jpg" loading="lazy"/ style="object-position: ">
+![Contribute image](/assets/github-how-to-contribute.jpg){: class="intro-img img-cover with-border" loading="lazy"}
 
 ACCESS-Hive is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
@@ -32,11 +32,11 @@ Contributions are encouraged from any member of the community regarding any aspe
                 Write your own content
             </div>
             <span class="with-padding">
-                Contribute to the ACCESS-Hive user portal by adding content to the ACCESS-Hive Github repository yourself.
+                Contribute to the ACCESS-Hive user portal by adding content to the ACCESS-Hive GitHub repository yourself.
             </span>
         </div>
     </a>
 </div>
 
-[^1]: _"How to contribute" sample image source_: <a href="https://www.freepik.com/free-vector/team-crisis-managers-solving-businessman-problems-employees-with-lightbulb-unraveling-tangle-vector-illustration-teamwork-solution-management-concept_10613678.htm#query=teamwork%20cartoon&position=18&from_view=keyword&track=ais" target="_blank">Image by pch.vector</a> on Freepik
-[^3]: _"Contribute to github?" sample image source_:<a href="https://www.freepik.com/free-vector/business-idea-generation-plan-development-pensive-man-with-lightbulb-cartoon-character-technical-mindset-entrepreneurial-mind-brainstorming-process_11668582.htm#page=9&query=idea%20cartoon&position=30&from_view=search&track=ais" target="_blank">Image by vectorjuice</a> on Freepik
+[^1]: _"How to contribute" sample image source_: [Image by pch.vector](https://www.freepik.com/free-vector/team-crisis-managers-solving-businessman-problems-employees-with-lightbulb-unraveling-tangle-vector-illustration-teamwork-solution-management-concept_10613678.htm#query=teamwork%20cartoon&position=18&from_view=keyword&track=ais) on Freepik
+[^2]: _"Contribute to github?" sample image source_: [Image by vectorjuice](https://www.freepik.com/free-vector/business-idea-generation-plan-development-pensive-man-with-lightbulb-cartoon-character-technical-mindset-entrepreneurial-mind-brainstorming-process_11668582.htm#page=9&query=idea%20cartoon&position=30&from_view=search&track=ais) on Freepik

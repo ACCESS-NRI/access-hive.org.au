@@ -179,23 +179,22 @@ function toggleTerminalAnimations() {
     
     let terminalAnimationsSwitch = document.createElement('img');
     terminalAnimationsSwitch.classList.add('terminalSwitch');
-    document.querySelectorAll('h1').forEach(h1 => {
-      let _switch = terminalAnimationsSwitch.cloneNode(true);
-      _switch.addEventListener('click', toggleState, false);
-      h1.parentElement.insertBefore(_switch, h1);
-    })
-    terminalAnimationsSwitch.remove();
+    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
+    let h1 = document.querySelector('h1');
+    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
     applyState();
   }
 }
 
 /*
-  Add style equals to number of children to all card containers, used for styling the card gaps in CSS
+  Add custom info box for terminal-animations at the top of the page (right after the page title)
 */
-function addCardContainerChildrenNumber() {
-  document.querySelectorAll(".card-container").forEach(container => {
-    container.setAttribute("style",`--num-children: ${container.childElementCount}`);
-  })
+function addTerminalAnimationsInfo() {
+  if (document.querySelector('terminal-window')) {
+    let h1 = document.querySelector('h1');
+    let infoBox = document.createElement('custom-simulated-terminal-info');
+    h1.parentElement.insertBefore(infoBox, h1.nextSibling);
+  }
 }
 
 /*
@@ -248,8 +247,8 @@ function main() {
   makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
+  addTerminalAnimationsInfo();
   makeCitationLinks();
-  // addCardContainerChildrenNumber();
 }
 
 // Run all functions

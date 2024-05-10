@@ -9,7 +9,7 @@
             <span class="bold" >Training Day Program<br>(4 Sep 2023)</span>
         </div>
     </a>
-    <a href="training_materials" class="horizontal-card">
+    <a href="/community_resources/workshops_events_archive/access_workshop_2023/training_materials" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/ACCESS_icon_training.png" class="img-contain"></img> 
         </div>
@@ -38,4 +38,4 @@
     </a>
 </div>
 
-To find out more information about the workshop, check the <a href="https://www.access-nri.org.au/access-community-workshop-2023/" target="_blank">ACCESS Community Workshop 2023 page</a> on the ACCESS-NRI website.
+To find out more information about the workshop, check the [ACCESS Community Workshop 2023 page](https://www.access-nri.org.au/access-community-workshop-2023) on the ACCESS-NRI website.
