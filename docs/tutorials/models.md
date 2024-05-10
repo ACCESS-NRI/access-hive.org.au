@@ -1,7 +1,9 @@
-For an intoduction on how to run a model see <a href="\models\run-a-model\index.md">here</a>.
+# ACCESS-CM2
+
+For an introduction on how to run ACCESS-CM2, see the [Run ACCESS-CM](/models/run-a-model/run-access-cm).
 
 ## 2023 ACCESS workshop
-1. <a href="https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/rose_cylc_example.md" target="_blank">Running ACCESS-CM2 from ARE/Gadi</a>
-2. <a href="https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/ex1_runlength.md" target="_blank">Changing a suite run length</a>
-3. <a href="https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/ex2_co2.md" target="_blank">Changing model physics options</a>
-4. <a href="https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/ex3_troubleshooting.md" target="_blank">Troubleshooting example</a>
+1. [Running ACCESS-CM2 from ARE/Gadi](https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/rose_cylc_example.md)
+2. [Changing a suite run length](https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/ex1_runlength.md)
+3. [Changing model physics options](https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/ex2_co2.md)
+4. [Troubleshooting example](https://github.com/ACCESS-NRI/workshop-training-2023/blob/main/access_rose_cylc/ex3_troubleshooting.md)

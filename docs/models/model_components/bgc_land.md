@@ -1,14 +1,14 @@
 
 #  Biogeochemistry Land component
 
-<img src = "../../../assets/component-logos/component-maps/bgc-land-component-map.png" class="img-contain white-background with-border with-padding intro-img"></img>
+![Biogeochemistry Land component image](/assets/component-logos/component-maps/bgc-land-component-map.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
 
 ## CASA-CNP
 
-The <a href="https://carbonwaterobservatory.csiro.au/casa.html" target="_blank">Carnegie-Ames-Stanford Approach with Carbon-Nitrogen-Phosphorus (CASA-CNP)</a> is the biogeochemical module implemented in the ACCESS land surface model <a href="../land#cable">CABLE</a>. It models the dynamics of carbon pools and the dependence of carbon uptake due to nitrogen and phosphorous limitations.  
+The [Carnegie-Ames-Stanford Approach with Carbon-Nitrogen-Phosphorus (CASA-CNP)](https://carbonwaterobservatory.csiro.au/casa.html) is the biogeochemical module implemented in the ACCESS land surface model [CABLE](/models/model_components/land#cable). It models the dynamics of carbon pools and the dependence of carbon uptake due to nitrogen and phosphorous limitations.  
 
 ### Configurations that use CASA-CNP
 
-CASA-CNP is included in <a href="../../configurations/access-esm">ACCESS-ESM1.5</a>, enabled within CABLE.
+CASA-CNP is included in [ACCESS-ESM1.5](/models/configurations/access-esm), enabled within [CABLE](/models/model_components/land#cable).
 
 

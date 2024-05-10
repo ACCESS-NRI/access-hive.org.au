@@ -1,5 +1,31 @@
 'use strict';
 
+/*
+  Change absolute URLs for development-website and PR-previews (Move to build script)
+*/
+function changeAbsoluteUrls() {
+  let url = window.location.href;
+  if (
+    url.startsWith('https://access-hive.org.au/development-website/') 
+    ||
+    url.startsWith('https://access-hive.org.au/pr-preview/')
+  ) {
+    let links = document.querySelectorAll('a[href^="/"],img[src^="/"]');
+    links.forEach(link => {
+      let href = link.getAttribute('href');
+      let src = link.getAttribute('src');
+      let base = url.startsWith('https://access-hive.org.au/development-website') ? 
+        url.split('/').slice(3,4) : url.split('/').slice(3,5).join('/');
+      if (href) {
+        link.setAttribute('href',`/${base}${href}`);
+      }
+      if (src) {
+        link.setAttribute('src',`/${base}${src}`);
+      }
+    })
+  }
+}
+
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
@@ -96,12 +122,14 @@ function tabFunctionality() {
 
 
 /*
-  Add the external-link icon to <a> tags with target="_blank"
+  Make links that go to a different website 'external' by adding the
+  target="_blank" attribute, and add an external-link icon to them.
 */
-function addExternalLinkIcon() {
-  let extLinks = document.querySelectorAll("article a[target='_blank']:not(:is(.vertical-card,.horizontal-card))");
+function makeLinksExternal() {
+  let extLinks = document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card,.text-card))");
   extLinks.forEach(link => {
     link.classList.add('external-link');
+    link.setAttribute('target','_blank');
   })
 }
 
@@ -151,23 +179,22 @@ function toggleTerminalAnimations() {
     
     let terminalAnimationsSwitch = document.createElement('img');
     terminalAnimationsSwitch.classList.add('terminalSwitch');
-    document.querySelectorAll('h1').forEach(h1 => {
-      let _switch = terminalAnimationsSwitch.cloneNode(true);
-      _switch.addEventListener('click', toggleState, false);
-      h1.parentElement.insertBefore(_switch, h1);
-    })
-    terminalAnimationsSwitch.remove();
+    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
+    let h1 = document.querySelector('h1');
+    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
     applyState();
   }
 }
 
 /*
-  Add style equals to number of children to all card containers, used for styling the card gaps in CSS
+  Add custom info box for terminal-animations at the top of the page (right after the page title)
 */
-function addCardContainerChildrenNumber() {
-  document.querySelectorAll(".card-container").forEach(container => {
-    container.setAttribute("style",`--num-children: ${container.childElementCount}`);
-  })
+function addTerminalAnimationsInfo() {
+  if (document.querySelector('terminal-window')) {
+    let h1 = document.querySelector('h1');
+    let infoBox = document.createElement('custom-simulated-terminal-info');
+    h1.parentElement.insertBefore(infoBox, h1.nextSibling);
+  }
 }
 
 /*
@@ -213,14 +240,15 @@ function makeCitationLinks() {
 
 // Join all functions
 function main() {
+  changeAbsoluteUrls();
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
-  addExternalLinkIcon();
+  makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
+  addTerminalAnimationsInfo();
   makeCitationLinks();
-  // addCardContainerChildrenNumber();
 }
 
 // Run all functions
