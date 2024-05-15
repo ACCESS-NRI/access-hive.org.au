@@ -16,11 +16,18 @@ jobs:
   link-check:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout main repo
+      if: ${{github.event_name == 'schedule'}}
+      uses: actions/checkout@master
+      with:
+        ref: main
+
     - name: Checkout repo
+      if: ${{github.event_name != 'schedule'}}
       uses: actions/checkout@master
     
     - name: Link checker
-      uses: lycheeverse/lychee-action@v1.9.0
+      uses: lycheeverse/lychee-action@v1.10.0
       with:
         fail: true
         args: --config .github/workflows/lychee-config.toml './docs/**/*.md' './docs/**/*.html'
