@@ -1,8 +1,8 @@
 # External Resources
 
-ACCESS-NRI is a constantly growing community. There are many tutorials, references, articles, projects and tools, related to ACCESS-NRI and its documentation hub, ACCESS-Hive.
+ACCESS-NRI is a constantly growing community! There are external tutorials, references, articles, projects and tools, related to ACCESS-NRI and its documentation hub, ACCESS-Hive.
 
-Here's a list of interesting articles and links, constantly updated as relevant resources are found: 
+Here's a list of interesting articles and links, constantly updated as relevant external resources are found: 
 
 <div class="card-container">
     <a href="https://www.climatechange.ai" target="_blank" class="horizontal-card">
