@@ -27,6 +27,12 @@
         </div>
         <div class="card-text-container bold">Model Evaluation Links</div>
     </a>
+    <a href="/community_resources/external_resources" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img class="img-cover" src="/assets/external-links.jpg" alt="External Resources and Links">
+        </div>
+        <div class="card-text-container bold">External Resources</div>
+    </a>
     <a href="/community_resources/glossaries" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-cover" src="/assets/glossary.png" alt="Glossaries">
