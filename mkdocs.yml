@@ -71,9 +71,6 @@ plugins:
 markdown_extensions: 
   - attr_list
   - abbr
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - md_in_html
   - admonition
   - pymdownx.details
@@ -82,12 +79,16 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 
+  - pymdownx.keys
   - def_list
   - footnotes
   - tables
-  - pymdownx.keys
   - toc:
       title: On this page
 
