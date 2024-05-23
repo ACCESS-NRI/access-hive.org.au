@@ -168,6 +168,7 @@ jobs:
           pr_sha=($(jq '.headRefOid' <<< "$open_pr_info"))
           if [[ -n $pr_nums ]]; then
             echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
+            echo "pr_nums=[$(perl -pe 's/\s(?!$)/,/g' <<< ${pr_nums[@]})]" >> "$GITHUB_OUTPUT"
             for i in ${!pr_nums[@]}; do
               retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
               retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
