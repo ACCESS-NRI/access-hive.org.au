@@ -20,295 +20,260 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
-
-      - name: Setup pr-preview
-        # If the PR is not from the development branch and is new (or has been reopened),
-        # setup the message that will get updated with the URL after deployment
-        if: ${{ github.event.pull_request.head.ref != 'development' && github.event.action != 'closed' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            PR preview
-
-            :---:
-
-            🛫 Deployment still ongoing.<br>
-            Preview URL will be available at the end of the deployment.
-
-            For more information, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.
-
-            ${{ env.DATE }}
-            "
-
-      - name: Setup development preview
-        # If the PR is from the development branch and is new (or has been reopened),
-        # setup the message that will get updated with the URL after deployment
-        if: ${{ github.event.pull_request.head.ref == 'development' && github.event.action != 'closed' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            Development website preview
-
-            :---:
-
-            🛫 Deployment still ongoing.<br>
-            Preview URL will be available at the end of the deployment.
-
-            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
-
-            ${{ env.DATE }}
-            "
-
-      # If the PR is closed, remove the pr-preview URL
-      - name: Remove pr-preview URL link
-        if: ${{github.event.action == 'closed' && github.event.pull_request.head.ref != 'development' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            PR Preview
-
-            :---:
-
-            🛬 Link removed because the pull request was closed.
-
-            ${{ env.DATE }}
-            "
-
-      # If the PR is closed, remove the development URL
-      - name: Remove development URL
-        if: ${{github.event.action == 'closed' && github.event.pull_request.head.ref == 'development' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          # GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            Development website preview
-
-            :---:
-
-            🛬 Preview removed because the pull request was closed.
-
-            ${{ env.DATE }}
-            "
-
-  build:
-    # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
-    concurrency:
-      group: build-deploy
-      cancel-in-progress: true
-    runs-on: ubuntu-latest
-    outputs:
-      pr_nums: ${{ steps.build.outputs.pr_nums }}
-      url: ${{ steps.url.outputs.url }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          token: ${{ secrets.ADMIN_TOKEN }}
-          ref: main
-
-      - name: Get URL
-        id: url
-        run: echo "url=$(cat docs/CNAME)" >> "$GITHUB_OUTPUT"
-
-      - name: Python setup
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.9.x
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      # Build full website using main, development and open PRs head branches
-      # (excluding `development` and `main` as PR head branches)
-      - name: Build full website
-        id: build
-        shell: bash
+      - name: Set up PR preview title
+        # Set up infos for PR (new, updated or reopened branch not having a head as 'development' or 'main' branch)
+        if: ${{ github.event.pull_request.head.ref != 'development' && github.event.pull_request.head.ref != 'main' }}
         run: |
-          retry() {
-            command="$1"
-            n_tries="$2"
-            wait="$3"
-            exit_msg="$4"
-            eval "$command"
-            until [ $? == 0 ]; do
-              if [ $i -eq $((n_tries - 1)) ]; then
-                echo "$exit_msg"
-                exit 1
-              else
-                ((i++))
-              fi
-              sleep $wait
-              eval "$command"
-            done
-          }
-
-          git fetch --all
-          echo "Build main website"
-          retry "git checkout main" 5 1 "Failed to checkout 'main'."
-          retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
-          echo "Build development website"
-          retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
-          retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
-          echo "Build PR websites"
-          open_pr_info=$(gh pr list --json headRefOid,number,headRefName --jq '.[] | select(.headRefName!="development" and .headRefName!="main")')
-          pr_nums=($(jq '.number' <<< "$open_pr_info"))
-          pr_sha=($(jq '.headRefOid' <<< "$open_pr_info"))
-          if [[ -n $pr_nums ]]; then
-            echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
-            echo "pr_nums=[$(perl -pe 's/\s(?!$)/,/g' <<< ${pr_nums[@]})]" >> "$GITHUB_OUTPUT"
-            for i in ${!pr_nums[@]}; do
-              retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
-              retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
-            done
-          else
-            echo "No open PR found."
-          fi
-          echo "Set the right file permissions"
-          chmod -c -R +rX ../website
-
-      - name: Create artifact for deployment to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ../website
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
-    concurrency:
-      group: build-deploy
-      cancel-in-progress: true
-    outputs:
-      success: ${{ steps.success.outputs.success }}
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
-        with:
-          token: ${{ secrets.ADMIN_TOKEN }}
-
-      - name: Output success status
-        id: success
-        run: |
-          echo "success=1" >> "$GITHUB_OUTPUT"
-
-  # Set pr-preview URL
-  pr-preview:
-    needs: [build, deploy]
-    # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
-    if: ${{ needs.build.outputs.pr_nums }}
-    runs-on: ubuntu-latest
-    # Run the same job for each of the open PRs found
-    strategy:
-      matrix:
-        pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
-    steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
-
-      - name: Set pr-preview URL
-        if: ${{github.event.action != 'closed'}}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ matrix.pr_nums }}
-          message: "\
-            PR Preview
-
-            :---:
-
-            🚀 Deployed preview to
-            https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
-
-            ${{ env.DATE }}
-            "
-  # Add development URL
-  development-preview:
-    needs: [build, deploy]
-    # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
-    if: ${{ github.event.pull_request.head.ref == 'development' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
-
-      - name: Add development-preview URL
-        if: ${{github.event.action != 'closed'}}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            Development website preview
-
-            :---:
-
-            🚀 Development website deployed to
-            https://${{ needs.build.outputs.url }}/development-website
-
-            ${{ env.DATE }}
-            "
-
-  # Change preview message if deployment fails
-  failed-preview:
-    needs: deploy
-    # If the action failed (but was not cancelled) and was fired because of a pull request (not closed)
-    if: ${{ always() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed' && needs.deploy.outputs.success != '1' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get date
-        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
-
-      - name: Change development-preview message
+          echo 'TITLE=PR preview' >> $GITHUB_ENV
+      
+      - name: Set up development preview title
+        # Set up infos for PR (new, updated or reopened branch not having a head as 'development' or 'main' branch)
         if: ${{ github.event.pull_request.head.ref == 'development' }}
+        run: |
+          echo 'TITLE=Development website preview' >> $GITHUB_ENV
+
+      - name: Get date
+        run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Set up open PR message
+        if: ${{ github.event.action != 'closed' }}
+        run: |
+          MULTI_LINES_TEXT="${{ env.TITLE }}\n
+          :---:\n
+          🛫 Deployment still ongoing.<br>
+          Preview URL will be available at the end of the deployment.\n
+          For more information, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.\n
+          ${{ env.DATE }}"
+          
+          echo "MSG<<EOF" >> $GITHUB_ENV
+          echo -e $MULTI_LINES_TEXT >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      
+      - name: Set up closed PR message
+        if: ${{ github.event.action == 'closed' }}
+        run: |
+          MULTI_LINES_TEXT="${{ env.TITLE }}\n
+          :---:\n
+          🛬 Preview link removed because the pull request was closed."
+          
+          echo "MSG<<EOF" >> $GITHUB_ENV
+          echo -e $MULTI_LINES_TEXT >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Set preview
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
-          message: "\
-            Development website preview
+          message: ${{ env.MSG }}
 
-            :---:
+  # build:
+  #   # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
+  #   concurrency:
+  #     group: build-deploy
+  #     cancel-in-progress: true
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     pr_nums: ${{ steps.build.outputs.pr_nums }}
+  #     url: ${{ steps.url.outputs.url }}
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@master
+  #       with:
+  #         token: ${{ secrets.ADMIN_TOKEN }}
+  #         ref: main
 
-            ⚠️ There was an error in the deployment of the development website.
-            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+  #     - name: Get URL
+  #       id: url
+  #       run: echo "url=$(cat docs/CNAME)" >> "$GITHUB_OUTPUT"
 
-            ${{ env.DATE }}
-            "
+  #     - name: Python setup
+  #       uses: actions/setup-python@v5
+  #       with:
+  #         python-version: 3.9.x
 
-      - name: Change pr-preview message
-        if: ${{ github.event.pull_request.head.ref != 'development' }}
-        uses: thollander/actions-comment-pull-request@v2.4.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          comment_tag: pr-preview
-          pr_number: ${{ github.event.number }}
-          message: "\
-            PR preview
+  #     - name: Install dependencies
+  #       run: pip install -r requirements.txt
 
-            :---:
+  #     # Build full website using main, development and open PRs head branches
+  #     # (excluding `development` and `main` as PR head branches)
+  #     - name: Build full website
+  #       id: build
+  #       shell: bash
+  #       run: |
+  #         retry() {
+  #           command="$1"
+  #           n_tries="$2"
+  #           wait="$3"
+  #           exit_msg="$4"
+  #           eval "$command"
+  #           until [ $? == 0 ]; do
+  #             if [ $i -eq $((n_tries - 1)) ]; then
+  #               echo "$exit_msg"
+  #               exit 1
+  #             else
+  #               ((i++))
+  #             fi
+  #             sleep $wait
+  #             eval "$command"
+  #           done
+  #         }
 
-            ⚠️ There was an error in the pr-preview deployment.
-            For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+  #         git fetch --all
+  #         echo "Build main website"
+  #         retry "git checkout main" 5 1 "Failed to checkout 'main'."
+  #         retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
+  #         echo "Build development website"
+  #         retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
+  #         retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
+  #         echo "Build PR websites"
+  #         open_pr_info=$(gh pr list --json headRefOid,number,headRefName --jq '.[] | select(.headRefName!="development" and .headRefName!="main")')
+  #         pr_nums=($(jq '.number' <<< "$open_pr_info"))
+  #         pr_sha=($(jq '.headRefOid' <<< "$open_pr_info"))
+  #         if [[ -n $pr_nums ]]; then
+  #           echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
+  #           echo "pr_nums=[$(perl -pe 's/\s(?!$)/,/g' <<< ${pr_nums[@]})]" >> "$GITHUB_OUTPUT"
+  #           for i in ${!pr_nums[@]}; do
+  #             retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
+  #             retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
+  #           done
+  #         else
+  #           echo "No open PR found."
+  #         fi
+  #         echo "Set the right file permissions"
+  #         chmod -c -R +rX ../website
 
-            ${{ env.DATE }}
-            "
+  #     - name: Create artifact for deployment to GitHub Pages
+  #       uses: actions/upload-pages-artifact@v2
+  #       with:
+  #         path: ../website
+
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   # Cancel any previous build/deploy jobs that are still running (no need to build/deploy multiple times)
+  #   concurrency:
+  #     group: build-deploy
+  #     cancel-in-progress: true
+  #   outputs:
+  #     success: ${{ steps.success.outputs.success }}
+  #   permissions:
+  #     pages: write # to deploy to Pages
+  #     id-token: write # to verify the deployment originates from an appropriate source
+
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       uses: actions/deploy-pages@v2
+  #       with:
+  #         token: ${{ secrets.ADMIN_TOKEN }}
+
+  #     - name: Output success status
+  #       id: success
+  #       run: |
+  #         echo "success=1" >> "$GITHUB_OUTPUT"
+
+  # # Set pr-preview URL
+  # pr-preview:
+  #   needs: [build, deploy]
+  #   # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
+  #   if: ${{ needs.build.outputs.pr_nums }}
+  #   runs-on: ubuntu-latest
+  #   # Run the same job for each of the open PRs found
+  #   strategy:
+  #     matrix:
+  #       pr_nums: ${{fromJson(needs.build.outputs.pr_nums)}}
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+  #     - name: Set pr-preview URL
+  #       if: ${{github.event.action != 'closed'}}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ matrix.pr_nums }}
+  #         message: "\
+  #           PR Preview
+
+  #           :---:
+
+  #           🚀 Deployed preview to
+  #           https://${{ needs.build.outputs.url }}/pr-preview/pr-${{ matrix.pr_nums }}
+
+  #           ${{ env.DATE }}
+  #           "
+  # # Add development URL
+  # development-preview:
+  #   needs: [build, deploy]
+  #   # If there are open PRs (whose head branch is neither `development` nor `main`), run this job
+  #   if: ${{ github.event.pull_request.head.ref == 'development' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+  #     - name: Add development-preview URL
+  #       if: ${{github.event.action != 'closed'}}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ github.event.number }}
+  #         message: "\
+  #           Development website preview
+
+  #           :---:
+
+  #           🚀 Development website deployed to
+  #           https://${{ needs.build.outputs.url }}/development-website
+
+  #           ${{ env.DATE }}
+  #           "
+
+  # # Change preview message if deployment fails
+  # failed-preview:
+  #   needs: deploy
+  #   # If the action failed (but was not cancelled) and was fired because of a pull request (not closed)
+  #   if: ${{ always() && '!cancelled()' && github.event_name == 'pull_request' && github.event.action != 'closed' && needs.deploy.outputs.success != '1' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get date
+  #       run: echo "DATE=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+  #     - name: Change development-preview message
+  #       if: ${{ github.event.pull_request.head.ref == 'development' }}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ github.event.number }}
+  #         message: "\
+  #           Development website preview
+
+  #           :---:
+
+  #           ⚠️ There was an error in the deployment of the development website.
+  #           For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+
+  #           ${{ env.DATE }}
+  #           "
+
+  #     - name: Change pr-preview message
+  #       if: ${{ github.event.pull_request.head.ref != 'development' }}
+  #       uses: thollander/actions-comment-pull-request@v2.4.3
+  #       with:
+  #         GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+  #         comment_tag: pr-preview
+  #         pr_number: ${{ github.event.number }}
+  #         message: "\
+  #           PR preview
+
+  #           :---:
+
+  #           ⚠️ There was an error in the pr-preview deployment.
+  #           For more information, please check the [Actions](https://github.com/${{github.repository}}/actions) tab.
+
+  #           ${{ env.DATE }}
+  #           "
