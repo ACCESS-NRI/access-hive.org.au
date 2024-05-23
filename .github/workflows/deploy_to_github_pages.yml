@@ -90,7 +90,7 @@ jobs:
         if: ${{github.event.action == 'closed' && github.event.pull_request.head.ref == 'development' }}
         uses: thollander/actions-comment-pull-request@v2.4.3
         with:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           comment_tag: pr-preview
           pr_number: ${{ github.event.number }}
           message: "\
@@ -163,9 +163,9 @@ jobs:
           retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
           retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
           echo "Build PR websites"
-          open_pr_nums_and_sha=$(gh pr list --json headRefOid,number --jq '.[]')
-          pr_nums=($(jq '.number' <<< "$open_pr_nums_and_sha"))
-          pr_sha=($(jq '.headRefOid' <<< "$open_pr_nums_and_sha"))
+          open_pr_info=$(gh pr list --json headRefOid,number,headRefName --jq '.[] | select(.headRefName!="development" and .headRefName!="main")')
+          pr_nums=($(jq '.number' <<< "$open_pr_info"))
+          pr_sha=($(jq '.headRefOid' <<< "$open_pr_info"))
           if [[ -n $pr_nums ]]; then
             echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
             for i in ${!pr_nums[@]}; do
