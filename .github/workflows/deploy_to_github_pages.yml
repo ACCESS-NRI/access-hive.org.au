@@ -159,14 +159,11 @@ jobs:
           retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
           retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
           echo "Build PR websites"
-          command="pr_list=\$(curl -s https://api.github.com/repos/${{github.repository}}/pulls?state=opened \
-          | jq '.[] | select(.head.label!=\"${{ github.repository_owner }}:development\" and .head.label!=\"${{ github.repository_owner }}:main\")')"
-          retry "$command" 5 1 "Failed to fetch opened PRs."
-          pr_nums=($(jq '.number' <<< $pr_list))
+          open_pr_nums_and_sha=$(gh pr list --json headRefOid,number --jq '.[]')
+          pr_nums=($(jq '.number' <<< "$open_pr_nums_and_sha"))
+          pr_sha=($(jq '.headRefOid' <<< "$open_pr_nums_and_sha"))
           if [[ -n $pr_nums ]]; then
-            echo "Found PR numbers: $(sed 's/\s/, /g' <<< ${pr_nums[@]})."
-            pr_sha=($(jq '.head.sha' <<< $pr_list))
-            echo "pr_nums=$(sed 's/\s/,/g' <<< [${pr_nums[@]}])" >> "$GITHUB_OUTPUT"
+            echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
             for i in ${!pr_nums[@]}; do
               retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
               retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
@@ -174,7 +171,7 @@ jobs:
           else
             echo "No open PR found."
           fi
-          echo "Give the right file permissions"
+          echo "Set the right file permissions"
           chmod -c -R +rX ../website
 
       - name: Create artifact for deployment to GitHub Pages
