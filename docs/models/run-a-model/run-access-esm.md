@@ -1,6 +1,12 @@
 {% set model = "ACCESS-ESM" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 
+!!! bug
+    There is a known issue with the {{ model }} configurations currently set up in the GitHub repository below.
+    {{ model }} configurations are currently being updated and an ACCESS-NRI release will come
+    in the following weeks.
+    If you encounter problems with the current guide in this page, consider asking for help on the [ACCESS-Hive Forum](https://forum.access-hive.org.au).
+
 # Run {{ model }}
 
 ## Prerequisites
