@@ -29,7 +29,7 @@ Please follow the guidelines below to make the Hive consistent among all the pag
 
 ### Styling Markdown using CSS
 #### Attribute lists
-To style Markdown using custom CSS, you can use [attribute lists](https://python-markdown.github.io/extensions/attr_list/#limitations) by adding the desired CSS style (in-line or adding classes as defined in the `access-nri.css` file) inside curly brackets (starting with a colon) right after the markdown syntax.
+To style Markdown using custom CSS, you can use [attribute lists](https://python-markdown.github.io/extensions/attr_list/) by adding the desired CSS style (in-line or adding classes as defined in the `access-nri.css` file) inside curly brackets (starting with a colon) right after the markdown syntax.
 
 For example, to make an image 50%-wide and with rounded borders, you can write the following:
 ```

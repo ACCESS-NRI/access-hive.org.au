@@ -10,7 +10,7 @@ Check the [User Support page](/about/user_support) if you need help, and for inf
 
 Join the [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/) and find related discussions about the resources listed here, or start your own and make contacts with your community.
 
-## Places where you can find the ACCESS-NRI team
+## Get in contact with the ACCESS-NRI team
 
 :fontawesome-brands-discourse: [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/)
 
@@ -19,7 +19,5 @@ Join the [ACCESS-Hive Community Forum](https://forum.access-hive.org.au/) and fi
 :fontawesome-brands-twitter: [ACCESS-NRI Twitter](https://twitter.com/ACCESS_NRI)
 
 :fontawesome-brands-linkedin: [ACCESS-NRI LinkedIn](https://www.linkedin.com/in/access-nri)
-    
-:fontawesome-brands-slack: [ACCESS-NRI Slack channel](https://access-nri.slack.com)
 
 [^1]: _"Contact" image source_: [Image by pch.vector](https://www.freepik.com/free-vector/contact-concept-landing-page_5155590.htm#page=5&query=contact%20cartoon&position=6&from_view=search&track=ais) on Freepik
