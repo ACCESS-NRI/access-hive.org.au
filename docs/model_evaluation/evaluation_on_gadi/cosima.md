@@ -1,7 +1,7 @@
 # COSIMA Cookbook on Gadi
 
 
-COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings together Australian researchers involved in global ocean and sea ice modelling. The <i>COSIMA Cookbook</i> is a collection of <i>cosima-recipes</i> curated on <i>Gadi</i> for analysing output from ocean-sea ice models.
+COSIMA is the Consortium for Ocean-Sea Ice Modelling in Australia, which brings together Australian researchers involved in global ocean and sea ice modelling. The <i>COSIMA Cookbook</i> is a collection of computational notebooks (called <i>cosima-recipes</i>) in the form of tutorials and documented examples that are curated on <i>Gadi</i> for analysing output from ocean-sea ice models.
 
 ???+ warning "Support Level: Supported on <i>Gadi</i>, but not owned by ACCESS-NRI"
     <!-- Who develped the tool? -->

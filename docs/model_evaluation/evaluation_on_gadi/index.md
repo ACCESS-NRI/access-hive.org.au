@@ -1,7 +1,7 @@
 # Model Evaluation on Gadi
-## What is MED?
+## What is Model Evaluation and Diagnostics?
 
-Model Evaluation and Diagnostics (MED) of ACCESS models includes:
+Model Evaluation and Diagnostics (often shortened to "MED" at ACCESS-NRI) of ACCESS models includes:
 
 <ul>
   <li><b>Evaluation</b>
@@ -10,7 +10,7 @@ Model Evaluation and Diagnostics (MED) of ACCESS models includes:
   <li>
     <b>Diagnostics</b>
     <br>
-    Model diagnostics is essentially constant monitoring of model runs to detect any anomalies or inconsistencies. Thorough analysis of outputs are used to verify the model's accuracy over time.
+    Model diagnostics is the constant monitoring of model runs to detect any anomalies or inconsistencies. 
     <br>
 </ul>
 

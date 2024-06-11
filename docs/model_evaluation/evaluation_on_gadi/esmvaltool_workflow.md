@@ -2,7 +2,7 @@
 
 ## What is ESMValTool?
 
-The Earth System Model Evaluation Tool (ESMValTool) is a tool developed for evaluation of Earth System Models in CMIP (Climate Model Intercomparison Projects). It allows for routine comparison of single or multiple models, either against predecessor versions or against observations. ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. It is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the Coupled Model Intercomparison Project CMIP ensemble. 
+The Earth System Model Evaluation Tool (ESMValTool) is a tool developed for evaluation of Earth System Models in CMIP (Climate Model Intercomparison Projects). It allows for routine comparison of single or multiple models, either against predecessor versions or against observations. ESMValTool is a community-developed climate model diagnostics and evaluation software package, driven both by computational performance and scientific accuracy and reproducibility. It is open to both users and developers, encouraging open exchange of diagnostic source code and evaluation results from the CMIP ensemble of models. 
 
 For more information, refer to the official <a href="https://docs.esmvaltool.org/en/latest" target="_blank">ESMValTool documentation</a>.
 
@@ -15,7 +15,7 @@ For more information, refer to the official <a href="https://docs.esmvaltool.org
     </a>
 </div> -->
 
-<div class="note">ACCESS-NRI is supporting an NCI configuration of ESMValTool under the name <i>ESMValTool-workflow</i>. </div> 
+<div class="note">ACCESS-NRI is supporting a Gadi-specific configuration of ESMValTool under the name <i>ESMValTool-workflow</i>. </div> 
 
 *ESMValTool-workflow* is the ACCESS-NRI software and data infrastructure that enables the ESMValTool evaluation framework on NCI Gadi. It includes the <a href="https://github.com/ESMValGroup/ESMValTool" target="_blank">ESMValTool</a>/<a href="https://github.com/ESMValGroup/ESMValCore" target="_blank">ESMValCore</a> Python packages, the <a href="https://docs.esmvaltool.org/en/latest/recipes/index.html" target="_blank">ESMValTool collection of recipes and diagnostics</a> and some <a href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/metadata/f0550_0998_4567_4139" target="_blank">observational datasets</a>. *ESMValTool-workflow* is configured to use the existing NCI supported CMIP data collections. 
 
@@ -23,7 +23,7 @@ For more information, refer to the official <a href="https://docs.esmvaltool.org
 
 ### Pre-requisites
 
-<i>ESMValTool</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> project on Gadi.To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the <i>xp65</i> NCI projects.
+<i>ESMValTool</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> project on Gadi.To enable the  <i>ESMValTool-workflow</i>, you need to be a member of the <i>xp65</i> NCI project.
 
 Depending on your needs, you may want to also join the following supported data collections:
 

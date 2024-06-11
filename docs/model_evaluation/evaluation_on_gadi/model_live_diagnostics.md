@@ -2,11 +2,11 @@
 
 ## What is Model Live Diagnostics?
 
-<i>Model Live Diagnostics</i> is a simple, accessible and easy to use Jupter-based framework for the ACCESS modelling community to monitor, visualise and evaluate the behaviour of models in real time (<i>live</i>) while they run on <i>Gadi</i>.
+<i>Model Live Diagnostics</i> is a simple, accessible and easy-to-use Jupyter notebook-based framework for the ACCESS modelling community to monitor, visualise and evaluate the behaviour of models in real time (<i>live</i>) while they run on <i>Gadi</i>.
 
 In addition to monitoring a live model, the package also provides the functionality to load, visualise and compare legacy ACCESS model data with the live model.
 
-For more information and tutorials, please visit <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics Documentation</a>
+Below, we show an example of the Model Live Diagnostics Tool. For more information and tutorials, please visit <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" target="_blank">Model Diagnostics Documentation</a>.
 <!-- <div class="card-container">
     <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
         <div class="card-image-container">
@@ -16,9 +16,9 @@ For more information and tutorials, please visit <a href="https://med-live-diagn
     </a>
 </div> -->
 
-## Showcase: Monitoring total seawater mass of an ACCESS-CM2 run
+## Example: Monitoring total seawater mass of an ACCESS-CM2 run
 
-In this showcase, monitoring the progress of an [ACCESS Coupled Model 2 (ACCESS-CM2)](/models/run-a-model/run-access-cm) run will be shown.
+This example provides a brief demonstration of how the Model Live Diagnostics tool can be use to monitor the progress of an [ACCESS Coupled Model 2 (ACCESS-CM2)](/models/run-a-model/run-access-cm) run.
 
 To start a session that automatically checks for new model output within a given period of 20 minutes: 
 

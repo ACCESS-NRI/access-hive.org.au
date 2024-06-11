@@ -4,7 +4,7 @@
 
 Model evaluation in climate science is the process of assessing the performance and reliability of computational models that simulate the Earth's climate system. It involves comparing model predictions to observed data to determine the model's accuracy and usefulness. In doing so, we can understand how well a model represents real-world climate processes and make predictions about future climate trends. Such rigorous model evaluation allows scientists to identify model strengths, weaknesses and uncertainties, as well as refine models to enhance their predictive capabilities. 
 -->
-If you are new to using Model Evaluation and Diagnostics tools on Gadi visit [First Steps](/getting_started/first_steps) section.
+If you are new to using the Gadi supercomputer, visit the [First Steps](/getting_started/first_steps) section for instructions on how to get an account, log in, and get set up to access climate data on Gadi.
 <!--## Prerequisites
 
 If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md): -->
