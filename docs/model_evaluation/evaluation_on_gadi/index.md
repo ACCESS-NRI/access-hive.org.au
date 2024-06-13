@@ -3,18 +3,14 @@
 
 Model Evaluation and Diagnostics (often shortened to "MED" at ACCESS-NRI) of ACCESS models includes:
 
-<ul>
-  <li><b>Evaluation</b>
-    <br>
-    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions.
-  <li>
-    <b>Diagnostics</b>
-    <br>
-    Model diagnostics is the constant monitoring of model runs to detect any anomalies or inconsistencies. 
-    <br>
-</ul>
+- **Evaluation**<br>
+    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions. For further explainations on experiements see [here](about/user_support/#frequently-asked-questions-faq).
 
-ACCESS-NRI currently provides support for the following model evaluation frameworks on <i>Gadi</i>:
+- **Diagnostics**<br>
+    Model diagnostics is the constant monitoring of model runs to detect any anomalies or inconsistencies. 
+
+
+While evaluation and diagnostics can be described separately they often overlap and can use similar tools. ACCESS-NRI currently provides support for the following model evaluation and diagnostics frameworks on <i>Gadi</i>:
 
 <div class="card-container">
     <a href="esmvaltool_workflow" class="vertical-card aspect-ratio2to1">

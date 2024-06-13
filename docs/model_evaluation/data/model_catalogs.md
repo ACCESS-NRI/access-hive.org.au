@@ -21,7 +21,7 @@ Each entry in the table corresponds to a different product, where the columns co
 
 The ACCESS-NRI Intake catalog enables users to find products that satisfy their query and to subsequently load their data without having to know the location and structure of the underlying files.
 
-## Showcase: use ACCESS-NRI Intake to find, load and plot data
+## Example: use ACCESS-NRI Intake to find, load and plot data
 
 A simple use case of the ACCESS-NRI Intake catalog is a user wants to plot a timeseries of a variable from a specific data product. 
 <br>
