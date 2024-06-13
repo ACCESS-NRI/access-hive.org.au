@@ -1,3 +1,5 @@
+<!-- SUPERSEDED COPY - current in evaluation_on_gadi folder (model_live_diagnostics.md) 
+this page is referenced in run-a-model pages and links will be updated -->
 # ACCESS-NRI Model Live Diagnostics
 
 ## What is Model Live Diagnostics?

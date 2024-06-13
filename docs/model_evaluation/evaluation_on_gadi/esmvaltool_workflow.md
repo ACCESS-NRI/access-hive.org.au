@@ -44,15 +44,15 @@ To load the the *esmvaltool* module, execute the following commands:
     module load esmvaltool
 ```
 
-*esmvaltool* is pre-configured to access CMIP and observation datasets available on Gadi.
-By default, *ESMValTool* looks for the *config_user.yml* file in the home directory, inside the *.esmvaltool* folder.
-You can get a copy by running:
+This *esmvaltool* module is pre-configured to access CMIP and observation datasets available on Gadi.
+By default, ESMValTool looks for the *config_user.yml* file in the home directory, inside the *.esmvaltool* folder.
+To start, you can get a copy in your home directory, *.esmvaltool* folder by running the below or use the `--path=dest` flag to save elsewhere.
 
 ```
-esmvaltool config get_config_user --path=dest
+esmvaltool config get_config_user
 ```
 
-To list which <i>ESMValTool</i> recipes are available on <i>Gadi</i>, run:
+To list which ESMValTool recipes are available on <i>Gadi</i>, run:
 ```
 esmvaltool recipes list
 ```
@@ -106,9 +106,9 @@ A list of <i>ESMValTool</i> recipes available on <i>Gadi</i> can be found on the
 
 ## Support
 
-To get help running your <i>ESMValTool</i> recipe on <i>Gadi</i>, you can submit an issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> GitHub repository or ask for help on the <a href="https://access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
+To get help running your ESMValTool recipe on <i>Gadi</i>, you can submit an issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> GitHub repository or ask for help on the <a href="https://access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
 
-General <i>ESMValTool</i> support (i.e. non-specific to <i>Gadi</i>) can be found on the <a href="https://github.com/ESMValGroup/ESMValTool/discussions" target="_blank">ESMValTool Discussions</a> page, where users can also post technical questions on the <i>ESMValTool</i> installation, application and development.
+General ESMValTool support (i.e. non-specific to <i>Gadi</i>) can be found on the <a href="https://github.com/ESMValGroup/ESMValTool/discussions" target="_blank">ESMValTool Discussions</a> page, where users can also post technical questions on the ESMValTool installation, application and development.
 
 ### Recipes and diagnostics
 
