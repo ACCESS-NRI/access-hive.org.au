@@ -130,27 +130,24 @@ nav:
 
   - Data and Model Evaluation:
     - model_evaluation/index.md
-    - Getting Started: 
-      - model_evaluation/model_evaluation_getting_started/index.md
-      - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
-      - Data Format and Variables: model_evaluation/model_evaluation_getting_started/model_variables/index.md
-        # - CMIP6: model_evaluation/model_evaluation_getting_started/model_variables/variables_cmip6.md
-        # - ERA5: model_evaluation/model_evaluation_getting_started/model_variables/variables_era5.md
-    - Observational Data: model_evaluation/model_evaluation_observational_catalogs.md
-    - Model Data: model_evaluation/model_evaluation_model_catalogs/index.md
+    - Data: 
+      - model_evaluation/data/index.md
+      # - model_evaluation/model_evaluation_getting_started/index.md
+      # - Model Evaluation on Gadi: model_evaluation/model_evaluation_getting_started/model_evaluation_getting_started.md
+      - Data Format and Standards: model_evaluation/data/data_format.md      
+      - Data Variables: model_evaluation/data/variables.md
+      - Observational Data: model_evaluation/data/observations.md
+      - Accessing Model Data: model_evaluation/data/model_catalogs.md
         # - Search Model Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_search_models.md
-        # - Add your Model to the Catalog: model_evaluation/model_evaluation_model_catalogs/model_evaluation_add_models.md
-        # - Model Format Processing: model_evaluation/model_evaluation_data_processing.md
-    - Model Live Diagnostics:
-      - model_evaluation/model_diagnostics/index.md
-    - Evaluation Tools: 
-      - model_evaluation/model_evaluation_on_gadi/index.md
+
+    - Model Evaluation: 
+      - model_evaluation/evaluation_on_gadi/index.md
       # - Frameworks on Gadi:
-      - ILAMB: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_ilamb.md
-      - ESMValTool: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool.md
-      - COSIMA cookbook: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_pangeo_cosima.md
-      - METplus: model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_metplus.md
-      # - Live-Diagnostics on Gadi: model_evaluation/model_evaluation_live_diagnostics.md
+      - ESMValTool: model_evaluation/evaluation_on_gadi/esmvaltool_workflow.md     
+      - ILAMB: model_evaluation/evaluation_on_gadi/ilamb_workflow.md   
+      - COSIMA cookbook: model_evaluation/evaluation_on_gadi/cosima.md
+      - Model Live Diagnostics: model_evaluation/evaluation_on_gadi/model_live_diagnostics.md
+      - METplus: model_evaluation/evaluation_on_gadi/metplus.md
       # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
 
   - Tutorials:

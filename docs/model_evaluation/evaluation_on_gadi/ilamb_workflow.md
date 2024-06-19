@@ -16,7 +16,7 @@ ACCESS-NRI is releasing an NCI configuration of ILAMB under the name **ILAMB-wor
 
 <i>ILAMB</i> is provided through the `xp65` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
 
-<div class='admonition warning'>
+<div class="note">
     To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
 </div>
 
@@ -67,7 +67,7 @@ For more information, refer to <a href="\model_evaluation/model_evaluation_obser
 <br>
 To learn more about how to adjust the <i>ILAMB</i> setup, refer to the official <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and relevant <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">tutorials</a>.
 
-## Showcase: CMIP6 comparisons and ACCESS ESM1.5 benchmarking
+## Example: CMIP6 comparisons and ACCESS ESM1.5 benchmarking
 
 ACCESS-NRI is maintaining a collection of benchmark comparisons for the ACCESS community, such as that with Coupled Model Intercomparison Project (CMIP) data:
 
