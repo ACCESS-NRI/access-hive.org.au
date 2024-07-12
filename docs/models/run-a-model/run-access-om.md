@@ -126,6 +126,9 @@ _Payu_ also creates symbolic links in the _control_ directory pointing to the `a
 
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
+!!! admonition warning
+    The _laboratory_ directory might get deleted if not accessed for several days. To know more about how to preserve your experiment refer to [Syncing output data](#syncing-output-data).
+
 ### Run configuration
 
 To run {{ model }} configuration execute the following command from within the *control* directory:
@@ -308,6 +311,8 @@ This section describes how to modify {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.
 
 The `config.yaml` file located in the _control_ directory is the _Master Configuration_ file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
+
+To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
 ### Change run length
 
@@ -545,8 +550,6 @@ qsub_flags: -W umask=027
 env:
     UCX_LOG_LEVEL: 'error'
 ```
-
-To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
 ### Edit a single {{ model }} component configuration
 
