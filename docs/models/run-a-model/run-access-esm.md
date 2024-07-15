@@ -129,7 +129,7 @@ _Payu_ also creates symbolic links in the _control_ directory pointing to the `a
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
 !!! admonition warning
-    The _laboratory_ directory might get deleted if not accessed for several days. To know more about how to preserve your experiment refer to [Syncing output data](#syncing-output-data).
+    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
 
 ### Run configuration
 
@@ -378,7 +378,7 @@ project: ol01
 ### Syncing output data
 
 The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage.<br>
-On _Gadi_, this is typically under a project code on `/g/data`.  
+On _Gadi_, this is typically in a folder under a project code on `/g/data`.  
 
 _Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory git history to another location.<br>
 This feature is controlled by the following section in the `config.yaml` file: 
@@ -392,7 +392,10 @@ sync:
       - '*.nc.*'
       - 'iceh.????-??-??.nc'
 ```
-To enable output syncing, change `enable` to `True`, and set `path` to a location on `/g/data`. 
+To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
+
+!!! admonition tip
+    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
 
 ### Saving model restarts
 
