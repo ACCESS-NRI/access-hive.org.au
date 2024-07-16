@@ -23,7 +23,7 @@ This means it can simulate both the physical climate and global biogeochemical c
 
 - **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat).
 
-- **Sea ice**: [CICE5.1.2](/models/model_components/sea-ice#cice5).<br>
+- **Sea ice**: [CICE4.1](/models/model_components/sea-ice#cice4).<br>
   Same grid as Ocean.
 
 - **Coupler**: [OASIS3-MCT](/models/model_components/coupler#oasis3-mct).
