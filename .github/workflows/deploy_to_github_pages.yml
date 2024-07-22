@@ -12,7 +12,6 @@ on:
       - closed
   workflow_dispatch: #Action can also be triggered manually
 env:
-  # TOKEN: ${{ secrets.ADMIN_TOKEN }}
   TZ: Australia/Canberra
 permissions:
   pull-requests: write # to comment on PRs
@@ -86,7 +85,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          # token: ${{ secrets.ADMIN_TOKEN }}
           ref: main
 
       - name: Get URL
@@ -106,7 +104,6 @@ jobs:
       - name: Build full website
         env:
           GH_TOKEN: ${{ github.token }} # Required for gh usage
-          # GH_TOKEN: ${{ secrets.ADMIN_TOKEN }} # Required for gh usage
         id: build
         shell: bash
         run: |
@@ -151,8 +148,6 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
-        # with:
-        #   token: ${{ secrets.ADMIN_TOKEN }}
 
       - name: Output success status
         id: success
