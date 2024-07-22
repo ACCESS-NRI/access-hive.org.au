@@ -1,0 +1,27 @@
+name: Automatic merge
+
+on:
+  schedule: 
+    # Run every Sunday at 03:07 (AEDT)
+    # AEDT is UTC+10 --> Sunday at 03:07 AEDT is Saturday at 17:07 UTC
+    - cron: "7 17 * * SAT"
+  workflow_dispatch:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@master
+      with:
+        ref: main_test
+        fetch-depth: 0
+        token: ${{ secrets.ADMIN_TOKEN }}
+    
+    - name: Merge development to main
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "github-actions@github.com"
+        git merge --no-ff -X theirs origin/development -m "Automatically merge 'development' to 'main'.
+        Merge commit issued by the automatic_merge workflow."
+        git push origin main
