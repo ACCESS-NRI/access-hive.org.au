@@ -110,31 +110,13 @@ jobs:
         id: build
         shell: bash
         run: |
-          retry() {
-            command="$1"
-            n_tries="$2"
-            wait="$3"
-            exit_msg="$4"
-            eval "$command"
-            until [ $? == 0 ]; do
-              if [ $i -eq $((n_tries - 1)) ]; then
-                echo "$exit_msg"
-                exit 1
-              else
-                ((i++))
-              fi
-              sleep $wait
-              eval "$command"
-            done
-          }
-
           git fetch --all -Pp
           echo "Build main website"
-          retry "git checkout main" 5 1 "Failed to checkout 'main'."
-          retry 'mkdocs build -f mkdocs.yml -d ../website' 5 1 "Failed to build main website."
+          git checkout main
+          mkdocs build -f mkdocs.yml -d ../website
           echo "Build development website"
-          retry 'git checkout development' 5 1 "Failed to checkout 'development' branch."
-          retry 'mkdocs build -f mkdocs.yml -d ../website/development-website' 5 1 "Failed to build development website."
+          git checkout development
+          mkdocs build -f mkdocs.yml -d ../website/development-website
           echo "Build PR websites"
           open_pr_info=$(gh pr list --json headRefOid,number,headRefName --jq '.[] | select(.headRefName!="development" and .headRefName!="main")')
           pr_nums=($(jq '.number' <<< "$open_pr_info"))
@@ -143,13 +125,12 @@ jobs:
             echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
             echo "pr_nums=[$(perl -pe 's/\s(?!$)/,/g' <<< ${pr_nums[@]})]" >> "$GITHUB_OUTPUT"
             for i in ${!pr_nums[@]}; do
-              retry "git checkout ${pr_sha[i]}" 5 1 "Failed to checkout git hash '${pr_sha[i]}'."
-              retry "mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}" 5 1 "Failed to build pr-${pr_nums[i]} website."
+              git checkout ${pr_sha[i]}
+              mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}
             done
           else
             echo "No open PR found."
           fi
-          echo "Set the right file permissions"
           chmod -c -R +rX ../website
 
       - name: Create artifact for deployment to GitHub Pages
