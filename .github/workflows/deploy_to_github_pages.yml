@@ -117,7 +117,7 @@ jobs:
           echo "Build PR websites"
           open_pr_info=$(gh pr list --json headRefOid,number,headRefName --jq '.[] | select(.headRefName!="development" and .headRefName!="main")')
           pr_nums=($(jq '.number' <<< "$open_pr_info"))
-          pr_sha=($(jq '.headRefOid' <<< "$open_pr_info"))
+          pr_sha=($(jq -r '.headRefOid' <<< "$open_pr_info"))
           if [[ -n $pr_nums ]]; then
             echo "Found PR numbers: $(perl -pe 's/\s(?!$)/, /g' <<< ${pr_nums[@]})."
             echo "pr_nums=[$(perl -pe 's/\s(?!$)/,/g' <<< ${pr_nums[@]})]" >> "$GITHUB_OUTPUT"
