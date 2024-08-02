@@ -175,7 +175,7 @@ The following lines should be added to your `~/.ssh/config` to describe the SSH 
 ```ssh
 Host gadi
 Hostname gadi.nci.org.au
-User &lt;your-NCI-username&gt;
+User <your-NCI-username>
 ForwardX11 true
 ForwardX11Trusted yes
 IdentityFile ~/.ssh/id_gadi
