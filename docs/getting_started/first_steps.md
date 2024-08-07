@@ -1,4 +1,4 @@
-# First Steps
+# Set Up and Customize your NCI Account
 
 The steps in this section are aimed at new users who would like to do any of the following tasks:
 
