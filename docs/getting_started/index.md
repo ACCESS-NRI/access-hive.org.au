@@ -1,4 +1,4 @@
-# Getting Set Up on NCI
+# Get Started on NCI
 
 <div class="card-container">
     <a href="/getting_started/first_steps" class="vertical-card aspect-ratio1to1">
