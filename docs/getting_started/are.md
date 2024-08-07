@@ -1,18 +1,17 @@
 # Australian Research Environment (ARE)
 
-[ARE](https://are.nci.org.au) is a web-based graphical interface for performing your computational research, provided by [NCI](https://nci.org.au/).<br>
-ARE can give you access to NCI’s _Gadi_ supercomputer and data collections.
+<a href="https://are-auth.nci.org.au/" target="_blank">ARE</a> is a web-based graphical interface for performing your computational research, provided by <a href="https://nci.org.au/" target="_blank">NCI</a>.
+ARE gives you access to NCI’s <i>Gadi</i> supercomputer and data collections.
 
 There are multiple applications included in ARE, but the two most used for ACCESS-related activities are [Virtual Desktop (VDI)](#vdi) and [JupyterLab](#jupyterlab).
 
 ## Prerequisites
-To use ARE, you must have an NCI account and be a member of a project with computing resources (SU).<br>
-If you are new to ACCESS, follow the [First Steps](/getting_started/first_steps).
+To use ARE, you must have an NCI account and be a member of a project with computing resources (known as Service Units, or SU). For instructions on how to set up an account and join projects, see <a href="/getting_started/first_steps">Set Up and Customize your NCI Account</a>.
 
 ## Start an ARE session
 <!-- Tab labels -->
 <div class="tabLabels" label="are-apps" style="margin-bottom: 0.5rem;">
-    <button id="vdi">Virtual Desktop (VDI)</i></button>
+    <button id="vdi"><i>Virtual Desktop (VDI)</i></button>
     <button id="jupyterlab"><i>JupyterLab</i></button>
 </div>
 <!-- Tab contents -->
