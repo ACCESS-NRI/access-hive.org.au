@@ -97,9 +97,9 @@ nav:
   - Home: 
     - index.md
 
-  - Get Started on NCI: 
+  - Getting Started 
     - getting_started/index.md
-    - Set Up and Customize your NCI Account: getting_started/first_steps.md
+    - Set Up your NCI Account: getting_started/first_steps.md
     - Australian Research Environment (ARE): getting_started/are.md
 
   - Models: 
