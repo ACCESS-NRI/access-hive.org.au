@@ -52,7 +52,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
     </terminal-window>
     !!! warning
         _payu_ version >=1.1.3 is required
-        TODO: Check if any specific version is required
+        TODO: Update this with the next version number for payu when it is released, as ESM1.5 configs will require the latest changes.
 
 ----------------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ For more information on {{ model }} configurations, check [{{model}}][model conf
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
-TODO: check correct configuration until line 106
+TODO: check correct configuration until line 106 - replace with pre-industrial when ready
 For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf).
 
 To clone this branch to a location on _Gadi_, run:
@@ -129,7 +129,7 @@ _Payu_ also creates symbolic links in the _control_ directory pointing to the `a
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
 !!! admonition warning
-    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
+    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data). TODO: find out whether sync will be available at the time of ESM1.5 release.
 
 ### Run configuration
 
@@ -137,8 +137,9 @@ To run {{ model }} configuration execute the following command from within the *
 
     payu run
 
-This will submit a single job to the queue with a run length of `restart_period`.<br>
-For information about `restart_period`, refer to [Change run length](#change-run-length).
+This will submit a single job to the queue with a run length given by [`runtime`](# TODO: ADD LINK) in the `config.yaml` file.<br>
+
+
 
 <terminal-window>
     <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
@@ -160,6 +161,8 @@ For information about `restart_period`, refer to [Change run length](#change-run
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
+TODO: REPLACE CONFIG NAMES WITH ESM CONFIG
+
 
 The `payu run` command prints out the PBS `job-ID` (formatted as `<9-digit-number>.gadi-pbs`), as the last line to the terminal.<br>
 To print out information on the status of a specific job, you can execute the following command:
@@ -248,6 +251,8 @@ This command will:
   - generate manifests
   - report useful information to the user, such as the location of the _laboratory_ where the `work` and `archive` directories are located
 
+TODO: UPDATE PATHS FOR ESM
+
 <terminal-window>
     <terminal-line data="input">payu setup</terminal-line>
     <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
@@ -285,6 +290,7 @@ Output and restart folders are called `outputXXX` and `restartXXX`, respectively
 
 Model components are separated into subdirectories within the output and restart directories.
 
+TODO: UPDATE PATH FOR ESM1.5
 <terminal-window>
     <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
     <terminal-line data="input" directory="~/access-om2/1deg_jra55_yaf<">ls</terminal-line>
@@ -307,45 +313,92 @@ To find out more about configuration settings for the `config.yaml` file, refer 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-The run length is controlled by the `restart_period` field in the `&date_manager_nml` section of the `~/access-om2/1deg_jra55_ryf/accessom2.nml` file:
+The length of an {{model}} run is controlled by the `runtime` settings in the `config.yaml` file:
 
-    &date_manager_nml
-        forcing_start_date = '1958-01-01T00:00:00'
-        forcing_end_date = '2019-01-01T00:00:00'<br>
-        ! Runtime for a single segment/job/submit, format is years, months, seconds,
-        ! two of which must be zero.
-        restart_period = 5, 0, 0
-    &end
+```
+    runtime:
+        years: 1
+        months: 0
+        days: 0
+```
 
-The format is `restart_period = <number_of_years>, <number_of_months>, <number_of_days>`.
-
-For example, to make the model run for 1 year, 4 months and 10 days, change `restart_period` to:
-
-    restart_period = 1, 4, 10
+For example, to make the model run for a single month, change the `runtime` to 
+```
+    runtime:
+        years: 0
+        months: 1
+        days: 0
+```
+!!! warning
+    The atmospheric component of {{ model }} is configured to produce restart files at the end of each month. To ensure that a valid restart file is produced at the end of a run, `runtime` setting for {{ model }} should total an integer number of months 
 
 !!! warning
-    While `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors.
-    <br><br>
-    It is also important to differentiate between _run length_ and _total experiment length_.<br>
-    For more information about their difference, or how to run the model for more than 5 years, refer to [Run configuration for more than 5 years](#run-configuration-for-more-than-5-years).
+    The _run length_ (controlled by [`runtime`](#runtime)) can be different from the _total experiment length_. While `runtime` can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between _run length_ and _total experiment length_, or how to run the model for more than 1 year, refer to the section [Understand `runtime`, `runspersub`, and `-n` parameters](#run-configuration-for-multiple-years). TODO: UPDATE LINK'
 
-#### Run configuration for more than 5 years
+If you want to run {{ model }} configuration for multiple _run lengths_ (controlled by [`runtime`](#runtime) in the `config.yaml` file), use the option `-n`:
+TODO: DOES THE RUNTIME LINK WORK?
 
-As mentioned in the [Change run length](#change-run-length) section, you cannot specify more than 5 years as `restart_period`.<br>
-If you want to run a configuration for more than 5 years, you need to use the `-n` option:
+```
+payu run -f -n <number-of-runs>
+```
 
-    payu run -n <number-of-runs>
+This will run the configuration `number-of-runs` times with a _total experiment length_ of `runtime * number-of-runs`. The number of consecutive [PBS jobs][PBS job] submitted to the queue depends on the [`runspersub`](#runspersub) value specified in the config.yaml file.
 
-This will run {{ model }} `number-of-runs` consecutive times, each with a *run length* equal to `restart_period`.<br>
-This way, the *total experiment length* will be `restart_period * number-of-runs`. 
+### Understand `runtime`, `runspersub`, and `-n` parameters
 
-For example, to run a configuration for a total of 50 years with a `restart_period` of 5 years, the `number-of-runs` should be set to `10`:
+With the correct use of [`runtime`](#runtime), [`runspersub`](#runspersub) and `-n` parameters, you can have full control of your run.<br>
 
-    payu run -n 10
+- `runtime` defines the _run length_.
+- `runspersub` defines the maximum number of runs for every [PBS job] submission.
+- `-n` sets the number of runs to be performed.
+
+Now some practical examples:
+
+- **Run 20 years of simulation with resubmission every 5 years**<br>
+    To have a _total experiment length_ of 20 years with a 5-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set [`runspersub`](#runspersub) to `5`. Then, run the configuration with `-n` set to `20`:
+    ```
+    payu run-f -n 20
+    ```
+    This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20, which is a total of 4 PBS jobs.
+
+- **Run 7 years of simulation with resubmission every 3 years**<br>
+    To have a _total experiment length_ of 7 years with a 3-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set [`runspersub`](#runspersub) to `3`. Then, run the configuration with `-n` set to `7`:
+    ```
+    payu run -f -n 7
+    ```
+    This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
+
+- **Run 3 months and 10 days of simulation in a single submission**<br>
+    To have a _total experiment length_ of 3 months and 10 days in a single submission, set the [`runtime`](#runtime) as follows:
+    ```yaml
+    years: 0
+    months: 3
+    days: 10
+    ```
+    Set [`runspersub`](#runspersub) to `1` (or any value > 1) and run the configuration without `-n` option (or with `-n` set to `1`):
+    ```
+    payu run -f
+    ```
+
+- **Run 1 year and 4 months of simulation with resubmission every 4 months**<br>
+    To have a _total experiment length_ of 1 year and 4 months (16 months), you need to split it into multiple runs. For example, 4 runs of 4 months each. In this case, set the [`runtime`](#runtime) as follows:
+    ```yaml
+    years: 0
+    months: 4
+    days: 0
+    ```
+    Since the _run length_ is set to 4 months, set [`runspersub`](#runspersub) to `1` to resubmit your jobs every 4 months (i.e. every run). Then, run the configuration with `-n` set to `4`:
+    ```
+    payu run -f -n 4
+    ```
+
+
 
 ### Modify PBS resources
 
 If the model has been altered and needs more time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
+
+TODO: update with esm config info
 
 ```yaml
 # If submitting to a different project to your default, uncomment line below
@@ -360,6 +413,8 @@ walltime: 3:00:00
 jobname: 1deg_jra55_ryf
 mem: 1000GB
 ```
+
+TODO: Update with a relevant project
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
 
@@ -376,6 +431,7 @@ project: ol01
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
 
 ### Syncing output data
+TODO: Wait for decisions/updates on ESM1.5 syncing. If not part of release, delete this section.
 
 The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage.<br>
 On _Gadi_, this is typically in a folder under a project code on `/g/data`.  
@@ -399,6 +455,7 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 
 ### Saving model restarts
 
+TODO: Wait for finalisation of date based restarts for ESM
 {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
@@ -428,14 +485,12 @@ For more information, check [_payu_ Configuration Settings documentation](https:
 
 #### Model configuration
 
-This section tells _payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all its [model components].
+This section tells _payu_ which driver to use for the main model (`access` refers to {{ model }}).  
 
 ```yaml
-name: common
-model: access-om2
-input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
+model: access
 ```
-The `name` field is not actually used for the configuration run, so it can be safely ignored.
+
 
 #### Submodels
 
@@ -443,57 +498,48 @@ The `name` field is not actually used for the configuration run, so it can be sa
 
 This section specifies the submodels and configuration options required to execute {{ model }} correctly.
 
-Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory whose name matches the submodel's `name` (e.g., configuration options for the `ocean` submodel are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).
+Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's `name` (e.g., configuration options for the `atmosphere` submodel are in the `~/access-esm/esm-pre-industrial/atmosphere` directory).
+
+#TODO: UPDATE WITH UPDATED ESM1.5 CONFIG FILE.
 
 ??? code "Expand to show the full `submodels` section"
 
     ```yaml
     submodels:
-        - name: atmosphere
-          model: yatm
-          exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/libaccessom2-git.2023.10.26=2023.10.26-ieiy3e7hidn4dzaqly3ly2yu45mecgq4/bin/yatm.exe
-          input:
-                - /g/data/vk83/experiments/inputs/access-om2/remapping_weights/JRA55/global.1deg/2020.05.30/rmp_jrar_to_cict_CONSERV.nc
-                - /g/data/vk83/experiments/inputs/JRA-55/RYF/v1-4/data
-          ncpus: 1
-
-        - name: ocean
-          model: mom
-          exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/mom5-git.2023.11.09=2023.11.09-ewcdbrfukblyjxpkhd3mfkj4yxfolal4/bin/fms_ACCESS-OM.x
-          input:
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/grid_spec.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/ocean_hgrid.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/ocean_mosaic.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/topog.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/ocean_mask.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/grids/vertical/global.1deg/2020.10.22/ocean_vgrid.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/processor_masks/global.1deg/216.16x15/2020.05.30/ocean_mask_table
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/chlorophyll/global.1deg/2020.05.30/chl.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/initial_conditions/global.1deg/2020.10.22/ocean_temp_salt.res.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/tideamp.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/roughness_amp.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/roughness_cdbot.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ocean/surface_salt_restoring/global.1deg/2020.05.30/salt_sfc_restore.nc
-          ncpus: 216
-
-        - name: ice
-          model: cice5
-          exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/cice5-git.2023.10.19=2023.10.19-rh3xfkrgajya3ghtliacuhlx3pgvrzqs/bin/cice_auscom_360x300_24x1_24p.exe
-          input:
-            - /g/data/vk83/experiments/inputs/access-om2/ice/grids/global.1deg/2020.05.30/grid.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ice/grids/global.1deg/2020.10.22/kmt.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/i2o.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/o2i.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/u_star.nc
-            - /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/monthly_sstsss.nc
-          ncpus: 24
+          - name: atmosphere
+            model: um
+            ncpus: 192
+            exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+            input:
+              - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
+              - /g/data/access/payu/access-esm/input/pre-industrial/start_dump<br>
+          - name: ocean
+            model: mom
+            ncpus: 180
+            exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
+            input:
+              - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
+              - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial<br>
+          - name: ice
+            model: cice
+            ncpus: 12
+            exe: /g/data/access/payu/access-esm/bin/coe/cicexx
+            input:
+              - /g/data/access/payu/access-esm/input/pre-industrial/ice<br>
+          - name: coupler
+            model: oasis
+            ncpus: 0
+            input:
+              - /g/data/access/payu/access-esm/input/pre-industrial/coupler
     ```
 
 #### Collate
 
-Rather than outputting a single diagnostic file over the whole model horizontal grid, [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans over a portion of the model horizontal grid.
+Rather than outputting a single diagnostic file over the whole model horizontal grid, the ocean component [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans over a portion of the model horizontal grid.
 
-The `collate` section in the `yaml.conf` file controls the process that combines these smaller files into a single output file.
+The `collate` section in the `config.yaml` file controls the process that combines these smaller files into a single output file.
+
+TODO: UPDATE WITH CORRECT DATA FOR AN ESM1.5 CONFIG
 ```yaml
 collate:
     restart: true
@@ -528,7 +574,7 @@ In the example above, the default number of cpus per node is set to 48.
     This might need changing if the configuration is run on hardware with different node structure.
 
 #### Userscripts
-
+TODO: UPDATE WITH RELEVANT ESM1.5 USERSCRIPTS... WE PROBABLY WON'T BE CALLING ANY IN THE PI RUN...
 ```yaml
 userscripts:
     error: tools/resub.sh
@@ -544,22 +590,25 @@ A dictionary to run scripts or subcommands at various stages of a _payu_ submiss
 
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
+
+### Postscripts
+TODO: ADD POSTSCRIPT EXAMPLE ONCE WE MOVE CONVERSION OVER THERE. 
+
 #### Miscellaneous
 
 The following configuration settings should never require changing:
 
 ```yaml
 stacksize: unlimited
-mpirun: --mca io ompio --mca io_ompio_num_aggregators 1
 qsub_flags: -W umask=027
-env:
-    UCX_LOG_LEVEL: 'error'
 ```
 
 ### Edit a single {{ model }} component configuration
 
 Each of [{{ model }} components][model components] contains additional configuration options that are read in when the model component is running.<br>
 These options are typically useful to modify the physics used in the model, the input data, or the model variables saved in the output files.
+
+TODO: UPDATE WITH CORRECT ESM PATH ONCE NAMING SCHEME CHOSEN
 
 These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
