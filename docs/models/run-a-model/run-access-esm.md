@@ -12,7 +12,7 @@
 
 ## About
 
-{{ model }} is a fully-coupled global climate model. More information is available in the [{{ model }} overview][model configurations].
+{{ model }} is a fully-coupled global climate model, combining  atmoshpere, land, ocean, sea ice, ocean biogeochemistry and land biogeochemistry components. A description of the model and its components is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -20,7 +20,8 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
-{{ model }} release notes are [available on the ACCESS-Hive Forum **TODO change with correct link**](https://forum.access-hive.org.au/t/access-om2-release-information/1602/) and are updated when new releases are made available.
+<!--- TODO change with correct link -->
+{{ model }} release notes are [available on the ACCESS-Hive Forum ](MISSING LINK) and are updated when new releases are made available.
 
 ## Prerequisites
 
@@ -35,7 +36,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Payu**<br>
-    [Payu][payu] is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive [documentation](https://payu.readthedocs.io/en/latest/).<br>
+    [_Payu_][payu] is a workflow management tool for running numerical models in supercomputing environments, for which there is extensive [documentation](https://payu.readthedocs.io/en/latest/).<br>
     _Payu_ on _Gadi_ is available through a dedicated `conda` environment in the _vk83_ project.<br>
     After joining the _vk83_ project, load the `payu` module:
     
@@ -50,51 +51,51 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
         <terminal-line data="input">payu --version</terminal-line>
         <terminal-line lineDelay="1000">1.1.3</terminal-line>
     </terminal-window>
+    <!--- TODO change with correct version required for -->
     !!! warning
         _payu_ version >=1.1.3 is required
-        TODO: Update this with the next version number for payu when it is released, as ESM1.5 configs will require the latest changes.
 
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
-Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [CLEX CMS](https://github.com/coecms/access-esm).
+Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [CSIRO](https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-science-centre) and [CLEX CMS](https://github.com/coecms/access-esm).
 
 For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
-TODO: check correct configuration until line 106 - replace with pre-industrial when ready
-For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf).
+<!-- TODO: add link to release configuration -->
+For example, if the required configuration is the co2 concentration driven pre-industrial configuration, then the branch to select is [`release-preindustrial+concentrations`](MISSING LINK).
 
 To clone this branch to a location on _Gadi_, run:
     
     mkdir -p ~/access-esm1.5
     cd ~/access-esm1.5
-    payu clone -b expt -B release-1deg_jra55_ryf {{ github_configs }} 1deg_jra55_ryf
+    payu clone -b expt -B release-preindustrial+concentrations {{ github_configs }} preindustrial+concentrations
 
-In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
-to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
+In the example above the `payu clone` command clones the concentration driven pre-industrial configuration (` -B -B release-preindustrial+concentrations`) 
+to a new experiment branch (`-b expt`) to a directory named `preindustrial+concentrations`.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
 <terminal-window>
-    <terminal-line data="input">mkdir -p ~/access-om2</terminal-line>
-    <terminal-line data="input">cd ~/access-om2</terminal-line>
-    <terminal-line data="input" directory="~/access-om2">payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs.git 1deg_jra55_ryf</terminal-line>
-    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om2-configs.git to directory: .../access-om/1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input">mkdir -p ~/access-esm1.5</terminal-line>
+    <terminal-line data="input">cd ~/access-esm1.5</terminal-line>
+    <terminal-line data="input" directory="~/access-esm1.5">payu clone -b expt -B release-preindustrial+concentrations {{ github_configs }} preindustrial+concentrations</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from {{ github_configs }} to directory: .../access-esm1.5/preindustrial+concentrations</terminal-line>
     <terminal-line>Created and checked out new branch: expt</terminal-line>
-    <terminal-line>laboratory path:  /scratch/.../access-om2</terminal-line>
-    <terminal-line>binary path:  /scratch/.../access-om2/bin</terminal-line>
-    <terminal-line>input path:  /scratch/.../access-om2/input</terminal-line>
-    <terminal-line>work path:  /scratch/.../access-om2/work</terminal-line>
-    <terminal-line>archive path:  /scratch/.../access-om2/archive</terminal-line>
-    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
-    <terminal-line>Added archive symlink to /scratch/.../access-om2/archive/1deg_jra55_ryf-expt-daeee7ff</terminal-line>
+    <terminal-line>laboratory path:   /scratch/.../access-esm</terminal-line>
+    <terminal-line>binary path:  /scratch/.../access-esm/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../access-esm/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../access-esm/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../access-esm/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: 0635396b-678d-45f9-b81e-abd25a2d7bf0</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../access-esm/archive/preindustrial+concentrations-expt-0635396b</terminal-line>
     <terminal-line>To change directory to control directory run:</terminal-line>
-    <terminal-line data="input">cd 1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input">cd preindustrial+concentrations</terminal-line>
 </terminal-window>
 
 !!! tip
@@ -105,15 +106,14 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
 ----------------------------------------------------------------------------------------
 
 ## Run {{ model }} configuration
-TODO: modify file paths for ACCESS-ESM
 If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
 
 {{ model }} configurations run on [_Gadi_][gadi] through a [PBS job][PBS job] submission managed by [_payu_][payu].
 
 The general layout of a _payu_-supported model run consists of two main directories:
 
-- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om2/1deg_jra55_ryf`).
-- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om2`.
+- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-esm1.5/preindustrial+concentrations`).
+- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-esm`.
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
@@ -129,7 +129,7 @@ _Payu_ also creates symbolic links in the _control_ directory pointing to the `a
 This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
 
 !!! admonition warning
-    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data). TODO: find out whether sync will be available at the time of ESM1.5 release.
+    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
 
 ### Run configuration
 
@@ -137,21 +137,17 @@ To run {{ model }} configuration execute the following command from within the *
 
     payu run
 
-This will submit a single job to the queue with a run length given by [`runtime`](# TODO: ADD LINK) in the `config.yaml` file.<br>
-
-
+This will submit a single job to the queue with a run length given by [`runtime`](#runtime) in the `config.yaml` file.<br>
 
 <terminal-window>
-    <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
-    <terminal-line directory="~/access-om2/1deg_jra55_ryf" data="input">payu run</terminal-line>
-    <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
-    <terminal-line lineDelay=50>payu: warning: CPU request increased from 241 to 288</terminal-line>
+    <terminal-line data="input">cd ~/access-esm1.5/preindustrial+concentrations</terminal-line>
+    <terminal-line directory="~/access-esm1.5/preindustrial+concentrations" data="input">payu run</terminal-line>
     <terminal-line lineDelay=50>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line lineDelay=50>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
     <terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line lineDelay=50>
-        qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_ryf -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/hr22/modulefiles:/g/data/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/vk83 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/python3.10 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/payu-run
+        qsub -q normal -P tm70 -l walltime=9000 -l ncpus=384 -l mem=1536GB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/vk83/apps/payu/1.1.4/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/vk83/modules:/etc/scl/modulefiles:/apps/Modules/restricted-modulefiles/matlab_monash:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/vk83 -- /g/data/vk83/apps/payu/1.1.4/bin/python3.10 /g/data/vk83/apps/payu/1.1.4/bin/payu-run
     </terminal-line>
     <terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
 </terminal-window>
@@ -161,9 +157,6 @@ This will submit a single job to the queue with a run length given by [`runtime`
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
-TODO: REPLACE CONFIG NAMES WITH ESM CONFIG
-
-
 The `payu run` command prints out the PBS `job-ID` (formatted as `<9-digit-number>.gadi-pbs`), as the last line to the terminal.<br>
 To print out information on the status of a specific job, you can execute the following command:
 ```
@@ -173,7 +166,7 @@ qstat <job-ID>
     <terminal-line data="input">qstat &lt;job-ID&gt;</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
@@ -185,13 +178,13 @@ qstat -u $USER
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
-The default name of your job is the name of the _payu_ _control_ directory (`1deg_jra55_ryf` in the example above).<br>
-This can be changed by altering the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file.
+The default name of your job is the name of the _payu_ _control_ directory (`preindustrial+concentrations` in the example above).<br>
+This can be overwritten by altering the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file.
 
 _S_ indicates the status of your run, where:
 
@@ -228,7 +221,7 @@ payu sweep
 
 #### Model log files
 
-While the model is running, _payu_ saves the model standard output and error streams in the `access-om2.out` and `access-om2.err` files inside the _control_ directory, respectively.<br>
+While the model is running, _payu_ saves the model standard output and error streams in the `access.out` and `access.err` files inside the _control_ directory, respectively.<br>
 You can examine the contents of these files to check on the status of a run as it progresses (or after a failed run has completed).
 
 !!! warning
@@ -251,27 +244,30 @@ This command will:
   - generate manifests
   - report useful information to the user, such as the location of the _laboratory_ where the `work` and `archive` directories are located
 
-TODO: UPDATE PATHS FOR ESM
 
 <terminal-window>
     <terminal-line data="input">payu setup</terminal-line>
-    <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-om2</terminal-line>
-    <terminal-line>binary path: /scratch/$PROJECT/$USER/access-om2/bin</terminal-line>
-    <terminal-line>input path: /scratch/$PROJECT/$USER/access-om2/input</terminal-line>
-    <terminal-line>work path: /scratch/$PROJECT/$USER/access-om2/work</terminal-line>
-    <terminal-line>archive path: /scratch/$PROJECT/$USER/access-om2/archive</terminal-line>
+    <terminal-line>laboratory path: /scratch/$PROJECT/$USER/access-esm</terminal-line>
+    <terminal-line>binary path: /scratch/$PROJECT/$USER/access-esm/bin</terminal-line>
+    <terminal-line>input path: /scratch/$PROJECT/$USER/access-esm/input</terminal-line>
+    <terminal-line>work path: /scratch/$PROJECT/$USER/access-esm/work</terminal-line>
+    <terminal-line>archive path: /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
+    <terminal-line>Found experiment archive: /scratch/$PROJECT/$USER/access-esm/archive/preindustrial+concentrations-expt-0635396b</terminal-line>
+    <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
+    <terminal-line>Loading access-esm1p5/2024.05.0</terminal-line>
+    <terminal-line>    Loading requirement: cice4/2024.05.21 mom5/access-esm1.5_2024.06.20 um7/2024.07.03</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
+    <terminal-line>Making exe links</terminal-line>
     <terminal-line>Setting up atmosphere</terminal-line>
     <terminal-line>Setting up ocean</terminal-line>
     <terminal-line>Setting up ice</terminal-line>
-    <terminal-line>Setting up access-om2</terminal-line>
+    <terminal-line>Setting up coupler</terminal-line>
     <terminal-line>Checking exe and input manifests</terminal-line>
-    <terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
     <terminal-line>Creating restart manifest</terminal-line>
+    <terminal-line>Updating full hashes for 29 files in manifests/restart.yaml</terminal-line>
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
-    <terminal-line>Writing manifests/exe.yaml</terminal-line>
 </terminal-window>
 
 This can help to isolate issues such as permissions problems accessing files and directories, missing files or malformed/incorrect paths.
@@ -290,11 +286,10 @@ Output and restart folders are called `outputXXX` and `restartXXX`, respectively
 
 Model components are separated into subdirectories within the output and restart directories.
 
-TODO: UPDATE PATH FOR ESM1.5
 <terminal-window>
-    <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
-    <terminal-line data="input" directory="~/access-om2/1deg_jra55_yaf<">ls</terminal-line>
-    <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
+    <terminal-line data="input">cd ~/access-esm/preindustrial+concentrations/archive</terminal-line>
+    <terminal-line data="input" directory="~/access-esm/preindustrial+concentrations/archive">ls</terminal-line>
+    <terminal-line class="ls-output-format">metadata.yaml output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
 ----------------------------------------------------------------------------------------
@@ -308,7 +303,7 @@ The `config.yaml` file located in the _control_ directory is the _Master Configu
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Change run length
+### Change run length {: id="runtime"}
 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
@@ -330,13 +325,13 @@ For example, to make the model run for a single month, change the `runtime` to
         days: 0
 ```
 !!! warning
-    The atmospheric component of {{ model }} is configured to produce restart files at the end of each month. To ensure that a valid restart file is produced at the end of a run, `runtime` setting for {{ model }} should total an integer number of months 
+    The sea ice component of {{ model }} is configured to produce restart files only at the end of each year. While simulations shorter than a year can be helpful for troubleshooting, they will not produce valid restart files and it will not be possible to continue them after the first run. If running more than one segment is required, the `runtime` setting for {{ model }} should be left at one year. 
 
 !!! warning
-    The _run length_ (controlled by [`runtime`](#runtime)) can be different from the _total experiment length_. While `runtime` can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between _run length_ and _total experiment length_, or how to run the model for more than 1 year, refer to the section [Understand `runtime`, `runspersub`, and `-n` parameters](#run-configuration-for-multiple-years). TODO: UPDATE LINK'
+    The _run length_ (controlled by `runtime`) can be different from the _total experiment length_. While `runtime` can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between _run length_ and _total experiment length_, or how to run the model for more than 1 year, refer to the section [Understand `runtime`, `runspersub`, and `-n` parameters](#multiple-runs). 
+    
+If you want to run {{ model }} configuration for multiple _run lengths_ (each with duration [`runtime`](#runtime) in the `config.yaml` file), use the option `-n`:
 
-If you want to run {{ model }} configuration for multiple _run lengths_ (controlled by [`runtime`](#runtime) in the `config.yaml` file), use the option `-n`:
-TODO: DOES THE RUNTIME LINK WORK?
 
 ```
 payu run -f -n <number-of-runs>
@@ -344,9 +339,9 @@ payu run -f -n <number-of-runs>
 
 This will run the configuration `number-of-runs` times with a _total experiment length_ of `runtime * number-of-runs`. The number of consecutive [PBS jobs][PBS job] submitted to the queue depends on the [`runspersub`](#runspersub) value specified in the config.yaml file.
 
-### Understand `runtime`, `runspersub`, and `-n` parameters
+### Understand `runtime`, `runspersub`, and `-n` parameters {: id="multiple-runs"}
 
-With the correct use of [`runtime`](#runtime), [`runspersub`](#runspersub) and `-n` parameters, you can have full control of your run.<br>
+With the correct use of [`runtime`](#runtime), `runspersub` and `-n` parameters, you can have full control of your run.<br>
 
 - `runtime` defines the _run length_.
 - `runspersub` defines the maximum number of runs for every [PBS job] submission.
@@ -355,52 +350,28 @@ With the correct use of [`runtime`](#runtime), [`runspersub`](#runspersub) and `
 Now some practical examples:
 
 - **Run 20 years of simulation with resubmission every 5 years**<br>
-    To have a _total experiment length_ of 20 years with a 5-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set [`runspersub`](#runspersub) to `5`. Then, run the configuration with `-n` set to `20`:
+    To have a _total experiment length_ of 20 years with a 5-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set `runspersub` to `5`. Then, run the configuration with `-n` set to `20`:
     ```
     payu run-f -n 20
     ```
     This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20, which is a total of 4 PBS jobs.
 
 - **Run 7 years of simulation with resubmission every 3 years**<br>
-    To have a _total experiment length_ of 7 years with a 3-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set [`runspersub`](#runspersub) to `3`. Then, run the configuration with `-n` set to `7`:
+    To have a _total experiment length_ of 7 years with a 3-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set `runspersub` to `3`. Then, run the configuration with `-n` set to `7`:
     ```
     payu run -f -n 7
     ```
     This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
-
-- **Run 3 months and 10 days of simulation in a single submission**<br>
-    To have a _total experiment length_ of 3 months and 10 days in a single submission, set the [`runtime`](#runtime) as follows:
-    ```yaml
-    years: 0
-    months: 3
-    days: 10
-    ```
-    Set [`runspersub`](#runspersub) to `1` (or any value > 1) and run the configuration without `-n` option (or with `-n` set to `1`):
-    ```
-    payu run -f
-    ```
-
-- **Run 1 year and 4 months of simulation with resubmission every 4 months**<br>
-    To have a _total experiment length_ of 1 year and 4 months (16 months), you need to split it into multiple runs. For example, 4 runs of 4 months each. In this case, set the [`runtime`](#runtime) as follows:
-    ```yaml
-    years: 0
-    months: 4
-    days: 0
-    ```
-    Since the _run length_ is set to 4 months, set [`runspersub`](#runspersub) to `1` to resubmit your jobs every 4 months (i.e. every run). Then, run the configuration with `-n` set to `4`:
-    ```
-    payu run -f -n 4
-    ```
-
 
 
 ### Modify PBS resources
 
 If the model has been altered and needs more time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
 
-TODO: update with esm config info
 
 ```yaml
+# PBS configuration
+
 # If submitting to a different project to your default, uncomment line below
 # and replace PROJECT_CODE with appropriate code. This may require setting shortpath
 # project: PROJECT_CODE
@@ -408,13 +379,13 @@ TODO: update with esm config info
 # Force payu to always find, and save, files in this scratch project directory
 # shortpath: /scratch/PROJECT_CODE
 
-queue: normal
-walltime: 3:00:00
-jobname: 1deg_jra55_ryf
-mem: 1000GB
-```
+# Note: if laboratory is relative path, it is relative to shortpath/$USER
+laboratory: access-esm
 
-TODO: Update with a relevant project
+jobname: pre-industrial
+queue: normal
+walltime: 2:30:00
+```
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
 
@@ -425,13 +396,12 @@ project: ol01
 ```
 
 !!! warning
-    If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
+    If a project other than the user's default project is used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
 
 ### Syncing output data
-TODO: Wait for decisions/updates on ESM1.5 syncing. If not part of release, delete this section.
 
 The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage.<br>
 On _Gadi_, this is typically in a folder under a project code on `/g/data`.  
@@ -439,23 +409,19 @@ On _Gadi_, this is typically in a folder under a project code on `/g/data`.
 _Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory git history to another location.<br>
 This feature is controlled by the following section in the `config.yaml` file: 
 ```yaml
-# Sync options for automatically copying data from ephemeral scratch space to 
+# Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
     enable: False # set path below and change to true
-    path: none # Set to location on /g/data or a remote server and path (rsync syntax)
-    exclude:
-      - '*.nc.*'
-      - 'iceh.????-??-??.nc'
+    path: null # Set to location on /g/data or a remote server and path (rsync syntax)
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
-!!! admonition tip
-    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
+!!! Warning
+    The {{model}} default configurations include a postprocessing [postcript](#postscripts) which converts atmospheric outputs to NetCDF format and runs in a separate PBS job. This prevents the final run's output and restart files from being automatically synced. Once the postprocessing is completed, the final outputs and restarts can be manually synced by running `payu sync` from the control directory.
 
 ### Saving model restarts
 
-TODO: Wait for finalisation of date based restarts for ESM
 {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
@@ -498,39 +464,93 @@ model: access
 
 This section specifies the submodels and configuration options required to execute {{ model }} correctly.
 
-Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's `name` (e.g., configuration options for the `atmosphere` submodel are in the `~/access-esm/esm-pre-industrial/atmosphere` directory).
+Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory, whose name matches the submodel's `name` (e.g., configuration options for the `atmosphere` submodel are in the `~/access-esm/preindustrial+concentrations/atmosphere` directory).
 
-#TODO: UPDATE WITH UPDATED ESM1.5 CONFIG FILE.
 
 ??? code "Expand to show the full `submodels` section"
 
     ```yaml
     submodels:
-          - name: atmosphere
-            model: um
-            ncpus: 192
-            exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
-            input:
-              - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
-              - /g/data/access/payu/access-esm/input/pre-industrial/start_dump<br>
-          - name: ocean
-            model: mom
-            ncpus: 180
-            exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
-            input:
-              - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
-              - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial<br>
-          - name: ice
-            model: cice
-            ncpus: 12
-            exe: /g/data/access/payu/access-esm/bin/coe/cicexx
-            input:
-              - /g/data/access/payu/access-esm/input/pre-industrial/ice<br>
-          - name: coupler
-            model: oasis
-            ncpus: 0
-            input:
-              - /g/data/access/payu/access-esm/input/pre-industrial/coupler
+    - name: atmosphere
+      model: um
+      ncpus: 192
+      exe: um_hg3.exe
+      input:
+        # Aerosols
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/OCFF_1850_ESM1.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/BC_hi_1850_ESM1.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/scycl_1850_ESM1_v4.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/Bio_1850_ESM1.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
+        # Forcing
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/forcing/global.N96/2020.05.19/ozone_1850_ESM1.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/forcing/resolution_independent/2020.05.19/volcts_18502000ave.dat
+        # Land
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2020.05.19/Ndep_1850_ESM1.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/pftlookup_csiro_v16_17tiles_wtlnds.csv
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt
+        # Spectral
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
+        # Grids
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
+        # STASH
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/
+
+    - name: ocean
+      model: mom
+      ncpus: 180
+      exe: fms_ACCESS-CM.x
+      input:
+        # Biogeochemistry
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/ocean/biogeochemistry/global.1deg/2024.07.12/bgc_param.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_fice_monthly_om1p5_bc.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_xkw_monthly_om1p5_bc.nc
+        # Tides
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/tideamp.nc
+        # Shortwave
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/shortwave_penetration/global.1deg/2020.05.19/ssw_atten_depth.nc
+        # Grids
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/grids/mosaic/global.1deg/2020.05.19/grid_spec.nc
+
+    - name: ice
+      model: cice
+      ncpus: 12
+      exe: cice_access_360x300_12x1_12p.exe
+      input:
+        # Grids
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/grid.nc
+        # Climatology
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
+
+    - name: coupler
+      model: oasis
+      ncpus: 0
+      input:
+        # Grids
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/grids.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/areas.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/masks.nc
+        # Remapping weights
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_cice_to_um1t_CONSERV_FRACNNEI.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1u_to_cice_CONSERV_FRACNNEI.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1t_to_cice_CONSERV_DESTAREA.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_cice_to_um1u_CONSERV_FRACNNEI.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1v_to_cice_CONSERV_FRACNNEI.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1t_to_cice_CONSERV_FRACNNEI.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_cice_to_um1v_CONSERV_FRACNNEI.nc
+
     ```
 
 #### Collate
@@ -539,15 +559,14 @@ Rather than outputting a single diagnostic file over the whole model horizontal 
 
 The `collate` section in the `config.yaml` file controls the process that combines these smaller files into a single output file.
 
-TODO: UPDATE WITH CORRECT DATA FOR AN ESM1.5 CONFIG
 ```yaml
+# Collation
 collate:
+    exe: mppnccombine.spack
     restart: true
+    mem: 4GB
     walltime: 1:00:00
-    mem: 30GB
-    ncpus: 4
-    queue: normal
-    exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine
+    mpi: false
 ```
 Restart files are typically tiled in the same way and will also be combined together if the `restart` field is set to `true`.
 
@@ -562,37 +581,27 @@ When running a new configuration, _payu_ automatically commits changes with `git
     This should not be changed as it is an essential part of the provenance of an experiment.<br>
     _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts, and executables used in an experiment.
 
-#### Platform
-
-```yaml
-platform: 
-    nodesize: 48
-```
-Set platform-specific default parameters.<br>
-In the example above, the default number of cpus per node is set to 48. 
-!!! warning
-    This might need changing if the configuration is run on hardware with different node structure.
 
 #### Userscripts
-TODO: UPDATE WITH RELEVANT ESM1.5 USERSCRIPTS... WE PROBABLY WON'T BE CALLING ANY IN THE PI RUN...
 ```yaml
 userscripts:
-    error: tools/resub.sh
-    run: rm -f resubmit.count
-    sync: /g/data/vk83/apps/om2-scripts/concatenate_ice/concat_ice_daily.sh 
+    # Apply land use changes after each run
+    run: ./scripts/update_landuse_driver.sh
 ```
 
-A dictionary to run scripts or subcommands at various stages of a _payu_ submission.
-
-- `error` gets called if the model does not run correctly and returns an error code.
-- `run` gets called after the model execution, but prior to model output archive.
-- `sync` gets called at the start of the sync pbs job.
+A dictionary to run scripts or subcommands at various stages of a _payu_ submission. The above example comes from the `release-historical+concentrations` configuration, where the ```update_landuse_driver.sh``` is used to apply historical land use changes at the end of each run.
 
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
 
-### Postscripts
-TODO: ADD POSTSCRIPT EXAMPLE ONCE WE MOVE CONVERSION OVER THERE. 
+#### Postscripts {: id="postscripts"}
+<!--- TODO: The postscript call will likely look different -->
+Postprocessing scripts that need to be run after _payu_ has completed all steps that might alter the output directory can be run as postscripts. These run in separate PBS jobs than the main model simulation. 
+
+```yaml
+postscript: -v PAYU_CURRENT_OUTPUT_DIR -P ${PROJECT} -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
+```
+All { model } configurations include the above postscript, which converts the atmosphere components output files to NetCDF format, in order to simplify analysis and reduce storage requirements.
 
 #### Miscellaneous
 
@@ -608,14 +617,12 @@ qsub_flags: -W umask=027
 Each of [{{ model }} components][model components] contains additional configuration options that are read in when the model component is running.<br>
 These options are typically useful to modify the physics used in the model, the input data, or the model variables saved in the output files.
 
-TODO: UPDATE WITH CORRECT ESM PATH ONCE NAMING SCHEME CHOSEN
-
-These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).<br>
+These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-esm/preindustrial+concentrations/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
 
 ## Get Help
 
-If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
+If you have questions or need help regarding {{ model }}, consider creating a topic in the [Earth System Model category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/esm/earth-system-model/72).<br>
 For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
 
 <custom-references>
