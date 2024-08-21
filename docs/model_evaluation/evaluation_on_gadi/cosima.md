@@ -36,6 +36,5 @@ For more information on the <i>COSIMA Cookbook</i>, refer to the <a href="https:
 
 - <a href="https://github.com/COSIMA/cosima-recipes/tree/main/Tutorials" target="_blank">Tutorials</a>
 - <a href="https://github.com/COSIMA/cosima-recipes/tree/main/ACCESS-OM2-GMD-Paper-Figs" target="_blank">Notebooks</a> to reproduce figures of the <a href="https://gmd.copernicus.org/articles/13/401/2020/" target="_blank">ACCESS-OM2 announcement paper</a>
-- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/DocumentedExamples" target="_blank">Documented Example</a>
-- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/ContributedExamples" target="_blank">Contributed Examples</a>
+- <a href="https://github.com/COSIMA/cosima-recipes/tree/main/Recipes" target="_blank">Recipes</a>
 
