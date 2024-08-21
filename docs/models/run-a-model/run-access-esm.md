@@ -205,7 +205,7 @@ qdel <job-ID>
 which kills the specified job without waiting for it to complete.
 
 !!! tip
-    If you started an {{ model }} run using the `-n` option (e.g., to [run the model for more than 5 years](#run-configuration-for-more-than-5-years)), but subsequently decide not to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory.<br>
+    If you started an {{ model }} run using the `-n` option (e.g., to [run the model for several years](#multiple-runs)), but subsequently decide not to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory.<br>
     This will prevent _payu_ from submitting another job.
 
 ### Error and output log files
@@ -303,10 +303,9 @@ The `config.yaml` file located in the _control_ directory is the _Master Configu
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Change run length {: id="runtime"}
+### Run lengths {: id="runtime"}
 
-One of the most common changes is to adjust the duration of the model run.<br>
-For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
+One of the most common changes is to adjust the duration of the model run.<br> {{model}} simulations are split into smaller _run lengths_, each with the duration specified by the `runtime` settings in the `config.yaml` file:
 
 The length of an {{model}} run is controlled by the `runtime` settings in the `config.yaml` file:
 
@@ -316,32 +315,22 @@ The length of an {{model}} run is controlled by the `runtime` settings in the `c
         months: 0
         days: 0
 ```
-
-For example, to make the model run for a single month, change the `runtime` to 
-```
-    runtime:
-        years: 0
-        months: 1
-        days: 0
-```
-!!! warning
-    The sea ice component of {{ model }} is configured to produce restart files only at the end of each year. While simulations shorter than a year can be helpful for troubleshooting, they will not produce valid restart files and it will not be possible to continue them after the first run. If running more than one segment is required, the `runtime` setting for {{ model }} should be left at one year. 
+At the end of each run length, each model component saves its state into a _restart file_, allowing the simulation to be continued in subsequent runs.
 
 !!! warning
-    The _run length_ (controlled by `runtime`) can be different from the _total experiment length_. While `runtime` can be reduced, it should not be increased to more than 1 year to avoid errors. For more information about the difference between _run length_ and _total experiment length_, or how to run the model for more than 1 year, refer to the section [Understand `runtime`, `runspersub`, and `-n` parameters](#multiple-runs). 
-    
-If you want to run {{ model }} configuration for multiple _run lengths_ (each with duration [`runtime`](#runtime) in the `config.yaml` file), use the option `-n`:
+    The _run length_ (controlled by `runtime`) should be left at 1 year for {{model}} experiments in order to avoid errors. Simulations longer than 1 year can be set up by running for multiple run lengths, as described in the section [Understand `runtime`, `runspersub`, and `-n` parameters](#multiple-runs). Shorter simulations can also be useful when setting up and debugging new experiments, however require additional model settings to be changed. See the section [Running for less than one year](#shorter-runs) for details.
 
+To run {{ model }} configuration for multiple subsequent _run lengths_ (each with duration `runtime` in the `config.yaml` file), use the option `-n` with the `payu run` command:
 
 ```
 payu run -f -n <number-of-runs>
 ```
 
-This will run the configuration `number-of-runs` times with a _total experiment length_ of `runtime * number-of-runs`. The number of consecutive [PBS jobs][PBS job] submitted to the queue depends on the [`runspersub`](#runspersub) value specified in the config.yaml file.
-
+This will run the configuration `number-of-runs` times, resulting in a _total experiment length_ of `runtime * number-of-runs`. The runs will be split accross a number of consecutive [PBS jobs][PBS job] submitted to the queue, as controlled by the `runspersub` value specified in the config.yaml file.
+    
 ### Understand `runtime`, `runspersub`, and `-n` parameters {: id="multiple-runs"}
 
-With the correct use of [`runtime`](#runtime), `runspersub` and `-n` parameters, you can have full control of your run.<br>
+With the correct use of [`runtime`](#runtime), `runspersub` and `-n` parameters, you can have full control of your experiment.<br>
 
 - `runtime` defines the _run length_.
 - `runspersub` defines the maximum number of runs for every [PBS job] submission.
@@ -363,6 +352,17 @@ Now some practical examples:
     ```
     This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
 
+### Running for less than one year {: id="shorter-runs"}
+When debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes. In order to run the model for a single month, the `runtime` can be changed to
+
+```
+    runtime:
+        years: 0
+        months: 1
+        days: 0
+```
+
+With the default configuration settings, the sea ice component of {{ model }} will produce restart files only at the end of each year. If valid restart files are required when running shorter simulations, the sea ice model configuration should be modified so that restart files are produced at monthly frequencies. To do this, change the `dumpfreq = 'y'` setting to `dumpfreq = 'm'` in the `cice_in.nml` configuration file located in the `ice` control directory.
 
 ### Modify PBS resources
 
@@ -601,7 +601,19 @@ Postprocessing scripts that need to be run after _payu_ has completed all steps 
 ```yaml
 postscript: -v PAYU_CURRENT_OUTPUT_DIR -P ${PROJECT} -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
 ```
-All { model } configurations include the above postscript, which converts the atmosphere components output files to NetCDF format, in order to simplify analysis and reduce storage requirements.
+All {{ model }} configurations include an automatic NetCDF conversion postscript, which converts the atmosphere model's fields file format output to NetCDF in order to aid analysis and reduce storage requirements. By default, both the original atmospheric fields files, and the NetCDF files will be retained at the end of a simulation. The conversion script has an automatic deletion option, which deletes the original fields files upon successful conversion. This setting is deactivated by default, however can be enabled in the following line of the job submission script `./scripts/NetCDF-conversion/UM_conversion_job.sh`:
+
+```bash
+esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR 
+```
+
+To activate automatic fields file deletion, add a `--delete-ff` flag to the end of the line:
+
+```bash
+esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR --delete-ff
+```
+
+It's recommended to run an experiment for a few years and checking that the conversion is working as desired before activating the automatic deletion.
 
 #### Miscellaneous
 
@@ -614,11 +626,28 @@ qsub_flags: -W umask=027
 
 ### Edit a single {{ model }} component configuration
 
-Each of [{{ model }} components][model components] contains additional configuration options that are read in when the model component is running.<br>
-These options are typically useful to modify the physics used in the model, the input data, or the model variables saved in the output files.
+Each of [{{ model }} components][model components] contains additional configuration options that are read in when the model component is running.<br> These options are typically useful to modify the physics used in the model, the input data, or the model variables saved in the output files.
 
 These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-esm/preindustrial+concentrations/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
+
+### Controlling model output
+Selecting the variables to save from a simulation can be a balance between enabling future analyisis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's control directory. 
+
+Each submodel's control directory contains _detailed_ and _standard_ presets for controling the output, located in the `diagnostic_profiles` subdirectories (e.g. `~/access-esm/preindustrial+concentrations/ice/diagnostic_profiles` for the sea ice submodel). The _detailed_ profiles request a large number of variables at higher frequencies, while the _standard_ profiles restrict the output to variables more regularly used accross the community.
+
+Selecting a preset output profile to use in a simulation can be done by pointing the following symbolic links to the desired profile:
+
+ * `STASHC` in the atmosphere control directory.
+ * `diag_table` in the ocean control directory.
+ * `ice_history.nml` in the ice control directory.
+
+For example, to select the _detailed_ output profile for the atmosphere:
+<terminal-window>
+    <terminal-line data="input">cd ~/access-esm/preindustrial+concentrations/atmosphere</terminal-line>
+    <terminal-line data="input">ln -sf diagnostic_profiles/STASHC_detailed STASHC</terminal-line>
+</terminal-window>
+
 
 ## Get Help
 
