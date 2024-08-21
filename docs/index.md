@@ -17,7 +17,7 @@ hide:
 
 <div class="card-container homepage-buttons">
     <a href="/getting_started" class="vertical-card">
-        <div class="bold">New to NCI?</div>
+        <div class="bold">New ACCESS user?</div>
         <div class="card-text-container">
             <div class="bold">Get Started on NCI</div>
         </div>
