@@ -66,8 +66,8 @@ For more information on {{ model }} configurations, check [{{model}}][model conf
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
-<!-- TODO: add link to release configuration -->
-For example, if the required configuration is the co2 concentration driven pre-industrial configuration, then the branch to select is [`release-preindustrial+concentrations`](MISSING LINK).
+
+For example, if the required configuration is the co2 concentration driven pre-industrial configuration, then the branch to select is [`release-preindustrial+concentrations`](https://forum.access-hive.org.au/t/access-esm1-5-release-information/2352).
 
 To clone this branch to a location on _Gadi_, run:
     
