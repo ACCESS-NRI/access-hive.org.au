@@ -75,7 +75,7 @@ To clone this branch to a location on _Gadi_, run:
     cd ~/access-esm1.5
     payu clone -b expt -B release-preindustrial+concentrations {{ github_configs }} preindustrial+concentrations
 
-In the example above the `payu clone` command clones the concentration driven pre-industrial configuration (` -B -B release-preindustrial+concentrations`) 
+In the example above the `payu clone` command clones the concentration driven pre-industrial configuration (`-B release-preindustrial+concentrations`) 
 to a new experiment branch (`-b expt`) to a directory named `preindustrial+concentrations`.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
@@ -317,7 +317,7 @@ The length of an {{model}} run is controlled by the `runtime` settings in the `c
 At the end of each run length, each model component saves its state into a _restart file_, allowing the simulation to be continued in subsequent runs.
 
 !!! warning
-    The _run length_ (controlled by `runtime`) should be left at 1 year for {{model}} experiments in order to avoid errors. Simulations longer than 1 year can be set up by running for multiple run lengths, as described in the section [Understand `runtime`, `runspersub`, and `-n` parameters](#multiple-runs). Shorter simulations can also be useful when setting up and debugging new experiments, however require additional model settings to be changed. See the section [Running for less than one year](#shorter-runs) for details.
+    The _run length_ (controlled by `runtime`) should be left at 1 year for {{model}} experiments in order to avoid errors. Shorter simulations can be useful when setting up and debugging new experiments, however they require additional configuration changes. See the section [Running for less than one year](#shorter-runs) for details.
 
 To run {{ model }} configuration for multiple subsequent _run lengths_ (each with duration `runtime` in the `config.yaml` file), use the option `-n` with the `payu run` command:
 
@@ -329,28 +329,30 @@ This will run the configuration `number-of-runs` times, resulting in a _total ex
     
 ### Understand `runtime`, `runspersub`, and `-n` parameters {: id="multiple-runs"}
 
-With the correct use of [`runtime`](#runtime), `runspersub` and `-n` parameters, you can have full control of your experiment.<br>
+It is possible to have more than one model run per queue submit. With the correct use of [`runtime`](#runtime), `runspersub` and `-n` parameters, you can have full control of your experiment.<br>
 
 - `runtime` defines the _run length_.
 - `runspersub` defines the maximum number of runs for every [PBS job] submission.
+- `walltime` defines the maximum time of every [PBS job] submission.
 - `-n` sets the number of runs to be performed.
 
 Now some practical examples:
 
 - **Run 20 years of simulation with resubmission every 5 years**<br>
-    To have a _total experiment length_ of 20 years with a 5-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set `runspersub` to `5`. Then, run the configuration with `-n` set to `20`:
+    To have a _total experiment length_ of 20 years with a 5-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year`, set `runspersub` to `5` and `walltime` to `10:00:00`. Then, run the configuration with `-n` set to `20`:
     ```
     payu run-f -n 20
     ```
     This will submit subsequent jobs for the following years: 1 to 5, 6 to 10, 11 to 15, and 16 to 20, which is a total of 4 PBS jobs.
 
 - **Run 7 years of simulation with resubmission every 3 years**<br>
-    To have a _total experiment length_ of 7 years with a 3-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year` and set `runspersub` to `3`. Then, run the configuration with `-n` set to `7`:
+    To have a _total experiment length_ of 7 years with a 3-year resubmission cycle, leave [`runtime`](#runtime) as the default value of `1 year`, set `runspersub` to `3` and `walltime` to `6:00:00`. Then, run the configuration with `-n` set to `7`:
     ```
     payu run -f -n 7
     ```
     This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
-
+!!! tip
+    The `walltime` must be set to be long enough that the PBS job can complete. The model usually runs a single year in 90 minutes or less, but the `walltime` for a single model run is set to `2:30:00` out of an abundance of caution to make sure the model has time to run when there are occasional slower runs for unpredicatable reasons. When setting `runspersub > 1` the `walltime` doesn't need to be a simple multiple of `2:30:00` because it is highly unlikely that there will be multiple anomalously slow runs per submit.
 ### Running for less than one year {: id="shorter-runs"}
 When debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes. In order to run the model for a single month, the `runtime` can be changed to
 
@@ -361,7 +363,7 @@ When debugging changes to a model, it is common to reduce the run length to mini
         days: 0
 ```
 
-With the default configuration settings, the sea ice component of {{ model }} will produce restart files only at the end of each year. If valid restart files are required when running shorter simulations, the sea ice model configuration should be modified so that restart files are produced at monthly frequencies. To do this, change the `dumpfreq = 'y'` setting to `dumpfreq = 'm'` in the `cice_in.nml` configuration file located in the `ice` control directory.
+With the default configuration settings, the sea ice component of {{ model }} will produce restart files only at the end of each year. If valid restart files are required when running shorter simulations, the sea ice model configuration should be modified so that restart files are produced at monthly frequencies. To do this, change the `dumpfreq = 'y'` setting to `dumpfreq = 'm'` in the `cice_in.nml` configuration file located in the `ice` subdirectory of the control directory.
 
 ### Modify PBS resources
 
@@ -388,15 +390,15 @@ walltime: 2:30:00
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
 
-For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` with `ol01`:
+By default the model will be submitted to the PBS queue using your default project.  To run {{ model }} using the resources of a specific project, for example the `lg87` project (ESM Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` with `lg87`:
 
 ```yaml
-project: ol01
+project: lg87
 ```
 
 !!! warning
-    If a project other than the user's default project is used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
-    Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
+    If more than one project is used to run an {{ model }} configuration the `shortpath` option also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` directory added.<br>
+    This ensures the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
 
@@ -417,7 +419,7 @@ sync:
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
 !!! Warning
-    The {{model}} default configurations include a postprocessing [postcript](#postscripts) which converts atmospheric outputs to NetCDF format and runs in a separate PBS job. This prevents the final run's output and restart files from being automatically synced. Once the postprocessing is completed, the final outputs and restarts can be manually synced by running `payu sync` from the control directory.
+    The {{model}} configurations include a postprocessing [postcript](#postscripts) which converts atmospheric outputs to NetCDF format. This runs in a separate PBS job and this prevents the output and restart files of the most recent run from being automatically synced. When a series of runs completes and the final post-processing is completed run `payu sync` in the control directory to sync the final outputs and restarts.
 
 ### Saving model restarts
 
@@ -554,7 +556,7 @@ Each submodel contains additional configuration options that are read in when th
 
 #### Collate
 
-Rather than outputting a single diagnostic file over the whole model horizontal grid, the ocean component [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans over a portion of the model horizontal grid.
+Rather than outputting a single diagnostic file over the whole model horizontal grid, the ocean component [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans a portion of model grid.
 
 The `collate` section in the `config.yaml` file controls the process that combines these smaller files into a single output file.
 
@@ -588,7 +590,7 @@ userscripts:
     run: ./scripts/update_landuse_driver.sh
 ```
 
-A dictionary to run scripts or subcommands at various stages of a _payu_ submission. The above example comes from the `release-historical+concentrations` configuration, where the ```update_landuse_driver.sh``` is used to apply historical land use changes at the end of each run.
+Run scripts or subcommands at various stages of a _payu_ submission. The above example comes from the `release-historical+concentrations` configuration, where the ```update_landuse_driver.sh``` is used to apply historical land use changes at the end of each run.
 
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
