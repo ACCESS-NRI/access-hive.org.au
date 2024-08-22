@@ -213,7 +213,7 @@ which kills the specified job without waiting for it to complete.
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
 These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
-To move these files to the `archive` directory, use the following commmand:
+To move these files to the `archive` directory, use the following command:
 ```
 payu sweep
 ```
@@ -325,7 +325,7 @@ To run {{ model }} configuration for multiple subsequent _run lengths_ (each wit
 payu run -f -n <number-of-runs>
 ```
 
-This will run the configuration `number-of-runs` times, resulting in a _total experiment length_ of `runtime * number-of-runs`. The runs will be split accross a number of consecutive [PBS jobs][PBS job] submitted to the queue, as controlled by the `runspersub` value specified in the config.yaml file.
+This will run the configuration `number-of-runs` times, resulting in a _total experiment length_ of `runtime * number-of-runs`. The runs will be split across a number of consecutive [PBS jobs][PBS job] submitted to the queue, as controlled by the `runspersub` value specified in the config.yaml file.
     
 ### Understand `runtime`, `runspersub`, and `-n` parameters {: id="multiple-runs"}
 
@@ -388,7 +388,7 @@ walltime: 2:30:00
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
 
-For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`:
+For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` with `ol01`:
 
 ```yaml
 project: ol01
@@ -630,9 +630,9 @@ These configuration options are specified in files located inside a subfolder of
 To modify these options please refer to the User Guide of the respective model component.
 
 ### Controlling model output
-Selecting the variables to save from a simulation can be a balance between enabling future analyisis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's control directory. 
+Selecting the variables to save from a simulation can be a balance between enabling future analysis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's control directory. 
 
-Each submodel's control directory contains _detailed_ and _standard_ presets for controling the output, located in the `diagnostic_profiles` subdirectories (e.g. `~/access-esm/preindustrial+concentrations/ice/diagnostic_profiles` for the sea ice submodel). The _detailed_ profiles request a large number of variables at higher frequencies, while the _standard_ profiles restrict the output to variables more regularly used accross the community.
+Each submodel's control directory contains _detailed_ and _standard_ presets for controlling the output, located in the `diagnostic_profiles` subdirectories (e.g. `~/access-esm/preindustrial+concentrations/ice/diagnostic_profiles` for the sea ice submodel). The _detailed_ profiles request a large number of variables at higher frequencies, while the _standard_ profiles restrict the output to variables more regularly used across the community.
 
 Selecting a preset output profile to use in a simulation can be done by pointing the following symbolic links to the desired profile:
 
