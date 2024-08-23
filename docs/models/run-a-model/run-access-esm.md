@@ -419,7 +419,7 @@ sync:
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders.
 
 !!! Warning
-    The {{model}} configurations include a postprocessing [postcript](#postscripts) which converts atmospheric outputs to NetCDF format. This runs in a separate PBS job and this prevents the output and restart files of the most recent run from being automatically synced. When a series of runs completes and the final post-processing is completed run `payu sync` in the control directory to sync the final outputs and restarts.
+    The {{model}} configurations include a postprocessing [postcript](#postscripts) which converts atmospheric outputs to NetCDF format. This runs in a separate PBS job and this prevents the output and restart files of the most recent run from being automatically synced. When a series of runs completes and the final post-processing is completed, run `payu sync` in the control directory to sync the final outputs and restarts.
 
 ### Saving model restarts
 
@@ -601,7 +601,7 @@ Postprocessing scripts that need to be run after _payu_ has completed all steps 
 ```yaml
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
 ```
-All {{ model }} configurations include an automatic NetCDF conversion postscript, which converts the atmosphere model's fields file format output to NetCDF in order to aid analysis and reduce storage requirements. By default, the conversion script will delete the fields files upon successful conversion, leaving only the NetCDF output.  The automatic deletion can be disabled by commenting out the `--delete-ff` command line flag from  the conversion job submission script `./scripts/NetCDF-conversion/UM_conversion_job.sh`. That is, changing
+All {{ model }} configurations include the above NetCDF conversion postscript, which converts the atmosphere model's fields file format output to NetCDF in order to aid analysis and reduce storage requirements. By default, the conversion script will delete the fields files upon successful completion, leaving only the NetCDF output.  This automatic deletion can be disabled by commenting out the `--delete-ff` command line flag from  the conversion job submission script `./scripts/NetCDF-conversion/UM_conversion_job.sh`. That is, changing
 
 ```bash
 esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR --delete-ff
