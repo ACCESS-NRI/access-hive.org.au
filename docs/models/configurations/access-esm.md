@@ -2,7 +2,7 @@
 
 ![ACCESS ESM model](/assets/model-config-logos/configurations-without-titles/access-esm.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
 
-The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate model that includes [atmoshpere](/models/model_components/atmosphere), [land](/models/model_components/land), [ocean](/models/model_components/ocean), [sea ice](/models/model_components/sea-ice), [ocean biogeochemistry](/models/model_components/bgc_ocean) and [land biogeochemistry](/models/model_components/bgc_land) components, linked together by a [coupler](/models/model_components/coupler).<br>
+The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate model that includes [atmosphere](/models/model_components/atmosphere), [land](/models/model_components/land), [ocean](/models/model_components/ocean), [sea ice](/models/model_components/sea-ice), [ocean biogeochemistry](/models/model_components/bgc_ocean) and [land biogeochemistry](/models/model_components/bgc_land) components, linked together by a [coupler](/models/model_components/coupler).<br>
 This means it can simulate both the physical climate and global biogeochemical cycles, in particular the carbon cycle.
 
 ## ACCESS-ESM1.5
@@ -21,7 +21,7 @@ There are currently two supported configurations:
       Historical forcing data including atmospheric CO~2~ concentrations are primarily sourced from UKMO versions of CMIP6 inputs, with land use change data adapted from the Land-Use Harmonisation 2 (LUH2) dataset developed for CMIP6 [(Hurtt et al. 2017)](https://doi.org/10.22033/ESGF/input4MIPs.1127).
 
 ### Model components
-- **Atmoshpere**: [UM7.3](/models/model_components/atmosphere#unified-model-um), GA7.1 science configuration.<br>
+- **Atmosphere**: [UM7.3](/models/model_components/atmosphere#unified-model-um), GA7.1 science configuration.<br>
   N96 spatial resolution (1.875° x 1.25°), 38 vertical levels.
 
 - **Land**: [CABLE2.4](/models/model_components/land#cable).
