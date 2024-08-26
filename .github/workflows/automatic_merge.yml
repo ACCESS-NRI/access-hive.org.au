@@ -2,25 +2,36 @@ name: Automatic merge
 
 on:
   schedule: 
-    # Run every Sunday at 03:09 (AEDT)
-    # AEDT is UTC+10 --> Sunday at 03:09 AEDT is Saturday at 17:09 UTC
-    - cron: "9 17 * * SAT"
+    # Run every Monday at 03:09 (AEDT)
+    # AEDT is UTC+10 --> Monday at 03:09 AEDT is Sunday at 17:09 UTC
+    - cron: "9 17 * * SUN"
 
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Checkout repo
-      uses: actions/checkout@master
+      uses: actions/checkout@v4
       with:
-        ref: main
+        ref: main 
         fetch-depth: 0
-        token: ${{ secrets.ADMIN_TOKEN }}
+    
+    - name: Import GPG settings
+      uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4  # v6.1.0
+      with:
+        gpg_private_key: ${{ secrets.GH_ACTIONS_BOT_GPG_PRIVATE_KEY }}
+        passphrase: ${{ secrets.GH_ACTIONS_BOT_GPG_PASSPHRASE }}
+        git_config_global: true
+        git_committer_name: ${{ vars.GH_ACTIONS_BOT_GIT_USER_NAME }}
+        git_committer_email: ${{ vars.GH_ACTIONS_BOT_GIT_USER_EMAIL }}
+        git_user_signingkey: true
+        git_commit_gpgsign: true
+        git_tag_gpgsign: true
     
     - name: Merge development to main
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "github-actions@github.com"
         git merge --no-ff -X theirs origin/development -m "Automatically merge 'development' to 'main'.
         Merge commit issued by the automatic_merge workflow."
         git push origin main
