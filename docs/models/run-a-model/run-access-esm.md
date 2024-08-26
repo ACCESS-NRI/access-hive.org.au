@@ -48,7 +48,7 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
     
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
-        <terminal-line lineDelay="1000">1.1.3</terminal-line>
+        <terminal-line lineDelay="1000">1.1.5</terminal-line>
     </terminal-window>
 
     !!! warning
@@ -308,7 +308,7 @@ One of the most common changes is to adjust the duration of the model run.<br> {
 
 The length of an {{model}} run is controlled by the `runtime` settings in the `config.yaml` file:
 
-```
+```yml
     runtime:
         years: 1
         months: 0
@@ -356,14 +356,14 @@ Now some practical examples:
 ### Running for less than one year {: id="shorter-runs"}
 When debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes. In order to run the model for a single month, the `runtime` can be changed to
 
-```
+```yml
     runtime:
         years: 0
         months: 1
         days: 0
 ```
 
-With the default configuration settings, the sea ice component of {{ model }} will produce restart files only at the end of each year. If valid restart files are required when running shorter simulations, the sea ice model configuration should be modified so that restart files are produced at monthly frequencies. To do this, change the `dumpfreq = 'y'` setting to `dumpfreq = 'm'` in the `cice_in.nml` configuration file located in the `ice` subdirectory of the control directory.
+With the default configuration settings, the sea ice component of {{ model }} will produce restart files only at the end of each year. If valid restart files are required when running shorter simulations, the sea ice model configuration should be modified so that restart files are produced at monthly frequencies. To do this, change the `dumpfreq = 'y'` setting to `dumpfreq = 'm'` in the `cice_in.nml` configuration file located in the `ice` subdirectory of the _control_ directory.
 
 ### Modify PBS resources
 
@@ -419,7 +419,8 @@ sync:
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders.
 
 !!! Warning
-    The {{model}} configurations include a postprocessing [postcript](#postscripts) which converts atmospheric outputs to NetCDF format. This runs in a separate PBS job and this prevents the output and restart files of the most recent run from being automatically synced. When a series of runs completes and the final post-processing is completed, run `payu sync` in the control directory to sync the final outputs and restarts.
+    The {{model}} configurations include a [postprocessing script](#postscripts) which converts atmospheric outputs to NetCDF format. This script runs in a separate PBS job and prevents the output and restart files of the most recent run from being automatically synced.<br>
+    After a series of runs and the final post-processing is completed, manually execute `payu sync` in the _control_ directory to sync the final output and restart files.
 
 ### Saving model restarts
 
@@ -595,13 +596,15 @@ Run scripts or subcommands at various stages of a _payu_ submission. The above e
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
 
-#### Postscripts {: id="postscripts"}
-Postprocessing scripts that need to be run after _payu_ has completed all steps that might alter the output directory can be run as postscripts. These run in separate PBS jobs than the main model simulation. 
+#### Postscripts
+Postprocessing scripts that run after _payu_ has completed all steps. Scripts that might alter the output directory, for example, can be run as postscripts. These run in PBS jobs separate from the main model simulation.
 
 ```yaml
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
 ```
-All {{ model }} configurations include the above NetCDF conversion postscript, which converts the atmosphere model's fields file format output to NetCDF in order to aid analysis and reduce storage requirements. By default, the conversion script will delete the fields files upon successful completion, leaving only the NetCDF output.  This automatic deletion can be disabled by commenting out the `--delete-ff` command line flag from  the conversion job submission script `./scripts/NetCDF-conversion/UM_conversion_job.sh`. That is, changing
+
+All {{ model }} configurations include the NetCDF conversion postscript mentioned above. This script converts the [UM](/models/model_components/atmosphere#unified-model-um)'s fields file format output to NetCDF in order to facilitate analysis and reduce storage requirements. By default, the conversion script will delete the fields files upon successful completion, leaving only the NetCDF output. This automatic deletion can be disabled by commenting out the `--delete-ff` command line flag from the conversion job submission script located in the _control_ directory under `scripts/NetCDF-conversion/UM_conversion_job.sh`.<br>
+That means changing
 
 ```bash
 esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR --delete-ff
@@ -612,8 +615,6 @@ to
 ```bash
 esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR # --delete-ff
 ```
-will prevent the output fields files from being deleted.
-
 
 #### Miscellaneous
 
@@ -632,15 +633,15 @@ These configuration options are specified in files located inside a subfolder of
 To modify these options please refer to the User Guide of the respective model component.
 
 ### Controlling model output
-Selecting the variables to save from a simulation can be a balance between enabling future analysis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's control directory. 
+Selecting the variables to save from a simulation can be a balance between enabling future analysis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's _control_ directory. 
 
-Each submodel's control directory contains _detailed_ and _standard_ presets for controlling the output, located in the `diagnostic_profiles` subdirectories (e.g. `~/access-esm/preindustrial+concentrations/ice/diagnostic_profiles` for the sea ice submodel). The _detailed_ profiles request a large number of variables at higher frequencies, while the _standard_ profiles restrict the output to variables more regularly used across the community.
+Each submodel's _control_ directory contains _detailed_ and _standard_ presets for controlling the output, located in the `diagnostic_profiles` subdirectories (e.g. `~/access-esm/preindustrial+concentrations/ice/diagnostic_profiles` for the sea ice submodel). The _detailed_ profiles request a large number of variables at higher frequencies, while the _standard_ profiles restrict the output to variables more regularly used across the community.
 
 Selecting a preset output profile to use in a simulation can be done by pointing the following symbolic links to the desired profile:
 
- * `STASHC` in the atmosphere control directory.
- * `diag_table` in the ocean control directory.
- * `ice_history.nml` in the ice control directory.
+ * `STASHC` in the atmosphere _control_ directory.
+ * `diag_table` in the ocean _control_ directory.
+ * `ice_history.nml` in the ice _control_ directory.
 
 For example, to select the _detailed_ output profile for the atmosphere:
 <terminal-window>
