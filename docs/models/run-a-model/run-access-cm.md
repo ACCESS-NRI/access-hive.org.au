@@ -21,7 +21,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
     The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
     To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
 
-- **Join the _access_, _hr22_, _ki32_, and _ki32\_mosrs_ projects at NCI**<br>
+- **Join the _access_, _hr22_, _ki32_ and _ki32\_mosrs_ projects at NCI**<br>
     To join these projects, request membership on the respective [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
 
     !!! tip

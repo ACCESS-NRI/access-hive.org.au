@@ -2,7 +2,7 @@
 
 ![ACCESS CM model](/assets/model-config-logos/configurations-without-titles/access-cm.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
 
-The ACCESS Coupled Model (ACCESS-CM) is a fully-coupled global climate model that includes [atmoshpere](/models/model_components/atmosphere), [aerosols and atmospheric chemistry](/models/model_components/aerosols_atmospheric_chemistry), [land](/models/model_components/land), [ocean](/models/model_components/ocean) and [sea ice](/models/model_components/sea-ice) components, linked together by a [coupler](/models/model_components/coupler).<br>
+The ACCESS Coupled Model (ACCESS-CM) is a fully-coupled global climate model that includes [atmosphere](/models/model_components/atmosphere), [aerosols and atmospheric chemistry](/models/model_components/aerosols_atmospheric_chemistry), [land](/models/model_components/land), [ocean](/models/model_components/ocean) and [sea ice](/models/model_components/sea-ice) components, linked together by a [coupler](/models/model_components/coupler).<br>
 It produces physical climate simulations.
 
 ## ACCESS-CM2
@@ -10,7 +10,7 @@ It produces physical climate simulations.
 [ACCESS-CM2](https://www.publish.csiro.au/es/ES19040) [@Bi2020] was initially developed by [CSIRO](https://www.csiro.au/) and is one of Australia’s contributions to the World Climate Research Programme’s [Coupled Model Intercomparison Project Phase 6 (CMIP6)](https://wcrp-cmip.org/cmip6/).
 
 ### Model components
-- **Atmoshpere**: [UM10.6](/models/model_components/atmosphere#unified-model-um), GA7.1 science configuration.<br>
+- **Atmosphere**: [UM10.6](/models/model_components/atmosphere#unified-model-um), GA7.1 science configuration.<br>
   N96 spatial resolution (1.875° x 1.25°), 85 vertical levels. Physical model only – no carbon cycle.
   
 - **Aerosols and Atmospheric Chemistry**: [GLOMAP](/models/model_components/aerosols_atmospheric_chemistry#glomap) for the aerosols and [UKCA](/models/model_components/aerosols_atmospheric_chemistry#ukca) for the atmospheric chemistry.

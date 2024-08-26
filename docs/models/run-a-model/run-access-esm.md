@@ -12,7 +12,7 @@
 
 ## About
 
-{{ model }} is a fully-coupled global climate model, combining  atmoshpere, land, ocean, sea ice, ocean biogeochemistry and land biogeochemistry components. A description of the model and its components is available in the [{{ model }} overview][model configurations].
+{{ model }} is a fully-coupled global climate model, combining  atmosphere, land, ocean, sea ice, ocean biogeochemistry and land biogeochemistry components. A description of the model and its components is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -30,8 +30,16 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 
 ### Model-specific prerequisites
 
-- **Join the _vk83_ project at NCI**<br>
-    To join this project, request membership on the [vk83](https://my.nci.org.au/mancini/project/vk83/join) NCI project page.<br>
+- **_MOSRS_ account**<br>
+    The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
+    To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
+
+- **Join the _vk83_, _ki32_ and _ki32\_mosrs_ projects at NCI**<br>
+    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
+
+    !!! tip
+        To request membership for the _ki32_mosrs_ subproject you need to be member of the _ki32_ project first.
+
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Payu**<br>
