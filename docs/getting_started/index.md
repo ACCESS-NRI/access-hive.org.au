@@ -5,7 +5,7 @@ If you have never used NCI Gadi for ACCESS models, run through these two pages t
 <div class="card-container">
     <a href="/getting_started/first_steps" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain with-padding white-background" src="/assets/first_steps_logo.png" alt="First Steps">
+            <img class="img-contain with-padding white-background" src="/assets/first_steps_logo.png" alt="Set up NCI account">
         </div>
         <div class="card-text-container bold">   
             Set Up your NCI Account

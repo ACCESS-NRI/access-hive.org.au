@@ -9,9 +9,10 @@
     Then, refer to instructions on how to [Set up persistent session worflow for {{ model }}]({{ '#set-up-%s-persistent-session'%model.lower() }}), and how to [port suites from accessdev](#port-suites-from-accessdev).
 
 ## Prerequisites
+
 ### General prerequisites
 
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/first_steps).
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 

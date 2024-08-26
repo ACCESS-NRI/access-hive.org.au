@@ -57,7 +57,7 @@ Click on the questions to unfold the answers.
 
     Go to our [**Model Data**](/model_evaluation/data/model_catalogs) section on the ACCESS-Hive to learn how to find and access model data.
 
-    In both cases, you need to have access to the specific projects at NCI in order to read the data. For more information, check the [**First Steps**](/getting_started/first_steps) page.
+    In both cases, you need to have access to the specific projects at NCI in order to read the data. For more information, check how to [**Set Up your NCI Account**](/getting_started/first_steps).
 
 ??? question "What is the difference between _teams_ and _working groups_?"
 

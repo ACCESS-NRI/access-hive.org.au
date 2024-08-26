@@ -14,11 +14,8 @@ ACCESS-NRI is releasing an NCI configuration of ILAMB under the name **ILAMB-wor
 
 ### Pre-requisites
 
-<i>ILAMB</i> is provided through the `xp65` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
-
-<div class="note">
-    To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
-</div>
+<i>ILAMB</i> is provided through the `xp65` NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it.<br>
+To obtain an NCI account and join NCI projects, refer to how to [Set Up your NCI Account](/getting_started/first_steps).
 
 Depending on your needs, you may want to also join the following supported data collections:
 

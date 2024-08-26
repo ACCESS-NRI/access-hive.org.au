@@ -27,7 +27,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 ### General prerequisites
 
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/first_steps).
 
 ### Model-specific prerequisites
 
