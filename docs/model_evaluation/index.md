@@ -1,7 +1,7 @@
 #  Data and Model Evaluation 
 
 
-In this section you will find some collated information on data in the context of climate modelling which is important for model evaluation. Then there is also a collation of model evaluation tools available on *Gadi*. If you are new to using the Gadi supercomputer, visit the [Set Up your NCI Account](/getting_started/first_steps) section for instructions on how to get an account, log in, and get set up to access climate data on Gadi.
+In this section you will find some collated information on data in the context of climate modelling which is important for model evaluation. Then there is also a collation of model evaluation tools available on *Gadi*. If you are new to using the Gadi supercomputer, visit the [Set Up your NCI Account](/getting_started/set_up_nci_account) section for instructions on how to get an account, log in, and get set up to access climate data on Gadi.
 <!--## Prerequisites
 
 If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md): -->

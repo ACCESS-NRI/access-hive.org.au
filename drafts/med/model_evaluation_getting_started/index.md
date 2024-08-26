@@ -22,7 +22,7 @@ Model Evaluation and Diagnostics (MED) of ACCESS models includes:
 Here you can find information on how to access curated data stored at NCI and how to use it to evaluate specific models, such as comparing model output with observational data.
 
 <div class="card-container">
-    <a href="../../getting_started/first_steps" class="vertical-card aspect-ratio1to1">
+    <a href="../../getting_started/set_up_nci_account" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/Gadi-19-2.jpg" alt="Computing Access" class="img-cover"></img>
         </div>

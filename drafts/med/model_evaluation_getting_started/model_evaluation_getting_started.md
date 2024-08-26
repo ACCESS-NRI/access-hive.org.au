@@ -1,11 +1,11 @@
 # Conda Environment for Model Evaluation on Gadi
 
-If you do not have `ssh` access to <i>Gadi</i>, refer to instructions on how to <a href="/getting_started/first_steps#login-to-gadi">login to Gadi</a>.
+If you do not have `ssh` access to <i>Gadi</i>, refer to instructions on how to <a href="/getting_started/set_up_nci_account#login-to-gadi">login to Gadi</a>.
 
 The following instructions explain how to load the curated python environment on NCI, which includes packages and scripts supported by ACCESS-NRI. Once loaded, these can be run directly on <i>Gadi</i> via `ssh`, Portable Batch System (PBS) scripts, or in JupyterLab.
 
 ???+ warning "ACCESS-NRI provides code and support, but not computing resources"
-    You do not automatically have access to all `/g/data/` storage on <i>Gadi</i>. You need to <a href="/getting_started/first_steps#join-relevant-nci-projects">join an NCI project</a> to view files on `/g/data/$PROJECT`.
+    You do not automatically have access to all `/g/data/` storage on <i>Gadi</i>. You need to <a href="/getting_started/set_up_nci_account#join-relevant-nci-projects">join an NCI project</a> to view files on `/g/data/$PROJECT`.
     <br>
     For model evaluation and diagnostics, you need to join projects `xp65` and `hh5` for code access and a `$PROJECT` with sufficient compute resources.
 

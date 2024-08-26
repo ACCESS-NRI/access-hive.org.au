@@ -1,5 +1,5 @@
 # Run a Model
-If you are a new user of ACCESS climate models, please refer to how to [Set Up your NCI Account](/getting_started/first_steps).
+If you are a new user of ACCESS climate models, please refer to how to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 If you are unsure which ACCESS model is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 

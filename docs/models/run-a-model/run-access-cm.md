@@ -12,7 +12,7 @@
 
 ### General prerequisites
 
-Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/first_steps).
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
@@ -52,7 +52,7 @@ Go to the [ARE VDI](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/d
 
 - **Project** &rarr; a project of which you are a member.<br>
     The project must have allocated _Service Units (SU)_ to run your simulation. Usually, but not always, this corresponds to your `$PROJECT`.<br>
-    For more information, refer to how to [Join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
+    For more information, refer to how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 - **Storage** &rarr; `gdata/access+gdata/hh5+gdata/hr22+gdata/ki32` (minimum)<br>
     This is a list of all project data storage, joined by plus (`+`) signs, needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access data from within a VDI instance.<br>
@@ -80,7 +80,7 @@ To start a new persistent session on _Gadi_, using either a login node or an ARE
 persistent-sessions start <name>
 ```
 
-This will start a persistent session with the given `name` that runs under your [default project](/getting_started/first_steps#change-default-project-on-gadi).<br>
+This will start a persistent session with the given `name` that runs under your [default project](/getting_started/set_up_nci_account#change-default-project-on-gadi).<br>
 If you want to assign a different project to the persistent session, use the option `-p`:
 ```
 persistent-sessions start -p <project> <name>
@@ -88,7 +88,7 @@ persistent-sessions start -p <project> <name>
 
 !!! tip
     While the project assigned to a persistent session does not have to be the same as the project used to run the {{ model }} configuration, it does need to have allocated _Service Units (SU)_.<br>
-    For more information, check how to [Join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
+    For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 <terminal-window data="input">
     <terminal-line>persistent-sessions start &lt;name&gt;</terminal-line>
@@ -262,7 +262,7 @@ For example, to run an {{ model }} suite under the `tm70` project (ACCESS-NRI), 
 ![Rose change project example](/assets/run_access_cm/rose_change_project_are.gif){: class="example-img" loading="lazy"}
 
 !!! warning
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check how to [Join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Change run length and cycling frequency
 {{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen _Cycling frequency_ until the _Total Run length_ is reached. 
