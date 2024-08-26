@@ -1,24 +1,25 @@
 {% set model = "ACCESS-OM2" %}
-{% set access_om2_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
+{% set github_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
-[model components]: https://access-hive.org.au/models/configurations/access-om/#model-components
+[model components]: /models/configurations/access-om/#model-components
+[model configurations]: /models/configurations/access-om/#access-om2
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations](https://github.com/ACCESS-NRI/access-om2-configs){: class="text-card"}
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
 # Run {{ model }}
 
 ## About
 
-{{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview](https://access-hive.org.au/models/configurations/access-om/#access-om2).
+{{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
-If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](https://access-hive.org.au/models).
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-All Model configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub](https://github.com/ACCESS-NRI/access-om2-configs).
+All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
 {{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-om2-release-information/1602/) and are updated when new releases are made available.
 
@@ -26,7 +27,7 @@ All Model configurations are open source, licensed under [CC BY 4.0](https://cre
 
 ### General prerequisites
 
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](https://access-hive.org.au/getting_started/first_steps) section.
+Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
 
 ### Model-specific prerequisites
 
@@ -57,12 +58,12 @@ Before running {{ model }}, you need to fulfil general prerequisites outlined in
 
 ## Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.<br>
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
 
-For more information on {{ model }} configurations, check [ACCESS-OM2](/models/configurations/access-om#access-om2) page.
+For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
-More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ access_om2_configs }}) GitHub repository.
+More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
 For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf).
@@ -71,7 +72,7 @@ To clone this branch to a location on _Gadi_, run:
     
     mkdir -p ~/access-om2
     cd ~/access-om2
-    payu clone -b expt -B release-1deg_jra55_ryf {{ access_om2_configs }} 1deg_jra55_ryf
+    payu clone -b expt -B release-1deg_jra55_ryf {{ github_configs }} 1deg_jra55_ryf
 
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
@@ -154,20 +155,6 @@ For information about `restart_period`, refer to [Change run length](#change-run
 </terminal-window>
 !!! tip
     You can add the `-f` option to `payu run` to let the model run even if there is an existing non-empty `work` directory, created from a previous failed run or from running `payu setup`.
-
-### Run configuration for more than 5 years
-
-As mentioned in the [Change run length](#change-run-length) section, you cannot specify more than 5 years as `restart_period`.<br>
-If you want to run a configuration for more than 5 years, you need to use the `-n` option:
-
-    payu run -n <number-of-runs>
-
-This will run {{ model }} `number-of-runs` consecutive times, each with a *run length* equal to `restart_period`.<br>
-This way, the *total experiment length* will be `restart_period * number-of-runs`. 
-
-For example, to run a configuration for a total of 50 years with a `restart_period` of 5 years, the `number-of-runs` should be set to `10`:
-
-    payu run -n 10
 
 ----------------------------------------------------------------------------------------
 
@@ -339,7 +326,21 @@ For example, to make the model run for 1 year, 4 months and 10 days, change `res
     While `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors.
     <br><br>
     It is also important to differentiate between _run length_ and _total experiment length_.<br>
-    For more information about their difference, or how to run the model for more than 5 years, refer to the section [Run configuration for more than 5 years](#run-configuration-for-more-than-5-years).
+    For more information about their difference, or how to run the model for more than 5 years, refer to [Run configuration for more than 5 years](#run-configuration-for-more-than-5-years).
+
+#### Run configuration for more than 5 years
+
+As mentioned in the [Change run length](#change-run-length) section, you cannot specify more than 5 years as `restart_period`.<br>
+If you want to run a configuration for more than 5 years, you need to use the `-n` option:
+
+    payu run -n <number-of-runs>
+
+This will run {{ model }} `number-of-runs` consecutive times, each with a *run length* equal to `restart_period`.<br>
+This way, the *total experiment length* will be `restart_period * number-of-runs`. 
+
+For example, to run a configuration for a total of 50 years with a `restart_period` of 5 years, the `number-of-runs` should be set to `10`:
+
+    payu run -n 10
 
 ### Modify PBS resources
 
@@ -390,7 +391,7 @@ sync:
       - '*.nc.*'
       - 'iceh.????-??-??.nc'
 ```
-To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/experiment_name/`.
+To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
 !!! admonition tip
     The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
