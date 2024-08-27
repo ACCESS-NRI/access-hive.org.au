@@ -7,8 +7,10 @@ hide:
 <h1 class="homepage"></h1>
 <div class="introduction">
     <div>
-        <div>Welcome to ACCESS-Hive!</div>
-        <div>Documentation for the ACCESS users: Getting set up, Running models and Model Evaluation</div>
+        <div>Welcome to ACCESS-Hive Docs!</div>
+        <div>
+            Documentation for the ACCESS users: Getting set up, Running models and Model Evaluation
+        </div>
     </div>
     <div>
         <img src="assets/ACCESS_icon_HIVE.png">

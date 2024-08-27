@@ -565,7 +565,7 @@ To modify these options please refer to the User Guide of the respective model c
 
 ## Get Help
 
-If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
+If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
 For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
 
 <custom-references>

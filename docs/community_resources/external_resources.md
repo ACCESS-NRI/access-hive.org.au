@@ -1,6 +1,6 @@
 # External Resources
 
- ACCESS-NRI is a constantly growing community! There are external tutorials, references, articles, projects and tools, related to ACCESS-NRI and its documentation hub, ACCESS-Hive.
+ ACCESS-NRI is a constantly growing community! There are external tutorials, references, articles, projects and tools, related to ACCESS-NRI and its documentation hub, ACCESS-Hive Docs.
 
  Here's a list of interesting articles and links, constantly updated as relevant external resources are found: 
 

@@ -6,11 +6,15 @@ On this page we answer frequently asked questions (FAQs), and also give addition
 
 Click on the questions to unfold the answers.
 
-??? question "What is the difference between the ACCESS-Hive and the Hive Forum?"
-    ACCESS-Hive is the open portal where ACCESS-NRI provides documentation for the ACCESS user community.
-    The Hive Forum is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
+??? question "What is the difference between the ACCESS-Hive Docs and the ACCESS-Hive Forum?"
+    The **ACCESS-Hive Docs** (also referred to as *Hive Docs*) is the website where ACCESS-NRI provides documentation for ACCESS users.
 
-    ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the ACCESS-Hive and the Hive Forum](/assets/access_hive_links.png){: class="with-border centered" style="width: 50%" loading="lazy"}
+    The **ACCESS-Hive Forum** (also referred to as *Hive Forum*) is the place where the ACCESS user community and its scientific working groups can exchange ideas and provide support.
+
+    !!! warning
+        **ACCESS-Hive** (without any other term attached) is an "umbrella" term that includes both the Hive Docs and Hive Forum, but should not be used in place of any of the two, to avoid confusion.
+    
+    <!-- ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the Hive Docs and the Hive Forum](/assets/access_hive_links.png){: class="with-border centered" style="width: 50%" loading="lazy"} -->
 
 ??? question "What is the difference between _model_, _model component_, and _model configuration_?"
     A **model component** (sometimes referred to simply as component) is a codebase that is typically compiled into a single executable. It usually runs independently and communicates with other components via a coupler.
@@ -53,9 +57,9 @@ Click on the questions to unfold the answers.
     
     Both observational and model data is hosted by the National Computational Infrastructure (NCI) under different projects. 
 
-    Go to our [**Observational Data**](/model_evaluation/data/observations) section on the ACCESS-Hive to learn how to find and access observational data.
+    Go to our [**Observational Data**](/model_evaluation/data/observations) section on the ACCESS-Hive Docs to learn how to find and access observational data.
 
-    Go to our [**Model Data**](/model_evaluation/data/model_catalogs) section on the ACCESS-Hive to learn how to find and access model data.
+    Go to our [**Model Data**](/model_evaluation/data/model_catalogs) section on the ACCESS-Hive Docs to learn how to find and access model data.
 
     In both cases, you need to have access to the specific projects at NCI in order to read the data. For more information, check how to [**Set Up your NCI Account**](/getting_started/set_up_nci_account).
 
