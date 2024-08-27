@@ -6,7 +6,7 @@ ARE gives you access to NCI’s _Gadi_ supercomputer and data collections.
 There are multiple applications included in ARE, but the two most used for ACCESS-related activities are [Virtual Desktop (VDI)](#vdi) and [JupyterLab](#jupyterlab).
 
 ## Prerequisites
-To use ARE, you must have an NCI account and be a member of a project with computing resources (known as Service Units, or SU). For instructions on how to set up an account and join projects, see <a href="/getting_started/first_steps">Set Up and Customize your NCI Account</a>.
+To use ARE, you must have an NCI account and be a member of a project with computing resources (known as Service Units, or SU). For instructions on how to set up an account and join projects, see <a href="/getting_started/set_up_nci_account">Set Up and Customize your NCI Account</a>.
 
 ## Start an ARE session
 <!-- Tab labels -->
@@ -51,7 +51,7 @@ Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/
     
     !!! warning
         The specified project must have allocated _Service Units (SU)_.<br>
-        For more information, check [how to join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
+        For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 - **<span markdown id="storage-option">Storage</span>**<br>
     `/g/data` (inserted as _gdata/&lt;project-ID&gt;_) `/scratch` (inserted as _scratch/&lt;project-ID&gt;_) data storage projects that will be available to the session.<br>
