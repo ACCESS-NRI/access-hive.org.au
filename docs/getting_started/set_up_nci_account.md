@@ -34,7 +34,7 @@ To run models on _Gadi_ instead, you need to join a project with computing resou
 To join a project, search for it on [NCI website](https://my.nci.org.au/mancini/project-search) and request membership.
 
 !!! tip
-    The first project you join will become your default one. If you would like to change this, check out [how to change your default project on Gadi](/getting_started/first_steps#change-default-project-on-gadi).
+    The first project you join will become your default one. If you would like to change this, check out [how to change your default project on Gadi](/getting_started/set_up_nci_account#change-default-project-on-gadi).
 
 There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out.<br>
 For tasks supported by ACCESS-NRI (e.g., running a supported model configuration, using a supported model evaluation tool, etc.), you will find a list of relevant projects to join in the pages relative to each respective task.
