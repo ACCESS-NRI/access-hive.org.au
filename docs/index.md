@@ -8,7 +8,7 @@ hide:
 <div class="introduction">
     <div>
         <div>Welcome to ACCESS-Hive!</div>
-        <div>The open portal for the ACCESS user community, hosted by <a href="https://www.access-nri.org.au/" target="_blank">ACCESS-NRI</a></div>
+        <div>Documentation for the ACCESS users: Getting set up, Running models and Model Evaluation</div>
     </div>
     <div>
         <img src="assets/ACCESS_icon_HIVE.png">
