@@ -1,4 +1,4 @@
-# ACCESS Community Workshop 2024 (2-5 Sept)
+# ACCESS Training Day (2 Sept)
 
 To find out detailed information about the workshop schedule, check the [ACCESS Community Workshop 2024 page](https://www.access-nri.org.au/access-community-workshop-2024/) on the ACCESS-NRI website. This section includes [training materials](community_resources/training_materials.md) for hands-on exercises during the workshop.
 
