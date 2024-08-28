@@ -70,9 +70,8 @@ hide:
         </div>
     </a>
 </div>
+<hr>
 
-## <span class="center-text">Acknowledgement of Country</span>
+#### <span class="center-text">Acknowledgement of Country</span>
 
-We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
-
-<img src = "assets/acknowledgement_unsplash_david_clode_Bark_Cairns.png"  class="acknowledgement-img" loading="lazy">
+<span class="small-text">We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.</span>
