@@ -7,8 +7,10 @@ hide:
 <h1 class="homepage"></h1>
 <div class="introduction">
     <div>
-        <div>Welcome to ACCESS-Hive!</div>
-        <div>The open portal for the ACCESS user community, hosted by <a href="https://www.access-nri.org.au/" target="_blank">ACCESS-NRI</a></div>
+        <div>Welcome to ACCESS-Hive Docs!</div>
+        <div>
+            Documentation for the ACCESS users: Getting set up, Running models and Model Evaluation
+        </div>
     </div>
     <div>
         <img src="assets/ACCESS_icon_HIVE.png">
@@ -70,9 +72,8 @@ hide:
         </div>
     </a>
 </div>
+<hr>
 
-## <span class="center-text">Acknowledgement of Country</span>
+#### <span class="center-text">Acknowledgement of Country</span>
 
-We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.
-
-<img src = "assets/acknowledgement_unsplash_david_clode_Bark_Cairns.png"  class="acknowledgement-img" loading="lazy">
+<span class="small-text">We at ACCESS-NRI acknowledge the Traditional Owners of the land on which our research infrastructure and community operate across Australia and pay our respects to Elders past and present. We recognise the thousands of years of accumulated knowledge and deep connection they have with all the Earth systems we simulate.</span>

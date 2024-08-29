@@ -27,12 +27,12 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 ### General prerequisites
 
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 ### Model-specific prerequisites
 
 - **Join the _vk83_ and _qv56_ projects at NCI**<br>
-    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https:my.nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
+    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Payu**<br>
@@ -372,7 +372,7 @@ project: ol01
     If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Syncing output data
 
@@ -565,7 +565,7 @@ To modify these options please refer to the User Guide of the respective model c
 
 ## Get Help
 
-If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
+If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
 For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
 
 <custom-references>

@@ -1,16 +1,16 @@
-# Contribute to ACCESS-Hive
+# Contribute to ACCESS-Hive Docs
 
 ![Contribute image](/assets/github-how-to-contribute.jpg){: class="intro-img img-cover with-border" loading="lazy"}
 
-ACCESS-Hive is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
+ACCESS-Hive Docs is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
-Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive user portal.
+Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive Docs user portal.
 
 ## How can I contribute?
 
 
 <div class="card-container">
-    <a href="https://github.com/ACCESS-Hive/access-hive.github.io/issues/new?assignees=&labels=External&projects=&template=simple-issue-template.md&title=" class="horizontal-card" target="_blank">
+    <a href="https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?assignees=&labels=External&projects=&template=simple-issue-template.md&title=" class="horizontal-card" target="_blank">
         <div class="card-image-container">
             <img class="img-contain white-background" src="/assets/how-to-contribute-img.jpg">
         </div>
@@ -32,7 +32,7 @@ Contributions are encouraged from any member of the community regarding any aspe
                 Write your own content
             </div>
             <span class="with-padding">
-                Contribute to the ACCESS-Hive user portal by adding content to the ACCESS-Hive GitHub repository yourself.
+                Contribute to the ACCESS-Hive Docs user portal by adding content to the ACCESS-Hive Docs GitHub repository yourself.
             </span>
         </div>
     </a>

@@ -34,7 +34,7 @@ To run models on _Gadi_ instead, you need to join a project with computing resou
 To join a project, search for it on [NCI website](https://my.nci.org.au/mancini/project-search) and request membership.
 
 !!! tip
-    The first project you join will become your default one. If you would like to change this, check out [how to change your default project on Gadi](/getting_started/first_steps#change-default-project-on-gadi).
+    The first project you join will become your default one. If you would like to change this, check out [how to change your default project on Gadi](/getting_started/set_up_nci_account#change-default-project-on-gadi).
 
 There are several NCI projects that may be relevant to you, depending on the tasks you want to carry out.<br>
 For tasks supported by ACCESS-NRI (e.g., running a supported model configuration, using a supported model evaluation tool, etc.), you will find a list of relevant projects to join in the pages relative to each respective task.
@@ -136,27 +136,28 @@ To add the SSH key to the SSH-agent:
     </div>
     <!-- Tab content -->
     <div class="tabContents" label="systems">
+    <!-- MacOS -->
         <div>
-        <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
-        You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
-        <terminal-window>
-            <terminal-line data="input">ssh-add --apple-use-keychain ~/.ssh/id_gadi</terminal-line>
-            <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
-            <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-        </terminal-window>
-        <div class='admonition warning'>
-            If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
+            <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
+            You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
+            <terminal-window>
+                <terminal-line data="input">ssh-add --apple-use-keychain ~/.ssh/id_gadi</terminal-line>
+                <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
+                <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
+            </terminal-window>
+            <div class='admonition warning'>
+                If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
+            </div>
         </div>
-        </div>
-        <!-- Linux/Windows -->
+    <!-- Linux/Windows -->
         <div>
-        <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
-        You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
-        <terminal-window>
-            <terminal-line data="input">ssh-add ~/.ssh/id_gadi</terminal-line>
-            <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
-            <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-        </terminal-window>
+            <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
+            You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
+            <terminal-window>
+                <terminal-line data="input">ssh-add ~/.ssh/id_gadi</terminal-line>
+                <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
+                <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
+            </terminal-window>
         </div>
     </div>
     <!-- End of tab content -->
@@ -172,16 +173,35 @@ touch ~/.ssh/config
     If you already have an existing `~/.ssh/config` file, the above command will not have any effect.
 
 The following lines should be added to your `~/.ssh/config` to describe the SSH configuration for _Gadi_ (replace `<your-NCI-username>` with your NCI _username_, e.g., `ab1234`):
-```ssh
-Host gadi
-Hostname gadi.nci.org.au
-User <your-NCI-username>
-ForwardX11 true
-ForwardX11Trusted yes
-IdentityFile ~/.ssh/id_gadi
-AddKeysToAgent yes
-UseKeychain yes
-```
+<div class="tabContents" label="systems">
+<!-- MacOS -->
+    <div markdown>
+        ```
+        Host gadi
+        Hostname gadi.nci.org.au
+        User &lt;your-NCI-username&gt;
+        ForwardX11 true
+        ForwardX11Trusted yes
+        IdentityFile ~/.ssh/id_gadi
+        AddKeysToAgent yes
+        UseKeychain yes
+        ```
+    </div>
+<!-- Linux/Windows -->
+    <div markdown>
+        ```
+        Host gadi
+        Hostname gadi.nci.org.au
+        User &lt;your-NCI-username&gt;
+        ForwardX11 true
+        ForwardX11Trusted yes
+        IdentityFile ~/.ssh/id_gadi
+        AddKeysToAgent yes
+        ```
+    </div>
+</div>
+</code></pre>
+<!-- End of tab content -->
 
 !!! warning
     If you already have an existing `~/.ssh/config` file which contains configurations for any `Host` (e.g., by using `Host *`), make sure you delete any of the keywords present in that SSH configuration from the `Gadi` configuration above.
@@ -190,7 +210,7 @@ UseKeychain yes
 To enable automatic connection to a server, that server needs to recognise the SSH key as _authorised_. The list of authorised keys for a certain server is stored in the file `~/.ssh/authorized_keys`.<br>
 To add the newly created SSH key as an _authorised_ key for _Gadi_, run the following command from your **local machine**:
 ```
-ssh gadi "cat >> .ssh/authorized_keys <<< '$(cat ~/.ssh/id_gadi.pub)'"
+ssh gadi "mkdir -p .ssh && cat >> .ssh/authorized_keys <<< '$(cat ~/.ssh/id_gadi.pub)'"
 ```
 
 You will be prompted to enter your NCI password. If you did all of the above steps correctly, this should be the last time you need to do so.

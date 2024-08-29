@@ -1,14 +1,11 @@
-site_name: ACCESS-Hive
+site_name: ACCESS-Hive Docs
 
 # Needed to generate the canonical_url for each pages that are 
 # then used to create the sitemap for search engine indexing
 site_url: https://access-hive.org.au
 # Git repository
-# repo_url: https://github.com/ACCESS-Hive/access-hive.github.io
-# repo_name: ACCESS-Hive
+# repo_url: https://github.com/ACCESS-NRI/access-hive.org.au
 # Material default to a "master" branch, need to change to "main"
-edit_uri: edit/main/docs
-docs_dir: docs
 
 # Theme
 theme:
@@ -53,7 +50,7 @@ theme:
   icon:
     edit: material/pencil
     view: material/eye
-copyright: Copyright &copy; 2023 ACCESS-NRI
+copyright: Copyright &copy; 2024 ACCESS-NRI
 
 plugins:
   - git-revision-date-localized:
@@ -99,7 +96,7 @@ nav:
 
   - Getting Started: 
     - getting_started/index.md
-    - Set Up your NCI Account: getting_started/first_steps.md
+    - Set Up your NCI Account: getting_started/set_up_nci_account.md
     - Australian Research Environment (ARE): getting_started/are.md
 
   - Models: 
@@ -160,12 +157,16 @@ nav:
     
   - Community Resources:
     - community_resources/index.md
+    - ACCESS Training Day 2024: 
+      - community_resources/access_workshop_2024/index.md
+      - Training materials: community_resources/access_workshop_2024/training_materials.md
     # TEMPORARY for Workshop
     - Workshops and Events Archive:
       - community_resources/workshops_events_archive/index.md
       - ACCESS Community Workshop 2023: 
         - Overview: community_resources/workshops_events_archive/access_workshop_2023/index.md
         - Training materials: community_resources/workshops_events_archive/access_workshop_2023/training_materials.md
+    - ACCESS-Hive Forum: https://forum.access-hive.org.au
     # TEMPORARY for Workshop
     - Working Groups: community_resources/community_working_groups.md
     - Model Evaluation Links:
@@ -176,13 +177,6 @@ nav:
       - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
     - External Resources: community_resources/external_resources.md
     - Glossaries: community_resources/glossaries.md
-    # - Training: 
-    #   - Training: drafts/training/index.md
-    #   - Git Version Control: drafts/training/git-version-control.md
-    #   - High Performance Computing (HPC): drafts/training/hpc.md
-    #   - ACCESS Training: drafts/training/ACCESS_training.md
-    #   - NCI Training: drafts/training/nci-training.md
-    #   - Additional Training: drafts/training/additional_training.md
   - About:
     - about/index.md
     - Contact: about/contact.md

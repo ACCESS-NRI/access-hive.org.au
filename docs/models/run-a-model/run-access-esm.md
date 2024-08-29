@@ -20,13 +20,13 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
-{{ model }} release notes are [available on the ACCESS-Hive Forum ](https://forum.access-hive.org.au/t/access-esm1-5-release-information/2352) and are updated when new releases are made available.
+{{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-esm1-5-release-information/2352) and are updated when new releases are made available.
 
 ## Prerequisites
 
 ### General prerequisites
 
-Before running {{ model }}, you need to fulfil general prerequisites outlined in the [First Steps](/getting_started/first_steps) section.
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 ### Model-specific prerequisites
 
@@ -408,7 +408,7 @@ project: lg87
     If more than one project is used to run an {{ model }} configuration the `shortpath` option also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` directory added.<br>
     This ensures the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/first_steps#join-relevant-nci-projects).
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Syncing output data
 
@@ -660,7 +660,7 @@ For example, to select the _detailed_ output profile for the atmosphere:
 
 ## Get Help
 
-If you have questions or need help regarding {{ model }}, consider creating a topic in the [Earth System Model category of the ACCESS Hive Forum](https://forum.access-hive.org.au/c/esm/earth-system-model/72).<br>
+If you have questions or need help regarding {{ model }}, consider creating a topic in the [Earth System Model category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/esm/earth-system-model/72).<br>
 For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
 
 <custom-references>

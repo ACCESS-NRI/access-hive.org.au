@@ -141,11 +141,11 @@ function toggleTerminalAnimations() {
   if (document.querySelector('terminal-window')) {
     
     function getState() {
-      return localStorage.getItem('ACCESS-Hive-animated-terminal_state') || 'active';
+      return localStorage.getItem('ACCESS-Hive-Docs-animated-terminal_state') || 'active';
     }
     
     function setState(state) {
-      localStorage.setItem('ACCESS-Hive-animated-terminal_state', state);
+      localStorage.setItem('ACCESS-Hive-Docs-animated-terminal_state', state);
     }
 
     function applyState() {

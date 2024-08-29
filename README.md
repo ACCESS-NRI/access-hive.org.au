@@ -1,21 +1,21 @@
-# ACCESS-Hive
-[![ACCESS-Hive Badge](docs/assets/badge.svg)][website]
-[![github-contributors](https://img.shields.io/github/contributors/ACCESS-Hive/access-hive.github.io?color=blue&style=plastic)][github-repo]
+# ACCESS-Hive Docs
+[![ACCESS-Hive Docs Badge](docs/assets/badge_hive_docs.svg)][hive-docs-website]
+[![github-contributors](https://img.shields.io/github/contributors/ACCESS-NRI/access-hive.org.au?color=blue&style=plastic)][github-repo]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
 [![link-check](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml/badge.svg)](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml)
 
-This repository is the implementation of the ACCESS-Hive website accessible at the following URL:<br>
+This repository is the implementation of the ACCESS-Hive Docs website accessible at the following URL:<br>
 https://access-hive.org.au/
 
-ACCESS-Hive is the documentation hub for the Earth System models, ACCESS, and their community.
+The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting set up, running models and model evaluation.
 
 # How to Contribute
-If you wish to add documentation to the ACCESS-Hive website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
+If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
 ## Styling guidelines for developers
-The ACCESS-Hive website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
+The ACCESS-Hive Docs website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
 
-Please follow the guidelines below to make the Hive consistent among all the pages contributed by different people. 
+Please follow the guidelines below to make the Hive Docs consistent among all the pages contributed by different people. 
 
 - Always prefer Markdown syntax to HTML when possible;
 - All internal URLs need to be ABSOLUTE links, starting with `/` which indicates the base website `https://access-hive.org.au/`. So, a reference to the page `https://access-hive.org.au/models/configurations/access-cm/` will be `/models/configurations/access-cm`. Also, all assets need to be linked starting with `/assets/...`. This because currently the link checker does not handle relative links properly.
@@ -23,8 +23,8 @@ Please follow the guidelines below to make the Hive consistent among all the pag
 - Code lines/blocks need to be used for lines/blocks of code, terminal commands and file/directory paths/names;
 - Italic needs to be used when referring to specific proper nouns (for example _Gadi_ or _payu_);
 - Bold can be used to highlight some words (please do not overuse it);
-- All types of admonitions (info, warning, etc.), collapsible and not, can be used as described in the [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. For the HTML version of them, please refer to the [HTML/Markdown cheatsheet for the Hive](#htmlmarkdown-cheatsheet-for-the-hive).
-- Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see [HTML/Markdown cheatsheet for the Hive](#htmlmarkdown-cheatsheet-for-the-hive));
+- All types of admonitions (info, warning, etc.), collapsible and not, can be used as described in the [documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/), but they are rendered slightly differently. For the HTML version of them, please refer to the [HTML/Markdown cheatsheet for the Hive Docs](#htmlmarkdown-cheatsheet-for-the-hive-docs).
+- Instructions for different versions (for example different operative systems or different model versions) can be rendered using tabs (see [HTML/Markdown cheatsheet for the Hive Docs](#htmlmarkdown-cheatsheet-for-the-hive-docs));
 - Terminal input/output examples can be rendered using [animated-terminal.js](https://github.com/atteggiani/animated-terminal.js)
 
 ### Styling Markdown using CSS
@@ -71,7 +71,7 @@ The following custom tags are available:
   It should not be used manually as it is automatically embedded in the pages containing simulated terminals.
 
 
-### HTML/Markdown Cheatsheet for the Hive
+### HTML/Markdown Cheatsheet for the Hive Docs
 |Style|Markdown Syntax|HTML Syntax|Rendered example|
 |---|---|---|---|
 |**Bold**|\*\*bold**|\<b>bold\</b>|**bold**|
@@ -84,10 +84,10 @@ The following custom tags are available:
 
 
 # License
-The ACCESS-Hive site is covered by the [CC-BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
+The ACCESS-Hive Docs website is covered by the [CC-BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
-However, the material linked to from ACCESS-Hive is covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.
+However, the material linked to from ACCESS-Hive Docs is covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.
 
-[website]: https://access-hive.org.au
-[github-repo]: https://github.com/ACCESS-Hive/access-hive.github.io.git
+[hive-docs-website]: https://access-hive.org.au
+[github-repo]: https://github.com/ACCESS-NRI/access-hive.org.au
 [forum]: https://forum.access-hive.org.au
