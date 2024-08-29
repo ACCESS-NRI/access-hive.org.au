@@ -9,7 +9,7 @@ hide:
     <div>
         <div>Welcome to ACCESS-Hive Docs!</div>
         <div>
-            Documentation for the ACCESS users: Getting set up, Running models and Model Evaluation
+            Documentation for ACCESS users: getting set up, running models and Model Evaluation
         </div>
     </div>
     <div>
