@@ -1,5 +1,15 @@
 'use strict';
 
+// Redirect for workshop
+function redirect() {
+  let url = window.location.href;
+  const pattern = /\/getting_started\/first_steps\b/;
+  if (url.match(pattern)) {
+    window.location.replace(url.replace(pattern, '/getting_started/set_up_nci_account'));
+  }
+}
+console.log('running');
+redirect();
 /*
   Change absolute URLs for development-website and PR-previews (Move to build script)
 */
@@ -236,7 +246,6 @@ function makeCitationLinks() {
     }
   })
 }
-
 
 // Join all functions
 function main() {
