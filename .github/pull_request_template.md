@@ -1,8 +1,8 @@
-# ACCESS Community Hive 
+# ACCESS-Hive Docs
 
-Thank you for submitting a pull request to the ACCESS Hive Project. 🎉
+Thank you for submitting a pull request to the ACCESS-Hive Docs Project. 🎉
 
-More assistance is available in the [how to contribute section on ACCESS-Hive](https://access-hive.org.au/about/contribute/)
+More assistance is available in the [how to contribute section on ACCESS-Hive Docs](https://access-hive.org.au/about/contribute/)
 
 ## Description
 
@@ -16,15 +16,6 @@ Fixes #(issue number)
 This also works if you include the same text in a commit message.
 
 (Delete these instructions after you write your description. 🙃)
-
-<!-- This is an html comment so these instructions are not visible in your pull request
-Now, if you really want to make the ACCESS-Hive developers life easier, consider filling up what follows. 😍
-
-The following sections create checkboxes that you can "tick-off" after you've created your pull request. They are intended to help you to ensure your pull request will be accepted as easily as possible.  
-
-If you find this intimidating or you don't really know what some of those bullet points mean, then just delete everything from here onwards. 🫣
--->
-
 
 ## Type of change
 
@@ -43,4 +34,4 @@ Please delete options that are not relevant.
 
 When your pull request is ready please [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review). 
 
-Unless there is a specific person you want to review your PR please select the **reviewers team**: `ACCESS-Hive/reviewers`. This ensures the load for reviewing pull requests is shared equitably.
+Unless there is a specific person you want your PR to be reviewd by, please select the **WebOps team**: `ACCESS-NRI/WebOps`. This ensures the load for reviewing pull requests is shared equitably.

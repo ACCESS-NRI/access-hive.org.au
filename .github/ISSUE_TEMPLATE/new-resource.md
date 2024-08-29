@@ -9,11 +9,11 @@ assignees: ''
 
 Thank you for sharing a resource with the ACCESS community
 
-If there is a new resource you would like to add to the ACCESS-Hive please include the following information:
+If there is a new resource you would like to add to the ACCESS-Hive Docs please include the following information:
 
 - [ ] link to the resource: this can include multiple "sub links". Please indicate the nature of the sub-links,  e.g. `docs`, `source-code`, `tutorials`, `getting-started`
 - [ ] short description to accompany the link
-- [ ] category and sub-category where this resource should sit in the ACCESS-Hive structure (see below for details of categories)
+- [ ] category and sub-category where this resource should sit in the ACCESS-Hive Docs structure (see below for details of categories)
 
 The site has an excellent in-built search facility, so the description plays an important role in people finding your resource, and assessing if this is of interest to them.
 

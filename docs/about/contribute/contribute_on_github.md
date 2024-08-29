@@ -13,13 +13,13 @@ For a quick reference on how to use Markdown syntax you can refer to the [Markdo
 ## Raise a GitHub Issue
 
 All contributions need to have an associated [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution.<br>
-To raise an issue, create a New Issue in the [ACCESS-Hive GitHub repository issue page](https://github.com/ACCESS-NRI/access-hive.org.au/issues). Feel free to assign that issue to yourself if you intend to work on it.
+To raise an issue, create a New Issue in the [ACCESS-Hive Docs GitHub repository issue page](https://github.com/ACCESS-NRI/access-hive.org.au/issues). Feel free to assign that issue to yourself if you intend to work on it.
 
-## Fork the ACCESS-Hive GitHub repository
+## Fork the ACCESS-Hive Docs GitHub repository
 
-After raising a GitHub issue about your contribution, you need to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui) the [ACCESS-Hive GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au).
+After raising a GitHub issue about your contribution, you need to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui) the [ACCESS-Hive Docs GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au).
 
-## Clone the forked ACCESS-Hive GitHub repository locally
+## Clone the forked ACCESS-Hive Docs GitHub repository locally
 For cloning the forked repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
 
 To start with, if you have an [existing SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys), then simply [add this key to your github account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account), and you are all set to clone the repository. In case you don't have the SSH keys set up on your local computer, it's easy to [create a new SSH key locally](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and then [feel free to link this key to your github account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
@@ -27,7 +27,7 @@ To start with, if you have an [existing SSH key](https://docs.github.com/en/auth
 <terminal-window>
     <terminal-line data="input">git clone git@github.com:ACCESS-NRI/access-hive.org.au.git</terminal-line>
     <terminal-line></terminal-line>
-    <terminal-line>Cloning into 'access-hive.github.io'...</terminal-line>
+    <terminal-line>Cloning into 'access-hive.org.au'...</terminal-line>
     <terminal-line>remote: Enumerating objects: 54754, done.</terminal-line>
     <terminal-line>remote: Counting objects: 100% (4096/4096), done.</terminal-line>
     <terminal-line>remote: Compressing objects: 100% (560/560), done.</terminal-line>
@@ -91,13 +91,13 @@ This would make sure that the local branch `spongebob/fix-hive-title-issue-234` 
 ## Deploying Website Preview
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving. 
 
-To build the site locally, you need to install [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and other plugins. You can find a full list in the `requirements.txt` file (in the root of the [ACCESS-Hive GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au)). Please use `pip` for the installation as some of the packages are not updated or not available on conda:
+To build the site locally, you need to install [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and other plugins. You can find a full list in the `requirements.txt` file (in the root of the [ACCESS-Hive Docs GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au)). Please use `pip` for the installation as some of the packages are not updated or not available on conda:
 
 <terminal-window>
     <terminal-line data="input">pip install -r requirements.txt</terminal-line>
 </terminal-window>
 
-To start the server, open terminal and navigate to your ACCESS-Hive local repository and use the command:
+To start the server, open terminal and navigate to your ACCESS-Hive Docs local repository and use the command:
 
 <terminal-window>
     <terminal-line data="input">mkdocs serve</terminal-line>
@@ -120,7 +120,7 @@ Once the changes on your local branch `spongebob/fix-hive-title-issue-234` are r
 
 ![GitHub preview](/assets/github-preview-link.png){: class="example-img"  loading="lazy"}
 
-After a PR is created and tested, feel free to ask for reviews by tagging the ACCESS-Hive/reviewers team and reply if any changes are being requested in the PR. 
+After a PR is created and tested, feel free to ask for reviews by tagging the ACCESS-NRI/WebOps team and reply if any changes are being requested in the PR. 
 
 ## Additional GitHub learning resources 
 
