@@ -1,5 +1,5 @@
 # ACCESS-Hive Docs
-[![ACCESS-Hive Docs Badge](docs/assets/badge_hive_docs.svg)][hive-docs-website]
+[![ACCESS-Hive Docs Badge](docs/assets/assets_for_readme/badge_hive_docs.svg)][hive-docs-website]
 [![github-contributors](https://img.shields.io/github/contributors/ACCESS-NRI/access-hive.org.au?color=blue&style=plastic)][github-repo]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
 [![link-check](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml/badge.svg)](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml)
