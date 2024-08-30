@@ -9,14 +9,27 @@ hide:
     <div>
         <div>Welcome to ACCESS-Hive Docs!</div>
         <div>
-            Documentation for the ACCESS users: Getting set up, Running models and Model Evaluation
+            Documentation for ACCESS users: getting set up, running models and model evaluation
         </div>
     </div>
     <div>
         <img src="assets/ACCESS_icon_HIVE.png">
     </div>
 </div>
-
+<!-- TEMPORARY for workshop -->
+<div class="card-container homepage-buttons workshop">
+    <a href="/community_resources/access_workshop_2024" class="horizontal-card" style="height: 3rem;">
+        <div class="card-image-container" style="flex-basis: 20%">
+            <img src="/assets/ACCESS_NRI_full_logo.png" class="white-background img-contain"></img>
+        </div>
+        <div class="card-text-container" style="flex-grow: 1;">
+            <span class="bold small-text">
+                ACCESS Training Day and Workshop 2024
+            </span>
+        </div>
+    </a>
+</div>
+<!-- TEMPORARY for workshop -->
 <div class="card-container homepage-buttons">
     <a href="/getting_started" class="vertical-card">
         <div class="bold">New ACCESS user?</div>
