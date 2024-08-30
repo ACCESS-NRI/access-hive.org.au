@@ -1,6 +1,6 @@
 # ACCESS Training Day 
 
-**Time:** 9am - 5pm on Monday, September 2, 2024
+**Time:** 9am - 5pm on Monday, 2 September 2024
 
 **Location:** Marie Reay Teaching Centre, Level 5 (on the ANU campus)
 
