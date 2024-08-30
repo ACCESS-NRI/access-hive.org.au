@@ -1,6 +1,10 @@
-# ACCESS Training Day (2 Sept)
+# ACCESS Training Day 
 
-To find out detailed information about the workshop schedule, check the [ACCESS Community Workshop 2024 page](https://www.access-nri.org.au/access-community-workshop-2024/) on the ACCESS-NRI website. This section includes [training materials](community_resources/training_materials.md) for hands-on exercises during the workshop.
+**Time:** 9am - 5pm on Monday, 2 September 2024
+
+**Location:** Marie Reay Teaching Centre, Level 5 (on the ANU campus)
+
+Setup requirements can be found on the Training Materials page linked below.
 
 <div class="card-container workshop-page">
     <a href="https://www.access-nri.org.au/wp-content/uploads/2024/08/Schedule_and_session_details_with_hackathon.pdf" class="horizontal-card" target="_blank">
