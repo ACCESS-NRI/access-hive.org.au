@@ -4,7 +4,7 @@
     <!-- TEMPORARY for Workshop -->
     <a href="/community_resources/workshops_events_archive" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/ACCESS_NRI_full_logo.png" alt="ACCESS Workshop 2023">
+            <img class="white-background" src="/assets/workshop_and_events.jpeg" alt="ACCESS Workshop 2023">
         </div>
         <div class="card-text-container bold">Workshops and Events Archive</div>
     </a>
