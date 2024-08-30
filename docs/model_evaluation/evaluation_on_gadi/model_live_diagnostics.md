@@ -10,7 +10,7 @@ Below, we show an example of the Model Live Diagnostics Tool. For more informati
 <!-- <div class="card-container">
     <a href="https://med-live-diagnostics.readthedocs.io/en/latest/index.html" class="vertical-card aspect-ratio2to1" target="_blank">
         <div class="card-image-container">
-            <img src="../../../assets/access_logo_rgb.svg" alt="ACCESS-NRI Model Diagnostics Documentation" class="img-contain white-background with-padding"></img>
+            <img src="../../../assets/ACCESS_NRI_full_logo.png" alt="ACCESS-NRI Model Diagnostics Documentation" class="img-contain white-background with-padding"></img>
         </div>
         <div class="card-text-container bold ">Model Diagnostics Documentation</div>
     </a>

@@ -223,6 +223,8 @@
   width: clamp(100px,30%,250px);
   min-height: 0;
   container-type: inline-size;
+  padding: 0.4rem;
+  gap: 0.2rem;
 }
 
 .horizontal-card {
@@ -232,6 +234,8 @@
   align-items: stretch;
   width: 100%;
   height: 8rem;
+  padding: 0.4rem;
+  gap: 0.2rem;
 }
 
 .card-text-container {
@@ -258,36 +262,25 @@
 
 .vertical-card > .card-image-container {
   flex-basis: 70%;
-  padding: 3.5%;
 }
 .vertical-card > .card-text-container {
   height: 30%;
   flex-grow: 0;
   flex-shrink: 0;
   font-size: 10cqi;
-  padding: 3.5%;
 }
 
 .horizontal-card > .card-image-container {
   flex-basis: 25%;
-  padding: 0.4rem;
 }
 .horizontal-card > .card-text-container {
   flex-basis: 75%;
-  padding: 0.4rem;
 }
 
 .card-image-container > img {
   width: 100%;
   height: 100%;
   border-radius: 0.35rem;
-}
-
-.vertical-card > .card-text-container:last-child {
-  padding-top: 0;
-}
-.vertical-card > .card-text-container:first-child {
-  padding-bottom: 0;
 }
 
 .horizontal-card > .card-text-container > *:first-child:not(:only-child) {
@@ -421,7 +414,6 @@ h1.homepage {
 .homepage-buttons .card-text-container {
   height: 1.8em;
   font-size: 2em;
-  padding: 2.5%;
 }
 
 /* Navigation cards in homepage */
@@ -1326,9 +1318,6 @@ img.intro-img {
     height: 8vw;
     border-radius: 2vw;
   }
-  .homepage-buttons .card-text-container {
-    padding: 0;
-  }
 }
 
 
@@ -1358,13 +1347,6 @@ img.intro-img {
     flex: 0 0 auto;
     font-size: 10cqi;
     font-weight: 600;
-    padding: 3.5%;
-  }
-  .horizontal-card > .card-image-container {
-    padding: 3.5%;
-  }
-  .horizontal-card > .card-text-container:last-child {
-    padding-top: 0;
   }
   .horizontal-card > .card-text-container > *:last-child:not(:only-child) {
     display: none;
@@ -1460,7 +1442,6 @@ img.intro-img {
 }
 .card-container.homepage-buttons.workshop .card-text-container {
   height: 100%;
-  padding: 0.4rem 0.4rem 0.4rem 0;
 }
 .card-container.homepage-buttons.workshop .card-text-container > span {
   background-color: var(--nri-orange);
@@ -1494,7 +1475,6 @@ img.intro-img {
   }
   .card-container.homepage-buttons.workshop .card-text-container {
     flex-basis: 100%;
-    padding: 0;
   }
 }
 @media screen and (width <= 550px) {
