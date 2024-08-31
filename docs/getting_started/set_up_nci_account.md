@@ -231,7 +231,7 @@ echo $PROJECT
 To change your default project on _Gadi_, you need to manually change the `PROJECT` field in the `~/.config/gadi-login.conf` file.<br>
 Alternatively, you can run the following command **on _Gadi_'s terminal** (by substituting `<new-default-project>` with the project you want to set as default):
 ```
-sed "s/\(PROJECT \)\w*/\1<new-default-project>/" ~/.config/gadi-login.conf
+sed -i "s/\(PROJECT \)\w*/\1<new-default-project>/" ~/.config/gadi-login.conf
 ```
 
 Once this is done, exit from _Gadi_ and log back in.
