@@ -1,4 +1,14 @@
-Links to other materials will be added here soon!
+## Training session materials
+
+[CMIP7 Evaluation Hackathon](https://access-nri.github.io/CMIP7_MED_Hackathon/) 
+
+[How to find and access datasets on NCI & handle large model output](https://github.com/ACCESS-NRI/training-day-2024-find-analyse-data)
+
+[Advanced git & GitHub best practices for software developers](https://github.com/ACCESS-NRI/training-day-2024-advanced_git)
+
+[Running model experiments with Payu and Git](https://forum.access-hive.org.au/t/running-model-experiments-with-payu-and-git/2285)
+
+[Running a high-resolution regional model using a two-level nest](https://github.com/ACCESS-NRI/training-day-2024-regional_model)
 
 
 
