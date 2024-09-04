@@ -7,9 +7,9 @@ on:
       - reopened
       - synchronize
   schedule: 
-    # Run every Sunday at 03:07 (AEDT)
-    # AEDT is UTC+10 --> Sunday at 03:07 AEDT is Saturday at 17:07 UTC
-    - cron: "7 17 * * SAT"
+    # Run every Monday at 03:07 (AEDT)
+    # AEDT is UTC+10 --> Monday at 03:07 AEDT is Sunday at 17:07 UTC
+    - cron: "7 17 * * SUN"
   workflow_dispatch:
 
 jobs:
