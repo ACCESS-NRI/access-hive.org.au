@@ -874,9 +874,6 @@ details.code {
 }
 
 /* Main logo */
-.md-header__button.md-logo {
-  cursor:default
-}
 .md-header__button:hover {
   opacity: 1;
 }
