@@ -7,16 +7,22 @@ on:
     - cron: "9 17 * * SUN"
 
 jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check links
+      uses: ./.github/workflows/check_links.yml
+
   auto-merge:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    # needs: check-links
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@master
       with:
-        ref: main 
+        ref: main
         fetch-depth: 0
+        token: ${{ secrets.ADMIN_TOKEN }}
     
     - name: Import GPG settings
       uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4  # v6.1.0
@@ -32,6 +38,7 @@ jobs:
     
     - name: Merge development to main
       run: |
+        git config --list
         git merge --no-ff -X theirs origin/development -m "Automatically merge 'development' to 'main'.
         Merge commit issued by the automatic_merge workflow."
         git push origin main
