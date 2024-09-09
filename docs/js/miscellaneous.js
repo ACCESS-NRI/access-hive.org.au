@@ -84,7 +84,7 @@ function tabFunctionality() {
     button.addEventListener('click', (e) => openTab(e.currentTarget));
   })
 
-  // Add click event for links to tab IDs on the same page
+  // Add click event for links to tab IDs
   document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
     let href = el.getAttribute('href');
     let tabEl = document.getElementById(href.slice(1,))

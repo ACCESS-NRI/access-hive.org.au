@@ -16,7 +16,7 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/access_esm_globe_visualisation.png" alt="ACCESS-ESM">
         </div>
-        <div class="card-text-container   bold">   
+        <div class="card-text-container bold">   
             Run ACCESS-ESM
         </div>
     </a>
@@ -24,8 +24,16 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/access_om_globe_visualisation.png" alt="ACCESS-OM">
         </div>
-        <div class="card-text-container   bold">   
+        <div class="card-text-container bold">   
             Run ACCESS-OM
+        </div>
+    </a>
+    <a href="/models/run-a-model/build_a_model" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/access_om_globe_visualisation.png" alt="Build a model">
+        </div>
+        <div class="card-text-container bold">   
+            Build a model
         </div>
     </a>
 </div>

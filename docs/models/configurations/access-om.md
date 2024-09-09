@@ -29,9 +29,9 @@ Each configuration also has a biogeochemical (BGC) configuration that uses the [
 
 ### Model Components
 <div class="tabLabels" label="ACCESS-OM2-versions">
-    <button>ACCESS-OM2</button>
-    <button>ACCESS-OM2-025</button>
-    <button>ACCESS-OM2-01</button>
+    <button id="1deg">ACCESS-OM2</button>
+    <button id="025deg">ACCESS-OM2-025</button>
+    <button id='01deg'>ACCESS-OM2-01</button>
 </div>
 
 - **Ocean**: [MOM5](/models/model_components/ocean#mom5).<br>
