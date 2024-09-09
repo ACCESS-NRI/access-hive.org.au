@@ -5,6 +5,7 @@ on:
     # Run every Monday at 03:09 (AEDT)
     # AEDT is UTC+10 --> Monday at 03:09 AEDT is Sunday at 17:09 UTC
     - cron: "9 17 * * SUN"
+  push:
 
 jobs:
   auto-merge:
@@ -32,6 +33,7 @@ jobs:
     
     - name: Merge development to main
       run: |
+        git config --list
         git merge --no-ff -X theirs origin/development -m "Automatically merge 'development' to 'main'.
         Merge commit issued by the automatic_merge workflow."
         git push origin main
