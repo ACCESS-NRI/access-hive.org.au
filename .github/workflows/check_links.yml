@@ -6,25 +6,21 @@ on:
       - opened
       - reopened
       - synchronize
-  schedule: 
-    # Run every Monday at 03:07 (AEDT)
-    # AEDT is UTC+10 --> Monday at 03:07 AEDT is Sunday at 17:07 UTC
-    - cron: "7 17 * * SUN"
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   link-check:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout main repo
-      if: ${{github.event_name == 'schedule'}}
+      if: ${{github.event_name == 'pull_request'}}
+      uses: actions/checkout@master
+
+    - name: Checkout repo
+      if: ${{github.event_name != 'pull_request'}}
       uses: actions/checkout@master
       with:
         ref: main
-
-    - name: Checkout repo
-      if: ${{github.event_name != 'schedule'}}
-      uses: actions/checkout@master
     
     - name: Link checker
       uses: lycheeverse/lychee-action@2b973e86fc7b1f6b36a93795fe2c9c6ae1118621 #v1.10.0

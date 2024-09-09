@@ -5,11 +5,17 @@ on:
     # Run every Monday at 03:09 (AEDT)
     # AEDT is UTC+10 --> Monday at 03:09 AEDT is Sunday at 17:09 UTC
     - cron: "9 17 * * SUN"
-  push:
 
 jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check links
+      uses: ./.github/workflows/check_links.yml
+
   auto-merge:
     runs-on: ubuntu-latest
+    # needs: check-links
     steps:
     - name: Checkout repo
       uses: actions/checkout@master
