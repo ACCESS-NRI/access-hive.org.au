@@ -59,29 +59,29 @@ function tabFunctionality() {
   let activeEl = document.activeElement;
   // If tab is activeElement (for example if a link points to an ID 
   // inside the tab content/button), make that tab active
-  if (activeEl.parentElement.classList.contains("tabLabels")) {
+  if (activeEl?.parentElement.classList.contains("tabLabels")) {
     activeEl.blur();
     openTab(activeEl);
   } else {
     // Otherwise first check if a tab was open and a page reloaded, and open the same tab, 
-    // otherwise open first tab
-    document.querySelectorAll(".tabLabels").forEach(tabs => {
-      let label = tabs.getAttribute("label");
-      let index;
+    // otherwise open the tab that has the .activeTab class, otherwise open the first tab
+    document.querySelectorAll(".tabLabels").forEach(tabLabels => {
+      let label = tabLabels.getAttribute("label");
+      let tabID;
       if (sessionStorage.getItem(`tabs-label=${label}`)) {
-        index = sessionStorage.getItem(`tabs-label=${label}`);
+        tabID = sessionStorage.getItem(`tabs-label=${label}`);
+      } else if (tabLabels.querySelector(".activeTab")) {
+        tabID = tabLabels.querySelector(".activeTab").id;
       } else {
-        index = '1';
+        tabID = tabLabels.firstElementChild.id;
       }
-      // tabs.querySelector(`:nth-child(${index})`).classList.add("activeTab");
-      // document.querySelectorAll(`.tabContents[label="${label}"] > :nth-child(${index})`).forEach(content => content.classList.add("activeTabContent"));
-      openTab(tabs.querySelector(`:nth-child(${index})`));
+      openTab(document.getElementById(tabID));
     })
   }
   // Add click event to tab buttons
   let tabButtons = document.querySelectorAll(".tabLabels > button");
   tabButtons.forEach(button=>{
-    button.addEventListener('click', openTab);
+    button.addEventListener('click', (e) => openTab(e.currentTarget));
   })
 
   // Add click event for links to tab IDs on the same page
@@ -93,30 +93,32 @@ function tabFunctionality() {
     }
   })
   
-  function openTab(e) {
-    let active;
-    if (e.currentTarget) {
-      active = e.currentTarget;
-    } else {
-      active = e;
-    }
+  function openTab(active) {
     let label = active.parentElement.getAttribute('label');
     let index = Array.from(active.parentElement.children).indexOf(active)+1;
-    // Remove active classes from button/content
-    document.querySelectorAll(`.tabContents[label=${label}] > .activeTabContent`).forEach(content => {
-      content.classList.remove('activeTabContent');
-    })
-    document.querySelectorAll(`.tabLabels[label=${label}] > .activeTab`).forEach(button => {
-      button.classList.remove('activeTab');
-    })
-    // Add active classes to button/content and add focus
-    document.querySelectorAll(`.tabContents[label=${label}] > :nth-child(${index})`).forEach(content => {
-      content.classList.add('activeTabContent');
-    })
-    document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`).forEach(button => {
-      button.classList.add('activeTab');
-    })
-    sessionStorage.setItem(`tabs-label=${label}`,`${index}`);
+    // Remove active classes from tabs with matching labels 
+    document.querySelectorAll(`.tabLabels[label="${label}"] > .activeTab`).forEach(elem => {
+      elem.classList.remove('activeTab');
+    });
+    // Remove active classes from contents whose tabs ID are not activeTabs
+    document.querySelectorAll('[tabcontentfor]').forEach(elem => {
+      let tabcontentfor = elem.getAttribute('tabcontentfor');
+      if (! document.getElementById(`${tabcontentfor}`).classList.contains('activeTab')) {
+        elem.classList.remove('activeTab');
+      }
+    });
+    // Add active classes to tab labels
+    document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`)
+      .forEach(button => {button.classList.add('activeTab')});
+    // Add active classes to contents whose tabs ID are activeTabs
+    document.querySelectorAll('[tabcontentfor]').forEach(elem => {
+      let tabcontentfor = elem.getAttribute('tabcontentfor');
+      if (document.getElementById(`${tabcontentfor}`).classList.contains('activeTab')) {
+        elem.classList.add('activeTab');
+      }
+    });
+    // Save active tab to sessionStorage
+    sessionStorage.setItem(`tabs-label=${label}`,`${active.id}`);
   }
 }
 
