@@ -1,30 +1,49 @@
 {% set om2_build_config = "https://github.com/ACCESS-NRI/ACCESS-OM2" %}
 {% set esm1_5_build_config = "https://github.com/ACCESS-NRI/ACCESS-ESM1.5" %}
+[gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-# Build a model
+# <div tabcontentfor="access-esm1.5">Build ACCESS-ESM1.5</div><div tabcontentfor="access-om2">Build ACCESS-OM2</div>
+
+!!! tip 
+    To tailor the following instructions to your desired model, please select it from the tabs below.
 
 <div class="tabLabels large-text" label="model" style="margin-bottom: 1em;">
-    <button id="access-om2">ACCESS-ESM1.5</button>
-    <button id="access-esm1.5">ACCESS-OM2</button>
-</div>
-<div class="tabContents" label="model" style="margin-bottom: 1em;">
-    <div>
-        <a href="{{esm1_5_build_config}}" class="text-card">
-            <span class="icon-before-text"><i class="fab fa-github med-text"></i></span>
-            ACCESS-ESM1.5 configurations
-        </a>
-    </div>
-    <div>
-        <a href="{{om2_build_config}}" class="text-card">
-            <span class="icon-before-text"><i class="fab fa-github med-text"></i></span>
-            ACCESS-OM2 configurations
-        </a>
-    </div>
+    <button id="access-esm1.5">ACCESS-ESM1.5</button>
+    <button id="access-om2">ACCESS-OM2</button>
 </div>
 
-# Developers Guide
+<div tabcontentfor="access-esm1.5" markdown>
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} ACCESS-ESM1.5 build]({{esm1_5_build_config}}){: class="text-card"}
+</div>
+<div tabcontentfor="access-om2" markdown>
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} ACCESS-OM2 build]({{om2_build_config}}){: class="text-card"}
+</div>
 
-This guide steps through the process to develop the ACCESS-OM2 model using [spack](https://spack.readthedocs.io), the build from source package manager that is used to build and deploy the model.  Spack automatically downloads package sources to a cache, compiles and installs them.  However spack also supports model development using a modified environment where the components that are being actively developed are compiled in a local source directory, and the rest built in the normal spack manner.
+## About
+
+The instructions below outline how to build ACCESS-<span tabcontentfor="access-esm1.5">ESM1.5</span><span tabcontentfor="access-om2">OM2</span> using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
+This build workflow is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+
+<div tabcontentfor="access-esm1.5" markdown>
+If you are looking for information on how to run ACCESS-ESM1.5 instead, refer to [Run ACCESS-ESM1.5](/models/run-a-model/run-access-esm).
+</div>
+<div tabcontentfor="access-om2" markdown>
+If you are looking for information on how to run ACCESS-OM2 instead, refer to [Run ACCESS-OM2](/models/run-a-model/run-access-om).
+</div>
+
+## Prerequisites
+
+### General prerequisites
+
+Before building a model, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+
+### Build-specific prerequisites
+
+???
+
+## Spack
+
+_Spack_ supports model development using a modified environment where the components that are being actively developed are compiled in a local source directory, and the rest built in the normal spack manner.
 
 This guide is to assist developers who wish to modify one or more of the model components of ACCESS-OM2 and compile the modified code. Typically there is a development cycle, where the code is modified, compiled, tested and further modified based on testing.
 
