@@ -14,14 +14,9 @@ There are two MOM versions currently used in ACCESS models: [MOM5](https://githu
     <button id="mom5">MOM5</button>
     <button id="mom6">MOM6</button>
 </div>
-<!-- Tab content -->
-<div class="tabContents" label="MOM-versions">
-    <!-- MOM5 -->
-    <div>
-        <p>MOM5 is used in <a href="/models/configurations/access-cm#access-cm2">ACCESS-CM2</a>, <a href="/models/configurations/access-esm#access-esm15">ACCESS-ESM1.5</a> and <a href="/models/configurations/access-om#access-om2">ACCESS-OM2</a>.</p>
-    </div>
-    <!-- MOM6 -->
-    <div>
-        <p>MOM6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.</p>
-    </div>
+<div tabcontentfor="mom5" markdown>
+MOM5 is used in [ACCESS-CM2](/models/configurations/access-cm#access-cm2), [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15) and [ACCESS-OM2](/models/configurations/access-om#access-om2).
+</div>
+<div tabcontentfor="mom6" markdown>
+MOM6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
 </div>
