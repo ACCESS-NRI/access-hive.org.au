@@ -117,6 +117,12 @@ You will be prompted to create a passphrase linked to the SSH key, which you wil
     As you will see in the next step, you will not need to enter the passphrase every time you login to _Gadi_.
 
 #### Add the SSH key to the SSH-agent
+
+<div class="tabLabels" label="systems">
+    <button id="macos">MacOS</button>
+    <button id="linux-windows">Linux / Windows</button>
+</div>
+
 An SSH-agent is an SSH key manager that avoids you having to enter your passphrase every time you connect to a server.<br>
 To add the SSH key to the SSH-agent:
 
@@ -129,38 +135,19 @@ To add the SSH key to the SSH-agent:
         <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
     </terminal-window>
 2. Add your SSH key to the SSH-agent by running:
-    <!-- Tab labels -->
-    <div class="tabLabels" label="systems">
-        <button id="macos">MacOS</button>
-        <button id="linux-windows">Linux / Windows</button>
+    <pre><code>ssh-add <span tabcontentfor="macos" markdown>--apple-use-keychain</span> ~/.ssh/id_gadi</code></pre>
+    
+    You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
+    <terminal-window>
+    <terminal-line data="input">ssh-add <span tabcontentfor="macos" markdown>--apple-use-keychain</span> ~/.ssh/id_gadi</terminal-line>
+    <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
+    <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
+    </terminal-window>
+    <div tabcontentfor="macos" markdown>
+    
+    !!! warning
+        If you are using a MacOS version prior to Monterey (12.0), substitute the `--apple-use-keychain` flag with `-K`.
     </div>
-    <!-- Tab content -->
-    <div class="tabContents" label="systems">
-    <!-- MacOS -->
-        <div>
-            <pre><code>ssh-add --apple-use-keychain ~/.ssh/id_gadi</code></pre>
-            You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
-            <terminal-window>
-                <terminal-line data="input">ssh-add --apple-use-keychain ~/.ssh/id_gadi</terminal-line>
-                <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
-                <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-            </terminal-window>
-            <div class='admonition warning'>
-                If you are using a MacOS version prior to Monterey (12.0), substitute the <code>--apple-use-keychain</code> flag with <code>-K</code>.
-            </div>
-        </div>
-    <!-- Linux/Windows -->
-        <div>
-            <pre><code>ssh-add ~/.ssh/id_gadi</code></pre>
-            You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
-            <terminal-window>
-                <terminal-line data="input">ssh-add ~/.ssh/id_gadi</terminal-line>
-                <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
-                <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
-            </terminal-window>
-        </div>
-    </div>
-    <!-- End of tab content -->
 
 #### Create/Update the SSH config file
 The `~/.ssh/config` is a file where you can store labelled SSH configurations for different remote servers you regularly connect to, so you do not have to remember them all.<br>
@@ -173,35 +160,15 @@ touch ~/.ssh/config
     If you already have an existing `~/.ssh/config` file, the above command will not have any effect.
 
 The following lines should be added to your `~/.ssh/config` to describe the SSH configuration for _Gadi_ (replace `<your-NCI-username>` with your NCI _username_, e.g., `ab1234`):
-<div class="tabContents" label="systems">
-<!-- MacOS -->
-    <div markdown>
-        ```
-        Host gadi
-        Hostname gadi.nci.org.au
-        User &lt;your-NCI-username&gt;
-        ForwardX11 true
-        ForwardX11Trusted yes
-        IdentityFile ~/.ssh/id_gadi
-        AddKeysToAgent yes
-        UseKeychain yes
-        ```
-    </div>
-<!-- Linux/Windows -->
-    <div markdown>
-        ```
-        Host gadi
-        Hostname gadi.nci.org.au
-        User &lt;your-NCI-username&gt;
-        ForwardX11 true
-        ForwardX11Trusted yes
-        IdentityFile ~/.ssh/id_gadi
-        AddKeysToAgent yes
-        ```
-    </div>
-</div>
-</code></pre>
-<!-- End of tab content -->
+
+<pre><code>Host gadi
+Hostname gadi.nci.org.au
+User <your-NCI-username>
+ForwardX11 true
+ForwardX11Trusted yes
+IdentityFile ~/.ssh/id_gadi
+AddKeysToAgent yes
+<span tabcontentfor="macos">UseKeychain yes</span></code></pre>
 
 !!! warning
     If you already have an existing `~/.ssh/config` file which contains configurations for any `Host` (e.g., by using `Host *`), make sure you delete any of the keywords present in that SSH configuration from the `Gadi` configuration above.
