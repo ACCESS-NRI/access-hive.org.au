@@ -15,18 +15,12 @@ There are three CICE versions currently used in ACCESS models:
     <button id="cice5">CICE5</button>
     <button id="cice6">CICE6</button>
 </div>
-<!-- Tab content -->
-<div class="tabContents" label="CICE-versions">
-     <!-- CICE4 -->
-    <div>
-        <p>CICE4 is used in <a href="/models/configurations/access-esm#access-esm15">ACCESS-ESM1.5</a> .</p>
-    </div>
-    <!-- CICE5 -->
-    <div>
-        <p>CICE5 is used in <a href="/models/configurations/access-cm#access-cm2">ACCESS-CM2</a> and <a href="/models/configurations/access-om#access-om2">ACCESS-OM2</a>.</p>
-    </div>
-    <!-- CICE6 -->
-    <div>
-        <p>CICE6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.</p>
-    </div>
+<div tabcontentfor="cice4" markdown>
+CICE4 is used in [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15).
+</div>
+<div tabcontentfor="cice5" markdown>
+CICE5 is used in [ACCESS-CM2](/models/configurations/access-cm#access-cm2) and [ACCESS-OM2](/models/configurations/access-om#access-om2).
+</div>
+<div tabcontentfor="cice6" markdown>
+CICE6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
 </div>
