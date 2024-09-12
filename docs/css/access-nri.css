@@ -71,7 +71,7 @@
   --failure: rgb(var(--failure-color)); /* Failure admonition */
   --question-color: var(--nri-blue-color); /* Question admonition color */
   --question: rgb(var(--question-color)); /* Question admonition */
-  --bug-color: 141, 57, 75; /* Bug admonition color */
+  --bug-color: 197, 75, 64; /* Bug admonition color */
   --bug: rgb(var(--bug-color)); /* Bug admonition */
   --example-color: 124, 77, 255; /* Example admonition color */
   --example: rgb(var(--example-color)); /* Example admonition */
