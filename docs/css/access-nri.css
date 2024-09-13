@@ -1179,8 +1179,9 @@ img.terminalSwitch:hover {
 
 img.intro-img {
   max-height: 12rem;
-  display: block;
-  margin: 0 auto;
+  max-width: 40%;
+  margin: 0 0 0.5rem 1rem;
+  float: right;
 }
 
 /* Aspect ratios */
@@ -1210,10 +1211,8 @@ img.intro-img {
 }
 
 /* With borders */
-.with-border {
+.round-edges {
   border-radius: 0.6rem;
-  border: var(--border-width) solid var(--card-borders);
-  box-sizing: border-box;
 }
 
 /* Add padding to image container */

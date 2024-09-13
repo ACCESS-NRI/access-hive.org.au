@@ -14,7 +14,7 @@ Click on the questions to unfold the answers.
     !!! warning
         **ACCESS-Hive** (without any other term attached) is an "umbrella" term that includes both the Hive Docs and Hive Forum, but should not be used in place of any of the two, to avoid confusion.
     
-    <!-- ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the Hive Docs and the Hive Forum](/assets/access_hive_links.png){: class="with-border centered" style="width: 50%" loading="lazy"} -->
+    <!-- ![Diagram showing how ACCESS-NRI and the Climate Research Working Groups engage with each other through the Hive Docs and the Hive Forum](/assets/access_hive_links.png){: class="round-edges centered" style="width: 50%" loading="lazy"} -->
 
 ??? question "What is the difference between _model_, _model component_, and _model configuration_?"
     A **model component** (sometimes referred to simply as component) is a codebase that is typically compiled into a single executable. It usually runs independently and communicates with other components via a coupler.
@@ -35,7 +35,7 @@ Click on the questions to unfold the answers.
 
     Climate science - like all science - is based on the comparison of different models and hypothesis with observational data. We provide or support the frameworks to perform such comparisons as part of the **model evaluation**. The different model hypotheses, or more practically speaking *model experiments*, are created by executing different model configurations with different setups; for example by perturbing initial conditions or by adding new physical prescriptions to the models.
     
-    ![Diagram showing how running ACCESS model configurations with different setups create different experiments](/assets/how_does_it_work_together.png){: class="with-border centered" style="width: 75%" loading="lazy"}
+    ![Diagram showing how running ACCESS model configurations with different setups create different experiments](/assets/how_does_it_work_together.png){: class="round-edges centered" style="width: 75%" loading="lazy"}
 
 ??? question "What is a control experiment? Why are they important?"
     A **control experiment** (sometimes also called a "control run") is an experiment that is designed to be used as a comparison against which perturbation experiments can be compared.
