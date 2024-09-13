@@ -4,6 +4,12 @@ The Earth System Model Evaluation Tool (ESMValTool) is a tool developed for eval
 
 ## 2024 Training day CMIP7 Hackathon
 - [CMIP7 Evaluation Hackathon tutorial](https://access-nri.github.io/CMIP7_MED_Hackathon/)
+See the following episodes for tutorials on ESMValTool on Gadi:
+1. [Running your first recipe](https://access-nri.github.io/CMIP7_MED_Hackathon/02-runarecipe/index.html)
+2. [Writing your own recipe](https://access-nri.github.io/CMIP7_MED_Hackathon/04-writingyourrecipe/index.html)
+3. [Writing your own diagnostic script](https://access-nri.github.io/CMIP7_MED_Hackathon/05-writingdiagnostics/index.html)
+4. [Use a Jupyter Notebook to run a recipe](https://access-nri.github.io/CMIP7_MED_Hackathon/06-jupyternotebook/index.html)
+5. [ESMValCore in Jupyter notebook](https://access-nri.github.io/CMIP7_MED_Hackathon/07-esmvalcoreapi/index.html)
 
 ## YouTube Video Series
 1. [What is ESMValTool?](https://www.youtube.com/watch?v=YSs6A0H1MwE&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFlFLc&index=1)
