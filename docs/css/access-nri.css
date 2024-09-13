@@ -1211,10 +1211,8 @@ img.intro-img {
 }
 
 /* With borders */
-.with-border {
+.round-edges {
   border-radius: 0.6rem;
-  border: var(--border-width) solid var(--card-borders);
-  box-sizing: border-box;
 }
 
 /* Add padding to image container */

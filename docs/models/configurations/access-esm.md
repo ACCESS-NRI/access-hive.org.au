@@ -1,6 +1,6 @@
 # ACCESS-ESM
 
-![ACCESS ESM model](/assets/model-config-logos/configurations-without-titles/access-esm.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
+![ACCESS ESM model](/assets/model-config-logos/configurations-without-titles/access-esm.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
 The ACCESS Earth System Model (ACCESS-ESM) is a fully-coupled global climate model that includes [atmosphere](/models/model_components/atmosphere), [land](/models/model_components/land), [ocean](/models/model_components/ocean), [sea ice](/models/model_components/sea-ice), [ocean biogeochemistry](/models/model_components/bgc_ocean) and [land biogeochemistry](/models/model_components/bgc_land) components, linked together by a [coupler](/models/model_components/coupler).<br>
 This means it can simulate both the physical climate and global biogeochemical cycles, in particular the carbon cycle.
