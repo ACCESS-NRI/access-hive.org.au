@@ -1,6 +1,6 @@
 #  Atmosphere component
 
-![Atmosphere component image](/assets/component-logos/component-maps/atmosphere-component-map.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
+![Atmosphere component image](/assets/component-logos/component-maps/atmosphere-component-map.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
 ## Unified Model (UM)
 

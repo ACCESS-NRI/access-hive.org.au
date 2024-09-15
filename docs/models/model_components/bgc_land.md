@@ -1,7 +1,7 @@
 
 #  Biogeochemistry Land component
 
-![Biogeochemistry Land component image](/assets/component-logos/component-maps/bgc-land-component-map.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
+![Biogeochemistry Land component image](/assets/component-logos/component-maps/bgc-land-component-map.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
 ## CASA-CNP
 

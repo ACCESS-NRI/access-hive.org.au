@@ -1,6 +1,6 @@
 #  Land Surface component
 
-![Land Surface component image](/assets/component-logos/component-maps/land-component-map.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
+![Land Surface component image](/assets/component-logos/component-maps/land-component-map.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
 ## CABLE
 

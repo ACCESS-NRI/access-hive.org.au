@@ -70,6 +70,23 @@ The following custom tags are available:
   The `<custom-simulated-terminal-info/>` tag renders a preset info admonition on the pages where simulated terminal are used.<br>
   It should not be used manually as it is automatically embedded in the pages containing simulated terminals.
 
+- **Admonitions**<br>
+  For information on how to render an [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage) please check the respective section in the [HTML/Markdown cheatsheet for the Hive Docs](#htmlmarkdown-cheatsheet-for-the-hive-docs).<br>
+  The list of available admonition types is the following:
+  - note
+  - info
+  - danger
+  - abstract
+  - tip
+  - success
+  - warning
+  - failure
+  - question
+  - bug
+  - example
+  - quote
+  - supported
+  If you want a new admonition type to be created, please raise a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?assignees=&labels=&projects=&template=simple-issue-template.md&title=) about it.
 
 ### HTML/Markdown Cheatsheet for the Hive Docs
 |Style|Markdown Syntax|HTML Syntax|Rendered example|

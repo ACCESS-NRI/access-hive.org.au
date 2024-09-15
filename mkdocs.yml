@@ -187,7 +187,6 @@ nav:
       - about/contribute/index.md
       - Contribute on GitHub: about/contribute/contribute_on_github.md
     - License: about/License.md
-    
 # Footer
 extra:
   generator: false

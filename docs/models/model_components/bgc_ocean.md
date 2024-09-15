@@ -1,6 +1,6 @@
 #  Biogeochemistry Ocean component
 
-![BGC Ocean component image](/assets/component-logos/component-maps/bgc-ocean-component-map.png){: class="img-contain white-background with-border with-padding intro-img" loading="lazy"}
+![BGC Ocean component image](/assets/component-logos/component-maps/bgc-ocean-component-map.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
 ## WOMBAT
 
