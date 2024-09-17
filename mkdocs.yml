@@ -77,6 +77,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.snippets
+  - pymdownx.highlight
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -98,6 +99,7 @@ nav:
     - getting_started/index.md
     - Set Up your NCI Account: getting_started/set_up_nci_account.md
     - Australian Research Environment (ARE): getting_started/are.md
+    - Set up Spack for building ACCESS models: getting_started/spack.md
 
   - Models: 
     - Models: models/index.md
