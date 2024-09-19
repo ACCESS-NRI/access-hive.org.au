@@ -69,7 +69,7 @@ function tabFunctionality() {
       let label = tabLabels.getAttribute("label");
       let tabID;
       if (sessionStorage.getItem(`tabs-label=${label}`)) {
-        tabID = sessionStorage.getItem(`tabs-label=${label}`);
+        tabID = document.getElementById(tabID) ? sessionStorage.getItem(`tabs-label=${label}`) : tabLabels.firstElementChild.id;
       } else if (tabLabels.querySelector(".activeTab")) {
         tabID = tabLabels.querySelector(".activeTab").id;
       } else {
