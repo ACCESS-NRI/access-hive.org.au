@@ -41,19 +41,30 @@ For tasks supported by ACCESS-NRI (e.g., running a supported model configuration
 
 
 ## Login to Gadi
-
+<div class="tabLabels" label="systems">
+    <button id="macos">MacOS</button>
+    <button id="linux">Linux</button>
+    <button id="windows">Windows</button>
+</div>
 Operations involving model runs and data collections take place on the [_Gadi_ supercomputer](https://nci.org.au/our-systems/hpc-systems).
 
-Before you login to _Gadi_, you need to possess the following prerequisites:
-
+### Prerequisites
 - **Internet connection**
 - **Terminal with built-in SSH**<br>
-    Linux, MacOS and Windows 10 (or later) operative systems already have a terminal with built-in SSH.<br>
+    <span tabcontentfor="linux">Linux</span><span tabcontentfor="macos">MacOS</span><span tabcontentfor="windows">Windows 10 (or later)</span> operative system already has a terminal with built-in SSH.<br>
+    <div tabcontentfor="windows" markdown>
     Users of Windows 9 (or earlier) can install [Windows Subsystems for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl).
     
     !!! tip
         Alternatively, you can login through the [ARE Gadi Terminal](https://are.nci.org.au/pun/sys/shell/ssh/gadi.nci.org.au).<br>
         However, it is recommended that you connect to _Gadi_ from your local machine's terminal without using ARE. 
+    </div>
+<div tabcontentfor="windows" markdown>
+
+- **git-bash**<br>
+  You can install `git` and `git-bash` at [this link](https://git-scm.com/downloads).
+</div>
+
 
 To login to _Gadi_ using [SSH](https://en.wikipedia.org/wiki/Secure_Shell), on your **local machine's terminal** run the following command, replacing `<your-NCI-username>` with your NCI _username_ (e.g., `ab1234`):
 
@@ -85,22 +96,24 @@ You will be prompted to enter your NCI password, and then you will be connected 
 To simplify the login and avoid being prompted every time to enter your NCI password, follow these steps:
 
 #### Create an SSH key
-To create an SSH key on your **local machine**, run:
+To create an SSH key, in your **local machine's <span tabcontentfor="windows" markdown>`git-bash` </span>terminal** run:
 ```
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi
+mkdir -p ~/.ssh
+ssh-keygen -t ed25519 -f ~/.ssh/id_gadi
 ```
 You will be prompted to create a passphrase linked to the SSH key, which you will enter twice:
 <terminal-window>
-    <terminal-line data="input">ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_gadi</terminal-line>
+    <terminal-line data="input">mkdir -p ~/.ssh</terminal-line>
+    <terminal-line data="input">ssh-keygen -t ed25519 -f ~/.ssh/id_gadi</terminal-line>
     <terminal-line>Generating public/private rsa key pair.</terminal-line>
     <terminal-line>Enter passphrase (empty for no passphrase):</terminal-line>
     <terminal-line lineDelay=3000>Enter same passphrase again:</terminal-line>
     <terminal-line lineDelay=3000>Your identification has been saved in &lt;$HOME&gt;/.ssh/id_gadi</terminal-line>
-    <terminal-line>Your public key has been saved in /Users/davide/.ssh/id_gadi.pub</terminal-line>
+    <terminal-line>Your public key has been saved in &lt;$HOME&gt;/.ssh/id_gadi.pub</terminal-line>
     <terminal-line lineDelay=0>The key fingerprint is:</terminal-line>
     <terminal-line lineDelay=0>SHA256:&lt;fingerprint-code&gt; &lt;$USER@hostname&gt;</terminal-line>
     <terminal-line lineDelay=0>The key's randomart image is:</terminal-line>
-    <terminal-line lineDelay=0>[RSA 4096-+</terminal-line>
+    <terminal-line lineDelay=0>+--[ED25519 256]--+</terminal-line>
     <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
     <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
     <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
@@ -109,7 +122,7 @@ You will be prompted to create a passphrase linked to the SSH key, which you wil
     <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
     <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
     <terminal-line lineDelay=0>|xxxxxxxxxxxxxxxxx|</terminal-line>
-    <terminal-line lineDelay=0>-[SHA256--+</terminal-line>
+    <terminal-line lineDelay=0>+----[SHA256]-----+</terminal-line>
 </terminal-window>
 
 !!! warning
@@ -118,74 +131,60 @@ You will be prompted to create a passphrase linked to the SSH key, which you wil
 
 #### Add the SSH key to the SSH-agent
 
-<div class="tabLabels" label="systems">
-    <button id="macos">MacOS</button>
-    <button id="linux-windows">Linux / Windows</button>
-</div>
-
 An SSH-agent is an SSH key manager that avoids you having to enter your passphrase every time you connect to a server.<br>
-To add the SSH key to the SSH-agent:
+To add the SSH key to the SSH-agent, in your **local machine's <span tabcontentfor="windows" markdown>`git-bash` </span>terminal** run:
 
-1. On your **local machine**, start the SSH-agent by running:
-    ```
-    eval "$(ssh-agent -s)"
-    ```
-    <terminal-window>
-        <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
-        <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
-    </terminal-window>
-2. Add your SSH key to the SSH-agent by running:
-    <pre><code>ssh-add <span tabcontentfor="macos" markdown>--apple-use-keychain</span> ~/.ssh/id_gadi</code></pre>
-    
-    You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
-    <terminal-window>
+<pre><code>eval "$(ssh-agent -s)"
+ssh-add <span tabcontentfor="macos" markdown>--apple-use-keychain </span>~/.ssh/id_gadi</code></pre>
+
+You will be prompted to enter your SSH key passphrase, which will be stored inside the SSH-agent:
+<terminal-window>
+    <terminal-line data="input">eval "$(ssh-agent -s)"</terminal-line>
+    <terminal-line>Agent pid &lt;agent-PID&gt;</terminal-line>
     <terminal-line data="input">ssh-add <span tabcontentfor="macos" markdown>--apple-use-keychain</span> ~/.ssh/id_gadi</terminal-line>
     <terminal-line>Enter passphrase for &lt;$HOME&gt;/.ssh/id_gadi:</terminal-line>
     <terminal-line lineDelay=3000>Identity added: &lt;$HOME&gt;/.ssh/id_gadi &lt;$USER@hostname&gt;</terminal-line>
     </terminal-window>
-    <div tabcontentfor="macos" markdown>
+</terminal-window>
+<div tabcontentfor="macos" markdown>
     
-    !!! warning
-        If you are using a MacOS version prior to Monterey (12.0), substitute the `--apple-use-keychain` flag with `-K`.
-    </div>
+!!! warning
+    If you are using a MacOS version prior to Monterey (12.0), substitute the `--apple-use-keychain` flag with `-K`.
+</div>
 
 #### Create/Update the SSH config file
 The `~/.ssh/config` is a file where you can store labelled SSH configurations for different remote servers you regularly connect to, so you do not have to remember them all.<br>
-To create an SSH config file, run the following command on your **local machine**:
-```
-touch ~/.ssh/config
-```
-
-!!! tip
-    If you already have an existing `~/.ssh/config` file, the above command will not have any effect.
-
-The following lines should be added to your `~/.ssh/config` to describe the SSH configuration for _Gadi_ (replace `<your-NCI-username>` with your NCI _username_, e.g., `ab1234`):
-
-<pre><code>Host gadi
+To create an SSH config file and add (append) the SSH configuration for _Gadi_, in your **local machine's <span tabcontentfor="windows" markdown>`git-bash` </span>terminal** run (by replacing `<your-NCI-username>` with your NCI _username_, e.g., `ab1234`):
+<pre><code>cat >> ~/.ssh/config << EOF
+Host gadi
 Hostname gadi.nci.org.au
-User <your-NCI-username>
+User &lt;your-NCI-username&gt;
 ForwardX11 true
 ForwardX11Trusted yes
 IdentityFile ~/.ssh/id_gadi
 AddKeysToAgent yes
-<span tabcontentfor="macos">UseKeychain yes</span></code></pre>
+ForwardAgent yes
+<span tabcontentfor="macos" markdown>UseKeychain yes<br></span>EOF</code></pre>
 
 !!! warning
-    If you already have an existing `~/.ssh/config` file which contains configurations for any `Host` (e.g., by using `Host *`), make sure you delete any of the keywords present in that SSH configuration from the `Gadi` configuration above.
+    If you have an existing `~/.ssh/config` file which contains hosts with wildcards  (`*`) in their names so that `gadi` would be included in the wildcard expansion (e.g., `Host *`), make sure you don't duplicate any of the SSH configuration keywords above.
 
 #### Add the SSH key to the authorised keys
 To enable automatic connection to a server, that server needs to recognise the SSH key as _authorised_. The list of authorised keys for a certain server is stored in the file `~/.ssh/authorized_keys`.<br>
-To add the newly created SSH key as an _authorised_ key for _Gadi_, run the following command from your **local machine**:
+To add the newly created SSH key as an _authorised_ key for _Gadi_, in your **local machine's <span tabcontentfor="windows" markdown>`git-bash` </span>terminal** run the following command:
 ```
 ssh gadi "mkdir -p .ssh && cat >> .ssh/authorized_keys <<< '$(cat ~/.ssh/id_gadi.pub)'"
 ```
 
 You will be prompted to enter your NCI password. If you did all of the above steps correctly, this should be the last time you need to do so.
 
-Once you complete all the above steps, you should be able to connect to _Gadi_ from your **local machine's terminal** simply by running:
-```
-ssh gadi
-```
+!!! success
+    Your automatic _Gadi_ connection is set up! 
+    
+    Now you should be able to connect to _Gadi_ from your **local machine's terminal** simply by running:
+    ```
+    ssh gadi
+    ```
 
 ### Change default project on Gadi
 
@@ -234,3 +233,14 @@ For example, if you want to change your default project to `tm70` on _Gadi_:
 - [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [https://linuxize.com/post/using-the-ssh-config-file](https://linuxize.com/post/using-the-ssh-config-file)
 </custom-references>
+
+<!-- Custom style for tabs within markdown bullet point (to avoid extra space) -->
+<style>
+    #prerequisites + ul,
+    #prerequisites + ul p:has(+ [tabcontentfor="windows"]) {
+        margin-bottom: 0;
+    }
+    #prerequisites + ul + [tabcontentfor="windows"] > ul {
+        margin-top: 0;
+    }
+</style>
