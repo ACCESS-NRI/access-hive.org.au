@@ -53,7 +53,7 @@ function adjustScrollingToId() {
 
 
 /*
-  Add functionality to tabs
+  Add functionality to tabs 
 */
 function tabFunctionality() {
   let activeEl = document.activeElement;
@@ -93,32 +93,40 @@ function tabFunctionality() {
     }
   })
   
-  function openTab(active) {
-    let label = active.parentElement.getAttribute('label');
-    let index = Array.from(active.parentElement.children).indexOf(active)+1;
+  function openTab(tab) {
+    let label = tab.parentElement.getAttribute('label');
+    let index = Array.from(tab.parentElement.children).indexOf(tab)+1;
     // Remove active classes from tabs with matching labels 
     document.querySelectorAll(`.tabLabels[label="${label}"] > .activeTab`).forEach(elem => {
       elem.classList.remove('activeTab');
     });
-    // Remove active classes from contents whose tabs ID are not activeTabs
+    // Remove active classes from contents whose none of their associated tabs IDs are activeTabs
     document.querySelectorAll('[tabcontentfor]').forEach(elem => {
       let tabcontentfor = elem.getAttribute('tabcontentfor');
-      if (! document.getElementById(`${tabcontentfor}`).classList.contains('activeTab')) {
-        elem.classList.remove('activeTab');
+      if (
+        ! tabcontentfor.split(' ').some(tabID => {
+          return document.getElementById(tabID).classList.contains('activeTab')
+        })
+      ) {
+          elem.classList.remove('activeTab');
       }
     });
     // Add active classes to tab labels
     document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`)
       .forEach(button => {button.classList.add('activeTab')});
-    // Add active classes to contents whose tabs ID are activeTabs
+    // Add active classes to contents whose any associated tabs IDs are activeTabs
     document.querySelectorAll('[tabcontentfor]').forEach(elem => {
       let tabcontentfor = elem.getAttribute('tabcontentfor');
-      if (document.getElementById(`${tabcontentfor}`).classList.contains('activeTab')) {
+      if (
+        tabcontentfor.split(' ').some(tabID => {
+          return document.getElementById(tabID).classList.contains('activeTab')
+        })
+      ) {
         elem.classList.add('activeTab');
       }
     });
     // Save active tab to sessionStorage
-    sessionStorage.setItem(`tabs-label=${label}`,`${active.id}`);
+    sessionStorage.setItem(`tabs-label=${label}`,`${tab.id}`);
   }
 }
 
