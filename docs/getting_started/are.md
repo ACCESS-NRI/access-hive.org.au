@@ -14,30 +14,24 @@ To use ARE, you must have an NCI account and be a member of a project with compu
     <button id="vdi"><i>Virtual Desktop (VDI)</i></button>
     <button id="jupyterlab"><i>JupyterLab</i></button>
 </div>
-<!-- Tab contents -->
-<div class="tabContents" label="are-apps">
-    <!-- VDI -->
-    <div>
-        To start an ARE VDI session go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new" target="_blank">ARE VDI Desktop</a> page.
-    </div>
-    <!-- Jupyterlab -->
-    <div>
-        To start an ARE JupyterLab session go to the <a href="https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/jupyter/ncigadi/session_contexts/new" target="_blank">ARE JupyterLab</a> page.
-    </div>
+<div tabcontentfor="vdi" markdown>
+To start an ARE VDI session go to the [ARE VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) page.
 </div>
-<!-- End of tab contents -->
+<div tabcontentfor="jupyterlab" markdown>
+To start an ARE JupyterLab session go to the [ARE JupyterLab](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/jupyter/ncigadi/session_contexts/new) page.
+</div>
 
 ### Session options
 Launching an ARE session is similar to submitting an interactive [PBS job](https://opus.nci.org.au/display/Help/4.+PBS+Jobs) that enables you to connect to a _Gadi_ computing node.<br>
 Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) and other options you can select:
 
-- **<span markdown id="walltime-option">Walltime (hours)</span>**<br>
+- **<span id="walltime-option">Walltime (hours)</span>**<br>
     Number of hours your VDI session will run for (unless manually ended earlier).<br>
     The maximum number of hours an ARE session can run for depends on the selected Queue. For more information, check [Gadi Queue Limits](https://opus.nci.org.au/display/Help/Queue+Limits).
 
     !!! warning
         Once the session ends any operation still in progress on the session's computing node(s) will be immediately terminated.
-    
+
 - **Queue**<br>
     Gadi queue that your session will be scheduled in. For more information check [Gadi Queue Structure](https://opus.nci.org.au/display/Help/Queue+Structure).
 
@@ -53,10 +47,11 @@ Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/
         The specified project must have allocated _Service Units (SU)_.<br>
         For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
-- **<span markdown id="storage-option">Storage</span>**<br>
+- **Storage**<br>
     `/g/data` (inserted as _gdata/&lt;project-ID&gt;_) `/scratch` (inserted as _scratch/&lt;project-ID&gt;_) data storage projects that will be available to the session.<br>
     In ARE, data storage locations need to be explicitly defined. This means that you need to insert any `/g/data` and `/scratch` project folders you want to execute data I/O operations from.<br>
     Multiple storage projects are separated by a plus (_+_) (e.g., _gdata/tm70+gdata/hh5+scratch/xp65_).
+{: id="storage-option"}
 
     !!! warning
         Generally, you need to be a member of the specified projects to access their storage data.<br>
@@ -68,64 +63,41 @@ Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/
     Multiple licenses are separated by a colon (_:_).
 
 ### Advanced options
-<!-- Tab contents -->
-<div class="tabContents" label="are-apps">
-<!-- VDI -->
-    <div>
-    </div>
-<!-- Jupyterlab -->
-    <div>
-        <ul>
-            <li>
-                <b>Extra arguments</b>
-                <br>
-                Additional arguments to pass on the JupyterLab command line (e.g., <i>--debug</i>, <i>--log-level=INFO</i>)
-            </li>
-            <li>
-                <b id="module-directories-option">Module directories</b>
-                <br>
-                Include module directories.
-                <br>
-                It is the eqivalent of <code>module use &lt;/path/to/module/directory&gt;</code> run on the command line.
-                <div class='admonition warning'>
-                    You also need to include the project directory of each module directory in the <a href="#storage-option"><i>Storage</i></a> option.
-                </div>
-            </li>
-            <li>
-                <b>Modules</b>
-                <br>
-                Include modules.
-                It is the equivalent of <code>module load &lt;module-name&gt;</code> run on the command line.
-                <div class='admonition warning'>
-                    If the module is not inside <i>Gadi</i>'s default module directory <code>/apps/Modules/modulefiles</code>, you need to include the module directory in the <a href="#module-directories-option"><i>Module directories</i></a> option.
-                </div>
-            </li>
-            <li>
-                <b id="venv-base-option">Python or Conda virtual environment base</b>
-                <br>
-                Path to a Python or conda base environment to be activated for the JupyterLab session.
-                <br>
-                It is the equivalent of <code>source &lt;path/to/environment/bin/activate&gt;</code> run on the command line.
-                <div class='admonition warning'>
-                    You also need to include the project directory of the virtual environment in the <a href="#storage-option"><i>Storage</i></a> option.
-                </div>
-            </li>
-            <li>
-                <b>Conda environment</b>
-                <br>
-                Name of a specific conda environment to be activated for the JupyterLab session.
-                <br>
-                It is the equivalent of <code>conda activate &lt;environment-name&gt;</code> run on the command line.
-                <div class='admonition warning'>
-                    You need to include the path to the conda base environment in the <a href="#venv-base-option"><i>Python or Conda virtual environment base</i></a> option.
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- End of tab contents -->
+<div tabcontentfor="jupyterlab" markdown>
+
+- **Extra arguments**<br>
+    Additional arguments to pass on the JupyterLab command line (e.g., `--debug_`, `--log-level=INFO`)
+
+- **<span id="module-directories-option">Module directories<span>**<br>
+    Include module directories.<br>
+    It is the eqivalent of `module use </path/to/module/directory>` run on the command line.
     
-- **Environment variables**<br>
+    !!! warning 
+        You also need to include the project directory of each module directory in the [_Storage_](#storage-option) option.
+
+- **Modules**<br>
+    Include modules.<br>
+    It is the equivalent to running `module load <module-name>` on the command line.
+    
+    !!! warning
+        If the module is not inside _Gadi_'s default module directory `/apps/Modules/modulefiles`, you need to include the module directory in the [_Module directories_](#module-directories-option) option.
+
+- **<span id="venv-base-option">Python or Conda virtual environment base</span>**<br>
+    Path to a Python or conda base environment to be activated for the JupyterLab session.<br>
+    It is the equivalent to running `source <path/to/environment/bin/activate>` on the command line.
+            
+    !!! warning 
+        You also need to include the project directory of the virtual environment in the [_Storage_](#storage-option) option.
+
+- **Conda environment**<br>
+    Name of a specific conda environment to be activated for the JupyterLab session.<br>
+    It is the equivalent to running `conda activate <environment-name>` on the command line.
+            
+    !!! warning
+        You need to include the path to the conda base environment in the [_Python or Conda virtual environment base_](#venv-base-option) option.
+</div>
+
+- **Environment variables** <br>
     Environment variables passed to the session. Identical to the [`-v` PBS directive](https://opus.nci.org.au/display/Help/PBS+Directives+Explained#PBSDirectivesExplained--v%3Cvar=10,%22var2='A,B'%22%3E).<br>
     Multiple environment variables are separated by a comma (_,_).
 
@@ -144,24 +116,18 @@ Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/
 1. Click on the <i>Launch</i> button to launch the session. You will be prompted to your Interactive Sessions page and you will see your last requested session at the top.
 
 2. 
-   <!-- Tab contents -->
-    <div class="tabContents" label="are-apps">
-        <!-- VDI -->
-        <div>
-            Wait until your session starts and then click on the <i>Launch VDI Desktop</i> button to open a new tab with the VDI interface.
-            <br>
-            Inside the VDI interface, you can open the terminal by clicking on the black terminal icon at the top of the window.
-            <img src="/assets/launch_are_vdi_desktop.gif" alt="Launch ARE VDI Desktop" class="example-img" loading="lazy"/>
-        </div>
-        <!-- Jupyterlab -->
-        <div>
-            Wait until your session starts and then click on the <i>Open JupyterLab</i> button to open a new tab with the JupyterLab interface.
-            <br>
-            Inside the JupyterLab interface, you can open a new notebook by clicking on the Python3 Notebook button in the Launcher panel (to open a new Laucher panel, click on the plus button <img src="/assets/jupyterlab_plus_button.png" alt="Plus button" style="height:1em"/> next to your current tab).
-            <img src="/assets/launch_are_jupyterlab.gif" alt="Launch ARE JupyterLab" class="example-img" loading="lazy"/>
-        </div>
+    <div tabcontentfor="vdi">
+        Wait until your session starts and then click on the <i>Launch VDI Desktop</i> button to open a new tab with the VDI interface.
+        <br>
+        Inside the VDI interface, you can open the terminal by clicking on the black terminal icon at the top of the window.
+        <img src="/assets/launch_are_vdi_desktop.gif" alt="Launch ARE VDI Desktop" class="example-img" loading="lazy"/>
     </div>
-    <!-- End of tab contents -->
+    <div tabcontentfor="jupyterlab">
+        Wait until your session starts and then click on the <i>Open JupyterLab</i> button to open a new tab with the JupyterLab interface.
+        <br>
+        Inside the JupyterLab interface, you can open a new notebook by clicking on the Python3 Notebook button in the Launcher panel (to open a new Laucher panel, click on the plus button <img src="/assets/jupyterlab_plus_button.png" alt="Plus button" style="height:1em"/> next to your current tab).
+        <img src="/assets/launch_are_jupyterlab.gif" alt="Launch ARE JupyterLab" class="example-img" loading="lazy"/>
+    </div>
 
 ## Delete an ARE session
 You can delete a session before its automatic expiration (based on the specified [Walltime](#walltime-option) by clicking on the session's ![Session Delete button](/assets/session_delete_button.png){: style="height:1em"} button in the [Interactive Sessions](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sessions) page.
@@ -171,3 +137,14 @@ You can delete a session before its automatic expiration (based on the specified
 - [https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new)
 - [https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/jupyter/ncigadi/session_contexts/new](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/jupyter/ncigadi/session_contexts/new)
 </custom-references>
+
+<!-- Add specific style to fix big gap between ul elements divided because of the tab content-->
+<style>
+    ul:has(#venv-base-option) {
+        margin-bottom: 0;
+    }
+    div[tabcontentfor="jupyterlab"] + ul,
+    div[tabcontentfor="jupyterlab"] + ul > li:first-child > p:first-child {
+        margin-top: 0;
+    }
+</style>

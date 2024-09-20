@@ -1097,6 +1097,7 @@ img.terminalSwitch {
 img.terminalSwitch:hover {
   cursor: pointer;
 }
+
 /* =============================================================== 
   General styling for html tabs
 */
@@ -1142,18 +1143,11 @@ img.terminalSwitch:hover {
 }
 
 /* Style the tab content */
-.tabContents > * {
+[tabcontentfor] {
   display: none;
 }
-
-.tabContents > .activeTabContent {
-  display: block;
-}
-
-.version-tabs {
-  margin-bottom: 0.3rem;
-  font-size: 1.2em;
-  width: 100%;
+[tabcontentfor].activeTab {
+  display: contents;
 }
 
 /* =============================================================== 
