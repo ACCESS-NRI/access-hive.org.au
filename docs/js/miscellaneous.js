@@ -136,11 +136,16 @@ function tabFunctionality() {
   target="_blank" attribute, and add an external-link icon to them.
 */
 function makeLinksExternal() {
-  let extLinks = document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card,.text-card))");
-  extLinks.forEach(link => {
-    link.classList.add('external-link');
-    link.setAttribute('target','_blank');
-  })
+  // Links to be opened in a new tab
+  document.querySelectorAll("a[href^='http']:not([href^='https://access-hive.org.au'])")
+    .forEach(link => {
+      link.setAttribute('target','_blank');
+    });
+  // Add external link icon only to some external links
+  document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card,.text-card))")
+    .forEach(link => {
+      link.classList.add('external-link');
+    });
 }
 
 
