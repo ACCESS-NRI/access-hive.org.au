@@ -33,13 +33,11 @@ If you are looking for information on how to run ACCESS-OM2 instead, refer to [R
 
 ## Prerequisites
 
-### General prerequisites
+- **NCI account**<br>
+  Before building a model, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
-Before building a model, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
-
-### Build-specific prerequisites
-
-???
+- **_Spack_**<br>
+  To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models](/getting_started/spack/).
 
 ## Spack
 
@@ -51,40 +49,15 @@ It is assumed the modifications and compilation will be done on the [NCI HPC sys
 
 Much of this is adapted from the [spack Developer Workflows Tutorial](https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html).
 
-## Initial set-up 
-
-It is necessary to make local copies of the following repositories using `git clone`: 
-- [`spack`](https://github.com/ACCESS-NRI/spack.git) - the build from source package manager
-- [`spack-config`](https://github.com/ACCESS-NRI/spack-config.git) - a spack configuration for `gadi`
-- [`spack-packages`](https://github.com/ACCESS-NRI/spack-packages.git) - ACCESS-NRI package repository which defines a number of the packages used by ACCESS-OM2
-
-```bash
-git clone -c feature.manyFiles=true https://github.com/ACCESS-NRI/spack.git --branch releases/v0.22 --single-branch --depth=1
-git clone https://github.com/ACCESS-NRI/spack-packages.git --branch main
-git clone https://github.com/ACCESS-NRI/spack-config.git --branch main
-```
-
-Then link all the `spack-config` settings to your local spack instance:
-```bash
-ln -s -r -v spack-config/v0.22/gadi/* spack/etc/spack/
-```
-
-> [!NOTE]
->
-> The steps in this section need only be done once, unless the cloned repositories need to be updated to a newer version.
->
-> This guide is adapted from [instructions on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/how-to-build-access-om2-on-gadi/1545)
->
-> ACCESS-NRI maintains a fork of spack to enable back-porting fixes from more recent spack versions. This fork is the one used in these instructions.
-
 ## Enable spack
 
 For every new login or new shell it is necessary to add your local copy of `spack` to your shell, as well as some other settings. 
-```bash
+```
 . spack-config/spack-enable.bash
 ```
-> [!NOTE]
-> There is a space between the `.` and the path, as we are not treating `spack-enable.bash` as an executable
+
+!!! warning
+    There is a space between the `.` and the path to the file, as we are [sourcing](https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x237.html#:~:text=When%20a%20file%20is%20sourced,the%20file%20they%20are%20in.) the file.
 
 ## Development environment
 
