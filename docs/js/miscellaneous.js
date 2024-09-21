@@ -125,6 +125,8 @@ function tabFunctionality() {
         elem.classList.add('activeTab');
       }
     });
+    // Add tab ID hash to URL
+    history.pushState(null, null, `#${tab.id}`);
     // Save active tab to sessionStorage
     sessionStorage.setItem(`tabs-label=${label}`,`${tab.id}`);
   }
