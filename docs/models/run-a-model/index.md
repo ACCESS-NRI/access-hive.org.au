@@ -33,7 +33,7 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/access_om_globe_visualisation.png" alt="Build a model">
         </div>
         <div class="card-text-container bold">   
-            Build a model
+            Build an ACCESS model
         </div>
     </a>
 </div>
