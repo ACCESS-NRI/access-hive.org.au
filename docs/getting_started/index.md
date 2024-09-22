@@ -1,22 +1,37 @@
 # Getting Started
 
-If you have never used NCI Gadi for ACCESS models, run through these two pages to get set up. If you already have an NCI account but have never used ARE, it is a web-based interface to Gadi that is useful for many ACCESS-related activities.
-
 <div class="card-container">
-    <a href="/getting_started/set_up_nci_account" class="vertical-card aspect-ratio1to1">
+    <a href="/getting_started/set_up_nci_account" class="horizontal-card" height="6rem">
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/set_up_nci_account_logo.png" alt="Set up NCI account">
         </div>
-        <div class="card-text-container bold">   
-            Set Up your NCI Account
+        <div class="card-text-container">
+            <span class="bold">Set Up your NCI Account</span>
+            <span>
+                If you are new to ACCESS or have never used NCI's supercomputer <i>Gadi</i>, run through this page to get set up.
+            </span>
         </div>
     </a>
-    <a href="/getting_started/are" class="vertical-card aspect-ratio1to1">
+    <a href="/getting_started/are" class="horizontal-card">
         <div class="card-image-container">
             <img class="img-contain white-background with-padding" src="/assets/are_logo.svg" alt="ARE">
         </div>
-        <div class="card-text-container bold">   
-            Australian Research Environment (ARE)
+        <div class="card-text-container">
+            <span class="bold">Australian Research Environment (ARE)</span>
+            <span>
+                ARE is a web-based interface to <i>Gadi</i> that is useful for many ACCESS-related activities.
+            </span>
+        </div>
+    </a>
+    <a href="/getting_started/spack" class="horizontal-card">
+        <div class="card-image-container">
+            <img class="img-contain white-background with-padding" src="https://cdn.jsdelivr.net/gh/spack/spack@develop/share/spack/logo/spack-logo-text.svg" alt="spack">
+        </div>
+        <div class="card-text-container">
+            <span class="bold">Set up Spack for building ACCESS models</span>
+            <span>
+                Spack is a build-from-source package manager that is used to build ACCESS models.
+            </span>
         </div>
     </a>
 </div>
