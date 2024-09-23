@@ -39,16 +39,18 @@ function sortTables() {
 function adjustScrollingToId() {
   function scrollToId() {
     if (location.hash) {
-      let header = document.querySelector('header');
       let el = document.getElementById(location.hash.slice(1,));
-      let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
-      if (offset != 0) {
-        window.scrollBy(0, offset);
+      if (el) {
+        let header = document.querySelector('header');
+        let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
+        if (offset != 0) {
+          window.scrollBy(0, offset);
+        }
       }
     }
   }
-  document.querySelectorAll(`[href^="#"]`).forEach(el => el.addEventListener("click",(e) => setTimeout(scrollToId,0), false));
   scrollToId();
+  document.querySelectorAll(`[href^="#"]`).forEach(el => el.addEventListener("click",(e) => setTimeout(scrollToId,0), false));
 }
 
 
