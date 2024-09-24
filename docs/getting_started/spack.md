@@ -43,21 +43,21 @@ ln -s -r -v spack-config/v0.22/gadi/* spack/etc/spack/
 
 ## Test Spack (OPTIONAL)
 
-To test _Spack_ we will create an [ACCESS-OM2](/models/configurations/access-om#access-om2) environment and build the relevant packages. Then, we will uninstall all the packages and remove the environment.
+To test _Spack_ we will create an `ACCESS-TEST` environment and build the relevant packages. Then, we will uninstall all the packages and remove the environment.
 
 ```
 module purge
 cd <myspack>
 . spack-config/spack-enable.bash
-git clone https://github.com/ACCESS-NRI/ACCESS-OM2.git
-spack env create access-om2 ACCESS-OM2/spack.yaml
-spack env activate -p access-om2
+git clone https://github.com/ACCESS-NRI/ACCESS-TEST.git
+spack env create test ACCESS-TEST/spack.yaml
+spack env activate -p test
 spack find
 spack concretize -f
 spack install --verbose
 spack find
 spack uninstall --remove --all
 spack env deactivate
-spack env rm access-om2
-rm -rf ACCESS-OM2
+spack env rm test
+rm -rf ACCESS-TEST
 ```
