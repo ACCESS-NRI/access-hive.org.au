@@ -27,7 +27,7 @@ cd <myspack>
 ### Clone the relevant git repositories
 
 ```
-git clone -c feature.manyFiles=true https://github.com/ACCESS-NRI/spack.git --branch releases/v0.22 --single-branch --depth=1
+git clone -c feature.manyFiles=true https://github.com/ACCESS-NRI/spack.git --branch releases/v0.22 --single-branch --depth=100
 git clone https://github.com/ACCESS-NRI/spack-packages.git --branch main
 git clone https://github.com/ACCESS-NRI/spack-config.git --branch main
 ```
