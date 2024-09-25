@@ -92,9 +92,6 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home: 
-    - index.md
-
   - Getting Started: 
     - getting_started/index.md
     - Set Up your NCI Account: getting_started/set_up_nci_account.md
