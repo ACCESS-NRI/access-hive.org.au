@@ -1,4 +1,4 @@
-# ACCESS Training Day 
+# ACCESS Community Workshop 2024
 
 **Time:** 9am - 5pm on Monday, 2 September 2024
 
