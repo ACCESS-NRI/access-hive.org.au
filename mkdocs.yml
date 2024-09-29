@@ -92,9 +92,6 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home: 
-    - index.md
-
   - Getting Started: 
     - getting_started/index.md
     - Set Up your NCI Account: getting_started/set_up_nci_account.md
@@ -159,14 +156,14 @@ nav:
     
   - Community Resources:
     - community_resources/index.md
-    - ACCESS Training Day 2024: 
-      - community_resources/access_workshop_2024/index.md
-      - Training materials: community_resources/access_workshop_2024/training_materials.md
     - Workshops and Events Archive:
       - community_resources/workshops_events_archive/index.md
       - ACCESS Community Workshop 2023: 
         - Overview: community_resources/workshops_events_archive/access_workshop_2023/index.md
-        - Training materials: community_resources/workshops_events_archive/access_workshop_2023/training_materials.md
+        - Training materials 2023: community_resources/workshops_events_archive/access_workshop_2023/training_materials.md
+      - ACCESS Community Workshop 2024: 
+        - Overview: community_resources/workshops_events_archive/access_workshop_2024/index.md
+        - Training materials 2024: community_resources/workshops_events_archive/access_workshop_2024/training_materials.md
     - ACCESS-Hive Forum: https://forum.access-hive.org.au
     - Working Groups: community_resources/community_working_groups.md
     - Model Evaluation Links:

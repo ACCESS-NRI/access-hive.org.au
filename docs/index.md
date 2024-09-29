@@ -65,7 +65,7 @@ hide:
     </a>
     <a href="community_resources" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="assets/community_workinggroups.jpg" alt="Community Resources">
+            <img class="img-contain white-background" src="/assets/working_groups_icons/all_WG.png" alt="Community Resources">
         </div>
         <div class="card-text-container">
             <div class="bold">Community Resources</div>

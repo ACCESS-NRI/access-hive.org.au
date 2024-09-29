@@ -68,14 +68,15 @@ More information about the available experiments and the naming scheme of the br
 The first step is to choose a configuration from those available.<br>
 For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`release-1deg_jra55_ryf`](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-1deg_jra55_ryf).
 
-To clone this branch to a location on _Gadi_, run:
+To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
     mkdir -p ~/access-om2
     cd ~/access-om2
     payu clone -b expt -B release-1deg_jra55_ryf {{ github_configs }} 1deg_jra55_ryf
+    cd 1deg_jra55_ryf
 
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
-to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
+as a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -92,7 +93,6 @@ to a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
     <terminal-line>archive path:  /scratch/.../access-om2/archive</terminal-line>
     <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
     <terminal-line>Added archive symlink to /scratch/.../access-om2/archive/1deg_jra55_ryf-expt-daeee7ff</terminal-line>
-    <terminal-line>To change directory to control directory run:</terminal-line>
     <terminal-line data="input">cd 1deg_jra55_ryf</terminal-line>
 </terminal-window>
 

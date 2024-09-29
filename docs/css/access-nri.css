@@ -314,7 +314,7 @@
 */
 /* Grid */
 .md-grid {
-  max-width: 68rem;
+  max-width: 87%;
 }
 /* Article */
 .md-content__inner {
@@ -449,6 +449,7 @@ h1.homepage {
   padding: 0.3em 0.3em 0.3em 1.8em !important;
   margin: 0.3em 0 0.8em 0 !important;
   border-radius: 0.3rem !important;
+  border: solid 1.5px var(--md-primary-fg-color) !important;
 }
 .admonition > p {
   margin: 0 !important;
@@ -466,6 +467,7 @@ h1.homepage {
 details {
   font-size: 1em !important;
   border-radius: 0.3rem !important;
+  border: solid 1.5px var(--md-primary-fg-color) !important;
 }
 details > summary {
   border-radius: 0.3rem !important;
@@ -484,7 +486,7 @@ details > p {
 
 /* note */
 .note {
-  border: solid 0.01em var(--note) !important;
+  border-color: var(--note) !important;
   background-color: var(--note-bg) !important;
 }
 .note > summary {
@@ -501,7 +503,7 @@ details > p {
 }
 /* info */
 .info {
-  border: solid 0.01em var(--info) !important;
+  border-color: var(--info) !important;
   background-color: var(--info-bg) !important;
 }
 .info > summary {
@@ -518,7 +520,7 @@ details > p {
 }
 /* danger */
 .danger {
-  border: solid 0.01em var(--danger) !important;
+  border-color: var(--danger) !important;
   background-color: var(--danger-bg) !important;
 }
 .danger > summary {
@@ -535,7 +537,7 @@ details > p {
 }
 /* abstract */
 .abstract {
-  border: solid 0.01em var(--abstract) !important;
+  border-color: var(--abstract) !important;
   background-color: var(--abstract-bg) !important;
 }
 .abstract > summary {
@@ -552,7 +554,7 @@ details > p {
 }
 /* tip */
 .tip {
-  border: solid 0.01em var(--tip) !important;
+  border-color: var(--tip) !important;
   background-color: var(--tip-bg) !important;
 }
 .tip > summary {
@@ -569,7 +571,7 @@ details > p {
 }
 /* success */
 .success {
-  border: solid 0.01em var(--success) !important;
+  border-color: var(--success) !important;
   background-color: var(--success-bg) !important;
 }
 .success > summary {
@@ -586,7 +588,7 @@ details > p {
 }
 /* warning */
 .warning {
-  border: solid 0.01em var(--warning) !important;
+  border-color: var(--warning) !important;
   background-color: var(--warning-bg) !important;
 }
 .warning > summary {
@@ -603,7 +605,7 @@ details > p {
 }
 /* failure */
 .failure {
-  border: solid 0.01em var(--failure) !important;
+  border-color: var(--failure) !important;
   background-color: var(--failure-bg) !important;
 }
 .failure > summary {
@@ -620,7 +622,7 @@ details > p {
 }
 /* question */
 .question {
-  border: solid 0.01em var(--question) !important;
+  border-color: var(--question) !important;
   background-color: var(--question-bg) !important;
 }
 .question > summary {
@@ -637,7 +639,7 @@ details > p {
 }
 /* bug */
 .bug {
-  border: solid 0.01em var(--bug) !important;
+  border-color: var(--bug) !important;
   background-color: var(--bug-bg) !important;
 }
 .bug > summary {
@@ -654,7 +656,7 @@ details > p {
 }
 /* example */
 .example {
-  border: solid 0.01em var(--example) !important;
+  border-color: var(--example) !important;
   background-color: var(--example-bg) !important;
 }
 .example > summary {
@@ -671,7 +673,7 @@ details > p {
 }
 /* quote */
 .quote {
-  border: solid 0.01em var(--quote) !important;
+  border-color: var(--quote) !important;
   background-color: var(--quote-bg) !important;
 }
 .quote > summary {
@@ -689,17 +691,17 @@ details > p {
 /* code (custom admonition) */
 .admonition.code,
 details.code {
-  border: solid 0.01em var(--code-adm) !important;
+  border-color: var(--code-adm) !important;
   background-color: var(--code-adm-bg) !important;
 }
-.code > summary {
+:is(details,.admonition).code > summary {
   background-color: var(--code-adm-bg) !important;
 }
-.code > summary::after {
+:is(details,.admonition).code > summary::after {
   color: var(--code-adm) !important;
 }
-.code:not(details)::before,
-.code > summary::before {
+:is(details,.admonition).code:not(details)::before,
+:is(details,.admonition).code > summary::before {
   font-family: "fontawesome" !important;
   content: "\f121" !important;
   color: var(--code-adm) !important;
@@ -707,7 +709,7 @@ details.code {
 
 /* not-supported */
 .not-supported {
-  border: solid 0.01em var(--danger) !important;
+  border-color: var(--danger) !important;
   background-color: var(--danger-bg) !important;
 }
 .not-supported > summary {
@@ -772,7 +774,6 @@ details.code {
   justify-content: center;
   align-items: stretch;
   gap: 0.1rem;
-  height: 7rem;
 }
 
 .md-footer-meta.md-typeset.md-grid > * {
@@ -863,16 +864,6 @@ details.code {
   flex-shrink: 1;
   position: relative;
 }
-.md-header__img {
-  justify-content: center;
-  align-items: center;
-  margin: 0 0.2em 0 0.3em;
-  flex-shrink: 1;
-  position: relative;
-}
-.md-header__img img {
-  max-height: 2rem;
-}
 
 /* Main logo */
 .md-header__button:hover {
@@ -931,15 +922,13 @@ details.code {
   Header Buttons CSS - "Hive Forum", "ACCESS-NRI", "Contribute"
 */
 .header-btn-container {
-  flex-grow: 1;
-  flex-shrink: 1;
   max-width: 20rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: stretch;
-  gap: 1rem;
+  gap: 0.8rem;
   margin: 0 .5rem;
 }
 
@@ -951,6 +940,7 @@ details.code {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  gap: 0.2rem;
   border-radius: 0.3rem;
   border: 1px solid;
   padding: 0 0.3em;
@@ -1311,22 +1301,13 @@ img.intro-img {
   }
 }
 
-
-@media screen and (width <= 608px) {
-  /* Footer */
-  .md-footer-meta.md-typeset.md-grid {
-    height: 11rem;
-  }
-}
-
-@media screen and (width > 600px) {
+@media screen and (width > 650px) {
   .small-card {
     max-height: 5rem;
     max-width: 40%;
   }
 }
-
-@media screen and (width <= 600px) {
+@media screen and (width <= 650px) {
   .vertical-card {
     width: 40%;
   }
@@ -1360,10 +1341,6 @@ img.intro-img {
     flex-wrap: wrap;
   }
 
-  /* Forum, ACCESS-NRI and GitHub buttons */
-  .header-btn-container {
-    flex-grow: 0;
-  }
   /* Make squared btn */
   .header-btn {
     flex-basis: 0;
@@ -1407,20 +1384,16 @@ img.intro-img {
   }
 }
 
-@media screen and (width > 400px) {
-  /* Hide logo in title */
-  .md-header__img {
-    display: none;
+@media screen and (width <= 450px) {
+  /* Hide title in header */
+  .md-header__title {
+    visibility: hidden;
   }
 }
 
-@media screen and (width <= 400px) {
-  /* Show logo in title */
-  .md-header__title {
-    display: none;
-  }
-  /* Hide text in title */
-  .md-header__img {
-    display: flex;
+/* Overwrites build */
+@media screen and (max-width: 76.1875em) {
+  .md-header__button.md-logo {
+      display: block;
   }
 }
