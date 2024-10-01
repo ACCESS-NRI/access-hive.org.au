@@ -1,8 +1,5 @@
 # Set up Spack for building ACCESS models
 
-!!! info
-    Last updated: 30/09/2024
-
 !!! danger
     This page is tailored to experienced users and collaborators developing ACCESS models.
 
@@ -18,7 +15,7 @@ These instructions are tailored specifically for _Gadi_. To use _Spack_ on _Gadi
 
 ## Set up Spack on Gadi
 
-!!! warning
+!!! tip
     The steps in this section only need to be done once.
 
 ### Create a directory for Spack
@@ -33,7 +30,7 @@ cd spack/0.22
 ### Clone the relevant git repositories
 
 !!! info
-    ACCESS-NRI maintains a fork of spack to enable back-porting fixes from more recent spack versions. This fork is the one used in these instructions.
+    ACCESS-NRI maintains a [fork of Spack](https://github.com/ACCESS-NRI/spack) to enable back-porting fixes from more recent spack versions. This fork is the one used in these instructions.
 
 ```
 git clone -c feature.manyFiles=true https://github.com/ACCESS-NRI/spack.git --branch releases/v0.22
