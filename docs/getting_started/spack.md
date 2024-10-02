@@ -59,7 +59,7 @@ git clone https://github.com/ACCESS-NRI/ACCESS-TEST.git
 spack env create test ACCESS-TEST/spack.yaml
 spack env activate -p test
 spack find
-spack concretize -f
+spack concretize -f --fresh
 spack install --verbose
 spack find
 spack uninstall --remove --all
