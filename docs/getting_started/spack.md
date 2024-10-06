@@ -15,19 +15,25 @@ These instructions are tailored specifically for _Gadi_. To use _Spack_ on _Gadi
 
 ## Set up Spack on Gadi
 
+!!! tip
+    The steps in this section only need to be done once.
+
 ### Create a directory for Spack
 
-Create a directory on the filesystem where _Spack_ will be installed (e.g. `/g/data/$PROJECT/$USER/<myspack>`). This directory shall be referred to as `<myspack>`.
+Create a directory on the filesystem where _Spack_ will be installed (e.g. `/g/data/$PROJECT/$USER/spack/0.22`).
 
 ```
-mkdir <myspack>
-cd <myspack>
+mkdir -p spack/0.22
+cd spack/0.22
 ```
 
 ### Clone the relevant git repositories
 
+!!! info
+    ACCESS-NRI maintains a [fork of Spack](https://github.com/ACCESS-NRI/spack) to enable back-porting fixes from more recent spack versions. This fork is the one used in these instructions.
+
 ```
-git clone -c feature.manyFiles=true https://github.com/ACCESS-NRI/spack.git --branch releases/v0.22 --single-branch --depth=100
+git clone -c feature.manyFiles=true https://github.com/ACCESS-NRI/spack.git --branch releases/v0.22
 git clone https://github.com/ACCESS-NRI/spack-packages.git --branch main
 git clone https://github.com/ACCESS-NRI/spack-config.git --branch main
 ```
@@ -47,17 +53,29 @@ To test _Spack_ we will create an `ACCESS-TEST` environment and build the releva
 
 ```
 module purge
-cd <myspack>
+cd spack/0.22
 . spack-config/spack-enable.bash
 git clone https://github.com/ACCESS-NRI/ACCESS-TEST.git
 spack env create test ACCESS-TEST/spack.yaml
 spack env activate -p test
 spack find
-spack concretize -f
+spack concretize -f --fresh
 spack install --verbose
 spack find
 spack uninstall --remove --all
 spack env deactivate
 spack env rm test
 rm -rf ACCESS-TEST
+```
+
+## Update Spack on Gadi
+
+Keep your Spack instance up-to-date by doing the following:
+
+```
+cd spack/0.22
+git -C spack fetch --all -Pp
+git -C spack reset --hard origin/releases/v0.22
+git -C spack-config pull
+git -C spack-packages pull
 ```
