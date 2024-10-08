@@ -13,7 +13,7 @@ The instructions below outline how to build an ACCESS model using the build-from
 This build workflow is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
 
-As an example, in the following instrutions we will show how to build a modified [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15). All other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
+As an example, in the following instructions we will show how to build a modified [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15). All other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
 
 !!! tip
     The instructions below remain valid (with simple tweaks) for any model or package.
@@ -30,7 +30,7 @@ If you are looking for information on how to run a model, refer to the [Run a Mo
   To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models]({{spack_setup}}).
 
 ## Navigate into your Spack directory
-Navigate into the directory where you cloned the _Spack_ repositories during [Spack's setup]({{spack_setup}}#create-a-directory-for-spack).<br>
+Navigate into the directory where you cloned the _Spack_ repositories during the [Spack setup]({{spack_setup}}#create-a-directory-for-spack).<br>
 The suggested directory is `/g/data/$PROJECT/$USER/spack/0.22`:
 ```
 cd /g/data/$PROJECT/$USER/spack/0.22
@@ -39,10 +39,11 @@ cd /g/data/$PROJECT/$USER/spack/0.22
 ## Enable spack
 
 !!! warning
-    This step needs to be carried out for any new login or new shell
+    This step needs to be carried out for any new login or new shell environment.
 
 To add the `spack` command to your shell, as well as other settings, run:
 ```
+module purge
 . spack-config/spack-enable.bash
 ```
 
@@ -51,13 +52,13 @@ To add the `spack` command to your shell, as well as other settings, run:
 
 ## Create a Spack development environment
 
-_Spack_ has [environments](https://spack.readthedocs.io/en/latest/environments.html) that, in some ways, are similar to _Conda_ environments or _Python_ virtual environments: they create an isolated operating environment where _Spack_ can only see and access specific packages. This allows to build and deploy new packages in a coherent fashion.
+_Spack_ has [environments](https://spack.readthedocs.io/en/latest/environments.html) that are, in some ways, similar to _Conda_ environments or _Python_ virtual environments: they create an isolated operating environment where _Spack_ can only see and access specific packages. This allows the build and deployment of new packages in a coherent fashion.
 
-_Spack_ environments are located inside `/g/data/$PROJECT/$USER/spack/0.22/environments`, each in a separate directory. Each environment configuration is defined within its directory using the [`spack.yaml`](https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml) file.
+_Spack_ [managed environments](https://spack.readthedocs.io/en/latest/environments.html#creating-a-managed-environment) are located inside `/g/data/$PROJECT/$USER/spack/0.22/environments`, each in a separate directory. Each environment configuration is defined within its directory using the [`spack.yaml`](https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml) file.
 {: id="spack-environment-folder"}
 
 !!! warning
-    _Spack_ environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following [Spack's setup instructions]({{spack_setup}}).
+    _Spack_ managed environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions]({{spack_setup}}).
 
 ### Create the environment
 
@@ -86,7 +87,7 @@ spack env create mom5_dev ACCESS-ESM1.5/spack.yaml
 The newly-created `mom5_dev` _Spack_ <b>environment folder</b> is `/g/data/$PROJECT/$USER/spack/0.22/environments/mom5_dev`.
 
 ### Activate the environment
-To activate the `mom5_dev` _Spack_ environment run:
+To activate the `mom5_dev` _Spack_ environment, run:
 ```
 spack env activate -p mom5_dev
 ```
@@ -97,14 +98,14 @@ spack env activate -p mom5_dev
 
 ## Compile Spack environment packages (optional)
 
-It is always good to first compile all the packages in the newly created _Spack_ environment as is (without changing).
+It is recommended to first compile all the packages in the newly created _Spack_ environment as is, without making any changes.
 
 Compiling all the packages present in a _Spack_ environment is referred to as [installing the environment](https://spack.readthedocs.io/en/latest/environments.html#installing-an-environment).
 
 ### Concretize the Spack environment
-[Concretizing](https://spack.readthedocs.io/en/latest/environments.html#concretizing) the _Spack_ environment is necessary to force _Spack_ to update its knowledge of all the packages (their specs) within the environment.
+[Concretizing](https://spack.readthedocs.io/en/latest/environments.html#concretizing) the _Spack_ environment is necessary anytime the environment's `spack.yaml` gets changed, to force _Spack_ to update its knowledge of the environment configuration.
 
-To concretize the `mom5_dev` environment run:
+To concretize the `mom5_dev` environment, run:
 ```
 spack concretize -f --fresh
 ```
@@ -129,16 +130,16 @@ spack concretize -f --fresh
     <span class="grey preserve"> -   j6yscmm        </span> ^gmake<span class="cyan">@4.4.1</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~guile build_system=generic</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~cxx\~fortran+hl\~ipo\~java+mpi+shared\~szip\~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="grey preserve"> -   ugenh6g                </span> ^pkgconf<span class="cyan">@2.2.0</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -147,16 +148,16 @@ spack concretize -f --fresh
     <span class="grey preserve"> -   h45fvyw                </span> ^zlib-ng<span class="cyan">@2.1.6</span><span class="green">%intel@19.0.3.199</span><span class="indigo">+compat+new_strategies+opt+pic+shared build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~atomics\~cuda\~cxx\~cxx_exceptions\~gpfs\~internal-hwloc\~internal-libevent\~internal-pmix\~java\~legacylaunchers\~lustre\~memchecker\~openshmem\~orterunprefix\~romio+rsh\~singularity\~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green bold">[e] </span>  <span class="grey preserve">mqjolvb    </span> ^glibc<span class="cyan">@2.28</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report+restart_repro build_system=makefile type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report+restart_repro build_system=makefile type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared~szip~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~blosc\~byterange\~dap\~fsync\~hdf4\~jna+mpi\~nczarr_zip+optimize\~parallel-netcdf+pic+shared\~szip\~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="grey preserve"> -   udr7pbn    </span> ^um7<span class="cyan">@git.2024.07.03=access-esm1.5</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=generic optim=high</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -174,14 +175,14 @@ spack concretize -f --fresh
 
 ### Install the Spack environment
 
-To compile the packages in the `mom5_dev` environment run:
+To compile the packages in the `mom5_dev` environment, run:
 ```
 spack install 
 ```
 
 !!! tip
-    It takes 30-40 mins to compile all the packages for the first time.<br>
-    However, subsequent installations will re-use the built dependencies, therefore the total compilation time will be reduced.
+    It takes 30-40 minutes to compile all the packages for the first time.<br>
+    Subsequent installations, however, will compile quicker as the built dependencies are reused.
 
 <terminal-window>
   <terminal-line data="input" directory="[mom5_dev]">spack install</terminal-line>
@@ -302,18 +303,18 @@ This is done through the [`spack develop`](https://spack.readthedocs.io/en/lates
 
 ### Mark package as a development package
 
-There are in general two cases that influence the command to run to mark a package as "in development", depending on the state of the package's source code:
+There are, in general, two cases that influence the command to run to mark a package as "in development", depending on the state of the package's source code:
 
 1. [The new source code already exists](#case1)
-2. [The new source code does not exist yet](#case2)
+2. [The new source code does not yet exist](#case2)
    
 #### Case 1. The new source code already exists {: id='case1'}
 If the new source code for the development package already exists in the filesystem (this also includes cases when the new source code is in a `git` repo that can be cloned), to mark a package as "in development" we will need two things:
 
-- A name for the package new tag
+- A name for the package's new tag
 - The path of the new source code
 
-For example, to mark the `mom5` package as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
+For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
 ```
 spack develop mom5@development_version --path /path/to/mom5/new/source/code
 ```
@@ -344,10 +345,10 @@ spack find mom5
 ```
 <terminal-window>
   <terminal-line data="input" directory="[mom5_dev]">spack find mom5</terminal-line>
-  <terminal-line data="input">mom5@git.access-esm1.5_2024.08.23=access-esm1.5</terminal-line>
+  <terminal-line>mom5@git.access-esm1.5_2024.08.23=access-esm1.5</terminal-line>
 </terminal-window> 
 
-To mark the `mom5` as a development package and copy the `mom5@git.access-esm1.5_2024.08.23=access-esm1.5` version as a base copy, we can run:
+To mark `mom5` as a development package and copy the `mom5@git.access-esm1.5_2024.08.23=access-esm1.5` version as a base copy, we can run:
 
 ```
 spack develop mom5@git.access-esm1.5_2024.08.23=access-esm1.5
@@ -364,19 +365,19 @@ develop:
 The source code is automatically copied inside the [environment's folder](#spack-environment-folder).
 
 !!! warning
-    As you might notice, differently from [Case 1](#case1), there is no `path` specification inside the `develop` portion of the `spack.yaml` environment configuration file.<br>
+    As opposed to [Case 1](#case1), there is no `path` specification inside the `develop` portion of the `spack.yaml` environment configuration file.<br>
     This means that _Spack_ automatically expects to find the source code inside the [environment's folder](#spack-environment-folder).
 
 ## Compile modified Spack environment packages
 
-After the source code has been modified, the new package can be built following the same steps listed in [Compile Spack environment packages](#compile-spack-environment-packages-optional):
+After setting a development package the _Spack_ environment needs to be re-concretized (because the `spack.yaml` file changed). The _Spack_ environment can be concretized following the same steps listed in [Concretize the Spack environment](#concretize-the-spack-environment). Then, the new package can be built following the steps listed in [Compile Spack environment packages](#compile-spack-environment-packages-optional):
 
 ```
 spack concretize -f --fresh
 spack install
 ```
 !!! warning
-    Even though the `spack install` command this time will only build the development package, it might still take a long time to complete, depending on the specific package.
+    Although this time the `spack install` command will only build the development package, it might still take a long time to complete, depending on the specific package.
 
 <terminal-window lineDelay=0>
   <terminal-line data="input" lineDelay=200 directory="[mom5_dev]">
@@ -392,19 +393,19 @@ spack install
     <span class="green">[+]</span> <span class="grey preserve">hhtnigw    </span> ^cice4<span class="cyan">@git.2024.05.21=access-esm1.5</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">j6yscmm        </span> ^gmake<span class="cyan">@4.4.1</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~guile build_system=generic</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">j6yscmm        </span> ^gmake<span class="cyan">@4.4.1</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~guile build_system=generic</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~cxx\~fortran+hl\~ipo\~java+mpi+shared\~szip\~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green">[+]</span> <span class="grey preserve">ugenh6g                </span> ^pkgconf<span class="cyan">@2.2.0</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -413,16 +414,16 @@ spack install
     <span class="green">[+]</span> <span class="grey preserve">h45fvyw                </span> ^zlib-ng<span class="cyan">@2.1.6</span><span class="green">%intel@19.0.3.199</span><span class="indigo">+compat+new_strategies+opt+pic+shared build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~atomics\~cuda\~cxx\~cxx_exceptions\~gpfs\~internal-hwloc\~internal-libevent\~internal-pmix\~java\~legacylaunchers\~lustre\~memchecker\~openshmem\~orterunprefix\~romio+rsh\~singularity\~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green bold">[e] </span>  <span class="grey preserve">mqjolvb    </span> ^glibc<span class="cyan">@2.28</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report+restart_repro build_system=makefile dev_path=/path/to/source/code/for/mom5 type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report+restart_repro build_system=makefile dev_path=/path/to/source/code/for/mom5 type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared~szip~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~blosc\~byterange\~dap\~fsync\~hdf4\~jna+mpi\~nczarr_zip+optimize\~parallel-netcdf+pic+shared\~szip\~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green">[+]</span> <span class="grey preserve">udr7pbn    </span> ^um7<span class="cyan">@git.2024.07.03=access-esm1.5</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=generic optim=high</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -502,16 +503,17 @@ spack install
 !!! info
     The full output has been truncated for brevity.
 
-## Output directory for compiled packages
-All compiled packages will be placed in directories having the following format: `<install_tree:root>/<architecture>/<compiler>/<package-name>`.
+!!! tip
+    From now on, the source code can be modified and the _Spack_ environment installed without repeating the concretization step.<br>
+    The _Spack_ environment will need to be re-concretized only if further changes occur in the `spack.yaml` file.
 
-`<install_tree:root>` depends on the [`install_tree`](https://spack.readthedocs.io/en/latest/config_yaml.html#install-tree-root) configuration field. _Spack_ reads this configuration field from files in several directories, following [Spack's configuration scopes](https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes).
+## Output directory for compiled packages
+For the Spack instance obtained through the [Spack setup instructions]({{spack_setup}}), all compiled packages will be placed in directories having the following format: `<install_tree.root>/<architecture>/<compiler.name>-<compiler.version>/<name>-<version>-<hash>`.
+
+`<install_tree.root>` depends on the [`install_tree.root`](https://spack.readthedocs.io/en/latest/config_yaml.html#install-tree-root) configuration field. _Spack_ reads this configuration field from files in several directories, following [Spack's configuration scopes](https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes).
 
 !!! warning
     For instances of _Spack_ on _Gadi_ you should ignore the **system** scope.
-
-!!! tip
-    For the _Spack_ instance obtained through the [Spack's setup instructions]({{spack_setup}}), `$(prefix)` corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
 
 For the example above, `mom5_dev` _Spack_ environment's configuration file (`spack.yaml`) contains the following lines that fall in the **environment** scope:
 ```yaml
@@ -520,13 +522,13 @@ config:
       root: $spack/../restricted/ukmo/release
 ```
 !!! tip
-    `$spack` refers to the `$(prefix)` directory above.
+    For the _Spack_ instance obtained through the [Spack setup instructions]({{spack_setup}}), `$spack` (referred to as `$(prefix)` in _Spack_ configuration scopes documentation above) corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
 
-This means the packages that we just built in this example can be found under `/g/data/$PROJECT/$USER/spack/0.22/spack/../restricted/ukmo/release/<architecture>/<compiler>/<package-name>`.
+This means the packages built in this example can be found in `/g/data/$PROJECT/$USER/spack/0.22/spack/../restricted/ukmo/release/<architecture>/<compiler.name>-<compiler.version>/<name>-<version>-<hash>`.
 
 ## Troubleshooting build errors
 
-Sometimes you might get errors while compiling the packages.<br>
+Sometimes you might encounter errors while compiling the packages.<br>
 _Spack_ prints out the error message and generates a full build log that can be viewed by the user. The location of the build log is shown at the end of the error message.
 
 For example, if we try to install the `mom5_dev` environment with an error in the new `mom5` source code (in this example a `use` statement in the `<new-mom5-source-code-folder>/src/accessom_coupler/ocean_solo.F90` file has been purposely commented out to force an error in compilation), we might get an output error similar to the following:
@@ -541,7 +543,7 @@ See build log for details:
 <span class="red">==></span> Error: access-esm1p5-git.2024.05.1=2024.05.1-aysea5r7rbwy22lluvl64baperlokktv: Package was not installed
 <span class="red">==></span> Error: Installation request failed.  Refer to reported errors for failing package(s).</code></pre>
 
-In this case the error might be obvious already from the error message but, for more information, the build log can be examined.
+If the error is not obvious from the error message, see the build log for more information.
 
 <custom-references>
 - [https://spack.readthedocs.io/en/latest/](https://spack.readthedocs.io/en/latest/)
