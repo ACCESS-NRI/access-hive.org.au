@@ -1,7 +1,7 @@
 # Set up Spack for building ACCESS models
 
 !!! danger
-    This page is tailored to experienced users and collaborators developing ACCESS models.
+    This page is tailored to experienced users and collaborators developing ACCESS models. This step is *not* required if you *only* want to run a model.
 
 [Spack](https://spack.io/about/) is a build-from-source package manager, specifically designed to simplify the installation of scientific software on supercomputers.
 
@@ -20,11 +20,11 @@ These instructions are tailored specifically for _Gadi_. To use _Spack_ on _Gadi
 
 ### Create a directory for Spack
 
-Create a directory on the filesystem where _Spack_ will be installed (e.g. `/g/data/$PROJECT/$USER/spack/0.22`).
+Create a directory on the filesystem where _Spack_ will be installed (e.g. `/g/data/$PROJECT/$USER/spack/0.22`). Use the `/g/data` filesystem if you wish to run the binaries on the compute nodes.
 
 ```
-mkdir -p spack/0.22
-cd spack/0.22
+mkdir -p /g/data/$PROJECT/$USER/spack/0.22
+cd /g/data/$PROJECT/$USER/spack/0.22
 ```
 
 ### Clone the relevant git repositories
@@ -49,14 +49,33 @@ ln -s -r -v spack-config/v0.22/gadi/* spack/etc/spack/
 
 ## Test Spack (OPTIONAL)
 
-To test _Spack_ we will create an `ACCESS-TEST` environment and build the relevant packages. Then, we will uninstall all the packages and remove the environment.
+To test _Spack_ we will create an `ACCESS-TEST` environment and build the relevant packages. It takes approximately 30 minutes to compile. Then, we will uninstall all the packages and remove the environment.
+
+
+### Enable Spack
+
+!!! warning
+    This step needs to be carried out for any new login or new shell environment.
 
 ```
 module purge
-cd spack/0.22
+cd /g/data/$PROJECT/$USER/spack/0.22
 . spack-config/spack-enable.bash
+```
+
+!!! warning
+    There is a space between the `.` and the path to the file, as we are sourcing the file.
+
+### Create the Spack managed environment
+
+```
 git clone https://github.com/ACCESS-NRI/ACCESS-TEST.git
 spack env create test ACCESS-TEST/spack.yaml
+```
+
+### Start compiling
+
+```
 spack env activate -p test
 spack find
 spack concretize -f --fresh
@@ -73,7 +92,7 @@ rm -rf ACCESS-TEST
 Keep your Spack instance up-to-date by doing the following:
 
 ```
-cd spack/0.22
+cd /g/data/$PROJECT/$USER/spack/0.22
 git -C spack fetch --all -Pp
 git -C spack reset --hard origin/releases/v0.22
 git -C spack-config pull
