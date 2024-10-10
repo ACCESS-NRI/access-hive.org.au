@@ -53,11 +53,11 @@ To add the `spack` command to your shell, as well as other settings, run:
 
 _Spack_ has [environments](https://spack.readthedocs.io/en/latest/environments.html) that are, in some ways, similar to _Conda_ environments or _Python_ virtual environments: they create an isolated operating environment where _Spack_ can only see and access specific packages. This allows the build and deployment of new packages in a coherent fashion.
 
-_Spack_ environments are located inside `/g/data/$PROJECT/$USER/spack/0.22/environments`, each in a separate directory. Each environment configuration is defined within its directory using the [`spack.yaml`](https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml) file.
+_Spack_ [managed environments](https://spack.readthedocs.io/en/latest/environments.html#creating-a-managed-environment) are located inside `/g/data/$PROJECT/$USER/spack/0.22/environments`, each in a separate directory. Each environment configuration is defined within its directory using the [`spack.yaml`](https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml) file.
 {: id="spack-environment-folder"}
 
 !!! warning
-    _Spack_ environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions]({{spack_setup}}).
+    _Spack_ managed environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions]({{spack_setup}}).
 
 ### Create the environment
 
@@ -129,16 +129,16 @@ spack concretize -f --fresh
     <span class="grey preserve"> -   j6yscmm        </span> ^gmake<span class="cyan">@4.4.1</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~guile build_system=generic</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~cxx\~fortran+hl\~ipo\~java+mpi+shared\~szip\~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="grey preserve"> -   ugenh6g                </span> ^pkgconf<span class="cyan">@2.2.0</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -147,16 +147,16 @@ spack concretize -f --fresh
     <span class="grey preserve"> -   h45fvyw                </span> ^zlib-ng<span class="cyan">@2.1.6</span><span class="green">%intel@19.0.3.199</span><span class="indigo">+compat+new_strategies+opt+pic+shared build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~atomics\~cuda\~cxx\~cxx_exceptions\~gpfs\~internal-hwloc\~internal-libevent\~internal-pmix\~java\~legacylaunchers\~lustre\~memchecker\~openshmem\~orterunprefix\~romio+rsh\~singularity\~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green bold">[e] </span>  <span class="grey preserve">mqjolvb    </span> ^glibc<span class="cyan">@2.28</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report+restart_repro build_system=makefile type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report+restart_repro build_system=makefile type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared~szip~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~blosc\~byterange\~dap\~fsync\~hdf4\~jna+mpi\~nczarr_zip+optimize\~parallel-netcdf+pic+shared\~szip\~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="grey preserve"> -   udr7pbn    </span> ^um7<span class="cyan">@git.2024.07.03=access-esm1.5</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=generic optim=high</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -310,10 +310,10 @@ There are, in general, two cases that influence the command to run to mark a pac
 #### Case 1. The new source code already exists {: id='case1'}
 If the new source code for the development package already exists in the filesystem (this also includes cases when the new source code is in a `git` repo that can be cloned), to mark a package as "in development" we will need two things:
 
-- A name for the package new tag
+- A name for the package's new tag
 - The path of the new source code
 
-For example, to mark the `mom5` package as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
+For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
 ```
 spack develop mom5@development_version --path /path/to/mom5/new/source/code
 ```
@@ -344,10 +344,10 @@ spack find mom5
 ```
 <terminal-window>
   <terminal-line data="input" directory="[mom5_dev]">spack find mom5</terminal-line>
-  <terminal-line data="input">mom5@git.access-esm1.5_2024.08.23=access-esm1.5</terminal-line>
+  <terminal-line>mom5@git.access-esm1.5_2024.08.23=access-esm1.5</terminal-line>
 </terminal-window> 
 
-To mark the `mom5` as a development package and copy the `mom5@git.access-esm1.5_2024.08.23=access-esm1.5` version as a base copy, we can run:
+To mark `mom5` as a development package and copy the `mom5@git.access-esm1.5_2024.08.23=access-esm1.5` version as a base copy, we can run:
 
 ```
 spack develop mom5@git.access-esm1.5_2024.08.23=access-esm1.5
@@ -392,19 +392,19 @@ spack install
     <span class="green">[+]</span> <span class="grey preserve">hhtnigw    </span> ^cice4<span class="cyan">@git.2024.05.21=access-esm1.5</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">j6yscmm        </span> ^gmake<span class="cyan">@4.4.1</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~guile build_system=generic</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">j6yscmm        </span> ^gmake<span class="cyan">@4.4.1</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~guile build_system=generic</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">5xcyy2h        </span> ^netcdf-fortran<span class="cyan">@4.5.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+pic+shared build_system=autotools patches=b050dbd</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">py3awb7        </span> ^oasis3-mct<span class="cyan">@git.access-esm1.5_2024.05.24=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report build_system=makefile</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">yfo7fum            </span> ^hdf5<span class="cyan">@1.10.11</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~cxx\~fortran+hl\~ipo\~java+mpi+shared\~szip\~threadsafe+tools api=default build_system=cmake build_type=Release generator=make</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span> <span class="grey preserve">vc4y4c6                </span> ^cmake<span class="cyan">@3.24.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~doc+ncurses+ownlibs build_system=generic build_type=Release</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green">[+]</span> <span class="grey preserve">ugenh6g                </span> ^pkgconf<span class="cyan">@2.2.0</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -413,16 +413,16 @@ spack install
     <span class="green">[+]</span> <span class="grey preserve">h45fvyw                </span> ^zlib-ng<span class="cyan">@2.1.6</span><span class="green">%intel@19.0.3.199</span><span class="indigo">+compat+new_strategies+opt+pic+shared build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green bold">[e] </span>  <span class="grey preserve">ikhujrk        </span> ^openmpi<span class="cyan">@4.0.2</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~atomics\~cuda\~cxx\~cxx_exceptions\~gpfs\~internal-hwloc\~internal-libevent\~internal-pmix\~java\~legacylaunchers\~lustre\~memchecker\~openshmem\~orterunprefix\~romio+rsh\~singularity\~static+vt+wrapper-rpath build_system=autotools fabrics=none patches=073477a,60ce20b romio-filesystem=none schedulers=none</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green bold">[e] </span>  <span class="grey preserve">mqjolvb    </span> ^glibc<span class="cyan">@2.28</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~deterministic~optimisation_report+restart_repro build_system=makefile dev_path=/path/to/source/code/for/mom5 type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="grey preserve"> -   oopqoqg    </span> ^mom5<span class="cyan">@git.access-esm1.5_2024.08.23=access-esm1.5</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~deterministic\~optimisation_report+restart_repro build_system=makefile dev_path=/path/to/source/code/for/mom5 type=ACCESS-CM</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
-    <span class="green">[+]</span> <span class="grey preserve">725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">~blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared~szip~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
+    <span class="green">[+]</span> <span class="grey preserve">725rz7c        </span> ^netcdf-c<span class="cyan">@4.7.4</span><span class="green">%intel@19.0.3.199</span><span class="indigo">\~blosc\~byterange\~dap\~fsync\~hdf4\~jna+mpi\~nczarr_zip+optimize\~parallel-netcdf+pic+shared\~szip\~zstd build_system=autotools</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
   </terminal-line>
   <terminal-line>
     <span class="green">[+]</span> <span class="grey preserve">udr7pbn    </span> ^um7<span class="cyan">@git.2024.07.03=access-esm1.5</span><span class="green">%intel@19.0.3.199</span> <span class="indigo">build_system=generic optim=high</span> <span class="pink">arch=linux-rocky8-x86_64_v4</span>
@@ -503,15 +503,12 @@ spack install
     The full output has been truncated for brevity.
 
 ## Output directory for compiled packages
-All compiled packages will be placed in directories having the following format: `<install_tree:root>/<architecture>/<compiler>/<package-name>`.
+For the Spack instance obtained through the [Spack setup instructions]({{spack_setup}}), all compiled packages will be placed in directories having the following format: `<install_tree:root>/<architecture>/<compiler>/<package-name>`.
 
 `<install_tree:root>` depends on the [`install_tree`](https://spack.readthedocs.io/en/latest/config_yaml.html#install-tree-root) configuration field. _Spack_ reads this configuration field from files in several directories, following [Spack's configuration scopes](https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes).
 
 !!! warning
     For instances of _Spack_ on _Gadi_ you should ignore the **system** scope.
-
-!!! tip
-    For the _Spack_ instance obtained through the [Spack setup instructions]({{spack_setup}}), `$(prefix)` corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
 
 For the example above, `mom5_dev` _Spack_ environment's configuration file (`spack.yaml`) contains the following lines that fall in the **environment** scope:
 ```yaml
@@ -520,7 +517,7 @@ config:
       root: $spack/../restricted/ukmo/release
 ```
 !!! tip
-    `$spack` refers to the `$(prefix)` directory above.
+    For the _Spack_ instance obtained through the [Spack setup instructions]({{spack_setup}}), `$spack` (referred to as `$(prefix)` in _Spack_ configuration scopes documentation above) corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
 
 This means the packages built in this example can be found in `/g/data/$PROJECT/$USER/spack/0.22/spack/../restricted/ukmo/release/<architecture>/<compiler>/<package-name>`.
 
