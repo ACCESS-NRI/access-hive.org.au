@@ -640,6 +640,10 @@ Each of [{{ model }} components][model components] contains additional configura
 These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-esm/preindustrial+concentrations/ocean` directory).<br>
 To modify these options please refer to the User Guide of the respective model component.
 
+### Create a custom {{ model }} build
+All the executables needed to run {{ model }} are pre-built into independent configurations using _Spack_.<br>
+To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Build {{ model }}](/models/run-a-model/build_a_model#{{model|lower}}).
+
 ### Controlling model output
 Selecting the variables to save from a simulation can be a balance between enabling future analysis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's _control_ directory. 
 
