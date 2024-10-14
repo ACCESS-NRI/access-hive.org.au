@@ -2,9 +2,9 @@ name: Automatic merge
 
 on:
   schedule: 
-    # Run every day at 02:09 (AEDT)
-    # AEDT is UTC+10 --> 02:09 AEDT is 16:09 UTC
-    - cron: "9 16 * * *"
+    # Run every day at 01:09 (AEST)
+    # AEST is UTC+10 --> 01:09 AEST is 15:09 UTC
+    - cron: "9 15 * * *"
 
 jobs:
   check-links:
