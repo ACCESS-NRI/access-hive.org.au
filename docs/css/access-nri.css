@@ -1089,6 +1089,39 @@ img.terminalSwitch:hover {
 }
 
 /* =============================================================== 
+  Virtural terminal colours for Spack output
+*/
+
+.spack-red {
+  color: #FF6E67;
+}
+.spack-highlighted {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.spack-cyan {
+  color: cyan;
+}
+.spack-indigo {
+  color: #6871FF;
+}
+.spack-green{
+  color: #00C200;
+}
+.spack-pink {
+  color: #CA30C7;
+}
+.spack-grey {
+  color: #686868;
+}
+
+.spack::part(directory),
+.spack ::part(directory) {
+  color: #60FA67;
+}
+
+
+/* =============================================================== 
   General styling for html tabs
 */
 .tabLabels {
@@ -1156,6 +1189,10 @@ img.terminalSwitch:hover {
 /* =============================================================== 
   Miscellaneous
 */
+.keep-blanks {
+  white-space: pre;
+}
+
 .centered {
   display: block;
   margin-left: auto;
