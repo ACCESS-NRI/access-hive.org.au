@@ -195,9 +195,6 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/access-nri
       name: ACCESS-NRI on Linkedin
-    # - icon: fontawesome/brands/slack
-    #   link: https://access-nri.slack.com/
-    #   name: Join ACCESS-NRI Slack Channel
   analytics:
     provider: google
     property: G-2T6SQEH2CX
