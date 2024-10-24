@@ -314,7 +314,7 @@ If the new source code for the development package already exists in the filesys
 
 For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
 ```
-spack develop mom5@development_version --path /path/to/mom5/new/source/code
+spack develop --path /path/to/mom5/new/source/code mom5@development_version
 ```
 !!! tip
     This command should not display any output
