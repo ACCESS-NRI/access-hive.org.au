@@ -30,10 +30,10 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
     </a>
     <a href="/models/run-a-model/build_a_model" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/access_om_globe_visualisation.png" alt="Build a model">
+            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/access_om_globe_visualisation.png" alt="Modify a model's source code">
         </div>
         <div class="card-text-container bold">   
-            Build an ACCESS model
+            Modify an ACCESS model's source code
         </div>
     </a>
 </div>
