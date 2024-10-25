@@ -6,15 +6,14 @@
 {% set spack_setup = "/getting_started/spack" %}
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-# Build an ACCESS model
+# Modify an ACCESS model's source code
 
 ## About
 
-The instructions below outline how to build an ACCESS model using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
+The instructions below outline how to build an ACCESS model and its dependencies, using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
 This build workflow is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
-
-As an example, in the following instructions we will show how to build a modified [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15). All other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
+As an example, in the following instructions we will show how to modify [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15) and re-compile the relevant ACCESS-ESM1.5 dependencies. All the other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
 
 !!! tip
     The instructions below remain valid (with simple tweaks) for any model or package.
@@ -314,7 +313,7 @@ If the new source code for the development package already exists in the filesys
 
 For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
 ```
-spack develop mom5@development_version --path /path/to/mom5/new/source/code
+spack develop --path /path/to/mom5/new/source/code mom5@development_version
 ```
 !!! tip
     This command should not display any output
