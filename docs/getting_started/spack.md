@@ -47,7 +47,7 @@ ln -s -r -v spack-config/v0.22/gadi/* spack/etc/spack/
 !!! success
     Your _Spack_ setup is complete!
 
-For instructions on how to build an ACCESS model using _Spack_, refer to [Build an ACCESS model](/models/run-a-model/build_a_model).
+For instructions on how to build an ACCESS model using _Spack_, refer to [Modify an ACCESS model's source code](/models/run-a-model/build_a_model).
 
 ## Enable Spack
 

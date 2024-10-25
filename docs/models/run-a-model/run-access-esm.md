@@ -642,7 +642,7 @@ To modify these options please refer to the User Guide of the respective model c
 
 ### Create a custom {{ model }} build
 All the executables needed to run {{ model }} are pre-built into independent configurations using _Spack_.<br>
-To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Build {{ model }}](/models/run-a-model/build_a_model#{{model|lower}}).
+To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
 
 ### Controlling model output
 Selecting the variables to save from a simulation can be a balance between enabling future analysis and minimising storage requirements. The choice and frequency of variables saved by each model can be configured from within each submodel's _control_ directory. 

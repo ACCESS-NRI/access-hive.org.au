@@ -123,7 +123,7 @@ nav:
     - Run ACCESS-CM: models/run-a-model/run-access-cm.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
-    - Build an ACCESS Model: models/run-a-model/build_a_model.md
+    - Modify an ACCESS model's source code: models/run-a-model/build_a_model.md
 
   - Data and Model Evaluation:
     - model_evaluation/index.md
