@@ -7,7 +7,7 @@ Model evaluation is about measuring how fit for purpose a particular model is. M
 Model Evaluation and Diagnostics (often shortened to "MED" at ACCESS-NRI) of ACCESS models includes:
 
 - **Evaluation**<br>
-    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions. For further explanations on experiments, see [here](../../about/user_support/#frequently-asked-questions-faq).
+    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions. For further explanations on experiments, see [here](/about/user_support/#frequently-asked-questions-faq).
 
 - **Diagnostics**<br>
     Model diagnostics is the constant monitoring of model runs to detect any anomalies or inconsistencies. 
