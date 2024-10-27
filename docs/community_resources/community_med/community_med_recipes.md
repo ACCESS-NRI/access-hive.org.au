@@ -64,7 +64,7 @@ Please let us know, if we are missing an important tool. Check [How To Contribut
 <td width="64%">
     <div align='center' width="100%" >
         <a href="https://cosima-recipes.readthedocs.io/en/latest/" target="_blank">Documentation</a> |
-        <a href="https://cosima-recipes.readthedocs.io/en/latest/tutorials/index.html">Tutorial</a> |
+        <a href="https://cosima-recipes.readthedocs.io/en/latest/tutorials.html">Tutorial</a> |
         <a href="https://github.com/COSIMA/cosima-cookbook" target="_blank">Source Code</a> |
         <a href="https://github.com/COSIMA/cosima-recipes" target="_blank">Recipes</a>
         <!-- The COSIMA (Consortium for Ocean-Sea Ice Modelling in Australia) Cookbook / Recipes is a framework for analysing output from ocean-sea ice models. The focus is on the ACCESS-OM2 suite of models being developed and run by members of COSIMA: Consortium for Ocean-Sea Ice Modelling in Australia.
@@ -316,7 +316,7 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
 <td width="64%">
     <div align='center' width="100%" >
         <a href="https://metoffice.github.io/CSET/index.html" target="_blank">Documentation</a> |
-        <a href="https://metoffice.github.io/CSET/working-practices/index.html" target="_blank">Tutorial</a> |
+        <a href="https://metoffice.github.io/CSET/getting-started//index.html" target="_blank">Tutorial</a> |
         <a href="https://metoffice.github.io/CSET/" target="_blank">Source Code</a>
         <!-- CSET is a tool to aid in verifying and evaluating convective-scale and turbulence-scale (regional and increasingly global) model configurations. It aims to replace the RMED RES and Toolbox and the collection of bespoke scripts littering people's home directories, reducing effort wasted on duplicating already existing code. This centralisation of diagnostics should also make evaluations more consistent, reproducible and comparable. -->
     </div>
