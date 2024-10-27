@@ -52,7 +52,7 @@ Please let us know, if we are missing an important catalogue. Check [How To Cont
 <tr>
 <td width="25%">
     <div align='center' width="100%">
-    <a href="https://oneclimate.dmponline.cloud.edu.au/" target="_blank">Australia Climate Data Guide Catalogue</a> 
+    <a href="https://oneclimate.acdguide.cloud.edu.au/" target="_blank">Australia Climate Data Guide Catalogue</a> 
     </div>
 </td>
 <td width="75%">
