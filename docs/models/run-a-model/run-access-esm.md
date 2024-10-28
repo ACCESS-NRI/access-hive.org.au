@@ -6,7 +6,7 @@
 [model components]: /models/configurations/access-esm/#model-components
 [model configurations]: /models/configurations/access-esm/#access-esm15
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs){: class="text-card"}
 
 # Run {{ model }}
 
@@ -18,7 +18,7 @@ The instructions below outline how to run {{ model }} using ACCESS-NRI's softwar
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
+All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub](https://github.com/ACCESS-NRI/access-esm1.5-configs).
 
 {{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-esm1-5-release-information/2352) and are updated when new releases are made available.
 
@@ -66,12 +66,12 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
 
 ## Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
+All released {{ model }} configurations are available from the [{{ model }} configs](https://github.com/ACCESS-NRI/access-esm1.5-configs) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [CSIRO](https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-science-centre) and [CLEX CMS](https://github.com/coecms/access-esm).
 
 For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
-More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
+More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs](https://github.com/ACCESS-NRI/access-esm1.5-configs) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
 
