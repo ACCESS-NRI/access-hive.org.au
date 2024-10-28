@@ -7,13 +7,13 @@ In this section you will find some collated information on data in the context o
 If you are new to MED and are wondering [*"What is Model Evaluation and Diagnostics about?"*](./model_evaluation_getting_started/index.md), we recommend you read our [Getting Started with MED page](./model_evaluation_getting_started/index.md): -->
 
 <div class="card-container">
-    <a href="data" class="vertical-card aspect-ratio1to1">
+    <a href="/model_evaluation/data" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="../assets/model_evaluation/model_evaluation_variables.png" alt="Data" class="img-cover"></img>
         </div>
         <div class="card-text-container bold ">Data</div>
     </a>  
-    <a href="evaluation_on_gadi" class="vertical-card aspect-ratio1to1">
+    <a href="/model_evaluation/evaluation_on_gadi" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Model Evaluation" class="img-cover" style="object-position: left;"></img>
         </div>
@@ -34,7 +34,7 @@ While this work is in progress, you can refer to a collection of links to existi
 <!-- 
 
 <div class="card-container">
-    <a href="./model_evaluation_getting_started/access_to_gadi_at_nci.md" class="vertical-card aspect-ratio1to1">
+    <a href="/getting_started/set_up_nci_account" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="..//assets/model_evaluation/Gadi-19-2.jpg" alt="Model Diagnostics"></img>
         </div>
