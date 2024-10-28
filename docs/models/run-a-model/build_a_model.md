@@ -13,7 +13,7 @@
 The instructions below outline how to build an ACCESS model and its dependencies, using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
 This build workflow is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
-As an example, in the following instructions we will show how to modify [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15) and re-compile the relevant ACCESS-ESM1.5 dependencies. All the other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
+As an example, in the following instructions we will show how to modify [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15) and re-compile the relevant ACCESS-ESM1.5 dependencies. All the other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release](https://github.com/ACCESS-NRI/ACCESS-ESM1.5).
 
 !!! tip
     The instructions below remain valid (with simple tweaks) for any model or package.
@@ -24,10 +24,10 @@ As an example, in the following instructions we will show how to modify [mom5 co
   Before building a model, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 - **_Spack_**<br>
-  To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models]({{spack_setup}}).
+  To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models](/getting_started/spack).
 
 ## Navigate into your Spack directory
-Navigate into the directory where you cloned the _Spack_ repositories during the [Spack setup]({{spack_setup}}#create-a-directory-for-spack).<br>
+Navigate into the directory where you cloned the _Spack_ repositories during the [Spack setup](/getting_started/spack/#create-a-directory-for-spack).<br>
 The suggested directory is `/g/data/$PROJECT/$USER/spack/0.22`:
 ```
 cd /g/data/$PROJECT/$USER/spack/0.22
@@ -55,11 +55,11 @@ _Spack_ [managed environments](https://spack.readthedocs.io/en/latest/environmen
 {: id="spack-environment-folder"}
 
 !!! warning
-    _Spack_ managed environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions]({{spack_setup}}).
+    _Spack_ managed environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions](/getting_started/spack).
 
 ### Create the environment
 
-To ensure we keep all dependecies the same as the official release, we will create our [_Spack_ development environment](https://spack.readthedocs.io/en/latest/environments.html#creating-a-managed-environment) as a copy of the released [ACCESS-ESM1.5 Spack environment]({{esm1_5_build_config}}/blob/main/spack.yaml).<br>
+To ensure we keep all dependecies the same as the official release, we will create our [_Spack_ development environment](https://spack.readthedocs.io/en/latest/environments.html#creating-a-managed-environment) as a copy of the released [ACCESS-ESM1.5 Spack environment](https://github.com/ACCESS-NRI/ACCESS-ESM1.5/blob/main/spack.yaml).<br>
 To create a _Spack_ development environment called `mom5_dev`, run:
 
 ```
@@ -519,7 +519,7 @@ config:
       root: $spack/../restricted/ukmo/release
 ```
 !!! tip
-    For the _Spack_ instance obtained through the [Spack setup instructions]({{spack_setup}}), `$spack` (referred to as `$(prefix)` in _Spack_ configuration scopes documentation above) corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
+    For the _Spack_ instance obtained through the [Spack setup instructions](/getting_started/spack), `$spack` (referred to as `$(prefix)` in _Spack_ configuration scopes documentation above) corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
 
 This means the packages built in this example can be found in `/g/data/$PROJECT/$USER/spack/0.22/spack/../restricted/ukmo/release/<architecture>/<compiler.name>-<compiler.version>/<name>-<version>-<hash>`.
 
