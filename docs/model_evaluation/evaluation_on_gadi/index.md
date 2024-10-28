@@ -16,31 +16,31 @@ Model Evaluation and Diagnostics (often shortened to "MED" at ACCESS-NRI) of ACC
 While evaluation and diagnostics can be described separately they often overlap and can use similar tools. ACCESS-NRI currently provides support for the following model evaluation and diagnostics frameworks on <i>Gadi</i>:
 
 <div class="card-container">
-    <a href="esmvaltool_workflow" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/esmvaltool_workflow" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
         <!--<div class="card-text-container bold">ESMValTool</div> -->
     </a>
-    <a href="ilamb_workflow" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/ilamb_workflow" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB" class="img-cover"></img>
         </div>
         <!-- <div class="card-text-container bold">ILAMB</div> -->
     </a>
-    <a href="cosima" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/cosima" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA" class="img-cover"></img>
         </div>
         <div class="card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="model_live_diagnostics" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/model_live_diagnostics" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Model Live Diagnostics" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">Model Live Diagnostics</div>
     </a>
-    <a href="metplus" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain white-background"></img>
         </div>
