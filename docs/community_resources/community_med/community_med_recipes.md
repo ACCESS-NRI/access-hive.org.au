@@ -160,7 +160,6 @@ IOMB uses the same code base as the International Land Model Benchmarking (ILAMB
         [METplotpy-source]: https://github.com/dtcenter/METplotpy
         [METcalcpy-doc]: https://metcalcpy.readthedocs.io/en/latest/
         [METcalcpy-source]: https://github.com/dtcenter/METcalcpy
-        [METdatadb-doc]: https://metdatadb.readthedocs.io/en/latest/
         [METdatadb-source]: https://github.com/dtcenter/METdatadb -->
     </div>
 </td>
