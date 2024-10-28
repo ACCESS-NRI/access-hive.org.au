@@ -6,6 +6,7 @@ exclude = [
     '^https://web\.archive\.org/web/',
     '^http://127\.0\.0\.1:8000',
     '^https://www.linkedin.com/',
+    '^%intel@',
 ]
 
 # Exclude these filesystem paths from getting checked.
