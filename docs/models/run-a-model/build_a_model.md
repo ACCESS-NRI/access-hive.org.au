@@ -302,36 +302,10 @@ This is done through the [`spack develop`](https://spack.readthedocs.io/en/lates
 
 There are, in general, two cases that influence the command to run to mark a package as "in development", depending on the state of the package's source code:
 
-1. [The new source code already exists](#case1)
-2. [The new source code does not yet exist](#case2)
-   
-#### Case 1. The new source code already exists {: id='case1'}
-If the new source code for the development package already exists in the filesystem (this also includes cases when the new source code is in a `git` repo that can be cloned), to mark a package as "in development" we will need two things:
+1. [The new source code does not exist](#code-does-not-exist)
+2. [The new source code already exists](#code-exists)
 
-- A name for the package's new tag
-- The path of the new source code
-
-For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
-```
-spack develop --path /path/to/mom5/new/source/code mom5@development_version
-```
-!!! tip
-    This command should not display any output
-
-This adds the following lines at the end of the `spack.yaml` file inside the [environment's folder](#spack-environment-folder):
-```
-develop:
-    mom5:
-      spec: mom5@=development_version
-      path: /path/to/mom5/new/source/code
-```
-
-!!! warning
-    Care needs to be taken when multiple _Spack_ development environments point to the same source code location. If these environments require different independent changes of the source code, the user needs to make sure to sync the source code version (e.g., using different `git` branches for the different versions of the source code) with the desired one when switching between development environments.<br>
-    This would still prevent building both environments simultaneously.
-
-
-#### Case 2. The new source does not exist {: id='case2'}
+#### The new source does not exist {: id='code-does-not-exist'}
 If the source code does not yet exist, _Spack_ can create it as a copy of the current source code version, that can be later modified.
 
 In this case we need to tell _Spack_ which package tag (version) to copy as a starting base for the new source code.
@@ -362,8 +336,34 @@ develop:
 The source code is automatically copied inside the [environment's folder](#spack-environment-folder).
 
 !!! warning
-    As opposed to [Case 1](#case1), there is no `path` specification inside the `develop` portion of the `spack.yaml` environment configuration file.<br>
+    As opposed to the case where the [code already exists](#code-exists), there is no `path` specification inside the `develop` portion of the `spack.yaml` environment configuration file.<br>
     This means that _Spack_ automatically expects to find the source code inside the [environment's folder](#spack-environment-folder).
+
+#### The new source code already exists {: id='code-exists'}
+If the new source code for the development package already exists in the filesystem (this also includes cases when the new source code is in a `git` repo that can be cloned), to mark a package as "in development" we will need two things:
+
+- A name for the package's new tag
+- The path of the new source code
+
+For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
+```
+spack develop --path /path/to/mom5/new/source/code mom5@development_version
+```
+!!! tip
+    This command should not display any output
+
+This adds the following lines at the end of the `spack.yaml` file inside the [environment's folder](#spack-environment-folder):
+```
+develop:
+    mom5:
+      spec: mom5@=development_version
+      path: /path/to/mom5/new/source/code
+```
+
+!!! warning
+    Care needs to be taken when multiple _Spack_ development environments point to the same source code location. If these environments require different independent changes of the source code, the user needs to make sure to sync the source code version (e.g., using different `git` branches for the different versions of the source code) with the desired one when switching between development environments.<br>
+    This would still prevent building both environments simultaneously.
+
 
 ## Compile modified Spack environment packages
 
