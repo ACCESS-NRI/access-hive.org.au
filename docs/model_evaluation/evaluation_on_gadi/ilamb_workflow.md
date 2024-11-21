@@ -20,11 +20,11 @@ ILAMB-workflow is configured to use the existing NCI supported CMIP data collect
 
 ### Pre-requisites
 
-To use *ILAMB* on *Gadi* ensure you fulfill the [First Steps](/getting_started/first_steps) section.
+To use *ILAMB* on *Gadi* ensure you fulfill the [Set Up your NCI Account](/getting_started/set_up_nci_account) section.
 <i>ILAMB</i> is provided through the <a href="https://my.nci.org.au/mancini/project/xp65/join" target="_blank">xp65</a> NCI projects on <i>Gadi</i>, so you need to have an NCI account and be a member of this projects to use it. 
 
 <div class='admonition warning'>
-    To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/first_steps" target="_blank">First Steps</a>.
+    To obtain an NCI account and join NCI projects, refer to <a href="/getting_started/set_up_nci_account" target="_blank">Set Up your NCI Account</a>.
 </div>
 
 Depending on your needs, you may want to also join the following supported data collections:
