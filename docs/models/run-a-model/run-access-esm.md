@@ -6,7 +6,7 @@
 [model components]: /models/configurations/access-esm/#model-components
 [model configurations]: /models/configurations/access-esm/#access-esm15
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs){: class="text-card"}
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
 # Run {{ model }}
 
