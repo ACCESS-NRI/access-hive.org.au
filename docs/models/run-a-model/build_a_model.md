@@ -27,7 +27,7 @@ As an example, in the following instructions we will show how to modify [mom5 co
   To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models]({{spack_setup}}).
 
 ## Navigate into your Spack directory
-Navigate into the directory where you cloned the _Spack_ repositories during the [Spack setup](/getting_started/spack/#create-a-directory-for-spack).<br>
+Navigate into the directory where you cloned the _Spack_ repositories during the [Spack setup]({{spack_setup}}).<br>
 The suggested directory is `/g/data/$PROJECT/$USER/spack/0.22`:
 ```
 cd /g/data/$PROJECT/$USER/spack/0.22
