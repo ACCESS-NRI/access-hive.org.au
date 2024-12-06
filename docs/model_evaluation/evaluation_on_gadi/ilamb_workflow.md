@@ -30,8 +30,8 @@ To use *ILAMB* on *Gadi* ensure you fulfill the [Set Up your NCI Account](/getti
 
 Depending on your needs, you may want to also join the following supported data collections:
 
-- CMIP6: <a href="https://my.nci.org.au/mancini/project/fs38/join" target="_blank">fs38</a>, <a href="https://my.nci.org.au/mancini/project/oi10/join" target="_blank">oi10</a>
-- CMIP5: <a href="https://my.nci.org.au/mancini/project/rr3/join" target="_blank">rr3</a>, <a href="https://my.nci.org.au/mancini/project/al33/join" target="_blank">al33</a>
+- CMIP6: [fs38](https://my.nci.org.au/mancini/project/fs38/join), [oi10](https://my.nci.org.au/mancini/project/oi10/join)
+- CMIP5: [rr3](https://my.nci.org.au/mancini/project/rr3/join), [al33](https://my.nci.org.au/mancini/project/al33/join)
 
 ### Loading the ILAMB-workflow modules
  <!-- #### Load the `access-med` conda environment -->
