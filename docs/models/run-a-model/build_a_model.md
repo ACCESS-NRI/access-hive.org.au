@@ -59,7 +59,7 @@ _Spack_ [managed environments](https://spack.readthedocs.io/en/latest/environmen
 
 ### Create the environment
 
-To ensure we keep all dependecies the same as the official release, we will create our [_Spack_ development environment](https://spack.readthedocs.io/en/latest/environments.html#creating-a-managed-environment) as a copy of the released [ACCESS-ESM1.5 Spack environment](https://github.com/ACCESS-NRI/ACCESS-ESM1.5/blob/main/spack.yaml).<br>
+To ensure we keep all dependecies the same as the official release, we will create our [_Spack_ development environment](https://spack.readthedocs.io/en/latest/environments.html#creating-a-managed-environment) as a copy of the released [ACCESS-ESM1.5 Spack environment]({{esm1_5_build_config}}/blob/main/spack.yaml).<br>
 To create a _Spack_ development environment called `mom5_dev`, run:
 
 ```
