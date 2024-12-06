@@ -86,7 +86,7 @@ A list of <i>ESMValTool</i> recipes available on <i>Gadi</i> can be found on the
 <div class="card-container">
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_ipccwg1ar5ch9.html" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/esmvaltool/fig-9-3.png" alt="Computing Access"></img>
+            <img src="/assets/model_evaluation/esmvaltool/fig-9-3.png" alt="Computing Access"></img>
         </div>
         <div class="card-text-container bold">Example 1</div>
     </a>
