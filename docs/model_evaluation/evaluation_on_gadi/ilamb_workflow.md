@@ -44,15 +44,6 @@ To load the the *ilamb* module, execute the following commands:
 
 Visit <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" target="_blank">ACCESS-NRI documentation</a> on how to run <i>ILAMB</i> on <i>Gadi</i>.
 
-<!-- <div class="card-container">
-    <a href="https://ilamb-workflow.readthedocs.io/en/latest/?badge=latest" class="vertical-card aspect-ratio2to1" target="_blank">
-        <div class="card-image-container">
-            <img src="/assets/model_evaluation/logo_ilamb.png" alt="ILAMB on Gadi" class="img-cover white-background"></img>
-        </div>
-        <div class="card-text-container bold ">Documentation for ILAMB on Gadi</div>
-    </a>
-</div> -->
-
 <br>
 To run <i>ILAMB</i>, you need to execute the command `ilamb-run` with a number of arguments/ files:
 ```
