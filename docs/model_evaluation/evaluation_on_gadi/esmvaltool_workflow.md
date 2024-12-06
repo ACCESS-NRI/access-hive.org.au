@@ -98,7 +98,7 @@ A list of <i>ESMValTool</i> recipes available on <i>Gadi</i> can be found on the
     </a>
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_emergent_constraints.html" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/esmvaltool/ltmi1_1.png" alt="Model Variables"></img>
+            <img src="/assets/model_evaluation/esmvaltool/ltmi1_1.png" alt="Model Variables"></img>
         </div>
         <div class="card-text-container bold">Example 3</div>
     </a>
