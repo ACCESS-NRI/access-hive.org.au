@@ -71,7 +71,7 @@ Released configurations are tested and supported by ACCESS-NRI, as an adaptation
 
 For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
-More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs](https://github.com/ACCESS-NRI/access-esm1.5-configs) GitHub repository.
+More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{github_configs}}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
 
