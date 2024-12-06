@@ -55,7 +55,7 @@ _Spack_ [managed environments](https://spack.readthedocs.io/en/latest/environmen
 {: id="spack-environment-folder"}
 
 !!! warning
-    _Spack_ managed environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions](/getting_started/spack).
+    _Spack_ managed environments' location can be changed within _Spack_ configuration files and the directory specified above represents the default location for a _Spack_ instance that has been set up following the [Spack setup instructions]({{spack_setup}}).
 
 ### Create the environment
 
