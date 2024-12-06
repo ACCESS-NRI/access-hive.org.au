@@ -6,7 +6,8 @@ The <a href="https://www.ilamb.org/" target="_blank">International Land Model Be
     
 This documentation is tailored to using <i>ILAMB</i> on <i>Gadi</i> and, hence, it supplements rather than replaces the official documentation. Users are encouraged to read the <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and relevant <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">tutorials</a>.
 
-<div class="note">ACCESS-NRI is supporting an NCI configuration of ILAMB under the name <i>ILAMB-workflow</i>. </div>
+!!! note
+    ACCESS-NRI is supporting an NCI configuration of ILAMB under the name _ILAMB-workflow_.
 
 *ILAMB-workflow* is the ACCESS-NRI software and data infrastructure that enables the ILAMB evaluation framework on NCI Gadi. It includes the 
 
