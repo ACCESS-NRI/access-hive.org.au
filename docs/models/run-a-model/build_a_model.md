@@ -24,7 +24,7 @@ As an example, in the following instructions we will show how to modify [mom5 co
   Before building a model, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 - **_Spack_**<br>
-  To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models](/getting_started/spack).
+  To set up _Spack_ on _Gadi_, refer to [Set up Spack for building ACCESS models]({{spack_setup}}).
 
 ## Navigate into your Spack directory
 Navigate into the directory where you cloned the _Spack_ repositories during the [Spack setup](/getting_started/spack/#create-a-directory-for-spack).<br>
