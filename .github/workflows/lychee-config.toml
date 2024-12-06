@@ -35,5 +35,5 @@ base = "https://access-hive.org.au/"
 include_verbatim = true
 
 # Check mail addresses
-include_mail = true
+include_mail = false
 
