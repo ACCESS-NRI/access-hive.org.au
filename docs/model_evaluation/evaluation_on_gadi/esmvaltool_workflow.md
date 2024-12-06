@@ -92,7 +92,7 @@ A list of <i>ESMValTool</i> recipes available on <i>Gadi</i> can be found on the
     </a>
     <a href="https://docs.esmvaltool.org/en/latest/recipes/recipe_perfmetrics.html" target="_blank" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="../../../assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" alt="MED Conda Environment"></img>
+            <img src="/assets/model_evaluation/esmvaltool/fig4_ipccar5_ch9.png" alt="MED Conda Environment"></img>
         </div>
         <div class="card-text-container bold">Example 2</div>
     </a>
