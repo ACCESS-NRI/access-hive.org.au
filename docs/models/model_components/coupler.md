@@ -9,7 +9,7 @@ A coupler is a software package that allows synchronised exchanges of coupling i
 [OASIS3-MCT](https://oasis.cerfacs.fr/en/OASIS3-MCT) is the version of the Ocean Atmosphere Sea Ice Soil (OASIS) coupler interfaced with the Model Coupling Toolkit (MCT) from the Argonne National Laboratory. 
 
 ### Configurations that use OASIS3-MCT
-OASIS3-MCT is the coupler used in [ACCESS-CM2](/models/configurations/access-cm#access-cm2), [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15) and /models/configurations/access-om#access-om2ACCESS-OM2</a>.
+OASIS3-MCT is the coupler used in [ACCESS-CM2](/models/configurations/access-cm#access-cm2), [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15) and [ACCESS-OM2](/models/configurations/access-om#access-om2).
 
 ## NUOPC
 

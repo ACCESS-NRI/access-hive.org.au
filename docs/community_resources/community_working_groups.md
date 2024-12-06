@@ -3,7 +3,7 @@
 The ACCESS Community and the ACCESS-NRI have established [Community Working Groups](https://www.access-nri.org.au/working-groups) to assess and prioritise the needs of the modelling community as well as encourage collaboration within. These working groups are open to the community and welcome new members.
 
 The working group activities are coordinated through the [ACCESS-Hive Forum](https://forum.access-hive.org.au).
-To join a working group check [how to join a working group](https://www.access-nri.org.au/how-to-join-a-working-group) on the ACCESS-NRI webite.
+To join a working group check [how to join a working group](https://www.access-nri.org.au/join-community-working-groups) on the ACCESS-NRI webite.
 
 <div class="card-container">
     <a href="https://forum.access-hive.org.au/c/atmosphere/working-group/41" class="vertical-card aspect-ratio1to1" target="_blank">

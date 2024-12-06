@@ -1,7 +1,7 @@
 # Community Observational Data Catalogues
 
 ???+ danger "Support Level: NOT supported by ACCESS-NRI"
-    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](../../model_evaluation/index.md), the information below is not supported by ACCESS-NRI unless stated otherwise.
+    Here, we collate lists of useful resources for Model Evaluation and Diagnostics (MED). Contrary to the supported content of our [ACCESS-NRI Model Evaluation pages](/model_evaluation), the information below is not supported by ACCESS-NRI unless stated otherwise.
 
 Please let us know if we are missing an important catalogue. Check [How To Contribute](/about/contribute) to get in touch.
 
@@ -28,8 +28,8 @@ Please let us know if we are missing an important catalogue. Check [How To Contr
 <td width="75%">
     <div align='center' width="100%" >
         The Copernicus Climate Change Service (C3S) combines observations of the climate system with the latest science to develop authoritative, quality-assured information about the past, current and future states of the climate in Europe and worldwide. C3S data is provided via its Climate Data Store (CDS).
-        You can search its available datasets via <a href="https://cds.climate.copernicus.eu/cdsapp#!/search?type=dataset" target="_blank">this interface</a>.
-        You can use the <a href="https://cds.climate.copernicus.eu/api-how-to" target="_blank">CDS API</a> as well as command line tools to download data. To download ERA5 from CDS, you can use for example <a href="https://era5cli.readthedocs.io/en/stable/" target="_blank">this era5cli</a> command line tool.
+        You can search its available datasets via <a href="https://cds.climate.copernicus.eu/datasets" target="_blank">this interface</a>.
+        You can use the <a href="https://cds.climate.copernicus.eu/how-to-api" target="_blank">CDS API</a> as well as command line tools to download data. To download ERA5 from CDS, you can use for example <a href="https://era5cli.readthedocs.io/en/stable/" target="_blank">this era5cli</a> command line tool.
     </div>
 </td>
 </tr>

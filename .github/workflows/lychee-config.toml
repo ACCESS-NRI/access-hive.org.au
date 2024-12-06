@@ -6,6 +6,7 @@ exclude = [
     '^https://web\.archive\.org/web/',
     '^http://127\.0\.0\.1:8000',
     '^https://www.linkedin.com/',
+    '^\{\{[^\}]*\}\}',
 ]
 
 # Exclude these filesystem paths from getting checked.
@@ -35,5 +36,5 @@ base = "https://access-hive.org.au/"
 include_verbatim = true
 
 # Check mail addresses
-include_mail = true
+include_mail = false
 

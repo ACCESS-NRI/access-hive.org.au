@@ -27,7 +27,7 @@ Some examples of NCI data collections include:
 </ul>
 
 
-NCI also has a <a href="https://opus.nci.org.au/display/NDP/Data+Catalogue" target="_blank">user guide</a> for finding, accessing and citing data.
+NCI also has a <a href="https://opus.nci.org.au/display/NDP/NCI+Data+Catalogue" target="_blank">user guide</a> for finding, accessing and citing data.
 
 For example, the catalogue of above mentioned ACCESS-NRI Replicated Datasets for Climate Model Evaluation can be found by entering *ACCESS-NRI* in the <i>NCI Data Catalogue Search</i> field.  
 

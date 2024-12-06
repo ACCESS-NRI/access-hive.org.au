@@ -7,7 +7,7 @@ Model evaluation is about measuring how fit for purpose a particular model is. M
 Model Evaluation and Diagnostics (often shortened to "MED" at ACCESS-NRI) of ACCESS models includes:
 
 - **Evaluation**<br>
-    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions. For further explanations on experiments, see [here](../../about/user_support/#frequently-asked-questions-faq).
+    Model evaluation involves scrutinising a model's performance by comparing its output with observations. It also includes experiment comparisons, model testing with different scenarios and inter-model comparisons such as those used to prepare for Coupled Model Intercomparison Project (CMIP) submissions. For further explanations on experiments, see [here](/about/user_support/#frequently-asked-questions-faq).
 
 - **Diagnostics**<br>
     Model diagnostics is the constant monitoring of model runs to detect any anomalies or inconsistencies. 
@@ -16,31 +16,31 @@ Model Evaluation and Diagnostics (often shortened to "MED" at ACCESS-NRI) of ACC
 While evaluation and diagnostics can be described separately they often overlap and can use similar tools. ACCESS-NRI currently provides support for the following model evaluation and diagnostics frameworks on <i>Gadi</i>:
 
 <div class="card-container">
-    <a href="esmvaltool_workflow" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/esmvaltool_workflow" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_esmvaltool.png" alt="ESMValTool" class="img-cover"></img>
         </div>
         <!--<div class="card-text-container bold">ESMValTool</div> -->
     </a>
-    <a href="ilamb_workflow" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/ilamb_workflow" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_ilamb.png" alt="ILAMB" class="img-cover"></img>
         </div>
         <!-- <div class="card-text-container bold">ILAMB</div> -->
     </a>
-    <a href="cosima" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/cosima" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/logo_cosima.png" alt="Pangeo/COSIMA" class="img-cover"></img>
         </div>
         <div class="card-text-container bold">COSIMA cookbook</div>
     </a>
-    <a href="model_live_diagnostics" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/model_live_diagnostics" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/live_diagnostics/tutorial_image_4.png" alt="Model Live Diagnostics" class="img-contain white-background"></img>
         </div>
         <div class="card-text-container bold">Model Live Diagnostics</div>
     </a>
-    <a href="metplus" class="vertical-card aspect-ratio2to1">
+    <a href="/model_evaluation/evaluation_on_gadi/metplus" class="vertical-card aspect-ratio2to1">
         <div class="card-image-container">
             <img src="../../assets/model_evaluation/METplus_logo.png" alt="METplus" class="img-contain white-background"></img>
         </div>
