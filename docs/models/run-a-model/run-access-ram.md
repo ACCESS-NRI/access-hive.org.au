@@ -9,10 +9,9 @@
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]
-({{github_configs}}){: class="text-card"}
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]({{github_configs}}){: class="text-card"}
 
-{{ model }} is an ACCESS-NRI-supported configuration of the UKMO Regional Nesting Suite (RNS). Driven by ERA5, the configuration uses a 2-level nest with an outer level (10km or 11km resolution, depending on the choice of land-surface initial conditions, and GAL9) and an inner nest (2.2 km resolution and RAL 3.2) focused on the region of interest. ACCESS-NRI is  working on a release of this configuration, which comprises a Regional Ancillary Suite (RAS) {{ ras_id }} and a RNS {{ rns_id }}.
+{{ model }} is an ACCESS-NRI-supported configuration of the UKMO Regional Nesting Suite (RNS). Driven by ERA5, the configuration uses a 2-level nest with an outer level (10km or 11km resolution, depending on the choice of land-surface initial conditions, and GAL9) and an inner nest (2.2 km resolution and RAL 3.2) focused on the region of interest. ACCESS-NRI is  working on a release of this configuration, which comprises a Regional Ancillary Suite (RAS) `{{ ras_id }}` and a RNS `{{ rns_id }}`.
 <!--
 TODO
 {: style="color:red"}
@@ -95,11 +94,11 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 {{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-esm1-5-release-information/2352) and are updated when new releases are made available.
 -->
 
-The {{model}} configuration comprises a Regional Ancillary Suite (RAS) {{ ras_id }} and a RNS {{ rns_id }}, which are run in two separate steps:
+The {{model}} configuration comprises a Regional Ancillary Suite (RAS) `{{ ras_id }}` and a Regional Nesting Suite (RNS) `{{ rns_id }}`, which are run in two separate steps:
 
-1. Ancillary files specific to the domain of interest need to be generated first by running the [Regional Ancillary Suite (RAS)](#ras) {{ ras_id }}.
+1. Ancillary files specific to the domain of interest need to be generated first by running the [RAS](#ras).
 
-2. A regional forecast specific to the domain of interest is then run using the [Regional Nesting Suite (RNS)](#rns) {{ rns_id }}.
+2. A regional forecast specific to the domain of interest is then run using the [RNS](#rns).
 
 <!--
 TODO
