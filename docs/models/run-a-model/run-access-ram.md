@@ -9,7 +9,8 @@
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]
+<!--({{github_configs}}){: class="text-card"}-->
 
 {{ model }} is an ACCESS-NRI-supported configuration of the UKMO Regional Nesting Suite (RNS). Driven by ERA5, the configuration uses a 2-level nest with an outer level (10km or 11km resolution, depending on the choice of land-surface initial conditions, and GAL9) and an inner nest (2.2 km resolution and RAL 3.2) focused on the region of interest. ACCESS-NRI is  working on a release of this configuration, which comprises a Regional Ancillary Suite (RAS) {{ ras_id }} and a RNS {{ rns_id }}.
 <!--
@@ -19,8 +20,8 @@ TODO
 
 The following *Quick Start* guide is for experienced users wanting to run {{ model }}. If you're after more detail, please refer to the *Detailed Guide* below.
 
-# Quick Start: Run {{ model }}
 <!-- Quick start guide for experienced users -->
+# Quick Start: Run {{ model }}
 
 ### Required setup for running {{ model }}:
 
