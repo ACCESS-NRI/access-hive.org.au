@@ -8,28 +8,27 @@
 
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
-<!--
+
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
-
+<!--
 TODO
 {: style="color:red"}
 <!-- Can we put a configuration here taken from MOSRS instead of GitHub? SVN? -->
 
 # Quick start: Run {{ model }}
 <!-- Quick start guide for experienced users -->
-ACCESS-RAM3 is comprised of two suites: 
- 1. Regional Ancillary Suite (RAS) (#ras)
- 2. Regional Nesting Suite (RNS) (#rns)
+ACCESS-RAM3 comprises the Regional Ancillary Suite (RAS) (#ras) and the Regional Nesting Suite (RNS) (#rns).
 
-Required setup for running {{ model }}:
-- **Join relevant NCI projects:**<br>  _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
+### Required setup for running {{ model }}:
+
+- **Join relevant NCI projects:**<br> _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
 
 - **Start a new persistent session on *Gadi***<br> using a login node or an ARE terminal instance:
 ```
 persistent-sessions start <name>
 ```
-If you want to assign a different project to the persistent session, use the option `-p`:
+which will use your default project. To assign a different project to the persistent session, use option `-p`:
 ```
 persistent-sessions start -p <project> <name>
 ```
@@ -40,13 +39,44 @@ module use /g/data/hr22/modulefiles
 module load cylc7
 ```
 - **MOSRS authentication**<br>
-To authenticate using your MOSRS credentials, run:
+Authenticate using your MOSRS credentials:
 ```
 mosrs-auth
 ```
 ### Regional Ancillary Suite (RAS)
------------------------------------------------
------------------------------------------------
+1. **Copy the RAS from UKMO**<br>
+- Local-only copy: 
+```
+rosie checkout {{ ras_id }}
+```
+ -   New copy both _locally_ and _remotely_: 
+```
+rosie copy {{ ras_id }}
+```
+2. **Run the RAS**<br>
+From within the suite directory:
+```
+rose suite-run
+```
+
+### Regional Nesting Suite (RNS)
+1. **Copy the RNS from UKMO**<br>
+- Local-only copy: 
+```
+rosie checkout {{ rns_id }}
+```
+- New copy both _locally_ and _remotely_: 
+```
+rosie copy {{ rns_id }}
+```
+2. **Run the RNS**<br>
+From within the suite directory:
+```
+rose suite-run
+```
+
+------------------------------------------
+------------------------------------------
 # Run {{ model }}
 ## About
 
