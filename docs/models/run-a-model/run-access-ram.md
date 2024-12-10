@@ -7,16 +7,47 @@
 [model configurations]: /models/configurations/access-ram
 
 !!! info
-    The name {{ model }} is a place-holder for the time being, until the final release name will be chosen.
-
+    {{ model }} is a place-holder name until the final release name is chosen.
+<!--
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+
 
 TODO
 {: style="color:red"}
 <!-- Can we put a configuration here taken from MOSRS instead of GitHub? SVN? -->
 
-# Run {{ model }}
+# Quick start: Run {{ model }}
+<!-- Quick start guide for experienced users -->
+ACCESS-RAM3 is comprised of two suites: 
+ 1. Regional Ancillary Suite (RAS) (#ras)
+ 2. Regional Nesting Suite (RNS) (#rns)
 
+Required setup for running {{ model }}:
+- **Join relevant NCI projects:**<br>  _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
+
+- **Start a new persistent session on *Gadi***<br> using a login node or an ARE terminal instance:
+```
+persistent-sessions start <name>
+```
+If you want to assign a different project to the persistent session, use the option `-p`:
+```
+persistent-sessions start -p <project> <name>
+```
+- **Cylc setup**<br>
+To get the required _Cylc_ setup, run:
+```
+module use /g/data/hr22/modulefiles
+module load cylc7
+```
+- **MOSRS authentication**<br>
+To authenticate using your MOSRS credentials, run:
+```
+mosrs-auth
+```
+### Regional Ancillary Suite (RAS)
+-----------------------------------------------
+-----------------------------------------------
+# Run {{ model }}
 ## About
 
 {{ model }} is a .... . A description of the model and its components is available in the [{{ model }} overview][model configurations].
