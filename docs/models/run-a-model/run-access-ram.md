@@ -47,11 +47,11 @@ mosrs-auth
 ```
 ### Regional Ancillary Suite (RAS)
 1. **Copy the RAS from UKMO**<br>
-- Local-only copy: 
+* Local-only copy: 
 ```
 rosie checkout {{ ras_id }}
 ```
- -   New copy both _locally_ and _remotely_: 
+* New copy both _locally_ and _remotely_: 
 ```
 rosie copy {{ ras_id }}
 ```
@@ -63,11 +63,11 @@ rose suite-run
 
 ### Regional Nesting Suite (RNS)
 1. **Copy the RNS from UKMO**<br>
-- Local-only copy: 
+   - Local-only copy: 
 ```
 rosie checkout {{ rns_id }}
 ```
-- New copy both _locally_ and _remotely_: 
+  - New copy both _locally_ and _remotely_: 
 ```
 rosie copy {{ rns_id }}
 ```
@@ -79,6 +79,7 @@ rose suite-run
 
 ------------------------------------------
 ------------------------------------------
+
 # Detailed Guide: Run {{ model }}
 <!--
 ## About
@@ -93,11 +94,11 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 {{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-esm1-5-release-information/2352) and are updated when new releases are made available.
 -->
 
-Regional forecasts are produced in two separate steps:
+The {{model}} configuration comprises a Regional Ancillary Suite (RAS) {{ ras_id }} and a RNS {{ rns_id }}, which are run in two separate steps:
 
-1. Ancillary files specific to the domain of interest need to be generated first by running the [Regional Ancillary Suite (RAS)](#ras).
+1. Ancillary files specific to the domain of interest need to be generated first by running the [Regional Ancillary Suite (RAS)](#ras) {{ ras_id }}.
 
-2. A regional forecast/hindcast specific to the domain of interest is then run using the [Regional Nesting Suite (RNS)](#rns).
+2. A regional forecast specific to the domain of interest is then run using the [Regional Nesting Suite (RNS)](#rns) {{ rns_id }}.
 
 <!--
 TODO
@@ -115,7 +116,7 @@ TODO
 
 - **Join NCI projects**<br>
  _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_.
-  
+
     To join these projects, request membership on the respective [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join), [rt52](https://my.nci.org.au/mancini/project/rt52/join), [zz93](https://my.nci.org.au/mancini/project/zz93/join) and [vk83](https://my.nci.org.au/mancini/project/vk83/join) NCI project pages.
 
     !!! tip
