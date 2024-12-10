@@ -23,7 +23,7 @@ TODO
 The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. If you would prefer more detailed instructions, please refer to the *Detailed Guide* below.
 
 <!-- Quick start guide for experienced users -->
-# Quick Start: Run {{ model }}
+# Quick Start Guide: Run {{ model }}
 
 ### Required setup for running {{ model }}:
 
@@ -79,9 +79,9 @@ From within the suite directory:
 ```
 rose suite-run
 ```
-
-------------------------------------------
-------------------------------------------
+____
+----
+* * * 
 
 # Detailed Guide: Run {{ model }}
 <!--
