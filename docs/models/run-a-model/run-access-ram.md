@@ -22,8 +22,9 @@ ACCESS-RAM3 is comprised of two suites:
  1. Regional Ancillary Suite (RAS) (#ras)
  2. Regional Nesting Suite (RNS) (#rns)
 
-Required setup for running {{ model }}:
-- **Join relevant NCI projects:**<br>  _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
+### Required setup for running {{ model }}:
+
+- **Join relevant NCI projects:**<br> _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
 
 - **Start a new persistent session on *Gadi***<br> using a login node or an ARE terminal instance:
 ```
@@ -45,8 +46,36 @@ To authenticate using your MOSRS credentials, run:
 mosrs-auth
 ```
 ### Regional Ancillary Suite (RAS)
------------------------------------------------
------------------------------------------------
+- **Copy the RAS from UKMO**<br>
+   - Local-only copy: 
+```
+rosie checkout {{ ras_id }}
+```
+ - - New copy both _locally_ and _remotely_: 
+```
+rosie copy {{ ras_id }}
+```
+- **Run the RAS**<br>
+From within the suite directory:
+```
+rose suite-run
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------
+------------------------------------------
 # Run {{ model }}
 ## About
 
