@@ -80,8 +80,8 @@ From within the suite directory:
 rose suite-run
 ```
 ____
-----
-* * * 
+!!! tip
+    You've completed the quick reference steps! For more comprehensive instructions keep reading below.
 
 # Detailed Guide
 <!--
