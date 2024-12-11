@@ -50,11 +50,11 @@ mosrs-auth
 ```
 ### Regional Ancillary Suite (RAS)
 1. **Copy the RAS from UKMO**<br>
-* Local-only copy: 
+    Local-only copy: 
 ```
 rosie checkout {{ ras_id }}
 ```
-* New copy both _locally_ and _remotely_: 
+    New copy both _locally_ and _remotely_: 
 ```
 rosie copy {{ ras_id }}
 ```
@@ -66,11 +66,11 @@ rose suite-run
 
 ### Regional Nesting Suite (RNS)
 1. **Copy the RNS from UKMO**<br>
-   - Local-only copy: 
+    Local-only copy: 
 ```
 rosie checkout {{ rns_id }}
 ```
-  - New copy both _locally_ and _remotely_: 
+    New copy both _locally_ and _remotely_: 
 ```
 rosie copy {{ rns_id }}
 ```
