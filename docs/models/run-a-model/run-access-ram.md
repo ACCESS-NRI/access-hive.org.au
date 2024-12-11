@@ -81,7 +81,7 @@ rose suite-run
 ```
 
 !!! tip
-    You've completed the quick reference steps! For more comprehensive instructions keep reading below.
+    You've completed all steps in the Quick Start reference. For more comprehensive instructions keep reading below.
 
 ## Detailed Guide
 <!--
