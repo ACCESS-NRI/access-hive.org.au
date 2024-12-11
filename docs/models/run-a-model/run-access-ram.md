@@ -83,7 +83,7 @@ ____
 !!! tip
     You've completed the quick reference steps! For more comprehensive instructions keep reading below.
 
-# Detailed Guide
+## Detailed Guide
 <!--
 ## About
 {{ model }} is a .... . A description of the model and its components is available in the [{{ model }} overview][model configurations].
