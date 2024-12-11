@@ -82,6 +82,10 @@ rose suite-run
 ____
 
 ## **Detailed Guide**
+
+!!! tip
+    You've completed the quick reference steps! For more comprehensive instructions keep reading below.
+
 <!--
 ## About
 {{ model }} is a .... . A description of the model and its components is available in the [{{ model }} overview][model configurations].
