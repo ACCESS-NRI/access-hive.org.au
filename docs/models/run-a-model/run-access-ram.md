@@ -6,10 +6,10 @@
 [model components]: /models/configurations/access-ram/#model-components
 [model configurations]: /models/configurations/access-ram
 
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]({{github_configs}}){: class="text-card"}
+
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
-
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]({{github_configs}}){: class="text-card"}
 
 {{ model }} is an ACCESS-NRI-supported configuration of the UKMO Regional Nesting Suite. Driven by ERA5, the configuration comprises a 2-level nest; the outer level uses GAL9 with a resolution of 10km or 11km (depending on the choice of land-surface initial conditions), and the inner nest that focuses on the region of interest uses RAL3.2 with 2.2 km resolution. 
 
