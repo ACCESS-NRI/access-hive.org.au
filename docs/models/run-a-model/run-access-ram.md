@@ -23,7 +23,7 @@ TODO
 The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. If you would prefer more detailed instructions, please refer to the *Detailed Guide* below.
 
 <!-- Quick start guide for experienced users -->
-# Quick Start Guide: Run {{ model }}
+# Quick Start
 
 ### Required setup for running {{ model }}:
 
@@ -83,7 +83,7 @@ ____
 ----
 * * * 
 
-# Detailed Guide: Run {{ model }}
+# Detailed Guide
 <!--
 ## About
 {{ model }} is a .... . A description of the model and its components is available in the [{{ model }} overview][model configurations].
