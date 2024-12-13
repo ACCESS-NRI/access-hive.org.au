@@ -27,7 +27,7 @@ To use the <i>COSIMA Cookbook</i> that is pre-installed in the `conda/analysis3`
   <b>Module directories</b>: `/g/data/hh5/public/modules`  
   <b>Modules</b>: `conda/analysis3`
   <br>
-  If you are new to ARE, refer to instructions on [Getting Started with ARE](../model_evaluation_getting_started/model_evaluation_getting_started.md).
+  If you are new to ARE, refer to instructions on [Getting Started with ARE](/getting_started/are).
 1. Within the ARE environment, navigate to one of the COSIMA recipes and run the analysis.
 
 ## COSIMA Cookbook information

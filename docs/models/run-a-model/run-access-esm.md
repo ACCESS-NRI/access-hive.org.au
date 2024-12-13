@@ -66,12 +66,12 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
 
 ## Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
+All released {{ model }} configurations are available from the [{{ model }} configs]({{github_configs}}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [CSIRO](https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-science-centre) and [CLEX CMS](https://github.com/coecms/access-esm).
 
 For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
-More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
+More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{github_configs}}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
 

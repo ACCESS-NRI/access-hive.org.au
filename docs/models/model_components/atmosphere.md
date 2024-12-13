@@ -13,4 +13,4 @@ It is included both in [ACCESS-CM](/models/configurations/access-cm) and [ACCESS
 
 The [Australian Bureau of Meteorology (BoM)](http://www.bom.gov.au) uses the UM in its suite of ACCESS forecast systems for daily and seasonal weather, as well as extreme events and emergencies (e.g., bushfires, cyclones, floods, coral bleaching, coastal inundation, etc.).
 
-The UM is used by several international operational meteorology and research organisations, and these contribute towards its development through the [UM partnership](https://www.metoffice.gov.uk/research/approach/collaboration/unified-model/partnership).
+The UM is used by several international operational meteorology and research organisations, and these contribute towards its development through the [UM partnership](https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/foundation-science/um_partnership_handout.pdf).
