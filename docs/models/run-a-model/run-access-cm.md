@@ -150,7 +150,7 @@ For this example you can use `u-cy339`, which is a pre-industrial experiment sui
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
 ### Copy {{ model }} suite with Rosie
-[Rosie](http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for {{ model }} suites.<br>
+[Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie.html#rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for {{ model }} suites.<br>
 To copy an existing suite on _Gadi_ you need to follow three main steps:
 
 #### Get Cylc7 setup
