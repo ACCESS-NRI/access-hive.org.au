@@ -1,5 +1,3 @@
-# Community Model Evaluation and Diagnostics Links
-
 <custom-not-supported/>
 
 <div class="card-container" style="flex-wrap:nowrap;">
