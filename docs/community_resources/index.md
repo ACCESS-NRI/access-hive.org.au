@@ -19,12 +19,6 @@
         </div>
         <div class="card-text-container bold">Working Groups</div>
     </a>
-    <a href="/community_resources/community_med" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-cover" src="/assets/community_medlinks.jpg" alt="Model Evaluation Links">
-        </div>
-        <div class="card-text-container bold">Model Evaluation Links</div>
-    </a>
     <a href="/community_resources/external_resources" class="vertical-card aspect-ratio1to1">
          <div class="card-image-container">
              <img class="img-cover" src="/assets/external-links.jpg" alt="External Resources and Links">
