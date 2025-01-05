@@ -37,5 +37,4 @@
         </div>
         <div class="card-text-container bold">Upcoming Events</div>
     </a>
-    
 </div>
