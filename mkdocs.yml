@@ -145,7 +145,12 @@ nav:
       - COSIMA cookbook: model_evaluation/evaluation_on_gadi/cosima.md
       - Model Live Diagnostics: model_evaluation/evaluation_on_gadi/model_live_diagnostics.md
       - METplus: model_evaluation/evaluation_on_gadi/metplus.md
-      # - Evaluation Recipe Gallery: model_evaluation/model_evaluation_recipe_gallery.md
+      - Additional Resources: 
+        - Additional Resources: model_evaluation/community_med/index.md
+        - Observational Catalogues: model_evaluation/community_med/community_observational_catalogs.md
+        - Model Catalogues: model_evaluation/community_med/community_model_catalogs.md
+        - Data Formatting: model_evaluation/community_med/community_data_processing.md
+        - Evaluation Recipes: model_evaluation/community_med/community_med_recipes.md
 
   - Tutorials:
     - tutorials/index.md
@@ -165,14 +170,7 @@ nav:
       - ACCESS Community Workshop 2024: 
         - Overview: community_resources/workshops_events_archive/access_workshop_2024/index.md
         - Training materials 2024: community_resources/workshops_events_archive/access_workshop_2024/training_materials.md
-    - ACCESS-Hive Forum: https://forum.access-hive.org.au
     - Working Groups: community_resources/community_working_groups.md
-    - Model Evaluation Links:
-      - community_resources/community_med/index.md
-      - Observational Catalogues: community_resources/community_med/community_observational_catalogs.md
-      - Model Catalogues: community_resources/community_med/community_model_catalogs.md
-      - Data Formatting: community_resources/community_med/community_data_processing.md
-      - Evaluation Recipes: community_resources/community_med/community_med_recipes.md
     - External Resources: community_resources/external_resources.md
     - Glossaries: community_resources/glossaries.md
   - About:
