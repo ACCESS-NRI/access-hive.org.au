@@ -22,7 +22,7 @@ jobs:
       with:
         ref: main
         fetch-depth: 0
-        token: ${{ secrets.ADMIN_TOKEN }}
+        token: ${{ secrets.REPO_CONTENT_WRITE_TOKEN }}
     
     - name: Import GPG settings
       uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4  # v6.1.0
