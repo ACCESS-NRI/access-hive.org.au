@@ -7,7 +7,7 @@ exclude = [
     '^http://127\.0\.0\.1:8000',
     '^https://www.linkedin.com/',
     '^https://www.freepik.com/',
-    '^\{\{[^\}]*\}\}',
+    '%7B%7B', # Exclude jinja templating links that have double opening curly brackets in it
 ]
 
 # Exclude these filesystem paths from getting checked.
