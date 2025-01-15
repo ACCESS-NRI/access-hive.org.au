@@ -10,95 +10,74 @@ https://access-hive.org.au/
 The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting set up, running models and model evaluation.
 
 # How to Contribute
-### I. For New Users
+## For New Users
 
 If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
-### II. For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
+## For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
 
 The ACCESS-Hive Docs website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
+The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed below:
+1. **Clone the ACCESS-Hive Docs GitHub repo**
 
-1. **CLONE**
+    To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/access-hive.org.au) GitHub repo, run the following command in your local terminal:
 
-    On [GitHub](https://github.com/ACCESS-NRI/access-hive.org.au), click on the **< > Code** button (top-right) and copy the SSH remote URL (starts with git@github.com). 
-    
-    Now, run the following command in your local terminal to clone the ACCESS-Hive GitHub repository:
+    ```
+    git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
+    ```
+2. **Raise an issue about the contribution**
+    Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
+    If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
+3. **Create a new git branch**
 
-    ```ruby
-    $ git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
+    Create a new `git` branch for your new contribution, starting from the `development` branch.
+    A suggested way to call it is in the format `<name>/<issue-summary>-<issue-number>`, for example `jasmeen/improve-how-to-contribute-812`:
+    ```
+    git checkout -b jasmeen/improve-how-to-contribute-812 origin/development
     ```
 
-2. **MAKE CHANGES LOCALLY**
+3. **Make changes, commit and push to the remote repo**
 
-    For making changes locally, open your preferred IDE (ex. VSCode). 
-    And in the terminal, create a new branch to make your local changes and then push it to GitHub:
+    While you are in your new `git` branch, make your desired changes, commit your changes, and push the commits to the remote repo: 
 
-    ```ruby
-    # Create a new branch, name it as - <name>/<issue-summary>-<issue-no>
-
-    $ git checkout -b john/fix-title-800
     ```
+    # Stage the desired files
+    git add ...
 
-    ```ruby
-    # Push the branch to upstream
-
-    $ git push --set-upstream origin john/fix-title-800  
-    ```
-
-3. **COMMIT AND PUSH CHANGES**
-
-    Make your desired changes to the branch `john/fix-title-800`, and push the commits to remote: 
-
-    ```ruby
-    # Stage the current local directory
-
-    $ git add .
-    ```
-
-    ```ruby
-    # Commit the changes, include linked issue ID and meaningful commit descriptions.
-
+    # Commit the changes, including a meaningful commit descriptions.
     # Avoid general descriptions, such as 'a fix', 'useful change', 'home page bug fixes' etc.
-
-    $ git commit -m "(#800) Camel-cased hive title!"
-    ```
-
-    ```ruby
-    # Push the changes to the remote of your branch
-
-    $ git push origin john/fix-title-800 
-
-    # or, if the remote is known, run 
+    git commit -m "Improved how-to-contribute instructions in the README."
     
-    $ git push
+    # Push the changes to the remote
+    git push 
     ```
-
-4. **BE IN SYNC WITH THE `development` BRANCH**
     
-    There are two main methods for integrating feature branch with the main branch:
+    > [!TIP]
+    > The first that you push your new `git` branch to the remote, you will have to set its upstream with:
+    > ```
+    > git push --set-upstream origin jasmeen/improve-how-to-contribute-812
+    > ```
+    
+    Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
-    - Merge (creates a merge commit for every `git merge`)
-    - Rebase (fast-forward merge, and linear history) 
+4. **Keep your branch in sync with the `development` branch**
+    Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
+    It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
+    For syncing your feature branch with the upstream `development` branch, use the following 
+    command: 
 
-    Recently, we are transitioning to using `git rebase` as one of the steps in our development workflow.
-    This would give an opportunity to polish a feature branch before merging into the main, and also avoiding
-    additional merge commits in the project history.
-
-    For syncing our feature branch into the main branch, use the following 
-    commands: 
-
-    ```ruby
-    # Skip this step if you are already working on feature branch 
-    git checkout john/fix-title-800
-
-    # Moves the entire feature branch on the tip of main branch
-    git rebase origin main  # or git pull --rebase
     ```
+    git rebase origin/development jasmeen/improve-how-to-contribute-812
+    ```
+    
+    > [!WARNING]
+    > After rebasing, you might have to resolve conflicts.
+    > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
+    > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :) 
 
-5. **DEPLOYING WEBSITE PREVIEW**
+5. **Deploy website preview**
 
-    During development, preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
-
+    During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
 6. **REVIEWING A FEATURE WITH THE PULL REQUEST**
     
     Once we are happy with the commits in the feature branch, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
