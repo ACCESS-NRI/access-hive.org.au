@@ -605,7 +605,7 @@ For more information about specific `userscripts` fields, check the relevant sec
 
 
 #### Postscripts
-Postprocessing scripts that run after _payu_ has completed all steps. Scripts that might alter the output directory, for example, can be run as postscripts. These run in PBS jobs separate from the main model simulation.
+Postprocessing scripts that run after _payu_ has completed all steps of each run. Scripts that might alter the output directory, for example, can be run as postscripts. These run in PBS jobs separate from the main model simulation.
 
 ```yaml
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
