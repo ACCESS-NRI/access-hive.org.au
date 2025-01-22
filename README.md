@@ -61,7 +61,12 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     
     Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
-4. **Keep your branch in sync with the `development` branch**
+
+4. **Deploy website preview**
+
+    During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
+
+5. **Keep your branch in sync with the `development` branch**
 
     Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
     It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
@@ -75,10 +80,6 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     > **Warning:** After rebasing, you might have to resolve conflicts.
     > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
     > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :) 
-
-5. **Deploy website preview**
-
-    During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
 
 6. **Open a Pull Request**
 
