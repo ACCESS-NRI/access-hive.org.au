@@ -7,29 +7,28 @@
     This page is tailored to experienced users and collaborators developing ACCESS models.<br>
     This step is *not* required if you *only* want to run a model. If you are looking for information on how to run a model, refer to the [Run a Model](/models/run-a-model) section.
 
-# Creating Pre/Releases for an ACCESS Model
+# Creating Prereleases and Releases for an ACCESS Model
 
 ## About
 
 The instructions below outline how to trigger automatic prerelease and release builds of an [ACCESS model][ACCESS models] by making use of the build and deployment workflows enabled by the [access-nri/build-cd repository](https://github.com/ACCESS-NRI/build-cd).
 
-This allows, for example, to quickly test the development of a new feature in a specific ACCESS Model configuration.
+This allows, for example, quick testing of the development of a new feature in a specific ACCESS Model configuration.
 
-As an example, in the following instructions we will show how to trigger a prerelease build of [ACCESS-OM2][om2 config], after having modified its [MOM5 component].<br>
-All the other components will remain the same as the official [ACCESS-OM2 release][om2 repo].
+The following instructions outline how to trigger a prerelease build of [ACCESS-OM2][om2 config] after modifying its [MOM5 component]. All other components of the official [ACCESS-OM2 release][om2 repo] will remain unchanged.
 
 !!! tip
-    The instructions below remain valid (with simple tweaks) for all [ACCESS models].
+    The following instructions are valid (with simple tweaks) for all [ACCESS models].
 
 ## Prerequisites
 
 - **Join the required projects specific to the HPC system**<br>
-    For models deployed to `Gadi`, join the `vk83` project, by requesting membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) NCI project pages.
+    For models deployed to `Gadi`, join the `vk83` project by requesting membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) NCI project page.
 
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
-- **_Write_ permissions to the related Model Deployment Repository**
-    To request write permissions for a specific Model Deployment Repository, please [contact ACCESS-NRI](/about/contact/).
+- **_Write_ permissions to the related model deployment repository**<br>
+    To request write permissions for a specific model deployment repository, please [contact ACCESS-NRI](/about/contact/).
 
 ## The model deployment repository
 
@@ -40,28 +39,28 @@ The model deployment repository also enables automatic prerelease build deployme
 Every commit within the same PR triggers an isolated prerelease build deployment for the same PR (every PR can be seen as a separate development configuration for the model).<br>
 When a PR is merged, the related prereleases are deleted and an official release build is created.
 
-Although the structure of different model deployment repositories can slightly differ, their top-level will always contain:
+Although the structure of different model deployment repositories can slightly differ, their top-level will always contain a:
 
-- a [`spack.yaml` file](#the-spackyaml-file)
-- a [`config` directory](#the-config-directory)
+- [`spack.yaml` file](#the-spackyaml-file)
+- [`config` directory](#the-config-directory)
 
 ### The spack.yaml file
 
 The `spack.yaml` file defines the [_Spack_ environment](https://spack.readthedocs.io/en/latest/environments.html#environments-spack-yaml-spack-lock) that constrains the versions and features (variants) of all dependencies required to build a given ACCESS model. At build time, it is [concretized](https://spack.readthedocs.io/en/latest/environments.html#concretizing) into a single set of dependencies, creating a `spack.lock` file.
 
-For more information on the `spack.yaml` file, refer to  [ACCESS-NRI's devdocs](https://github.com/ACCESS-NRI/dev-docs/wiki/Spack#the-spackyaml-file-spec-file).
+For more information on the `spack.yaml` file, refer to  [ACCESS-NRI's DevDocs](https://github.com/ACCESS-NRI/dev-docs/wiki/Spack#the-spackyaml-file-spec-file).
 
 ### The config directory
 
-The `config` directory contains a single `versions.json` file. This file allows customisation of both the version of [`access-nri/spack`](https://github.com/ACCESS-NRI/spack) used to deploy the model and the version of [`access-nri/spack-packages`](https://github.com/ACCESS-NRI/spack-packages) that will source _Spack_ packages recipes.
+The `config` directory contains a single `versions.json` file. This file allows customisation of both the version of [`access-nri/spack`](https://github.com/ACCESS-NRI/spack) used to deploy the model and the version of [`access-nri/spack-packages`](https://github.com/ACCESS-NRI/spack-packages) that will source the recipes for the _Spack_ packages.
 
-## Trigger a model pre/release build deployment
+## Trigger model prerelease and release build deployments
 
 As mentioned above, prerelease build deployments are triggered by commits within a model deployment repository's open PR. When the PR is merged, a release build deployment is created.<br>
-The sequence of tasks needed to trigger a pre/release build deployment for a new model feature is detailed below:
+The following sequence of tasks are needed to trigger a prerelease and release build deployment for a model new feature:
 
 #### 1. Clone the repo and create a feature branch
-The first step is to clone the model deployment repository and create a feature branch from its `main` branch, where the new features will be developed.
+The first step is to clone the model deployment repository and create a feature branch from its `main` branch, on which new features will be developed.
 
 To clone the [ACCESS-OM2 deployment repository][om2 repo] and create a feature branch named `update_mom5_dev_build` run:
 ```
@@ -84,23 +83,23 @@ git checkout -b update_mom5_dev_build
 </terminal-window>
 
 #### 2. Apply the modifications and commit the changes {: id="modifications"}
-Then, modifications can be made to the `spack.yaml` or `config/versions.json` files as needed (e.g., update packages versions, add or change variants, etc.).<br>
-After the modifications are made, commit the changes to the newly-created feature branch and push the changes upstream.
+Modifications can then be made to the `spack.yaml` or `config/versions.json` files as needed (e.g., update packages versions, add or change variants, etc.).<br>
+After making the modifications, commit the changes to the newly-created feature branch and push the changes upstream.
 
-In this example, we will change ACCESS-OM2's [MOM5 component] (we will replace it with the version from [MOM5 `development` branch](https://github.com/ACCESS-NRI/MOM5/tree/development)).
-To achieve this, we will:
+In this example, we will change ACCESS-OM2's [MOM5 component] by replacing it with the version from [MOM5 `development` branch](https://github.com/ACCESS-NRI/MOM5/tree/development).
+To achieve this, the following modifications will be made:
 
-1. Update the [version of the `mom5` package](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15) in the `spack.yaml` file with the new version (`@git.development`).
+1. Update the [version of the `mom5` package](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15) in the `spack.yaml` file with the new version (i.e., `@git.development`).
 2. Update the [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L53) to `{name}/development-{hash:7}`.<br>
 
     !!! tip
         The `{hash:7}` part is used so the module doesn't conflict with other versions.
 
 3. It is also recommended to update the [overall ACCESS-OM2 version](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L8) along with its [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L51).<br>
-   This is particularly important before a PR gets merged, as this will determine the version tag for the model new release. The format is `CALVER_YEAR.CALVER_MONTH.MINOR`.<br>
-   For this example, we will update the overall version to `git.2024.03.1`.
+   This is particularly important before merging a PR as it will determine the version tag for the model new release. The format is `CALVER_YEAR.CALVER_MONTH.MINOR`.<br>
+   In this example, the overall version will be updated to `git.2024.03.1`.
 
-After the modifications listed above, the output of the command
+After completing the modifications above, the output of the command
 ```
 git diff
 ```
@@ -141,7 +140,7 @@ should look like the following:
     <terminal-line lineDelay=0 class="keep-blanks">        oasis3-mct: '{name}/2023.11.09-{hash:7}'</terminal-line>
 </terminal-window>
 
-To stage and commit the changes we can run:
+To stage and commit the changes, run:
 ```
 git commit -am "Updated mom5 to development version."
 ```
@@ -151,7 +150,7 @@ git commit -am "Updated mom5 to development version."
     <terminal-line class="keep-blanks"> 1 file changed, 4 insertions(+), 4 deletions(-)</terminal-line>
 </terminal-window>
 
-Finally, we can push the changes upstream by executing:
+Finally, push the changes upstream by executing:
 ```
 git push --set-upstream origin update_mom5_dev_build
 ```
@@ -195,7 +194,7 @@ There are three main _statuses_ for a deployment that can be identified by looki
   The deployment failed and the CI/CD log can be viewed by clicking on [Show environments](https://github.com/ACCESS-NRI/ACCESS-OM2/pull/94#:~:text=Show%20environments) in the GitHub Environment diaglog box.<br>
   ![Failed deployment](/assets/create_a_prerelease/failed_deployment.png){: style="max-width: 650px;" class="example-img" loading="lazy"}
 
-If we open a PR to the [ACCESS-OM2 deployment repository][om2 repo] with our `update_mom5_dev_build` branch as the *base*, we will get a [comment](https://github.com/ACCESS-NRI/ACCESS-OM2/pull/94#issuecomment-2594604585) and, once deployed, the prerelease build can be accessed through the module `access-om2/pr94-1`:
+If we open a PR to the [ACCESS-OM2 deployment repository][om2 repo] with our `update_mom5_dev_build` branch as the *base*, we will get a [comment](https://github.com/ACCESS-NRI/ACCESS-OM2/pull/94#issuecomment-2594604585). Once deployed, the prerelease build can be accessed through the module `access-om2/pr94-1`:
 ![GitHub bot comment](/assets/create_a_prerelease/comment.png){: class="example-img"}
 
 !!! tip
@@ -221,7 +220,7 @@ The following _Comment Commands_ are available in all model deployment repositor
 
 #### !bump
 !!! info
-    Requires the commenter to have write permissions on the repository.
+    Requires the commenter to have write permissions within the repository.
 
 <h5>Usage</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
 
@@ -233,18 +232,17 @@ The following _Comment Commands_ are available in all model deployment repositor
 
 Convenience function that automatically bumps the overall model version in the `spack.yaml` file  and commits the result to the PR branch.<br>
 The overall model version is formatted as `YEAR.MONTH.MINOR`.<br>
-`!bump major` bumps the model version to the next major version, formatted as `YEAR.MONTH.0`. Here `YEAR` and `MONTH` correspond to the current year and month when the comment is issued.<br>
+`!bump major` bumps the model version to the next major version, formatted as `YEAR.MONTH.0`, where `YEAR` and `MONTH` correspond to the current year and month when the comment is issued.<br>
 `!bump minor` bumps the model version to the next minor version, formatted as `YEAR.MONTH.(MINOR+1)`. Here `YEAR`, `MONTH` and `MINOR` are the same as the previous version.
 
 <h5>Example</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
 
-Let's take as example an open PR that has its overall model version set to `git.2024.06.2`.<br>
-If we commented the PR in Jan 2025 with `!bump major`, the overall model version would be bumped to `git.2025.01.0`.<br>
-If instead, we commented the PR with `!bump minor`, the overall model version would be bumped to `git.2024.06.3` (regardless of the comment date).
+For example, if in Jan 2025 we commented with `!bump major` on an open PR that has its overall model version set to `git.2024.06.2`, the overall model version would be bumped to `git.2025.01.0`.<br>
+If, however, we commented the PR with `!bump minor`, the overall model version would be bumped to `git.2024.06.3` regardless of the comment date.
 
 #### !redeploy
 !!! info
-    Requires the commenter to have write permissions on the repository.
+    Requires the commenter to have write permissions within the repository.
 
 <h5>Usage</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
 
@@ -256,23 +254,22 @@ If instead, we commented the PR with `!bump minor`, the overall model version wo
 
 Convenience function that triggers a new independent deployment of the `HEAD` of the model deployment repository PR branch.
 
-This is most useful, for example, to trigger a new deployment when changes are made to a model dependency used by the model, without any changes occurring in the `HEAD` of the PR branch
+This is used to trigger a new deployment when changes are made to a model dependency, but no changes have occurred in the `HEAD` of the PR branch.
 
 <h5>Example</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
 
-Let's say we make the [modifications](#modifications) above, updating the ACCESS-OM2 MOM5 component version to the one from MOM5 repository's `development` branch (by changing the `mom5` `require` version to `git.development` in the [`spack.yaml`](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15)).<br>
-We then push the commits to the `update_mom5_dev_build` branch, open a PR to `main`, and we get a [successful deployment](#successful-deployment) of our ACCESS-OM2 _mom5-development_ build (version 1).<br>
+For example, we make the above [modifications](#modifications) that updated the ACCESS-OM2 MOM5 component version to the one from MOM5 repository's `development` branch (by changing the `mom5` `require` version to `git.development` in the [`spack.yaml`](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15)).<br>
+We then push the commits to the `update_mom5_dev_build` branch and open a PR to `main`, resulting in a [successful deployment](#successful-deployment) of our ACCESS-OM2 _mom5-development_ build (version 1).<br>
 Subsequently, we decide to make some further changes to the MOM5 `development` branch and we push the commits upstream.<br>
-Now, if we want to test these new MOM5 changes, we would have to redeploy the latest commit in the `update_mom5_dev_build` branch to reflect the updates to the MOM5 `development` branch.<br>
-Since the `HEAD` of the `update_mom5_dev_build` did not change, instead of having to create a new "redundant" commit only to trigger the prerelease deployment, we can comment `!redeploy` in the `update_mom5_dev_build` PR. This will force the CI/CD pipeline to redeploy the model build with the latest modifications in the MOM5 `development` branch.<br>
-As a result, we will get a new separate deployment of the ACCESS-OM2 _mom5-development_ build (version 2).
+Now, if we want to test these new MOM5 changes, we would have to redeploy the latest commit in the `update_mom5_dev_build` branch to reflect the updates to the MOM5 `development` branch. Since the `HEAD` of the `update_mom5_dev_build` did not change, instead of having to create a new "redundant" commit only to trigger the prerelease deployment, we can comment `!redeploy` in the `update_mom5_dev_build` PR. This will force the CI/CD pipeline to redeploy the model build with the latest modifications in the MOM5 `development` branch.<br>
+As a result, a new separate deployment of the ACCESS-OM2 _mom5-development_ build (version 2) is produced.
 
 !!! warning
-    It is up to the user to monitor the state of each dependency's `git` branch listed in the `spack.yaml` file before using a `!redeploy` _Comment Command_. The CI/CD pipeline does not perform any checks and will simply redeploy the `HEAD` of the model deployment repository's PR branch, using the `HEAD` of all corresponding dependency `git` branches specified in the `spack.yaml` file.
+    Before using a `!redeploy` _Comment Command_, the user should monitor the state of each dependency's `git` branch listed in the `spack.yaml` file. The CI/CD pipeline does not perform any checks and will simply redeploy the `HEAD` of the model deployment repository's PR branch using the `HEAD` of all corresponding dependency `git` branches specified in the `spack.yaml` file.
 
 ## Backporting Bugfixes
 
-The `main` branch of a model deployment repository reflects the most up-to-date changes to the model and is always at the same level or ahead of the model latest major release.<br>
+The `main` branch of a model deployment repository reflects the most up-to-date changes to the model. Hence, it is always at the same level or ahead of the model's latest major release.<br>
 However, it is also essential to provide a way to apply bug fixes to earlier major versions of the model. This is where dedicated `backport/YEAR.MONTH` branches come into play, allowing bug fixes to be incorporated into previous versions of the model.
 
 For example, let's say there is a bug fix that needs to be incorporated to the [ACCESS-OM2 `2023.11.23` release](https://github.com/ACCESS-NRI/ACCESS-OM2/tree/2023.11.23).<br>
@@ -311,5 +308,5 @@ To do so, a developer should:
     <terminal-line class="keep-blanks"> * [new branch]      backport/2023.11 -> backport/2023.11</terminal-line>
     <terminal-line>branch 'backport/2023.11' set up to track 'origin/backport/2023.11'.</terminal-line>
     </terminal-window>
-3. Open a PR off the `backport/2023.11` branch with the fixes.<br>
+3. Open a PR from the `backport/2023.11` branch with the fixes.<br>
    When the PR is merged, a release tagged as `2023.11.24` will be created.
