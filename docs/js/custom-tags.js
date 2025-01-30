@@ -26,12 +26,13 @@ class SimulatedTerminalInfo extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `<div class="admonition info">
-        In this documentation, the same code is sometimes shown in a highlighted code-block 
+        In this documentation, the same code is sometimes shown in a highlighted code block 
         and also in a simulated terminal.<br>
-        The <b>code-blocks</b> show the commands to be run in a terminal. They can be easily copied
+        The <b>code blocks</b> show the commands to be run in a terminal. They can be easily copied
         by clicking on the icon over the right side of the code block.<br>
-        The <b>simulated terminals</b> are examples of the output to expect when the commands are
-        run. Sometimes they might slightly differ from the real outputs.
+        The <b>simulated terminals</b> are produced using <a href="https://github.com/atteggiani/animated-terminal.js" target="_blank" class="external-link">animated-terminal.js</a> 
+        and provide examples of the output to expect when the commands are run. 
+        Sometimes they might slightly differ from the real outputs.
         </div>`
     }
 }
