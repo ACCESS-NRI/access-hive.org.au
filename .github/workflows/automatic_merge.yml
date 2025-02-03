@@ -5,16 +5,11 @@ on:
     # Run every day at 01:09 (AEST)
     # AEST is UTC+10 --> 01:09 AEST is 15:09 UTC
     - cron: "9 15 * * *"
+  workflow_dispatch:
 
 jobs:
   check-links:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repo
-      uses: actions/checkout@master
-    
-    - name: Check links
-      uses: ./.github/workflows/check_links.yml
+    uses: ./.github/workflows/check_links.yml
 
   auto-merge:
     runs-on: ubuntu-latest
