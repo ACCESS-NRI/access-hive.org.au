@@ -9,52 +9,71 @@ https://access-hive.org.au/
 
 The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting set up, running models and model evaluation.
 
-# How to Contribute
-## For New Users
+## Table of Contents
+- [How to Contribute](#how-to-contribute)
+  - [For New Users](#for-new-users)
+  - [For ACCESS-NRI GitHub Organisation members](#for-access-nri-github-organisation-members)
+    - [1. Clone the ACCESS-Hive Docs GitHub repo](#1-clone-the-access-hive-docs-github-repo)
+    - [2. Raise an issue about the contribution](#2-raise-an-issue-about-the-contribution)
+    - [3. Create a new git branch](#3-create-a-new-git-branch)
+    - [4. Make changes, commit and push to the remote repo](#4-make-changes-commit-and-push-to-the-remote-repo)
+    - [4. Deploy website preview](#4-deploy-website-preview)
+    - [5. Keep your branch in sync with the `development` branch](#5-keep-your-branch-in-sync-with-the-development-branch)
+    - [6. Open a Pull Request](#6-open-a-pull-request)
+- [Styling guidelines for developers](#styling-guidelines-for-developers)
+  - [Styling Markdown using CSS](#styling-markdown-using-css)
+    - [Attribute lists](#attribute-lists)
+    - [Markdown in HTML](#markdown-in-html)
+  - [Custom HTML tags](#custom-html-tags)
+  - [HTML/Markdown Cheatsheet for the Hive Docs](#htmlmarkdown-cheatsheet-for-the-hive-docs)
+- [License](#license)
+
+
+## How to Contribute
+### For New Users
 
 If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
-## For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
+### For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
 
 The ACCESS-Hive Docs website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
 The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed below:
-1. **Clone the ACCESS-Hive Docs GitHub repo**
 
-    To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/access-hive.org.au) GitHub repo, run the following command in your local terminal:
+#### 1. Clone the ACCESS-Hive Docs GitHub repo
 
-    ```
-    git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
-    ```
-2. **Raise an issue about the contribution**
+To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/access-hive.org.au) GitHub repo, run the following command in your local terminal:
 
-    Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
-    If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
+```
+git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
+```
+#### 2. Raise an issue about the contribution
 
-3. **Create a new git branch**
+Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
+If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
 
-    Create a new `git` branch for your new contribution, starting from the `development` branch.
-    A suggested way to call it is in the format `<name>/<issue-summary>-<issue-number>`, for example `jasmeen/improve-how-to-contribute-812`:
-    ```
-    git checkout -b jasmeen/improve-how-to-contribute-812 origin/development
-    ```
+#### 3. Create a new git branch
 
-3. **Make changes, commit and push to the remote repo**
+Create a new `git` branch for your new contribution, starting from the `development` branch.
+A suggested way to call it is in the format `<name>/<issue-summary>-<issue-number>`, for example `jasmeen/improve-how-to-contribute-812`:
+```
+git checkout -b jasmeen/improve-how-to-contribute-812 origin/development
+```
 
-    While you are in your new `git` branch, make your desired changes, commit your changes, and push the commits to the remote repo: 
+#### 4. Make changes, commit and push to the remote repo
 
-    ```
-    # Stage the desired files
-    git add ...
+While you are in your new `git` branch, make your desired changes, commit your changes, and push the commits to the remote repo: 
 
-    # Commit the changes, including a meaningful commit descriptions.
-    # Avoid general descriptions, such as 'a fix', 'useful change', 'home page bug fixes' etc.
-    git commit -m "Improved how-to-contribute instructions in the README."
-    
-    # Push the changes to the remote
-    git push 
-    ```
-    
-    Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
+```
+# Stage the desired files
+git add ...
+
+# Commit the changes, including a meaningful commit descriptions.
+# Avoid general descriptions, such as 'a fix', 'useful change', 'home page bug fixes' etc.
+git commit -m "Improved how-to-contribute instructions in the README."
+
+# Push the changes to the remote
+git push 
+```
 
 > [!TIP]
 > When you push your new `git` branch to the remote for the first time, you will need to set its upstream with:
@@ -62,35 +81,35 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
 > git push --set-upstream origin jasmeen/improve-how-to-contribute-812
 > ```
 
+Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
-4. **Deploy website preview**
+#### 4. Deploy website preview
 
-    During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
+During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
 
-5. **Keep your branch in sync with the `development` branch**
+#### 5. Keep your branch in sync with the `development` branch
 
-    Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
-    It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
-    For syncing your feature branch with the upstream `development` branch, use the following 
-    command: 
+Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
+It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
+For syncing your feature branch with the upstream `development` branch, use the following 
+command: 
 
-    ```
-    git rebase origin/development jasmeen/improve-how-to-contribute-812
-    ```
+```
+git rebase origin/development jasmeen/improve-how-to-contribute-812
+```
 
 > [!WARNING]
 > After rebasing, you might have to resolve conflicts.
 > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
 > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :smile:
 
-6. **Open a Pull Request**
+#### 6. Open a Pull Request
 
-    Once you are happy with your contribution, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to have it reviewed by the ACCESS-Hive Docs team.
-    Feel free to assign `ACCESS-NRI/WebOps` team as reviewers.
+Once you are happy with your contribution, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to have it reviewed by the ACCESS-Hive Docs team.
+Feel free to assign `ACCESS-NRI/WebOps` team as reviewers.
 
 > [!IMPORTANT]
 > The ACCESS-Hive Docs repo's default branch is `development`. The `main` branch is automatically updated daily by merging the `development` branch.
-
 
 ## Styling guidelines for developers
 
@@ -179,7 +198,7 @@ The following custom tags are available:
 |**Tabs**|N/A|**Labels:**<br>\<div class="tabLabels" label="your-tab-label"><br>&emsp;\<button id="id-tab1"><br>&emsp;&emsp;Tab1<br>&emsp;\</button><br>&emsp;\<button id="id-tab2"><br>&emsp;&emsp;Tab2<br>&emsp;\</button><br>\</div><br><br>**Contents:**<br>\<div tabcontentfor="id-tab1"><br>&emsp;&emsp;Content for tab1<br>\</div><br>\<div contentfor="id-tab2"><br>&emsp;&emsp;Content for tab2<br>\</div><br><br>A content for a specific tab `id` can be included or not independently from the other contents.|![tabs](docs/assets/assets_for_readme/tabs.gif)|
 
 
-# License
+## License
 The ACCESS-Hive Docs website is covered by the [CC-BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
 However, the material linked to from ACCESS-Hive Docs is covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.
