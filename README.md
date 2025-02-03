@@ -54,12 +54,13 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     git push 
     ```
     
-    > **Tip**: When you push your new `git` branch to the remote for the first time, you will need to set its upstream with:
-    > ```
-    > git push --set-upstream origin jasmeen/improve-how-to-contribute-812
-    > ```
-    
     Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
+
+> [!TIP]
+> When you push your new `git` branch to the remote for the first time, you will need to set its upstream with:
+> ```
+> git push --set-upstream origin jasmeen/improve-how-to-contribute-812
+> ```
 
 
 4. **Deploy website preview**
@@ -77,16 +78,18 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     git rebase origin/development jasmeen/improve-how-to-contribute-812
     ```
 
-    > **Warning:** After rebasing, you might have to resolve conflicts.
-    > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
-    > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :) 
+> [!WARNING]
+> After rebasing, you might have to resolve conflicts.
+> Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
+> For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :smile:
 
 6. **Open a Pull Request**
 
     Once you are happy with your contribution, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to have it reviewed by the ACCESS-Hive Docs team.
     Feel free to assign `ACCESS-NRI/WebOps` team as reviewers.
 
-    > **Note**: The ACCESS-Hive Docs repo's default branch is `development`. The `main` branch is automatically updated daily by merging the `development` branch.
+> [!IMPORTANT]
+> The ACCESS-Hive Docs repo's default branch is `development`. The `main` branch is automatically updated daily by merging the `development` branch.
 
 
 ## Styling guidelines for developers
