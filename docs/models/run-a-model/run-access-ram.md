@@ -17,9 +17,22 @@ TODO
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
 
-{{ model }} is an ACCESS-NRI-supported configuration of the UKMO Regional Nesting Suite. Driven by ERA5, the configuration comprises a 2-level nest; the outer level uses GAL9 with a resolution of 10km or 11km (depending on the choice of land-surface initial conditions), and the inner nest that focuses on the region of interest uses RAL3.2 with 2.2 km resolution. 
+## About
 
-{{ model }} comprises a Regional Ancillary Suite (RAS) `{{ ras_id }}` to generate ancillary files needed to run the Regional Nesting Suite (RNS) `{{ rns_id }}` for the domain of interest.
+{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office](https://www.metoffice.gov.uk/) Regional Nesting Suite. Driven by ERA5, the configuration comprises a 2-level nest; the outer level uses GAL9 with a resolution of 10km or 11km (depending on the choice of land-surface initial conditions), and the inner nest that focuses on the region of interest uses RAL3.2 with 2.2 km resolution.<br>
+A description of the model and its components is available in the [ACCESS-RAM3 overview][model configurations].
+
+{{ model }} comprises a [Regional Ancillary Suite (RAS)](#ras) (RAS) `{{ ras_id }}` to generate ancillary files needed to run the [Regional Nesting Suite (RNS)](#rns) `{{ rns_id }}` for the domain of interest.
+
+The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+
+All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
+
+{{ model }} release notes are available on the ACCESS-Hive Forum and are updated when new releases are made available.
+<!-- TODO: Include link to the ACCESS-Hive Forum when the 1.0 release occurs -->
+
 
 <!-- Quick start guide for experienced users -->
 ## Quick Start
