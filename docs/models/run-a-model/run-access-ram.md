@@ -5,6 +5,7 @@
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [model components]: /models/configurations/access-ram/#model-components
 [model configurations]: /models/configurations/access-ram
+[gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]({{github_configs}}){: class="text-card"}
 <!--
