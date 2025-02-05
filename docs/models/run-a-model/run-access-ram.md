@@ -20,7 +20,7 @@ TODO
 
 ## About
 
-{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office](https://www.metoffice.gov.uk/) Regional Nesting Suite. Driven by ERA5, the configuration comprises a 2-level nest; the outer level uses GAL9 with a resolution of 10km or 11km (depending on the choice of land-surface initial conditions), and the inner nest that focuses on the region of interest uses RAL3.2 with 2.2 km resolution.<br>
+{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite. Driven by ERA5, the configuration comprises a 2-level nest; the outer level uses GAL9 with a resolution of 10km or 11km (depending on the choice of land-surface initial conditions), and the inner nest that focuses on the region of interest uses RAL3.2 with 2.2 km resolution.<br>
 A description of the model and its components is available in the [ACCESS-RAM3 overview][model configurations].
 
 {{ model }} comprises a [Regional Ancillary Suite (RAS)](#ras) (RAS) `{{ ras_id }}` to generate ancillary files needed to run the [Regional Nesting Suite (RNS)](#rns) `{{ rns_id }}` for the domain of interest.
