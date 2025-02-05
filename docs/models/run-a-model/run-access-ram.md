@@ -110,7 +110,7 @@ rose suite-run
 
 ## Detailed Guide
 
-## Prerequisites
+### Prerequisites
 
 - **NCI Account**<br> 
     Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
@@ -133,11 +133,11 @@ rose suite-run
     To run {{ model }}, start an [Australian Research Environment (ARE) VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) session.<br>
     If you are not familiar with ARE, check out the [Getting Started on ARE](/getting_started/are) section.
 
-## Set up an ARE VDI Desktop (optional)
+### Set up an ARE VDI Desktop (optional)
 !!! info 
     If you want to skip this step and run {{ model }} from _Gadi_ login node instead, refer directly to the instructions on how to [Set up persistent session](#set-up-persistent-session).
 
-### Launch ARE VDI Session
+#### Launch ARE VDI Session
 Go to the [ARE VDI](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) page and launch a session with the following entries:
 
 - **Walltime (hours)** &rarr; `2`<br>
@@ -163,18 +163,18 @@ Launch the ARE session and, once it starts, click on _Launch VDI Desktop_.
 
 ![Launch ARE VDI session example](/assets/run_access_cm/launch_are_vdi.gif){: class="example-img" loading="lazy"}
 
-### Open the terminal in the VDI Desktop
+#### Open the terminal in the VDI Desktop
 Once the new tab opens, you will see a Desktop with a few folders on the left.<br>
 To open the terminal, click on the black terminal icon at the top of the window. You should now be connected to a _Gadi_ computing node.
 
 ![Open ARE VDI terminal example](/assets/run_access_cm/open_are_vdi_terminal.gif){: class="example-img" loading="lazy"}
 
-## Set up persistent session 
+### Set up persistent session 
 To support the use of long-running processes, such as ACCESS model runs, NCI provides a service on _Gadi_ called [persistent sessions](https://opus.nci.org.au/display/Help/Persistent+Sessions).
 
 To run {{ model }}, you need to start a persistent session and set it as the target session for the model run.
 
-### Start a new persistent session
+#### Start a new persistent session
 To start a new persistent session on _Gadi_, using either a login node or an ARE terminal instance, run the following command:
 ```
 persistent-sessions start <name>
@@ -211,7 +211,7 @@ persistent-sessions list
 The label of a newly-created persistent session has the following format: <br>
 `<name>.<$USER>.<project>.ps.gadi.nci.org.au`.
 
-### Specify target persistent session
+#### Specify target persistent session
 
 After starting the persistent session, it is essential to assign it to the {{ model }} run.<br>
 The easiest way to create a file `~/.persistent-sessions/cylc-session` that contains the target of the persistent session.<br>
@@ -244,7 +244,7 @@ For more information on how to specify the target session, refer to [Specify Tar
     You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only be done once.<br>
     After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just need to make sure to have an active persistent session named like the specified {{ model }} target persistent session.
 
-### Terminate a persistent session
+#### Terminate a persistent session
 !!! tip
     Logging out of a *Gadi* login node or an ARE terminal instance will not affect your persistent session. 
 
@@ -255,11 +255,11 @@ persistent-sessions kill <persistent-session-uuid>
 !!! warning
     When you terminate a persistent session, any model running on that session will stop. Therefore, you should check whether you have any active model runs before terminating a persistent session.
 
-## Rose/Cylc/MOSRS setup
+### Rose/Cylc/MOSRS setup
 
 To run {{ model }}, access to multiple softwares and the Met Office Science Repository Service (MOSRS) is needed.
 
-### Cylc setup {: id="cylc"}
+#### Cylc setup {: id="cylc"}
 
 [_Cylc_](https://cylc.github.io/cylc-doc/7.8.8/html/index.html) (pronounced ‘silk’) is a workflow manager that automatically executes tasks according to the model's main cycle script `suite.rc`. _Cylc_ controls how the job will be run and manages the time steps of each model component. It also monitors all tasks, reporting any errors that may occur.
 
@@ -281,12 +281,12 @@ module load cylc7
     It is recommended not to specify any version when loading _Cylc_, as versions earlier than `23.09` do not support the persistent sessions workflow.<br>
     Also, before loading the _Cylc_ module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up persistent session](#set-up-persistent-session).
 
-### Rose setup {: id="rose"}
+#### Rose setup {: id="rose"}
 [Rose](http://metomi.github.io/rose/doc/html/index.html) is a toolkit that can be used to view, edit, or run an ACCESS modelling suite.
 
 By completing the [_Cylc_ setup](#cylc), also _Rose_ will be automatically available. Therefore, there is no additional step required.
 
-### MOSRS authentication
+#### MOSRS authentication
 To authenticate using your _MOSRS_ credentials, run:
 ```
 mosrs-auth
@@ -301,7 +301,7 @@ mosrs-auth
     <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: Successfully accessed rosie with your credentials.</terminal-line>
 </terminal-window>
 
-## {{ model }} configuration
+### {{ model }} configuration
 {{ model }} is comprised of 2 different suites: a [Regional Ancillary Suite (RAS)](#ras) and a [Regional Nesting Suite (RNS)](#rns).
 
 Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
@@ -312,7 +312,7 @@ For more information on {{ model }} configuration, check [{{model}}][model confi
 !!! info 
     Many of the steps that follow are to be repeated almost identically for the RAS and RNS. For this reason, details on these steps will be provided only within the RAS section below, whereas in the following RNS section they will only be linked for reference.
 
-## Regional Ancillary Suite (RAS) {: id="ras"}
+### Regional Ancillary Suite (RAS) {: id="ras"}
 
 The RAS produces a set of input (ancillary) files, which are then used by the RNS.
 
@@ -322,7 +322,7 @@ TODO
 {: style="color:red"}
 <!-- Add short description of what the RAS does -->
 
-### Get the RAS configuration
+#### Get the RAS configuration
 [Rosie](http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
 
 The RAS configuration can be obtained as a copy of the MOSRS one, following 2 approaches:
@@ -342,7 +342,7 @@ The suite directory contains multiple subdirectories and files, including:
 - `rose-suite.info` &rarr; suite information file.
 - `suite.rc` &rarr; _Cylc_ control script file (Jinja2 language).
 
-#### Local-only copy {: id="local-copy"}
+##### Local-only copy {: id="local-copy"}
 To create a _local copy_ of the RAS from the UKMO repository, run:
 ```
 rosie checkout {{ ras_id }}
@@ -354,7 +354,7 @@ rosie checkout {{ ras_id }}
 </terminal-window>
 This option is mostly used for testing and examining existing suites.
     
-#### Remote and local copy {: id="remote-copy"}
+##### Remote and local copy {: id="remote-copy"}
 To create a new copy of the RAS both _locally_ and _remotely_ in the UKMO repository, run: 
 ```
 rosie copy {{ ras_id }}
@@ -373,7 +373,7 @@ For additional `rosie` options, run:
 rosie help
 ```
 
-### Run the suite
+#### Run the suite
 {{ model }} suites run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job] submission.<br>
 When a suite runs, its configuration files are copied on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>` and a symbolic link to this directory is also created in the `$USER`'s home directory under `~/cylc-run/<suite-ID>`.<br>
 {{ model }} suites comprise several tasks, such as checking out code repositories, compiling and building the different model components, running the model, etc. The workflow of these tasks is controlled by [_Cylc_](#cylc).
@@ -399,12 +399,12 @@ You can now close the _Cylc_ GUI. To open it again, run the following command fr
 rose suite-gcontrol
 ```
 
-### Monitor the suite runs
+#### Monitor the suite runs
 
 It is quite common, especially during the first few runs, to experience errors and job failures. Running a suite involves the execution of several tasks, and any of these tasks could fail. When a task fails, the suite is halted and a red icon appears next to the respective task name in the _Cylc_ GUI.<br>
 To investigate the cause of a failure, we can look at the logs `job.err` and `job.out` from the suite run. There are two main ways to do so:
 
-#### Using the _Cylc_ GUI
+##### Using the _Cylc_ GUI
 Right-click on the task that failed and click on _View Job Logs (Viewer) &rarr; job.err_ (or _job.out_).<br>
 To access a specific task, click on the arrow next to the task to extend the drop-down menu with all the subtasks.
 
@@ -416,7 +416,7 @@ TODO
 <!-- Replace with a RAS video/gif -->
 
 
-#### Through the suite directory
+##### Through the suite directory
 The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMESTAMP>`, and the latest set of logs are also symlinked in the `~/cylc-run/<suite-ID>/log` directory.<br>
 The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
 Logs are separated into simulation cycles according to their starting dates, then divided into subdirectories according to the task name. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
@@ -430,7 +430,7 @@ TODO
 {: style="color:red"}
 <!-- Replace TASK_NAME with the actual task name according to the video/gif above -->
 
-### Stop, restart and reload suites
+#### Stop, restart and reload suites
 In some cases, you may want to control the running state of a suite.<br>
 If your _Cylc_ GUI has been closed and you are unsure whether your suite is still running, you can scan for active suites and reopen the GUI if desired.<br>
 To scan for active suites, run:
@@ -454,7 +454,7 @@ TODO
 {: style="color:red"}
 <!-- Replace with a RAS video/gif -->
 
-#### STOP a suite
+##### STOP a suite
 To shutdown a suite in a safe manner, run the following command from within the [suite directory](#suitedir):
 ```
 rose suite-stop -y
@@ -471,17 +471,18 @@ qstat -u $USER
 qdel <job-ID>
 ```
 
-#### RESTART a suite
+##### RESTART a suite
 There are two main ways to restart a suite:
 
-##### _SOFT_ restart
-To reinstall the suite and reopen _Cylc_ in the same state it was prior to being stopped, run the following command from within the [suite directory](#suitedir):
-```
-rose suite-run --restart
-```
+- **_SOFT_ restart**<br>
+    To reinstall the suite and reopen _Cylc_ in the same state it was prior to being stopped, run the following command from within the [suite directory](#suitedir):
+    ```
+    rose suite-run --restart
+    ```
 
-!!! warning
-    You may need to manually trigger failed tasks from the _Cylc_ GUI.
+    !!! warning
+        You may need to manually trigger failed tasks from the _Cylc_ GUI.
+
 <!--
 <terminal-window lineDelay="50">
     <terminal-line data="input" lineDelay="300">cylc</terminal-line>
@@ -525,16 +526,16 @@ TODO
 {: style="color:red"}
 <!-- Replace with a RAS image -->
 
-##### _HARD_ restart
-To overwrite any previous runs of the suite and start afresh, run the following command from within the [suite directory](#suitedir):
-```
-rose suite-run --new
-```
+- **HARD restart**<br>
+    To overwrite any previous runs of the suite and start afresh, run the following command from within the [suite directory](#suitedir):
+    ```
+    rose suite-run --new
+    ```
 
-!!! warning
-    This will overwrite all existing model output and logs for the same suite.
+    !!! warning
+        This will overwrite all existing model output and logs for the same suite.
 
-#### RELOAD a suite
+##### RELOAD a suite
 In some cases the suite needs to be updated without necessarily having to stop it (e.g., after fixing a typo in a file). Updating an active suite is called a _reload_, where the suite is _re-installed_ and _Cylc_ is updated with the changes. This is similar to a _SOFT_ restart, except new changes are installed, so you may need to manually trigger failed tasks from the _Cylc_ GUI.
 
 To reload a suite, run the following command from within the [suite directory](#suitedir):
@@ -542,7 +543,7 @@ To reload a suite, run the following command from within the [suite directory](#
 rose suite-run --reload
 ```
 
-### RAS output files
+#### RAS output files
     
 The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`. The ancillaries are divided for each nested region, with each of the region subdivided in directories named according to the nests names. As a consequence, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 <!--
@@ -568,7 +569,7 @@ TODO
 <!-- Are the namelists always produced? What are they produced for? Do we need to mention namelists as well here? Are the namelists Fortran namelists? In case I would specify it (if we decide to mention them). -->
 
 
-### Edit the RAS configuration
+#### Edit the RAS configuration
 This section describes how to modify the RAS configuration.<br>
 The modifications discussed in this section can change the way the RAS is run and, as a result, control the ancillaries that are generated.
 
@@ -577,7 +578,7 @@ In general, ACCESS modelling suites can be edited either by directly modifying t
 !!! warning 
     Unless you are a very expert user, directly modifying configuration files is usually discouraged to avoid incurring in errors.
 
-#### Rose GUI {: id="rosegui"}
+##### Rose GUI {: id="rosegui"}
 To open the [_Rose_](#rose) GUI, run the following command from within the [suite directory](#suitedir): 
 ```
 rose edit &
@@ -598,7 +599,7 @@ TODO
 {: style="color:red"}
 <!-- Change image with a RAS one -->
 
-#### Change the region centre and name
+##### Change the region centre and name
 {{model}} is a regional model that can perform simulations for a specific region on Earth. 
 
 In the RAS, each region can be specified through the following parameters:
@@ -636,7 +637,7 @@ TODO
 {: style="color:red"}
 <!-- Add a gif/video for the exmple -->
 
-## Regional Nesting Suite (RNS) {: id="rns"}
+### Regional Nesting Suite (RNS) {: id="rns"}
 <!--
 The RNS is ...
 -->
@@ -647,7 +648,7 @@ TODO
 {: style="color:red"}
 <!-- Add short description of what the RAS does -->
 
-### Get and run RNS configuration
+#### Get and run RNS configuration
 Steps to get and run the RNS configuration, as well as monitoring the runs, are analogous to those listed above for the [RAS](#ras).<br>
 The only difference is the `suite-ID` that, for the RNS is `{{ rns_id }}`.
 
@@ -657,7 +658,7 @@ To run the RNS configuration, please follow the steps listed in [Run the suite](
 
 To monitor the RNS suite run, please follow the steps listed in [Monitor the suite runs](#monitor-the-suite-runs).
 
-### RNS output files
+#### RNS output files
 
 All the RNS output files are available on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
 
@@ -684,7 +685,7 @@ The model output data for the `Lismore` `nested_region`, using a `RAL3P2` `scien
 
 The RNS atmospheric output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
-### Edit the RNS configuration
+#### Edit the RNS configuration
 
 This section describes how to modify the RNS configuration.
 The modifications discussed in this section can change the way the RNS is run, or how its specific [model components] are configured and coupled together.
@@ -696,7 +697,7 @@ In general, ACCESS modelling suites can be edited either by directly modifying t
 
 To open the _Rose_ GUI, you can follow the steps listed in [Rose GUI](#rosegui).
 
-### Change where the output from run is stored project
+#### Change where the output from run is stored project
 To change where the output from the model run is stored, edit the _NCI_STORAGE_ field in _suite conf &rarr; Nesting Suite &rarr; General run options _, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}. 
 
 <!--
@@ -704,7 +705,7 @@ TODO
 {: style="color:red"}
 <!-- I couldn't restructure this title/text because from them I am not really understanding what `NCI_STORAGE` is. From its default value in the rose-suite.conf (scratch/$PROJECT) and how it's used inside the suite, it seems to be a project folder added to the `storage` option for the PBS jobs submission of many tasks. Therefore is not necessarily related to model outputs (is also related to model input), but to filesystem mounts that the model need to be able to access. Why is the text mentioning changing where the output is stored? -->
 
-### Change run length and cycling frequency
+#### Change run length and cycling frequency
 The RNS is run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen cycling frequency, until the total run length is reached.
 
 For the RNS:
@@ -728,11 +729,10 @@ TODO
 {: style="color:red"}
 <!-- Check and change link details if needed -->
 
-<!--
+
 <custom-references>
 - [https://nespclimate.com.au/wp-content/uploads/2020/10/Instruction-document-Getting_started_with_ACCESS.pdf](https://nespclimate.com.au/wp-content/uploads/2020/10/Instruction-document-Getting_started_with_ACCESS.pdf)
 - [https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html](https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html)
 - [https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites](https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites)
 - [https://opus.nci.org.au/display/Help/Persistent+Sessions](https://opus.nci.org.au/display/Help/Persistent+Sessions)
 </custom-references>
--->
