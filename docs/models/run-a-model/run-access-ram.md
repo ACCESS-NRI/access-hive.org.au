@@ -7,6 +7,12 @@
 [model configurations]: /models/configurations/access-ram
 
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]({{github_configs}}){: class="text-card"}
+<!--
+TODO
+{: style="color:red"}
+<!-- Can we put a configuration here taken from MOSRS instead of GitHub? SVN? -->
+
+# Run ACCESS-RAM3
 
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
@@ -15,15 +21,10 @@
 
 {{ model }} comprises a Regional Ancillary Suite (RAS) `{{ ras_id }}` to generate ancillary files needed to run the Regional Nesting Suite (RNS) `{{ rns_id }}` for the domain of interest.
 
-<!--
-TODO
-{: style="color:red"}
-<!-- Can we put a configuration here taken from MOSRS instead of GitHub? SVN? -->
-
-The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. If you would prefer more detailed instructions, please refer to the *Detailed Guide* below.
-
 <!-- Quick start guide for experienced users -->
 ## Quick Start
+
+The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. If you would prefer more detailed instructions, please refer to the *Detailed Guide* below.
 
 ### Required setup for running {{ model }}
 
