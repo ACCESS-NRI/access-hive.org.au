@@ -45,63 +45,71 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 - **Join relevant NCI projects**<br> _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
 
 - **Start a new [persistent session](https://opus.nci.org.au/display/Help/Persistent+Sessions)**<br> 
-using a *Gadi* login node or an ARE terminal instance:
-```
-persistent-sessions start <name>
-```
-This will use your default project. Use option `-p` to assign a different project to the persistent session:
-```
-persistent-sessions start -p <project> <name>
-```
+    using a *Gadi* login node or an ARE terminal instance:
+    ```
+    persistent-sessions start <name>
+    ```
+    
+    This will use your default project. Use option `-p` to assign a different project to the persistent session:
+    ```
+    persistent-sessions start -p <project> <name>
+    ```
+
 - **Assign the persistent session**<br>
-Run the following command:
-```
-echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
-```
-substituting `<name>` with the name given to your persistent session, and `<project>` with the project assigned to it.
+    Run the following command:
+    ```
+    echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
+    ```
+    substituting `<name>` with the name given to your persistent session, and `<project>` with the project assigned to it.
 
 - **Cylc setup**<br>
-To get the required _Cylc_ setup, run:
-```
-module use /g/data/hr22/modulefiles
-module load cylc7
-```
+    To get the required _Cylc_ setup, run:
+    ```
+    module use /g/data/hr22/modulefiles
+    module load cylc7
+    ```
+
 - **MOSRS authentication**<br>
-Authenticate using your MOSRS credentials:
-```
-mosrs-auth
-```
+    Authenticate using your MOSRS credentials:
+    ```
+    mosrs-auth
+    ```
+
 ### Regional Ancillary Suite (RAS)
 1. **Copy the RAS from UKMO**<br>
     Local-only copy: 
-```
-rosie checkout {{ ras_id }}
-```
-    New copy both _locally_ and _remotely_: 
-```
-rosie copy {{ ras_id }}
-```
+    ```
+    rosie checkout {{ ras_id }}
+    ```
+    
+    New copy, both _locally_ and _remotely_: 
+    ```
+    rosie copy {{ ras_id }}
+    ```
+
 2. **Run the RAS**<br>
-From within the RAS directory:
-```
-rose suite-run
-```
+    From within the RAS directory:
+    ```
+    rose suite-run
+    ```
 
 ### Regional Nesting Suite (RNS)
 1. **Copy the RNS from UKMO**<br>
     Local-only copy: 
-```
-rosie checkout {{ rns_id }}
-```
-    New copy both _locally_ and _remotely_: 
-```
-rosie copy {{ rns_id }}
-```
+    ```
+    rosie checkout {{ rns_id }}
+    ```
+
+    New copy, both _locally_ and _remotely_: 
+    ```
+    rosie copy {{ rns_id }}
+    ```
+
 2. **Run the RNS**<br>
-From within the RNS directory:
-```
-rose suite-run
-```
+    From within the RNS directory:
+    ```
+    rose suite-run
+    ```
 
 !!! tip
     You've completed all steps in the Quick Start reference. For more comprehensive instructions keep reading below.
