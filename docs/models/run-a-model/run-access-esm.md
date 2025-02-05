@@ -56,11 +56,11 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
     
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
-        <terminal-line lineDelay="1000">1.1.5</terminal-line>
+        <terminal-line lineDelay="1000">payu 1.1.6</terminal-line>
     </terminal-window>
 
     !!! warning
-        _payu_ version >=1.1.5 is required
+        _payu_ version >=1.1.6 is required
 
 ----------------------------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ This will submit a single job to the queue with a run length given by [`runtime`
     <terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
     <terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line lineDelay=50>
-        qsub -q normal -P tm70 -l walltime=9000 -l ncpus=384 -l mem=1536GB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/vk83/apps/payu/1.1.4/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/vk83/modules:/etc/scl/modulefiles:/apps/Modules/restricted-modulefiles/matlab_monash:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/vk83 -- /g/data/vk83/apps/payu/1.1.4/bin/python3.10 /g/data/vk83/apps/payu/1.1.4/bin/payu-run
+        qsub -q normal -P tm70 -l walltime=9000 -l ncpus=432 -l mem=1728GB -l jobfs=1500MB -N pre-industrial -l wd -j n -v PAYU_PATH=/g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/vk83/modules:/etc/scl/modulefiles:/apps/Modules/restricted-modulefiles/matlab_monash:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/vk83 -- /g/data/vk83/./apps/conda_scripts/payu-1.1.6.d/bin/python /g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin/payu-run
     </terminal-line>
     <terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
 </terminal-window>
@@ -261,8 +261,8 @@ This command will:
     <terminal-line>archive path: /scratch/$PROJECT/$USER/access-esm/archive</terminal-line>
     <terminal-line>Found experiment archive: /scratch/$PROJECT/$USER/access-esm/archive/preindustrial+concentrations-expt-0635396b</terminal-line>
     <terminal-line>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
-    <terminal-line>Loading access-esm1p5/2024.05.0</terminal-line>
-    <terminal-line>    Loading requirement: cice4/2024.05.21 mom5/access-esm1.5_2024.06.20 um7/2024.07.03</terminal-line>
+    <terminal-line>Loading access-esm1p5/2024.12.0</terminal-line>
+    <terminal-line>    Loading requirement: cice4/2024.05.21-izhg4i3 mom5/access-esm1.5_2024.08.23-m5h4mmw um7/2024.10.17-l3w5m5u</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
@@ -272,9 +272,6 @@ This command will:
     <terminal-line>Setting up ice</terminal-line>
     <terminal-line>Setting up coupler</terminal-line>
     <terminal-line>Checking exe and input manifests</terminal-line>
-    <terminal-line>Creating restart manifest</terminal-line>
-    <terminal-line>Updating full hashes for 29 files in manifests/restart.yaml</terminal-line>
-    <terminal-line>Writing manifests/restart.yaml</terminal-line>
 </terminal-window>
 
 This can help to isolate issues such as permissions problems accessing files and directories, missing files or malformed/incorrect paths.
@@ -483,7 +480,7 @@ Each submodel contains additional configuration options that are read in when th
     submodels:
     - name: atmosphere
       model: um
-      ncpus: 192
+      ncpus: 240
       exe: um_hg3.exe
       input:
         # Aerosols
@@ -512,7 +509,7 @@ Each submodel contains additional configuration options that are read in when th
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
-        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2024.11.01
 
     - name: ocean
       model: mom
@@ -523,8 +520,6 @@ Each submodel contains additional configuration options that are read in when th
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/ocean/biogeochemistry/global.1deg/2024.07.12/bgc_param.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_fice_monthly_om1p5_bc.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_xkw_monthly_om1p5_bc.nc
         # Tides
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/tideamp.nc
@@ -532,6 +527,8 @@ Each submodel contains additional configuration options that are read in when th
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/shortwave_penetration/global.1deg/2020.05.19/ssw_atten_depth.nc
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/grids/mosaic/global.1deg/2020.05.19/grid_spec.nc
+        # Basin mask
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/basins/global.1deg/2020.05.19/basin_mask.nc
 
     - name: ice
       model: cice
