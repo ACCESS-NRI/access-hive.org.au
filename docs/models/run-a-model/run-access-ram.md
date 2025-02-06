@@ -1,17 +1,18 @@
 {% set model = "ACCESS-RAM3" %}
+{% set ancillary_model = "ACCESS-RAS" %}
+{% set regional_model = "ACCESS-RNS" %}
 {% set suite = "u-dg767" %}
 {% set ras_id = "u-dg767" %}
 {% set rns_id = "u-dg768" %}
+{% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/7/trunk" %}
+{% set mosrs_config_rns = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/8/trunk" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [model components]: /models/configurations/access-ram/#model-components
 [model configurations]: /models/configurations/access-ram
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configuration]({{github_configs}}){: class="text-card"}
-<!--
-TODO
-{: style="color:red"}
-<!-- Can we put a configuration here taken from MOSRS instead of GitHub? SVN? -->
+[![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} {{ ancillary_model }} configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
+[![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} {{ regional_model }} configuration]({{mosrs_config_rns}}){: class="text-card"}
 
 # Run ACCESS-RAM3
 
