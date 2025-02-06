@@ -225,6 +225,7 @@ The label of a newly-created persistent session has the following format: <br>
 After starting the persistent session, it is essential to assign it to the {{ model }} run.<br>
 The easiest way to create a file `~/.persistent-sessions/cylc-session` that contains the target of the persistent session.<br>
 You can do it manually, or by running the following command (by substituting `<name>` with the name given to the persistent session, and `<project>` with the project assigned to it):
+
 ```
 echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
 ```
@@ -238,15 +239,6 @@ For example, if the user `abc123` started a persistent session named `cylc` unde
     <terminal-line data="output">cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
 </terminal-window>
 
-<!-- Updated example with echo command instead of cat
-<!-- 
-For example, if the user `abc123` started a persistent session named `cylc` under the project `xy00`, the command will be:
-<terminal-window data="input">
-    <terminal-line>cat > ~/.persistent-sessions/cylc-session <<< cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
-    <terminal-line data="input" linedelay="1000">cat ~/.persistent-sessions/cylc-session</terminal-line>
-    <terminal-line data="output">cylc.abc123.xy00.ps.gadi.nci.org.au</terminal-line>
-</terminal-window>
---->
 For more information on how to specify the target session, refer to [Specify Target Session with Cylc7 Suites](https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession).
 
 !!! tip
