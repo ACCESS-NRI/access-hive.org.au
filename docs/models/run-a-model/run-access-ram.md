@@ -629,9 +629,7 @@ TODO
 
 To change these parameters, edit the `_rg01_name_` and `_rg01_centre_` fields in _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
-<!-- 
 For example, to run an {{ model }} suite for a region with centre (-12.4, 130.8) and name "Darwin":
--->
 
 ![Rose change region centre example](/assets/run_access_ras/ras_edit_region_center_and_name.gif){: class="example-img" loading="lazy"}
 
