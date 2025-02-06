@@ -570,13 +570,7 @@ TODO
 {: style="color:red"}
 <!-- Why in a two-level nest there are three nests? This passage is not clear. -->
 
-<!--
-The ancillary data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) or namelist files formats.
-
-TODO
-{: style="color:red"}
-<!-- Are the namelists always produced? What are they produced for? Do we need to mention namelists as well here? Are the namelists Fortran namelists? In case I would specify it (if we decide to mention them). -->
-
+The ancillary data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
 #### Edit the RAS configuration
 This section describes how to modify the RAS configuration.<br>
