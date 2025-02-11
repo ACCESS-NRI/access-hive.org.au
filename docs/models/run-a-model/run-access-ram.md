@@ -26,7 +26,7 @@ A description of the model and its components is available in the [ACCESS-RAM3 o
 
 {{ model }} comprises a [Regional Ancillary Suite (RAS)](#ras) (RAS) `{{ ras_id }}` to generate ancillary files needed to run the [Regional Nesting Suite (RNS)](#rns) `{{ rns_id }}` for the domain of interest.
 
-The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
