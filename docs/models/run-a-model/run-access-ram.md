@@ -546,21 +546,18 @@ rose suite-run --reload
 
 #### RAS output files
     
-The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`. The ancillaries are divided for each nested region, with each of the region subdivided in directories named according to the nests names. As a consequence, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
+The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`. The ancillaries are divided for each nested region, with each of the region subdivided in directories named according to the nests names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 <!--
 TODO
 {: style="color:red"}
 <!-- There is no information before about nests (e.g., nest structure, what is the difference between nested region name and nest name, etc.) It would be good to add something in the suite description and link it here. -->
 
-<!-- 
-In the default two-level nest there is one nested region with three nests named era5, d1000 and d0198.  In this case the output directories:
-Lismore/era5
-Lismore/d1000
-Lismore/d0198
-
-TODO
-{: style="color:red"}
-<!-- Why in a two-level nest there are three nests? This passage is not clear. -->
+In addition to the chosen nests, a subdirectory named according to the driving model data can be found within the `nested_region_name` directory.<br>
+The example above has one `nested_region_name` called `Lismore`, with a 2-level nest (2 nests) named `d1000` (outer nest) and `d0198` (inner nest), driven by ERA5 data.
+As a consequence, within the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/` the following folders will be present:
+- `Lismore/d1000`
+- `Lismore/d0198`
+- `Lismore/era5`
 
 The ancillary data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
