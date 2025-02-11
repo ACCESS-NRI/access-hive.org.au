@@ -596,18 +596,11 @@ TODO
 
 In the RAS, each region can be specified through the following parameters:
 
-- *region center* &rarr; `_rg01_centre_` within the suite 
+- *region centre* &rarr; `_rg01_centre_` within the suite.<br>
+  Set of latitude/longitude coordinates defining the centre of the region.
 
-<!--  
-TODO
-{: style="color:red"}
-<!-- Is this a set of coordinates? It would be good to be more specific here. -->
-
-- *nested region name* &rarr; `_rg01_name_` within the suite
-<!--
-TODO
-{: style="color:red"}
-<!-- Are there any more parameters that can be set here? For example the extents of the different nests, etc... ? -->
+- *nested region name* &rarr; `_rg01_name_` within the suite<br>
+  Name for the nested region.
 
 In `{{ras_id}}` these prameters are set by default to the *Lismore Flood* example. 
 
