@@ -1,7 +1,6 @@
 {% set model = "ACCESS-RAM3" %}
 {% set ancillary_model = "ACCESS-RAS" %}
 {% set regional_model = "ACCESS-RNS" %}
-{% set suite = "u-dg767" %}
 {% set ras_id = "u-dg767" %}
 {% set rns_id = "u-dg768" %}
 {% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/7/trunk" %}
