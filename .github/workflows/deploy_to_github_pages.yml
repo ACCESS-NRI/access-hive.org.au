@@ -43,6 +43,7 @@ jobs:
            :---:
            🛫 Deployment still ongoing.<br>Preview URL will be available at the end of the deployment.<br>For more information, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.
            ${{ needs.get-date.outputs.date }}
+           test
           label: pr-preview
       - name: Remove PR preview comment
         if: ${{ github.event.action == 'closed' }}
