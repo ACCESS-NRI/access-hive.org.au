@@ -47,14 +47,3 @@ While evaluation and diagnostics can be described separately they often overlap 
         <!-- <div class="card-text-container bold">METplus</div> -->
     </a>
 </div>
-
-<!-- The best way to get our help is by raising an issue on the <a href="https://forum.access-hive.org.au/" target="_blank">community forum</a> with tags `help` and another tag for the specific framework. 
-
-### Tools in development
-
-For the evaluation and diagnosis of ACCESS climate models, the following tools are currently being setup:  
-
-* Data format processing tools like APP4  
-* An Evaluation Recipe Gallery with searching functionality  
-
-In future, ACCESS-NRI aims to support a broader range of frameworks and recipes that are currently not supported, but are listed in <a href="\community_resources/community_med">Community Resources</a>.-->
