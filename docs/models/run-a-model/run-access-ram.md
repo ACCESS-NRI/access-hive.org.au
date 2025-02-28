@@ -20,10 +20,10 @@
 
 ## About
 
-{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite. Driven by ERA5, the configuration comprises a 2-level nest; the outer level uses GAL9 with a resolution of 10km or 11km (depending on the choice of land-surface initial conditions), and the inner nest that focuses on the region of interest uses RAL3.2 with 2.2 km resolution.<br>
+{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) regional nesting suite for high-resolution regional atmosphere modelling.<br>
 A description of the model and its components is available in the [ACCESS-RAM3 overview][model configurations].
 
-{{ model }} comprises a [Regional Ancillary Suite (RAS)](#ras) (RAS) `{{ ras_id }}` to generate ancillary files needed to run the [Regional Nesting Suite (RNS)](#rns) `{{ rns_id }}` for the domain of interest.
+{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -35,14 +35,46 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 <!-- TODO: Include link to the ACCESS-Hive Forum when the 1.0 release occurs -->
 
 
-<!-- Quick start guide for experienced users -->
-## Quick Start
+## Prerequisites
 
-The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. If you would prefer more detailed instructions, please refer to the *Detailed Guide* below.
+- **NCI Account**<br> 
+    Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+
+- **_MOSRS_ account**<br>
+    The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
+    To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
+    {: id='mosrs-account'}
+
+- **Join NCI projects**<br>
+    Join the following projects by requesting membership on their respective NCI project pages:
+
+    - [access](https://my.nci.org.au/mancini/project/access/join)
+    - [hr22](https://my.nci.org.au/mancini/project/hr22/join)
+    - [ki32](https://my.nci.org.au/mancini/project/ki32/join)
+    - [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join)
+    - [rt52](https://my.nci.org.au/mancini/project/rt52/join)
+    - [zz93](https://my.nci.org.au/mancini/project/zz93/join)
+    - [vk83](https://my.nci.org.au/mancini/project/vk83/join)
+
+    !!! tip
+        To request membership for the _ki32_mosrs_ subproject, you need to:
+        
+        - already be member of the _ki32_ project
+        {: style="list-style-type: disc"}
+        - have a [MOSRS account](#mosrs-account)
+        {: style="list-style-type: disc"}
+
+    For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
+
+- **Connection to an ARE VDI Desktop (optional)**<br>
+    To run {{ model }}, start an [Australian Research Environment (ARE) VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) session.<br>
+    If you are not familiar with ARE, check out the [Getting Started on ARE](/getting_started/are) section.
+
+## Quick Start guide
+
+The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. For more detailed instructions, please refer to the [Detailed guide](#detailed-guide).
 
 ### Required setup for running {{ model }}
-
-- **Join relevant NCI projects**<br> _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_ 
 
 - **Start a new [persistent session](https://opus.nci.org.au/display/Help/Persistent+Sessions)**<br> 
     using a *Gadi* login node or an ARE terminal instance:
@@ -55,15 +87,15 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     persistent-sessions start -p <project> <name>
     ```
 
-- **Assign the persistent session**<br>
+- **Assign the persistent session to Rose/Cylc workflows**<br>
     Run the following command:
     ```
     echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
     ```
     substituting `<name>` with the name given to your persistent session, and `<project>` with the project assigned to it.
 
-- **Cylc setup**<br>
-    To get the required _Cylc_ setup, run:
+- **Rose/Cylc setup**<br>
+    To get the required _Rose/Cylc_ setup, run:
     ```
     module use /g/data/hr22/modulefiles
     module load cylc7
@@ -82,7 +114,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rosie checkout {{ ras_id }}
     ```
     
-    New copy, both _locally_ and _remotely_: 
+    New copy, both local and remote: 
     ```
     rosie copy {{ ras_id }}
     ```
@@ -100,7 +132,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rosie checkout {{ rns_id }}
     ```
 
-    New copy, both _locally_ and _remotely_: 
+    New copy, both local and remote: 
     ```
     rosie copy {{ rns_id }}
     ```
@@ -112,34 +144,11 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     ```
 
 !!! tip
-    You've completed all steps in the Quick Start reference. For more comprehensive instructions keep reading below.
+    You've completed all steps required to run {{model}}. For more comprehensive instructions, refer to the [Detailed guide](#detailed-guide).
 
 ---
 
-## Detailed Guide
-
-### Prerequisites
-
-- **NCI Account**<br> 
-    Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
-
-- **_MOSRS_ account**<br>
-    The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
-    To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
-
-- **Join NCI projects**<br>
- _access_, _hr22_, _ki32_, _ki32\_mosrs_, _rt52_, _zz93_ and _vk83_.
-
-    To join these projects, request membership on the respective [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join), [rt52](https://my.nci.org.au/mancini/project/rt52/join), [zz93](https://my.nci.org.au/mancini/project/zz93/join) and [vk83](https://my.nci.org.au/mancini/project/vk83/join) NCI project pages.
-
-    !!! tip
-        To request membership for the _ki32_mosrs_ subproject you need to be member of the _ki32_ project first.
-
-    For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
-
-- **Connection to an ARE VDI Desktop (optional)**<br>
-    To run {{ model }}, start an [Australian Research Environment (ARE) VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) session.<br>
-    If you are not familiar with ARE, check out the [Getting Started on ARE](/getting_started/are) section.
+## Detailed guide
 
 ### Set up an ARE VDI Desktop (optional)
 !!! info 
@@ -165,7 +174,7 @@ Go to the [ARE VDI](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/d
 - **Storage** &rarr; `gdata/access+gdata/hr22+gdata/ki32+gdata/rt52+gdata/zz93+gdata/vk83` (minimum)<br>
     This is a list of all project data storage, joined by plus (`+`) signs, needed for the {{ model }} simulation. In ARE, storage locations need to be explicitly defined to access data from within a VDI instance.<br>
     Every {{ model }} simulation can be unique and input data can originate from various sources. Hence, if your simulation requires data stored in project folders other than the ones listed in the minimum storage above, you need to add those projects to the storage path.<br>
-    For example, if your {{ model }} simulation requires data stored in `/g/data/tm70` and `/scratch/w40`, the following should be added to the minimum storage above: `+gdata/tm70+scratch/w40`
+    For example, if your {{ model }} simulation requires data stored in `/g/data/gx60` and `/scratch/gx60`, the following should be added to the minimum storage above: `+gdata/gx60+scratch/gx60`
     
 Launch the ARE session and, once it starts, click on _Launch VDI Desktop_.
 
@@ -241,8 +250,7 @@ For example, if the user `abc123` started a persistent session named `cylc` unde
 For more information on how to specify the target session, refer to [Specify Target Session with Cylc7 Suites](https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession).
 
 !!! tip
-    You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only be done once.<br>
-    After specifying the {{ model }} target persistent session the first time, to run {{ model }} you just need to make sure to have an active persistent session named like the specified {{ model }} target persistent session.
+    You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only be done once. Then, to run {{ model }}, you just need to ensure that you have an active persistent session named like the target one you specified above. If the persistent session is not active, simply [start one](#start-a-new-persistent-session).
 
 #### Terminate a persistent session
 !!! tip
@@ -257,7 +265,7 @@ persistent-sessions kill <persistent-session-uuid>
 
 ### Rose/Cylc/MOSRS setup
 
-To run {{ model }}, access to multiple softwares and the Met Office Science Repository Service (MOSRS) is needed.
+To run {{ model }}, access to multiple software and MOSRS authentication is needed.
 
 #### Cylc setup {: id="cylc"}
 
@@ -307,7 +315,7 @@ mosrs-auth
 Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
-For more information on {{ model }} configuration, check [{{model}}][model configurations] page.
+For more information on {{ model }}, refer to the [{{model}} configuration][model configurations] page.
 
 !!! info 
     Many of the steps that follow are to be repeated almost identically for the RAS and RNS. For this reason, details on these steps will be provided only within the RAS section below, whereas in the following RNS section they will only be linked for reference.
@@ -378,9 +386,7 @@ rosie help
 When a suite runs, its configuration files are copied on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>` and a symbolic link to this directory is also created in the `$USER`'s home directory under `~/cylc-run/<suite-ID>`.<br>
 {{ model }} suites comprise several tasks, such as checking out code repositories, compiling and building the different model components, running the model, etc. The workflow of these tasks is controlled by [_Cylc_](#cylc).
 
-
-
-To run the RAS run the following command from within the [suite directory](#suitedir):
+To run the RAS, execute the following command from within the [suite directory](#suitedir):
 ```
 rose suite-run
 ```
@@ -545,15 +551,15 @@ rose suite-run --reload
 
 #### RAS output files
     
-The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`. The ancillaries are divided for each nested region, with each of the region subdivided in directories named according to the nests names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
+The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`. The ancillaries are divided for each nested region, with each of the region subdivided in directories named according to the nests' names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 <!--
 TODO
 {: style="color:red"}
 <!-- There is no information before about nests (e.g., nest structure, what is the difference between nested region name and nest name, etc.) It would be good to add something in the suite description and link it here. -->
 
-In addition to the chosen nests, a subdirectory named according to the driving model data can be found within the `nested_region_name` directory.<br>
-The example above has one `nested_region_name` called `Lismore`, with a 2-level nest (2 nests) named `d1000` (outer nest) and `d0198` (inner nest), driven by ERA5 data.
-As a consequence, within the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/` the following folders will be present:
+In addition to these nests, a subdirectory named according to the driving model data can be found within the `nested_region_name` directory.<br>
+The 2-level (i.e., two nests) example above has one `nested_region_name` called `Lismore`. Driven by ERA5 data, the outer and inner nests are named `d1000` and `d0198`, respectively.<br>
+Thus, the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/` contains the following folders:
 - `Lismore/d1000`
 - `Lismore/d0198`
 - `Lismore/era5`
@@ -567,7 +573,7 @@ The modifications discussed in this section can change the way the RAS is run an
 In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the [suite directory](#suitedir), or by using the [_Rose_ GUI](#rosegui).
 
 !!! warning 
-    Unless you are a very expert user, directly modifying configuration files is usually discouraged to avoid incurring in errors.
+    Unless you are an experienced user, direct modification of configuration files is discouraged to avoid errors.
 
 ##### Rose GUI {: id="rosegui"}
 To open the [_Rose_](#rose) GUI, run the following command from within the [suite directory](#suitedir): 
@@ -591,24 +597,25 @@ TODO
 <!-- Change image with a RAS one -->
 
 ##### Change the region centre and name
-{{model}} is a regional model that can perform simulations for a specific region on Earth. 
+In {{model}}, it is possible to perform simulations for a specific region on Earth, by setting specific parameters for the region of interest.<br>
+In the {{ancillary_model}}, the following parameters can be set:
 
-In the RAS, each region can be specified through the following parameters:
+- `rg01_name`<br>
+  Name for the region of interest.
 
-- *region centre* &rarr; `_rg01_centre_` within the suite.<br>
-  Set of latitude/longitude coordinates defining the centre of the region.
-
-- *nested region name* &rarr; `_rg01_name_` within the suite<br>
-  Name for the nested region.
-
-In `{{ras_id}}` these prameters are set by default to the *Lismore Flood* example. 
-
+- `rg01_centre`<br>
+  Set of latitude/longitude coordinates defining the centre of the region of interest.
 <!--
 TODO
-{: style="color:red"}
-<!-- Can we add a link for the Lismore Flood example? Anything that makes it a bit clearer what that is. -->
+What about the extent of the region? -->
 
-To change these parameters, edit the `_rg01_name_` and `_rg01_centre_` fields in _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+!!! tip
+    In `{{ras_id}}` these parameters are set, by default, to the *Lismore Flood* example. 
+<!--
+TODO
+Can we add a link for the Lismore Flood example? Anything that makes it a bit clearer what that is. -->
+
+To change these parameters, edit the `rg01_name` and `rg01_centre` fields in _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
 For example, to run an {{ model }} suite for a region with centre (-12.4, 130.8) and name "Darwin":
 
@@ -631,7 +638,7 @@ TODO
 <!-- Add short description of what the RAS does -->
 
 #### Get and run RNS configuration
-Steps to get and run the RNS configuration, as well as monitoring the runs, are analogous to those listed above for the [RAS](#ras).<br>
+Steps to obtain and run the RNS configuration, as well as monitoring the runs, are analogous to those listed above for the [RAS](#ras).<br>
 The only difference is the `suite-ID` that, for the RNS is `{{ rns_id }}`.
 
 To get the RNS configuration, please follow the steps listed in [Get the RAS configuration](#get-the-ras-configuration), making sure you use the correct RNS `suite-ID` `{{ rns_id }}` when copying the suite.
@@ -652,7 +659,7 @@ TODO
 {: style="color:red"}
 <!-- Use the same names for `nested_region` `science_choice` and `nest_name` as the one used above for the RAS and make sure all of the are referenced in the RAS and there are clear instructions on how to modify them. There is no reference for how to change the `science_choice`. If it cannot be changed, I would call it in a different way. Add links -->
 
-Each of the `<nest_name>` directory has the following subdirectories:
+Each `<nest_name>` directory has the following subdirectories:
 
 - `ics` &rarr; initial conditions
 - `lbcs` &rarr; lateral boundary conditions
@@ -665,7 +672,7 @@ TODO
 
 The model output data for the `Lismore` `nested_region`, using a `RAL3P2` `science_choice` and `d0198` as a `nest_name`, will be stored in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um`.
 
-The RNS atmospheric output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
+{{regional}}'s atmosphere output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
 #### Edit the RNS configuration
 
