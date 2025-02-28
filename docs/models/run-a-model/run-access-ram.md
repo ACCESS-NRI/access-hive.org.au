@@ -94,6 +94,9 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     ```
     substituting `<name>` with the name given to your persistent session, and `<project>` with the project assigned to it.
 
+    !!! tip
+        This step should only be done once
+
 - **Rose/Cylc setup**<br>
     To get the required _Rose/Cylc_ setup, run:
     ```
