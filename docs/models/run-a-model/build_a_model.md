@@ -321,6 +321,10 @@ spack find mom5
   <terminal-line>mom5@git.access-esm1.5_2024.08.23=access-esm1.5</terminal-line>
 </terminal-window> 
 
+!!! warning
+    This will only work if the _Spack_ environment was previously [compiled](#compile-spack-environment-packages-optional).<br>
+    Alternatively, the original tag can be retrieved from the [_Spack_ environment file](#spack-environment-folder).
+
 To mark `mom5` as a development package and copy the `mom5@git.access-esm1.5_2024.08.23=access-esm1.5` version as a base copy, we can run:
 
 ```
