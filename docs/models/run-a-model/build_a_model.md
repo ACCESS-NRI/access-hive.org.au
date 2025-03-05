@@ -112,6 +112,11 @@ spack concretize -f --reuse-deps
 !!! warning
     This command might take a few minutes to complete
 
+    If the command above fails, try running the following command instead:
+    ```
+    spack concretize -f --fresh
+    ```
+
 <terminal-window lineDelay=0>
   <terminal-line data="input" lineDelay=200 directory="[mom5_dev]" class="spack">
     spack concretize -f --reuse-deps
@@ -499,6 +504,11 @@ spack install
 ```
 !!! warning
     Although this time the `spack install` command will only build the development package, it might still take a long time to complete, depending on the specific package.
+
+    If the concretization step fails, try running the following command instead:
+    ```
+    spack concretize -f --fresh
+    ```
 
 <terminal-window lineDelay=0>
   <terminal-line data="input" lineDelay=200 directory="[mom5_dev]" class="spack">
