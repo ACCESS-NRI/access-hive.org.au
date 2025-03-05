@@ -300,76 +300,194 @@ spack install
 When you develop a package within a _Spack_ environment, _Spack_ needs to know that the desired package is marked as "in development", and be able to access its source code.<br>
 This is done through the [`spack develop`](https://spack.readthedocs.io/en/latest/command_index.html#spack-develop) command.
 
-### Mark package as a development package
-
-There are, in general, two cases that influence the command to run to mark a package as "in development", depending on the state of the package's source code:
-
-1. [The new source code does not exist](#code-does-not-exist)
-2. [The new source code already exists](#code-exists)
-
-#### The new source does not exist {: id='code-does-not-exist'}
-If the source code does not yet exist, _Spack_ can create it as a copy of the current source code version, that can be later modified.
-
-In this case we need to tell _Spack_ which package tag (version) to copy as a starting base for the new source code.
-
-For example, to retrieve the tag for the original `mom5` package used in the `mom5_dev` _Spack_ environment, we can run:
+To mark a package as a development package, the general command to run is:
 ```
-spack find mom5
-```
-<terminal-window>
-  <terminal-line data="input" directory="[mom5_dev]" class="spack">spack find mom5</terminal-line>
-  <terminal-line>mom5@git.access-esm1.5_2024.08.23=access-esm1.5</terminal-line>
-</terminal-window> 
-
-!!! warning
-    This will only work if the _Spack_ environment was previously [compiled](#compile-spack-environment-packages-optional).<br>
-    Alternatively, the original tag can be retrieved from the [_Spack_ environment file](#spack-environment-folder).
-
-To mark `mom5` as a development package and copy the `mom5@git.access-esm1.5_2024.08.23=access-esm1.5` version as a base copy, we can run:
-
-```
-spack develop mom5@git.access-esm1.5_2024.08.23=access-esm1.5
+spack develop <package_specifier>
 ```
 !!! tip
     This command should not display any output
 
-This adds the following lines at the end of the `spack.yaml` file inside the [environment's folder](#spack-environment-folder):
+When specifying a _Spack_ development package, there are 3 portions that can be set within the `package_specifier`:
+
+1. [package name](#package-name) (required)
+2. [package source code](#package-source-code) (required)
+3. [package _Spack_ version](#spack-version) (optional)
+
+The `spack develop` command adds the following lines at the end of the `spack.yaml` file inside the [environment's folder](#spack-environment-folder):
 ```
 develop:
-    mom5:
-      spec: mom5@git.access-esm1.5_2024.08.23=access-esm1.5
+    <package_name>:
+      spec: <package_specifier>
 ```
-The source code is automatically copied inside the [environment's folder](#spack-environment-folder).
+
+!!! info
+    In the case of a development package with a [local source code](#local-package), the following line is also added:
+    ```
+    path: <source_path>
+    ```
 
 !!! warning
-    As opposed to the case where the [code already exists](#code-exists), there is no `path` specification inside the `develop` portion of the `spack.yaml` environment configuration file.<br>
-    This means that _Spack_ automatically expects to find the source code inside the [environment's folder](#spack-environment-folder).
+    After setting a development package, it is important to also [fix any inconsistencies within the `spack.yaml` file](#fix-inconsistencies-within-the-environment-file).
 
-#### The new source code already exists {: id='code-exists'}
-If the new source code for the development package already exists in the filesystem (this also includes cases when the new source code is in a `git` repo that can be cloned), to mark a package as "in development" we will need two things:
+### Specifying the package name {: id='package-name'}
+The package name identifies the package to be set for development.<br>
+For example, in the case of _mom5_, the package name should be exactly `mom5`.
 
-- A name for the package's new tag
-- The path of the new source code
+### Specifying the package source code {: id='package-source-code'}
+In general, a package source code can be:
 
-For example, to mark `mom5` as a development package using the `development_version` tag and with the new source code in the `/path/to/mom5/new/source/code` folder, we can run:
+- [cloned from a remote _git_ repository](#remote-package)
+- [linked to from a local folder](#local-package)
+
+#### Specify the source code cloned from a _git_ repository {: id='remote-package'}
+For remote packages, the source code can be specified as a _git_ reference in the form:
 ```
-spack develop --path /path/to/mom5/new/source/code mom5@development_version
+<package_name>@git.<git_reference>
 ```
 !!! tip
-    This command should not display any output
+    The `git_reference` can be either a branch, tag or commit hash.
 
-This adds the following lines at the end of the `spack.yaml` file inside the [environment's folder](#spack-environment-folder):
+For example, for a _mom5_ package with source code residing in the `development` branch, the package specifier would be `mom5@git.development`.<br>
+I this case, the `development` branch of the _mom5_ repository would be automatically cloned and used as source code for the _mom5_ development package, that can be later modified.
+
+!!! info
+    The source code is automatically cloned in the [environment's folder](#spack-environment-folder).<br><br>
+    The repository URL is set within the package definition file `package.py`.<br>
+    In the case of _mom5_, the package definition file is in `spack-packages/packages/mom5/package.py`.<br>
+    For more information about _Spack_ packages definition, please refer to [Creating new spack packages](https://spack.readthedocs.io/en/latest/packaging_guide.html#creating-new-packages).
+
+#### Specify the source code from a local folder {: id='local-package'}
+To set a local path as the source code of a _Spack_ development package, the path needs to be specified directly within the `spack develop` command, by adding the `--path <path_to_source_code>` option.
+In this case, no _git_ reference should be provided.<br>
+For example, if the _mom5_ development package's source code resides in `/path/to/mom5/new/source/code`, the command to run would be:
 ```
-develop:
-    mom5:
-      spec: mom5@=development_version
-      path: /path/to/mom5/new/source/code
+spack develop --path /path/to/mom5/new/source/code mom5
 ```
+
+Optionally, and usually recommended, a [_Spack_ version](#spack-version-local-package) can be also specified.
 
 !!! warning
     Care needs to be taken when multiple _Spack_ development environments point to the same source code location. If these environments require different independent changes of the source code, the user needs to make sure to sync the source code version (e.g., using different `git` branches for the different versions of the source code) with the desired one when switching between development environments.<br>
     This would still prevent building both environments simultaneously.
 
+### Specify the package version {: id='spack-version'}
+A version specifier can optionally be set, assiging the specified _Spack_ version to the development package.<br>
+The syntax for the version specifier varies depending whether the package source code is [remote](#spack-version-remote-package) or [local](#spack-version-local-package).
+
+#### Specify the package version for a remote package {: id='spack-version-remote-package'}
+If the development package's source code is to be cloned from _git_, the _Spack_ version can be set by appending `=<package_version>` to the package specifier.<br>
+For example, to set the `access-om2` _Spack_ version to the _mom5_ development package with its source code cloned from the `development` branch, we can run:
+```
+spack develop mom5@git.development=access-om2
+```
+
+#### Specify the package version for a local package {: id='spack-version-local-package'}
+When the development package's source code is local, no _git_ reference is provided.<br>
+In this case a _Spack_ version can be added by appending `@<spack_version>` to the package specifier.
+
+For example, to assign the `access-om2` _Spack_ version to the _mom5_ development package with its source code residing in the `/path/to/mom5/new/source/code` folder, we can run:
+```
+spack develop --path /path/to/mom5/new/source/code mom5@access-om2
+```
+!!! tip
+    When in doubt about which versions to assign to a specific package, a useful command to retrieve the existing versions of a package is:
+    ```
+    spack versions <package_name>
+    ```
+
+!!! warning
+    _Spack_ always needs to associate a _Spack_ version with a development package. This means that, if no _Spack_ version is specified by the user:
+    
+    - If the package has a _git_ reference, the _Spack_ version will be taken from the closest valid _git_ tag among ancestors of the _git_ reference
+    - If the package source code is local, an error will be thrown
+
+## Fix inconsistencies within the environment file
+At times, setting development packages might cause inconsistencies within the `spack.yaml` environment file.<br>
+This occurs whenever an environment contains a required package with the same name as the development package.
+
+For example, the `mom5_dev` environment `spack.yaml` file contains the following lines:
+```yaml
+```yaml
+spack:
+  specs:
+    - access-esm1p5@git.2024.12.0
+  packages:
+    # other package ...
+    # other package ...
+    mom5:
+      require:
+      - '@git.access-esm1.5_2024.08.23=access-esm1.5'
+    # other package ...
+    # other package ...
+  # other specifications ...
+  # other specifications ...
+  modules:
+    default:
+      tcl:
+        include:
+          # other package ...
+          # other package ...
+          mom5
+          # other package ...
+          # other package ...
+        projections:
+          # other package ...
+          # other package ...
+          mom5: '{name}/access-esm1.5_2024.08.23-{hash:7}'
+          # other package ...
+          # other package ...
+  # other specifications ...
+  # other specifications ...
+```
+This means that the `mom5_dev` environment depends on `mom5` version `access-esm1.5`, coming from the _git_ reference `access-esm1.5_2024.08.23`, and the module produced after compiling the `mom5` package can be loaded with `module load mom5/access-esm1.5_2024.08.23-<hash_of_the_compiled_package>`.
+
+If `mom5` is set as a development package, the `spack.yaml` file needs to be edited to:
+
+- comment out any `spack.packages` entry with the same name as the development package
+- change the `modules.default.tcl.projection` for the development package.
+
+A simple way to manually edit the `spack.yaml` file is to run:
+```
+spack config edit
+```
+
+For example, after setting `mom5` as a development package, the final `spack.yaml` file should be modified to look similar to the following:
+```yaml
+spack:
+  specs:
+    - access-esm1p5@git.2024.12.0
+  packages:
+    # other package ...
+    # other package ...
+    # mom5:
+    #   require:
+    #   - '@git.access-esm1.5_2024.08.23=access-esm1.5'
+    # other package ...
+    # other package ...
+  # other specifications ...
+  # other specifications ...
+  modules:
+    default:
+      tcl:
+        include:
+          # other package ...
+          # other package ...
+          mom5
+          # other package ...
+          # other package ...
+        projections:
+          # other package ...
+          # other package ...
+          mom5: '{name}/<custom_name_for_development_package_module>-{hash:7}'
+          # other package ...
+          # other package ...
+  # other specifications ...
+  # other specifications ...
+  develop:
+    mom5:
+      spec: <package_specifier>
+      path: /path/to/mom5/source/code # Only if a local source code was specified
+```
 
 ## Compile modified Spack environment packages
 
