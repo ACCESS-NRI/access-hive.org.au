@@ -5,8 +5,9 @@
 {% set esm1_5_build_config = "https://github.com/ACCESS-NRI/ACCESS-ESM1.5" %}
 {% set spack_setup = "/getting_started/spack" %}
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
+[spack-configuration-scopes-documentation]: https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes
 
-# Modify an ACCESS model's source code
+# Build or modify an ACCESS model's source code
 
 ## About
 
@@ -639,9 +640,13 @@ spack install
     The _Spack_ environment will need to be re-concretized only if further changes occur in the `spack.yaml` file.
 
 ## Output directory for compiled packages
+
+!!! tip
+    For the _Spack_ instance obtained through the [Spack setup instructions]({{spack_setup}}), `$spack`(referred to as `$(prefix)` in [_Spack_ configuration scopes documentation][spack-configuration-scopes-documentation]) corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
+
 For the Spack instance obtained through the [Spack setup instructions]({{spack_setup}}), all compiled packages will be placed in directories having the following format: `<install_tree.root>/<architecture>/<compiler.name>-<compiler.version>/<name>-<version>-<hash>`.
 
-`<install_tree.root>` depends on the [`install_tree.root`](https://spack.readthedocs.io/en/latest/config_yaml.html#install-tree-root) configuration field. _Spack_ reads this configuration field from files in several directories, following [Spack's configuration scopes](https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes).
+`<install_tree.root>` depends on the [`install_tree.root`](https://spack.readthedocs.io/en/latest/config_yaml.html#install-tree-root) configuration field. _Spack_ reads this configuration field from files in several directories, following [Spack's configuration scopes][spack-configuration-scopes-documentation].
 
 !!! warning
     For instances of _Spack_ on _Gadi_ you should ignore the **system** scope.
@@ -652,8 +657,6 @@ config:
     install_tree:
       root: $spack/../restricted/ukmo/release
 ```
-!!! tip
-    For the _Spack_ instance obtained through the [Spack setup instructions]({{spack_setup}}), `$spack` (referred to as `$(prefix)` in _Spack_ configuration scopes documentation above) corresponds to the `/g/data/$PROJECT/$USER/spack/0.22/spack` directory.
 
 This means the packages built in this example can be found in `/g/data/$PROJECT/$USER/spack/0.22/spack/../restricted/ukmo/release/<architecture>/<compiler.name>-<compiler.version>/<name>-<version>-<hash>`.
 
