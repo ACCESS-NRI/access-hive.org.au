@@ -379,10 +379,10 @@ With the default configuration settings, the sea ice component of {{ model }} wi
 
 To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
 
-For example, to get the `preindustrial+concentrations` configuration and set its initial condition to the  `/path/to/restart/file` restart file, run:
+For example, to get the `preindustrial+concentrations` configuration and set its initial condition to the  `/g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/restart` restart file, run:
 
 ```
-payu clone -b expt -B release-preindustrial+concentrations https://github.com/ACCESS-NRI/access-esm1.5-configs preindustrial+concentrations --restart /path/to/restart/file
+payu clone -b expt -B release-preindustrial+concentrations https://github.com/ACCESS-NRI/access-esm1.5-configs preindustrial+concentrations --restart /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/restart
 ```
 
 !!! warning
