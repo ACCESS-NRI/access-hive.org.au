@@ -83,8 +83,12 @@ To clone this branch to a location on _Gadi_, run:
     cd ~/access-esm1.5
     payu clone -b expt -B release-preindustrial+concentrations {{ github_configs }} preindustrial+concentrations
 
+!!! tip
+    If you want to restart your experiment from a specific restart point, please refer to [Start the run from a specific restart file](#specific-restart).
+
 In the example above the `payu clone` command clones the concentration driven pre-industrial configuration (`-B release-preindustrial+concentrations`) 
 to a new experiment branch (`-b expt`) to a directory named `preindustrial+concentrations`.
+
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -307,7 +311,7 @@ The `config.yaml` file located in the _control_ directory is the _Master Configu
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Run lengths {: id="runtime"}
+### Change run length {: id="runtime"}
 
 One of the most common changes is to adjust the duration of the model run.<br> {{model}} simulations are split into smaller _run lengths_, each with the duration specified by the `runtime` settings in the `config.yaml` file:
 
@@ -322,7 +326,7 @@ The length of an {{model}} run is controlled by the `runtime` settings in the `c
 At the end of each run length, each model component saves its state into a _restart file_, allowing the simulation to be continued in subsequent runs.
 
 !!! warning
-    The _run length_ (controlled by `runtime`) should be left at 1 year for {{model}} experiments in order to avoid errors. Shorter simulations can be useful when setting up and debugging new experiments, however they require additional configuration changes. See the section [Running for less than one year](#shorter-runs) for details.
+    The _run length_ (controlled by `runtime`) should be left at 1 year for {{model}} experiments in order to avoid errors. Shorter simulations can be useful when setting up and debugging new experiments, however they require additional configuration changes. See the section [Run for less than one year](#shorter-runs) for details.
 
 To run {{ model }} configuration for multiple subsequent _run lengths_ (each with duration `runtime` in the `config.yaml` file), use the option `-n` with the `payu run` command:
 
@@ -332,14 +336,14 @@ payu run -f -n <number-of-runs>
 
 This will run the configuration `number-of-runs` times, resulting in a _total experiment length_ of `runtime * number-of-runs`. The runs will be split across a number of consecutive [PBS jobs][PBS job] submitted to the queue, as controlled by the `runspersub` value specified in the config.yaml file.
     
-### Understand `runtime`, `runspersub`, and `-n` parameters {: id="multiple-runs"}
+#### Understand _runtime_, _runspersub_, and _-n_ parameters {: id="multiple-runs"}
 
-It is possible to have more than one model run per queue submit. With the correct use of [`runtime`](#runtime), `runspersub` and `-n` parameters, you can have full control of your experiment.<br>
+It is possible to have more than one model run per queue submit. With the correct use of [`runtime`](#runtime), `runspersub`, `-n` and `walltime` parameters, you can have full control of your experiment.<br>
 
 - `runtime` defines the _run length_.
 - `runspersub` defines the maximum number of runs for every [PBS job] submission.
-- `walltime` defines the maximum time of every [PBS job] submission.
 - `-n` sets the number of runs to be performed.
+- `walltime` defines the maximum time of every [PBS job] submission.
 
 Now some practical examples:
 
@@ -358,7 +362,8 @@ Now some practical examples:
     This will submit subsequent jobs for the following years: 1 to 3, 4 to 6, and 7, which is a total of 3 PBS jobs.
 !!! tip
     The `walltime` must be set to be long enough that the PBS job can complete. The model usually runs a single year in 90 minutes or less, but the `walltime` for a single model run is set to `2:30:00` out of an abundance of caution to make sure the model has time to run when there are occasional slower runs for unpredictable reasons. When setting `runspersub > 1` the `walltime` doesn't need to be a simple multiple of `2:30:00` because it is highly unlikely that there will be multiple anomalously slow runs per submit.
-### Running for less than one year {: id="shorter-runs"}
+
+#### Run for less than one year {: id="shorter-runs"}
 When debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes. In order to run the model for a single month, the `runtime` can be changed to
 
 ```yml
@@ -369,6 +374,19 @@ When debugging changes to a model, it is common to reduce the run length to mini
 ```
 
 With the default configuration settings, the sea ice component of {{ model }} will produce restart files only at the end of each year. If valid restart files are required when running shorter simulations, the sea ice model configuration should be modified so that restart files are produced at monthly frequencies. To do this, change the `dumpfreq = 'y'` setting to `dumpfreq = 'm'` in the `cice_in.nml` configuration file located in the `ice` subdirectory of the _control_ directory.
+
+### Start the run from a specific restart file {: id='specific-restart'}
+
+To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
+
+For example, to get the `preindustrial+concentrations` configuration and set its initial condition to the  `/path/to/restart/file` restart file, run:
+
+```
+payu clone -b expt -B release-preindustrial+concentrations https://github.com/ACCESS-NRI/access-esm1.5-configs preindustrial+concentrations --restart /path/to/restart/file
+```
+
+!!! warning
+    In some cases, experiments with initial conditions set this way may require additional manual adjustments to run properly.
 
 ### Modify PBS resources
 
