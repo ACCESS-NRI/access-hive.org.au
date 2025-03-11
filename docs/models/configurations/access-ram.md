@@ -52,8 +52,8 @@ For more information on how to change the configuration options, refer to [Edit 
 ### Model components 
 
 - **Atmosphere:** [UM13.5](/models/model_components/atmosphere/#unified-model-um)<br>
-   Nests > 4km: [GAL9 science configuration](https://doi.org/10.5194/gmd-12-1909-2019), 70 vertical levels.(The paper referenced mentions GAL 7, not 9) ???<br>
-   Nests <= 4km: [RAL3.2 science configuration](10.0.20.74/gmd-2024-201), 90 vertical levels.(The link to the paper is broken)<br>
+   Nests > 4km: [GAL9 science configuration](https://doi.org/10.5194/gmd-12-1909-2019), 70 vertical levels.<br>
+   Nests <= 4km: [RAL3.2 science configuration](https://doi.org/10.5194/gmd-2024-201), 90 vertical levels.<br>
    Spatial resolution depending on the [nesting configuration](#nesting-configuration).
 - **Land:** [Jules7.5](/models/model_components/land/#jules)<br>
    Nests > 4km: [GAL9 science configuration](https://doi.org/10.5194/gmd-12-1909-2019), 70 vertical levels.<br>
