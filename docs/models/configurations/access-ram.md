@@ -10,15 +10,24 @@ ACCESS-RAM requires both initial conditions and lateral boundary (_driving_) con
 ### Nesting
 _Nesting_ is the process of embedding a smaller, finer resolution region (often referred to as _nest_ or _nested region_) within a larger, coarser-resolution domain to improve accuracy for localised weather events. This approach enables atmospheric variables such as temperature, pressure, and wind speed from the larger domain to be used as lateral boundary conditions for the nested region, allowing more accurate simulations within the nest.
 
-## ACCESS-RAM3 
-By default, ACCESS-RAM3 is configured to obtain both initial conditions and lateral boundary conditions from the [ECMWF Reanalysis v5 (ERA5)](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) dataset.
+## ACCESS-RAM3
+Similar to the the UKMO regional nesting suite, ACCESS-RAM3 is configured to derive its initial and lateral boundary conditions from the [ECMWF Reanalysis v5 (ERA5)](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) dataset.<br>
+However, for its land-surface initial conditions, ACCESS-RAM3 offers flexibility by allowing the use of alternative datasets.
 
-### Initial conditions options
-- [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) (default)
-- [ERA5-Land](https://www.ecmwf.int/en/era5-land) 
-- [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)
+### Land-surface initial conditions options
+- [ERA5-Land](https://www.ecmwf.int/en/era5-land) (default)
+- [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5)
+
+!!! info
+    [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf) is also available as an option for land-surface initial conditions. However, setting up a fully functional experiment with this option requires additional manual adjustments to the nesting configuration.<br>
+    For detailed instructions on configuring an experiment using BARRA-R2 as the land-surface initial condition, refer to [LINK NEEDS TO BE PROVIDED](/failing/link/picked/by/link-checker).
 
 ### Nesting configuration
+
+!!! tip
+    The structure, horizontal resolution, and placement of nests listed below are the default settings for the associated land-surface initial condition, but they can be fully customised.<br>
+    For details on how to modify these configuration options, refer to [Edit the RAS configuration](/models/run-a-model/run-access-ram/#edit-the-ras-configuration).
+
 <div class="tabLabels" label="ACCESS-RAM3-init-data">
     <button id="era5">ERA5</button>
     <button id="era5-land">ERA5-Land</button>
@@ -26,28 +35,23 @@ By default, ACCESS-RAM3 is configured to obtain both initial conditions and late
 </div>
 <div tabcontentfor="era5" markdown>
 
-- Domain: N96 (1.875° x 1.25°, ≈200km) horizontal resolution 
 - 2-level nest:
     - Outer nest: 0.25° x 0.25° (≈25km) horizontal resolution
     - Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
 </div>
 <div tabcontentfor="era5-land" markdown>
 
-- Domain: N96 (1.875° x 1.25°, ≈200km) horizontal resolution 
 - 2-level nest:
     - Outer nest: 0.1° x 0.1° (≈10km) horizontal resolution
     - Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
 </div>
 <div tabcontentfor="barra-r2" markdown>
 
-- Domain: N96 (1.875° x 1.25°, ≈200km) horizontal resolution 
-- 2-level nest:
-    - Outer nest: 0.11° x 0.11° (≈10km) horizontal resolution
-    - Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
-</div>
+!!! info 
+    BARRA-R2 nesting configuration settings are not provided as a default.<br>
+    For detailed instructions on configuring an experiment using BARRA-R2 as the land-surface initial condition, refer to [LINK NEEDS TO BE PROVIDED](/failing/link/picked/by/link-checker).
 
-The structure, horizontal resolution, and placement of nests can all be fully customised.<br>
-For more information on how to change the configuration options, refer to [Edit the RAS configuration](/models/run-a-model/run-access-ram/#edit-the-ras-configuration) 
+</div>
 
 ### Model components 
 
