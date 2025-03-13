@@ -70,6 +70,9 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
     To run {{ model }}, start an [Australian Research Environment (ARE) VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) session.<br>
     If you are not familiar with ARE, check out the [Getting Started on ARE](/getting_started/are) section.
 
+!!! warning
+    Please note that the waiting time for some of the prerequisites mentioned above could take 2-3 weeks.
+
 ## Quick Start guide
 
 The following *Quick Start* guide is aimed at experienced users wanting to run {{ model }}. For more detailed instructions, please refer to the [Detailed guide](#detailed-guide).
