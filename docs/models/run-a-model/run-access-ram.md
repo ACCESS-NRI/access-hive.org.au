@@ -79,26 +79,26 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 
 ### Required setup for running {{ model }}
 
-- **Start a new [persistent session](https://opus.nci.org.au/display/Help/Persistent+Sessions)**<br> 
+- **Start a new [_persistent session_](https://opus.nci.org.au/display/Help/Persistent+Sessions)**<br> 
     using a *Gadi* login node or an ARE terminal instance:
     ```
     persistent-sessions start <name>
     ```
-    
-    This will use your default project. Use option `-p` to assign a different project to the persistent session:
-    ```
-    persistent-sessions start -p <project> <name>
-    ```
+    This will use your default project.
 
-- **Assign the persistent session to Rose/Cylc workflows**<br>
+    For further instructions on starting a _persistent session_, refer to the [detailed guide](#start-a-new-persistent-session).
+
+- **Assign the _persistent session_ to Rose/Cylc workflows**<br>
     Run the following command:
     ```
     echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
     ```
-    substituting `<name>` with the name given to your persistent session, and `<project>` with the project assigned to it.
+    substituting `<name>` with the name given to your _persistent session_, and `<project>` with the project assigned to it.
 
     !!! tip
         This step should only be done once
+
+    For further instructions on assigning the target _persistent session_, refer to the [detailed guide](#specify-target-persistent-session).
 
 - **Rose/Cylc setup**<br>
     To get the required _Rose/Cylc_ setup, run:
@@ -107,23 +107,23 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     module load cylc7
     ```
 
+    For further instructions on getting the _Rose/Cylc_ setup, refer to the [detailed guide](#rosecylcmosrs-setup).
+
 - **MOSRS authentication**<br>
     Authenticate using your MOSRS credentials:
     ```
     mosrs-auth
     ```
 
+    For further instructions on MOSRS authentication, refer to the [detailed guide](#mosrs-authentication).
+
 ### Regional Ancillary Suite (RAS)
 1. **Copy the RAS from UKMO**<br>
-    Local-only copy: 
     ```
     rosie checkout {{ ras_id }}
     ```
-    
-    New copy, both local and remote: 
-    ```
-    rosie copy {{ ras_id }}
-    ```
+
+    For further instructions on getting the RAS configuration, refer to the [detailed guide](#get-the-ras-configuration).
 
 2. **Run the RAS**<br>
     From within the RAS directory:
@@ -131,17 +131,15 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rose suite-run
     ```
 
+    For further instructions on running the RAS configuration, refer to the [detailed guide](#run-the-suite).
+
 ### Regional Nesting Suite (RNS)
 1. **Copy the RNS from UKMO**<br>
-    Local-only copy: 
     ```
     rosie checkout {{ rns_id }}
     ```
 
-    New copy, both local and remote: 
-    ```
-    rosie copy {{ rns_id }}
-    ```
+    For further instructions on getting the RNS configuration, refer to the [detailed guide](#get-and-run-rns-configuration).
 
 2. **Run the RNS**<br>
     From within the RNS directory:
@@ -149,8 +147,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rose suite-run
     ```
 
-!!! tip
-    You've completed all steps required to run {{model}}. For more comprehensive instructions, refer to the [Detailed guide](#detailed-guide).
+    For further instructions on getting the RNS configuration, refer to the [detailed guide](#get-and-run-rns-configuration).
 
 ---
 
@@ -158,7 +155,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 
 ### Set up an ARE VDI Desktop (optional)
 !!! info 
-    If you want to skip this step and run {{ model }} from _Gadi_ login node instead, refer directly to the instructions on how to [Set up persistent session](#set-up-persistent-session).
+    If you want to skip this step and run {{ model }} from _Gadi_ login node instead, refer directly to the instructions on how to [Set up _persistent session_](#set-up-persistent-session).
 
 #### Launch ARE VDI Session
 Go to the [ARE VDI](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) page and launch a session with the following entries:
@@ -192,25 +189,25 @@ To open the terminal, click on the black terminal icon at the top of the window.
 
 ![Open ARE VDI terminal example](/assets/run_access_cm/open_are_vdi_terminal.gif){: class="example-img" loading="lazy"}
 
-### Set up persistent session 
-To support the use of long-running processes, such as ACCESS model runs, NCI provides a service on _Gadi_ called [persistent sessions](https://opus.nci.org.au/display/Help/Persistent+Sessions).
+### Set up _persistent session_ 
+To support the use of long-running processes, such as ACCESS model runs, NCI provides a service on _Gadi_ called [_persistent sessions_](https://opus.nci.org.au/display/Help/Persistent+Sessions).
 
-To run {{ model }}, you need to start a persistent session and set it as the target session for the model run.
+To run {{ model }}, you need to start a _persistent session_ and set it as the target session for the model run.
 
-#### Start a new persistent session
-To start a new persistent session on _Gadi_, using either a login node or an ARE terminal instance, run the following command:
+#### Start a new _persistent session_
+To start a new _persistent session_ on _Gadi_, using either a login node or an ARE terminal instance, run the following command:
 ```
 persistent-sessions start <name>
 ```
 
-This will start a persistent session with the given `name` that runs under your [default project](/getting_started/set_up_nci_account#change-default-project-on-gadi).<br>
-If you want to assign a different project to the persistent session, use the option `-p`:
+This will start a _persistent session_ with the given `name` that runs under your [default project](/getting_started/set_up_nci_account#change-default-project-on-gadi).<br>
+If you want to assign a different project to the _persistent session_, use the option `-p`:
 ```
 persistent-sessions start -p <project> <name>
 ```
 
 !!! tip
-    While the project assigned to a persistent session does not have to be the same as the project used to run the {{ model }} configuration, it does need to have allocated _Service Units (SU)_.<br>
+    While the project assigned to a _persistent session_ does not have to be the same as the project used to run the {{ model }} configuration, it does need to have allocated _Service Units (SU)_.<br>
     For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 <terminal-window data="input">
@@ -219,7 +216,7 @@ persistent-sessions start -p <project> <name>
     <terminal-line data="output">&emsp;ssh &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</terminal-line>
 </terminal-window>
 
-To list all active persistent sessions run:
+To list all active _persistent sessions_ run:
 ```
 persistent-sessions list
 ```
@@ -231,20 +228,20 @@ persistent-sessions list
 </terminal-window>
 
 
-The label of a newly-created persistent session has the following format: <br>
+The label of a newly-created _persistent session_ has the following format: <br>
 `<name>.<$USER>.<project>.ps.gadi.nci.org.au`.
 
-#### Specify target persistent session
+#### Specify target _persistent session_
 
-After starting the persistent session, it is essential to assign it to the {{ model }} run.<br>
-The easiest way to create a file `~/.persistent-sessions/cylc-session` that contains the target of the persistent session.<br>
-You can do it manually, or by running the following command (by substituting `<name>` with the name given to the persistent session, and `<project>` with the project assigned to it):
+After starting the _persistent session_, it is essential to assign it to the {{ model }} run.<br>
+The easiest way to create a file `~/.persistent-sessions/cylc-session` that contains the target of the _persistent session_.<br>
+You can do it manually, or by running the following command (by substituting `<name>` with the name given to the _persistent session_, and `<project>` with the project assigned to it):
 
 ```
 echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
 ```
 
-For example, if the user `abc123` started a persistent session named `cylc` under the project `xy00`, the command will be:
+For example, if the user `abc123` started a _persistent session_ named `cylc` under the project `xy00`, the command will be:
 
 <terminal-window data="input">
     <terminal-line>echo "cylc.abc123.xy00.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
@@ -256,18 +253,18 @@ For example, if the user `abc123` started a persistent session named `cylc` unde
 For more information on how to specify the target session, refer to [Specify Target Session with Cylc7 Suites](https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites#RunCylc7Suites-SpecifyTargetSession).
 
 !!! tip
-    You can simultaneously submit multiple {{ model }} runs using the same persistent session without needing to start a new one. Hence, the process of specifying the target persistent session for {{ model }} should only be done once. Then, to run {{ model }}, you just need to ensure that you have an active persistent session named like the target one you specified above. If the persistent session is not active, simply [start one](#start-a-new-persistent-session).
+    You can simultaneously submit multiple {{ model }} runs using the same _persistent session_ without needing to start a new one. Hence, the process of specifying the target _persistent session_ for {{ model }} should only be done once. Then, to run {{ model }}, you just need to ensure that you have an active _persistent session_ named like the target one you specified above. If the _persistent session_ is not active, simply [start one](#start-a-new-persistent-session).
 
-#### Terminate a persistent session
+#### Terminate a _persistent session_
 !!! tip
-    Logging out of a *Gadi* login node or an ARE terminal instance will not affect your persistent session. 
+    Logging out of a *Gadi* login node or an ARE terminal instance will not affect your _persistent session_. 
 
-To stop a persistent session, run:
+To stop a _persistent session_, run:
 ```
 persistent-sessions kill <persistent-session-uuid>
 ```
 !!! warning
-    When you terminate a persistent session, any model running on that session will stop. Therefore, you should check whether you have any active model runs before terminating a persistent session.
+    When you terminate a _persistent session_, any model running on that session will stop. Therefore, you should check whether you have any active model runs before terminating a _persistent session_.
 
 ### Rose/Cylc/MOSRS setup
 
@@ -292,8 +289,8 @@ module load cylc7
 </terminal-window>
 
 !!! warning
-    It is recommended not to specify any version when loading _Cylc_, as versions earlier than `23.09` do not support the persistent sessions workflow.<br>
-    Also, before loading the _Cylc_ module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up persistent session](#set-up-persistent-session).
+    It is recommended not to specify any version when loading _Cylc_, as versions earlier than `23.09` do not support the _persistent sessions_ workflow.<br>
+    Also, before loading the _Cylc_ module, make sure to have started a _persistent session_ and assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up _persistent session_](#set-up-persistent-session).
 
 #### Rose setup {: id="rose"}
 [Rose](http://metomi.github.io/rose/doc/html/index.html) is a toolkit that can be used to view, edit, or run an ACCESS modelling suite.
