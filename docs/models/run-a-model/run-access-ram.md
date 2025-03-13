@@ -1,4 +1,4 @@
-{% set model = "ACCESS-RAM3" %}
+{% set model = "ACCESS-rAM3" %}
 {% set ancillary_model = "ACCESS-RAS" %}
 {% set regional_model = "ACCESS-RNS" %}
 {% set ras_id = "u-dg767" %}
@@ -13,7 +13,7 @@
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} {{ ancillary_model }} configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} {{ regional_model }} configuration]({{mosrs_config_rns}}){: class="text-card"}
 
-# Run ACCESS-RAM3
+# Run {{ model }}
 
 !!! info
     {{ model }} is a place-holder name until the final release name is chosen.
@@ -21,7 +21,7 @@
 ## About
 
 {{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) regional nesting suite for high-resolution regional atmosphere modelling.<br>
-A description of the model and its components is available in the [ACCESS-RAM3 overview][model configurations].
+A description of the model and its components is available in the [{{ model }} overview][model configurations].
 
 {{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 

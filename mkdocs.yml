@@ -106,7 +106,7 @@ nav:
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-ESM: models/configurations/access-esm.md
       - ACCESS-OM: models/configurations/access-om.md
-      - ACCESS-RAM: models/configurations/access-ram.md
+      - ACCESS-rAM: models/configurations/access-ram.md
     - Model Components: 
       - Overview: models/model_components/index.md
       - Atmosphere: models/model_components/atmosphere.md
