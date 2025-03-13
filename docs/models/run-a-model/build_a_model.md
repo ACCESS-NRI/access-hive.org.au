@@ -313,7 +313,7 @@ spack develop <package_specifier>
 !!! tip
     This command should not display any output
 
-When specifying a _Spack_ development package, there are 3 portions that can be set within the `package_specifier`:
+When specifying a _Spack_ development package, there are 3 elements that can be set within the `package_specifier`:
 
 1. [package name](#package-name) (required)
 2. [package source code](#package-source-code) (required)
@@ -335,11 +335,11 @@ develop:
 !!! warning
     After setting a development package, it is important to also [fix any inconsistencies within the `spack.yaml` file](#fix-inconsistencies-within-the-environment-file).
 
-### Specifying the package name {: id='package-name'}
+### Specify the package name element {: id='package-name'}
 The package name identifies the package to be set for development.<br>
 For example, in the case of _mom5_, the package name should be exactly `mom5`.
 
-### Specifying the package source code {: id='package-source-code'}
+### Specify the package source code element {: id='package-source-code'}
 In general, a package source code can be:
 
 - [cloned from a remote _git_ repository](#remote-package)
@@ -376,27 +376,27 @@ Optionally, and usually recommended, a [_Spack_ version](#spack-version-local-pa
     Care needs to be taken when multiple _Spack_ development environments point to the same source code location. If these environments require different independent changes of the source code, the user needs to make sure to sync the source code version (e.g., using different `git` branches for the different versions of the source code) with the desired one when switching between development environments.<br>
     This would still prevent building both environments simultaneously.
 
-### Specify the package version {: id='spack-version'}
+### Specify the package _Spack_ version element {: id='spack-version'}
 A version specifier can optionally be set, assiging the specified _Spack_ version to the development package.<br>
 The syntax for the version specifier varies depending whether the package source code is [remote](#spack-version-remote-package) or [local](#spack-version-local-package).
 
-#### Specify the package version for a remote package {: id='spack-version-remote-package'}
-If the development package's source code is to be cloned from _git_, the _Spack_ version can be set by appending `=<package_version>` to the package specifier.<br>
-For example, to set the `access-om2` _Spack_ version to the _mom5_ development package with its source code cloned from the `development` branch, we can run:
+#### Specify the package _Spack_ version for a remote package source {: id='spack-version-remote-package'}
+If the development package's source code is to be cloned from _git_, the package _Spack_ version can be set by appending `=<package_version>` to the package specifier.<br>
+For example, to develop _mom5_ code from the the `development` branch and build it as _Spack_ version `access-om2`, run:
 ```
 spack develop mom5@git.development=access-om2
 ```
 
-#### Specify the package version for a local package {: id='spack-version-local-package'}
+#### Specify the package _Spack_ version for a local package source {: id='spack-version-local-package'}
 When the development package's source code is local, no _git_ reference is provided.<br>
-In this case a _Spack_ version can be added by appending `@<spack_version>` to the package specifier.
+In this case a package _Spack_ version can be added by appending `@<package_version>` to the package specifier.
 
-For example, to assign the `access-om2` _Spack_ version to the _mom5_ development package with its source code residing in the `/path/to/mom5/new/source/code` folder, we can run:
+For example, to develop _mom5_ code from the `/path/to/mom5/new/source/code` folder and build it as _Spack_ version `access-om2`, run:
 ```
 spack develop --path /path/to/mom5/new/source/code mom5@access-om2
 ```
 !!! tip
-    When in doubt about which versions to assign to a specific package, a useful command to retrieve the existing versions of a package is:
+    When in doubt about which _Spack_ versions to assign to a specific package, a useful command to retrieve the existing versions of a package is:
     ```
     spack versions <package_name>
     ```
@@ -412,7 +412,7 @@ At times, setting development packages might cause inconsistencies within the `s
 This occurs whenever an environment contains a required package with the same name as the development package.
 
 For example, the `mom5_dev` environment `spack.yaml` file contains the following lines:
-```yaml
+
 ```yaml
 spack:
   specs:
