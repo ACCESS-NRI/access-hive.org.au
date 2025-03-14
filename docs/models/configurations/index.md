@@ -41,9 +41,9 @@
             <img src="/assets/model-config-logos/configurations-without-titles/access-ram.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
-            <span class="bold" >ACCESS-RAM</span>
+            <span class="bold" >ACCESS-rAM</span>
             <span>
-                ACCESS-RAM is an implementation of the UKMO regional nesting suite that allows high-resolution regional atmosphere modelling.
+                ACCESS-rAM is an implementation of the UKMO regional nesting suite that allows high-resolution regional atmosphere modelling.
             </span>
         </div>
     </a>
