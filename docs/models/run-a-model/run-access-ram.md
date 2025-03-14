@@ -410,36 +410,203 @@ You can now close the _Cylc_ GUI. To open it again, run the following command fr
 rose suite-gcontrol
 ```
 
-#### Monitor the suite runs
+#### Check suite logs
 
-It is quite common, especially during the first few runs, to experience errors and job failures. Running a suite involves the execution of several tasks, and any of these tasks could fail. When a task fails, the suite is halted and a red icon appears next to the respective task name in the _Cylc_ GUI.<br>
-To investigate the cause of a failure, we can look at the logs `job.err` and `job.out` from the suite run. There are two main ways to do so:
+It is quite common, especially at the beginning, to experience errors and job failures.<br>
+When a suite task fails, a red icon appears next to the respective task name in the _Cylc_ GUI.<br>
 
-##### Using the _Cylc_ GUI
-Right-click on the task that failed and click on _View Job Logs (Viewer) &rarr; job.err_ (or _job.out_).<br>
-To access a specific task, click on the arrow next to the task to extend the drop-down menu with all the subtasks.
+To investigate the cause of a failure, or to monitor the progress of a suite, it can be useful to look at the suite logs.
 
-<!--
-![Investigate Error GUI example](/assets/run_access_cm/investigate_error_gui_are.gif){: class="example-img" loading="lazy"}
+##### Logs structure
+Suite logs are stored in the directory `~/cylc-run/<suite-ID>` within a folder named `log.<TIMESTAMP>`, which is also symlinked as `log` (referred to as _logs folder_ below). Logs from previous runs of the same suite are archived as compressed files with the naming pattern `log.<TIMESTAMP>.tar.gz`.
 
-TODO
-{: style="color:red"}
-<!-- Replace with a RAS video/gif -->
+Inside the logs folder, various files and subfolders can be found. The most relevant logs are typically:
 
+- [Suite execution log](#suite-execution-log)
+- [Task-specific logs](#task-specific-logs)
 
-##### Through the suite directory
-The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMESTAMP>`, and the latest set of logs are also symlinked in the `~/cylc-run/<suite-ID>/log` directory.<br>
-The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
-Logs are separated into simulation cycles according to their starting dates, then divided into subdirectories according to the task name. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
+###### Suite execution log {: id='suite-execution-log'}
 
-For the above *Lismore* default example, the `<cycle-basedate>` was set to `1` and no real starting date was used. Since the suite failed, the `job.err` and `job.out` files can be found in the `~/cylc-run/<suite-ID>/log/job/NN/<cycle-basedate>/TASK_NAME/NN` directory.
+The primary suite execution log is located at:
+```
+`~/cylc-run/<suite-ID>/log/suite/log`
+```
 
-For a subsequent run, the `<cycle-basedate>` directory gets compressed to `job-<cylc-basedate>.tar.gz` and stored in the `~/cylc-run/<suite-ID>/log/` directory.
+This file contains a chronological record of the suite's run history. Each line is a distinct log entry, generally formatted as:
+```
+<TIMESTAMP> <LOG-TYPE> - [<task-name>.<cylc-cycle-point>] <status>
+```
 
-<!-- 
-TODO
-{: style="color:red"}
-<!-- Replace TASK_NAME with the actual task name according to the video/gif above -->
+??? code "Example of a suite execution log file (click to enlarge)"
+    ```
+    2025-03-14T04:11:56Z INFO - Suite server: url=https://cylc.$USER$.$PROJECT.ps.gadi.nci.org.au:PORT/ pid=PID
+    2025-03-14T04:11:56Z INFO - Run: (re)start=0 log=1
+    2025-03-14T04:11:56Z INFO - Cylc version: 7.9.9
+    2025-03-14T04:11:56Z INFO - Run mode: live
+    2025-03-14T04:11:56Z INFO - Initial point: 01000101T0000Z
+    2025-03-14T04:11:56Z INFO - Final point: 01000328T2359Z
+    2025-03-14T04:11:56Z INFO - Cold Start 01000101T0000Z
+    2025-03-14T04:11:56Z INFO - [make_drivers.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:11:56Z INFO - [install_cold.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:11:56Z INFO - [make_cice.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:11:56Z INFO - [make_mom.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:11:56Z INFO - [install_ancil.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:11:56Z INFO - [fcm_make_um.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:11:58Z INFO - [fcm_make_um.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:11:57Z for job(01)
+    2025-03-14T04:11:58Z INFO - [fcm_make_um.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:11:58Z INFO - [install_ancil.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:11:57Z for job(01)
+    2025-03-14T04:11:58Z INFO - [install_ancil.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:11:58Z INFO - [install_cold.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:11:57Z for job(01)
+    2025-03-14T04:11:58Z INFO - [install_cold.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:11:58Z INFO - [make_cice.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:11:57Z for job(01)
+    2025-03-14T04:11:58Z INFO - [make_cice.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:11:58Z INFO - [make_drivers.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:11:57Z for job(01)
+    2025-03-14T04:11:58Z INFO - [make_drivers.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:11:58Z INFO - [make_mom.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:11:57Z for job(01)
+    2025-03-14T04:11:58Z INFO - [make_mom.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:12:04Z INFO - [make_drivers.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:02Z for job(01)
+    2025-03-14T04:12:04Z INFO - [make_drivers.01000101T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:12:04Z INFO - [install_cold.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:02Z for job(01)
+    2025-03-14T04:12:04Z INFO - [install_cold.01000101T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:12:04Z INFO - [make_cice.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:02Z for job(01)
+    2025-03-14T04:12:04Z INFO - [make_cice.01000101T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:12:04Z INFO - [make_mom.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:02Z for job(01)
+    2025-03-14T04:12:04Z INFO - [make_mom.01000101T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:12:04Z INFO - [install_ancil.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:02Z for job(01)
+    2025-03-14T04:12:04Z INFO - [install_ancil.01000101T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:12:04Z INFO - [client-command] get_latest_state dm5220@gadi-login-08.gadi.nci.org.au:cylc-gui c842e8fb-017a-47ec-8706-7fef0af6d5f5
+    2025-03-14T04:12:06Z INFO - [make_drivers.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:12:05Z for job(01)
+    2025-03-14T04:12:09Z INFO - [make_cice.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:12:07Z for job(01)
+    2025-03-14T04:12:09Z INFO - [install_ancil.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:12:07Z for job(01)
+    2025-03-14T04:12:10Z INFO - [make2_cice.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:12:11Z INFO - [make2_cice.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:12:10Z for job(01)
+    2025-03-14T04:12:11Z INFO - [make2_cice.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:12:14Z INFO - [make_mom.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:12:12Z for job(01)
+    2025-03-14T04:12:15Z INFO - [make2_mom.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:12:18Z INFO - [make2_mom.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:12:15Z for job(01)
+    2025-03-14T04:12:18Z INFO - [make2_mom.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:12:37Z INFO - [install_cold.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:12:35Z for job(01)
+    2025-03-14T04:12:48Z INFO - [make2_mom.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:45Z for job(01)
+    2025-03-14T04:12:48Z INFO - [make2_mom.01000101T0000Z] -health check settings: execution timeout=PT40M, polling intervals=PT31M,PT2M,PT7M,...
+    2025-03-14T04:12:59Z INFO - [fcm_make_um.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:57Z for job(01)
+    2025-03-14T04:12:59Z INFO - [fcm_make_um.01000101T0000Z] -health check settings: execution timeout=PT1H10M, polling intervals=PT1H1M,PT2M,PT7M,...
+    2025-03-14T04:13:00Z INFO - [make2_cice.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:12:58Z for job(01)
+    2025-03-14T04:13:00Z INFO - [make2_cice.01000101T0000Z] -health check settings: execution timeout=PT30M, polling intervals=PT21M,PT2M,PT7M,...
+    2025-03-14T04:15:58Z INFO - [make2_cice.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:15:57Z for job(01)
+    2025-03-14T04:18:19Z INFO - [make2_mom.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:18:17Z for job(01)
+    2025-03-14T04:20:10Z INFO - [fcm_make_um.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:20:08Z for job(01)
+    2025-03-14T04:20:11Z INFO - [fcm_make2_um.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:20:13Z INFO - [fcm_make2_um.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:20:12Z for job(01)
+    2025-03-14T04:20:13Z INFO - [fcm_make2_um.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:20:37Z INFO - [fcm_make2_um.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:20:35Z for job(01)
+    2025-03-14T04:20:37Z INFO - [fcm_make2_um.01000101T0000Z] -health check settings: execution timeout=PT1H10M, polling intervals=PT1H1M,PT2M,PT7M,...
+    2025-03-14T04:37:11Z INFO - [fcm_make2_um.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:37:09Z for job(01)
+    2025-03-14T04:37:12Z INFO - [recon.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:37:19Z INFO - [recon.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:37:14Z for job(01)
+    2025-03-14T04:37:19Z INFO - [recon.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:37:53Z INFO - [recon.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:37:52Z for job(01)
+    2025-03-14T04:37:53Z INFO - [recon.01000101T0000Z] -health check settings: execution timeout=PT30M, polling intervals=PT21M,PT2M,PT7M,...
+    2025-03-14T04:38:28Z INFO - [recon.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:38:28Z for job(01)
+    2025-03-14T04:38:29Z INFO - [coupled.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:38:30Z INFO - [coupled.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:38:30Z for job(01)
+    2025-03-14T04:38:30Z INFO - [coupled.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:42:00Z INFO - [coupled.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:41:59Z for job(01)
+    2025-03-14T04:42:00Z INFO - [coupled.01000101T0000Z] -health check settings: execution timeout=PT2H10M, polling intervals=PT2H1M,PT2M,PT7M,...
+    2025-03-14T04:45:28Z INFO - [coupled.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:45:27Z for job(01)
+    2025-03-14T04:45:29Z INFO - [filemove.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:45:30Z INFO - [filemove.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:45:30Z for job(01)
+    2025-03-14T04:45:30Z INFO - [filemove.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:46:12Z INFO - [filemove.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:46:11Z for job(01)
+    2025-03-14T04:46:12Z INFO - [filemove.01000101T0000Z] -health check settings: execution timeout=PT15M, polling intervals=PT6M,PT2M,PT7M,...
+    2025-03-14T04:46:26Z INFO - [filemove.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:46:25Z for job(01)
+    2025-03-14T04:46:27Z INFO - [history_postprocess.01000101T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:46:27Z INFO - [coupled.01000201T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:46:28Z INFO - [coupled.01000201T0000Z] status=ready: (internal)submitted at 2025-03-14T04:46:28Z for job(01)
+    2025-03-14T04:46:28Z INFO - [coupled.01000201T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:46:28Z INFO - [history_postprocess.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:46:28Z for job(01)
+    2025-03-14T04:46:28Z INFO - [history_postprocess.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:46:58Z INFO - [history_postprocess.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:46:57Z for job(01)
+    2025-03-14T04:46:58Z INFO - [history_postprocess.01000101T0000Z] -health check settings: execution timeout=PT1H40M, polling intervals=PT1H31M,PT2M,PT7M,...
+    2025-03-14T04:47:09Z INFO - [coupled.01000201T0000Z] status=submitted: (received)started at 2025-03-14T04:47:09Z for job(01)
+    2025-03-14T04:47:09Z INFO - [coupled.01000201T0000Z] -health check settings: execution timeout=PT2H10M, polling intervals=PT2H1M,PT2M,PT7M,...
+    2025-03-14T04:47:11Z INFO - [history_postprocess.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:47:10Z for job(01)
+    2025-03-14T04:47:12Z INFO - [housekeep.01000101T0000Z] -submit-num=01, owner@host=cylc.dm5220.tm70.ps.gadi.nci.org.au
+    2025-03-14T04:47:13Z INFO - [housekeep.01000101T0000Z] status=ready: (internal)submitted at 2025-03-14T04:47:13Z for job(01)
+    2025-03-14T04:47:13Z INFO - [housekeep.01000101T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:47:18Z INFO - [housekeep.01000101T0000Z] status=submitted: (received)started at 2025-03-14T04:47:17Z for job(01)
+    2025-03-14T04:47:18Z INFO - [housekeep.01000101T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:47:21Z INFO - [housekeep.01000101T0000Z] status=running: (received)succeeded at 2025-03-14T04:47:20Z for job(01)
+    2025-03-14T04:50:13Z INFO - [coupled.01000201T0000Z] status=running: (received)succeeded at 2025-03-14T04:50:11Z for job(01)
+    2025-03-14T04:50:14Z INFO - [filemove.01000201T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:50:15Z INFO - [filemove.01000201T0000Z] status=ready: (internal)submitted at 2025-03-14T04:50:14Z for job(01)
+    2025-03-14T04:50:15Z INFO - [filemove.01000201T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:50:54Z INFO - [filemove.01000201T0000Z] status=submitted: (received)started at 2025-03-14T04:50:52Z for job(01)
+    2025-03-14T04:50:54Z INFO - [filemove.01000201T0000Z] -health check settings: execution timeout=PT15M, polling intervals=PT6M,PT2M,PT7M,...
+    2025-03-14T04:51:08Z INFO - [filemove.01000201T0000Z] status=running: (received)succeeded at 2025-03-14T04:51:06Z for job(01)
+    2025-03-14T04:51:09Z INFO - [history_postprocess.01000201T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:51:09Z INFO - [coupled.01000301T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T04:51:10Z INFO - [coupled.01000301T0000Z] status=ready: (internal)submitted at 2025-03-14T04:51:09Z for job(01)
+    2025-03-14T04:51:10Z INFO - [coupled.01000301T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:51:10Z INFO - [history_postprocess.01000201T0000Z] status=ready: (internal)submitted at 2025-03-14T04:51:09Z for job(01)
+    2025-03-14T04:51:10Z INFO - [history_postprocess.01000201T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:51:23Z INFO - [history_postprocess.01000201T0000Z] status=submitted: (received)started at 2025-03-14T04:51:22Z for job(01)
+    2025-03-14T04:51:23Z INFO - [history_postprocess.01000201T0000Z] -health check settings: execution timeout=PT1H40M, polling intervals=PT1H31M,PT2M,PT7M,...
+    2025-03-14T04:51:35Z INFO - [history_postprocess.01000201T0000Z] status=running: (received)succeeded at 2025-03-14T04:51:34Z for job(01)
+    2025-03-14T04:51:36Z INFO - [housekeep.01000201T0000Z] -submit-num=01, owner@host=cylc.dm5220.tm70.ps.gadi.nci.org.au
+    2025-03-14T04:51:37Z INFO - [housekeep.01000201T0000Z] status=ready: (internal)submitted at 2025-03-14T04:51:37Z for job(01)
+    2025-03-14T04:51:37Z INFO - [housekeep.01000201T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T04:51:41Z INFO - [housekeep.01000201T0000Z] status=submitted: (received)started at 2025-03-14T04:51:40Z for job(01)
+    2025-03-14T04:51:41Z INFO - [housekeep.01000201T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T04:51:45Z INFO - [housekeep.01000201T0000Z] status=running: (received)succeeded at 2025-03-14T04:51:43Z for job(01)
+    2025-03-14T05:01:00Z INFO - [coupled.01000301T0000Z] status=submitted: (received)started at 2025-03-14T05:00:59Z for job(01)
+    2025-03-14T05:01:00Z INFO - [coupled.01000301T0000Z] -health check settings: execution timeout=PT2H10M, polling intervals=PT2H1M,PT2M,PT7M,...
+    2025-03-14T05:04:40Z INFO - [coupled.01000301T0000Z] status=running: (received)succeeded at 2025-03-14T05:04:39Z for job(01)
+    2025-03-14T05:04:41Z INFO - [filemove.01000301T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T05:04:43Z INFO - [filemove.01000301T0000Z] status=ready: (internal)submitted at 2025-03-14T05:04:43Z for job(01)
+    2025-03-14T05:04:43Z INFO - [filemove.01000301T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T05:05:25Z INFO - [filemove.01000301T0000Z] status=submitted: (received)started at 2025-03-14T05:05:24Z for job(01)
+    2025-03-14T05:05:25Z INFO - [filemove.01000301T0000Z] -health check settings: execution timeout=PT15M, polling intervals=PT6M,PT2M,PT7M,...
+    2025-03-14T05:05:40Z INFO - [filemove.01000301T0000Z] status=running: (received)succeeded at 2025-03-14T05:05:39Z for job(01)
+    2025-03-14T05:05:41Z INFO - [history_postprocess.01000301T0000Z] -submit-num=01, owner@host=localhost
+    2025-03-14T05:05:42Z INFO - [history_postprocess.01000301T0000Z] status=ready: (internal)submitted at 2025-03-14T05:05:42Z for job(01)
+    2025-03-14T05:05:42Z INFO - [history_postprocess.01000301T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T05:05:57Z INFO - [history_postprocess.01000301T0000Z] status=submitted: (received)started at 2025-03-14T05:05:56Z for job(01)
+    2025-03-14T05:05:57Z INFO - [history_postprocess.01000301T0000Z] -health check settings: execution timeout=PT1H40M, polling intervals=PT1H31M,PT2M,PT7M,...
+    2025-03-14T05:06:08Z INFO - [history_postprocess.01000301T0000Z] status=running: (received)succeeded at 2025-03-14T05:06:07Z for job(01)
+    2025-03-14T05:06:09Z INFO - [housekeep.01000301T0000Z] -submit-num=01, owner@host=cylc.dm5220.tm70.ps.gadi.nci.org.au
+    2025-03-14T05:06:10Z INFO - [housekeep.01000301T0000Z] status=ready: (internal)submitted at 2025-03-14T05:06:10Z for job(01)
+    2025-03-14T05:06:10Z INFO - [housekeep.01000301T0000Z] -health check settings: submission timeout=P3D
+    2025-03-14T05:06:18Z INFO - [housekeep.01000301T0000Z] status=submitted: (received)started at 2025-03-14T05:06:16Z for job(01)
+    2025-03-14T05:06:18Z INFO - [housekeep.01000301T0000Z] -health check settings: execution timeout=PT12H
+    2025-03-14T05:06:20Z INFO - [housekeep.01000301T0000Z] status=running: (received)succeeded at 2025-03-14T05:06:19Z for job(01)
+    2025-03-14T05:06:20Z INFO - Suite shutting down - AUTOMATIC
+    2025-03-14T05:06:28Z INFO - DONE
+    ``` 
+
+This file helps identify specific tasks that failed during the suite run.
+
+!!! tip
+    When a task fails, the `LOG-TYPE` will tipically be `ERROR` or `CRITICAL`, instead of the more common `INFO`.
+
+Once a specific task and _Cylc_ cycle point are identified, the task-specific logs can be inspected.
+
+###### Task-specific logs
+
+Logs for individual tasks are located in subfolders within the logs folder, following this path structure:
+```
+~/cylc-run/<suite-ID>/log/job/<cylc-cycle-point>/<task-name>/<retry-number>
+```
+The `<retry-number>` indicates the number of retries for the same task, with the latest retry symlinked to `NN`.
+
+For example, the logs for the latest retry of a task named `Lismore_d1000_GAL9_um_recon` at _Cylc_ cycle point `20220226T0000Z` can be in the following folder:
+```
+~/cylc-run/<suite-ID>/log/job/20220226T0000Z/Lismore_d1000_GAL9_um_recon/NN
+```
+
+Within this directory, the `job.out` and `job.err` files (representing `STDOUT` and `STDERR`, respectively) can be found, along with other related log files.
+
+!!! tip
+    Within the _Cylc_ GUI, logs for a specific task can be viewed by right-clicking on the task and selecting the desired log from the _View Job Logs (Viewer)_ menu.
 
 #### Stop, restart, reload and clean suites
 In some cases, you may want to control the running state of a suite.<br>
@@ -659,14 +826,14 @@ TODO
 <!-- Add short description of what the RAS does -->
 
 #### Get and run RNS configuration
-Steps to obtain and run the RNS configuration, as well as monitoring the runs, are analogous to those listed above for the [RAS](#ras).<br>
-The only difference is the `suite-ID` that, for the RNS is `{{ rns_id }}`.
+Steps to obtain and run the RNS configuration, as well as monitoring the logs, are analogous to those listed above for the [RAS](#ras).<br>
+The only difference is the `suite-ID`, which for the RNS is `{{ rns_id }}`.
 
 To get the RNS configuration, please follow the steps listed in [Get the RAS configuration](#get-the-ras-configuration), making sure you use the correct RNS `suite-ID` `{{ rns_id }}` when copying the suite.
 
 To run the RNS configuration, please follow the steps listed in [Run the suite](#run-the-suite).
 
-To monitor the RNS suite run, please follow the steps listed in [Monitor the suite runs](#monitor-the-suite-runs).
+To check the RNS suite logs, please follow the steps listed in [Check suite logs](#check-suite-logs).
 
 #### RNS output files
 
