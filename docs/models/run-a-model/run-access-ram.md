@@ -289,8 +289,9 @@ module load cylc7
 </terminal-window>
 
 !!! warning
-    It is recommended not to specify any version when loading _Cylc_, as versions earlier than `23.09` do not support the _persistent sessions_ workflow.<br>
-    Also, before loading the _Cylc_ module, make sure to have started a _persistent session_ and assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up _persistent session_](#set-up-persistent-session).
+    _Cylc_ version >= `cylc7/24.03` required.<br>
+    
+    Also, before loading the _Cylc_ module, make sure to have started a _persistent session_ and have assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up _persistent session_](#set-up-persistent-session).
 
 #### Rose setup {: id="rose"}
 [Rose](http://metomi.github.io/rose/doc/html/index.html) is a toolkit that can be used to view, edit, or run an ACCESS modelling suite.
@@ -311,6 +312,9 @@ mosrs-auth
     <terminal-line lineDelay=100><span style="color: #559cd5;">INFO</span>: Checking your credentials using rosie. Please wait.</terminal-line>
     <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: Successfully accessed rosie with your credentials.</terminal-line>
 </terminal-window>
+
+!!! warning
+    This step needs to be done once for each new session (e.g.: _Gadi_ login, _ARE_ terminal window)
 
 ### {{ model }} configuration
 {{ model }} is comprised of 2 different suites: a [Regional Ancillary Suite (RAS)](#ras) and a [Regional Nesting Suite (RNS)](#rns).
@@ -439,7 +443,7 @@ TODO
 {: style="color:red"}
 <!-- Replace TASK_NAME with the actual task name according to the video/gif above -->
 
-#### Stop, restart and reload suites
+#### Stop, restart, reload and clean suites
 In some cases, you may want to control the running state of a suite.<br>
 If your _Cylc_ GUI has been closed and you are unsure whether your suite is still running, you can scan for active suites and reopen the GUI if desired.<br>
 To scan for active suites, run:
@@ -551,6 +555,20 @@ To reload a suite, run the following command from within the [suite directory](#
 ```
 rose suite-run --reload
 ```
+
+##### CLEAN a suite
+To remove all files and folders created by the suite within the `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>` directory, run the following command from within the [suite directory](#suitedir):
+```
+rose suite-clean
+```
+
+Alternatively, you can achieve the same behaviour within a new submission of an experiment, by appending the `--new` option to the `rose suite-run` command:
+```
+rose suite-run --new
+```
+
+!!! warning
+    Cleaning a suite folder will remove any non-archived data (i.e.: output files, logs, executables, etc.) associated with the suite.
 
 #### RAS output files
     
