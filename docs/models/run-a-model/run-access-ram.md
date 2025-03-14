@@ -1,6 +1,4 @@
 {% set model = "ACCESS-rAM3" %}
-{% set ancillary_model = "ACCESS-RAS" %}
-{% set regional_model = "ACCESS-RNS" %}
 {% set ras_id = "u-dg767" %}
 {% set rns_id = "u-dg768" %}
 {% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/7/trunk" %}
@@ -10,8 +8,8 @@
 [model configurations]: /models/configurations/access-ram
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-[![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} {{ ancillary_model }} configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
-[![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} {{ regional_model }} configuration]({{mosrs_config_rns}}){: class="text-card"}
+[![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RAS configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
+[![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RNS configuration]({{mosrs_config_rns}}){: class="text-card"}
 
 # Run {{ model }}
 
@@ -619,7 +617,7 @@ TODO
 
 ##### Change the region centre and name
 In {{model}}, it is possible to perform simulations for a specific region on Earth, by setting specific parameters for the region of interest.<br>
-In the {{ancillary_model}}, the following parameters can be set:
+In the RAS, the following parameters can be set:
 
 - `rg01_name`<br>
   Name for the region of interest.
