@@ -115,19 +115,17 @@ Hence, there are multiple [PBS directives](https://opus.nci.org.au/display/Help/
 
 1. Click on the <i>Launch</i> button to launch the session. You will be prompted to your Interactive Sessions page and you will see your last requested session at the top.
 
-2. 
-    <div tabcontentfor="vdi">
-        Wait until your session starts and then click on the <i>Launch VDI Desktop</i> button to open a new tab with the VDI interface.
-        <br>
-        Inside the VDI interface, you can open the terminal by clicking on the black terminal icon at the top of the window.
-        <img src="/assets/launch_are_vdi_desktop.gif" alt="Launch ARE VDI Desktop" class="example-img" loading="lazy"/>
-    </div>
-    <div tabcontentfor="jupyterlab">
-        Wait until your session starts and then click on the <i>Open JupyterLab</i> button to open a new tab with the JupyterLab interface.
-        <br>
-        Inside the JupyterLab interface, you can open a new notebook by clicking on the Python3 Notebook button in the Launcher panel (to open a new Laucher panel, click on the plus button <img src="/assets/jupyterlab_plus_button.png" alt="Plus button" style="height:1em"/> next to your current tab).
-        <img src="/assets/launch_are_jupyterlab.gif" alt="Launch ARE JupyterLab" class="example-img" loading="lazy"/>
-    </div>
+2. <span tabcontentfor="vdi" markdown> 
+    Wait until your session starts and then click on the <i>Launch VDI Desktop</i> button to open a new tab with the VDI interface.<br>
+    Inside the VDI interface, you can open the terminal by clicking on the black terminal icon at the top of the window.
+    <img src="/assets/launch_are_vdi_desktop.gif" alt="Launch ARE VDI Desktop" class="example-img" loading="lazy"/>
+    </span>
+    
+    <span tabcontentfor="jupyterlab">
+    Wait until your session starts and then click on the <i>Open JupyterLab</i> button to open a new tab with the JupyterLab interface.<br>
+    Inside the JupyterLab interface, you can open a new notebook by clicking on the Python3 Notebook button in the Launcher panel (to open a new Laucher panel, click on the plus button <img src="/assets/jupyterlab_plus_button.png" alt="Plus button" style="height:1em"/> next to your current tab).
+    <img src="/assets/launch_are_jupyterlab.gif" alt="Launch ARE JupyterLab" class="example-img" loading="lazy"/>
+    </span>
 
 ## Delete an ARE session
 You can delete a session before its automatic expiration (based on the specified [Walltime](#walltime-option) by clicking on the session's ![Session Delete button](/assets/session_delete_button.png){: style="height:1em"} button in the [Interactive Sessions](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sessions) page.
