@@ -476,15 +476,15 @@ rose suite-run --restart
     <terminal-line>[WARN] Using the cylc session &lt;persistent-session-full-name&gt;</terminal-line>
     <terminal-line>[WARN]</terminal-line>
     <terminal-line>[WARN] Loading cylc7/23.09</terminal-line>
-    <terminal-line>[WARN] &emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
-    <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-    <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-    <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
-    <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+    <terminal-line class='keep-blanks'>[WARN]   Loading requirement: mosrs-setup/1.0.1</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]             .\_.</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]             | |              The Cylc Suite Engine [7.9.9]</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] .\_\_\_\_\_.\_. .\_| |\_\_\_\_\_.        Copyright (C) 2008-2019 NIWA</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] | .\_\_\_| | | | | .\_\_\_|   & British Crown (Met Office) & Contributors.</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] | !\_\_\_| !\_! | | !\_\_\_.  \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] !\_\_\_\_\_!\_\_\_. |\_!\_\_\_\_\_!  This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]       .\_\_\_! |          see \`cylc warranty\`.  It is free software, you</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]       !\_\_\_\_\_!           are welcome to redistribute it under certain</terminal-line>
     <terminal-line>[INFO]</terminal-line>
     <terminal-line>[INFO] *** listening on https://&lt;persistent-session-full-name&gt;:&lt;port&gt;/ ***</terminal-line>
     <terminal-line>[INFO]</terminal-line>
