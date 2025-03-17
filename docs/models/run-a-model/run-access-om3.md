@@ -21,7 +21,6 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
-{{ model }} release notes are [available on the ACCESS-Hive Forum](https://forum.access-hive.org.au/t/access-om2-release-information/1602/) and are updated when new releases are made available.
 
 ## Prerequisites
 
@@ -450,73 +449,6 @@ input:
 ```
 The `name` field is not actually used for the configuration run, so it can be safely ignored.
 
-<!--#### Submodels-->
-
-<!--{{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).-->
-
-<!--This section specifies the submodels and configuration options required to execute {{ model }} correctly.-->
-
-<!--Each submodel contains additional configuration options that are read in when the submodel is running. These options are specified in the subfolder of the _control_ directory whose name matches the submodel's `name` (e.g., configuration options for the `ocean` submodel are in the `~/access-om2/1deg_jra55_ryf/ocean` directory).-->
-
-<!--??? code "Expand to show the full `submodels` section"-->
-
-    <!--```yaml-->
-    <!--submodels:-->
-        <!--- name: atmosphere-->
-          <!--model: yatm-->
-          <!--exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/libaccessom2-git.2023.10.26=2023.10.26-ieiy3e7hidn4dzaqly3ly2yu45mecgq4/bin/yatm.exe-->
-          <!--input:-->
-                <!--- /g/data/vk83/experiments/inputs/access-om2/remapping_weights/JRA55/global.1deg/2020.05.30/rmp_jrar_to_cict_CONSERV.nc-->
-                <!--- /g/data/vk83/experiments/inputs/JRA-55/RYF/v1-4/data-->
-          <!--ncpus: 1-->
-
-        <!--- name: ocean-->
-          <!--model: mom-->
-          <!--exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/mom5-git.2023.11.09=2023.11.09-ewcdbrfukblyjxpkhd3mfkj4yxfolal4/bin/fms_ACCESS-OM.x-->
-          <!--input:-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/grid_spec.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/ocean_hgrid.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/grids/mosaic/global.1deg/2020.05.30/ocean_mosaic.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/topog.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/ocean_mask.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/grids/vertical/global.1deg/2020.10.22/ocean_vgrid.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/processor_masks/global.1deg/216.16x15/2020.05.30/ocean_mask_table-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/chlorophyll/global.1deg/2020.05.30/chl.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/initial_conditions/global.1deg/2020.10.22/ocean_temp_salt.res.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/tideamp.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/roughness_amp.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/tides/global.1deg/2020.05.30/roughness_cdbot.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ocean/surface_salt_restoring/global.1deg/2020.05.30/salt_sfc_restore.nc-->
-          <!--ncpus: 216-->
-
-        <!--- name: ice-->
-          <!--model: cice5-->
-          <!--exe: /g/data/vk83/apps/spack/0.20/release/linux-rocky8-x86_64/intel-19.0.5.281/cice5-git.2023.10.19=2023.10.19-rh3xfkrgajya3ghtliacuhlx3pgvrzqs/bin/cice_auscom_360x300_24x1_24p.exe-->
-          <!--input:-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ice/grids/global.1deg/2020.05.30/grid.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ice/grids/global.1deg/2020.10.22/kmt.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/i2o.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/o2i.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/u_star.nc-->
-            <!--- /g/data/vk83/experiments/inputs/access-om2/ice/initial_conditions/global.1deg/2020.05.30/monthly_sstsss.nc-->
-          <!--ncpus: 24-->
-    <!--```-->
-
-<!--#### Collate-->
-
-<!--Rather than outputting a single diagnostic file over the whole model horizontal grid, [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans over a portion of the model horizontal grid.-->
-
-<!--The `collate` section in the `yaml.conf` file controls the process that combines these smaller files into a single output file.-->
-<!--```yaml-->
-<!--collate:-->
-    <!--restart: true-->
-    <!--walltime: 1:00:00-->
-    <!--mem: 30GB-->
-    <!--ncpus: 4-->
-    <!--queue: normal-->
-    <!--exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine-->
-<!--```-->
-<!--Restart files are typically tiled in the same way and will also be combined together if the `restart` field is set to `true`.-->
 
 #### Runlog
 
@@ -588,7 +520,6 @@ For assistance on how to request help from ACCESS-NRI, follow the [guidelines on
 
 <custom-references>
 - [https://cosima.org.au](https://cosima.org.au)
-- [Kiss et al. (2020)](http://doi.org/10.5194/gmd-13-401-2020)
 - [https://payu.readthedocs.io/en/latest/usage.html](https://payu.readthedocs.io/en/latest/usage.html)
 - [https://github.com/access-nri/access-om3](https://github.com/access-nri/access-om3)
 - [https://opus.nci.org.au/](https://opus.nci.org.au/)
