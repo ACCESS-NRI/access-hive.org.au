@@ -7,7 +7,7 @@
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [spack-configuration-scopes-documentation]: https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes
 
-# Build or modify an ACCESS model's source code
+# Modify and build an ACCESS model's source code
 
 ## About
 
