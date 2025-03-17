@@ -375,7 +375,7 @@ spack develop --path /path/to/mom5/new/source/code mom5
     This would still prevent building both environments simultaneously.
 
 ### Specify the package _Spack_ version element {: id='spack-version'}
-A _Spack_ version can be assigned to development package by setting a version specifier.<br>
+A _Spack_ version can be assigned to a development package by setting a version specifier.<br>
 The syntax for the version specifier varies depending whether the package source code is [remote](#spack-version-remote-package) or [local](#spack-version-local-package).
 
 #### Specify the package _Spack_ version for a remote package source {: id='spack-version-remote-package'}
