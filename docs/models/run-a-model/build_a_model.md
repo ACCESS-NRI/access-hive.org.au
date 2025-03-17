@@ -370,14 +370,12 @@ For example, if the _mom5_ development package's source code resides in `/path/t
 spack develop --path /path/to/mom5/new/source/code mom5
 ```
 
-Optionally, and usually recommended, a [_Spack_ version](#spack-version-local-package) can be also specified.
-
 !!! warning
     Care needs to be taken when multiple _Spack_ development environments point to the same source code location. If these environments require different independent changes of the source code, the user needs to make sure to sync the source code version (e.g., using different `git` branches for the different versions of the source code) with the desired one when switching between development environments.<br>
     This would still prevent building both environments simultaneously.
 
 ### Specify the package _Spack_ version element {: id='spack-version'}
-A version specifier can optionally be set, assiging the specified _Spack_ version to the development package.<br>
+A _Spack_ version can be assigned to development package by setting a version specifier.<br>
 The syntax for the version specifier varies depending whether the package source code is [remote](#spack-version-remote-package) or [local](#spack-version-local-package).
 
 #### Specify the package _Spack_ version for a remote package source {: id='spack-version-remote-package'}
@@ -396,16 +394,17 @@ For example, to develop _mom5_ code from the `/path/to/mom5/new/source/code` fol
 spack develop --path /path/to/mom5/new/source/code mom5@access-om2
 ```
 !!! tip
-    When in doubt about which _Spack_ versions to assign to a specific package, a useful command to retrieve the existing versions of a package is:
+    When in doubt about which _Spack_ version to assign to a specific package, a useful command to retrieve the existing versions of a package is:
     ```
     spack versions <package_name>
     ```
 
 !!! warning
-    _Spack_ always needs to associate a _Spack_ version with a development package. This means that, if no _Spack_ version is specified by the user:
+    It is strongly recommended to specify a _Spack_ version, as _Spack_ always requires a version to be associated with a development package.<br>
+    If no _Spack_ version is specified by the user:
     
-    - If the package has a _git_ reference, the _Spack_ version will be taken from the closest valid _git_ tag among ancestors of the _git_ reference
-    - If the package source code is local, an error will be thrown
+    - If the package has a _git_ reference, the _Spack_ version will be taken from the closest valid _git_ tag among ancestors of the _git_ reference.
+    - If the package source code is local, an error will be thrown.
 
 ## Fix inconsistencies within the environment file
 At times, setting development packages might cause inconsistencies within the `spack.yaml` environment file.<br>
