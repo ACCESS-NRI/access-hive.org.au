@@ -196,9 +196,23 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/access-nri
       name: ACCESS-NRI on Linkedin
-  analytics:
-    provider: google
-    property: G-2T6SQEH2CX
+  # analytics:
+  #   provider: google
+  #   property: G-2T6SQEH2CX
+  #   feedback:
+  #     title: Was this page helpful?
+  #     ratings:
+  #       - icon: material/emoticon-happy-outline
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           Thanks for your feedback!
+  #       - icon: material/emoticon-sad-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >- 
+  #           Thanks for your feedback!<br>
+  #           Help us improve this page by <a href=/about/contribute target="_blank" rel="noopener">contributing</a>!
 
 extra_css:
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
