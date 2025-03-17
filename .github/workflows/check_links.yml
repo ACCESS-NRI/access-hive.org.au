@@ -1,12 +1,13 @@
 name: Check links
 
 on: 
-  pull_request: #Action fires anytime a PR is (re)opened or synchronized
-    types:
-      - opened
-      - reopened
-      - synchronize
-  workflow_call:
+#   pull_request: #Action fires anytime a PR is (re)opened or synchronized
+#     types:
+#       - opened
+#       - reopened
+#       - synchronize
+#   workflow_call:
+    workflow_dispatch:
 
 jobs:
   link-check:

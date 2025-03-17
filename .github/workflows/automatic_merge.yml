@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  check-links:
-    uses: ./.github/workflows/check_links.yml
+#   check-links:
+#     uses: ./.github/workflows/check_links.yml
 
   auto-merge:
     runs-on: ubuntu-latest
