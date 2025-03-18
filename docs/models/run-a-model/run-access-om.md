@@ -357,7 +357,7 @@ payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/acces
 ```
 
 !!! warning
-    In some cases, experiments with initial conditions set this way may require additional manual adjustments to run properly.
+    In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
 
 ### Modify PBS resources
 
