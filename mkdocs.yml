@@ -212,3 +212,10 @@ extra_javascript:
   - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js # Terminal animations
   - js/custom-tags.js
   - js/miscellaneous.js
+
+# Automatically reload page when running `mkdocs serve`, for any 
+# of the following files outside of the 'docs' directory
+watch:
+  - mkdocs.yml
+  - overrides/
+  - plugins/
