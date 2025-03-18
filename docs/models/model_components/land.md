@@ -35,5 +35,5 @@ The [Joint UK Land Environment System (JULES)](https://jules.jchmr.org/) is a co
 
 ### Configurations that use JULES
 
-JULES in not used in any ACCESS-NRI-supported configuration.<br>
-Some of the ACCESS models used for weather simulations use JULES instead of CABLE. For example, the Australian [Bureau of Meteorology (BoM)](http://www.bom.gov.au/) uses JULES in its numerical weather prediction models such as ACCESS-S (Seasonal) and ACCESS-C (City).
+Some of the ACCESS models used for weather simulations use JULES instead of CABLE. For example, the Australian [Bureau of Meteorology (BoM)](http://www.bom.gov.au/) uses JULES in its numerical weather prediction models such as ACCESS-S (Seasonal) and ACCESS-C (City). <br>
+The only ACCESS-NRI supported configuration that uses JULES is ACCESS-rAM, which is an implementation of the UKMO Regional Nesting Suite. 
