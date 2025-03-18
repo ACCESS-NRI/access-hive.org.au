@@ -75,8 +75,12 @@ To clone this branch to a location on _Gadi_ and navigate to that directory, run
     payu clone -b expt -B release-1deg_jra55_ryf {{ github_configs }} 1deg_jra55_ryf
     cd 1deg_jra55_ryf
 
+!!! tip
+    If you want to restart your experiment from a specific restart point, please refer to [Start the run from a specific restart file](#specific-restart).
+
 In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B release-1deg_jra55_ryf`) 
 as a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
+
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -342,6 +346,19 @@ For example, to run a configuration for a total of 50 years with a `restart_peri
 
     payu run -n 10
 
+### Start the run from a specific restart file {: id='specific-restart'}
+
+To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
+
+For example, to get the `1deg_jra55_ryf` configuration and set its initial condition to the  `/g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040` restart file, run:
+
+```
+payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs 1deg_jra55_ryf --restart /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040
+```
+
+!!! warning
+    In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
+
 ### Modify PBS resources
 
 If the model has been altered and needs more time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
@@ -565,7 +582,7 @@ To modify these options please refer to the User Guide of the respective model c
 
 ### Create a custom {{ model }} build
 All the executables needed to run {{ model }} are pre-built into independent configurations using _Spack_.<br>
-To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
+To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify and build an ACCESS model's source code](/models/run-a-model/build_a_model).
 
 ## Get Help
 
