@@ -38,7 +38,7 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
     To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
 
     !!! tip
-        To request membership for the _ki32_mosrs_ subproject you need to be member of the _ki32_ project first.
+        To request membership for the _ki32_mosrs_ subproject you need to have a MOSRS account and be member of the _ki32_ project.
 
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 

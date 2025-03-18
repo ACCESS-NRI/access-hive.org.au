@@ -26,7 +26,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
     To join these projects, request membership on the respective [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
 
     !!! tip
-        To request membership for the _ki32_mosrs_ subproject you need to be member of the _ki32_ project first.
+        To request membership for the _ki32_mosrs_ subproject you need to have a MOSRS account and be member of the _ki32_ project.
     
     For more information on how to join specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
