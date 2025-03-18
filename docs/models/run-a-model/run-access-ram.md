@@ -799,7 +799,7 @@ What about the extent of the region? -->
 TODO
 Can we add a link for the Lismore Flood example? Anything that makes it a bit clearer what that is. -->
 
-To change these parameters, edit the `rg01_name` and `rg01_centre` fields in _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+To change these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, edit the `rg01_name` and `rg01_centre` fields and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
 For example, to run an {{ model }} suite for a region with centre (-12.4, 130.8) and name "Darwin":
 
@@ -871,7 +871,7 @@ In general, ACCESS modelling suites can be edited either by directly modifying t
 To open the _Rose_ GUI, you can follow the steps listed in [Rose GUI](#rosegui).
 
 ##### Change where the output from run is stored project {: .no-toc }
-To change where the output from the model run is stored, edit the _NCI_STORAGE_ field in _suite conf &rarr; Nesting Suite &rarr; General run options _, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}. 
+To change where the output from the model run is stored, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; General run options_, edit the `_NCI_STORAGE_` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
 <!--
 TODO
@@ -886,7 +886,7 @@ For the RNS:
 - `CYCLE_INT_HR` is the cycling frequency (in hours)
 - The total run length is the time span between the `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT`
 
-To modify these parameters, navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_, edit the `INITIAL_CYCLE_POINT`, `FINAL_CYCLE_POINT` and the `CYCLE_INT_HR` fields (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+To modify these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_, edit the `INITIAL_CYCLE_POINT`, `FINAL_CYCLE_POINT` and the `CYCLE_INT_HR` fields (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
 <!--
 TODO
