@@ -9,6 +9,9 @@
 
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
+!!! danger
+    ACCESS-OM3 is currently only in alpha release, no support is currently provided for this model and the model configuration and model code will change before the full release. Using ACCESS-OM3 is only recommended for experienced (or brave!) users and collaborators developing ACCESS models. For a supported experience, see [run ACCESS-OM2](/models/run-a-model/run-access-om)
+
 # Run {{ model }}
 
 ## About
