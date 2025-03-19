@@ -218,4 +218,4 @@ extra_javascript:
 watch:
   - mkdocs.yml
   - overrides/
-  - plugins/
+  # - plugins/
