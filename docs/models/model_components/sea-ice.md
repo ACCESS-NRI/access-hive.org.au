@@ -23,5 +23,5 @@ There are three CICE versions currently used in ACCESS models:
 - [ACCESS-OM2](/models/configurations/access-om#access-om2)
 </div>
 <div tabcontentfor="cice6" markdown>
-CICE6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
+CICE6 is used in ACCESS-OM3 which is under active development.
 </div>
