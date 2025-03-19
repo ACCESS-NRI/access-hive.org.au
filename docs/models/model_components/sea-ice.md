@@ -22,5 +22,5 @@ CICE4 is used in [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15)
 CICE5 is used in [ACCESS-CM2](/models/configurations/access-cm#access-cm2) and [ACCESS-OM2](/models/configurations/access-om#access-om2).
 </div>
 <div tabcontentfor="cice6" markdown>
-CICE6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
+CICE6 is used in ACCESS-OM3 which is under active development.
 </div>
