@@ -17,7 +17,7 @@
 
 ## About
 
-{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) regional nesting suite for high-resolution regional atmosphere modelling.<br>
+{{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Coupled Suite for high-resolution regional atmosphere modelling.<br>
 A description of the model and its components is available in the [{{ model }} overview][model configurations].
 
 {{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (input files; e.g.: initial conditions, lateral boundary conditions, forcing conditions, etc.) for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
