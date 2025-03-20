@@ -23,7 +23,7 @@ A description of the model and its components is available in the [{{ model }} o
 {{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (input files; e.g.: initial conditions, lateral boundary conditions, forcing conditions, etc.) for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
-As an example, an experiment modelling a flood event in Lismore (NSW) will be run, having the configuration specified in [ERA5 Nesting configuration]({{ model_configurations }}/#era5).
+As an example, an experiment modelling a flood event in Lismore (NSW) will be run, using `ERA5-Land` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-options) and having the configuration specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
@@ -675,11 +675,7 @@ rose suite-run --new
 #### RAS output files
     
 The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`.<br>
-The ancillaries are divided for each nested region, with each of the region subdivided in directories named according to the nests' names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
-<!--
-TODO
-{: style="color:red"}
-<!-- There is no information before about nests (e.g., nest structure, what is the difference between nested region name and nest name, etc.) It would be good to add something in the suite description and link it here. -->
+The ancillaries are divided for each [nested region]({{ model_configurations }}/#nesting), with each of the region subdivided in directories named according to the nests' names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 
 In addition to these nests, a subdirectory named according to the driving model data can be found within the `nested_region_name` directory.<br>
 The 2-level (i.e., two nests) example above has one `nested_region_name` called `Lismore`. Driven by ERA5 data, the outer and inner nests are named `d1000` and `d0198`, respectively.<br>
@@ -723,10 +719,7 @@ TODO
 What about the extent of the region? -->
 
 !!! tip
-    In `{{ras_id}}` these parameters are set, by default, to the *Lismore Flood* example. 
-<!--
-TODO
-Can we add a link for the Lismore Flood example? Anything that makes it a bit clearer what that is. -->
+    In `{{ras_id}}` these parameters are set, by default, according to the *Lismore Flood* event. 
 
 To change these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, edit the `rg01_name` and `rg01_centre` fields and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
