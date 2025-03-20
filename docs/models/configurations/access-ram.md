@@ -1,6 +1,6 @@
 # ACCESS-rAM 
 
-![ACCESS RAM model](/assets/model-config-logos/configurations-without-titles/access-ram.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
+![ACCESS RAM model](/assets/placeholder_image.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
 The ACCESS Regional Area Model (ACCESS-rAM) is an implementation of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Coupled Suite, comprising [atmosphere](/models/model_components/atmosphere) and [land](/models/model_components/land) components.<br>
 Unlike the UKMO Regional Coupled Suite that relies on operational land-surface initial conditions, ACCESS-rAM derives its initial conditions from alternative sources, enhancing its capability for high-resolution regional atmosphere modelling on [Gadi](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview).
