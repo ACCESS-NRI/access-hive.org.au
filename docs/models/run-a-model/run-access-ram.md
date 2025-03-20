@@ -3,10 +3,10 @@
 {% set rns_id = "u-dg768" %}
 {% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/7/trunk" %}
 {% set mosrs_config_rns = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/8/trunk" %}
+{% set model_configurations = "/models/configurations/access-ram" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-ram3-release-information/4308" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [model components]: /models/configurations/access-ram/#model-components
-[model configurations]: /models/configurations/access-ram
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
 [:notepad_spiral:{: class="twemoji icon-before-text"} {{ model }} release notes]({{release_notes}}){: class="text-card"}
@@ -18,15 +18,16 @@
 ## About
 
 {{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Coupled Suite for high-resolution regional atmosphere modelling.<br>
-A description of the model and its components is available in the [{{ model }} overview][model configurations].
+A description of the model and its components is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
 {{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (input files; e.g.: initial conditions, lateral boundary conditions, forcing conditions, etc.) for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
-The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
+As an example, an experiment modelling a flood event in Lismore (NSW) will be run, having the configuration specified in [ERA5 Nesting configuration]({{ model_configurations }}/#era5).
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
+All {{model}} configurations are and available on MOSRS, through the links at the top of this page.
 
 [{{ model }} release notes]({{release_notes}}) are available on the ACCESS-Hive Forum and are updated when new releases are made available.
 
@@ -317,20 +318,16 @@ mosrs-auth
 Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
-For more information on {{ model }}, refer to the [{{model}} configuration][model configurations] page.
+For more information on {{ model }}, refer to the [{{model}} configuration]({{ model_configurations }}/#{{ model }}) page.
 
 !!! info 
     Many of the steps that follow are to be repeated almost identically for the RAS and RNS. For this reason, details on these steps will be provided only within the RAS section below, whereas in the following RNS section they will only be linked for reference.
 
 ### Regional Ancillary Suite (RAS) {: id="ras"}
 
-The RAS produces a set of input (ancillary) files, which are then used by the RNS.
+The RAS generates a set of ancillary files, such as initial conditions, lateral boundary conditions and forcing conditions, for the domain of interest. These ancillary files are then used by the [RNS](#rns).
 
 The `suite-ID` of the RAS is `{{ ras_id }}`.
-<!--
-TODO
-{: style="color:red"}
-<!-- Add short description of what the RAS does -->
 
 #### Get the RAS configuration
 [Rosie](http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
@@ -393,19 +390,18 @@ To run the RAS, execute the following command from within the [suite directory](
 rose suite-run
 ```
 
-After the initial tasks are executed, the _Cylc_ GUI will open. You can now view and control the different tasks in the suite as they are run. <!--<img src="/assets/run&UnderBar;access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy"> -->
-<!--
-TODO
-{: style="color:red"}
-<!-- Replace image with RAS one -->
+After the initial tasks are executed, the _Cylc_ GUI will open, where it is possible to view and control the different tasks in the suite as they are run.
 
-You are done!
-
-If you do not get any errors, you can check the suite output files after the run is complete.<br>
-You can now close the _Cylc_ GUI. To open it again, run the following command from within the [suite directory](#suitedir):
+!!! tip
+    The _Cylc_ GUI can be safely closed without impacting the experiment run.<br>
+    To open it again, run the following command from within the [suite directory](#suitedir):
 ```
 rose suite-gcontrol
 ```
+
+All steps are completed!! <br>
+You will be able to check the [suite output files](#ras-output-files) after the run successfully completes.<br>
+If you get errors or you can't find the outputs, [check the suite logs](#check-suite-logs) for debugging.
 
 #### Check suite logs
 
@@ -615,18 +611,6 @@ To reopen the _Cylc_ GUI, run the following command from within the [suite direc
 ```
 rose suite-gcontrol
 ```
-<!--
-<terminal-window>
-    <terminal-line data="input">cylc scan</terminal-line>
-    <terminal-line>&lt;suite-ID&gt; &lt;$USER&gt;@&lt;gadi-cpu&gt;.nci.org.au:&lt;port&gt;</terminal-line>
-    <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose suite-gcontrol</terminal-line>
-    <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
-</terminal-window>
-
-TODO
-{: style="color:red"}
-<!-- Replace with a RAS video/gif -->
 
 ##### STOP a suite {: .no-toc }
 To shutdown a suite in a safe manner, run the following command from within the [suite directory](#suitedir):
@@ -656,49 +640,6 @@ There are two main ways to restart a suite:
 
     !!! warning
         You may need to manually trigger failed tasks from the _Cylc_ GUI.
-
-<!--
-<terminal-window lineDelay="50">
-    <terminal-line data="input" lineDelay="300">cylc</terminal-line>
-    <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run --restart</terminal-line>
-    <terminal-line>[INFO] export CYLC_VERSION=7.9.7</terminal-line>
-    <terminal-line>[INFO] export ROSE_ORIG_HOST=&lt;gadi-cpu&gt;.nci.org.au</terminal-line>
-    <terminal-line>[INFO] export ROSE_SITE=nci</terminal-line>
-    <terminal-line>[INFO] export ROSE_VERSION=2019.01.2</terminal-line>
-    <terminal-line>[INFO] delete: log/rose-suite-run.conf</terminal-line>
-    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.conf <= log/rose-suite-run.conf</terminal-line>
-    <terminal-line>[INFO] delete: log/rose-suite-run.version</terminal-line>
-    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-restart.version <= log/rose-suite-run.version</terminal-line>
-    <terminal-line>[INFO] chdir: log/</terminal-line>
-    <terminal-line>[WARN] Using the cylc session &lt;persistent-session-full-name&gt;</terminal-line>
-    <terminal-line>[WARN]</terminal-line>
-    <terminal-line>[WARN] Loading cylc7/23.09</terminal-line>
-    <terminal-line>[WARN] &emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
-    <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-    <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-    <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
-    <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
-    <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] *** listening on https://&lt;persistent-session-full-name&gt;:&lt;port&gt;/ ***</terminal-line>
-    <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
-    <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
-    <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;persistent-session-full-name&gt;</terminal-line>
-    <terminal-line>[INFO]  $ cylc ping -v --host=&lt;persistent-session-full-name&gt; &lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;persistent-session-full-name&gt;</terminal-line>
-    <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
-</terminal-window>
-
-TODO
-{: style="color:red"}
-<!-- Replace with a RAS image -->
 
 - **HARD restart**<br>
     To overwrite any previous runs of the suite and start afresh, run the following command from within the [suite directory](#suitedir):
@@ -767,18 +708,6 @@ rose edit &
 
 !!! tip
     The `&` is optional. It allows the terminal prompt to remain active while running the `Rose` GUI as a separate process in the background.
-<!--
-<terminal-window>
-    <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
-    <terminal-line class="ls-output-format">[&lt;N&gt;] &lt;PID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
-    <img src="/assets/run_access_cm/Rose_GUI_are.png" alt="Rose GUI" imageTime="inf" loading="lazy">
-</terminal-window>
-
-TODO
-{: style="color:red"}
-<!-- Change image with a RAS one -->
 
 ##### Change the region centre and name {: .no-toc }
 In {{model}}, it is possible to perform simulations for a specific region on Earth, by setting specific parameters for the region of interest.<br>
@@ -811,15 +740,10 @@ TODO
 <!-- Add a gif/video for the exmple -->
 
 ### Regional Nesting Suite (RNS) {: id="rns"}
-<!--
-The RNS is ...
--->
-The `suite-ID` of the RNS is `{{ rns_id }}`.
 
-<!--
-TODO
-{: style="color:red"}
-<!-- Add short description of what the RAS does -->
+The RNS uses the ancillary files produced by the RAS to run the regional forecast for the domain of interest.
+
+The `suite-ID` of the RNS is `{{ rns_id }}`.
 
 #### Get and run RNS configuration
 Steps to obtain and run the RNS configuration, as well as monitoring the logs, are analogous to those listed above for the [RAS](#ras).<br>
@@ -893,15 +817,10 @@ TODO
 {: style="color:red"}
 <!-- Are there any other options more specific to the RNS that users may want to change here? -->
 
-<!--
-## Get Help
+
+<!-- ## Get Help
 If you have questions or need help regarding {{ model }}, consider creating a topic in the [Earth System Model category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/esm/earth-system-model/72).<br>
-For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
-
-TODO
-{: style="color:red"}
-<!-- Check and change link details if needed -->
-
+For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help). -->
 
 <custom-references>
 - [https://nespclimate.com.au/wp-content/uploads/2020/10/Instruction-document-Getting_started_with_ACCESS.pdf](https://nespclimate.com.au/wp-content/uploads/2020/10/Instruction-document-Getting_started_with_ACCESS.pdf)
