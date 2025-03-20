@@ -54,7 +54,7 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
         <terminal-line lineDelay="1000">1.1.3</terminal-line>
     </terminal-window>
     !!! warning
-        _payu_ version >=1.1.3 is required
+        _payu_ version >=1.1.6 is required
 
 ----------------------------------------------------------------------------------------
 
@@ -138,20 +138,18 @@ To run {{ model }} configuration execute the following command from within the *
 
     payu run
 
-This will submit a single job to the queue with a run length of `restart_period`.<br>
-For information about `restart_period`, refer to [Change run length](#change-run-length).
+This will submit a single job to the queue with the default run length specified in the configuration.<br>
+For information about changing the run length, refer to [Change run length](#change-run-length).
 
 <terminal-window>
     <terminal-line data="input">cd ~/access-om3/1deg_jra55_ryf</terminal-line>
     <terminal-line directory="~/access-om3/1deg_jra55_ryf" data="input">payu run</terminal-line>
-    <terminal-line>payu: warning: Job request includes 47 unused CPUs.</terminal-line>
-    <terminal-line lineDelay=50>payu: warning: CPU request increased from 241 to 288</terminal-line>
-    <terminal-line lineDelay=50>Loading input manifest: manifests/input.yaml</terminal-line>
+    <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line lineDelay=50>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
     <terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line lineDelay=50>
-        qsub -q normal -P tm70 -l walltime=10800 -l ncpus=288 -l mem=1000GB -N 1deg_jra55_ryf -l wd -j n -v PAYU_PATH=/g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/hr22/modulefiles:/g/data/hh5/public/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -W umask=027 -l storage=gdata/hh5+gdata/vk83 -- /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/python3.10 /g/data/hh5/public/apps/miniconda3/envs/analysis3-23.10/bin/payu-run
+        qsub -q normal -P tm70 -l walltime=02:00:00 -l ncpus=240 -l mem=960GB -l jobfs=10GB -N 1deg_jra55do_ry -l wd -j n -v PAYU_PATH=/g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/vk83/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -l storage=gdata/tm70+gdata/vk83 -- /g/data/vk83/./apps/conda_scripts/payu-1.1.6.d/bin/python /g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin/payu-run
     </terminal-line>
     <terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
 </terminal-window>
@@ -171,7 +169,7 @@ qstat <job-ID>
     <terminal-line data="input">qstat &lt;job-ID&gt;</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;1deg_jra55do_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
@@ -183,12 +181,12 @@ qstat -u $USER
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
     <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;1deg_jra55_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;1deg_jra55do_ryf&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
     <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
-The default name of your job is the name of the _payu_ _control_ directory (`1deg_jra55_ryf` in the example above).<br>
+The default name of your job is the name of the _payu_ _control_ directory (`1deg_jra55do_ryf` in the example above).<br>
 This can be changed by altering the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file.
 
 _S_ indicates the status of your run, where:
@@ -232,11 +230,6 @@ You can examine the contents of these files to check on the status of a run as i
 !!! warning
     At the end of a successful run these log files are archived to the `archive` directory and will no longer be found in the _control_ directory. If they remain in the _control_ directory after the PBS job for a run has completed it means the run has failed.
 
-### Model Live Diagnostics
-
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/evaluation_on_gadi/model_live_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on _Gadi_.<br>
-For a complete documentation on how to use this framework, check the [Model Diagnostics documentation](https://med-live-diagnostics.readthedocs.io/en/latest/index.html).
-
 ### Trouble-shooting
 
 If _payu_ doesn't run correctly for some reason, a good first step is to run the following command from within the _control_ directory:
@@ -259,15 +252,10 @@ This command will:
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line>Loading exe manifest: manifests/exe.yaml</terminal-line>
-    <terminal-line>Setting up atmosphere</terminal-line>
-    <terminal-line>Setting up ocean</terminal-line>
-    <terminal-line>Setting up ice</terminal-line>
     <terminal-line>Setting up access-om3</terminal-line>
     <terminal-line>Checking exe and input manifests</terminal-line>
-    <terminal-line>Updating full hashes for 3 files in manifests/exe.yaml</terminal-line>
-    <terminal-line>Creating restart manifest</terminal-line>
     <terminal-line>Writing manifests/restart.yaml</terminal-line>
-    <terminal-line>Writing manifests/exe.yaml</terminal-line>
+    <terminal-line>/usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh</terminal-line>
 </terminal-window>
 
 This can help to isolate issues such as permissions problems accessing files and directories, missing files or malformed/incorrect paths.
@@ -357,9 +345,11 @@ If the model has been altered and needs more time to complete, more memory, or n
 # shortpath: /scratch/PROJECT_CODE
 
 queue: normal
-walltime: 3:00:00
-jobname: 1deg_jra55_ryf
-mem: 1000GB
+ncpus: 240
+jobfs: 10GB
+mem: 960GB
+
+walltime: 02:00:00
 ```
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
@@ -492,30 +482,9 @@ A dictionary to run scripts or subcommands at various stages of a _payu_ submiss
   
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
-#### Miscellaneous
-
-The following configuration settings should never require changing:
-
-```yaml
-stacksize: unlimited
-mpirun: --mca io ompio --mca io_ompio_num_aggregators 1
-qsub_flags: -W umask=027
-env:
-    UCX_LOG_LEVEL: 'error'
-```
-
-### Edit a single {{ model }} component configuration
-
-Each of [{{ model }} components][model components] contains additional configuration options that are read in when the model component is running.<br>
-These options are typically useful to modify the physics used in the model, the input data, or the model variables saved in the output files.
-
-These configuration options are specified in files located inside a subfolder of the _control_ directory, named according to the submodel's `name` specified in the `config.yaml` `submodels` section (e.g., configuration options for the _ocean_ component are in the `~/access-om3/1deg_jra55_ryf/ocean` directory).<br>
-To modify these options please refer to the User Guide of the respective model component.
-
 ### Create a custom {{ model }} build
 All the executables needed to run {{ model }} are pre-built into independent configurations using _Spack_.<br>
 To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
-
 ## Get Help
 
 If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
