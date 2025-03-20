@@ -19,41 +19,18 @@ Information about the amount of NCI resources (such as Service Units (SU) and st
 ### Land-surface initial conditions options
 - [ERA5-Land](https://www.ecmwf.int/en/era5-land) (default)
 - [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5)
-
-!!! info
-    [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf) is also available as an option for land-surface initial conditions. However, setting up a fully functional experiment with this option requires additional manual adjustments to the nesting configuration.<br>
-    For detailed instructions on configuring an experiment using BARRA-R2 as the land-surface initial condition, refer to [LINK NEEDS TO BE PROVIDED](/failing/link/picked/by/link-checker).
+- [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)
 
 ### Nesting configuration
+The structure, horizontal resolution, and placement of [nests](#nesting) can be be fully customised.<br>
+For details on how to modify these configuration settings, refer to [Edit the RAS configuration](/models/run-a-model/run-access-ram/#edit-the-ras-configuration).
 
-!!! tip
-    The structure, horizontal resolution, and placement of nests listed below are the default settings for the associated land-surface initial condition, but they can be fully customised.<br>
-    For details on how to modify these configuration options, refer to [Edit the RAS configuration](/models/run-a-model/run-access-ram/#edit-the-ras-configuration).
+The default nesting configuration for the `ERA5-Land` land-surface initial conditions are the following:
 
-<div class="tabLabels" label="ACCESS-rAM3-init-data">
-    <button id="era5">ERA5</button>
-    <button id="era5-land">ERA5-Land</button>
-    <button id='barra-r2'>BARRA-R2</button>
-</div>
-<div tabcontentfor="era5" markdown>
+**2-level nest**
 
-- 2-level nest:
-    - Outer nest: 0.25° x 0.25° (≈25km) horizontal resolution
-    - Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
-</div>
-<div tabcontentfor="era5-land" markdown>
-
-- 2-level nest:
-    - Outer nest: 0.1° x 0.1° (≈10km) horizontal resolution
-    - Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
-</div>
-<div tabcontentfor="barra-r2" markdown>
-
-!!! info 
-    BARRA-R2 nesting configuration settings are not provided as a default.<br>
-    For detailed instructions on configuring an experiment using BARRA-R2 as the land-surface initial condition, refer to [LINK NEEDS TO BE PROVIDED](/failing/link/picked/by/link-checker).
-
-</div>
+- Outer nest: 0.1° x 0.1° (≈10km) horizontal resolution
+- Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
 
 ### Model components 
 
