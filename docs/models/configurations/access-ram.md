@@ -1,0 +1,46 @@
+# ACCESS-rAM 
+
+![ACCESS RAM model](/assets/placeholder_image.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
+
+The ACCESS Regional Area Model (ACCESS-rAM) is an implementation of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Coupled Suite, comprising [atmosphere](/models/model_components/atmosphere) and [land](/models/model_components/land) components.<br>
+Unlike the UKMO Regional Coupled Suite that relies on operational land-surface initial conditions, ACCESS-rAM derives its initial conditions from alternative sources, enhancing its capability for high-resolution regional atmosphere modelling on [Gadi](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview).
+
+ACCESS-rAM requires both initial conditions and lateral boundary (_driving_) conditions. It also supports multiple [_nesting_](#nesting) configurations, automatically providing their necessary initial and lateral boundary conditions.
+
+### Nesting
+_Nesting_ is the process of embedding a smaller, finer resolution region (often referred to as _nest_ or _nested region_) within a larger, coarser-resolution domain to improve accuracy for localised weather events. This approach enables atmospheric variables such as temperature, pressure, and wind speed from the larger domain to be used as lateral boundary conditions for the nested region, allowing more accurate simulations within the nest.
+
+## ACCESS-rAM3
+Similar to the the UKMO Regional Coupled Suite, ACCESS-rAM3 is configured to derive its initial and lateral boundary conditions from the [ECMWF Reanalysis v5 (ERA5)](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) dataset.<br>
+However, for its land-surface initial conditions, ACCESS-rAM3 offers flexibility by allowing the use of alternative datasets.
+
+Information about the amount of NCI resources (such as Service Units (SU) and storage) used by a typical ACCESS-rAM3 experiment run are available on the [ACCESS-Hive Forum release notes page](https://forum.access-hive.org.au/t/access-ram3-release-information/4308).
+
+### Land-surface initial conditions options
+- [ERA5-Land](https://www.ecmwf.int/en/era5-land) (default)
+- [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5)
+- [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)
+
+### Nesting configuration
+The structure, horizontal resolution, and placement of [nests](#nesting) can be be fully customised.<br>
+For details on how to modify these configuration settings, refer to [Edit the RAS configuration](/models/run-a-model/run-access-ram/#edit-the-ras-configuration).
+
+The default nesting configuration for the `ERA5-Land` land-surface initial conditions are the following:
+
+**2-level nest**
+
+- Outer nest: 0.1° x 0.1° (≈10km) horizontal resolution
+- Inner nest: 0.0198° x 0.0198° (≈2km) horizontal resolution
+
+### Model components 
+
+- **Atmosphere:** [UM13.5](/models/model_components/atmosphere/#unified-model-um)<br>
+   Nests > 4km: GAL9 science configuration, 70 vertical levels.<br>
+   Nests <= 4km: [RAL3.2 science configuration](https://doi.org/10.5194/gmd-2024-201), 90 vertical levels.<br>
+   Spatial resolution depending on the [nesting configuration](#nesting-configuration).
+- **Land:** [Jules7.5](/models/model_components/land/#jules)<br>
+   Nests > 4km: GAL9 science configuration, 70 vertical levels.<br>
+   Nests <= 4km: [RAL3.2 science configuration](10.0.20.74/gmd-2024-201), 90 vertical levels.<br>
+   Spatial resolution depending on the [nesting configuration](#nesting-configuration).
+
+[Run ACCESS-rAM](/models/run-a-model/run-access-ram){: class="text-card"}

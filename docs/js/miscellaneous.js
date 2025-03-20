@@ -26,6 +26,19 @@ function changeAbsoluteUrls() {
   }
 }
 
+// Hide Table of Content items whose related paragraph has the 'no-toc' class
+function hideTocItems() {
+    let toc_items = document.querySelectorAll('[aria-label="On this page"] .md-nav__item')
+    toc_items.forEach(item => {
+        let parag_id = item.querySelector('a').href.split('#')[1];
+        let parag = document.getElementById(parag_id)
+        if (parag && parag.classList.contains('no-toc')) {
+            item.style.display = 'none'
+        }
+    })
+    console.log('TOC items hidden')
+}
+
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
@@ -259,6 +272,7 @@ function makeCitationLinks() {
 // Join all functions
 function main() {
   changeAbsoluteUrls();
+  hideTocItems();
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
