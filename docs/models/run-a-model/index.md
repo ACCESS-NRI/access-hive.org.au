@@ -51,7 +51,7 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
     </a>
     <a href="/models/run-a-model/create-a-prerelease" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/globe_visualisation/create_a_prerelease.png" alt="Create Prereleases and Releases for an ACCESS Model">
+            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/create_a_prerelease.png" alt="Create Prereleases and Releases for an ACCESS Model">
         </div>
         <div class="card-text-container bold">   
             Create Prereleases and Releases for an ACCESS Model
