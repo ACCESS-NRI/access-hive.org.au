@@ -385,8 +385,6 @@ sync:
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
-!!! admonition tip
-    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
 
 ### Saving model restarts
 
