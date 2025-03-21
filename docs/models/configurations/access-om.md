@@ -46,4 +46,6 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 More details on the models is given [here](https://forum.access-hive.org.au/t/access-om2-control-experiments/258), together with details on the extensive control experiment data available for those who don't need to run a new experiment.
 
+Conditions of use for ACCESS-OM2 models or outputs are given [here](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
+
 [Run ACCESS-OM2](/models/run-a-model/run-access-om){: class="text-card"}
