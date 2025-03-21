@@ -33,8 +33,8 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
 
 ### Model-specific prerequisites
 
-- **Join the _vk83_ and _qv56_ projects at NCI**<br>
-    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
+- **Join the _vk83_, _xp65_ and _qv56_ projects at NCI**<br>
+    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join), [xp65](https://my.nci.org.au/mancini/project/xp65/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Payu**<br>
@@ -60,8 +60,11 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
 
 ## Get {{ model }} configuration
 
+!!! danger
+    ACCESS-OM3 is currently only in alpha release, no support is currently provided for this model and the model configurations. The model code/configurations will change before the full release. When browsing [the configuration repository on GitHub](https://github.com/ACCESS-NRI/access-om3-configs/) any branch that has a prefix `dev-` indicates that it is still in development (eventually `release-` prefix indicates supported configurations -- [example](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-01deg_jra55_iaf)).
+
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
-Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
+Released configurations are tested and supported by ACCESS-NRI.
 
 For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
@@ -417,8 +420,6 @@ input:
     - /g/data/vk83/configurations/inputs/access-om3/cice/initial_conditions/global.1deg/2023.07.28/iced.1900-01-01-10800.nc
     - /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
 ```
-The `name` field is not actually used for the configuration run, so it can be safely ignored.
-
 
 #### Runlog
 
@@ -446,16 +447,14 @@ In the example above, the default number of cpus per node is set to 48.
 
 ```yaml
 userscripts:
-    error: tools/resub.sh
-    run: rm -f resubmit.count
-    sync: /g/data/vk83/apps/om2-scripts/concatenate_ice/concat_ice_daily.sh 
+    setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
+    archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
 ```
 
 A dictionary to run scripts or subcommands at various stages of a _payu_ submission.
 
-- `error` gets called if the model does not run correctly and returns an error code.
-- `run` gets called after the model execution, but prior to model output archive.
-- `sync` gets called at the start of the sync pbs job. For more information refer to [Syncing output data](#syncing-output-data).
+- `setup` gets called if after model setup, but prior to model execution.
+- `archive` gets called after the model execution, but prior to model output archive.
   
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
