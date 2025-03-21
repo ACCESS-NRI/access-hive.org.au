@@ -36,8 +36,8 @@ Before running {{ model }}, you need to [Set Up your NCI Account](/getting_start
 
 ### Model-specific prerequisites
 
-- **Join the _vk83_ and _qv56_ projects at NCI**<br>
-    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
+- **Join the _vk83_, _xp65_ and _qv56_ projects at NCI**<br>
+    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join), [xp65](https://my.nci.org.au/mancini/project/xp65/join) and [qv56](https://my.nci.org.au/mancini/project/qv56/join) NCI project pages.<br>
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Payu**<br>
