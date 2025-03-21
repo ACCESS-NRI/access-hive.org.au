@@ -339,14 +339,17 @@ h3 {
 
 h4 {
     font-size: .85rem !important;
+    margin: 1em 0 0.35em !important;
 }
 
 h5 {
     font-size: .8rem !important;
+    margin: 0.8em 0 0.3em !important;
 }
 
 h6 {
     font-size: .75rem !important;
+    margin: 0.7em 0 0.3em !important;
 }
 
 
