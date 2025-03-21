@@ -18,12 +18,12 @@ There are global configurations for **three spatial resolutions**:
 - 0.25° horizontal resolution, 50 vertical levels.
 - 0.1° horizontal resolution, 75 vertical levels.
 
-For each resolution there are **two options of atmospheric forcing**: 
+For each resolution there are **two options of JRA55-do atmospheric forcing**:
 
-- Repeat Year Forcing (RYF)
-- Interannual Forcing (IAF)
+- Repeat Year Forcing (RYF): repeated 1 May 1990 - 30 April 1991 forcing
+- Interannual Forcing (IAF): 1958-2018 forcing
 
-Each configuration also has a biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if this is required.
+Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if this is required.
 !!! warning
     BGC experiments are slower and generally consume more resources (compute time and disk space).
 
@@ -35,13 +35,15 @@ Each configuration also has a biogeochemical (BGC) configuration that uses the [
 </div>
 
 - **Ocean**: [MOM5](/models/model_components/ocean#mom5).<br>
-  Tripolar grid, <span tabcontentfor="1deg">1</span><span tabcontentfor="025deg">0.25</span><span tabcontentfor="01deg">0.1</span>° spatial resolution, 50 vertical levels.
+  Tripolar grid, <span tabcontentfor="1deg">1</span><span tabcontentfor="025deg">0.25</span><span tabcontentfor="01deg">0.1</span>° spatial resolution, <span tabcontentfor="1deg">50</span><span tabcontentfor="025deg">50</span><span tabcontentfor="01deg">75</span> vertical levels.
 
-- **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat).
+- **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat) (optional).
 
 - **Sea ice**: [CICE5.1.2](/models/model_components/sea-ice#cice5).<br>
     Same grid as ocean.
 
-- **Coupler**: [OASIS3-MCT](/models/model_components/coupler#oasis3-mct).
+- **Coupler**: [OASIS3-MCTv2](/models/model_components/coupler#oasis3-mct).
 
-[Run ACCESS-OM](/models/run-a-model/run-access-om){: class="text-card"}
+More details on the models is given [here](https://forum.access-hive.org.au/t/access-om2-control-experiments/258), together with details on the extensive control experiment data available for those who don't need to run a new experiment.
+
+[Run ACCESS-OM2](/models/run-a-model/run-access-om){: class="text-card"}
