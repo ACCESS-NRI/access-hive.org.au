@@ -8,7 +8,12 @@ Unlike the UKMO Regional Coupled Suite that relies on operational land-surface i
 ACCESS-rAM requires both initial conditions and lateral boundary (_driving_) conditions. It also supports multiple [_nesting_](#nesting) configurations, automatically providing their necessary initial and lateral boundary conditions.
 
 ### Nesting
-_Nesting_ is the process of embedding a smaller, finer resolution region (often referred to as _nest_ or _nested region_) within a larger, coarser-resolution domain to improve accuracy for localised weather events. This approach enables atmospheric variables such as temperature, pressure, and wind speed from the larger domain to be used as lateral boundary conditions for the nested region, allowing more accurate simulations within the nest.
+_Nesting_ is the process of embedding a smaller, finer resolution region (often referred to as _nest_ or _nested region_) within a larger, coarser-resolution domain to improve accuracy for localised weather events. This approach enables atmospheric variables such as temperature, pressure, and wind speed from the larger domain to be used as lateral boundary conditions for the nested region, allowing more accurate simulations within the nest.<br>
+
+In ACCESS-rAM, the coarser-resolutio domains are referred to as _nested regions_.
+Each of them can contain multiple concentric _nests_, with each nest further refining the resolution of the simulation, allowing for progressively finer detail in areas of interest.
+
+Since the regional forecasting is performed separately for each nested region and, within each nested region, is performed for every individual nest, the total computational cost increases with both the number of nested regions and the number of nests within each nested region.
 
 ## ACCESS-rAM3
 Similar to the the UKMO Regional Coupled Suite, ACCESS-rAM3 is configured to derive its initial and lateral boundary conditions from the [ECMWF Reanalysis v5 (ERA5)](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) dataset.<br>
@@ -16,7 +21,7 @@ However, for its land-surface initial conditions, ACCESS-rAM3 offers flexibility
 
 Information about the amount of NCI resources (such as Service Units (SU) and storage) used by a typical ACCESS-rAM3 experiment run are available on the [ACCESS-Hive Forum release notes page](https://forum.access-hive.org.au/t/access-ram3-release-information/4308).
 
-### Land-surface initial conditions options
+### Land-surface initial conditions source
 - [ERA5-Land](https://www.ecmwf.int/en/era5-land) (default)
 - [ERA5](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5)
 - [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)

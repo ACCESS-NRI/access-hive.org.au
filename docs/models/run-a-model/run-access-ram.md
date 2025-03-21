@@ -23,7 +23,7 @@ A description of the model and its components is available in the [{{ model }} o
 {{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (input files; e.g.: initial conditions, lateral boundary conditions, forcing conditions, etc.) for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
-As an example, an experiment modelling a flood event in Lismore (NSW) will be run, using `ERA5-Land` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-options) and having the configuration specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
+As an example, an experiment modelling a flood event in Lismore (NSW) will be run, using `ERA5-Land` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-source) and having the configuration specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
@@ -39,7 +39,7 @@ All {{model}} configurations are and available on MOSRS, through the links at th
 - **_MOSRS_ account**<br>
     The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
     To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
-    {: id='mosrs-account'}
+    {: #mosrs-account}
 
 - **Join NCI projects**<br>
     Join the following projects by requesting membership on their respective NCI project pages:
@@ -266,7 +266,7 @@ persistent-sessions kill <persistent-session-uuid>
 
 To run {{ model }}, access to multiple software and MOSRS authentication is needed.
 
-#### Cylc setup {: id="cylc" .no-toc }
+#### Cylc setup {: #cylc .no-toc }
 
 [_Cylc_](https://cylc.github.io/cylc-doc/7.8.8/html/index.html) (pronounced ‘silk’) is a workflow manager that automatically executes tasks according to the model's main cycle script `suite.rc`. _Cylc_ controls how the job will be run and manages the time steps of each model component. It also monitors all tasks, reporting any errors that may occur.
 
@@ -289,7 +289,7 @@ module load cylc7
     
     Also, before loading the _Cylc_ module, make sure to have started a _persistent session_ and have assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up _persistent session_](#set-up-persistent-session).
 
-#### Rose setup {: id="rose" .no-toc }
+#### Rose setup {: #rose .no-toc }
 [Rose](http://metomi.github.io/rose/doc/html/index.html) is a toolkit that can be used to view, edit, or run an ACCESS modelling suite.
 
 By completing the [_Cylc_ setup](#cylc), also _Rose_ will be automatically available. Therefore, there is no additional step required.
@@ -323,7 +323,7 @@ For more information on {{ model }}, refer to the [{{model}} configuration]({{ m
 !!! info 
     Many of the steps that follow are to be repeated almost identically for the RAS and RNS. For this reason, details on these steps will be provided only within the RAS section below, whereas in the following RNS section they will only be linked for reference.
 
-### Regional Ancillary Suite (RAS) {: id="ras"}
+### Regional Ancillary Suite (RAS) {: #ras }
 
 The RAS generates a set of ancillary files, such as initial conditions, lateral boundary conditions and forcing conditions, for the domain of interest. These ancillary files are then used by the [RNS](#rns).
 
@@ -339,7 +339,7 @@ The RAS configuration can be obtained as a copy of the MOSRS one, following 2 ap
 
 Suites are, by default, created in the user's home directory on _Gadi_ under `~/roses/<suite-ID>`.
 This path will be referred to as the *suite directory*.
-{: id="suitedir" }
+{: #suitedir }
 
 The suite directory contains multiple subdirectories and files, including:
 
@@ -349,7 +349,7 @@ The suite directory contains multiple subdirectories and files, including:
 - `rose-suite.info` &rarr; suite information file.
 - `suite.rc` &rarr; _Cylc_ control script file (Jinja2 language).
 
-##### Local-only copy {: id="local-copy" .no-toc }
+##### Local-only copy {: #local-copy .no-toc }
 To create a _local copy_ of the RAS from the UKMO repository, run:
 ```
 rosie checkout {{ ras_id }}
@@ -361,7 +361,7 @@ rosie checkout {{ ras_id }}
 </terminal-window>
 This option is mostly used for testing and examining existing suites.
     
-##### Remote and local copy {: id="remote-copy" .no-toc }
+##### Remote and local copy {: #remote-copy .no-toc }
 To create a new copy of the RAS both _locally_ and _remotely_ in the UKMO repository, run: 
 ```
 rosie copy {{ ras_id }}
@@ -417,7 +417,7 @@ Inside the logs folder, various files and subfolders can be found. The most rele
 - [Suite execution log](#suite-execution-log)
 - [Task-specific logs](#task-specific-logs)
 
-##### Suite execution log {: id='suite-execution-log' .no-toc }
+##### Suite execution log {: #suite-execution-log .no-toc }
 
 The primary suite execution log is located at:
 ```
@@ -673,7 +673,7 @@ rose suite-run --new
     Cleaning a suite folder will remove any non-archived data (i.e.: output files, logs, executables, etc.) associated with the suite.
 
 #### RAS output files
-    
+
 The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`.<br>
 The ancillaries are divided for each [nested region]({{ model_configurations }}/#nesting), with each of the region subdivided in directories named according to the nests' names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 
@@ -687,52 +687,7 @@ Thus, the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>
 
 The ancillary data files in output are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
-#### Edit the RAS configuration
-This section describes how to modify the RAS configuration.<br>
-The modifications discussed in this section can change the way the RAS is run and, as a result, control the ancillaries that are generated.
-
-In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the [suite directory](#suitedir), or by using the [_Rose_ GUI](#rosegui).
-
-!!! warning 
-    Unless you are an experienced user, direct modification of configuration files is discouraged to avoid errors.
-
-##### Rose GUI {: id="rosegui" .no-toc }
-To open the [_Rose_](#rose) GUI, run the following command from within the [suite directory](#suitedir): 
-```
-rose edit &
-```
-
-!!! tip
-    The `&` is optional. It allows the terminal prompt to remain active while running the `Rose` GUI as a separate process in the background.
-
-##### Change the region centre and name {: .no-toc }
-In {{model}}, it is possible to perform simulations for a specific region on Earth, by setting specific parameters for the region of interest.<br>
-In the RAS, the following parameters can be set:
-
-- `rg01_name`<br>
-  Name for the region of interest.
-
-- `rg01_centre`<br>
-  Set of latitude/longitude coordinates defining the centre of the region of interest.
-<!--
-TODO
-What about the extent of the region? -->
-
-!!! tip
-    In `{{ras_id}}` these parameters are set, by default, according to the *Lismore Flood* event. 
-
-To change these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, edit the `rg01_name` and `rg01_centre` fields and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
-
-For example, to run an {{ model }} suite for a region with centre (-12.4, 130.8) and name "Darwin":
-
-![Rose change region centre example](/assets/run_access_ras/ras_edit_region_center_and_name.gif){: class="example-img" loading="lazy"}
-
-<!--
-TODO
-{: style="color:red"}
-<!-- Add a gif/video for the exmple -->
-
-### Regional Nesting Suite (RNS) {: id="rns"}
+### Regional Nesting Suite (RNS) {: #rns }
 
 The RNS uses the ancillary files produced by the RAS to run the regional forecast for the domain of interest.
 
@@ -775,41 +730,180 @@ The model output data for the `Lismore` `nested_region`, using a `RAL3P2` `scien
 
 The RNS output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
-#### Edit the RNS configuration
+### Edit {{ model }} configuration
 
-This section describes how to modify the RNS configuration.
-The modifications discussed in this section can change the way the RNS is run, or how its specific [model components] are configured and coupled together.
+This section describes how to modify the {{ model }} configuration.
+
+The modifications discussed in this section can change the way the RAS and RNS are run, or how specific [model components] are configured and coupled together.
+
+PARAGRAPH ABOUT THE IMPORTANCE OF DIFFERENTIATING BETWEEN RAS AND RNS
 
 In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the suite directory, or by using the [_Rose_ GUI](#rosegui).
 
 !!! warning
     Unless you are a very expert user, directly modifying configuration files is usually discouraged to avoid incurring in errors.
 
-To open the _Rose_ GUI, you can follow the steps listed in [Rose GUI](#rosegui).
+##### Rose GUI {: #rosegui }
+To open the [_Rose_](#rose) GUI, run the following command from within the [suite directory](#suitedir): 
+```
+rose edit &
+```
 
-##### Change where the output from run is stored project {: .no-toc }
-To change where the output from the model run is stored, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; General run options_, edit the `_NCI_STORAGE_` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+!!! tip
+    The `&` is optional. It allows the terminal prompt to remain active while running the `Rose` GUI as a separate process in the background.
 
-<!--
-TODO
-{: style="color:red"}
-<!-- I couldn't restructure this title/text because from them I am not really understanding what `NCI_STORAGE` is. From its default value in the rose-suite.conf (scratch/$PROJECT) and how it's used inside the suite, it seems to be a project folder added to the `storage` option for the PBS jobs submission of many tasks. Therefore is not necessarily related to model outputs (is also related to model input), but to filesystem mounts that the model need to be able to access. Why is the text mentioning changing where the output is stored? -->
+#### Change run length and cycling frequency
+- **RNS**<br>
+    The RNS runs in multiple [PBS jobs][PBS job] submissions, each one constituting a _cycle_. The job scheduler automatically resubmits the suite every chosen _cycling frequency_ (in model time), until the total _run length_ is reached.<br>
 
-#### Change run length and cycling frequency {: .no-toc }
-The RNS is run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen cycling frequency, until the total run length is reached.
+    - _cycling frequency_<br>
+        The _cycling frequency_ is controlled by the `CYCLE_INT_HR` field, set in hours.
+      
+    - _run length_<br>
+        The _run length_ is calculated using the `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` fields.<br>
+        Both `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` fields use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format, with the `FINAL_CYCLE_POINT` also accepting relative [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations).
 
-For the RNS:
+        !!! warning
+            `CYCLE_INT_HR`, `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` define all the [_Cylc_ cycle points](https://cylc.github.io/cylc-doc/7.9.3/html/terminology.html?highlight=cycle%20point#cycle-points) that are set within the experiment run.<br>
+            The model will always run for a full `CYCLE_INT_HR` for each _Cylc_ cycle point.<br>
+            This means, for example, that with `CYCLE_INT_HR` set to `24` (1 day), `INITIAL_CYCLE_POINT` set to `20220226T1000Z`, and `FINAL_CYCLE_POINT` set to `+P1D` (plus 1 day), 2 _Cylc_ cycle points will be set (`20220226T1000Z` and `20220227T1000Z`). Therefore, the model will run for a total of 2 days!<br>
+            To avoid running the model for longer that desired, we suggest adding `-PT1S` (minus 1 second) to the relative duration specified in the `FINAL_CYCLE_POINT` (example below).
+            {: #run-length-mismatch }
 
-- `CYCLE_INT_HR` is the cycling frequency (in hours)
-- The total run length is the time span between the `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT`
+    To modify these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_, edit the related field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to run the experiment for 2 days, starting the 5th April 2000, with a resubmissions cycle every 6 hours, set `INITIAL_CYCLE_POINT` to `20000405T0000Z`, `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)), and `CYCLE_INT_HR` to `6`.
 
-To modify these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_, edit the `INITIAL_CYCLE_POINT`, `FINAL_CYCLE_POINT` and the `CYCLE_INT_HR` fields (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+#### Change the land-surface initial coditions source
+- **RNS**<br>
+    To change the [land-surface initial coditions source]({{ model_configurations }}/#land-surface-initial-conditions-source), within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_, edit the `NCI_HRES_ECCB` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
-<!--
-TODO
-{: style="color:red"}
-<!-- Are there any other options more specific to the RNS that users may want to change here? -->
+    For example, to get the land-surface initial coditions from the `BARRA-R2` dataset, set the `NCI_HRES_ECCB` field to `BARRA2-R`.
 
+#### Change the simulation region
+In {{ model }}, users can perform simulations for distinct regions of Earth by configuring specific parameters for each domain of interest (referred to as _nested region_).<br>
+
+In {{ model }}, the following parameters are useful to configure the nested regions:
+
+- [Number of nested regions](#change-the-number-of-nested-regions)
+- [Nested region name](#change-the-nested-region-name)
+- [Nested region position](#change-the-nested-region-position)
+- [Nested region dimension](#change-the-nested-region-dimension)
+- [Nested region configuration](#change-the-nested-region-configuration)
+    - [Number of nests](#change-the-number-of-nests)
+    - [Name of a nest](#change-the-name-of-a-nest)
+    - [Resolution of a nest](#change-the-resolution-of-a-nest)
+    - [Dimension of a nest](#change-the-dimension-of-a-nest)
+    - [Position of a nest](#change-the-position-of-a-nest)
+
+!!! warning
+    Domain-specific changes need to be consistent between RAS and RNS. Therefore, for each of the configuration parameters listed above, consistent changes to both RAS and RNS will be required.
+
+##### Change the number of nested regions {: .no-toc }
+- **RAS**<br>
+    To change the number of nested regions, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; General run options_, edit the `nregns` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to have 2 separate nested regions, set `nregns` to `2`.
+
+    Modifying this field will adjust the number of _Nested region RGNUM setup_ fields available, where `RGNUM` can be considered the identification number of the corresponding region. For example, setting `nregns` to `2` will enable _Nested region 1 setup_ and _Nested region 2 setup_.<br>
+    The _Nested region RGNUM setup_ field controls the configuration of the corresponding nested region.
+
+- **RNS**<br>
+    To change the number of nested regions, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_, edit the `dm_nregns` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to have 2 separate nested regions, set `nregns` to `2`.
+
+    Modifying this field will adjust the number of _Nested region RGNUM setup_ fields available, where `RGNUM` can be considered the identification number of the corresponding region. For example, setting `dm_nregns` to `2` will enable _Nested region 1 setup_ and _Nested region 2 setup_.<br>
+    The _Nested region RGNUM setup_ field controls the configuration of the corresponding nested region.
+
+!!! warning
+    The same number of nested regions must be specified for RAS and RNS.<br>
+    The maximum allowed number of nested regions is `3`.
+
+##### Change the nested region name {: .no-toc }
+- **RAS**<br>
+    To change a nested region name, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+
+    For example, to set the name of nested region 2 to `Darwin`, set the _Nested region 2 setup_ `rg02_name` field to `Darwin`.
+
+- **RNS**<br>
+    To change a nested region name, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+
+    For example, to set the name of nested region 2 to `Darwin`, set the _Nested region 2 setup_ `rg02_name` field to `Darwin`.
+
+!!! warning
+    Each nested region with the same identification number (_RGNUM_ within this documentation) must have the same name for RAS and RNS.
+
+##### Change the nested region position {: .no-toc }
+The nested region position is usually defined by the latitude and longitude coordinates of the nested region centre.
+
+- **RAS**<br>
+    To change a nested region centre, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_centre` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+
+    For example, to set the centre of nested region 2 to `-12.4` / `130.8`, set the _Nested region 2 setup_ `rg02_centre` field to `-12.4` / `130.8`.
+
+##### Change the nested region dimension {: .no-toc }
+- **RAS**<br>
+    Each nested region must specify at least one [nest]({{model_configurations}}/#nesting), that usually corresponds to the outer domain for the simulation.<br>
+    Therefore, to change the nested region dimension, apply the steps listed in [Change the dimension of a nest](#change-the-dimension-of-a-nest) to nest number (_NSNUM_ within this documentation) 1.
+
+##### Change the nested region configuration {: .no-toc }
+Each nested region can contain multiple [nests]({{model_configurations}}/#nesting), each of them being a separate domain where the simulation experiment is carried out.<br>
+Typically, nests within the same nested region are arranged concentrically, with their dimensions and resolutions decreasing towards the innermost nests.
+
+!!! warning
+    Within the RAS, nest number 1 is always treated as the outer domain, typically encompassing the entire nested region. In the RNS, however, only the nests within this outer domain are counted.<br>
+    As a result, nest identification numbers in the RNS are offset by one compared to those in the RAS. Specifically, RNS nest _NSNUM_ corresponds to RAS nest _NSNUM + 1_. For example, nest 1 in the RNS corresponds to nest 2 in the RAS.
+    {: #nest-id-mismatch }
+
+###### Change the number of nests {: .no-toc }
+- **RAS**<br>
+    To change the number of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_nreslns` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to have 3 nests in total (outer domain nest plus 2 additional sub-nests) within the nested region number 1, set `rg01_nreslns` to `3`.
+
+    Modifying this field will adjust the number of _Resolution NSNUM setup_ fields available for the related nested region, where `NSNUM` can be considered the identification number of the corresponding nest. For example, setting `rg01_nreslns` to `3` will enable _Resolution 1 setup_, _Resolution 2 setup_ and _Resolution 3 setup_ for the nested region 1.<br>
+    The _Resolution NSNUM setup_ field controls the configuration of the corresponding nest.
+
+- **RNS**<br>
+    To change the number of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_nreslns` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to have 2 inner nests within the nested region number 1, set `rg01_nreslns` to `2`.
+
+    Modifying this field will adjust the number of _Resolution NSNUM setup_ fields available for the related nested region, where `NSNUM` can be considered the identification number of the corresponding nest. For example, setting `rg01_nreslns` to `3` will enable _Resolution 1 setup_, _Resolution 2 setup_ and _Resolution 3 setup_ for the nested region 1.<br>
+    The _Resolution NSNUM setup_ field controls the configuration of the corresponding nest.
+
+!!! warning
+    Due to the [nest specification mistmatch between RAS and RNS](#nest-id-mismatch), each nested region with the same identification number (_RGNUM_ within this documentation) must specify, in the RNS, one fewer nest than in the RAS. For example, if within RAS `rg01_nreslns` was set to `2`, in the RNS `rg01_nreslns` must be set to `1`.
+
+###### Change the name of a nest {: .no-toc }
+- **RAS**<br>
+    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to set the name of nest number 2 within the nested region 2 to `inner-nest`, set the _Nested region 2 setup &rarr; Resolution 2 setup_ `rg02_rs02_name` field to `inner-nest`.
+
+- **RNS**<br>
+    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to set the name RNS nest number 1 (nest number 2 in the RAS because of the [nest id mismatch](#nest-id-mismatch)) within the nested region 2 to `inner-nest`, set the _Nested region 2 setup &rarr; Resolution 1 setup_ `rg02_rs01_name` field to `inner-nest`.
+
+!!! warning
+    Due to the [nest specification mistmatch between RAS and RNS](#nest-id-mismatch), within each nested region with the same identification number (_RGNUM_ within this documentation), the name of nest number _NSNUM_ in the RNS needs to be the same as the name of nest number _NSNUM + 1_ in the RAS.
+    For example, if within the RAS `rg02_rs02_name` was set to `my-custom-name`, in the RNS `rg02_rs01_name` must be set to `my-custom-name`.
+
+###### Change the dimension of a nest {: .no-toc }
+The dimension of nests is usually defined by its number of latitude and longitude grid-points.
+
+- **RAS**<br>
+    To change the dimension of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_npts` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to set the dimension of nest number 2 (first inner nest due to [nest mismatch](#nest-id-mismatch)) for the nested region 1, to `500` / `600`, set the _Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_npts` field to `500` / `600`.
+
+###### Change the resolution of a nest {: .no-toc }
+The resolution of nests is usually defined by the spacing (in degrees) of their latitude and longitude grid-points.
+
+- **RAS**<br>
+    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_delta` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to set the resolution of nest number 2 within the nested region 1 to `0.05`/`0.05`, set the _Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_delta` field to `0.05`/`0.05`.
+
+###### Change the position of a nest {: .no-toc }
+The position of nests is usually defined by the latitude and longitude offset (in degrees) from the [nested region position](#change-the-nested-region-position).
+
+- **RAS**<br>
+    To change the position of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_offset` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to offset nest number 3 within the nested region 2 by `3`° along latitude and `6`° along longitude, set the _Nested region 2 setup &rarr; Resolution 3 setup_ `rg02_rs03_offset` field to `3`/`6`.
 
 ## Get Help
 If you have questions or need help regarding {{ model }}, consider creating a topic in the [Regional Nesting Suite category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/atmosphere/regional-nesting-suite/17).<br>
