@@ -296,41 +296,34 @@ To find out more about configuration settings for the `config.yaml` file, refer 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-The run length is controlled by the `restart_period` field in the `&date_manager_nml` section of the `~/access-om3/1deg_jra55_ryf/accessom3.nml` file:
+The run length and restart period are controlled by a set of parameters in the `~/access-om3/1deg_jra55_ryf/nuopc.runconfig` file:
 
-    &date_manager_nml
-        forcing_start_date = '1958-01-01T00:00:00'
-        forcing_end_date = '2019-01-01T00:00:00'<br>
-        ! Runtime for a single segment/job/submit, format is years, months, seconds,
-        ! two of which must be zero.
-        restart_period = 5, 0, 0
-    &end
+    CLOCK_attributes::
+    ﻿     ...
+    ﻿     restart_n = 1
+         restart_option = nyears
+         ...
+         stop_n = 1
+         stop_option = nyears
+         ...
+         
+`stop_option` and `stop_n` control how long the model will run.<br>
+Common options for `stop_option` are `nseconds`, `nhours`, `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
 
-The format is `restart_period = <number_of_years>, <number_of_months>, <number_of_days>`.
+`restart_option` and `restart_n` control how often restarts are written.<br>
+In general, users will want to write restarts at the end of each run so should set the `restart_*` controls to match the `stop_*` controls.
 
-For example, to make the model run for 1 year, 4 months and 10 days, change `restart_period` to:
+For example, to run a configuration for 2 months a user should set the following in the `~/access-om3/1deg_jra55_ryf/nuopc.runconfig` file:
 
-    restart_period = 1, 4, 10
+    CLOCK_attributes::
+    ﻿     ...
+    ﻿     restart_n = 2
+         restart_option = nmonths
+         ...
+         stop_n = 2
+         stop_option = nmonths
+         ...
 
-!!! warning
-    While `restart_period` can be reduced, it should not be increased to more than 5 years to avoid errors.
-    <br><br>
-    It is also important to differentiate between _run length_ and _total experiment length_.<br>
-    For more information about their difference, or how to run the model for more than 5 years, refer to [Run configuration for more than 5 years](#run-configuration-for-more-than-5-years).
-
-#### Run configuration for more than 5 years
-
-As mentioned in the [Change run length](#change-run-length) section, you cannot specify more than 5 years as `restart_period`.<br>
-If you want to run a configuration for more than 5 years, you need to use the `-n` option:
-
-    payu run -n <number-of-runs>
-
-This will run {{ model }} `number-of-runs` consecutive times, each with a *run length* equal to `restart_period`.<br>
-This way, the *total experiment length* will be `restart_period * number-of-runs`. 
-
-For example, to run a configuration for a total of 50 years with a `restart_period` of 5 years, the `number-of-runs` should be set to `10`:
-
-    payu run -n 10
 
 ### Modify PBS resources
 
@@ -379,9 +372,6 @@ This feature is controlled by the following section in the `config.yaml` file:
 sync:
     enable: False # set path below and change to true
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
-    exclude:
-      - '*.nc.*'
-      - 'iceh.????-??-??.nc'
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
@@ -392,19 +382,8 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
 The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
-This can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
+This is a number (in which case every _nth_ restart file is retained).
 
-- `YS` &rarr; start of the year
-- `MS` &rarr; start of the month
-- `D` &rarr; day
-- `H` &rarr; hour
-- `T` &rarr; minute
-- `S` &rarr; second
-
-For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
-```yaml
-restart_freq: '50YS'
-```
 
 The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
 
