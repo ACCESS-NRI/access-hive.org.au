@@ -43,7 +43,7 @@
         <div class="card-text-container">
             <span class="bold" >ACCESS-rAM</span>
             <span>
-                ACCESS-rAM is an implementation of the UKMO Regional Coupled Suite that allows high-resolution regional atmosphere modelling.
+                ACCESS-rAM is an implementation of the UKMO Regional Nesting Suite that allows high-resolution regional atmosphere modelling.
             </span>
         </div>
     </a>
