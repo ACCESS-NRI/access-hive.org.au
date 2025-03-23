@@ -731,12 +731,13 @@ The model output data for the `Lismore` `nested_region`, using a `RAL3P2` `scien
 The RNS output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
 ### Edit {{ model }} configuration
+!!! tip
+    Due to the presence of two distinct suites ([RAS](#ras) and [RNS](#rns)), specific modifications might be required in either one or both.<br>
+    To clarify which suite needs editing, each modification paragraph includes a bullet point specifying the relevant suite to edit.
 
 This section describes how to modify the {{ model }} configuration.
 
 The modifications discussed in this section can change the way the RAS and RNS are run, or how specific [model components] are configured and coupled together.
-
-PARAGRAPH ABOUT THE IMPORTANCE OF DIFFERENTIATING BETWEEN RAS AND RNS
 
 In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the suite directory, or by using the [_Rose_ GUI](#rosegui).
 
