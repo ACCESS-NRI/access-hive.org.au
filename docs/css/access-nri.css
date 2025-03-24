@@ -1101,13 +1101,13 @@ pre > button:is(:hover,:focus).md-clipboard {
   word-break: normal;
 }
 
-img.terminalSwitch {
+img.terminal-switch {
   float: right;
   height: 1.1rem;
   margin: 0.5rem 0.2rem;
 }
 
-img.terminalSwitch:hover {
+img.terminal-switch:hover {
   cursor: pointer;
 }
 
