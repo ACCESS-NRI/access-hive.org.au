@@ -36,7 +36,6 @@ function hideTocItems() {
             item.style.display = 'none'
         }
     })
-    console.log('TOC items hidden')
 }
 
 // Add buttons at the top of each table column (when hovered) to sort it
@@ -170,63 +169,60 @@ function makeLinksExternal() {
   Add button to toggle terminal-animations for the whole page (next to the page title)
 */
 function toggleTerminalAnimations() {
-  if (document.querySelector('terminal-window')) {
-    
-    function getState() {
-      return localStorage.getItem('ACCESS-Hive-Docs-animated-terminal_state') || 'active';
-    }
-    
-    function setState(state) {
-      localStorage.setItem('ACCESS-Hive-Docs-animated-terminal_state', state);
-    }
+    if (document.querySelector('terminal-window')) {
+        const COOKIE_TEXT = 'ACCESS-Hive-Docs-animated-terminal-state';
+        
+        function getState() {
+            return localStorage.getItem(COOKIE_TEXT) || 'active';
+        }
 
-    function applyState() {
-      let state = getState();
-      let current_string = state == 'active' ? 'enabled' : 'disabled';
-      let onclick_string = state == 'active' ? 'disable' : 'enable';
-      document.querySelectorAll('.terminalSwitch').forEach(_switch => {
-        _switch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
-        _switch.setAttribute('title',`Terminal animations ${current_string}.\nClick to ${onclick_string} them.`);
-      })
-      let terminalWindows = document.querySelectorAll('terminal-window');
-      if (state == 'active') {
-        terminalWindows.forEach(t => {
-          t.removeAttribute('static');
-        })
-      } else {
-        terminalWindows.forEach(t => {
-          t.setAttribute('static',"");
-        })
-      }
-    }
+        function setStateCookie(state) {
+            localStorage.setItem(COOKIE_TEXT, state);
+        }
+        
+        function setSwitchIconAndTitle(_switch, state) {
+            const onclick_string = state == 'active' ? 'disable' : 'enable';
+            _switch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
+            _switch.setAttribute('title',`Terminal animations ${state}.\nClick to ${onclick_string} them.`);
+        }
+        
+        function applyStateToTerminalWindows(state) {
+            let terminalWindows = document.querySelectorAll('terminal-window');
+            console.log(terminalWindows);
+            if (state === 'active') {
+                console.log('mamma');
+                terminalWindows.forEach(t => {
+                    t.removeAttribute('static');
+                })
+            } else {
+                console.log('bubbi');
+                terminalWindows.forEach(t => {
+                    t.setAttribute('static',"");
+                })
+            }
+        }
 
-    function toggleState(e) {
-      if (getState() == 'active') {
-        setState('inactive');
-      } else {
-        setState('active');
-      }
-      applyState();
-    }
-    
-    let terminalAnimationsSwitch = document.createElement('img');
-    terminalAnimationsSwitch.classList.add('terminalSwitch');
-    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
-    let h1 = document.querySelector('h1');
-    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
-    applyState();
-  }
-}
+        function applyState(element, state) {
+            // Change the switch icon and title
+            setSwitchIconAndTitle(element, state);
+            // Apply the state to terminal windows
+            applyStateToTerminalWindows(state);
+        }
 
-/*
-  Add custom info box for terminal-animations at the top of the page (right after the page title)
-*/
-function addTerminalAnimationsInfo() {
-  if (document.querySelector('terminal-window')) {
-    let h1 = document.querySelector('h1');
-    let infoBox = document.createElement('custom-simulated-terminal-info');
-    h1.parentElement.insertBefore(infoBox, h1.nextSibling);
-  }
+        function toggleState(event) {
+            const newstate = getState() === 'active' ? 'inactive' : 'active';
+            applyState(event.currentTarget, newstate);
+            setStateCookie(newstate);
+        }
+
+        const terminalAnimationsSwitch = document.createElement('img');
+        terminalAnimationsSwitch.classList.add('terminal-switch');
+        terminalAnimationsSwitch.addEventListener('click', toggleState, false);
+        const h1 = document.querySelector('h1');
+        let state = getState();
+        applyState(terminalAnimationsSwitch, state);
+        h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
+    }
 }
 
 /*
@@ -279,7 +275,6 @@ function main() {
   makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
-  addTerminalAnimationsInfo();
   makeCitationLinks();
 }
 
