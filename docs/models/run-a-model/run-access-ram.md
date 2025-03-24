@@ -731,6 +731,9 @@ Therefore, the model output data for the first cycle (`20220226T0000Z`) of the e
 
 The RNS output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
+!!! tip
+    To change which output variables are produced, refer to [Change the output variables](#change-the-output-variables)
+
 ### Edit {{ model }} configuration
 !!! tip
     Due to the presence of two distinct suites ([RAS](#ras) and [RNS](#rns)), specific modifications might be required in either one or both.<br>
@@ -844,7 +847,7 @@ The nested region position is usually defined by the latitude and longitude coor
 ##### Change the nested region dimension {: .no-toc }
 - **RAS**<br>
     Each nested region must specify at least one [nest]({{model_configurations}}/#nesting), that usually corresponds to the outer domain for the simulation.<br>
-    Therefore, to change the nested region dimension, apply the steps listed in [Change the dimension of a nest](#change-the-dimension-of-a-nest) to nest number (_NSNUM_ within this documentation) 1.
+    Therefore, to change the nested region dimension, apply the steps listed in [Change the dimension of a nest](#change-the-dimension-of-a-nest) to nest number (_NSTNUM_ within this documentation) 1.
 
 ##### Change the nested region's nest configuration {: .no-toc }
 Each nested region can contain multiple [nests]({{model_configurations}}/#nesting), each of them being a separate domain where the simulation experiment is carried out.<br>
@@ -852,7 +855,7 @@ Typically, nests within the same nested region are arranged concentrically, with
 
 !!! warning
     Within the RAS, nest number 1 is always treated as the outer domain, typically encompassing the entire nested region. In the RNS, however, only the nests within this outer domain are counted.<br>
-    As a result, nest identification numbers in the RNS are offset by one compared to those in the RAS. Specifically, RNS nest _NSNUM_ corresponds to RAS nest _NSNUM + 1_. For example, nest 1 in the RNS corresponds to nest 2 in the RAS.
+    As a result, nest identification numbers in the RNS are offset by one compared to those in the RAS. Specifically, RNS nest _NSTNUM_ corresponds to RAS nest _NSTNUM + 1_. For example, nest 1 in the RNS corresponds to nest 2 in the RAS.
     {: #nest-id-mismatch }
 
 ###### Change the number of nests {: .no-toc }
@@ -860,52 +863,60 @@ Typically, nests within the same nested region are arranged concentrically, with
     To change the number of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_nreslns` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to have 3 nests in total (outer domain nest plus 2 additional sub-nests) within the nested region number 1, set `rg01_nreslns` to `3`.
 
-    Modifying this field will adjust the number of _Resolution NSNUM setup_ fields available for the related nested region, where `NSNUM` can be considered the identification number of the corresponding nest. For example, setting `rg01_nreslns` to `3` will enable _Resolution 1 setup_, _Resolution 2 setup_ and _Resolution 3 setup_ for the nested region 1.<br>
-    The _Resolution NSNUM setup_ field controls the configuration of the corresponding nest.
+    Modifying this field will adjust the number of _Resolution NSTNUM setup_ fields available for the related nested region, where `NSTNUM` can be considered the identification number of the corresponding nest. For example, setting `rg01_nreslns` to `3` will enable _Resolution 1 setup_, _Resolution 2 setup_ and _Resolution 3 setup_ for the nested region 1.<br>
+    The _Resolution NSTNUM setup_ field controls the configuration of the corresponding nest.
 
 - **RNS**<br>
     To change the number of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup_, edit the `rgRGNUM_nreslns` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to have 2 inner nests within the nested region number 1, set `rg01_nreslns` to `2`.
 
-    Modifying this field will adjust the number of _Resolution NSNUM setup_ fields available for the related nested region, where `NSNUM` can be considered the identification number of the corresponding nest. For example, setting `rg01_nreslns` to `3` will enable _Resolution 1 setup_, _Resolution 2 setup_ and _Resolution 3 setup_ for the nested region 1.<br>
-    The _Resolution NSNUM setup_ field controls the configuration of the corresponding nest.
+    Modifying this field will adjust the number of _Resolution NSTNUM setup_ fields available for the related nested region, where `NSTNUM` can be considered the identification number of the corresponding nest. For example, setting `rg01_nreslns` to `3` will enable _Resolution 1 setup_, _Resolution 2 setup_ and _Resolution 3 setup_ for the nested region 1.<br>
+    The _Resolution NSTNUM setup_ field controls the configuration of the corresponding nest.
 
 !!! warning
     Due to the [nest specification mistmatch between RAS and RNS](#nest-id-mismatch), each nested region with the same identification number (_RGNUM_ within this documentation) must specify, in the RNS, one fewer nest than in the RAS. For example, if within RAS `rg01_nreslns` was set to `2`, in the RNS `rg01_nreslns` must be set to `1`.
 
 ###### Change the name of a nest {: .no-toc }
 - **RAS**<br>
-    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSTNUM setup_, edit the `rgRGNUM_rsNSTNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to set the name of nest number 2 within the nested region 2 to `inner-nest`, set the _Nested region 2 setup &rarr; Resolution 2 setup_ `rg02_rs02_name` field to `inner-nest`.
 
 - **RNS**<br>
-    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-    For example, to set the name RNS nest number 1 (nest number 2 in the RAS because of the [nest id mismatch](#nest-id-mismatch)) within the nested region 2 to `inner-nest`, set the _Nested region 2 setup &rarr; Resolution 1 setup_ `rg02_rs01_name` field to `inner-nest`.
+    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSTNUM setup_, edit the `rgRGNUM_rsNSTNUM_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to set the name of RNS nest number 1 (nest number 2 in the RAS because of the [nest id mismatch](#nest-id-mismatch)) within the nested region 2 to `inner-nest`, set the _Nested region 2 setup &rarr; Resolution 1 setup_ `rg02_rs01_name` field to `inner-nest`.
 
 !!! warning
-    Due to the [nest specification mistmatch between RAS and RNS](#nest-id-mismatch), within each nested region with the same identification number (_RGNUM_ within this documentation), the name of nest number _NSNUM_ in the RNS needs to be the same as the name of nest number _NSNUM + 1_ in the RAS.
+    Due to the [nest specification mistmatch between RAS and RNS](#nest-id-mismatch), within each nested region with the same identification number (_RGNUM_ within this documentation), the name of nest number _NSTNUM_ in the RNS needs to be the same as the name of nest number _NSTNUM + 1_ in the RAS.
     For example, if within the RAS `rg02_rs02_name` was set to `my-custom-name`, in the RNS `rg02_rs01_name` must be set to `my-custom-name`.
 
 ###### Change the dimension of a nest {: .no-toc }
 The dimension of nests is usually defined by its number of latitude and longitude grid-points.
 
 - **RAS**<br>
-    To change the dimension of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_npts` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    To change the dimension of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSTNUM setup_, edit the `rgRGNUM_rsNSTNUM_npts` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to set the dimension of nest number 2 (first inner nest due to [nest mismatch](#nest-id-mismatch)) for the nested region 1, to `500` / `600`, set the _Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_npts` field to `500` / `600`.
 
 ###### Change the resolution of a nest {: .no-toc }
 The resolution of nests is usually defined by the spacing (in degrees) of their latitude and longitude grid-points.
 
 - **RAS**<br>
-    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_delta` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    To change the name of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSTNUM setup_, edit the `rgRGNUM_rsNSTNUM_delta` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to set the resolution of nest number 2 within the nested region 1 to `0.05`/`0.05`, set the _Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_delta` field to `0.05`/`0.05`.
 
 ###### Change the position of a nest {: .no-toc }
 The position of nests is usually defined by the latitude and longitude offset (in degrees) from the [nested region position](#change-the-nested-region-position).
 
 - **RAS**<br>
-    To change the position of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSNUM setup_, edit the `rgRGNUM_rsNSNUM_offset` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    To change the position of nests, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSTNUM setup_, edit the `rgRGNUM_rsNSTNUM_offset` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to offset nest number 3 within the nested region 2 by `3`° along latitude and `6`° along longitude, set the _Nested region 2 setup &rarr; Resolution 3 setup_ `rg02_rs03_offset` field to `3`/`6`.
+
+#### Change the output variables
+[UM](models/model_components/atmosphere/#unified-model-um) outputs are usually provided as a list of [STASH](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_C04.pdf) variables.<br>
+Manually specifying each STASH variable can be complex. To simplify the selection process for commonly used climate analysis variables, predefined groups of STASH variables, known as _stashpacks_, have been created.
+
+- **RNS**<br>
+    To toggle a _stashpack_, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region RGNUM setup &rarr; Resolution NSTNUM setup &rarr; Config NSTNUM setup_, toggle a specific _stashpack_ within the `rgRGNUM_rsNSTNUM_mNSTNUM_stashpack` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to enable stashpack `6` (that includes variables such as wind gust, mean sea level pressure and rainfall amount, for every model timestep) in the nest number 1 within the nested region 2, set the `6th` button of the _Nested region 2 setup &rarr; Resolution 1 setup &rarr; Config 1 setup_ `rg02_rs01_m01_stashpack` field to `true`.
 
 ## Get Help
 If you have questions or need help regarding {{ model }}, consider creating a topic in the [Regional Nesting Suite category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/atmosphere/regional-nesting-suite/17).<br>
