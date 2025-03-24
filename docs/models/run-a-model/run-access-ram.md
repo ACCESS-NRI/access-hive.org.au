@@ -9,9 +9,12 @@
 [model components]: /models/configurations/access-ram/#model-components
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-[:notepad_spiral:{: class="twemoji icon-before-text"} {{ model }} release notes]({{release_notes}}){: class="text-card"}
+<div class="text-card-group" markdown>
+
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RAS configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RNS configuration]({{mosrs_config_rns}}){: class="text-card"}
+[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
+</div>
 
 # Run {{ model }}
 
