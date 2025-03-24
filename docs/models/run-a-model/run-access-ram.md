@@ -705,15 +705,18 @@ To check the RNS suite logs, please follow the steps listed in [Check suite logs
 
 #### RNS output files
 
-All the RNS output files are available on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
+All the RNS output files are available on _Gadi_ inside the directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
 
-The RNS output data can be found in the `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle` directory, grouped for each [cycle](#change-run-length-and-cycling-frequency).<br>
-Within the cycle directory, outputs are divided into multiple nested subdirectories in the format `<nested_region>/<science_choice>/<nest_name>`, with [nested_region](), [science_choice]() and [nest_name]() referring to the respective configurable options in the [RAS](#edit-the-ras-configuration).
-
-<!--
-TODO
-{: style="color:red"}
-<!-- Use the same names for `nested_region` `science_choice` and `nest_name` as the one used above for the RAS and make sure all of the are referenced in the RAS and there are clear instructions on how to modify them. There is no reference for how to change the `science_choice`. If it cannot be changed, I would call it in a different way. Add links -->
+The RNS output data can be found in the directory 
+```
+/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle
+```
+grouped for each [cycle](#change-run-length-and-cycling-frequency).<br>
+Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format 
+```
+<nested_region_name>/<science_configuration>/<nest_name>
+```
+with [nested_region_name](#change-the-nested-region-name) and [nest_name](#change-the-name-of-a-nest) referring to the respective configurable options. The `science_configuration` is usually one among `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
 
 Each `<nest_name>` directory has the following subdirectories:
 
@@ -721,12 +724,10 @@ Each `<nest_name>` directory has the following subdirectories:
 - `lbcs` &rarr; lateral boundary conditions
 - `um` &rarr; model output data
 
-<!--
-TODO
-{: style="color:red"}
-<!-- Use the same names for `nested_region` `science_choice` and `nest_name` as the one used above for the RAS and make sure all of the are referenced in the RAS and there are clear instructions on how to modify them. Add links -->
-
-The model output data for the `Lismore` `nested_region`, using a `RAL3P2` `science_choice` and `d0198` as a `nest_name`, will be stored in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um`.
+Therefore, the model output data for the first cycle (`20220226T0000Z`) of the example in this documentation (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) is stored in
+```
+/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um
+```
 
 The RNS output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
@@ -789,7 +790,7 @@ In {{ model }}, the following parameters are useful to configure the nested regi
 - [Nested region name](#change-the-nested-region-name)
 - [Nested region position](#change-the-nested-region-position)
 - [Nested region dimension](#change-the-nested-region-dimension)
-- [Nested region configuration](#change-the-nested-region-configuration)
+- [Nested region's nest configuration](#change-the-nested-regions-nest-configuration)
     - [Number of nests](#change-the-number-of-nests)
     - [Name of a nest](#change-the-name-of-a-nest)
     - [Resolution of a nest](#change-the-resolution-of-a-nest)
@@ -845,7 +846,7 @@ The nested region position is usually defined by the latitude and longitude coor
     Each nested region must specify at least one [nest]({{model_configurations}}/#nesting), that usually corresponds to the outer domain for the simulation.<br>
     Therefore, to change the nested region dimension, apply the steps listed in [Change the dimension of a nest](#change-the-dimension-of-a-nest) to nest number (_NSNUM_ within this documentation) 1.
 
-##### Change the nested region configuration {: .no-toc }
+##### Change the nested region's nest configuration {: .no-toc }
 Each nested region can contain multiple [nests]({{model_configurations}}/#nesting), each of them being a separate domain where the simulation experiment is carried out.<br>
 Typically, nests within the same nested region are arranged concentrically, with their dimensions and resolutions decreasing towards the innermost nests.
 
