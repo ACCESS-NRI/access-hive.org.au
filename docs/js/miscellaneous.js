@@ -180,33 +180,45 @@ function toggleTerminalAnimations() {
             localStorage.setItem(COOKIE_TEXT, state);
         }
         
-        function setSwitchIconAndTitle(_switch, state) {
-            const onclick_string = state == 'active' ? 'disable' : 'enable';
-            _switch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
-            _switch.setAttribute('title',`Terminal animations ${state}.\nClick to ${onclick_string} them.`);
+        function setSwitchIcon(element, state) {
+            element.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
         }
         
         function applyStateToTerminalWindows(state) {
             let terminalWindows = document.querySelectorAll('terminal-window');
-            console.log(terminalWindows);
             if (state === 'active') {
-                console.log('mamma');
                 terminalWindows.forEach(t => {
                     t.removeAttribute('static');
                 })
             } else {
-                console.log('bubbi');
                 terminalWindows.forEach(t => {
                     t.setAttribute('static',"");
                 })
             }
         }
 
-        function applyState(element, state) {
-            // Change the switch icon and title
-            setSwitchIconAndTitle(element, state);
+        function applyState(container, state) {
+            // Change the switch icon and title            
+            setSwitchIcon(container.querySelector('.terminal-switch'), state);
+            setSwitchTooltipText(container.querySelector('.terminal-switch-tooltip'), state);
             // Apply the state to terminal windows
             applyStateToTerminalWindows(state);
+        }
+        
+        function setSwitchTooltipText(element, state) {
+            let word = state === 'active' ? 'disable' : 'enable';
+            element.innerHTML = `
+            Terminal animations are <b>${state}</b>. Click to ${word} them.<br><br>
+            In this documentation, the same code is sometimes shown in a <b>code block</b> 
+            and also as a <b>terminal animation</b>.<br>
+            The <b>code blocks</b> show the commands to be run in a terminal. They can be easily copied
+            by clicking on the icon over the right side of the code block.<br>
+            The <b>terminal animations</b> are produced using 
+            <a href="https://github.com/atteggiani/animated-terminal.js" target="_blank" rel="noopener noreferrer" 
+                class="external-link">animated-terminal.js</a>
+            and provide examples of the output to expect when the commands are run. 
+            Sometimes they might slightly differ from the actual outputs.
+            `
         }
 
         function toggleState(event) {
@@ -215,13 +227,29 @@ function toggleTerminalAnimations() {
             setStateCookie(newstate);
         }
 
+        // Create the Animation switch
         const terminalAnimationsSwitch = document.createElement('img');
         terminalAnimationsSwitch.classList.add('terminal-switch');
-        terminalAnimationsSwitch.addEventListener('click', toggleState, false);
-        const h1 = document.querySelector('h1');
+        // Create the Animation Switch tooltip
+        const terminalAnimationsTooltip = document.createElement('div');
+        terminalAnimationsTooltip.classList.add('terminal-switch-tooltip');
+        terminalAnimationsTooltip.addEventListener("mouseenter", (event) => {
+            terminalAnimationsTooltip.classList.add('visible');
+        });
+        terminalAnimationsTooltip.addEventListener("mouseleave", (event) => {
+            terminalAnimationsTooltip.classList.remove('visible');
+        });
+        // Create the Animation Switch Container
+        const terminalAnimationsSwitchContainer = document.createElement('div');
+        terminalAnimationsSwitchContainer.classList.add('terminal-switch-container');
+        terminalAnimationsSwitchContainer.appendChild(terminalAnimationsSwitch);
+        terminalAnimationsSwitchContainer.appendChild(terminalAnimationsTooltip);
+        terminalAnimationsSwitchContainer.addEventListener('click', toggleState, false);
         let state = getState();
-        applyState(terminalAnimationsSwitch, state);
-        h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
+        applyState(terminalAnimationsSwitchContainer, state);
+        // Place the Animation switch within the document
+        const h1 = document.querySelector('h1');
+        h1.parentElement.insertBefore(terminalAnimationsSwitchContainer, h1);
     }
 }
 

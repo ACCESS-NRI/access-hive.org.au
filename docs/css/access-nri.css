@@ -124,6 +124,8 @@
   --example-bg: rgba(var(--example-color),0.05); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.05); /* Quote admonition background */
   --code-adm-bg: rgba(var(--code-adm-color),0.05); /* Code admonition (custom) background */
+  --tooltip-background: #272728; /* Tooltip background */
+  --tooltip-border-color: #404041; /* Tooltip border color */
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -169,6 +171,8 @@
   --example-bg: rgba(var(--example-color),0.1); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.1); /* Quote admonition background */
   --code-adm-bg: rgba(var(--code-adm-color),0.1); /* Code admonition (custom) background */
+  --tooltip-background: #cbcdd1; /* Tooltip background */
+  --tooltip-border-color: #a3a5a9; /* Tooltip border color */
 }
 
 /* Set rem based on viewport width */
@@ -1109,6 +1113,37 @@ img.terminal-switch {
 
 img.terminal-switch:hover {
   cursor: pointer;
+}
+
+.terminal-switch-container {
+    position: relative;
+}
+
+.terminal-switch-tooltip {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    right: 2em;
+    top: 2em;
+    max-width: 30vw;
+    font-size: 0.7em;
+    background-color: var(--tooltip-background);
+    border: solid 1.5px var(--tooltip-border-color);
+    border-radius: 0.3rem;
+    padding: 0.5em;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+img.terminal-switch:hover + .terminal-switch-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* =============================================================== 
