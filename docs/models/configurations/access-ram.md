@@ -3,7 +3,7 @@
 
 ![ACCESS RAM model](/assets/placeholder_image.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
 
-The ACCESS Regional Area Model (ACCESS-rAM) is an implementation of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite, comprising [atmosphere](/models/model_components/atmosphere) and [land](/models/model_components/land) components.<br>
+The ACCESS Regional Atmosphere Model (ACCESS-rAM) is an implementation of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite, comprising [atmosphere](/models/model_components/atmosphere) and [land](/models/model_components/land) components.<br>
 Unlike the UKMO Regional Nesting Suite that relies on operational land-surface initial conditions, ACCESS-rAM derives its initial conditions from alternative sources, enhancing its capability for high-resolution regional atmosphere modelling on [Gadi](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview).
 
 ACCESS-rAM requires both initial conditions and lateral boundary (_driving_) conditions. It also supports multiple [_nesting_](#nesting) configurations, automatically providing their necessary initial and lateral boundary conditions.
@@ -28,7 +28,7 @@ Information about the amount of NCI resources (such as Service Units (SU) and st
 - [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)
 
 ### Nesting configuration
-The structure, horizontal resolution, and placement of [nests](#nesting) can be be fully customised.<br>
+The structure, horizontal resolution, and placement of [nests](#nesting) can be be customised.<br>
 For details on how to modify these configuration settings, refer to [Change the nested region's nest configuration](/models/run-a-model/run-access-ram/#change-the-nested-regions-nest-configuration).
 
 The default nesting configuration for the `ERA5-Land` land-surface initial conditions are the following:
