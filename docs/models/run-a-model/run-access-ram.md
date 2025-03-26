@@ -125,12 +125,12 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     For further instructions on getting the RAS configuration, refer to the [detailed guide](#get-the-ras-configuration).
 
 2. **Run the RAS**<br>
-    From within the RAS directory:
     ```
+    cd ~/roses/{{ras_id}}
     rose suite-run
     ```
 
-    For further instructions on running the RAS configuration, refer to the [detailed guide](#run-the-suite).
+    For further instructions on running the RAS configuration, refer to the [detailed guide](#run-the-ras).
 
 ### Regional Nesting Suite (RNS) {: .no-toc }
 1. **Copy the RNS from UKMO**<br>
@@ -383,7 +383,7 @@ For additional `rosie` options, run:
 rosie help
 ```
 
-#### Run the suite
+#### Run the RAS
 {{ model }} suites run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job] submission.<br>
 When a suite runs, its configuration files are copied on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>` and a symbolic link to this directory is also created in the `$USER`'s home directory under `~/cylc-run/<suite-ID>`.<br>
 {{ model }} suites comprise several tasks, such as checking out code repositories, compiling and building the different model components, running the model, etc. The workflow of these tasks is controlled by [_Cylc_](#cylc).
@@ -702,7 +702,7 @@ The only difference is the `suite-ID`, which for the RNS is `{{ rns_id }}`.
 
 To get the RNS configuration, please follow the steps listed in [Get the RAS configuration](#get-the-ras-configuration), making sure you use the correct RNS `suite-ID` `{{ rns_id }}` when copying the suite.
 
-To run the RNS configuration, please follow the steps listed in [Run the suite](#run-the-suite).
+To run the RNS configuration, please follow the steps listed in [Run the suite](#run-the-ras).
 
 To check the RNS suite logs, please follow the steps listed in [Check suite logs](#check-suite-logs).
 
@@ -781,11 +781,11 @@ rose edit &
     To modify these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_, edit the related field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     For example, to run the experiment for 2 days, starting the 5th April 2000, with a resubmissions cycle every 6 hours, set `INITIAL_CYCLE_POINT` to `20000405T0000Z`, `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)), and `CYCLE_INT_HR` to `6`.
 
-#### Change the land-surface initial coditions source
+#### Change the land-surface initial conditions source
 - **RNS**<br>
-    To change the [land-surface initial coditions source]({{ model_configurations }}/#land-surface-initial-conditions-source), within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_, edit the `NCI_HRES_ECCB` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+    To change the [land-surface initial conditions source]({{ model_configurations }}/#land-surface-initial-conditions-source), within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_, edit the `NCI_HRES_ECCB` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
-    For example, to get the land-surface initial coditions from the `BARRA-R2` dataset, set the `NCI_HRES_ECCB` field to `BARRA2-R`.
+    For example, to get the land-surface initial conditions from the `BARRA-R2` dataset, set the `NCI_HRES_ECCB` field to `BARRA2-R`.
 
 #### Change the simulation region
 In {{ model }}, users can perform simulations for distinct regions of Earth by configuring specific parameters for each domain of interest (referred to as _nested region_).<br>
@@ -914,7 +914,7 @@ The position of nests is usually defined by the latitude and longitude offset (i
     For example, to offset nest number 3 within the nested region 2 by `3`° along latitude and `6`° along longitude, set the _Nested region 2 setup &rarr; Resolution 3 setup_ `rg02_rs03_offset` field to `3`/`6`.
 
 #### Change the output variables
-[UM](models/model_components/atmosphere/#unified-model-um) outputs are usually provided as a list of [STASH](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_C04.pdf) variables.<br>
+[UM](/models/model_components/atmosphere/#unified-model-um) outputs are usually provided as a list of [STASH](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_C04.pdf) variables.<br>
 Manually specifying each STASH variable can be complex. To simplify the selection process for commonly used climate analysis variables, predefined groups of STASH variables, known as _stashpacks_, have been created.
 
 - **RNS**<br>

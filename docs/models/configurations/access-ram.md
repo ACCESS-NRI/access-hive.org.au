@@ -1,3 +1,4 @@
+[run-access-ram]: /models/run-a-model/run-access-ram
 # ACCESS-rAM 
 
 ![ACCESS RAM model](/assets/placeholder_image.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
@@ -10,7 +11,7 @@ ACCESS-rAM requires both initial conditions and lateral boundary (_driving_) con
 ### Nesting
 _Nesting_ is the process of embedding a smaller, finer resolution region (often referred to as _nest_ or _nested region_) within a larger, coarser-resolution domain to improve accuracy for localised weather events. This approach enables atmospheric variables such as temperature, pressure, and wind speed from the larger domain to be used as lateral boundary conditions for the nested region, allowing more accurate simulations within the nest.<br>
 
-In ACCESS-rAM, the coarser-resolutio domains are referred to as _nested regions_.
+In ACCESS-rAM, the coarser-resolution domains are referred to as _nested regions_.
 Each of them can contain multiple concentric _nests_, with each nest further refining the resolution of the simulation, allowing for progressively finer detail in areas of interest.
 
 Since the regional forecasting is performed separately for each nested region and, within each nested region, is performed for every individual nest, the total computational cost increases with both the number of nested regions and the number of nests within each nested region.
@@ -48,4 +49,4 @@ The default nesting configuration for the `ERA5-Land` land-surface initial condi
    Nests <= 4km: [RAL3.2 science configuration](10.0.20.74/gmd-2024-201), 90 vertical levels.<br>
    Spatial resolution depending on the [nesting configuration](#nesting-configuration).
 
-[Run ACCESS-rAM](/models/run-a-model/run-access-ram){: class="text-card"}
+[Run ACCESS-rAM][run-access-ram]{: class="text-card"}
