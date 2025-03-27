@@ -171,6 +171,8 @@ function makeLinksExternal() {
 function toggleTerminalAnimations() {
     if (document.querySelector('terminal-window')) {
         const COOKIE_TEXT = 'ACCESS-Hive-Docs-animated-terminal-state';
+        const SWITCH_IMG = '/assets/terminal_animation_switch.png';
+        const SWITCH_IMG_INACTIVE = '/assets/terminal_animation_switch_inactive.png';
         
         function getState() {
             return localStorage.getItem(COOKIE_TEXT) || 'active';
@@ -181,7 +183,11 @@ function toggleTerminalAnimations() {
         }
         
         function setSwitchIcon(element, state) {
-            element.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
+            if (state === 'active') {
+                element.classList.add('hidden');
+            } else {
+                element.classList.remove('hidden');
+            }
         }
         
         function applyStateToTerminalWindows(state) {
@@ -199,7 +205,7 @@ function toggleTerminalAnimations() {
 
         function applyState(container, state) {
             // Change the switch icon and title            
-            setSwitchIcon(container.querySelector('.terminal-switch'), state);
+            setSwitchIcon(container.children[1], state);
             setSwitchTooltipText(container.querySelector('.terminal-switch-tooltip'), state);
             // Apply the state to terminal windows
             applyStateToTerminalWindows(state);
@@ -229,7 +235,11 @@ function toggleTerminalAnimations() {
 
         // Create the Animation switch
         const terminalAnimationsSwitch = document.createElement('img');
+        terminalAnimationsSwitch.setAttribute('src',SWITCH_IMG);
         terminalAnimationsSwitch.classList.add('terminal-switch');
+        const terminalAnimationsSwitchInactive = document.createElement('img');
+        terminalAnimationsSwitchInactive.classList.add('terminal-switch');
+        terminalAnimationsSwitchInactive.setAttribute('src',SWITCH_IMG_INACTIVE);
         // Create the Animation Switch tooltip
         const terminalAnimationsTooltip = document.createElement('div');
         terminalAnimationsTooltip.classList.add('terminal-switch-tooltip');
@@ -243,6 +253,7 @@ function toggleTerminalAnimations() {
         const terminalAnimationsSwitchContainer = document.createElement('div');
         terminalAnimationsSwitchContainer.classList.add('terminal-switch-container');
         terminalAnimationsSwitchContainer.appendChild(terminalAnimationsSwitch);
+        terminalAnimationsSwitchContainer.appendChild(terminalAnimationsSwitchInactive);
         terminalAnimationsSwitchContainer.appendChild(terminalAnimationsTooltip);
         terminalAnimationsSwitchContainer.addEventListener('click', toggleState, false);
         let state = getState();
