@@ -38,7 +38,7 @@
     </a>
     <a href="/models/configurations/access-ram/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="/assets/placeholder_image.png" class="white-background img-contain"></img> 
+            <img src="/assets/model-config-logos/model_visualisation/access_ram_model_visualisation.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-rAM</span>
