@@ -26,6 +26,18 @@ function changeAbsoluteUrls() {
   }
 }
 
+// Hide Table of Content items whose related paragraph has the 'no-toc' class
+function hideTocItems() {
+    let toc_items = document.querySelectorAll('[aria-label="On this page"] .md-nav__item')
+    toc_items.forEach(item => {
+        let parag_id = item.querySelector('a').href.split('#')[1];
+        let parag = document.getElementById(parag_id)
+        if (parag && parag.classList.contains('no-toc')) {
+            item.style.display = 'none'
+        }
+    })
+}
+
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
@@ -157,63 +169,99 @@ function makeLinksExternal() {
   Add button to toggle terminal-animations for the whole page (next to the page title)
 */
 function toggleTerminalAnimations() {
-  if (document.querySelector('terminal-window')) {
-    
-    function getState() {
-      return localStorage.getItem('ACCESS-Hive-Docs-animated-terminal_state') || 'active';
-    }
-    
-    function setState(state) {
-      localStorage.setItem('ACCESS-Hive-Docs-animated-terminal_state', state);
-    }
+    if (document.querySelector('terminal-window')) {
+        const COOKIE_TEXT = 'ACCESS-Hive-Docs-animated-terminal-state';
+        const SWITCH_IMG = '/assets/terminal_animation_switch.png';
+        const SWITCH_IMG_INACTIVE = '/assets/terminal_animation_switch_inactive.png';
+        
+        function getState() {
+            return localStorage.getItem(COOKIE_TEXT) || 'active';
+        }
 
-    function applyState() {
-      let state = getState();
-      let current_string = state == 'active' ? 'enabled' : 'disabled';
-      let onclick_string = state == 'active' ? 'disable' : 'enable';
-      document.querySelectorAll('.terminalSwitch').forEach(_switch => {
-        _switch.setAttribute('src',`/assets/terminal_animation_switch_${state}.png`);
-        _switch.setAttribute('title',`Terminal animations ${current_string}.\nClick to ${onclick_string} them.`);
-      })
-      let terminalWindows = document.querySelectorAll('terminal-window');
-      if (state == 'active') {
-        terminalWindows.forEach(t => {
-          t.removeAttribute('static');
-        })
-      } else {
-        terminalWindows.forEach(t => {
-          t.setAttribute('static',"");
-        })
-      }
-    }
+        function setStateCookie(state) {
+            localStorage.setItem(COOKIE_TEXT, state);
+        }
+        
+        function setSwitchIcon(element, state) {
+            if (state === 'active') {
+                element.classList.add('hidden');
+            } else {
+                element.classList.remove('hidden');
+            }
+        }
+        
+        function applyStateToTerminalWindows(state) {
+            let terminalWindows = document.querySelectorAll('terminal-window');
+            if (state === 'active') {
+                terminalWindows.forEach(t => {
+                    t.removeAttribute('static');
+                })
+            } else {
+                terminalWindows.forEach(t => {
+                    t.setAttribute('static',"");
+                })
+            }
+        }
 
-    function toggleState(e) {
-      if (getState() == 'active') {
-        setState('inactive');
-      } else {
-        setState('active');
-      }
-      applyState();
-    }
-    
-    let terminalAnimationsSwitch = document.createElement('img');
-    terminalAnimationsSwitch.classList.add('terminalSwitch');
-    terminalAnimationsSwitch.addEventListener('click', toggleState, false);
-    let h1 = document.querySelector('h1');
-    h1.parentElement.insertBefore(terminalAnimationsSwitch, h1);
-    applyState();
-  }
-}
+        function applyState(container, state) {
+            // Change the switch icon and title            
+            setSwitchIcon(container.children[1], state);
+            setSwitchTooltipText(container.querySelector('.terminal-switch-tooltip'), state);
+            // Apply the state to terminal windows
+            applyStateToTerminalWindows(state);
+        }
+        
+        function setSwitchTooltipText(element, state) {
+            let word = state === 'active' ? 'disable' : 'enable';
+            element.innerHTML = `
+            Terminal animations are <b>${state}</b>. Click to ${word} them.<br><br>
+            In this documentation, the same code is sometimes shown in a <b>code block</b> 
+            and also as a <b>terminal animation</b>.<br>
+            The <b>code blocks</b> show the commands to be run in a terminal. They can be easily copied
+            by clicking on the icon over the right side of the code block.<br>
+            The <b>terminal animations</b> are produced using 
+            <a href="https://github.com/atteggiani/animated-terminal.js" target="_blank" rel="noopener noreferrer" 
+                class="external-link">animated-terminal.js</a>
+            and provide examples of the output to expect when the commands are run. 
+            Sometimes they might slightly differ from the actual outputs.
+            `
+        }
 
-/*
-  Add custom info box for terminal-animations at the top of the page (right after the page title)
-*/
-function addTerminalAnimationsInfo() {
-  if (document.querySelector('terminal-window')) {
-    let h1 = document.querySelector('h1');
-    let infoBox = document.createElement('custom-simulated-terminal-info');
-    h1.parentElement.insertBefore(infoBox, h1.nextSibling);
-  }
+        function toggleState(event) {
+            const newstate = getState() === 'active' ? 'inactive' : 'active';
+            applyState(event.currentTarget, newstate);
+            setStateCookie(newstate);
+        }
+
+        // Create the Animation switch
+        const terminalAnimationsSwitch = document.createElement('img');
+        terminalAnimationsSwitch.setAttribute('src',SWITCH_IMG);
+        terminalAnimationsSwitch.classList.add('terminal-switch');
+        const terminalAnimationsSwitchInactive = document.createElement('img');
+        terminalAnimationsSwitchInactive.classList.add('terminal-switch');
+        terminalAnimationsSwitchInactive.setAttribute('src',SWITCH_IMG_INACTIVE);
+        // Create the Animation Switch tooltip
+        const terminalAnimationsTooltip = document.createElement('div');
+        terminalAnimationsTooltip.classList.add('terminal-switch-tooltip');
+        terminalAnimationsTooltip.addEventListener("mouseenter", (event) => {
+            terminalAnimationsTooltip.classList.add('visible');
+        });
+        terminalAnimationsTooltip.addEventListener("mouseleave", (event) => {
+            terminalAnimationsTooltip.classList.remove('visible');
+        });
+        // Create the Animation Switch Container
+        const terminalAnimationsSwitchContainer = document.createElement('div');
+        terminalAnimationsSwitchContainer.classList.add('terminal-switch-container');
+        terminalAnimationsSwitchContainer.appendChild(terminalAnimationsSwitch);
+        terminalAnimationsSwitchContainer.appendChild(terminalAnimationsSwitchInactive);
+        terminalAnimationsSwitchContainer.appendChild(terminalAnimationsTooltip);
+        terminalAnimationsSwitchContainer.addEventListener('click', toggleState, false);
+        let state = getState();
+        applyState(terminalAnimationsSwitchContainer, state);
+        // Place the Animation switch within the document
+        const h1 = document.querySelector('h1');
+        h1.parentElement.insertBefore(terminalAnimationsSwitchContainer, h1);
+    }
 }
 
 /*
@@ -259,13 +307,13 @@ function makeCitationLinks() {
 // Join all functions
 function main() {
   changeAbsoluteUrls();
+  hideTocItems();
   adjustScrollingToId();
   tabFunctionality();
   sortTables();
   makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
-  addTerminalAnimationsInfo();
   makeCitationLinks();
 }
 

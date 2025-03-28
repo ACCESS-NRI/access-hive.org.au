@@ -79,6 +79,8 @@
   --quote: rgb(var(--quote-color)); /* Quote admonition */
   --code-adm-color: 158, 158, 158; /* Code admonition (custom) color */
   --code-adm: rgb(var(--code-adm-color)); /* Code admonition (custom) */
+  --release-color: 255, 222, 8; /* Release admonition (custom) color */
+  --release: rgb(var(--release-color)); /* Release admonition (custom) border */
 }
 
 [data-md-color-scheme="custom-dark"] {
@@ -124,6 +126,9 @@
   --example-bg: rgba(var(--example-color),0.05); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.05); /* Quote admonition background */
   --code-adm-bg: rgba(var(--code-adm-color),0.05); /* Code admonition (custom) background */
+  --release-bg: rgba(var(--release-color), 0.05); /* Release admonition (custom) background */
+  --tooltip-background: #272728; /* Tooltip background */
+  --tooltip-border-color: #404041; /* Tooltip border color */
 }
 
 [data-md-color-scheme="custom-light"] {
@@ -169,6 +174,9 @@
   --example-bg: rgba(var(--example-color),0.1); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.1); /* Quote admonition background */
   --code-adm-bg: rgba(var(--code-adm-color),0.1); /* Code admonition (custom) background */
+  --release-bg: rgba(var(--release-color), 0.1); /* Release admonition (custom) background */
+  --tooltip-background: #cbcdd1; /* Tooltip background */
+  --tooltip-border-color: #a3a5a9; /* Tooltip border color */
 }
 
 /* Set rem based on viewport width */
@@ -288,6 +296,17 @@
 }
 
 /* Text card */
+/* Group of text cards similar to the ones at the top of the "How to run" pages */
+.text-card-group > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  /* column-gap: 0.5em;
+  row-gap: 0; */
+}
+
 .text-card {
   color: var(--md-default-fg-color) !important;
   font-size: 1.4em;
@@ -301,6 +320,7 @@
   padding: 0.5rem;
   width: max-content;
   height: 2.5rem;
+  margin: 0.5em;
 }
 .text-card:hover {
   border-color: var(--md-accent-fg-color);
@@ -325,20 +345,31 @@
 /* =============================================================== 
   Main headings
 */
-h1 {
-  color: var(--default-fg-color) !important;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--md-default-fg-color) !important;
   font-weight: 600 !important;
-}
-
-h2 {
-  font-weight: 500 !important;
+  text-transform: unset !important;
 }
 
 h3 {
-  font-weight: 500 !important;
+  font-size: 1rem !important;
   margin: 1.3em 0 0.4em !important;
 }
 
+h4 {
+    font-size: .85rem !important;
+    margin: 1em 0 0.35em !important;
+}
+
+h5 {
+    font-size: .8rem !important;
+    margin: 0.8em 0 0.3em !important;
+}
+
+h6 {
+    font-size: .75rem !important;
+    margin: 0.7em 0 0.3em !important;
+}
 
 /* =============================================================== 
   Homepage
@@ -725,6 +756,24 @@ details.code {
   color: var(--danger) !important;
 }
 
+/* release */
+.release {
+  border-color: var(--release) !important;
+  background-color: var(--release-bg) !important;
+}
+.release > summary {
+  background-color: var(--release-bg) !important;
+}
+.release > summary::after {
+  color: var(--release) !important;
+}
+.release:not(details)::before,
+.release > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f135' !important;
+  color: var(--release) !important;
+}
+
 /* =============================================================== 
   Left Navigation and right "On this page" navigation 
 */
@@ -1078,14 +1127,51 @@ pre > button:is(:hover,:focus).md-clipboard {
   word-break: normal;
 }
 
-img.terminalSwitch {
-  float: right;
-  height: 1.1rem;
+img.terminal-switch {
+  position: absolute;
+  right: 0;
+  top: -0.5em;
+  height: 1.5rem;
   margin: 0.5rem 0.2rem;
 }
 
-img.terminalSwitch:hover {
+img.terminal-switch:hover {
   cursor: pointer;
+}
+
+.terminal-switch-container {
+    position: relative;
+}
+
+.terminal-switch-tooltip {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    right: 2em;
+    top: 2em;
+    max-width: 30vw;
+    font-size: 0.7em;
+    background-color: var(--tooltip-background);
+    border: solid 1.5px var(--tooltip-border-color);
+    border-radius: 0.3rem;
+    padding: 0.5em;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+img.terminal-switch:hover ~ .terminal-switch-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /* =============================================================== 
@@ -1320,6 +1406,8 @@ img.intro-img {
 /* Style for icons before text (used for example in User Support and Contribute pages) */
 .icon-before-text {
   margin-right: 0.5em;
+  font-size: 1.5rem;
+  width: 1.5rem;
 }
 /* =============================================================== 
   Media queries for website responsiveness
