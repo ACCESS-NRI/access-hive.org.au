@@ -12,12 +12,12 @@ ACCESS-rAM requires both initial conditions and lateral boundary (_driving_) con
 _Nesting_ is the process of embedding a smaller, finer resolution region (often referred to as _nest_ or _nested region_) within a larger, coarser-resolution domain to improve accuracy for localised weather events. This approach enables atmospheric variables such as temperature, pressure, and wind speed from the larger domain to be used as lateral boundary conditions for the nested region, allowing more accurate simulations within the nest.<br>
 
 In ACCESS-rAM, the coarser-resolution domains are referred to as _nested regions_.
-Each of them can contain multiple concentric _nests_, with each nest further refining the resolution of the simulation, allowing for progressively finer detail in areas of interest.
+Each region can contain multiple concentric _nests_, with each nest increasing the resolution of the simulation, allowing for progressively finer detail in areas of interest.
 
-Since the regional forecasting is performed separately for each nested region and, within each nested region, is performed for every individual nest, the total computational cost increases with both the number of nested regions and the number of nests within each nested region.
+Since the regional forecasting is performed separately for each nested region and for every individual nest within, the total computational cost increases with both the number of nested regions and the number of nests contained within each of them.
 
 ## ACCESS-rAM3
-Similar to the the UKMO Regional Nesting Suite, ACCESS-rAM3 is configured to derive its initial and lateral boundary conditions from the [ECMWF Reanalysis v5 (ERA5)](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) dataset.<br>
+Similar to the UKMO Regional Nesting Suite, ACCESS-rAM3 is configured to derive its initial and lateral boundary conditions from the [ECMWF Reanalysis v5 (ERA5)](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) dataset.<br>
 However, for its land-surface initial conditions, ACCESS-rAM3 offers flexibility by allowing the use of alternative datasets.
 
 Information about the amount of NCI resources (such as Service Units (SU) and storage) used by a typical ACCESS-rAM3 experiment run are available on the [ACCESS-Hive Forum release notes page](https://forum.access-hive.org.au/t/access-ram3-release-information/4308).
@@ -28,7 +28,7 @@ Information about the amount of NCI resources (such as Service Units (SU) and st
 - [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)
 
 ### Nesting configuration
-The structure, horizontal resolution, and placement of [nests](#nesting) can be be customised.<br>
+The structure, horizontal resolution and placement of [nests](#nesting) can be be customised.<br>
 For details on how to modify these configuration settings, refer to [Change the nested region's nest configuration](/models/run-a-model/run-access-ram/#change-the-nested-regions-nest-configuration).
 
 The default nesting configuration for the `ERA5-Land` land-surface initial conditions are the following:

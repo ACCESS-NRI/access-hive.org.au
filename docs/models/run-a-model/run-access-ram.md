@@ -24,14 +24,14 @@
 {{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite for high-resolution regional atmosphere modelling.<br>
 A description of the model and its components is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
-{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (i.e.: input files), and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
+{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (i.e., input files), and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
-As an example, an experiment modelling a flood event in Lismore (NSW) will be run, using `ERA5-Land` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-source) and having the configuration specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
+The example experiment within this page focuses on a flood event in Lismore, NSW, using `ERA5-Land` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-source). Its configuration is specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-All {{model}} configurations are and available on MOSRS, through the links at the top of this page.
+All {{model}} configurations are and available on MOSRS via links at the top of this page.
 
 [{{ model }} release notes]({{release_notes}}) are available on the ACCESS-Hive Forum and are updated when new releases are made available.
 
@@ -71,7 +71,7 @@ All {{model}} configurations are and available on MOSRS, through the links at th
     If you are not familiar with ARE, check out the [Getting Started on ARE](/getting_started/are) section.
 
 !!! warning
-    Please note that the waiting time for some of the prerequisites mentioned above could take 2-3 weeks.
+    The waiting time to complete some of the above prerequisites may be 2-3 weeks.
 
 ## Quick Start guide
 
@@ -80,13 +80,13 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 ### Required setup for running {{ model }} {: .no-toc }
 
 - **Start a new [_persistent session_](https://opus.nci.org.au/display/Help/Persistent+Sessions)**<br> 
-    using a *Gadi* login node or an ARE terminal instance:
+    In a [Gadi][gadi] login node or from an ARE terminal instance run:
     ```
     persistent-sessions start <name>
     ```
     This will use your [default project].
 
-    For further instructions on starting a _persistent session_, refer to the [detailed guide](#start-a-new-persistent-session).
+    For further instructions on starting a _persistent session_, refer to the [Detailed guide](#start-a-new-persistent-session).
 
 - **Assign the _persistent session_ to Rose/Cylc workflows**<br>
     Run the following command:
@@ -98,7 +98,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     !!! tip
         This step should only be done once
 
-    For further instructions on assigning the target _persistent session_, refer to the [detailed guide](#specify-target-persistent-session).
+    For further instructions on assigning the target _persistent session_, refer to the [Detailed guide](#specify-target-persistent-session).
 
 - **Rose/Cylc setup**<br>
     To get the required _Rose/Cylc_ setup, run:
@@ -107,7 +107,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     module load cylc7
     ```
 
-    For further instructions on getting the _Rose/Cylc_ setup, refer to the [detailed guide](#rosecylcmosrs-setup).
+    For further instructions on getting the _Rose/Cylc_ setup, refer to the [Detailed guide](#rosecylcmosrs-setup).
 
 - **MOSRS authentication**<br>
     Authenticate using your MOSRS credentials:
@@ -115,7 +115,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     mosrs-auth
     ```
 
-    For further instructions on MOSRS authentication, refer to the [detailed guide](#mosrs-authentication).
+    For further instructions on MOSRS authentication, refer to the [Detailed guide](#mosrs-authentication).
 
 ### Regional Ancillary Suite (RAS) {: .no-toc }
 1. **Copy the RAS from UKMO**<br>
@@ -123,7 +123,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rosie checkout {{ ras_id }}
     ```
 
-    For further instructions on getting the RAS configuration, refer to the [detailed guide](#get-the-ras-configuration).
+    For further instructions on getting the RAS configuration, refer to the [Detailed guide](#get-the-ras-configuration).
 
 2. **Run the RAS**<br>
     ```
@@ -131,7 +131,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rose suite-run
     ```
 
-    For further instructions on running the RAS configuration, refer to the [detailed guide](#run-the-ras).
+    For further instructions on running the RAS configuration, refer to the [Detailed guide](#run-the-ras).
 
 ### Regional Nesting Suite (RNS) {: .no-toc }
 1. **Copy the RNS from UKMO**<br>
@@ -139,7 +139,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rosie checkout {{ rns_id }}
     ```
 
-    For further instructions on getting the RNS configuration, refer to the [detailed guide](#get-and-run-rns-configuration).
+    For further instructions on getting the RNS configuration, refer to the [Detailed guide](#get-and-run-rns-configuration).
 
 2. **Run the RNS**<br>
     From within the RNS directory:
@@ -147,7 +147,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rose suite-run
     ```
 
-    For further instructions on getting the RNS configuration, refer to the [detailed guide](#get-and-run-rns-configuration).
+    For further instructions on getting the RNS configuration, refer to the [Detailed guide](#get-and-run-rns-configuration).
 
 ---
 
@@ -195,7 +195,7 @@ To support the use of long-running processes, such as ACCESS model runs, NCI pro
 To run {{ model }}, you need to start a _persistent session_ and set it as the target session for the model run.
 
 #### Start a new _persistent session_ {: .no-toc }
-To start a new _persistent session_ on _Gadi_, using either a login node or an ARE terminal instance, run the following command:
+To start a new _persistent session_, using either a _Gadi_ login node or an ARE terminal instance, run the following command:
 ```
 persistent-sessions start <name>
 ```
@@ -296,7 +296,7 @@ module load cylc7
 #### Rose setup {: #rose .no-toc }
 [Rose](http://metomi.github.io/rose/doc/html/index.html) is a toolkit that can be used to view, edit, or run an ACCESS modelling suite.
 
-By completing the [_Cylc_ setup](#cylc), also _Rose_ will be automatically available. Therefore, there is no additional step required.
+By completing the [_Cylc_ setup](#cylc), also _Rose_ will be automatically available. Hence, no additional step is required.
 
 #### MOSRS authentication {: .no-toc }
 To authenticate using your _MOSRS_ credentials, run:
@@ -314,34 +314,34 @@ mosrs-auth
 </terminal-window>
 
 !!! warning
-    This step needs to be done once for each new session (e.g.: _Gadi_ login, _ARE_ terminal window)
+    This step needs to be done once for each new session (e.g., _Gadi_ login, _ARE_ terminal window)
 
 ### {{ model }} configuration
-{{ model }} is comprised of 2 different suites: a [Regional Ancillary Suite (RAS)](#ras) and a [Regional Nesting Suite (RNS)](#rns).
+{{ model }} comprises 2 different suites: a [Regional Ancillary Suite (RAS)](#ras) and a [Regional Nesting Suite (RNS)](#rns).
 
-Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
-Typically, an existing suite is copied and then edited as needed for a particular run.
+Both suites within {{ model }} have a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
+Typically, an existing suite is copied and then edited as needed for a particular experiment.
 
 For more information on {{ model }}, refer to the [{{model}} configuration]({{ model_configurations }}/#{{ model }}) page.
 
 !!! info 
-    Many of the steps that follow are to be repeated almost identically for the RAS and RNS. For this reason, details on these steps will be provided only within the RAS section below, whereas in the following RNS section they will only be linked for reference.
+    Many of the following steps appear in both the RAS and RNS. For this reason, these steps will be detailed only within the RAS section below, and subsequenltly linked to within the RNS section.
 
 ### Regional Ancillary Suite (RAS) {: #ras }
 
-The RAS generates a set of ancillary files, such as initial conditions, lateral boundary conditions and forcing conditions, for the domain of interest. These ancillary files are then used by the [RNS](#rns).
+For the domain of interest, the RAS generates a set of ancillary files, such as initial conditions. These ancillary files are then used by the [RNS](#rns).
 
 The `suite-ID` of the RAS is `{{ ras_id }}`.
 
 #### Get the RAS configuration
 [Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
 
-The RAS configuration can be obtained as a copy of the MOSRS one, following 2 approaches:
+The RAS configuration can be copied from the MOSRS repository in 2 ways:
 
 - [Local-only copy](#local-copy)
 - [Remote and local copy](#remote-copy)
 
-Suites are, by default, created in the user's home directory on _Gadi_ under `~/roses/<suite-ID>`.
+Suites are, by default, created in the user's _Gadi_ home directory under `~/roses/<suite-ID>`.
 This path will be referred to as the *suite directory*.
 {: #suitedir }
 
@@ -354,7 +354,7 @@ The suite directory contains multiple subdirectories and files, including:
 - `suite.rc` &rarr; _Cylc_ control script file (Jinja2 language).
 
 ##### Local-only copy {: #local-copy .no-toc }
-To create a _local copy_ of the RAS from the UKMO repository, run:
+To create a _local copy_ of the RAS from MOSRS repository, run:
 ```
 rosie checkout {{ ras_id }}
 ```
@@ -363,10 +363,10 @@ rosie checkout {{ ras_id }}
     <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
     <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/{{ ras_id }}</terminal-line>
 </terminal-window>
-This option is mostly used for testing and examining existing suites.
+This option is mostly used for testing and examining suites.
     
 ##### Remote and local copy {: #remote-copy .no-toc }
-To create a new copy of the RAS both _locally_ and _remotely_ in the UKMO repository, run: 
+To create a new copy of the RAS both _locally_ and _remotely_ in the MOSRS repository, run: 
 ```
 rosie copy {{ ras_id }}
 ```
@@ -377,7 +377,7 @@ rosie copy {{ ras_id }}
     <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from {{ ras_id }}/trunk@&lt;trunk-ID&gt;</terminal-line>
     <terminal-line>[INFO] {{ ras_id }}: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
 </terminal-window>
-When a new suite is created in this way, a _unique_ `<suite-ID>` is generated within the repository and populated with descriptive information about the suite and its initial configuration.
+When a new suite is created in this way, a _unique_ `<suite-ID>` folder is generated within the MOSRS repository and populated with descriptive information about the suite and its initial configuration.
 
 For additional `rosie` options, run:
 ```
@@ -386,10 +386,10 @@ rosie help
 
 #### Run the RAS
 {{ model }} suites run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job] submission.<br>
-When a suite runs, its configuration files are copied on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>` and a symbolic link to this directory is also created in the `$USER`'s home directory under `~/cylc-run/<suite-ID>`.<br>
+When a suite runs, its configuration files are copied in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. A symbolic link to this directory is also created in the `$USER`'s home directory under `~/cylc-run/<suite-ID>`.<br>
 {{ model }} suites comprise several tasks, such as checking out code repositories, compiling and building the different model components, running the model, etc. The workflow of these tasks is controlled by [_Cylc_](#cylc).
 
-To run the RAS, execute the following command from within the [suite directory](#suitedir):
+To run the RAS, execute the following command from within your RAS [suite directory](#suitedir):
 ```
 rose suite-run
 ```
@@ -409,12 +409,12 @@ If you get errors or you can't find the outputs, [check the suite logs](#check-s
 
 #### Check suite logs
 
-It is quite common, especially at the beginning, to experience errors and job failures.<br>
+It is not unusual that new users experience errors and job failures.<br>
 When a suite task fails, a red icon appears next to the respective task name in the _Cylc_ GUI.<br>
 
-To investigate the cause of a failure, or to monitor the progress of a suite, it can be useful to look at the suite logs.
+To investigate the cause of a failure, or to monitor the progress of a suite, it is helpful to look at the suite's log files.
 
-Suite logs are stored in the directory `~/cylc-run/<suite-ID>` within a folder named `log.<TIMESTAMP>`, which is also symlinked as `log` (referred to as _logs folder_ below). Logs from previous runs of the same suite are archived as compressed files with the naming pattern `log.<TIMESTAMP>.tar.gz`.
+These files can be found in the directory `~/cylc-run/<suite-ID>` within a folder named `log.<TIMESTAMP>`, which is also symlinked as `log` (referred to as _logs folder_ below). Logs from previous runs of the same suite are archived as compressed files with the naming pattern `log.<TIMESTAMP>.tar.gz`.
 
 Inside the logs folder, various files and subfolders can be found. The most relevant logs are typically:
 
@@ -423,11 +423,11 @@ Inside the logs folder, various files and subfolders can be found. The most rele
 
 ##### Suite execution log {: #suite-execution-log .no-toc }
 
-The primary suite execution log is located at: `~/cylc-run/<suite-ID>/log/suite/log`.
+The primary suite execution log resides in `~/cylc-run/<suite-ID>/log/suite/log`.
 
-This file contains a chronological record of the suite's run history. Each line is a distinct log entry, generally formatted as: `<TIMESTAMP> <LOG-TYPE> - [<task-name>.<cylc-cycle-point>] <status>`.
+This file contains a chronological record of the suite's run history. Each line is a distinct log entry, generally formatted as `<TIMESTAMP> <LOG-TYPE> - [<task-name>.<cylc-cycle-point>] <status>`.
 
-??? code "Example of a suite execution log file (click to enlarge)"
+??? code "Example of a suite execution log file (click to see content)"
     ```
     2025-03-14T04:11:56Z INFO - Suite server: url=https://cylc.$USER$.$PROJECT.ps.gadi.nci.org.au:PORT/ pid=PID
     2025-03-14T04:11:56Z INFO - Run: (re)start=0 log=1
@@ -588,10 +588,7 @@ Logs for individual tasks are located in subfolders within the logs folder, foll
 ```
 The `<retry-number>` indicates the number of retries for the same task, with the latest retry symlinked to `NN`.
 
-For example, the logs for the latest retry of a task named `Lismore_d1000_GAL9_um_recon` at _Cylc_ cycle point `20220226T0000Z` can be in the following folder:
-```
-~/cylc-run/<suite-ID>/log/job/20220226T0000Z/Lismore_d1000_GAL9_um_recon/NN
-```
+For example, logs for most recent retry of a task named `Lismore_d1000_GAL9_um_recon` at _Cylc_ cycle point `20220226T0000Z` can be found in the folder `~/cylc-run/<suite-ID>/log/job/20220226T0000Z/Lismore_d1000_GAL9_um_recon/NN`.
 
 Within this directory, the `job.out` and `job.err` files (representing `STDOUT` and `STDERR`, respectively) can be found, along with other related log files.
 
@@ -600,7 +597,7 @@ Within this directory, the `job.out` and `job.err` files (representing `STDOUT` 
 
 #### Stop, restart, reload and clean suites
 In some cases, you may want to control the running state of a suite.<br>
-If your _Cylc_ GUI has been closed and you are unsure whether your suite is still running, you can scan for active suites and reopen the GUI if desired.<br>
+If your _Cylc_ GUI has been closed and you are unsure whether your suite is still running, you can scan for active suites and reopen the GUI.<br>
 To scan for active suites, run:
 ```
 cylc scan
@@ -649,7 +646,7 @@ There are two main ways to restart a suite:
         This will overwrite all existing model output and logs for the same suite.
 
 ##### RELOAD a suite {: .no-toc }
-In some cases the suite needs to be updated without necessarily having to stop it (e.g., after fixing a typo in a file). Updating an active suite is called a _reload_, where the suite is _re-installed_ and _Cylc_ is updated with the changes. This is similar to a _SOFT_ restart, except new changes are installed, so you may need to manually trigger failed tasks from the _Cylc_ GUI.
+In some cases, the suite needs to be updated without necessarily having to stop it (e.g., after fixing a typo in a file). Updating an active suite is called a _reload_, where the suite is _re-installed_ and _Cylc_ is updated with the changes. This is similar to a _SOFT_ restart, except new changes are installed, so you may need to manually trigger failed tasks from the _Cylc_ GUI.
 
 To reload a suite, run the following command from within the [suite directory](#suitedir):
 ```
@@ -668,22 +665,21 @@ rose suite-run --new
 ```
 
 !!! warning
-    Cleaning a suite folder will remove any non-archived data (i.e.: output files, logs, executables, etc.) associated with the suite.
+    Cleaning a suite folder will remove any non-archived data (i.e., output files, logs, executables, etc.) associated with the suite.
 
 #### RAS output files
 
 The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`.<br>
-The ancillaries are divided for each [nested region]({{ model_configurations }}/#nesting), with each of the region subdivided in directories named according to the nests' names. Therefore, the path of the ancillaries for a specific nest is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
+Ancillaries are divided into folders according to each [nested region]({{ model_configurations }}/#nesting) name, and then further separated according to each nest (i.e., _Resolution_) name. The path of ancillaries for a specific nest (i.e., _Resolution_) is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 
-In addition to these nests, a subdirectory named according to the driving model data can be found within the `nested_region_name` directory.<br>
-The 2-level (i.e., two nests) example above has one `nested_region_name` called `Lismore`. Driven by ERA5 data, the outer and inner nests are named `d1000` and `d0198`, respectively.<br>
-Thus, the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/` contains the following folders:
+The example above has one `nested_region_name` called `Lismore`, 1 nest named `era5` (outer domain corresponding to _Resolution 1_), and 2 inner nests (_Resolution 2_ and _Resolution 3_) named `d1000` and `d0198`, respectively.<br>
+Thus, the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/` contains the following subdirectories:
 
 - `Lismore/d1000`
 - `Lismore/d0198`
 - `Lismore/era5`
 
-The ancillary data files in output are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
+Ancillary data files are typically output in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
 ### Regional Nesting Suite (RNS) {: #rns }
 
@@ -692,21 +688,21 @@ The RNS uses the ancillary files produced by the RAS to run the regional forecas
 The `suite-ID` of the RNS is `{{ rns_id }}`.
 
 #### Get and run RNS configuration
-Steps to obtain and run the RNS configuration, as well as monitoring the logs, are analogous to those listed above for the [RAS](#ras).<br>
-The only difference is the `suite-ID`, which for the RNS is `{{ rns_id }}`.
+Steps to obtain and run the RNS, as well as monitor logs, are similar to those listed above for the [RAS](#ras).<br>
+The main difference is the `suite-ID`, which for the RNS is `{{ rns_id }}`.
 
-To get the RNS configuration, please follow the steps listed in [Get the RAS configuration](#get-the-ras-configuration), making sure you use the correct RNS `suite-ID` `{{ rns_id }}` when copying the suite.
+To get the RNS configuration, follow the steps listed in [Get the RAS configuration](#get-the-ras-configuration), making sure you use the correct RNS `suite-ID` `{{ rns_id }}` when copying the suite.
 
-To run the RNS configuration, please follow the steps listed in [Run the suite](#run-the-ras).
+To run the RNS configuration, follow the steps listed in [Run the suite](#run-the-ras).
 
-To check the RNS suite logs, please follow the steps listed in [Check suite logs](#check-suite-logs).
+To check the RNS suite logs, follow the steps listed in [Check suite logs](#check-suite-logs).
 
 #### RNS output files
 
-All the RNS output files are available on _Gadi_ inside the directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
+All the RNS output files are available in the directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
 
 The RNS output data can be found in the directory `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle`, grouped for each [cycle](#change-run-length-and-cycling-frequency).<br>
-Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format `<nested_region_name>/<science_configuration>/<nest_name>`, with [`<nested_region_name>`](#change-the-nested-region-name) and `<nest_name>` referring to the respective configurable options. The `<science_configuration>` is usually one among `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
+Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format `<nested_region_name>/<science_configuration>/<nest_name>`, with [`<nested_region_name>`](#change-the-nested-region-name) and `<nest_name>` referring to the respective configurable options. The `<science_configuration>` is usually `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
 
 Each `<nest_name>` directory has the following subdirectories:
 
@@ -714,7 +710,7 @@ Each `<nest_name>` directory has the following subdirectories:
 - `lbcs` &rarr; lateral boundary conditions
 - `um` &rarr; model output data
 
-Therefore, the model output data for the first cycle (`20220226T0000Z`) of the example in this documentation (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) is stored in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um`.
+For example, the model output data for the first cycle (`20220226T0000Z`) of the Lismore experiment (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um`.
 
 The RNS output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
@@ -724,7 +720,7 @@ The RNS output data files are typically in the [UM fieldsfile](https://code.meto
 ### Edit {{ model }} configuration
 !!! tip
     Due to the presence of two distinct suites ([RAS](#ras) and [RNS](#rns)), specific modifications might be required in either one or both.<br>
-    To clarify which suite needs editing, each modification paragraph includes a bullet point specifying the relevant suite to edit.
+    For each of the following possible modifications, the relevant suite that needs editing is listed as a bullet point.
 
 This section describes how to modify the {{ model }} configuration.
 
@@ -733,7 +729,7 @@ The modifications discussed in this section can change the way the RAS and RNS a
 In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the suite directory, or by using the [_Rose_ GUI](#rosegui).
 
 !!! warning
-    Unless you are a very expert user, directly modifying configuration files is usually discouraged to avoid incurring in errors.
+    Unless you are an experienced user, directly modifying configuration files is usually discouraged to avoid encountering errors.
 
 ##### Rose GUI {: #rosegui }
 To open the [_Rose_](#rose) GUI, run the following command from within the [suite directory](#suitedir): 
@@ -746,7 +742,7 @@ rose edit &
 
 #### Change run length
 - **RNS**<br>
-    The RNS runs in multiple [PBS jobs][PBS job] submissions, each one constituting a _cycle_. The job scheduler automatically resubmits the suite every chosen _cycling frequency_, until the total _run length_ is reached.<br>
+    The RNS runs in multiple [PBS jobs][PBS job] submissions, each one constituting a _cycle_. The job scheduler automatically resubmits the suite every chosen _cycling frequency_ until the total _run length_ is reached.<br>
     
     !!! warning
         The _cycling frequency_ is currently set to `24` hours (1 day) and should be left unchanged to avoid errors.<br>
@@ -759,23 +755,23 @@ rose edit &
         `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` define all the [_Cylc_ cycle points](https://cylc.github.io/cylc-doc/7.9.3/html/terminology.html?highlight=cycle%20point#cycle-points) that are set within the experiment run.<br>
         The model will always run for a full _cycling frequency_ (1 day) for each _Cylc_ cycle point.<br>
         This means, for example, that with `INITIAL_CYCLE_POINT` set to `20220226T0000Z`, and `FINAL_CYCLE_POINT` set to `+P1D` (plus 1 day), 2 _Cylc_ cycle points will be set (`20220226T0000Z` and `20220227T0000Z`). Therefore, the model will run for a total of 2 days!<br>
-        To avoid running the model for longer that desired, we suggest adding `-PT1S` (minus 1 second) to the relative duration specified in the `FINAL_CYCLE_POINT` (related example below).
+        To avoid running the model for longer that desired, we suggest adding `-PT1S` (minus 1 second) to the relative duration specified in the `FINAL_CYCLE_POINT` (refer to the example below).
         {: #run-length-mismatch }
 
-    To modify these parameters, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_, edit the related field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-    For example, to run the experiment for 2 days, starting the 5th April 2000, set `INITIAL_CYCLE_POINT` to `20000405T0000Z` and `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)).
+    To modify these parameters within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_. Edit the related field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    For example, to run the experiment for 2 days starting on the 5th April 2000, set `INITIAL_CYCLE_POINT` to `20000405T0000Z` and `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)).
 
 #### Change the land-surface initial conditions source
 - **RNS**<br>
-    To change the [land-surface initial conditions source]({{ model_configurations }}/#land-surface-initial-conditions-source), within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_, edit the `NCI_HRES_ECCB` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+    To change the [land-surface initial conditions source]({{ model_configurations }}/#land-surface-initial-conditions-source) within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_. Edit the `NCI_HRES_ECCB` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
     For example, to get the land-surface initial conditions from the `BARRA-R2` dataset, set the `NCI_HRES_ECCB` field to `BARRA2-R`.
 
 !!! warning
-    When changing the land-surface initial conditions source, it is important to always ensure that the nested region's nest configuration aligns with the [nest configuration requirements](#nest-configuration-requirements).
+    When changing the land-surface initial conditions source, it is important to ensure that the configuration of the nested region aligns with the [nest configuration requirements](#nest-configuration-requirements).
 
 #### Change the simulation region
-In {{ model }}, users can perform simulations for distinct regions of Earth by configuring specific parameters for each domain of interest (referred to as _nested region_).<br>
+In {{ model }}, users can perform simulations for a particular region of the Earth by configuring specific parameters for each domain of interest (referred to as _nested region_).<br>
 
 In {{ model }}, the following parameters are supported to configure the nested regions:
 
@@ -788,7 +784,7 @@ In {{ model }}, the following parameters are supported to configure the nested r
 
 ##### Change the nested region name {: .no-toc }
 - **RAS**<br>
-    To change a nested region name, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+    To change a nested region name within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_. Edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
     For example, to set the name of the nested region to `Darwin`, set the `rg01_name` field to `Darwin`.
 
@@ -796,7 +792,7 @@ In {{ model }}, the following parameters are supported to configure the nested r
     Changing the RAS nested region name changes the [RAS output path](#ras-output-files). As a consequence, the following changes are required within the RNS:
     
     - **Ancillary directory**<br>
-        To change the first nest ancillary directory, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup_, change the `rg01_rs01_ancil_dir` field by replacing `Lismore` with the chosen RAS nested region name, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+        To change the first nest ancillary directory within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup_. Change the `rg01_rs01_ancil_dir` field by replacing `Lismore` with the chosen RAS nested region name, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
         The same step needs to be repeated for:
         
         - _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_ancil_dir` field
@@ -805,7 +801,7 @@ In {{ model }}, the following parameters are supported to configure the nested r
         For example, if the RAS nested region name was set to `Darwin`, replace `Lismore` in the `rg01_rs01_ancil_dir`, `rg01_rs02_ancil_dir` and `dm_ec_lam_ancil_dir` fields with `Darwin`.
 
     - **RNS nested region name**<br>
-        To change the nested region name, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup_, edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+        To change the nested region name within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup_. Edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
         For example, to set the name of the nested region to `Darwin`, set the `rg01_name` field to `Darwin`.
 
@@ -816,32 +812,32 @@ In {{ model }}, the following parameters are supported to configure the nested r
 The nested region position is usually defined by the latitude and longitude coordinates of the nested region centre.
 
 - **RAS**<br>
-    To change the nested region centre, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_, edit the `rg01_centre` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+    To change the nested region centre within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_. Edit the `rg01_centre` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
     For example, to set the centre of the nested region to `-12.4` / `130.8`, set the `rg01_centre` field to `-12.4` / `130.8`.
 
 !!! warning
-    When changing the nested region position, it is important to always ensure that the nested region's nest configuration aligns with the [nest configuration requirements](#nest-configuration-requirements).
+    When changing the land-surface initial conditions source, it is important to ensure that the configuration of the nested region aligns with the [nest configuration requirements](#nest-configuration-requirements).
 
 ##### Change the nested region's nest configuration {: .no-toc }
 Each nested region can contain multiple [nests]({{model_configurations}}/#nesting) (referred to as _Resolutions_ within the RAS and RNS), each of them being a separate domain where the simulation experiment is carried out.<br>
-Typically, nests within the same nested region are arranged concentrically, with their dimensions and resolutions decreasing towards the innermost nests.
+Typically, nests within the same nested region are arranged concentrically, with increasingly smaller dimensions and higher resolutions towards the innermost nests.
 
 <div markdown id='nest-configuration-requirements'>
 !!! warning
-    Currently, {{model}} only supports specific nest configurations, that meet the following criteria:
+    Currently, {{model}} only supports specific nest configurations that meet the following criteria:
     
-    The grid points of the RAS first inner nest (i.e.: _Resolution 2_, because _Resolution 1_ always corresponds to the outer ERA5 domain) need to match the [land-surface initial conditions dataset]({{model_configurations}}/#land-surface-initial-conditions-source) grid-points. Therefore, configurations (position, dimension and resolution) for the RAS first inner nest (_Resolution 2_) need to be modified accordingly. Note that the position of a nest is also influenced by the [nested region position](#change-the-nested-region-position).
+    The grid points of the RAS first inner nest (i.e., _Resolution 2_, because _Resolution 1_ always corresponds to the outer ERA5 domain) must align with those of the [land-surface initial conditions dataset]({{model_configurations}}/#land-surface-initial-conditions-source). Thus, the configuration of the RAS first inner nest (_Resolution 2_), including its position, dimension and resolution, need to be modified accordingly. Note that the position of a nest is also influenced by the [nested region position](#change-the-nested-region-position).
 </div>
 
 #### Change the output variables
 [UM](/models/model_components/atmosphere/#unified-model-um) outputs are usually provided as a list of [STASH](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_C04.pdf) variables.<br>
-Manually specifying each STASH variable can be complex. To simplify the selection process for commonly used climate analysis variables, predefined groups of STASH variables, known as _stashpacks_, have been created.
+Manually specifying each STASH variable can be complex. To simplify the selection process for commonly used climate analysis variables, predefined groups of STASH variables are set up, known as _stashpacks_.
 
 - **RNS**<br>
-    To toggle a _stashpack_, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup &rarr; Config 1 setup_, toggle a specific _stashpack_ within the `rg01_rs01_m01_stashpack` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+    To toggle a _stashpack_ within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup &rarr; Config 1 setup_. Toggle a specific _stashpack_ within the `rg01_rs01_m01_stashpack` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
     Similar steps can be repeated for the _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup &rarr; Config 2 setup_ `rg01_rs02_m02_stashpack` field.<br>
-    For example, to enable stashpack `6` (that includes variables such as wind gust, mean sea level pressure and rainfall amount, for every model timestep) in all nests, set the `6th` button of both `rg01_rs01_m01_stashpack` and `rg01_rs02_m02_stashpack` fields to `true`.
+    For example, to enable `stashpack 6` (that includes variables such as wind gust, mean sea level pressure and rainfall amount, for every model timestep) in all nests, set the `6th` button of both `rg01_rs01_m01_stashpack` and `rg01_rs02_m02_stashpack` fields to `true`.
 
 ## Get Help
 If you have questions or need help regarding {{ model }}, consider creating a topic in the [Regional Nesting Suite category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/atmosphere/regional-nesting-suite/17).<br>
