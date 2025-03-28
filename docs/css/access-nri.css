@@ -79,6 +79,8 @@
   --quote: rgb(var(--quote-color)); /* Quote admonition */
   --code-adm-color: 158, 158, 158; /* Code admonition (custom) color */
   --code-adm: rgb(var(--code-adm-color)); /* Code admonition (custom) */
+  --release-color: 255, 222, 8; /* Release admonition (custom) color */
+  --release: rgb(var(--release-color)); /* Release admonition (custom) border */
 }
 
 [data-md-color-scheme="custom-dark"] {
@@ -124,6 +126,7 @@
   --example-bg: rgba(var(--example-color),0.05); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.05); /* Quote admonition background */
   --code-adm-bg: rgba(var(--code-adm-color),0.05); /* Code admonition (custom) background */
+  --release-bg: rgba(var(--release-color), 0.05); /* Release admonition (custom) background */
   --tooltip-background: #272728; /* Tooltip background */
   --tooltip-border-color: #404041; /* Tooltip border color */
 }
@@ -171,6 +174,7 @@
   --example-bg: rgba(var(--example-color),0.1); /* Example admonition background */
   --quote-bg: rgba(var(--quote-color),0.1); /* Quote admonition background */
   --code-adm-bg: rgba(var(--code-adm-color),0.1); /* Code admonition (custom) background */
+  --release-bg: rgba(var(--release-color), 0.1); /* Release admonition (custom) background */
   --tooltip-background: #cbcdd1; /* Tooltip background */
   --tooltip-border-color: #a3a5a9; /* Tooltip border color */
 }
@@ -750,6 +754,24 @@ details.code {
   font-family: "fontawesome" !important;
   content: '\f057' !important;
   color: var(--danger) !important;
+}
+
+/* release */
+.release {
+  border-color: var(--release) !important;
+  background-color: var(--release-bg) !important;
+}
+.release > summary {
+  background-color: var(--release-bg) !important;
+}
+.release > summary::after {
+  color: var(--release) !important;
+}
+.release:not(details)::before,
+.release > summary::before {
+  font-family: "fontawesome" !important;
+  content: '\f135' !important;
+  color: var(--release) !important;
 }
 
 /* =============================================================== 
