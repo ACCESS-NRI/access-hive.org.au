@@ -33,7 +33,7 @@ Information about the amount of NCI resources (such as Service Units (SU) and st
 - [BARRA-R2](http://www.bom.gov.au/research/publications/researchreports/BRR-067.pdf)
 
 ### Nesting configuration
-The structure, horizontal resolution and placement of [nests](#nesting) can be be customised.<br>
+The structure, horizontal resolution and placement of [nests](#nesting) can be customised.<br>
 For details on how to modify these configuration settings, refer to [Change the nested region's nest configuration](/models/run-a-model/run-access-ram/#change-the-nested-regions-nest-configuration).
 
 The default nesting configuration for the `ERA5-Land` land-surface initial conditions are the following:
