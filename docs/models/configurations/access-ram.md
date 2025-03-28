@@ -46,7 +46,12 @@ The default nesting configuration for the `ERA5-Land` land-surface initial condi
    Spatial resolution depending on the [nesting configuration](#nesting-configuration).
 - **Land:** [Jules7.5](/models/model_components/land/#jules)<br>
    Nests > 4km: GAL9 science configuration, 70 vertical levels.<br>
-   Nests <= 4km: [RAL3.2 science configuration](10.0.20.74/gmd-2024-201), 90 vertical levels.<br>
+   Nests <= 4km: [RAL3.2 science configuration](https://doi.org/10.5194/gmd-2024-201), 90 vertical levels.<br>
    Spatial resolution depending on the [nesting configuration](#nesting-configuration).
 
 [Run ACCESS-rAM][run-access-ram]{: class="text-card"}
+
+<custom-references>
+- [https://gmd.copernicus.org/articles/13/1999/2020/](https://gmd.copernicus.org/articles/13/1999/2020/)
+- [https://doi.org/10.5194/gmd-2024-201](https://doi.org/10.5194/gmd-2024-201)
+</custom-references>

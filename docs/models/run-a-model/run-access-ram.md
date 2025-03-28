@@ -8,6 +8,7 @@
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [model components]: /models/configurations/access-ram/#model-components
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
+[default project]: /getting_started/set_up_nci_account#change-default-project-on-gadi
 
 <div class="text-card-group" markdown>
 
@@ -23,7 +24,7 @@
 {{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite for high-resolution regional atmosphere modelling.<br>
 A description of the model and its components is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
-{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (input files; e.g.: initial conditions, lateral boundary conditions, forcing conditions, etc.) for the domain of interest, and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
+{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (i.e.: input files), and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
 As an example, an experiment modelling a flood event in Lismore (NSW) will be run, using `ERA5-Land` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-source) and having the configuration specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
@@ -83,7 +84,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     ```
     persistent-sessions start <name>
     ```
-    This will use your default project.
+    This will use your [default project].
 
     For further instructions on starting a _persistent session_, refer to the [detailed guide](#start-a-new-persistent-session).
 
@@ -159,10 +160,10 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 #### Launch ARE VDI Session  {: .no-toc }
 Go to the [ARE VDI](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) page and launch a session with the following entries:
 
-- **Walltime (hours)** &rarr; `2`<br>
+- **Walltime (hours)** &rarr; `5`<br>
     This is the amount of time the ARE VDI session will stay active for.<br>
     {{ model }} does not run directly on ARE.<br>
-    This means that the ARE VDI session only needs to carry out setup steps as well as starting the run itself. All these tasks can be done within 2 hours.
+    This means that the ARE VDI session only needs to carry out setup steps as well as starting the run itself.
     
 - **Queue** &rarr; `normalbw`
     
@@ -199,7 +200,7 @@ To start a new _persistent session_ on _Gadi_, using either a login node or an A
 persistent-sessions start <name>
 ```
 
-This will start a _persistent session_ with the given `name` that runs under your [default project](/getting_started/set_up_nci_account#change-default-project-on-gadi).<br>
+This will start a _persistent session_ with the given `name` that runs under your [default project].<br>
 If you want to assign a different project to the _persistent session_, use the option `-p`:
 ```
 persistent-sessions start -p <project> <name>
@@ -333,7 +334,7 @@ The RAS generates a set of ancillary files, such as initial conditions, lateral 
 The `suite-ID` of the RAS is `{{ ras_id }}`.
 
 #### Get the RAS configuration
-[Rosie](http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
+[Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
 
 The RAS configuration can be obtained as a copy of the MOSRS one, following 2 approaches:
 
@@ -422,15 +423,9 @@ Inside the logs folder, various files and subfolders can be found. The most rele
 
 ##### Suite execution log {: #suite-execution-log .no-toc }
 
-The primary suite execution log is located at:
-```
-`~/cylc-run/<suite-ID>/log/suite/log`
-```
+The primary suite execution log is located at: `~/cylc-run/<suite-ID>/log/suite/log`.
 
-This file contains a chronological record of the suite's run history. Each line is a distinct log entry, generally formatted as:
-```
-<TIMESTAMP> <LOG-TYPE> - [<task-name>.<cylc-cycle-point>] <status>
-```
+This file contains a chronological record of the suite's run history. Each line is a distinct log entry, generally formatted as: `<TIMESTAMP> <LOG-TYPE> - [<task-name>.<cylc-cycle-point>] <status>`.
 
 ??? code "Example of a suite execution log file (click to enlarge)"
     ```
@@ -581,7 +576,7 @@ This file contains a chronological record of the suite's run history. Each line 
 This file helps identify specific tasks that failed during the suite run.
 
 !!! tip
-    When a task fails, the `LOG-TYPE` will tipically be `ERROR` or `CRITICAL`, instead of the more common `INFO`.
+    When a task fails, the `LOG-TYPE` will typically be `ERROR` or `CRITICAL`, instead of the more common `INFO`.
 
 Once a specific task and _Cylc_ cycle point are identified, the task-specific logs can be inspected.
 
@@ -763,7 +758,7 @@ rose edit &
     !!! warning
         `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` define all the [_Cylc_ cycle points](https://cylc.github.io/cylc-doc/7.9.3/html/terminology.html?highlight=cycle%20point#cycle-points) that are set within the experiment run.<br>
         The model will always run for a full _cycling frequency_ (1 day) for each _Cylc_ cycle point.<br>
-        This means, for example, that with `INITIAL_CYCLE_POINT` set to `20220226T1000Z`, and `FINAL_CYCLE_POINT` set to `+P1D` (plus 1 day), 2 _Cylc_ cycle points will be set (`20220226T1000Z` and `20220227T1000Z`). Therefore, the model will run for a total of 2 days!<br>
+        This means, for example, that with `INITIAL_CYCLE_POINT` set to `20220226T0000Z`, and `FINAL_CYCLE_POINT` set to `+P1D` (plus 1 day), 2 _Cylc_ cycle points will be set (`20220226T0000Z` and `20220227T0000Z`). Therefore, the model will run for a total of 2 days!<br>
         To avoid running the model for longer that desired, we suggest adding `-PT1S` (minus 1 second) to the relative duration specified in the `FINAL_CYCLE_POINT` (related example below).
         {: #run-length-mismatch }
 
@@ -800,10 +795,14 @@ In {{ model }}, the following parameters are supported to configure the nested r
 - **RNS**<br>
     Changing the RAS nested region name changes the [RAS output path](#ras-output-files). As a consequence, the following changes are required within the RNS:
     
-    - **Nest Ancillary directory**<br>
+    - **Ancillary directory**<br>
         To change the first nest ancillary directory, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup_, change the `rg01_rs01_ancil_dir` field by replacing `Lismore` with the chosen RAS nested region name, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-        The same step needs to be repeated for the _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_ancil_dir` field.<br>
-        For example, if the RAS nested region name was set to `Darwin`, replace `Lismore` in the `rg01_rs01_ancil_dir` and `rg01_rs02_ancil_dir` fields with `Darwin`.
+        The same step needs to be repeated for:
+        
+        - _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_ancil_dir` field
+        - _suite conf &rarr; Nesting Suite &rarr; Driving model setup_ `dm_ec_lam_ancil_dir` field
+
+        For example, if the RAS nested region name was set to `Darwin`, replace `Lismore` in the `rg01_rs01_ancil_dir`, `rg01_rs02_ancil_dir` and `dm_ec_lam_ancil_dir` fields with `Darwin`.
 
     - **RNS nested region name**<br>
         To change the nested region name, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup_, edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
@@ -832,7 +831,7 @@ Typically, nests within the same nested region are arranged concentrically, with
 !!! warning
     Currently, {{model}} only supports specific nest configurations, that meet the following criteria:
     
-    The grid points of the RAS first inner nest (that would be nest number 2, because nest number 1 always corresponds to the outer ERA5 domain) need to match the the [land-surface initial conitions dataset]({{model_configurations}}/#land-surface-initial-conditions-source) grid-points. Therefore, the first inner nest configuration (position, dimension and resolution) need to be modified accordingly.
+    The grid points of the RAS first inner nest (that would be nest number 2, because nest number 1 always corresponds to the outer ERA5 domain) need to match the the [land-surface initial conditions dataset]({{model_configurations}}/#land-surface-initial-conditions-source) grid-points. Therefore, the first inner nest configuration (position, dimension and resolution) need to be modified accordingly.
 </div>
 
 #### Change the output variables
@@ -841,7 +840,7 @@ Manually specifying each STASH variable can be complex. To simplify the selectio
 
 - **RNS**<br>
     To toggle a _stashpack_, within the [Rose GUI](#rosegui) navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup &rarr; Config 1 setup_, toggle a specific _stashpack_ within the `rg01_rs01_m01_stashpack` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-    The same step can be repeated for the _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup &rarr; Config 2 setup_ `rg01_rs02_m02_stashpack` field.<br>
+    Similar steps can be repeated for the _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup &rarr; Config 2 setup_ `rg01_rs02_m02_stashpack` field.<br>
     For example, to enable stashpack `6` (that includes variables such as wind gust, mean sea level pressure and rainfall amount, for every model timestep) in all nests, set the `6th` button of both `rg01_rs01_m01_stashpack` and `rg01_rs02_m02_stashpack` fields to `true`.
 
 ## Get Help
@@ -853,4 +852,5 @@ For assistance on how to request help from ACCESS-NRI, follow the [guidelines on
 - [https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html](https://code.metoffice.gov.uk/doc/um/latest/um-training/rose-gui.html)
 - [https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites](https://opus.nci.org.au/display/DAE/Run+Cylc7+Suites)
 - [https://opus.nci.org.au/display/Help/Persistent+Sessions](https://opus.nci.org.au/display/Help/Persistent+Sessions)
+- [https://gmd.copernicus.org/articles/13/1999/2020/](https://gmd.copernicus.org/articles/13/1999/2020/)
 </custom-references>
