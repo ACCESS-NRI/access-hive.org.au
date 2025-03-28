@@ -824,14 +824,14 @@ The nested region position is usually defined by the latitude and longitude coor
     When changing the nested region position, it is important to always ensure that the nested region's nest configuration aligns with the [nest configuration requirements](#nest-configuration-requirements).
 
 ##### Change the nested region's nest configuration {: .no-toc }
-Each nested region can contain multiple [nests]({{model_configurations}}/#nesting), each of them being a separate domain where the simulation experiment is carried out.<br>
+Each nested region can contain multiple [nests]({{model_configurations}}/#nesting) (referred to as _Resolutions_ within the RAS and RNS), each of them being a separate domain where the simulation experiment is carried out.<br>
 Typically, nests within the same nested region are arranged concentrically, with their dimensions and resolutions decreasing towards the innermost nests.
 
 <div markdown id='nest-configuration-requirements'>
 !!! warning
     Currently, {{model}} only supports specific nest configurations, that meet the following criteria:
     
-    The grid points of the RAS first inner nest (that would be nest number 2, because nest number 1 always corresponds to the outer ERA5 domain) need to match the the [land-surface initial conditions dataset]({{model_configurations}}/#land-surface-initial-conditions-source) grid-points. Therefore, the first inner nest configuration (position, dimension and resolution) need to be modified accordingly.
+    The grid points of the RAS first inner nest (i.e.: _Resolution 2_, because _Resolution 1_ always corresponds to the outer ERA5 domain) need to match the [land-surface initial conditions dataset]({{model_configurations}}/#land-surface-initial-conditions-source) grid-points. Therefore, configurations (position, dimension and resolution) for the RAS first inner nest (_Resolution 2_) need to be modified accordingly. Note that the position of a nest is also influenced by the [nested region position](#change-the-nested-region-position).
 </div>
 
 #### Change the output variables
