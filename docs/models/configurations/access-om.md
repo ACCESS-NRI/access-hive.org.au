@@ -23,7 +23,7 @@ For each resolution there are **two options of JRA55-do atmospheric forcing**:
 - Repeat Year Forcing (RYF): repeated 1 May 1990 - 30 April 1991 forcing
 - Interannual Forcing (IAF): 1958-2018 forcing
 
-Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if this is required.
+Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if required.
 !!! warning
     BGC experiments are slower and generally consume more resources (compute time and disk space).
 
@@ -46,6 +46,6 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 More details on the models is given [here](https://forum.access-hive.org.au/t/access-om2-control-experiments/258), together with details on the extensive control experiment data available for those who don't need to run a new experiment.
 
-Conditions of use for ACCESS-OM2 models or outputs are given [here](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
+Full conditions of use for ACCESS-OM2 models and its outputs can be viewed in the  [ACCESS-OM2-configs README](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
 
 [Run ACCESS-OM2](/models/run-a-model/run-access-om){: class="text-card"}
