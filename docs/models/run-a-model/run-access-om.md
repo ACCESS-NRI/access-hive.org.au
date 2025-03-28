@@ -203,6 +203,12 @@ _S_ indicates the status of your run, where:
 If there are no jobs listed with your `jobname` (or if no job is listed), your run either successfully completed or was terminated due to an error.<br>
 For more information, check [NCI documentation](https://opus.nci.org.au/display/Help/FAQ+1%3A+Why+My+Jobs+are+NOT+Running).
 
+!!! tip
+    While the model is running, you can monitor its progress by running:
+    ```
+    grep cur_exp-datetime work/atmosphere/log/matmxx.pe00000.log
+    ```
+
 ### Stop a run
 
 If you want to manually terminate a run, you can do so by executing:
