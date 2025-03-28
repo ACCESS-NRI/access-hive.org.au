@@ -44,7 +44,7 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 - **Coupler**: [OASIS3-MCTv2](/models/model_components/coupler#oasis3-mct).
 
-More details on the models is given [here](https://forum.access-hive.org.au/t/access-om2-control-experiments/258), together with details on the extensive control experiment data available for those who don't need to run a new experiment.
+More details on the models can be found in [this ACCESS-Hive Forum post](https://forum.access-hive.org.au/t/access-om2-control-experiments/258), together with details on the extensive control experiment data already available without needing to run a new experiment.
 
 Full conditions of use for ACCESS-OM2 models and its outputs can be viewed in the  [ACCESS-OM2-configs README](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
 
