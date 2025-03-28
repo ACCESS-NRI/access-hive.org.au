@@ -18,25 +18,6 @@ class NotSupported extends HTMLElement {
     }
 }
 
-// Create an HTML tag to render the simulated terminal info admonition
-class SimulatedTerminalInfo extends HTMLElement {
-    constructor() {
-        super();  
-    }
-
-    connectedCallback() {
-        this.innerHTML = `<div class="admonition info">
-        In this documentation, the same code is sometimes shown in a highlighted code block 
-        and also in a simulated terminal.<br>
-        The <b>code blocks</b> show the commands to be run in a terminal. They can be easily copied
-        by clicking on the icon over the right side of the code block.<br>
-        The <b>simulated terminals</b> are produced using <a href="https://github.com/atteggiani/animated-terminal.js" target="_blank" class="external-link">animated-terminal.js</a> 
-        and provide examples of the output to expect when the commands are run. 
-        Sometimes they might slightly differ from the real outputs.
-        </div>`
-    }
-}
-
 // Create an HTML tag to render the references
 class References extends HTMLElement {
     constructor() {
@@ -64,5 +45,4 @@ class References extends HTMLElement {
 }
 
 customElements.define("custom-not-supported", NotSupported)
-customElements.define("custom-simulated-terminal-info", SimulatedTerminalInfo)
 customElements.define("custom-references", References)

@@ -150,7 +150,7 @@ For this example you can use `u-cy339`, which is a pre-industrial experiment sui
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
 ### Copy {{ model }} suite with Rosie
-[Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie.html#rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for {{ model }} suites.<br>
+[Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for {{ model }} suites.<br>
 To copy an existing suite on _Gadi_ you need to follow three main steps:
 
 #### Get Cylc7 setup
@@ -383,7 +383,7 @@ To access a specific task, click on the arrow next to the task to extend the dro
 #### Through the suite directory
 The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMESTAMP>`, and the latest set of logs are also symlinked in the `~/cylc-run/<suite-ID>/log` directory.<br>
 The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
-Logs are separated into simulation cycles according to their starting dates, and then differentiated by task. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
+Logs are separated into simulation cycles according to their starting dates, then divided into subdirectories according to the task name. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
 
 In the example above, a failure occurred for the _09500101_ simulation cycle (i.e. starting date: 1st January 950) in the _coupled_ task. Hence, the `job.err` and `job.out` files can be found in the `~/cylc-run/<suite-ID>/log/job/09500101/coupled/NN` directory.
 <terminal-window>
@@ -476,15 +476,15 @@ rose suite-run --restart
     <terminal-line>[WARN] Using the cylc session &lt;persistent-session-full-name&gt;</terminal-line>
     <terminal-line>[WARN]</terminal-line>
     <terminal-line>[WARN] Loading cylc7/23.09</terminal-line>
-    <terminal-line>[WARN] &emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;._.</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
-    <terminal-line>[INFO] ._____._. ._| |_____.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-    <terminal-line>[INFO] | .___| | | | | .___|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-    <terminal-line>[INFO] | !___| !_! | | !___. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</terminal-line>
-    <terminal-line>[INFO] !_____!___. |_!_____! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.___! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!_____! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
+    <terminal-line class='keep-blanks'>[WARN]   Loading requirement: mosrs-setup/1.0.1</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]             .\_.</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]             | |              The Cylc Suite Engine [7.9.9]</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] .\_\_\_\_\_.\_. .\_| |\_\_\_\_\_.        Copyright (C) 2008-2019 NIWA</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] | .\_\_\_| | | | | .\_\_\_|   & British Crown (Met Office) & Contributors.</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] | !\_\_\_| !\_! | | !\_\_\_.  \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO] !\_\_\_\_\_!\_\_\_. |\_!\_\_\_\_\_!  This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]       .\_\_\_! |          see \`cylc warranty\`.  It is free software, you</terminal-line>
+    <terminal-line class='keep-blanks'>[INFO]       !\_\_\_\_\_!           are welcome to redistribute it under certain</terminal-line>
     <terminal-line>[INFO]</terminal-line>
     <terminal-line>[INFO] *** listening on https://&lt;persistent-session-full-name&gt;:&lt;port&gt;/ ***</terminal-line>
     <terminal-line>[INFO]</terminal-line>

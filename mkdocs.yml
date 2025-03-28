@@ -101,11 +101,12 @@ nav:
   - Models: 
     - Models: models/index.md
     - Model Configurations: 
-      - Overview: models/configurations/index.md
+      - Supported ACCESS Model Configurations: models/configurations/index.md
       # - ACCESS-AM: models/configurations/access-am.md
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-ESM: models/configurations/access-esm.md
       - ACCESS-OM: models/configurations/access-om.md
+      - ACCESS-rAM: models/configurations/access-ram.md
     - Model Components: 
       - Overview: models/model_components/index.md
       - Atmosphere: models/model_components/atmosphere.md
@@ -123,6 +124,7 @@ nav:
     - Run ACCESS-CM: models/run-a-model/run-access-cm.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
+    - Run ACCESS-rAM: models/run-a-model/run-access-ram.md
     - Modify and build an ACCESS model's source code: models/run-a-model/build_a_model.md
     - Create Prereleases and Releases for an ACCESS Model: models/run-a-model/create-a-prerelease.md
 
@@ -194,9 +196,23 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/access-nri
       name: ACCESS-NRI on Linkedin
-  analytics:
-    provider: google
-    property: G-2T6SQEH2CX
+  # analytics:
+  #   provider: google
+  #   property: G-2T6SQEH2CX
+  #   feedback:
+  #     title: Was this page helpful?
+  #     ratings:
+  #       - icon: material/emoticon-happy-outline
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           Thanks for your feedback!
+  #       - icon: material/emoticon-sad-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >- 
+  #           Thanks for your feedback!<br>
+  #           Help us improve this page by <a href=/about/contribute target="_blank" rel="noopener">contributing</a>!
 
 extra_css:
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
