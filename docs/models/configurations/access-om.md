@@ -16,12 +16,12 @@ There are three planned global configurations for:
 - 1° horizontal resolution, 75 vertical levels.
 - 0.25° horizontal resolution, 75 vertical levels.
 
-For each resolution there are **two planned options of atmospheric forcing**: 
+For each resolution there are **two options of JRA55-do atmospheric forcing**:
 
-- Repeat Year Forcing (RYF)
-- Inter-Annual Forcing (IAF)
+- Repeat Year Forcing (RYF): repeated 1 May 1990 - 30 April 1991 forcing
+- Interannual Forcing (IAF): 1958-2018 forcing
 
-Each configuration can also have a biogeochemical WOMBAT (BGC) addition (see [biogeochemistry ocean component](/models/model_components/bgc_ocean)), if this is required.
+Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if required.
 !!! warning
     BGC experiments are slower and generally consume more resources (compute time and disk space).
 
@@ -54,7 +54,7 @@ There are global configurations for **three spatial resolutions**:
 For each resolution there are **two options of JRA55-do atmospheric forcing**:
 
 - Repeat Year Forcing (RYF): repeated 1 May 1990 - 30 April 1991 forcing
-- Interannual Forcing (IAF): 1958-2018 forcing
+- Inter-Annual Forcing (IAF): 1958-2018 forcing
 
 Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if required.
 !!! warning
