@@ -104,7 +104,8 @@ as a new experiment branch (`-b expt`) to a directory named `1deg_jra55_ryf`.
     <terminal-line>archive path:  /scratch/.../access-om2/archive</terminal-line>
     <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
     <terminal-line>Added archive symlink to /scratch/.../access-om2/archive/1deg_jra55_ryf-expt-daeee7ff</terminal-line>
-    <terminal-line data="input">cd 1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">cd 1deg_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om3/1deg_jra55_ryf"></terminal-line>
 </terminal-window>
 
 !!! tip
