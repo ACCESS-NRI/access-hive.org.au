@@ -231,7 +231,7 @@ which kills the specified job without waiting for it to complete.
 
 ### Error and output log files
 
-#### PBS output files
+#### PBS output files {: .no-toc }
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
 These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
@@ -240,7 +240,7 @@ To move these files to the `archive` directory, use the following commmand:
 payu sweep
 ```
 
-#### Model log files
+#### Model log files {: .no-toc }
 
 While the model is running, _payu_ saves the model standard output and error streams in the `access-om2.out` and `access-om2.err` files inside the _control_ directory, respectively.<br>
 You can examine the contents of these files to check on the status of a run as it progresses (or after a failed run has completed).
@@ -346,7 +346,7 @@ For example, to make the model run for 1 year, 4 months and 10 days, change `res
     It is also important to differentiate between _run length_ and _total experiment length_.<br>
     For more information about their difference, or how to run the model for more than 5 years, refer to [Run configuration for more than 5 years](#run-configuration-for-more-than-5-years).
 
-#### Run configuration for more than 5 years
+#### Run configuration for more than 5 years {: .no-toc }
 
 As mentioned in the [Change run length](#change-run-length) section, you cannot specify more than 5 years as `restart_period`.<br>
 If you want to run a configuration for more than 5 years, you need to use the `-n` option:
@@ -456,7 +456,7 @@ For more information, check [_payu_ Configuration Settings documentation](https:
 !!! warning
     The following sections in the `config.yaml` file control configuration options that are rarely modified, and often require a deeper understanding of how {{ model }} is structured to be safely changed.
 
-#### Model configuration
+#### Model configuration {: .no-toc }
 
 This section tells _payu_ which driver to use for the main model configuration (`access-om2`) and the location of all inputs that are common to all its [model components].
 
@@ -467,7 +467,7 @@ input: /g/data/ik11/inputs/access-om2/input_20201102/common_1deg_jra55
 ```
 The `name` field is not actually used for the configuration run, so it can be safely ignored.
 
-#### Submodels
+#### Submodels {: .no-toc }
 
 {{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).
 
@@ -519,7 +519,7 @@ Each submodel contains additional configuration options that are read in when th
           ncpus: 24
     ```
 
-#### Collate
+#### Collate {: .no-toc }
 
 Rather than outputting a single diagnostic file over the whole model horizontal grid, [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans over a portion of the model horizontal grid.
 
@@ -535,7 +535,7 @@ collate:
 ```
 Restart files are typically tiled in the same way and will also be combined together if the `restart` field is set to `true`.
 
-#### Runlog
+#### Runlog {: .no-toc }
 
 ```yaml
 runlog: true
@@ -546,7 +546,7 @@ When running a new configuration, _payu_ automatically commits changes with `git
     This should not be changed as it is an essential part of the provenance of an experiment.<br>
     _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts, and executables used in an experiment.
 
-#### Platform
+#### Platform {: .no-toc }
 
 ```yaml
 platform: 
@@ -557,7 +557,7 @@ In the example above, the default number of cpus per node is set to 48.
 !!! warning
     This might need changing if the configuration is run on hardware with different node structure.
 
-#### Userscripts
+#### Userscripts {: .no-toc }
 
 ```yaml
 userscripts:
@@ -574,7 +574,7 @@ A dictionary to run scripts or subcommands at various stages of a _payu_ submiss
   
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
-#### Miscellaneous
+#### Miscellaneous {: .no-toc }
 
 The following configuration settings should never require changing:
 

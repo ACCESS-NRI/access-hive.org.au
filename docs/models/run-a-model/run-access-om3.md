@@ -225,7 +225,7 @@ which kills the specified job without waiting for it to complete.
 
 ### Error and output log files
 
-#### PBS output files
+#### PBS output files {: .no-toc }
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
 These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
@@ -234,7 +234,7 @@ To move these files to the `archive` directory, use the following commmand:
 payu sweep
 ```
 
-#### Model log files
+#### Model log files {: .no-toc }
 
 While the model is running, _payu_ saves the model standard output and error streams in the `access-om3.out` and `access-om3.err` files inside the _control_ directory, respectively.<br>
 You can examine the contents of these files to check on the status of a run as it progresses (or after a failed run has completed).
@@ -406,7 +406,7 @@ For more information, check [_payu_ Configuration Settings documentation](https:
 !!! warning
     The following sections in the `config.yaml` file control configuration options that are rarely modified, and often require a deeper understanding of how {{ model }} is structured to be safely changed.
 
-#### Model configuration
+#### Model configuration {: .no-toc }
 
 This section tells _payu_ which driver to use for the main model configuration (`access-om3`) and the location of all inputs that are common to all its [model components].
 
@@ -430,7 +430,7 @@ input:
     - /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
 ```
 
-#### Runlog
+#### Runlog {: .no-toc }
 
 ```yaml
 runlog: true
@@ -441,7 +441,7 @@ When running a new configuration, _payu_ automatically commits changes with `git
     This should not be changed as it is an essential part of the provenance of an experiment.<br>
     _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts, and executables used in an experiment.
 
-#### Platform
+#### Platform {: .no-toc }
 
 ```yaml
 platform: 
@@ -452,7 +452,7 @@ In the example above, the default number of cpus per node is set to 48.
 !!! warning
     This might need changing if the configuration is run on hardware with different node structure.
 
-#### Userscripts
+#### Userscripts {: .no-toc }
 
 ```yaml
 userscripts:
