@@ -234,7 +234,7 @@ which kills the specified job without waiting for it to complete.
 
 ### Error and output log files
 
-#### PBS output files
+#### PBS output files {: .no-toc }
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
 These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
@@ -243,7 +243,7 @@ To move these files to the `archive` directory, use the following command:
 payu sweep
 ```
 
-#### Model log files
+#### Model log files {: .no-toc }
 
 While the model is running, _payu_ saves the model standard output and error streams in the `access.out` and `access.err` files inside the _control_ directory, respectively.<br>
 You can examine the contents of these files to check on the status of a run as it progresses (or after a failed run has completed).
@@ -324,7 +324,7 @@ The `config.yaml` file located in the _control_ directory is the _Master Configu
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Change run length {: id="runtime"}
+### Change run length {: #runtime .no-toc }
 
 One of the most common changes is to adjust the duration of the model run.<br> {{model}} simulations are split into smaller _run lengths_, each with the duration specified by the `runtime` settings in the `config.yaml` file:
 
@@ -487,7 +487,7 @@ For more information, check [_payu_ Configuration Settings documentation](https:
 !!! warning
     The following sections in the `config.yaml` file control configuration options that are rarely modified, and often require a deeper understanding of how {{ model }} is structured to be safely changed.
 
-#### Model configuration
+#### Model configuration {: .no-toc }
 
 This section tells _payu_ which driver to use for the main model (`access` refers to {{ model }}).  
 
@@ -496,7 +496,7 @@ model: access
 ```
 
 
-#### Submodels
+#### Submodels {: .no-toc }
 
 {{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).
 
@@ -591,7 +591,7 @@ Each submodel contains additional configuration options that are read in when th
 
     ```
 
-#### Collate
+#### Collate {: .no-toc }
 
 Rather than outputting a single diagnostic file over the whole model horizontal grid, the ocean component [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans a portion of model grid.
 
@@ -608,7 +608,7 @@ collate:
 ```
 Restart files are typically tiled in the same way and will also be combined together if the `restart` field is set to `true`.
 
-#### Runlog
+#### Runlog {: .no-toc }
 
 ```yaml
 runlog: true
@@ -620,7 +620,7 @@ When running a new configuration, _payu_ automatically commits changes with `git
     _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts, and executables used in an experiment.
 
 
-#### Userscripts
+#### Userscripts {: .no-toc }
 ```yaml
 userscripts:
     # Apply land use changes after each run
@@ -632,7 +632,7 @@ Run scripts or subcommands at various stages of a _payu_ submission. The above e
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
 
-#### Postscripts
+#### Postscripts {: .no-toc }
 Postprocessing scripts that run after _payu_ has completed all steps of each run (for example, with `payu run -n 10`, the postscript will run 10 times). Scripts that might alter the output directory, for example, can be run as postscripts. These run in PBS jobs separate from the main model simulation.
 
 ```yaml
@@ -652,7 +652,7 @@ to
 esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR # --delete-ff
 ```
 
-#### Miscellaneous
+#### Miscellaneous {: .no-toc }
 
 The following configuration settings should never require changing:
 
