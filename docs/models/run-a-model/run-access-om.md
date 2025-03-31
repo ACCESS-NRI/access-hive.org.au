@@ -6,13 +6,13 @@
 {% set model = "ACCESS-OM3" %}
 <div tabcontentfor="{{model}}" markdown>
 
-{% include "./run-access-om/run-" ~ model ~ ".md" %}
+{% include "/models/run-a-model/run-access-om/run-" ~ model ~ ".md" %}
 
 </div>
 
 {% set model = "ACCESS-OM2" %}
 <div tabcontentfor="{{model}}" markdown>
 
-{% include "./run-access-om/run-" ~ model ~ ".md" %}
+{% include "/models/run-a-model/run-access-om/run-" ~ model ~ ".md" %}
 
 </div>

@@ -1,8 +1,15 @@
+# This file uses the following environment variables:
+# - SITE_URL: the URL of the site (Falls back to "http://access-hive.org.au/")
+# - ROOT_DIR: the root directory for the website (Falls back to "docs")
+# For example, for PR-previews, SITE_URL is set to http://access-hive.org.au/pr-NUM and
+# INCLUDE_DIR is set to "pr-NUM/docs"
+
+
 site_name: ACCESS-Hive Docs
 
 # Needed to generate the canonical_url for each pages that are 
 # then used to create the sitemap for search engine indexing
-site_url: https://access-hive.org.au
+site_url: !ENV [SITE_URL, "http://access-hive.org.au/"]
 # Git repository
 # repo_url: https://github.com/ACCESS-NRI/access-hive.org.au
 # Material default to a "master" branch, need to change to "main"
@@ -58,7 +65,8 @@ plugins:
       enable_creation_date: false
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - macros
+  - macros:
+      include_dir: !ENV [ROOT_DIR, "docs"]
   - bibtex:
       bib_file: "references.bib"
   - events:
