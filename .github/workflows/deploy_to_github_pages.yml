@@ -107,13 +107,16 @@ jobs:
         shell: bash
         run: |
           git fetch --all -Pp
-          echo "Build main website"
+          echo "::group::Build main website"
           git checkout main
           mkdocs build -f mkdocs.yml -d ../website
-          echo "Build development website"
+          echo "::endgroup::"
+          echo "::group::Build development website"
           git checkout development
+          export ROOT_URL="http://access-hive.org.au/development-website/"
           mkdocs build -f mkdocs.yml -d ../website/development-website
-          echo "Build PR websites"
+          echo "::endgroup::"
+          echo "::group::Build PR websites"
           # Search for open PRs, excluding PRs from forks and PRs having `development` or `main` as head
           open_pr_info=$(gh pr list --json headRepositoryOwner,headRefOid,number,headRefName --jq '.[] | select(.headRefName!="development" and .headRefName!="main" and .headRepositoryOwner.login=="${{ github.repository_owner }}")')
           pr_nums=($(jq '.number' <<< "$open_pr_info"))
@@ -123,11 +126,15 @@ jobs:
             echo "pr_nums=[$(perl -pe 's/\s(?!$)/,/g' <<< ${pr_nums[@]})]" >> "$GITHUB_OUTPUT"
             for i in ${!pr_nums[@]}; do
               git checkout ${pr_sha[i]}
+              echo "::group::Build PR preview #${pr_nums[i]}"
+              export ROOT_URL="http://access-hive.org.au/pr-preview/pr-${pr_nums[i]}/"
               mkdocs build -f mkdocs.yml -d ../website/pr-preview/pr-${pr_nums[i]}
+              echo "::endgroup::"
             done
           else
             echo "No open PR found."
           fi
+          echo "::endgroup::"
           chmod -c -R +rX ../website
 
       - name: Create artifact for deployment to GitHub Pages
