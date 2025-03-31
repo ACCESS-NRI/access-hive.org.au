@@ -1,31 +1,5 @@
 'use strict';
 
-/*
-  Change absolute URLs for development-website and PR-previews (Move to build script)
-*/
-function changeAbsoluteUrls() {
-  let url = window.location.href;
-  if (
-    url.startsWith('https://access-hive.org.au/development-website/') 
-    ||
-    url.startsWith('https://access-hive.org.au/pr-preview/')
-  ) {
-    let links = document.querySelectorAll('a[href^="/"],img[src^="/"]');
-    links.forEach(link => {
-      let href = link.getAttribute('href');
-      let src = link.getAttribute('src');
-      let base = url.startsWith('https://access-hive.org.au/development-website') ? 
-        url.split('/').slice(3,4) : url.split('/').slice(3,5).join('/');
-      if (href) {
-        link.setAttribute('href',`/${base}${href}`);
-      }
-      if (src) {
-        link.setAttribute('src',`/${base}${src}`);
-      }
-    })
-  }
-}
-
 // Hide Table of Content items whose related paragraph has the 'no-toc' class
 function hideTocItems() {
     const no_toc_classes = ['no-toc', 'h1']
@@ -307,15 +281,14 @@ function makeCitationLinks() {
 
 // Join all functions
 function main() {
-  changeAbsoluteUrls();
-  hideTocItems();
   adjustScrollingToId();
+  hideTocItems();
   tabFunctionality();
-  sortTables();
   makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
   makeCitationLinks();
+  sortTables();
 }
 
 // Run all functions
