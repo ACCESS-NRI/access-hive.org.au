@@ -299,12 +299,10 @@
 /* Group of text cards similar to the ones at the top of the "How to run" pages */
 .text-card-group > p {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 0;
-  /* column-gap: 0.5em;
-  row-gap: 0; */
 }
 
 .text-card {
