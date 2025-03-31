@@ -30,12 +30,12 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 ### Model Components {: #model-components-{{model}} }
 <div class="tabLabels" label="ACCESS-OM3-versions">
-    <button id="1deg">{{ model }}-1</button>
-    <button id="025deg">{{ model }}-025</button>
+    <button id="{{ model }}-1deg">{{ model }}-1</button>
+    <button id="{{ model }}-025deg">{{ model }}-025</button>
 </div>
 
 - **Ocean**: [MOM6](/models/model_components/ocean#mom6).<br>
-  Tripolar grid, <span tabcontentfor="1deg">1</span><span tabcontentfor="025deg">0.25</span>° spatial resolution, 75 vertical levels.
+  Tripolar grid, <span tabcontentfor="{{ model }}-1deg">1</span><span tabcontentfor="{{ model }}-025deg">0.25</span>° spatial resolution, 75 vertical levels.
 
 - **Sea ice**: [CICE6](/models/model_components/sea-ice#cice6).<br>
     Same grid as ocean.
@@ -68,13 +68,13 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 ### Model Components {: #model-components-{{model}} }
 <div class="tabLabels" label="ACCESS-OM2-versions">
-    <button id="1deg">{{ model }}-1</button>
-    <button id="025deg">{{ model }}-025</button>
-    <button id='01deg'>{{ model }}-01</button>
+    <button id="{{ model }}-1deg">{{ model }}-1</button>
+    <button id="{{ model }}-025deg">{{ model }}-025</button>
+    <button id='{{ model }}-01deg'>{{ model }}-01</button>
 </div>
 
 - **Ocean**: [MOM5](/models/model_components/ocean#mom5).<br>
-  Tripolar grid, <span tabcontentfor="1deg">1</span><span tabcontentfor="025deg">0.25</span><span tabcontentfor="01deg">0.1</span>° spatial resolution, <span tabcontentfor="1deg">50</span><span tabcontentfor="025deg">50</span><span tabcontentfor="01deg">75</span> vertical levels.
+  Tripolar grid, <span tabcontentfor="{{ model }}-1deg">1</span><span tabcontentfor="{{ model }}-025deg">0.25</span><span tabcontentfor="{{ model }}-01deg">0.1</span>° spatial resolution, <span tabcontentfor="{{ model }}-1deg">50</span><span tabcontentfor="{{ model }}-025deg">50</span><span tabcontentfor="{{ model }}-01deg">75</span> vertical levels.
 
 - **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat) (optional).
 
