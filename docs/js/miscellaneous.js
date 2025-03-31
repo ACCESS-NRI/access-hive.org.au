@@ -28,11 +28,12 @@ function changeAbsoluteUrls() {
 
 // Hide Table of Content items whose related paragraph has the 'no-toc' class
 function hideTocItems() {
+    const no_toc_classes = ['no-toc', 'h1']
     let toc_items = document.querySelectorAll('[aria-label="On this page"] .md-nav__item')
     toc_items.forEach(item => {
         let parag_id = item.querySelector('a').href.split('#')[1];
         let parag = document.getElementById(parag_id)
-        if (parag && parag.classList.contains('no-toc')) {
+        if (parag && no_toc_classes.some(className => parag.classList.contains(className))) {
             item.style.display = 'none'
         }
     })

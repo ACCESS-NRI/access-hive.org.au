@@ -42,7 +42,7 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 - **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat).
 
-[Run {{ model }}](/models/run-a-model/run-access-om3){: class="text-card"}
+[Run {{ model }}](/models/run-a-model/run-access-om/#{{model}}){: class="text-card"}
 
 {% set model = "ACCESS-OM2" %}
 ## {{ model }}
@@ -87,4 +87,4 @@ More details on the models can be found in [this ACCESS-Hive Forum post](https:/
 
 Full conditions of use for {{ model }} models and outputs can be viewed in the  [{{ model }}-configs README](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
 
-[Run {{ model }}](/models/run-a-model/run-access-om){: class="text-card"}
+[Run {{ model }}](/models/run-a-model/run-access-om/#{{model}}){: class="text-card"}
