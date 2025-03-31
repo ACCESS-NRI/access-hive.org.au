@@ -380,13 +380,13 @@ rose suite-gcontrol
 It is quite common, especially during the first few runs, to experience errors and job failures. Running an {{ model }} suite involves the execution of several tasks, and any of these tasks could fail. When a task fails, the suite is halted and a red icon appears next to the respective task name in the _Cylc_ GUI.<br>
 To investigate the cause of a failure, we need to look at the logs `job.err` and `job.out` from the suite run. There are two main ways to do so:
 
-#### Using the _Cylc_ GUI
+#### Using the _Cylc_ GUI {: .no-toc }
 Right-click on the task that failed and click on _View Job Logs (Viewer) &rarr; job.err_ (or _job.out_).<br>
 To access a specific task, click on the arrow next to the task to extend the drop-down menu with all the subtasks.
 
 ![Investigate Error GUI example](/assets/run_access_cm/investigate_error_gui_are.gif){: class="example-img" loading="lazy"}
     
-#### Through the suite directory
+#### Through the suite directory {: .no-toc }
 The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMESTAMP>`, and the latest set of logs are also symlinked in the `~/cylc-run/<suite-ID>/log` directory.<br>
 The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
 Logs are separated into simulation cycles according to their starting dates, then divided into subdirectories according to the task name. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
@@ -457,7 +457,7 @@ qdel <job-ID>
 ### RESTART a suite
 There are two main ways to restart a suite:
 
-#### _SOFT_ restart
+#### _SOFT_ restart {: .no-toc }
 To reinstall the suite and reopen _Cylc_ in the same state it was prior to being stopped, run the following command from within the suite directory:
 ```
 rose suite-run --restart
@@ -504,7 +504,7 @@ rose suite-run --restart
     <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
 </terminal-window>
 
-#### _HARD_ restart
+#### _HARD_ restart {: .no-toc }
 To overwrite any previous runs of the suite and start afresh, run the following command from within the suite directory:
 ```
 rose suite-run --new
