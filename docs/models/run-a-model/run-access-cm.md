@@ -10,25 +10,31 @@
 
 ## Prerequisites
 
-### General prerequisites
-
-Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
-
-If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
-
-### Model-specific prerequisites
+- **NCI Account**<br> 
+    Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 - **_MOSRS_ account**<br>
     The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
     To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
+    {: #mosrs-account}
 
-- **Join the _access_, _hr22_, _ki32_ and _ki32\_mosrs_ projects at NCI**<br>
-    To join these projects, request membership on the respective [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
+- **Join NCI projects**<br>
+    Join the following projects by requesting membership on their respective NCI project pages:
 
-    !!! tip
-        To request membership for the _ki32_mosrs_ subproject you need to have a MOSRS account and be member of the _ki32_ project.
+    - [access](https://my.nci.org.au/mancini/project/access/join)
+    - [hr22](https://my.nci.org.au/mancini/project/hr22/join)
+    - [ki32](https://my.nci.org.au/mancini/project/ki32/join)
+    - [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join)
     
-    For more information on how to join specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
+    !!! tip
+        To request membership for the _ki32_mosrs_ subproject, you need to:
+        
+        - already be member of the _ki32_ project
+        {: style="list-style-type: disc"}
+        - have a [MOSRS account](#mosrs-account)
+        {: style="list-style-type: disc"}
+
+    For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Connection to an ARE VDI Desktop (optional)**<br>
     To run {{ model }}, start an [Australian Research Environment (ARE) VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) session.<br>
