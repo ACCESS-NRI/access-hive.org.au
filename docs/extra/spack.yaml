@@ -1,0 +1,40 @@
+# This is a Spack Environment file to be used within the 
+# "Set up Spack for building ACCESS models" of the ACCESS-Hive Docs.
+# It was copied from https://github.com/ACCESS-NRI/ACCESS-TEST/blob/406124294261557f9f6f2fe0dc5ed8e6a419d99f/spack.yaml
+#  
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  specs:
+    - access-test@git.2024.11.15
+  packages:
+    oasis3-mct:
+      require:
+        - '@git.2023.11.09'
+    netcdf-c:
+      require:
+        - '@4.9.2'
+    netcdf-fortran:
+      require:
+        - '@4.6.1'
+    openmpi:
+      require:
+        - '@4.1.5'
+        - 'cppflags="-diag-disable=10441"'
+    # Specifications that apply to all packages
+    all:
+      require:
+        - '%intel@2021.10.0'
+        - 'target=x86_64'
+  view: true
+  concretizer:
+    unify: true
+  modules:
+    default:
+      tcl:
+        include:
+          - access-test
+          - oasis3-mct
+        projections:
+          access-test: '{name}/2024.11.15'
+          oasis3-mct: '{name}/2023.11.09-{hash:7}'

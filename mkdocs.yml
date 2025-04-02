@@ -235,3 +235,6 @@ watch:
   - mkdocs.yml
   - overrides/
   # - plugins/
+
+include:
+  - extra/spack.yaml

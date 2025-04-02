@@ -67,12 +67,10 @@ module purge
 
 To test that your Spack installation works as expected, we will create an `ACCESS-TEST` environment and build the relevant packages (this will take approximately 30 minutes). Then, we will uninstall all the packages and remove the environment.
 
-
 ### Create a Spack managed environment
-
 ```
-git clone https://github.com/ACCESS-NRI/ACCESS-TEST.git
-spack env create test ACCESS-TEST/spack.yaml
+curl -o test_spack.yaml https://access-hive.org.au/extra/spack.yaml
+spack env create test test_spack.yaml
 ```
 
 <terminal-window>
