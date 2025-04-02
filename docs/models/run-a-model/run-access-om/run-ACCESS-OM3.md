@@ -1,3 +1,6 @@
+<!-- This file is included within the run-access-om.md file -->
+<!-- The 'model' jinja2 variable is set in the run-access-om.md file -->
+
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om3-configs" %}
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
