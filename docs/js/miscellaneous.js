@@ -1,6 +1,10 @@
 'use strict';
 
-// Hide Table of Content items whose related paragraph has the 'no-toc' class
+/* Hide Table of Content items that match one of the following criteria:
+* - has the 'no-toc' class
+* - has the 'h1' class
+* - its heading has a `display: none` style (e.g. when it is inside a tab that is not active)
+*/
 function hideTocItems() {
     const no_toc_classes = ['no-toc', 'h1']
     let toc_items = document.querySelectorAll('[aria-label="On this page"] .md-nav__item')
@@ -18,28 +22,6 @@ function sortTables() {
   let tables = document.querySelectorAll("article table:not([class])");
   tables.forEach(table => new Tablesort(table));
 }
-
-/*
-  Adjust the scrolling so that the paragraph's titles is not 
-  partially covered by the sticky banner when clicking on a toc link
-*/
-function adjustScrollingToId() {
-  function scrollToId() {
-    if (location.hash) {
-      let el = document.getElementById(location.hash.slice(1,));
-      if (el) {
-        let header = document.querySelector('header');
-        let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
-        if (offset != 0) {
-          window.scrollBy(0, offset);
-        }
-      }
-    }
-  }
-  scrollToId();
-  document.querySelectorAll(`[href^="#"]`).forEach(el => el.addEventListener("click",(e) => setTimeout(scrollToId,0), false));
-}
-
 
 /*
   Add functionality to tabs 
@@ -281,9 +263,8 @@ function makeCitationLinks() {
 
 // Join all functions
 function main() {
-  adjustScrollingToId();
-  hideTocItems();
   tabFunctionality();
+  hideTocItems();
   makeLinksExternal();
   fitText();
   toggleTerminalAnimations();

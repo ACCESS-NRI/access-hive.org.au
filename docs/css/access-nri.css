@@ -923,18 +923,29 @@ details.code {
 .md-header__button:hover {
   opacity: 1;
 }
-.md-header__button.md-logo :-webkit-any(img,svg) {
-  fill: currentcolor;
-  display: block;
-  height: 2.5rem;
-  width: auto;
+.md-header__button.md-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.md-header__button.md-logo img {
+  height: 85%;
 }
 /* Banner */
 .md-header__inner {
   padding: 0.5em 0;
-  min-height: 3.5rem;
+  height: 4rem;
   margin: 0 auto;
 }
+
+/* Adjust anchors to links */
+:target::before {
+  content: "";
+  display: block;
+  height: 1rem; /* This identifies the distance of the element from the banner when clicking on an achor link */
+  margin-top: -1rem; /* This should be match the height with the sign switched */
+}
+
 
 /* Tab section */
 .md-tabs {
@@ -1529,9 +1540,9 @@ img.intro-img {
   }
 }
 
-/* Overwrites build */
+/* Keep logo always visible for mobile devices */
 @media screen and (max-width: 76.1875em) {
   .md-header__button.md-logo {
-      display: block;
+    display: flex;
   }
 }
