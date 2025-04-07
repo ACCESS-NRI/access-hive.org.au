@@ -14,10 +14,9 @@ The atmospheric fields that drive the model are provided by a data source, usual
 
 ACCESS-NRI has released [{{ model }} configurations](https://github.com/ACCESS-NRI/access-om3-configs).
 
-There are global configurations for **three spatial resolutions**:
+There is a global configurations for **one spatial resolutions**:
 
-- 1° horizontal resolution, 75 vertical levels.
-- 0.25° horizontal resolution, 75 vertical levels.
+- 0.25° or 25km horizontal resolution, 75 vertical levels.
 
 For each resolution there are **two options of JRA55-do atmospheric forcing**:
 
@@ -30,17 +29,18 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 ### Model Components {: #model-components-{{model}} }
 <div class="tabLabels" label="ACCESS-OM3-versions">
-    <button id="{{ model }}-1deg">{{ model }}-1</button>
-    <button id="{{ model }}-025deg">{{ model }}-025</button>
+    <button id="{{ model }}-25km">{{ model }}-25km</button>
 </div>
 
 - **Ocean**: [MOM6](/models/model_components/ocean#mom6).<br>
-  Tripolar grid, <span tabcontentfor="{{ model }}-1deg">1</span><span tabcontentfor="{{ model }}-025deg">0.25</span>° spatial resolution, 75 vertical levels.
+  Tripolar grid, <span tabcontentfor="{{ model }}-1deg">1</span><span tabcontentfor="{{ model }}-25km">25 km</span> spatial resolution, 75 vertical levels.
 
 - **Sea ice**: [CICE6](/models/model_components/sea-ice#cice6).<br>
     Same grid as ocean.
 
 - **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat).
+
+- **Coupler**: [NUOPC](/models/model_components/coupler#nuopc).
 
 [Run {{ model }}](/models/run-a-model/run-access-om3){: class="text-card"}
 
