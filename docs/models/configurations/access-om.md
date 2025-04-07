@@ -12,9 +12,9 @@ The atmospheric fields that drive the model are provided by a data source, usual
 
 {{ model }} is a suite of coupled ocean-sea ice models developed by ACCESS-NRI and the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)][cosima].
 
-ACCESS-NRI will release the [{{ model }} configurations](https://github.com/ACCESS-NRI/access-om3-configs).
+ACCESS-NRI has released [{{ model }} configurations](https://github.com/ACCESS-NRI/access-om3-configs).
 
-There are three planned global configurations for:
+There are global configurations for **three spatial resolutions**:
 
 - 1° horizontal resolution, 75 vertical levels.
 - 0.25° horizontal resolution, 75 vertical levels.
