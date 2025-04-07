@@ -9,8 +9,10 @@
 
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
-!!! danger
-    ACCESS-OM3 is currently only in alpha release, no support is currently provided for this model and the model configuration and model code will change before the full release. Using ACCESS-OM3 is only recommended for experienced (or brave!) users and collaborators developing ACCESS models. For a supported experience, see [run ACCESS-OM2](/models/run-a-model/run-access-om)
+!!! release
+    This is an **Alpha Release**.<br>
+    This model configurations and source code might change before the full release.<br>
+    No support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported experience, refer to [Run ACCESS-OM2](/models/run-a-model/run-access-om) instead.
 
 # Run {{ model }}
 
@@ -53,7 +55,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
     
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
-        <terminal-line lineDelay="1000">1.1.3</terminal-line>
+        <terminal-line lineDelay="1000">1.1.6</terminal-line>
     </terminal-window>
     !!! warning
         _payu_ version >=1.1.6 is required
@@ -62,8 +64,6 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 ## Get {{ model }} configuration
 
-!!! danger
-    ACCESS-OM3 is currently only in alpha release, no support is currently provided for this model and the model configurations. The model code/configurations will change before the full release. When browsing [the configuration repository on GitHub](https://github.com/ACCESS-NRI/access-om3-configs/) any branch that has a prefix `dev-` indicates that it is still in development (eventually `release-` prefix indicates supported configurations -- [example](https://github.com/ACCESS-NRI/access-om2-configs/tree/release-01deg_jra55_iaf)).
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI.
@@ -308,7 +308,7 @@ To find out more about configuration settings for the `config.yaml` file, refer 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-The run length and restart period are controlled by a set of parameters in the `~/access-om3/1deg_jra55_ryf/nuopc.runconfig` file:
+The run length and restart period are controlled by a set of parameters in the `CLOCK_attributes` section of the `~/access-om3/1deg_jra55_ryf/nuopc.runconfig` file:
 
     CLOCK_attributes::
     ﻿     ...
@@ -319,13 +319,14 @@ The run length and restart period are controlled by a set of parameters in the `
          stop_option = nyears
          ...
          
-`stop_option` and `stop_n` control how long the model will run.<br>
+The run length is controlled  by`stop_option` and `stop_n`.<br>
 Common options for `stop_option` are `nseconds`, `nhours`, `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
 
-`restart_option` and `restart_n` control how often restarts are written.<br>
-In general, users will want to write restarts at the end of each run so should set the `restart_*` controls to match the `stop_*` controls.
+The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
+!!! tip
+    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisors of the corresponding `restart_*` values.
 
-For example, to run a configuration for 2 months a user should set the following in the `~/access-om3/1deg_jra55_ryf/nuopc.runconfig` file:
+For example, to run a configuration for 2 months, set the following in the `~/access-om3/1deg_jra55_ryf/nuopc.runconfig` file:
 
     CLOCK_attributes::
     ﻿     ...
@@ -339,7 +340,7 @@ For example, to run a configuration for 2 months a user should set the following
 
 ### Modify PBS resources
 
-If the model has been altered and needs more time to complete, more memory, or needs to be submitted under a different NCI project, you will need to modify the following section in the `config.yaml`:
+If the model configuration has been altered and the experiment needs more time to complete, more memory, or it needs to be submitted under a different NCI project, the following section in the `config.yaml` needs to be modified:
 
 ```yaml
 # If submitting to a different project to your default, uncomment line below
@@ -469,7 +470,7 @@ For more information about specific `userscripts` fields, check the relevant sec
 
 ### Create a custom {{ model }} build
 All the executables needed to run {{ model }} are pre-built into independent configurations using _Spack_.<br>
-To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
+To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify and build an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
 ## Get Help
 
 If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
