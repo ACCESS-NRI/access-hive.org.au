@@ -1,8 +1,16 @@
+{% set release_notes = "https://forum.access-hive.org.au/t/access-nri-analysis3-conda-environments-new-release-announcement/4377" %}
+
+<div class="text-card-group" markdown>
+[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
+</div>
+
 # `conda/analysis3` Python Environment
 
-ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, housed within the `xp65` NCI project. This environment includes _Python_ libraries commonly used for climate data processing and analysis. This environment allows users to run workflows on Gadi without having to manage package installations themselves. This environment was formerly maintained by CLEX within the `hh5` NCI project.
+ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, housed within the `xp65` NCI project. This environment includes _Python_ libraries commonly used for climate data processing and analysis. This environment allows users to run workflows on Gadi without having to manage package installations themselves. 
 
 !!! warning 
+    This environment was formerly maintained by CLEX within the `hh5` NCI project.
+<br>
     All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment **by 30 May 2025**. After this date, ACCESS-NRI cannot guarantee functionality of the `hh5` `conda/analysis3` environment.
 
 
@@ -27,8 +35,8 @@ ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, 
   When launching a JupyterLab or Virtual Desktop instance:
     * Under "Storage", add  `gdata/xp65`. If you have other storage locations, use a "+" to add `xp65`: `+gdata/xp65`
     * Under "Advanced options":
-      * In "Module directories", add `/g/data/xp65/public/modules/`
-      * In "Modules", add `conda/analysis3`
+        * In "Module directories", add `/g/data/xp65/public/modules/`
+        * In "Modules", add `conda/analysis3`
 
 !!! tip
     If you previously added the `hh5` conda environment to your `.bashrc` or `.bash_profile` file, we recommend that you **completely remove those lines**, as programmatically loading environments that way might lead to unforeseen interference with other processes on _Gadi_. We suggest instead that you for each new session by following the instructions for the Command line above.
