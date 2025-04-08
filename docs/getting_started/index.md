@@ -25,7 +25,7 @@
     </a>
     <a href="/getting_started/environments" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background with-padding" src="/assets/are_logo.svg" alt="Python environment">
+            <img class="img-contain white-background with-padding" src="/assets/python_logo.png" alt="Python environment">
         </div>
         <div class="card-text-container">
             <span class="bold">conda/analysis3 Python Environment</span>
