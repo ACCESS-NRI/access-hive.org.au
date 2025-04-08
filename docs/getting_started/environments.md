@@ -1,19 +1,20 @@
 # `conda/analysis3` Python Environment
 
-ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, housed within the `xp65` NCI project. This environment includes most of the standard Python processing libraries for climate researchers in Australia. This environment allows users to run workflows on Gadi without having to manage package installations. This environment was formerly maintained by CLEX within the `hh5` NCI project.
+ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, housed within the `xp65` NCI project. This environment includes _Python_ libraries commonly used for climate data processing and analysis. This environment allows users to run workflows on Gadi without having to manage package installations themselves. This environment was formerly maintained by CLEX within the `hh5` NCI project.
 
 !!! warning 
     All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment **by 30 May 2025**. After this date, ACCESS-NRI cannot guarantee functionality of the `hh5` `conda/analysis3` environment.
 
-!!! info
-    More detailed information about this _Python_ environment as well as instructions on how to use it will be added soon.
 
-## How to update your workflows to use the xp65 `conda/analysis3` environment
-**The only usage difference is to replace instances of `hh5` with `xp65`.**  There are several ways in which you may need to update your workflow.
+## How to use the _xp65_ _conda/analysis3_ environment {: #update-workflows }
+ There are several ways in which you may need to update your workflow.
 
-1. **Command line** 
+!!! important
+    To update your workflow from the previous `hh5` `conda/analysis3` environment, follow the steps below. **The only usage difference is to replace instances of `hh5` with `xp65`.**
+
+1. **Command line** {: #manually-load-the-environment }
   For each new session, run:
-  ```bash
+  ```
   module use /g/data/xp65/public/modules
   module load conda/analysis3
   ```
@@ -29,9 +30,10 @@ ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, 
     * In "Module directories", add `/g/data/xp65/public/modules/`
     * In "Modules", add `conda/analysis3`
 
-> Note that if you previously added the hh5 conda environment to your `.bashrc` file, we recommend that you **remove those lines** rather than replacing with xp65, as this can have some unforeseen interference with other processes you might run on Gadi. We suggest instead that you explicitly load the environment for each new session (the first bullet point above).
+!!! tip
+    If you previously added the `hh5` conda environment to your `.bashrc` file, we recommend that you **completely remove those lines**, as programmatically loading environments that way might lead to unforeseen interference with other processes on _Gadi_. We suggest instead that you [manually load the environment](#manually-load-the-environment) for each new session.
 
-## For more targeted usage of the `conda/analysis3` environment
+## For more advanced usage of the `conda/analysis3` environment
 
 ### Two Series of Environments: Analysis3 and Analysis3-Edge
 
@@ -42,12 +44,13 @@ We are releasing two parallel series of environments:
 
 These series offer flexibility: use `analysis3` for stability, or `analysis3-edge` for the latest updates.
 
-### How to specify a particular environment
+### Load a specific environment version
 
 The `xp65` `conda/analysis3` environment takes a versioning approach, where users can specify a particular month when loading the modules. 
 
 1. **Command line and PBS** \
-If you would like to specify a particular month's envrionment, you should call it explicitly. E.g. to load the April 2025 environment, specify `conda/analysis3-25.04`. If you do not specify a particular month's environment, (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`), the current month’s environment will be loaded. 
+If you would like to specify a particular version, you should call it explicitly. E.g. to load the April 2025 environment, specify `conda/analysis3-25.04`. If you do not specify a version, (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`), the latest environment version (the current month) will be loaded. 
 2. **ARE** \
-When launching an ARE session, you need only include `conda/analysis3`. If you would like to specify a particular month's environment, you can switch kernels inside your ARE JupyterLab instance. This allows you to choose different environments for each notebook.
+When launching an ARE session, you need only include `conda/analysis3`. If you would like to specify a particular environment version, you can do so for each notebook by switching kernels inside the ARE instance.
+
 

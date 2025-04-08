@@ -25,10 +25,10 @@
     </a>
     <a href="/getting_started/environments" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background with-padding" src="/assets/are_logo.svg" alt="ARE">
+            <img class="img-contain white-background with-padding" src="/assets/are_logo.svg" alt="Python environment">
         </div>
         <div class="card-text-container">
-            <span class="bold">Conda Python Environments</span>
+            <span class="bold">conda/analysis3 Python Environment</span>
             <span>
                 How to set up the conda/analysis3 Python environment on <i>Gadi</i>.
             </span>
