@@ -6,11 +6,9 @@
 
 # `conda/analysis3` Python Environment
 
-ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, housed within the `xp65` NCI project. This environment includes _Python_ libraries commonly used for climate data processing and analysis. This environment allows users to run workflows on Gadi without having to manage package installations themselves. 
+ACCESS-NRI now supports and maintains the `conda/analysis3` Python environment, housed within the `xp65` NCI project. This environment includes _Python_ libraries commonly used for climate data processing and analysis. This environment allows users to run workflows on Gadi without having to manage package installations themselves. This environment was formerly maintained by CLEX within the `hh5` NCI project.
 
 !!! warning 
-    This environment was formerly maintained by CLEX within the `hh5` NCI project.
-<br>
     All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment **by 30 May 2025**. After this date, ACCESS-NRI cannot guarantee functionality of the `hh5` `conda/analysis3` environment.
 
 
