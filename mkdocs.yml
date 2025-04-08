@@ -96,7 +96,7 @@ nav:
     - getting_started/index.md
     - Set Up your NCI Account: getting_started/set_up_nci_account.md
     - Australian Research Environment (ARE): getting_started/are.md
-    - Python Environments: getting_started/environments.md
+    - conda/analysis3 Python Environment: getting_started/environments.md
     - Set up Spack for building ACCESS models: getting_started/spack.md
 
   - Models: 
