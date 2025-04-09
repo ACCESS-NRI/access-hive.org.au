@@ -48,11 +48,18 @@ In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308
     <button id="are-vdi">ARE VDI</button>
     <button id="are-jupyterlab">ARE JupyterLab</button>
 </div>
-When launching an <span tabcontentfor='are-vdi' markdown>[ARE VDI](/getting_started/are/#vdi)</span><span tabcontentfor='are-jupyter' markdown>[ARE JupyterLab](/getting_started/are/#jupyterlab)</span> instance:
+<div tabcontentfor='are-vdi' markdown>
+When launching an [ARE VDI](/getting_started/are/#vdi) instance:
 
-1. Under "Storage", add  `gdata/xp65`. If you have other storage locations, use a plus sign (`+`) (e.g., `+gdata/xp65`).
+1. Under _Storage_, add  `gdata/xp65`.<br>
+    If you have other storage locations, use a plus sign (`+`) (e.g., `+gdata/xp65`).
+</div>
 <div tabcontentfor='are-jupyterlab' markdown>
-2. Under [Advanced options](/getting_started/are/#advanced-options):
+When launching an [ARE JupyterLab](/getting_started/are/#jupyterlab) instance:
+
+1. Under _Storage_, add  `gdata/xp65`.<br>
+    If you have other storage locations, use a plus sign (`+`) (e.g., `+gdata/xp65`).
+2. Under _Advanced options_:
     - In "Module directories", add `/g/data/xp65/public/modules/`
     - In "Modules", add `conda/analysis3`
 </div>
