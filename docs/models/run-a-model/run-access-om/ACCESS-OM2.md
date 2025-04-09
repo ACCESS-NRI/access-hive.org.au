@@ -1,5 +1,6 @@
 <!-- This file is included within the run-access-om.md file -->
-<!-- The 'model' jinja2 variable is set in the run-access-om.md file -->
+
+{% set model = "ACCESS-OM2" %}
 
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-om2-release-information/1602/" %}
@@ -16,7 +17,7 @@
 [:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
 </div>
 
-## Run {{ model }} {: .h1 }
+# Run {{ model }}
 
 ## About
 
