@@ -238,7 +238,7 @@ function fitText() {
   const observer = new ResizeObserver(entries => {
     entries.forEach(entry => fit(entry.target));
   })
-  document.querySelectorAll('.card-text-container,.fitText').forEach(el => {
+  document.querySelectorAll('.card-text-container,.fit-text').forEach(el => {
     observer.observe(el);
   })
 }
