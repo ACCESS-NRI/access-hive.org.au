@@ -20,7 +20,7 @@ ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment
 3. [ARE](#use-the-environment-within-are)
 
 !!! tip
-    If you only want to update your workflows from the previous `hh5` `conda/analysis3` environment, refer to [Update your workflows](#update-your-workflows) below.
+    If you only want to update your workflows from the previous `hh5` `conda/analysis3` environment, refer to [Update your workflows](#update-workflows) below.
 
 ### Manually load the environment from the command line  {: #manually-load-the-environment }
   For each new session within a _Gadi_ login node or [ARE VDI](/getting_started/are/#vdi) terminal, run:
