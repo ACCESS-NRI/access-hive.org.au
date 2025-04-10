@@ -30,7 +30,15 @@ ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment
   ```
 
 !!! tip
-    If you previously loaded the `hh5` `conda/analysis3` environment within your `.bashrc` or `.bash_profile` files, we recommend that you **completely remove those lines**, as programmatically loading environments that way might lead to unforeseen interference with other processes on _Gadi_. We suggest instead that you [manually load the environment](#manually-load-the-environment).
+    If you have previously added commands to load the `hh5` `conda/analysis3` environment within your `.bashrc` or `.bash_profile` file, we strongly recommend **completely removing those lines**, 
+    as programmatically loading environments that way might lead to unexpected interference with other processes on _Gadi_.<br><br>
+    A safer approach is to define a [Bash alias](https://tldp.org/LDP/abs/html/aliases.html#:~:text=A%20Bash%20alias%20is%20essentially,a%20ls%20%2Dl%20%7C%20more.) or shell function that runs your desired series of commands. 
+    You can then manually invoke the alias whenever needed.<br>
+    For example, you can add the following line to your `.bashrc` or `.bash_profile` file:
+    ```sh
+    alias analysis3='module use /g/data/xp65/public/modules && module load conda/analysis3'
+    ```
+    Then, within any session, you can simply run `analysis3` to load the environment.
 
 ### Use the environment within a PBS job  {: #use-the-environment-within-a-pbs-job }
 In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308778/0.+Welcome+to+Gadi#id-0.WelcometoGadi-SubmissionScriptExample), add `gdata/xp65` to your storage flag:
