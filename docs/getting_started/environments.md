@@ -6,8 +6,9 @@
 
 # _conda/analysis3_ Python Environment
 
-!!! danger 
-    All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment **by 30 May 2025**. After this date, the functionality of the `hh5` `conda/analysis3` environment will not be guaranteed.
+!!! danger
+    All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment as soon as possible to ensure continued support and access to the latest features. The `hh5` `conda/analysis3` environment is no longer actively maintained and, **after 30 May 2025**, the `hh5` project may be taken down without prior notice.
+   
 
 ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment, housed within the [xp65 NCI project](https://my.nci.org.au/mancini/project/xp65/join). This environment includes _Python_ libraries commonly used for climate data processing and analysis, allowing users to run workflows on _Gadi_ without having to manage package installations themselves. This is the continuation of the environment formerly maintained by CLEX within the `hh5` NCI project.
 
@@ -41,7 +42,7 @@ ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment
     Then, within any session, you can simply run `analysis3` to load the environment.
 
 ### Use the environment within a PBS job  {: #use-the-environment-within-a-pbs-job }
-In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308778/0.+Welcome+to+Gadi#id-0.WelcometoGadi-SubmissionScriptExample), add `gdata/xp65` to your storage flag:
+In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308778/0.+Welcome+to+Gadi#id-0.WelcometoGadi-SubmissionScriptExample) (including for usage with rose/cylc), in addition to adding the two `module use` and `module load` lines above, add `gdata/xp65` to your storage flag:
 ```
 #PBS -l storage=gdata/xp65
 ```
@@ -53,14 +54,8 @@ In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308
 
 ### Use the environment within ARE  {: #use-the-environment-within-are }
 <div class="tabLabels" label="are">
-    <button id="are-vdi">ARE VDI</button>
-    <button id="are-jupyterlab">ARE JupyterLab</button>
-</div>
-<div tabcontentfor='are-vdi' markdown>
-When launching an [ARE VDI](/getting_started/are/#vdi) instance:
-
-1. Under _Storage_, add  `gdata/xp65`.<br>
-    If you have other storage locations, use a plus sign (`+`) (e.g., `+gdata/xp65`).
+    <button id="are-vdi">ARE JupyterLab</button>
+    <button id="are-jupyterlab">ARE VDI</button>
 </div>
 <div tabcontentfor='are-jupyterlab' markdown>
 When launching an [ARE JupyterLab](/getting_started/are/#jupyterlab) instance:
@@ -71,6 +66,13 @@ When launching an [ARE JupyterLab](/getting_started/are/#jupyterlab) instance:
     - In "Module directories", add `/g/data/xp65/public/modules/`
     - In "Modules", add `conda/analysis3`
 </div>
+<div tabcontentfor='are-vdi' markdown>
+When launching an [ARE VDI](/getting_started/are/#vdi) instance:
+
+1. Under _Storage_, add  `gdata/xp65`.<br>
+    If you have other storage locations, use a plus sign (`+`) (e.g., `+gdata/xp65`).
+</div>
+
 
 
 ## How to switch from the _hh5_ to the _xp65_ _conda/analysis3_ environment  {: #update-workflows }
@@ -102,7 +104,10 @@ The `xp65` `conda/analysis3` environment follows the versioning format `conda/an
 #### Command line and PBS 
 
 When [manually loading the environment from the command line](#manually-load-the-environment) or [within a PBS job](#use-the-environment-within-a-pbs-job), you can load a particular version by explicitly specifying its release year and month (e.g., to load the April 2025 environment, specify `conda/analysis3-25.04`).<br>
-If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest environment version (the current month) will be loaded.<br>
+If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest frozen (the previous month's) environment version will be loaded.<br>
+
+!!! note 
+    For rose/cylc, it is not recommended to specify a particular version of the environment (i.e. use `conda/analysis3` and not `conda/analysis3-YY.MM`).
 
 #### ARE
 
@@ -110,6 +115,8 @@ When launching an [ARE Jupyterlab session](#are-jupyterlab), you need only inclu
 
 !!! tip
     The same version naming structure can be applied to the `conda/analysis3-edge` environment.
+
+_These environments, developed and maintained by the CLEX CMS team, have proven very valuable to the community over the years. We again applaud and thank the CMS team for implementing this very successful service and supporting it for the whole community._ 
 
 
 
