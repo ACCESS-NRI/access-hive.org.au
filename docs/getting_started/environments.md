@@ -10,21 +10,21 @@
     All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment as soon as possible to ensure continued support and access to the latest features. The `hh5` `conda/analysis3` environment is no longer actively maintained and, **after 30 May 2025**, the `hh5` project may be taken down without prior notice.
    
 
-ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment, housed within the [xp65 NCI project](https://my.nci.org.au/mancini/project/xp65/join). This environment includes _Python_ libraries commonly used for climate data processing and analysis, allowing users to run workflows on _Gadi_ without having to manage package installations themselves. This is the continuation of the environment formerly maintained by CLEX within the `hh5` NCI project.
+ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment, housed within the [xp65 NCI project](https://my.nci.org.au/mancini/project/xp65/join). This environment includes _Python_ libraries commonly used for climate data processing and analysis, allowing users to run workflows on _Gadi_ without having to manage package installations themselves. This is the continuation of the environments formerly [maintained by CLEX](#acknowledgements) within the `hh5` NCI project.
 
 
 ## How to use the _xp65_ _conda/analysis3_ environment
  There are 3 main ways to use the `conda/analysis3` environment:  
 
-1. [Command line](#manually-load-the-environment) 
+1. [Command line and shell scripts](#manually-load-the-environment) 
 2. [PBS job](#use-the-environment-within-a-pbs-job)
 3. [ARE](#use-the-environment-within-are)
 
 !!! tip
     If you only want to update your workflows from the previous `hh5` `conda/analysis3` environment, refer to [Update your workflows](#update-workflows) below.
 
-### Manually load the environment from the command line  {: #manually-load-the-environment }
-  For each new session within a _Gadi_ login node or [ARE VDI](/getting_started/are/#vdi) terminal, run:
+### Manually load the environment {: #manually-load-the-environment }
+  For each new session within a _Gadi_ login node, [ARE VDI](/getting_started/are/#vdi) terminal, or in a shell script, run:
   ```
   module use /g/data/xp65/public/modules
   module load conda/analysis3
@@ -42,7 +42,7 @@ ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment
     Then, within any session, you can simply run `analysis3` to load the environment.
 
 ### Use the environment within a PBS job  {: #use-the-environment-within-a-pbs-job }
-In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308778/0.+Welcome+to+Gadi#id-0.WelcometoGadi-SubmissionScriptExample) (including for usage with rose/cylc), in addition to adding the two `module use` and `module load` lines above, add `gdata/xp65` to your storage flag:
+In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308778/0.+Welcome+to+Gadi#id-0.WelcometoGadi-SubmissionScriptExample) (including usage within _rose/cylc_ workflows), in addition to adding the `module use` and `module load` lines above, add `gdata/xp65` to your storage flag:
 ```
 #PBS -l storage=gdata/xp65
 ```
@@ -54,8 +54,8 @@ In a [PBS job submission script](https://opus.nci.org.au/spaces/Help/pages/90308
 
 ### Use the environment within ARE  {: #use-the-environment-within-are }
 <div class="tabLabels" label="are">
-    <button id="are-vdi">ARE JupyterLab</button>
-    <button id="are-jupyterlab">ARE VDI</button>
+    <button id="are-jupyterlab">ARE JupyterLab</button>
+    <button id="are-vdi">ARE VDI</button>
 </div>
 <div tabcontentfor='are-jupyterlab' markdown>
 When launching an [ARE JupyterLab](/getting_started/are/#jupyterlab) instance:
@@ -103,20 +103,22 @@ The `xp65` `conda/analysis3` environment follows the versioning format `conda/an
 
 #### Command line and PBS 
 
-When [manually loading the environment from the command line](#manually-load-the-environment) or [within a PBS job](#use-the-environment-within-a-pbs-job), you can load a particular version by explicitly specifying its release year and month (e.g., to load the April 2025 environment, specify `conda/analysis3-25.04`).<br>
-If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest frozen (the previous month's) environment version will be loaded.<br>
+When [manually loading the environment](#manually-load-the-environment) or [within a PBS job](#use-the-environment-within-a-pbs-job), you can load a particular version by explicitly specifying its release year and month (e.g., to load the April 2025 environment, specify `conda/analysis3-25.04`).<br>
+If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest (i.e., previous month's) frozen environment version will be loaded.<br>
 
 !!! note 
-    For rose/cylc, it is not recommended to specify a particular version of the environment (i.e. use `conda/analysis3` and not `conda/analysis3-YY.MM`).
+    For _rose/cylc_ workflows, it is not recommended to specify a particular version of the environment (i.e. use `conda/analysis3` and not `conda/analysis3-YY.MM`).
 
 #### ARE
 
-When launching an [ARE Jupyterlab session](#are-jupyterlab), you need only include `conda/analysis3`. If you would like to specify a particular environment version, you can do so for each notebook by switching kernels inside the ARE instance.
+When launching an [ARE Jupyterlab session](#are-jupyterlab), you only need to include `conda/analysis3`. If you would like to specify a particular environment version, you can do so for each notebook by switching kernels inside the ARE instance.
 
 !!! tip
     The same version naming structure can be applied to the `conda/analysis3-edge` environment.
 
-_These environments, developed and maintained by the CLEX CMS team, have proven very valuable to the community over the years. We again applaud and thank the CMS team for implementing this very successful service and supporting it for the whole community._ 
+## Acknowledgements {: #acknowledgements }
+
+These environments, developed and maintained by the CLEX CMS team, have proven very valuable to the community over the years. We again applaud and thank the CMS team for implementing this very successful service and supporting it for the whole community.
 
 
 
