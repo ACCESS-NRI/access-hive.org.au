@@ -116,9 +116,9 @@ When launching an [ARE Jupyterlab session](#are-jupyterlab), you only need to in
 !!! tip
     The same version naming structure can be applied to the `conda/analysis3-edge` environment.
 
-## Acknowledgements {: #acknowledgements }
+## Acknowledgements 
 
-These environments, developed and maintained by the CLEX CMS team, have proven very valuable to the community over the years. We again applaud and thank the CMS team for implementing this very successful service and supporting it for the whole community.
+These environments, developed and maintained by the CLEX CMS team, have proven very valuable to the community over the years. We commend and thank the CMS team for implementing this very successful service and supporting it for the whole community.
 
 
 
