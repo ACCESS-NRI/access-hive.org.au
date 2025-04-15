@@ -278,6 +278,12 @@ The _Wallclock time_ is the time requested by the [PBS job] to run a single cycl
 
 To modify the _Wallclock time_, edit the respective field in _suite conf &rarr; Run Initialisation and Cycling_ (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
+### Change warm restart date
+This {{ model }} configuration uses initial conditions from a previous {{ model }} simulation, a process known as _warm restart_.<br>
+The specific date of the initial conditions is set using the _Warm restart date_ parameter, formatted as `YYYYMMDD`.
+
+To modify the _Warm restart date_, edit the respective field in _suite conf &rarr; Run Initialisation and Cycling_ and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
+
 
 ## Run {{ model }} suite
 {{ model }} suites run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job] submission.<br>
