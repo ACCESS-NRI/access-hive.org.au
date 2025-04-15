@@ -23,6 +23,17 @@
             </span>
         </div>
     </a>
+    <a href="/getting_started/environments" class="horizontal-card">
+        <div class="card-image-container">
+            <img class="img-contain white-background with-padding" src="/assets/python_logo.png" alt="Python environment">
+        </div>
+        <div class="card-text-container">
+            <span class="bold">conda/analysis3 Python Environment</span>
+            <span>
+                How to set up the conda/analysis3 Python environment on <i>Gadi</i>.
+            </span>
+        </div>
+    </a>
     <a href="/getting_started/spack" class="horizontal-card">
         <div class="card-image-container">
             <img class="img-contain white-background with-padding" src="https://cdn.jsdelivr.net/gh/spack/spack@develop/share/spack/logo/spack-logo-text.svg" alt="spack">
