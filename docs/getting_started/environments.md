@@ -7,7 +7,7 @@
 # _conda/analysis3_ Python Environment
 
 !!! danger
-    All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment as soon as possible to ensure continued support and access to the latest features. The `hh5` `conda/analysis3` environment is no longer actively maintained and, **after 30 May 2025**, the `hh5` project may be taken down without prior notice.
+    All users are advised to [update their workflows](#update-workflows) to replace the `hh5` `conda/analysis3` environment with the `xp65` `conda/analysis3` environment as soon as possible to ensure continued support and access to the latest features. The `hh5` `conda/analysis3` environment is no longer actively maintained and, **after 30 May 2025**, may be taken down without prior notice.
    
 
 ACCESS-NRI now supports and maintains the `conda/analysis3` _Python_ environment, housed within the [xp65 NCI project](https://my.nci.org.au/mancini/project/xp65/join). This environment includes _Python_ libraries commonly used for climate data processing and analysis, allowing users to run workflows on _Gadi_ without having to manage package installations themselves. This is the continuation of the environments formerly [maintained by CLEX](#acknowledgements) within the `hh5` NCI project.
@@ -104,7 +104,7 @@ The `xp65` `conda/analysis3` environment follows the versioning format `conda/an
 #### Command line and PBS 
 
 When [manually loading the environment](#manually-load-the-environment) or [within a PBS job](#use-the-environment-within-a-pbs-job), you can load a particular version by explicitly specifying its release year and month (e.g., to load the April 2025 environment, specify `conda/analysis3-25.04`).<br>
-If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest (i.e., previous month's) frozen environment version will be loaded.<br>
+If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest (i.e., previous month's) frozen environment version will be loaded. We encourage those who want the newest features to help us test the current version by explicitly loading the current month’s environment. <br>
 
 !!! note 
     For _rose/cylc_ workflows, it is not recommended to specify a particular version of the environment (i.e. use `conda/analysis3` and not `conda/analysis3-YY.MM`).
