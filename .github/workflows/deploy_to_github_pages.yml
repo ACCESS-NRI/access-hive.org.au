@@ -160,6 +160,7 @@ jobs:
           pr_nums=($(jq '.number' <<< "$open_pr_info"))
           # Create the pr-previews page with links to all avaiable pr-previews
           # Start creating the html file
+          mkdir -p ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}
           cat > ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html << EOF
             <!DOCTYPE html>
             <html lang="en">
@@ -204,6 +205,8 @@ jobs:
             </body>
             </html>
           EOF
+          echo "Created the pr-previews page through the following html file:"
+          cat ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html
           echo '::endgroup::'
 
       - name: Set permissions
