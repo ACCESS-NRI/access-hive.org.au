@@ -40,6 +40,8 @@ jobs:
   
   get-date:
     runs-on: ubuntu-latest
+    # Run this job also if the workflow was skipped for concurrency reasons
+    if: ${{ always() }}
     env:
         TZ: Australia/Canberra
     outputs:
@@ -50,8 +52,9 @@ jobs:
         run: echo "date=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_OUTPUT
 
   pr-preview-setup:
-    # Run this job only if the action was fired because of a PR
-    if: ${{ github.event_name == 'pull_request' }}
+    # Run this job also if the workflow was skipped for concurrency reasons but only
+    # if the action was fired because of a PR
+    if: ${{ always() && github.event_name == 'pull_request' }}
     needs: get-date
     runs-on: ubuntu-latest
     env:
