@@ -154,18 +154,18 @@ jobs:
           # Include only open PRs, not from forks, and whose head branch is not `main`
           open_pr_info=$(gh pr list \
             --state open \
-            --json headRepositoryOwner,headRefOid,number,headRefName \
+            --json headRepositoryOwner,number,headRefName \
             --jq '.[] | select( .headRefName!="main" and .headRepositoryOwner.login=="ACCESS-NRI")' \
           )
-          pr_nums=($(jq '.number' <<< "$open_pr_info"))
+          pr_nums=($(jq '.number' <<< "$open_pr_info" | sort))
           # Create the pr-previews page with links to all avaiable pr-previews
           # Start creating the html file
           mkdir -p ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}
           cat > ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html << EOF
-            <!DOCTYPE html>
             <html lang="en">
             <body>
-            <h1>PR Previews list</h1>
+            <h1>PR Previews</h1>
+            <ul style="font-size: 20px; font-weight: 500;">
           EOF
           if [[ -n $pr_nums ]]; then
             echo "Found the following open PRs: $(IFS=, ; echo "${pr_nums[*]}")."
@@ -186,7 +186,12 @@ jobs:
                 # - pr_head_sha: the SHA of the commit in the PR head
                 json_array+=("{\"pr_num\":${num},\"pr_preview_url\":\"${site_url}\",\"pr_head_sha\":\"$(git rev-parse HEAD)\"}")
                 # Add pr to the pr-previews page with links to all avaiable pr-previews
-                cat >> ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html <<< "<a href=\"${site_url}\">PR #${num} - PR title</a>"
+                pr_title=$(gh pr view $num --json title -q '.title')
+                cat >> ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html <<EOF
+                <li style="margin: 0.3em;">
+                <a href="${site_url}" style="text-decoration: none;">PR #${num} - ${pr_title}</a>
+                </li>
+          EOF
               else
                 echo "::warning::No configuration found in the PR #${num} head."
               fi
@@ -202,6 +207,7 @@ jobs:
           fi
           # End the pr-previews page with links to all avaiable pr-previews
           cat >> ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html << EOF
+            </ul>
             </body>
             </html>
           EOF
