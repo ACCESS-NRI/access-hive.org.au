@@ -146,6 +146,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }} # Required for gh usage
           ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
+          PR_PREVIEWS_DIR: pr-previews
         id: build-pr-preview
         run: |
           echo "::group::Build PR previews"
@@ -157,13 +158,21 @@ jobs:
             --jq '.[] | select( .headRefName!="main" and .headRepositoryOwner.login=="ACCESS-NRI")' \
           )
           pr_nums=($(jq '.number' <<< "$open_pr_info"))
+          # Create the pr-previews page with links to all avaiable pr-previews
+          # Start creating the html file
+          cat > ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html << EOF
+            <!DOCTYPE html>
+            <html lang="en">
+            <body>
+            <h1>PR Previews list</h1>
+          EOF
           if [[ -n $pr_nums ]]; then
             echo "Found the following open PRs: $(IFS=, ; echo "${pr_nums[*]}")."
             for num in ${pr_nums[@]}; do
               echo "::group::Build PR preview for PR #${num}"
               gh pr checkout $num
               if [[ -f mkdocs.yml ]]; then
-                dir=pr-previews/${num}
+                dir=${{ env.PR_PREVIEWS_DIR }}/${num}
                 site_url=${{ env.ROOT_URL }}/${dir}
                 build_dir=${{ env.ROOT_BUILD_DIR }}/${dir}
                 command="SITE_URL=${site_url} mkdocs build -f mkdocs.yml -d ${build_dir}"
@@ -175,6 +184,8 @@ jobs:
                 # - pr_preview_url: the URL of the PR preview
                 # - pr_head_sha: the SHA of the commit in the PR head
                 json_array+=("{\"pr_num\":${num},\"pr_preview_url\":\"${site_url}\",\"pr_head_sha\":\"$(git rev-parse HEAD)\"}")
+                # Add pr to the pr-previews page with links to all avaiable pr-previews
+                cat >> ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html <<< "<a href=\"${site_url}\">PR #${num} - PR title</a>"
               else
                 echo "::warning::No configuration found in the PR #${num} head."
               fi
@@ -184,8 +195,15 @@ jobs:
             matrix_include=$(jq -c <<< "[$(IFS=, ; echo "${json_array[*]}")]")
             echo "matrix_include=${matrix_include}" >> "$GITHUB_OUTPUT"
           else
-            echo "No open PR found."
+            msg="No open PRs found."
+            echo "$msg"
+            cat >> ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html <<< "<p>${msg}</p>"
           fi
+          # End the pr-previews page with links to all avaiable pr-previews
+          cat >> ${{ env.ROOT_BUILD_DIR }}/${{ env.PR_PREVIEWS_DIR }}/index.html << EOF
+            </body>
+            </html>
+          EOF
           echo '::endgroup::'
 
       - name: Set permissions
