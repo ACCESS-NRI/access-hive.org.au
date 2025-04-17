@@ -45,28 +45,6 @@ function sortTables() {
 }
 
 /*
-  Adjust the scrolling so that the paragraph's titles is not 
-  partially covered by the sticky banner when clicking on a toc link
-*/
-function adjustScrollingToId() {
-  function scrollToId() {
-    if (location.hash) {
-      let el = document.getElementById(location.hash.slice(1,));
-      if (el) {
-        let header = document.querySelector('header');
-        let offset = el.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
-        if (offset != 0) {
-          window.scrollBy(0, offset);
-        }
-      }
-    }
-  }
-  scrollToId();
-  document.querySelectorAll(`[href^="#"]`).forEach(el => el.addEventListener("click",(e) => setTimeout(scrollToId,0), false));
-}
-
-
-/*
   Add functionality to tabs 
 */
 function tabFunctionality() {
@@ -281,7 +259,7 @@ function fitText() {
   const observer = new ResizeObserver(entries => {
     entries.forEach(entry => fit(entry.target));
   })
-  document.querySelectorAll('.card-text-container,.fitText').forEach(el => {
+  document.querySelectorAll('.card-text-container,.fit-text').forEach(el => {
     observer.observe(el);
   })
 }
@@ -308,7 +286,6 @@ function makeCitationLinks() {
 function main() {
   changeAbsoluteUrls();
   hideTocItems();
-  adjustScrollingToId();
   tabFunctionality();
   sortTables();
   makeLinksExternal();
