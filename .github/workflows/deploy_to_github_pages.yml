@@ -9,14 +9,12 @@ on:
       - opened
       - reopened
       - synchronize
-      - closed
   workflow_dispatch: #Action can also be triggered manually
 env:
   TZ: Australia/Canberra
   DOC_DIR: '.'
   BUILD_DIR: ${{ github.workspace }}/website-build
   WEBSITE_DIR: ${{ github.workspace }}/full-website
-  COMMENT_LABEL: pr-preview
   ROOT_DOMAIN: https://access-hive.org.au
   PR_PREVIEWS_DIR: pr-previews
 concurrency:
@@ -80,24 +78,15 @@ jobs:
           message: |
            PR Preview
            :---:
-           🛫 The preview of commit [${{ env.HEAD }}](${{ env.HEAD_URL }}) is currently being deployed.<br>The preview URL will be available once the deployment completes.<br>For further details, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.
+           🛫 The preview of PR head commit [${{ env.HEAD }}](${{ env.HEAD_URL }}) is currently being deployed.<br>The preview URL will be available once the deployment completes.<br>For further details, please check the [Actions](https://github.com/${{ github.repository }}/actions) tab.
            ${{ needs.get-date.outputs.date }}
-          label: ${{ env.COMMENT_LABEL }}
-      
-      - name: Remove PR preview comment
-        if: ${{ github.event.action == 'closed' }}
-        uses: access-nri/actions/.github/actions/comment@main
-        with:
-          delete: true
-          label: ${{ env.COMMENT_LABEL }}
-  
+          label: ${{ vars.PR_PREVIEW_COMMENT_LABEL }}
+
   # Build the main website
   build-main:
     name: Build main website
     runs-on: ubuntu-latest
     needs: set-root-url
-    # Run this job if the trigger is not a closed PR and only if there are open PRs
-    if: ${{ ! ( github.event_name == 'pull_request' && github.event.action == 'closed' ) }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
@@ -154,8 +143,6 @@ jobs:
     name: Build development website
     runs-on: ubuntu-latest
     needs: set-root-url
-    # Run this job if the trigger is not a closed PR
-    if: ${{ ! ( github.event_name == 'pull_request' && github.event.action == 'closed' ) }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
@@ -219,8 +206,6 @@ jobs:
     needs: set-root-url
     outputs:
       open_prs_info: ${{ steps.get-prs-info.outputs.open_prs_info }}
-    # Run this job if the trigger is not a closed PR
-    if: ${{ ! ( github.event_name == 'pull_request' && github.event.action == 'closed' ) }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
       ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
@@ -253,8 +238,8 @@ jobs:
     name: Build PR ${{matrix.pr_number}}
     runs-on: ubuntu-latest
     needs: [set-root-url, get-prs-info]
-    # Run this job if the trigger is not a closed PR and only if there are open PRs
-    if: ${{ (! ( github.event_name == 'pull_request' && github.event.action == 'closed' ) && needs.get-prs-info.outputs.open_prs_info != '[]') }}
+    # Run this job only if there are open PRs
+    if: ${{ needs.get-prs-info.outputs.open_prs_info != '[]' }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     strategy:
@@ -314,8 +299,6 @@ jobs:
     name: Create PR previews list page
     runs-on: ubuntu-latest
     needs: [set-root-url, get-prs-info]
-    # Run this job if the trigger is not a closed PR
-    if: ${{ ! ( github.event_name == 'pull_request' && github.event.action == 'closed' ) }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
       FILE_NAME: index.html
@@ -410,8 +393,8 @@ jobs:
   # Set pr-preview messages
   pr-preview:
     needs: [get-date, get-prs-info, deploy]
-    # Run this job if the trigger is not a closed PR and only if there are open PRs
-    if: ${{ needs.get-prs-info.outputs.open_prs_info != '[]' && ( github.event_name != 'pull_request' || github.event.action != 'closed' ) }}
+    # Run this job only if there are open PRs
+    if: ${{ needs.get-prs-info.outputs.open_prs_info != '[]' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -426,15 +409,15 @@ jobs:
           message: |
             PR Preview
             :---:
-            🚀 Preview of PR head ${{ matrix.pr_head_sha }} deployed to ${{ matrix.pr_preview_url }}
+            🚀 Preview of PR head commit ${{ matrix.pr_head_sha }} deployed to ${{ matrix.pr_preview_url }}
             ${{ needs.get-date.outputs.date }}
             Preview generated through the _${{ github.workflow }}_ workflow run [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}).
           number: ${{ matrix.pr_number }}
-          label: ${{ env.COMMENT_LABEL }}
+          label: ${{ vars.PR_PREVIEW_COMMENT_LABEL }}
 
   failed-preview:
     needs: [get-date, pr-preview]
-    # If any job failed (but the workflow was not cancelled) and was fired because of a pull request (not closed)
+    # Run this job if the workflow was triggered because of a pull request and any previou job failed
     if: ${{ github.event_name == 'pull_request' && failure() }}
     runs-on: ubuntu-latest
     permissions:
@@ -449,4 +432,4 @@ jobs:
             ⚠️ There was an error in the pr-preview deployment.
             For more information check the [Actions](https://github.com/${{github.repository}}/actions) tab.
             ${{ needs.get-date.outputs.date }}
-          label: ${{ env.COMMENT_LABEL }}
+          label: ${{ vars.PR_PREVIEW_COMMENT_LABEL }}
