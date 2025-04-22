@@ -14,7 +14,7 @@ The atmospheric fields that drive the model are provided by a data source, usual
 
 ACCESS-NRI has released [{{ model }} configurations](https://github.com/ACCESS-NRI/access-om3-configs).
 
-There is a global configurations for **one spatial resolutions**:
+There is a global configuration for **one spatial resolution**:
 
 - 0.25° or 25km horizontal resolution, 75 vertical levels.
 

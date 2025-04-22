@@ -7,7 +7,10 @@
 [model components]: /models/configurations/access-om/#model-components-{{model}}
 [model configurations]: /models/configurations/access-om/#access-om3
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
+<div class="text-card-group" markdown>
 
+[release notes]: https://forum.access-hive.org.au/t/access-om3-release-information/1602/
+</div>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
 !!! release
@@ -26,7 +29,7 @@ The instructions below outline how to run {{ model }} using ACCESS-NRI's softwar
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
-
+{{model}} release notes are [available on the ACCESS-Hive Forum][release notes] and are updated when new releases are made available.
 
 ## Prerequisites
 
@@ -323,9 +326,9 @@ Common options for `stop_option` are `nseconds`, `nhours`, `ndays`, `nmonths` an
 
 The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
 !!! tip
-    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisors of the corresponding `restart_*` values.
+    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values.
 
-For example, to run a configuration for 2 months, set the following in the `~/access-om3/100km_jra55_ryf/nuopc.runconfig` file:
+For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/100km_jra55_ryf/nuopc.runconfig` file:
 
     CLOCK_attributes::
     ﻿     ...
