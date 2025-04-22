@@ -37,4 +37,4 @@ The [Joint UK Land Environment System (JULES)](https://jules.jchmr.org/) is a co
 ### Model configurations that use JULES
 - [ACCESS-rAM3](/models/configurations/access-ram#access-ram3)
 
-Other ACCESS models used for weather simulations, not supported by ACCESS-NRI, use the UM. Examples are ACCESS-S and ACCESS-C developed by the [Bureau of Meteorology (BoM)](http://www.bom.gov.au/).
+Other ACCESS models used for weather simulations, not supported by ACCESS-NRI, use JULES. Examples are ACCESS-S and ACCESS-C developed by the [Bureau of Meteorology (BoM)](http://www.bom.gov.au/).
