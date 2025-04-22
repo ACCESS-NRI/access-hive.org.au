@@ -34,6 +34,8 @@ jobs:
         id: set-root-url
         run: |
           if [[ ${{ env.ROOT_DOMAIN }} == https://access-nri.github.io ]]; then
+            # If the domain is the default GitHub pages one (not a custom one), the website will be deployed 
+            # as a GitHub Pages Project Site with the URL in the format http://<username>.github.io/<repository>
             root_url=${{ env.ROOT_DOMAIN }}/${{ github.event.repository.name }}
           else
             root_url=${{ env.ROOT_DOMAIN }}
