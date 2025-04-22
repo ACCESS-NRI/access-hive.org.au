@@ -9,7 +9,7 @@
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 <div class="text-card-group" markdown>
 
-[release notes]: https://forum.access-hive.org.au/t/access-om3-release-information/1602/
+[release notes]: https://forum.access-hive.org.au/t/draft-access-om3-release-information-alpha-release/4372
 </div>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
@@ -76,23 +76,23 @@ For more information on {{ model }} configurations, check [{{model}}][model conf
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
-For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{ configprefix }}-MCW_100km_jra_ryf`](https://github.com/ACCESS-NRI/access-om3-configs/tree/dev-MCW_100km_jra_ryf).
+For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{ configprefix }}-MC_100km_jra_ryf`](https://github.com/ACCESS-NRI/access-om3-configs/tree/dev-MC_100km_jra_ryf).
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
     mkdir -p ~/access-om3
     cd ~/access-om3
-    payu clone -b expt -B {{ configprefix }}-MCW_100km_jra_ryf {{ github_configs }} 100km_jra55_ryf
+    payu clone -b expt -B {{ configprefix }}-MC_100km_jra_ryf {{ github_configs }} 100km_jra55_ryf
     cd 100km_jra55_ryf
 
-In the example above the `payu clone` command clones the 1° repeat-year JRA55 configuration (` -B {{ configprefix }}-MCW_100km_jra_ryf`) as a new experiment branch (`-b expt`) to a directory named `100km_jra55_ryf`.
+In the example above the `payu clone` command clones the 1° repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ configprefix }}-MC_100km_jra_ryf`) as a new experiment branch (`-b expt`) to a directory named `100km_jra55_ryf`.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om3</terminal-line>
     <terminal-line data="input">cd ~/access-om3</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ configprefix }}-MCW_100km_jra_ryf https://github.com/ACCESS-NRI/access-om3-configs.git 100km_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ configprefix }}-MC_100km_jra_ryf https://github.com/ACCESS-NRI/access-om3-configs.git 100km_jra55_ryf</terminal-line>
     <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/100km_jra55_ryf</terminal-line>
     <terminal-line>Created and checked out new branch: expt</terminal-line>
     <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
@@ -396,9 +396,7 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
-The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
-This is a number (in which case every _nth_ restart file is retained).
-
+For information about changing the run length, refer to [Change run length](#change-run-length).<br>
 
 The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
 
