@@ -9,11 +9,12 @@
 CABLE is an open source model developed by a community of Australian climate science researchers.<br>
 Refer to [CABLE documentation](https://cable.readthedocs.io/en/latest/user_guide) to know how to work with the CABLE model.
 
-### Configurations that use CABLE
+### Model configurations that use CABLE
 
-CABLE provides the land surface component of [ACCESS-CM](/models/configurations/access-cm) and [ACCESS-ESM](/models/configurations/access-esm) configurations.<br>
-Directly coupled into the [UM](/models/model_components/atmosphere#unified-model-um), CABLE replaces relevant parts of the functionality of the UM’s own land surface scheme ([JULES](#jules)).<br>
-CABLE can also be run as a standalone model, for a single location, a region or globally.
+- [ACCESS-CM2](/models/configurations/access-cm#access-cm2) (directly coupled into the [UM](/models/model_components/atmosphere#unified-model-um))
+- [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15) (directly coupled into the [UM](/models/model_components/atmosphere#unified-model-um))
+
+CABLE can also be run as a standalone model.
 
 ### Benchcab: evaluation tool for CABLE
 
@@ -33,7 +34,7 @@ To learn more about _benchcab_, its functionalities and limitations, refer to [_
 
 The [Joint UK Land Environment System (JULES)](https://jules.jchmr.org/) is a community land surface model that can be used both as a standalone model and as the land surface component in the UM model. By modelling different land surface processes (surface energy balance, hydrological cycle, carbon cycle, dynamic vegetation, etc.) and their interaction with each other, JULES provides a framework to assess the impact of modifying a particular process on the ecosystem as a whole, for example the impact of climate change on hydrology.
 
-### Configurations that use JULES
+### Model configurations that use JULES
+- [ACCESS-rAM3](/models/configurations/access-ram#access-ram3)
 
-JULES in not used in any ACCESS-NRI-supported configuration.<br>
-Some of the ACCESS models used for weather simulations use JULES instead of CABLE. For example, the Australian [Bureau of Meteorology (BoM)](http://www.bom.gov.au/) uses JULES in its numerical weather prediction models such as ACCESS-S (Seasonal) and ACCESS-C (City).
+Other ACCESS models used for weather simulations, not supported by ACCESS-NRI, use JULES. Examples are ACCESS-S and ACCESS-C developed by the [Bureau of Meteorology (BoM)](http://www.bom.gov.au/).
