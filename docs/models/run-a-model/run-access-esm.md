@@ -307,7 +307,7 @@ Model components are separated into subdirectories within the output and restart
 
 ----------------------------------------------------------------------------------------
 
-## Edit {{ model }} configuration
+## Edit {{ model }} configuration {: #edit-{{ model.lower() }}-configuration }
 
 This section describes how to modify {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.

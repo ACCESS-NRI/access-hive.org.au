@@ -183,16 +183,17 @@ There are three main _statuses_ for a deployment that can be identified by looki
   If a deployment is successful, it can be accessed on HPC systems.<br>
   ![Active deployment](/assets/create_a_prerelease/active_deployment.png){: style="max-width: 650px;" class="example-img" loading="lazy"}
   ![Inactive deployment](/assets/create_a_prerelease/inactive_deployment.png){: style="max-width: 650px;" class="example-img" loading="lazy"}
-  {: id="successful-deployment"}
+  {: #successful-deployment }
 
 - **In Progress**<br>
   The deployment is still ongoing. It will soon become [successful](#successful-deployment) or [fail](#failed-deployment).<br>
   ![In progress deployment](/assets/create_a_prerelease/in_progress_deployment.png){: style="max-width: 650px;" class="example-img" loading="lazy"}
-  {: id="in-progress-deployment"}
+  {: #in-progress-deployment }
 
 - **Failed**<br>
   The deployment failed and the CI/CD log can be viewed by clicking on [Show environments](https://github.com/ACCESS-NRI/ACCESS-OM2/pull/94#:~:text=Show%20environments) in the GitHub Environment diaglog box.<br>
   ![Failed deployment](/assets/create_a_prerelease/failed_deployment.png){: style="max-width: 650px;" class="example-img" loading="lazy"}
+  {: #failed-deployment }
 
 If we open a PR to the [ACCESS-OM2 deployment repository][om2 repo] with our `update_mom5_dev_build` branch as the *base*, we will get a [comment](https://github.com/ACCESS-NRI/ACCESS-OM2/pull/94#issuecomment-2594604585). Once deployed, the prerelease build can be accessed through the module `access-om2/pr94-1`:
 ![GitHub bot comment](/assets/create_a_prerelease/comment.png){: class="example-img"}
