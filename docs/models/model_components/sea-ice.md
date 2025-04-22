@@ -5,7 +5,7 @@
 ## CICE
 CICE is a numerical model for simulating the growth, melting and movement of polar sea ice. This software package was developed by researchers at [Los Alamos National Laboratory team](https://www.lanl.gov) and is currently managed by the [CICE Consortium](https://github.com/CICE-Consortium/About-Us/wiki), an international group of institutions formed to maintain and develop CICE in the public domain.
 
-### Configurations that use CICE
+### Model configurations that use CICE
 There are three CICE versions currently used in ACCESS models:
 [CICE4](https://github.com/CICE-Consortium/CICE-svn-trunk/tree/svn/tags/release-4.1),  
 [CICE5](https://github.com/CICE-Consortium/CICE-svn-trunk) and [CICE6](https://github.com/CICE-Consortium/CICE).
@@ -16,10 +16,11 @@ There are three CICE versions currently used in ACCESS models:
     <button id="cice6">CICE6</button>
 </div>
 <div tabcontentfor="cice4" markdown>
-CICE4 is used in [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15).
+- [ACCESS-ESM1.5](/models/configurations/access-esm#access-esm15)
 </div>
 <div tabcontentfor="cice5" markdown>
-CICE5 is used in [ACCESS-CM2](/models/configurations/access-cm#access-cm2) and [ACCESS-OM2](/models/configurations/access-om#access-om2).
+- [ACCESS-CM2](/models/configurations/access-cm#access-cm2)
+- [ACCESS-OM2](/models/configurations/access-om#access-om2)
 </div>
 <div tabcontentfor="cice6" markdown>
 CICE6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
