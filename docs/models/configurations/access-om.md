@@ -87,4 +87,4 @@ More details on the models can be found in [this ACCESS-Hive Forum post](https:/
 
 Full conditions of use for {{ model }} models and outputs can be viewed in the  [{{ model }}-configs README](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
 
-[Run {{ model }}](/models/run-a-model/run-access-om){: class="text-card"}
+[Run {{ model }}](/models/run-a-model/run-access-om2){: class="text-card"}

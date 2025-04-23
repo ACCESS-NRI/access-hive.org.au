@@ -16,7 +16,7 @@
 !!! release
     This is an **Alpha Release**.<br>
     This model configurations and source code might change before the full release.<br>
-    No support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported experience, refer to [Run ACCESS-OM2](/models/run-a-model/run-access-om) instead.
+    No support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported experience, refer to [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 # Run {{ model }}
 

@@ -23,7 +23,7 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
         </div>
     </a>
     <!-- Run ACCESS-OM -->
-    <a href="/models/run-a-model/run-access-om" class="vertical-card aspect-ratio1to1">
+    <a href="/models/run-a-model/run-access-om2" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_om_model_visualisation.png" alt="ACCESS-OM">
         </div>
