@@ -304,7 +304,7 @@ Model components are separated into subdirectories within the output and restart
 
 <terminal-window>
     <terminal-line data="input">cd ~/access-om2/1deg_jra55_ryf</terminal-line>
-    <terminal-line data="input" directory="~/access-om2/1deg_jra55_ryf<">ls</terminal-line>
+    <terminal-line data="input" directory="~/access-om2/1deg_jra55_ryf">ls</terminal-line>
     <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
