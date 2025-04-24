@@ -705,7 +705,7 @@ To check the RNS suite logs, follow the steps listed in [Check suite logs](#chec
 
 All the RNS output files are available in the directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
 
-The RNS output data can be found in the directory `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle`, grouped for each [cycle](#change-run-length-and-cycling-frequency).<br>
+The RNS output data can be found in the directory `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle`, grouped for each [cycle](#change-run-length).<br>
 Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format `<nested_region_name>/<science_configuration>/<nest_name>`, with [`<nested_region_name>`](#change-the-nested-region-name) and `<nest_name>` referring to the respective configurable options. The `<science_configuration>` is usually `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
 
 Each `<nest_name>` directory has the following subdirectories:
