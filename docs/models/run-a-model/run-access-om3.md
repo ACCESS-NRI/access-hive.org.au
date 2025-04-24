@@ -76,24 +76,24 @@ For more information on {{ model }} configurations, check [{{model}}][model conf
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
 The first step is to choose a configuration from those available.<br>
-For example, if the required configuration is the 1° horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{ configprefix }}-MC_100km_jra_ryf`](https://github.com/ACCESS-NRI/access-om3-configs/tree/dev-MC_100km_jra_ryf).
+For example, if the required configuration is MOM6-CICE6 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{ configprefix }}-MC_25km_jra_ryf`](https://github.com/ACCESS-NRI/access-om3-configs/tree/dev-MC_25km_jra_ryf).
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
     mkdir -p ~/access-om3
     cd ~/access-om3
-    payu clone -b expt -B {{ configprefix }}-MC_100km_jra_ryf {{ github_configs }} 100km_jra55_ryf
-    cd 100km_jra55_ryf
+    payu clone -b expt -B {{ configprefix }}-MC_25km_jra_ryf {{ github_configs }} 25km_jra55_ryf
+    cd 25km_jra55_ryf
 
-In the example above the `payu clone` command clones the 1° repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ configprefix }}-MC_100km_jra_ryf`) as a new experiment branch (`-b expt`) to a directory named `100km_jra55_ryf`.
+In the example above the `payu clone` command clones the 1° repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ configprefix }}-MC_25km_jra_ryf`) as a new experiment branch (`-b expt`) to a directory named `25km_jra55_ryf`.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
 <terminal-window>
     <terminal-line data="input">mkdir -p ~/access-om3</terminal-line>
     <terminal-line data="input">cd ~/access-om3</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ configprefix }}-MC_100km_jra_ryf https://github.com/ACCESS-NRI/access-om3-configs.git 100km_jra55_ryf</terminal-line>
-    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/100km_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ configprefix }}-MC_25km_jra_ryf https://github.com/ACCESS-NRI/access-om3-configs.git 25km_jra55_ryf</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/25km_jra55_ryf</terminal-line>
     <terminal-line>Created and checked out new branch: expt</terminal-line>
     <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
     <terminal-line>binary path:  /scratch/.../access-om3/bin</terminal-line>
@@ -101,9 +101,9 @@ In the example above the `payu clone` command clones the 1° repeat-year JRA55 M
     <terminal-line>work path:  /scratch/.../access-om3/work</terminal-line>
     <terminal-line>archive path:  /scratch/.../access-om3/archive</terminal-line>
     <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
-    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/100km_jra55_ryf-expt-daeee7ff</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">cd 100km_jra55_ryf</terminal-line>
-    <terminal-line data="input" directory="~/access-om3/100km_jra55_ryf"></terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/25km_jra55_ryf-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">cd 25km_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om3/25km_jra55_ryf"></terminal-line>
 </terminal-window>
 
 !!! tip
@@ -121,7 +121,7 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 The general layout of a _payu_-supported model run consists of two main directories:
 
-- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om3/100km_jra55_ryf`).
+- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om3/25km_jra55_ryf`).
 - The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om3`.
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
@@ -150,14 +150,14 @@ This will submit a single job to the queue with the default run length specified
 For information about changing the run length, refer to [Change run length](#change-run-length).
 
 <terminal-window>
-    <terminal-line data="input">cd ~/access-om3/100km_jra55_ryf</terminal-line>
-    <terminal-line directory="~/access-om3/100km_jra55_ryf" data="input">payu run</terminal-line>
+    <terminal-line data="input">cd ~/access-om3/25km_jra55_ryf</terminal-line>
+    <terminal-line directory="~/access-om3/25km_jra55_ryf" data="input">payu run</terminal-line>
     <terminal-line>Loading input manifest: manifests/input.yaml</terminal-line>
     <terminal-line lineDelay=50>Loading restart manifest: manifests/restart.yaml</terminal-line>
     <terminal-line lineDelay=50>Loading exe manifest: manifests/exe.yaml</terminal-line>
     <terminal-line lineDelay=50>payu: Found modules in /opt/Modules/v4.3.0</terminal-line>
     <terminal-line lineDelay=50>
-        qsub -q normal -P tm70 -l walltime=02:00:00 -l ncpus=240 -l mem=960GB -l jobfs=10GB -N 100km_jra55do_ry -l wd -j n -v PAYU_PATH=/g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/vk83/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -l storage=gdata/tm70+gdata/vk83 -- /g/data/vk83/./apps/conda_scripts/payu-1.1.6.d/bin/python /g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin/payu-run
+        qsub -q normal -P tm70 -l walltime=02:00:00 -l ncpus=240 -l mem=960GB -l jobfs=10GB -N 25km_jra55do_ry -l wd -j n -v PAYU_PATH=/g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin,MODULESHOME=/opt/Modules/v4.3.0,MODULES_CMD=/opt/Modules/v4.3.0/libexec/modulecmd.tcl,MODULEPATH=/g/data/vk83/modules:/etc/scl/modulefiles:/opt/Modules/modulefiles:/opt/Modules/v4.3.0/modulefiles:/apps/Modules/modulefiles -l storage=gdata/tm70+gdata/vk83 -- /g/data/vk83/./apps/conda_scripts/payu-1.1.6.d/bin/python /g/data/vk83/apps/base_conda/envs/payu-1.1.6/bin/payu-run
     </terminal-line>
     <terminal-line lineDelay=50>&lt;job-ID&gt;.gadi-pbs</job-ID>></terminal-line>
 </terminal-window>
@@ -177,7 +177,7 @@ qstat <job-ID>
     <terminal-line data="input">qstat &lt;job-ID&gt;</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      100km_jra55_ryf   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      25km_jra55_ryf   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
@@ -189,12 +189,12 @@ qstat -u $USER
     <terminal-line data="input">qstat -u $USER</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      100km_jra55_ryf   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      25km_jra55_ryf   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
 
-The default name of your job is the name of the _payu_ _control_ directory (`100km_jra55do_ryf` in the example above).<br>
+The default name of your job is the name of the _payu_ _control_ directory (`25km_jra55do_ryf` in the example above).<br>
 This can be changed by altering the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file.
 
 _S_ indicates the status of your run, where:
@@ -289,8 +289,8 @@ Output and restart folders are called `outputXXX` and `restartXXX`, respectively
 Model components are separated into subdirectories within the output and restart directories.
 
 <terminal-window>
-    <terminal-line data="input">cd ~/access-om3/100km_jra55_ryf</terminal-line>
-    <terminal-line data="input" directory="~/access-om3/100km_jra55_ryf<">ls</terminal-line>
+    <terminal-line data="input">cd ~/access-om3/25km_jra55_ryf</terminal-line>
+    <terminal-line data="input" directory="~/access-om3/25km_jra55_ryf<">ls</terminal-line>
     <terminal-line class="ls-output-format">output000 pbs_logs restart000</terminal-line>
 </terminal-window>
 
@@ -310,7 +310,7 @@ To find out more about configuration settings for the `config.yaml` file, refer 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
 
-The run length and restart period are controlled by a set of parameters in the `CLOCK_attributes` section of the `~/access-om3/100km_jra55_ryf/nuopc.runconfig` file:
+The run length and restart period are controlled by a set of parameters in the `CLOCK_attributes` section of the `~/access-om3/25km_jra55_ryf/nuopc.runconfig` file:
 
     CLOCK_attributes::
     ﻿     ...
@@ -328,7 +328,7 @@ The restart period is controlled by `restart_option` and `restart_n`, which set 
 !!! tip
     It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values.
 
-For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/100km_jra55_ryf/nuopc.runconfig` file:
+For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/25km_jra55_ryf/nuopc.runconfig` file:
 
     CLOCK_attributes::
     ﻿     ...
