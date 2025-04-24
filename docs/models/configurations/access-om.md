@@ -28,12 +28,9 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
     BGC experiments are slower and generally consume more resources (compute time and disk space).
 
 ### Model Components {: #model-components-{{model}} }
-<div class="tabLabels" label="ACCESS-OM3-versions">
-    <button id="{{ model }}-25km">{{ model }}-25km</button>
-</div>
 
 - **Ocean**: [MOM6](/models/model_components/ocean#mom6).<br>
-  Tripolar grid, <span tabcontentfor="{{ model }}-1deg">1</span><span tabcontentfor="{{ model }}-25km">25 km</span> spatial resolution, 75 vertical levels.
+  Tripolar grid, 25 km spatial resolution, 75 vertical levels.
 
 - **Sea ice**: [CICE6](/models/model_components/sea-ice#cice6).<br>
     Same grid as ocean.
