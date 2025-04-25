@@ -1272,8 +1272,8 @@ img.terminal-switch:hover ~ .terminal-switch-tooltip {
 [tabcontentfor] {
   display: none;
 }
-[tabcontentfor].activeTab {
-  display: contents;
+[tabcontentfor].activeContent {
+  display: revert;
 }
 
 /* =============================================================== 

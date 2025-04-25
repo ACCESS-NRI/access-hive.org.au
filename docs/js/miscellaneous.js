@@ -49,32 +49,29 @@ function sortTables() {
 function tabFunctionality() {
   // === Helpers ===
   function getTabIDFromStorage(label) {
-    const savedID = sessionStorage.getItem(`tabs-label=${label}`);
-    return savedID && document.getElementById(savedID) ? savedID : null;
+    return sessionStorage.getItem(`tabs-label=${label}`) ?? null;
   }
   
-  function getTabButtons(label) {
-    return document.querySelectorAll(`.tabLabels[label="${label}"] > button`);
+  function getTabButtons(label, index = null) {
+    let query = `.tabLabels[label=${label}] > button` 
+    if (!!index) query += `:nth-child(${index})`
+    return document.querySelectorAll(query);
   }
 
-  function getTabContents() {
-    return document.querySelectorAll('[tabcontentfor]');
-  }
-
-  function getTabLabels() {
-    return document.querySelectorAll('.tabLabels');
-  }
-
-  function getTabIDToOpen(tabLabels) {
-    const label = tabLabels.getAttribute("label");
-    return (
-      getTabIDFromStorage(label) ??
-      tabLabels.querySelector(".activeTab")?.id ??
-      tabLabels.firstElementChild.id
-    );
+  function getTabContents(label) {
+    const tabContents = Array.from(document.querySelectorAll('[tabcontentfor]')).filter(el => {
+      const targetId = el.getAttribute('tabcontentfor').split(' ')[0];
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return false;
+      const parent = targetElement.parentElement;
+      return parent && parent.getAttribute('label') === label;
+    });
+    return tabContents;
   }
 
   function isAssociatedWithActiveTab(elem) {
+    // More than one tab can be associated with the same content block 
+    // (e.g. tabcontentfor="tab1 tab2")
     const tabIDs = elem.getAttribute('tabcontentfor').split(' ');
     return tabIDs.some(tabID => {
       const tab = document.getElementById(tabID);
@@ -83,31 +80,31 @@ function tabFunctionality() {
   }
 
   function openTab(tab, updateURL = true) {
+    // Get the label of the tab and its index
     const label = tab.parentElement.getAttribute('label');
     const index = Array.from(tab.parentElement.children).indexOf(tab) + 1;
 
-    // Remove active class from current tabs in same group
+    // Deselect all tabs from tabLabels with the associated label
     getTabButtons(label).forEach(btn => btn.classList.remove('activeTab'));
 
-    // Remove from tab content blocks not tied to any active tab
-    getTabContents().forEach(elem => {
-      if (!isAssociatedWithActiveTab(elem)) {
-        elem.classList.remove('activeTab');
-      }
+    // Hide content blocks for all tabLabels with the associated label
+    getTabContents(label).forEach(elem => {
+      elem.classList.remove('activeContent');
     });
 
-    // Add active class to selected tab button
-    document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`)
-      .forEach(button => button.classList.add('activeTab'));
+    // Select tabs with the same index of the select one in all tabLabels with the associated label
+    getTabButtons(label, index).forEach(elem => {
+      elem.classList.add('activeTab');
+    });
 
-    // Add active class to associated content blocks
-    getTabContents().forEach(elem => {
+    // Show content blocks associated with the specific tab
+    getTabContents(label).forEach(elem => {
       if (isAssociatedWithActiveTab(elem)) {
-        elem.classList.add('activeTab');
+        elem.classList.add('activeContent');
       }
     });
 
-    // Update URL anchor and sessionStorage
+    // Update URL anchor
     if (updateURL) {
       history.pushState(null, null, `#${tab.id}`);
     }
@@ -115,25 +112,48 @@ function tabFunctionality() {
     sessionStorage.setItem(`tabs-label=${label}`, tab.id);
   }
 
-  // === Initial activation logic ===
-  const activeEl = document.activeElement;
-  if (activeEl?.parentElement.classList.contains("tabLabels")) {
-    activeEl.blur();
-    openTab(activeEl);
-  } else {
-    getTabLabels().forEach(tabLabels => {
-      const tabID = getTabIDToOpen(tabLabels);
-      const tab = document.getElementById(tabID);
-      if (tab) openTab(tab, false);
+  function getTabToOpen(tabLabels) {
+    const label = tabLabels.getAttribute("label");
+    const tabID = getTabIDFromStorage(label) ?? tabLabels?.firstElementChild?.id
+    return document.getElementById(tabID)
+  }
+  
+  function openTabsOnPageLoad() {
+    let tabsToOpen = []
+    let checkedLabel = null;
+    // Select tab associated with anchor if present
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.getElementById(hash.slice(1));
+      const tabLabelContainer = element?.parentElement;
+      if (tabLabelContainer?.classList.contains("tabLabels")) {
+        checkedLabel = tabLabelContainer.getAttribute("label");
+        tabsToOpen.push(element);
+      }
+    }
+    // Find a tab to open for each .tabLabels that isn't already opened
+    document.querySelectorAll(`.tabLabels:not([label="${checkedLabel}"])`)
+      .forEach(tabLabels => {
+        const tab = getTabToOpen(tabLabels);
+        if (tab) tabsToOpen.push(tab);
+      });
+    // Open tabs
+    tabsToOpen.forEach(tab => {
+        openTab(tab, false);
     });
   }
 
-  // === Add click listeners to tab buttons ===
+  // Open tabs when the page is loaded
+  openTabsOnPageLoad();
+
+  // Open tabs when clicked on them 
+  // (Add click listeners to tab buttons)
   document.querySelectorAll(".tabLabels > button").forEach(button => {
     button.addEventListener("click", e => openTab(e.currentTarget));
   });
 
-  // === Add listeners to anchor links pointing to tab IDs ===
+  // Open tabs when linked to with an anchor link in same page
+  // (Add click listeners to anchor links pointing to tab IDs)
   document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
     const href = el.getAttribute('href');
     const tabEl = document.getElementById(href.slice(1));
