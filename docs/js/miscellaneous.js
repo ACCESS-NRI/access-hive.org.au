@@ -28,102 +28,120 @@ function changeAbsoluteUrls() {
 
 // Hide Table of Content items whose related paragraph has the 'no-toc' class
 function hideTocItems() {
-    let toc_items = document.querySelectorAll('[aria-label="On this page"] .md-nav__item')
-    toc_items.forEach(item => {
-        let parag_id = item.querySelector('a').href.split('#')[1];
-        let parag = document.getElementById(parag_id)
-        if (parag && parag.classList.contains('no-toc')) {
-            item.style.display = 'none'
-        }
-    })
+  document.querySelectorAll('[aria-label="On this page"] .md-nav__item').forEach(item => {
+    let paragraph_id = item.querySelector('a')?.href.split('#')[1];
+    let paragraph = document.getElementById(paragraph_id)
+    if (paragraph?.classList.contains('no-toc')) {
+      item.style.display = 'none'
+    }
+  });
 }
 
 // Add buttons at the top of each table column (when hovered) to sort it
 function sortTables() {
-  let tables = document.querySelectorAll("article table:not([class])");
-  tables.forEach(table => new Tablesort(table));
+    if (typeof Tablesort !== 'function') return;
+    document.querySelectorAll("article table:not([class])").forEach(table => new Tablesort(table));
 }
 
 /*
   Add functionality to tabs 
 */
 function tabFunctionality() {
-  let activeEl = document.activeElement;
-  // If tab is activeElement (for example if a link points to an ID 
-  // inside the tab content/button), make that tab active
+  // === Helpers ===
+  function getTabIDFromStorage(label) {
+    const savedID = sessionStorage.getItem(`tabs-label=${label}`);
+    return savedID && document.getElementById(savedID) ? savedID : null;
+  }
+  
+  function getTabButtons(label) {
+    return document.querySelectorAll(`.tabLabels[label="${label}"] > button`);
+  }
+
+  function getTabContents() {
+    return document.querySelectorAll('[tabcontentfor]');
+  }
+
+  function getTabLabels() {
+    return document.querySelectorAll('.tabLabels');
+  }
+
+  function getTabIDToOpen(tabLabels) {
+    const label = tabLabels.getAttribute("label");
+    return (
+      getTabIDFromStorage(label) ??
+      tabLabels.querySelector(".activeTab")?.id ??
+      tabLabels.firstElementChild.id
+    );
+  }
+
+  function isAssociatedWithActiveTab(elem) {
+    const tabIDs = elem.getAttribute('tabcontentfor').split(' ');
+    return tabIDs.some(tabID => {
+      const tab = document.getElementById(tabID);
+      return tab && tab.classList.contains('activeTab');
+    });
+  }
+
+  function openTab(tab, updateURL = true) {
+    const label = tab.parentElement.getAttribute('label');
+    const index = Array.from(tab.parentElement.children).indexOf(tab) + 1;
+
+    // Remove active class from current tabs in same group
+    getTabButtons(label).forEach(btn => btn.classList.remove('activeTab'));
+
+    // Remove from tab content blocks not tied to any active tab
+    getTabContents().forEach(elem => {
+      if (!isAssociatedWithActiveTab(elem)) {
+        elem.classList.remove('activeTab');
+      }
+    });
+
+    // Add active class to selected tab button
+    document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`)
+      .forEach(button => button.classList.add('activeTab'));
+
+    // Add active class to associated content blocks
+    getTabContents().forEach(elem => {
+      if (isAssociatedWithActiveTab(elem)) {
+        elem.classList.add('activeTab');
+      }
+    });
+
+    // Update URL anchor and sessionStorage
+    if (updateURL) {
+      history.pushState(null, null, `#${tab.id}`);
+    }
+    // Save active tab in sessionStorage
+    sessionStorage.setItem(`tabs-label=${label}`, tab.id);
+  }
+
+  // === Initial activation logic ===
+  const activeEl = document.activeElement;
   if (activeEl?.parentElement.classList.contains("tabLabels")) {
     activeEl.blur();
     openTab(activeEl);
   } else {
-    // Otherwise first check if a tab was open and a page reloaded, and open the same tab, 
-    // otherwise open the tab that has the .activeTab class, otherwise open the first tab
-    document.querySelectorAll(".tabLabels").forEach(tabLabels => {
-      let label = tabLabels.getAttribute("label");
-      let tabID;
-      if (sessionStorage.getItem(`tabs-label=${label}`)) {
-        tabID = document.getElementById(tabID) ? sessionStorage.getItem(`tabs-label=${label}`) : tabLabels.firstElementChild.id;
-      } else if (tabLabels.querySelector(".activeTab")) {
-        tabID = tabLabels.querySelector(".activeTab").id;
-      } else {
-        tabID = tabLabels.firstElementChild.id;
-      }
-      openTab(document.getElementById(tabID));
-    })
+    getTabLabels().forEach(tabLabels => {
+      const tabID = getTabIDToOpen(tabLabels);
+      const tab = document.getElementById(tabID);
+      if (tab) openTab(tab, false);
+    });
   }
-  // Add click event to tab buttons
-  let tabButtons = document.querySelectorAll(".tabLabels > button");
-  tabButtons.forEach(button=>{
-    button.addEventListener('click', (e) => openTab(e.currentTarget));
-  })
 
-  // Add click event for links to tab IDs
+  // === Add click listeners to tab buttons ===
+  document.querySelectorAll(".tabLabels > button").forEach(button => {
+    button.addEventListener("click", e => openTab(e.currentTarget));
+  });
+
+  // === Add listeners to anchor links pointing to tab IDs ===
   document.querySelectorAll('[href^="#"]:not([class^="md"])').forEach(el => {
-    let href = el.getAttribute('href');
-    let tabEl = document.getElementById(href.slice(1,))
+    const href = el.getAttribute('href');
+    const tabEl = document.getElementById(href.slice(1));
     if (tabEl?.parentElement.classList.contains("tabLabels")) {
-      el.addEventListener("click",(e) => openTab(tabEl), false);
+      el.addEventListener("click", () => openTab(tabEl), false);
     }
-  })
-  
-  function openTab(tab) {
-    let label = tab.parentElement.getAttribute('label');
-    let index = Array.from(tab.parentElement.children).indexOf(tab)+1;
-    // Remove active classes from tabs with matching labels 
-    document.querySelectorAll(`.tabLabels[label="${label}"] > .activeTab`).forEach(elem => {
-      elem.classList.remove('activeTab');
-    });
-    // Remove active classes from contents whose none of their associated tabs IDs are activeTabs
-    document.querySelectorAll('[tabcontentfor]').forEach(elem => {
-      let tabcontentfor = elem.getAttribute('tabcontentfor');
-      if (
-        ! tabcontentfor.split(' ').some(tabID => {
-          return document.getElementById(tabID).classList.contains('activeTab')
-        })
-      ) {
-          elem.classList.remove('activeTab');
-      }
-    });
-    // Add active classes to tab labels
-    document.querySelectorAll(`.tabLabels[label=${label}] > :nth-child(${index})`)
-      .forEach(button => {button.classList.add('activeTab')});
-    // Add active classes to contents whose any associated tabs IDs are activeTabs
-    document.querySelectorAll('[tabcontentfor]').forEach(elem => {
-      let tabcontentfor = elem.getAttribute('tabcontentfor');
-      if (
-        tabcontentfor.split(' ').some(tabID => {
-          return document.getElementById(tabID).classList.contains('activeTab')
-        })
-      ) {
-        elem.classList.add('activeTab');
-      }
-    });
-    // Add tab ID hash to URL
-    history.pushState(null, null, `#${tab.id}`);
-    // Save active tab to sessionStorage
-    sessionStorage.setItem(`tabs-label=${label}`,`${tab.id}`);
-  }
+  });
 }
-
 
 /*
   Make links that go to a different website 'external' by adding the
