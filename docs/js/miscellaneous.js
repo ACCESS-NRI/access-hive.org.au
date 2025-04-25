@@ -294,5 +294,11 @@ function main() {
   makeCitationLinks();
 }
 
-// Run all functions
-window.onload = () => document$.subscribe(() => main());
+// Run all functions after every navigation event
+if (typeof document$ !== 'undefined') {
+    // The `document$` is a special observable enabled by the navigation.instant plugin (in mkdocs.yaml)
+    document$.subscribe(() => main());
+} else {
+    // If navigation.instant plugin is not active
+    window.addEventListener('load', main);
+}
