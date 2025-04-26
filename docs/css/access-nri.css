@@ -1233,7 +1233,6 @@ img.terminal-switch:hover ~ .terminal-switch-tooltip {
   display: flex;
   flex-wrap: wrap;
   width: fit-content;
-  overflow: auto;
   margin-top: 1em;
   gap: 1px;
   font-size: 0.9em;
@@ -1248,7 +1247,6 @@ img.terminal-switch:hover ~ .terminal-switch-tooltip {
   flex-shrink: 0;
   font-weight: 700;
   padding: 0.78125em 1.25em 0.625em;
-  scroll-margin-inline-start: 1rem;
   transition: background-color .25s;
   white-space: nowrap;
   width: auto;
