@@ -285,13 +285,16 @@ function toggleTerminalAnimations() {
 */
 function fitText() {
   const coeff = 0.9;
+  const minSize = 8;
   function isOverflowing(el) {
     return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
   }
   function fit(el) {
     el.style.fontSize = null;
-    while (isOverflowing(el)) {
-      el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * coeff}px`;
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    while (isOverflowing(el) && size > minSize) {
+      size *= coeff;
+      el.style.fontSize = `${size}px`;
     }
   }
   const observer = new ResizeObserver(entries => {
