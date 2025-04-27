@@ -7,16 +7,17 @@
 [model components]: /models/configurations/access-om/#model-components-{{model}}
 [model configurations]: /models/configurations/access-om/#access-om3
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
-<div class="text-card-group" markdown>
-
 [release notes]: https://forum.access-hive.org.au/t/draft-access-om3-release-information-alpha-release/4372
-</div>
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
 
 !!! release
     This is an **Alpha Release**.<br>
     This model configurations and source code might change before the full release.<br>
     No support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported experience, refer to [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
+
+<div class="text-card-group" markdown>
+[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes][release notes]{: class="text-card"}
+</div>
 
 # Run {{ model }}
 
