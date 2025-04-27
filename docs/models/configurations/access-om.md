@@ -21,7 +21,7 @@ There is a global configuration for **one spatial resolution**:
 For each resolution there are **two options of JRA55-do atmospheric forcing**:
 
 - Repeat Year Forcing (RYF): repeated 1 May 1990 - 30 April 1991 forcing
-- Interannual Forcing (IAF): 1958-2018 forcing
+- Inter-Annual Forcing (IAF): 1958-2018 forcing
 
 Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if required.
 !!! warning
