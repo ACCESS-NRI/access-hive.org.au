@@ -1,6 +1,7 @@
 {% set model = "ACCESS-rAM3" %}
 {% set ras_id = "u-dg767" %}
 {% set rns_id = "u-dg768" %}
+{% set branch = "access_rel_1" %}
 {% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/7/trunk" %}
 {% set mosrs_config_rns = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/8/trunk" %}
 {% set model_configurations = "/models/configurations/access-ram" %}
@@ -124,7 +125,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 ### Regional Ancillary Suite (RAS) {: .no-toc }
 1. **Copy the RAS from UKMO**<br>
     ```
-    rosie checkout {{ ras_id }}
+    rosie checkout {{ ras_id }}/{{ branch }}
     ```
 
     For further instructions on getting the RAS configuration, refer to the [Detailed guide](#get-the-ras-configuration).
@@ -140,7 +141,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
 ### Regional Nesting Suite (RNS) {: .no-toc }
 1. **Copy the RNS from UKMO**<br>
     ```
-    rosie checkout {{ rns_id }}
+    rosie checkout {{ rns_id }}/{{ branch }}
     ```
 
     For further instructions on getting the RNS configuration, refer to the [Detailed guide](#get-and-run-rns-configuration).
@@ -336,6 +337,7 @@ For more information on {{ model }}, refer to the [{{model}} configuration]({{ m
 For the domain of interest, the RAS generates a set of ancillary files, such as initial conditions. These ancillary files are then used by the [RNS](#rns).
 
 The `suite-ID` of the RAS is `{{ ras_id }}`.
+The latest release branch is `{{ branch }}`.
 
 #### Get the RAS configuration
 [Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
@@ -360,10 +362,10 @@ The suite directory contains multiple subdirectories and files, including:
 ##### Local-only copy {: #local-copy .no-toc }
 To create a _local copy_ of the RAS from MOSRS repository, run:
 ```
-rosie checkout {{ ras_id }}
+rosie checkout {{ ras_id }}/{{ branch }}
 ```
 <terminal-window>
-    <terminal-line data="input">rosie checkout {{ ras_id }}</terminal-line>
+    <terminal-line data="input">rosie checkout {{ ras_id }}/{{ branch }}</terminal-line>
     <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
     <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/{{ ras_id }}</terminal-line>
 </terminal-window>
@@ -690,6 +692,7 @@ Ancillary data files are typically output in the [UM fieldsfile](https://code.me
 The RNS uses the ancillary files produced by the RAS to run the regional forecast for the domain of interest.
 
 The `suite-ID` of the RNS is `{{ rns_id }}`.
+The latest release branch is `{{ branch }}`.
 
 #### Get and run RNS configuration
 Steps to obtain and run the RNS, as well as monitor logs, are similar to those listed above for the [RAS](#ras).<br>
@@ -714,11 +717,12 @@ Each `<nest_name>` directory has the following subdirectories:
 - `lbcs` &rarr; lateral boundary conditions
 - `um` &rarr; model output data
 
-For example, the model output data for the first cycle (`20220226T0000Z`) of the Lismore experiment (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um`.
+The RNS output data files are in NetCDF format.
 
-The RNS output data files are typically in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
+For example, the model output data for the first cycle (`20220226T0000Z`) of the _Lismore_ experiment (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um/umnsaa_pa000.nc`.
 
 !!! tip
+    The output data name format may vary depending on some configuration parameters.<br>
     To change which output variables are produced, refer to [Change the output variables](#change-the-output-variables)
 
 ### Edit {{ model }} configuration
