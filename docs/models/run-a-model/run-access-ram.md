@@ -11,10 +11,6 @@
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [default project]: /getting_started/set_up_nci_account#change-default-project-on-gadi
 
-!!! release
-    This is a **Beta Release**.<br>
-    It will be fit to use and test. Known issues are listed in the [release notes]({{release_notes}}), but there may be some issues that have not yet been discovered and fixed. The suite and these instructions may change during the beta testing period as improvements are made. If that happens, updates will be included in the release notes.
-
 <div class="text-card-group" markdown>
 
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RAS configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
