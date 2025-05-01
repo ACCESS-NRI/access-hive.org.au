@@ -1,9 +1,5 @@
 [run-access-ram]: /models/run-a-model/run-access-ram
 
-!!! release
-    This is a **Beta Release**.<br>
-    It will be fit to use and test. Known issues are listed in the [release notes]({{release_notes}}), but there may be some issues that have not yet been discovered and fixed. The suite and these instructions may change during the beta testing period as improvements are made. If that happens, updates will be included in the release notes.
-
 # ACCESS-rAM 
 
 ![ACCESS RAM model](/assets/model-config-logos/configurations-without-titles/access-ram.png){: class="img-contain white-background round-edges with-padding intro-img" loading="lazy"}
