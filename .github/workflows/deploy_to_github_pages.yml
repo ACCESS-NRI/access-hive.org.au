@@ -94,12 +94,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Check mkdocs.yaml
         id: check-mkdocs
         run: |
-          git fetch origin main
-          git checkout main
           if [[ -f mkdocs.yml ]]; then
             echo "mkdocs.yml file found."
           else
@@ -150,12 +150,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: development
 
       - name: Check mkdocs.yaml
         id: check-mkdocs
         run: |
-          git fetch origin development
-          git checkout development
           if [[ -f mkdocs.yml ]]; then
             echo "mkdocs.yml file found."
           else
@@ -273,6 +273,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.pr_head_sha }}
 
       - name: Python setup
         uses: actions/setup-python@v5
@@ -312,9 +314,6 @@ jobs:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
       FILE_NAME: index.html
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Create PR previews page
         run: |
           open_prs_info='${{ needs.get-prs-info.outputs.open_prs_info }}'
