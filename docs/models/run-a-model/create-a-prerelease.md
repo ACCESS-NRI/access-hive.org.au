@@ -87,15 +87,21 @@ Modifications can then be made to the `spack.yaml` or `config/versions.json` fil
 After making the modifications, commit the changes to the newly-created feature branch and push them to the remote repository.
 
 In this example, we will change ACCESS-OM2's [MOM5 component] by replacing it with the version from [MOM5 `development` branch](https://github.com/ACCESS-NRI/MOM5/tree/development).
-To achieve this, the following modifications will be made:
+To achieve this, the following steps will be carried out:
 
-1. Update the [version of the `mom5` package](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15) in the `spack.yaml` file with the new version (i.e., `@git.development`).
-2. Update the [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L53) to `{name}/development-{hash:7}`.<br>
+1. Retrieve the _Git_ hash (_LONG\_HASH_) for the `development` head commit.
+   
+    !!! warning
+        Currently, only _Git_ tags and commit hashes are supported for specifying component versions.<br>
+        To use a _Git_ branch, its corresponding commit hash should be retrieved and used instead.
+
+2. Update the [version of the `mom5` package](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15) in the `spack.yaml` file with the new version (i.e., `@git.LONG_HASH`).
+3. Update the [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L53) to `{name}/development-{hash:7}`.<br>
 
     !!! tip
         The `{hash:7}` part is used so the module doesn't conflict with other versions.
 
-3. It is also recommended to update the [overall ACCESS-OM2 version](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L8) along with its [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L51).<br>
+4. It is also recommended to update the [overall ACCESS-OM2 version](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L8) along with its [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L51).<br>
    This is particularly important before merging a PR as it will determine the version tag for the model new release. The format is `CALVER_YEAR.CALVER_MONTH.MINOR`.<br>
    In this example, the overall version will be updated to `git.2024.03.1`.
 
@@ -123,7 +129,7 @@ should look like the following:
     <terminal-line lineDelay=0 class="keep-blanks">    mom5:</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks">    require:</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks git-red">-        - '@git.2023.11.09'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks git-green">+        - '@git.development'</terminal-line>
+    <terminal-line lineDelay=0 class="keep-blanks git-green">+        - '@git.LONG_HASH'</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks">    libaccessom2:</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks">    require:</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks">        - '@git.2023.10.26'</terminal-line>
@@ -233,20 +239,20 @@ The following _Comment Commands_ are available in all model deployment repositor
 !!! info
     Requires the commenter to have write permissions within the repository.
 
-<h5>Usage</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
+##### Usage { .no-toc }
 
 ```
 !bump [major|minor]
 ```
 
-<h5>Description</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
+##### Description { .no-toc }
 
 Convenience function that automatically bumps the overall model version in the `spack.yaml` file  and commits the result to the PR branch.<br>
 The overall model version is formatted as `YEAR.MONTH.MINOR`.<br>
 `!bump major` bumps the model version to the next major version, formatted as `YEAR.MONTH.0`, where `YEAR` and `MONTH` correspond to the current year and month when the comment is issued.<br>
 `!bump minor` bumps the model version to the next minor version, formatted as `YEAR.MONTH.(MINOR+1)`. Here `YEAR`, `MONTH` and `MINOR` are the same as the previous version.
 
-<h5>Example</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
+##### Example { .no-toc }
 
 For example, if in Jan 2025 we commented with `!bump major` on an open PR that has its overall model version set to `git.2024.06.2`, the overall model version would be bumped to `git.2025.01.0`.<br>
 If, however, we commented the PR with `!bump minor`, the overall model version would be bumped to `git.2024.06.3` regardless of the comment date.
@@ -255,28 +261,17 @@ If, however, we commented the PR with `!bump minor`, the overall model version w
 !!! info
     Requires the commenter to have write permissions within the repository.
 
-<h5>Usage</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
+##### Usage { .no-toc }
 
 ```
 !redeploy
 ```
 
-<h5>Description</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
+##### Description { .no-toc }
 
 Convenience function that triggers a new independent deployment of the `HEAD` of the model deployment repository PR branch.
 
-This is used to trigger a new deployment when changes are made to a model dependency, but no changes have occurred in the `HEAD` of the PR branch.
-
-<h5>Example</h5> <!-- Using HTML syntax to avoid paragraph being added in the table of contents on the right-side of the website -->
-
-For example, we make the above [modifications](#modifications) that updated the ACCESS-OM2 MOM5 component version to the one from MOM5 repository's `development` branch (by changing the `mom5` `require` version to `git.development` in the [`spack.yaml`](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15)).<br>
-We then push the commits to the `update_mom5_dev_build` branch and open a PR to `main`, resulting in a [successful deployment](#successful-deployment) of our ACCESS-OM2 _mom5-development_ build (version 1).<br>
-Subsequently, we decide to make some further changes to the MOM5 `development` branch and we push the commits to the remote repository.<br>
-Now, if we want to test these new MOM5 changes, we would have to redeploy the latest commit in the `update_mom5_dev_build` branch to reflect the updates to the MOM5 `development` branch. Since the `HEAD` of the `update_mom5_dev_build` did not change, instead of having to create a new "redundant" commit only to trigger the prerelease deployment, we can comment `!redeploy` in the `update_mom5_dev_build` PR. This will force the CI/CD pipeline to redeploy the model build with the latest modifications in the MOM5 `development` branch.<br>
-As a result, a new separate deployment of the ACCESS-OM2 _mom5-development_ build (version 2) is produced.
-
-!!! warning
-    Before using a `!redeploy` _Comment Command_, the user should monitor the state of each dependency's `git` branch listed in the `spack.yaml` file. The CI/CD pipeline does not perform any checks and will simply redeploy the `HEAD` of the model deployment repository's PR branch using the `HEAD` of all corresponding dependency `git` branches specified in the `spack.yaml` file.
+This is used to trigger a new deployment when a transient error with the prerelease build process occurs (e.g., _Gadi_ is down).
 
 ## Backporting Bugfixes
 

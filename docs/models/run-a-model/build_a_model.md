@@ -1,11 +1,13 @@
-!!! danger
-    This page is tailored to experienced users and collaborators developing ACCESS models.<br>
-    This step is *not* required if you *only* want to run a model. If you are looking for information on how to run a model, refer to the [Run a Model](/models/run-a-model) section.
 
 {% set esm1_5_build_config = "https://github.com/ACCESS-NRI/ACCESS-ESM1.5" %}
 {% set spack_setup = "/getting_started/spack" %}
+[ACCESS models]: /models/configurations
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [spack-configuration-scopes-documentation]: https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes
+
+!!! danger
+    This page is tailored to experienced users and collaborators developing ACCESS models.<br>
+    This step is *not* required if you *only* want to run a model. If you are looking for information on how to run a model, refer to the [Run a Model](/models/run-a-model) section.
 
 # Modify and build an ACCESS model's source code
 
