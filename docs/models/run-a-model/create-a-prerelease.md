@@ -216,7 +216,7 @@ The differences are summarized in the table below:
 |**Type**|**Used for**|**CI Checks**|
 |---|---|---|
 |Regular PR|Changes to be incorporated into the default branch as a Release.|The full range of CI checks, including conformance to our restricted `spack.yaml` syntax.|
-|Draft PR|Changes that are not intended for a Release, but instead being used for testing.|Minimal CI Checks, only validating that the root spec is formatted correctly.|
+|Draft PR|Changes that are not intended for a Release, but instead being used for testing.|Minimal CI Checks, only validating that the model name and version is formatted correctly.|
 
 
 ## Comment Commands
@@ -271,7 +271,7 @@ This is used to trigger a new deployment when changes are made to a model depend
 
 For example, we make the above [modifications](#modifications) that updated the ACCESS-OM2 MOM5 component version to the one from MOM5 repository's `development` branch (by changing the `mom5` `require` version to `git.development` in the [`spack.yaml`](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15)).<br>
 We then push the commits to the `update_mom5_dev_build` branch and open a PR to `main`, resulting in a [successful deployment](#successful-deployment) of our ACCESS-OM2 _mom5-development_ build (version 1).<br>
-Subsequently, we decide to make some further changes to the MOM5 `development` branch and we push the commits to the remote repo.<br>
+Subsequently, we decide to make some further changes to the MOM5 `development` branch and we push the commits to the remote repository.<br>
 Now, if we want to test these new MOM5 changes, we would have to redeploy the latest commit in the `update_mom5_dev_build` branch to reflect the updates to the MOM5 `development` branch. Since the `HEAD` of the `update_mom5_dev_build` did not change, instead of having to create a new "redundant" commit only to trigger the prerelease deployment, we can comment `!redeploy` in the `update_mom5_dev_build` PR. This will force the CI/CD pipeline to redeploy the model build with the latest modifications in the MOM5 `development` branch.<br>
 As a result, a new separate deployment of the ACCESS-OM2 _mom5-development_ build (version 2) is produced.
 
