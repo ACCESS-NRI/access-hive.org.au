@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <style>
+            ul {
+                font-size: 20px; 
+                font-weight: 500;
+            }
+            li {
+                margin: 0.3em;
+            }
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>PR Previews</h1>
+        <ul>
+            <li>
+                {% if data %}
+                    {% for pr in data %}
+                        <a href="{{ pr.pr_preview_url }}">
+                            PR #{{ pr.pr_number }} - {{ pr.pr_title }}
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <p>No open PRs found.</p>
+                {% endif %}
+            </li>
+        </ul>
+    </body>
+</html>

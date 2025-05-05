@@ -84,7 +84,7 @@ jobs:
            ${{ needs.get-date.outputs.date }}
           label: ${{ vars.PR_PREVIEW_COMMENT_LABEL }}
 
-  # Build the main website
+#   Build the main website
   build-main:
     name: Build main website
     runs-on: ubuntu-latest
@@ -140,7 +140,7 @@ jobs:
           name: main-website
           path: ${{env.BUILD_DIR}}
   
-  # Build the development website
+# Build the development website
   build-development:
     name: Build development website
     runs-on: ubuntu-latest
@@ -257,7 +257,7 @@ jobs:
           fi
           echo "open_prs_info=${open_prs_info}" >> "$GITHUB_OUTPUT"
     
-  # Build each pr website with matrix strategy jobs
+# Build each pr website with matrix strategy jobs
   build-pr:
     name: Build PR ${{matrix.pr_number}}
     runs-on: ubuntu-latest
@@ -314,36 +314,21 @@ jobs:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
       FILE_NAME: index.html
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11.x
+
+      - name: Install dependencies
+        run: pip install jinja-cli==1.2.2
+
       - name: Create PR previews page
         run: |
-          open_prs_info='${{ needs.get-prs-info.outputs.open_prs_info }}'
-          cat > ${{ env.FILE_NAME }} << EOF
-            <html lang="en">
-            <body>
-            <h1>PR Previews</h1>
-            <ul style="font-size: 20px; font-weight: 500;">
-            $(
-            if [[ $open_prs_info != '[]' ]]; then
-            while IFS= read -r item; do
-            pr_number=$(jq -r '.pr_number' <<< "$item")
-            pr_title=$(jq -r '.pr_title'  <<< "$item")
-            pr_preview_url=$(jq -r '.pr_preview_url' <<< "$item")
-            cat <<EOT
-              <li style="margin: 0.3em;">
-              <a href="${pr_preview_url}" style="text-decoration: none;">
-              PR #${pr_number} - ${pr_title}
-              </a>
-              </li>
-          EOT
-            done < <(jq -c '.[]' <<< "$open_prs_info")
-            else 
-            echo '<p>No open PRs found.</p>'
-            fi
-            )
-            </ul>
-            </body>
-            </html>
-          EOF
+          printf '{"data": %s}' '${{ needs.get-prs-info.outputs.open_prs_info }}' | \
+            jinja -d - -f json ./.github/workflows/templates/pr_previews_page.html > ${{ env.FILE_NAME }}
           echo "Created the pr-previews page through the following html file:"
           cat ${{ env.FILE_NAME }}
 
@@ -353,7 +338,7 @@ jobs:
           name: '${{ env.PR_PREVIEWS_DIR }}'
           path: ${{ env.FILE_NAME }}
 
-  # Set the final website structure for the deployment
+# Set the final website structure for the deployment
   set-website-structure:
     name: Set entire website structure
     runs-on: ubuntu-latest
