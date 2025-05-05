@@ -16,17 +16,19 @@
     <body>
         <h1>PR Previews</h1>
         <ul>
-            <li>
-                {% if data %}
-                    {% for pr in data %}
+            {% if data %}
+                {% for pr in data %}
+                    <li>
                         <a href="{{ pr.pr_preview_url }}">
                             PR #{{ pr.pr_number }} - {{ pr.pr_title }}
                         </a>
-                    {% endfor %}
-                {% else %}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>
                     <p>No open PRs found.</p>
-                {% endif %}
-            </li>
+                </li>
+            {% endif %}
         </ul>
     </body>
 </html>
