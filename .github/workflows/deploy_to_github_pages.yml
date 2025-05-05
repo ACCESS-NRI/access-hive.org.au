@@ -217,23 +217,23 @@ jobs:
         run: |
           # Include only open PRs, not from forks, and whose head branch is not `main`
           open_prs=$(
-          gh pr list \
-          --state open \
-          --json number,title,headRepositoryOwner,headRefOid \
-          --jq 'sort_by(.number) | .[] | select( .headRefName!="main" and .headRepositoryOwner.login=="ACCESS-NRI")' \
+            gh pr list \
+            --state open \
+            --json number,title,headRepositoryOwner,headRefOid \
+            --jq 'sort_by(.number) | .[] | select( .headRefName!="main" and .headRepositoryOwner.login=="ACCESS-NRI")' \
           )
           
           # If open PRs are found, filter them and output the desired json object
           if [[ -n "$open_prs" ]]; then
             # Keep only PRs with a mkdocs.yml file in their head commit
             prs_with_mkdocs=$(
-            while read pr; do
-              sha=$(jq -r '.headRefOid' <<< $pr)
-              if gh api repos/${{ github.repository }}/git/trees/${sha}?recursive=1 | \
-              jq '.tree[].path' | grep 'mkdocs.ya\?ml' > /dev/null; then 
-                echo $pr
-              fi
-            done <<< "$open_prs"
+              while read pr; do
+                sha=$(jq -r '.headRefOid' <<< $pr)
+                if gh api repos/${{ github.repository }}/git/trees/${sha}?recursive=1 | \
+                jq '.tree[].path' | grep 'mkdocs.ya\?ml' > /dev/null; then 
+                  echo $pr
+                fi
+              done <<< "$open_prs"
             )
             
             # Define the PR info json object with the following fields:
@@ -242,12 +242,12 @@ jobs:
             # - pr_head_sha: the PR head commit sha
             # - pr_preview_url: the PR preview URL
             open_prs_info=$(
-            jq -s -c '[.[] | {
-            pr_number: .number, 
-            pr_title: .title, 
-            pr_head_sha: .headRefOid, 
-            pr_preview_url: ("${{ env.ROOT_URL }}/${{ env.PR_PREVIEWS_DIR }}/" + (.number | tostring))
-            }]' <<< "$prs_with_mkdocs"
+              jq -s -c '[.[] | {
+              pr_number: .number, 
+              pr_title: .title, 
+              pr_head_sha: .headRefOid, 
+              pr_preview_url: ("${{ env.ROOT_URL }}/${{ env.PR_PREVIEWS_DIR }}/" + (.number | tostring))
+              }]' <<< "$prs_with_mkdocs"
             )
             
             echo "Found the following open PRs:"
