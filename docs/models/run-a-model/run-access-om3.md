@@ -13,7 +13,7 @@
 !!! release
     This is an **Alpha Release**.<br>
     This model configurations and source code might change before the full release.<br>
-    No support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported experience, refer to [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
+    Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 <div class="text-card-group" markdown>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
@@ -26,7 +26,7 @@
 
 {{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview][model configurations].
 
-The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+The instructions below outline how to run {{ model }} using ACCESS-NRI's deployed software, on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
@@ -64,21 +64,18 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
         <terminal-line data="input">payu --version</terminal-line>
         <terminal-line lineDelay="1000">1.1.6</terminal-line>
     </terminal-window>
-    !!! warning
-        _payu_ version >=1.1.6 is required
 
 ----------------------------------------------------------------------------------------
 
 ## Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
-Released configurations are tested and supported by ACCESS-NRI.
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository. These released configurations are tested and supported by ACCESS-NRI.
 
 For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
 
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
-The first step is to choose a configuration from those available.<br>
+The first step is to choose a configuration from those available.
 For example, if the required configuration is MOM6-CICE6 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
@@ -88,7 +85,7 @@ To clone this branch to a location on _Gadi_ and navigate to that directory, run
     payu clone -b expt -B {{ example_branch }} {{ github_configs }} {{example_folder}}
     cd {{example_folder}}
 
-In the example above the `payu clone` command clones the 1° repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`.
+In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -122,7 +119,7 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 {{ model }} configurations run on [_Gadi_][gadi] through a [PBS job][PBS job] submission managed by [_payu_][payu].
 
-The general layout of a _payu_-supported model run consists of two main directories:
+The general layout of a _payu_ supported model run consists of two main directories:
 
 - The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om3/{{example_folder}}`).
 - The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om3`.
@@ -145,7 +142,7 @@ This design allows multiple self-resubmitting experiments that share common exec
 
 ### Run configuration
 
-To run {{ model }} configuration execute the following command from within the *control* directory:
+To run the cloned {{ model }} configuration, execute the following command from within the *control* directory:
 
     payu run
 
@@ -185,11 +182,11 @@ qstat <job-ID>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
 ```
-qstat -u $USER
+qstat
 ```
 
 <terminal-window>
-    <terminal-line data="input">qstat -u $USER</terminal-line>
+    <terminal-line data="input">qstat</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
@@ -241,8 +238,8 @@ payu sweep
 
 #### Model log files {: .no-toc }
 
-While the model is running, _payu_ saves the model standard output and error streams in the `access-om3.out` and `access-om3.err` files inside the _control_ directory, respectively.<br>
-You can examine the contents of these files to check on the status of a run as it progresses (or after a failed run has completed).
+While the model is running, the model standard output and error streams are saved in the `access-om3.out` and `access-om3.err` files inside the _control_ directory.
+The contents of these files show the status of a run as it progresses (or after a failed run has completed).
 
 !!! warning
     At the end of a successful run these log files are archived to the `archive` directory and will no longer be found in the _control_ directory. If they remain in the _control_ directory after the PBS job for a run has completed it means the run has failed.
@@ -325,7 +322,7 @@ The run length and restart period are controlled by a set of parameters in the `
          ...
          
 The run length is controlled  by`stop_option` and `stop_n`.<br>
-Common options for `stop_option` are `nseconds`, `nhours`, `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
+Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
 
 The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
 !!! tip
@@ -399,12 +396,7 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
-For information about changing the run length, refer to [Change run length](#change-run-length).<br>
-
-The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
-
-For more information, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
-
+_Payu_ can be configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts from every fifth model run. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
 ### Other configuration options
 
 !!! warning
@@ -412,7 +404,7 @@ For more information, check [_payu_ Configuration Settings documentation](https:
 
 #### Model configuration {: .no-toc }
 
-This section tells _payu_ which driver to use for the main model configuration (`access-om3`) and the location of all inputs that are common to all its [model components].
+This section tells _payu_ which driver to use for the main model configuration (`access-om3`) and the location of all input files.
 
 ```yaml
 model: access-om3
