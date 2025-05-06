@@ -61,11 +61,12 @@ plugins:
       enable_creation_date: false
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - macros
   - bibtex:
       bib_file: "references.bib"
   - events:
       events_dir: community_resources/events/events
+  - resolve-absolute-urls
+  - macros
 
 # Extensions
 markdown_extensions: 
