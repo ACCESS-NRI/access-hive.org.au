@@ -246,7 +246,7 @@ jobs:
               pr_number: .number, 
               pr_title: .title, 
               pr_head_sha: .headRefOid, 
-              pr_preview_url: ("${{ env.ROOT_URL }}/${{ env.PR_PREVIEWS_DIR }}/" + (.number | tostring))
+              pr_preview_url: ("${{ env.ROOT_URL }}${{ env.PR_PREVIEWS_DIR }}/" + (.number | tostring))
               }]' <<< "$prs_with_mkdocs"
             )
             
