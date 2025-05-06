@@ -24,7 +24,7 @@
 
 ## About
 
-{{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview][model configurations].
+{{ model }} is an Ocean Sea Ice model. More information is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's deployed software, on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -67,16 +67,42 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 ----------------------------------------------------------------------------------------
 
-## Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository. These released configurations are tested and supported by ACCESS-NRI.
+## Download and run {{ model }} configuration
 
-For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
+{{ model }} configurations run on [_Gadi_][gadi] through a [PBS job][PBS job] submission managed by [_payu_][payu].
 
-More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
+The general layout of a _payu_ supported model run consists of two main directories:
 
-The first step is to choose a configuration from those available.
-For example, if the required configuration is MOM6-CICE6 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
+- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om3/{{example_folder}}`).
+- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om3`.
+
+This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
+
+The _laboratory_ directory is a shared space for all _payu_ experiments using the same model.<br>
+Inside the _laboratory_ directory there are two subdirectories:
+
+- `work` &rarr; a directory where _payu_ automatically creates a temporary subdirectory while the model is run. The temporary subdirectory gets created as part of a run and then removed after the run succeeds.
+- `archive` &rarr; the directory where the output is stored following each successful run.
+
+Within each of the above directories _payu_ automatically creates subdirectories uniquely named according to the experiment being run.<br>
+_Payu_ also creates symbolic links in the _control_ directory pointing to the `archive` and `work` directories.
+
+This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
+
+If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
+
+!!! admonition warning
+    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
+
+
+----------------------------------------------------------------------------------------
+
+### Get {{ model }} configuration
+
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
+
+The first step is to choose a configuration from those available. For example, if the required configuration is an ocean and sea ice coarse-resolution coupled model, i.e.,  MOM6-CICE6 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
@@ -107,38 +133,9 @@ In the example above the `payu clone` command clones the 25km repeat-year JRA55 
 </terminal-window>
 
 !!! tip
-    _payu_ uses branches to differentiate between different experiments in the same local git repository.<br>
+    _payu_ uses branches to differentiate between different experiments in the same local `git` repository.<br>
     For this reason, it is recommended to always set the cloned branch name (`expt` in the example above) to something meaningful for the planned experiment.<br>
     For more information refer to this [payu tutorial](https://forum.access-hive.org.au/t/access-om2-payu-tutorial/1750#select-experiment-12).
-
-----------------------------------------------------------------------------------------
-
-## Run {{ model }} configuration
-
-If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
-
-{{ model }} configurations run on [_Gadi_][gadi] through a [PBS job][PBS job] submission managed by [_payu_][payu].
-
-The general layout of a _payu_ supported model run consists of two main directories:
-
-- The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om3/{{example_folder}}`).
-- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om3`.
-
-This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
-
-The _laboratory_ directory is a shared space for all _payu_ experiments using the same model.<br>
-Inside the _laboratory_ directory there are two subdirectories:
-
-- `work` &rarr; a directory where _payu_ automatically creates a temporary subdirectory while the model is run. The temporary subdirectory gets created as part of a run and then removed after the run succeeds.
-- `archive` &rarr; the directory where the output is stored following each successful run.
-
-Within each of the above directories _payu_ automatically creates subdirectories uniquely named according to the experiment being run.<br>
-_Payu_ also creates symbolic links in the _control_ directory pointing to the `archive` and `work` directories.
-
-This design allows multiple self-resubmitting experiments that share common executables and input data to be run simultaneously.
-
-!!! admonition warning
-    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
 
 ### Run configuration
 
@@ -146,7 +143,7 @@ To run the cloned {{ model }} configuration, execute the following command from 
 
     payu run
 
-This will submit a single job to the queue with the default run length specified in the configuration.<br>
+This will submit a single job to the supercomputer "queue" with the default run length (1 year) specified in the configuration.<br>
 For information about changing the run length, refer to [Change run length](#change-run-length).
 
 <terminal-window>
@@ -231,7 +228,7 @@ which kills the specified job without waiting for it to complete.
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
 These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
-To move these files to the `archive` directory, use the following commmand:
+To move these files to the `archive` directory, use the following command:
 ```
 payu sweep
 ```
@@ -242,7 +239,7 @@ While the model is running, the model standard output and error streams are save
 The contents of these files show the status of a run as it progresses (or after a failed run has completed).
 
 !!! warning
-    At the end of a successful run these log files are archived to the `archive` directory and will no longer be found in the _control_ directory. If they remain in the _control_ directory after the PBS job for a run has completed it means the run has failed.
+    At the end of a successful run, these log files are archived to the `archive` directory and will no longer be found in the _control_ directory. If they remain in the _control_ directory after the PBS job for a run has completed, it means the run has failed.
 
 ### Trouble-shooting
 
@@ -281,7 +278,7 @@ This can help to isolate issues such as permissions problems accessing files and
 At the end of a successful model run, output files, restart files and log files are moved from the `work` directory to the `archive` directory.<br>
 Symbolic links to these directories are also provided in the _control_ directory for convenience.
 
-If a model run is unsuccessful, the `work` directory is left untouched to facilitate the identification of the cause of the model failure.
+If a model run is unsuccessful, the `work` directory is left untouched to help identify the cause of model failure.
 
 Outputs and restarts are stored in subfolders within the `archive` directory, subdivided for each run of the model.<br>
 Output and restart folders are called `outputXXX` and `restartXXX`, respectively, where _XXX_ is the run number starting from `000`.
@@ -342,7 +339,7 @@ For example, to run a configuration for 2 months and write restart files at the 
 
 ### Modify PBS resources
 
-If the model configuration has been altered and the experiment needs more time to complete, more memory, or it needs to be submitted under a different NCI project, the following section in the `config.yaml` needs to be modified:
+If the model configuration has been altered and the experiment needs: more time to complete, more memory, or to be submitted under a different NCI project; the following section in the config.yaml requires modification:
 
 ```yaml
 # If submitting to a different project to your default, uncomment line below
@@ -376,10 +373,10 @@ project: ol01
 
 ### Syncing output data
 
-The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer term storage.<br>
+The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer-term storage.<br>
 On _Gadi_, this is typically in a folder under a project code on `/g/data`.  
 
-_Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory git history to another location.<br>
+_Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory `git` history to another location.<br>
 This feature is controlled by the following section in the `config.yaml` file: 
 ```yaml
 # Sync options for automatically copying data from ephemeral scratch space to 
@@ -434,18 +431,7 @@ When running a new configuration, _payu_ automatically commits changes with `git
 
 !!! warning
     This should not be changed as it is an essential part of the provenance of an experiment.<br>
-    _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts, and executables used in an experiment.
-
-#### Platform {: .no-toc }
-
-```yaml
-platform: 
-    nodesize: 48
-```
-Set platform-specific default parameters.<br>
-In the example above, the default number of cpus per node is set to 48. 
-!!! warning
-    This might need changing if the configuration is run on hardware with different node structure.
+    _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts and executables used in an experiment.
 
 #### Userscripts {: .no-toc }
 
@@ -455,7 +441,7 @@ userscripts:
     archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
 ```
 
-A dictionary to run scripts or subcommands at various stages of a _payu_ submission.
+Can specify run scripts or subcommands to be run at various stages of a _payu_ submission.
 
 - `setup` gets called if after model setup, but prior to model execution.
 - `archive` gets called after the model execution, but prior to model output archive.
@@ -463,12 +449,11 @@ A dictionary to run scripts or subcommands at various stages of a _payu_ submiss
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
 ### Create a custom {{ model }} build
-All the executables needed to run {{ model }} are pre-built into independent configurations using _Spack_.<br>
-To customise {{ model }}'s build (for example to run {{ model }} with changes in the source code of one of its component), refer to [Modify and build an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
+All the executables needed to run {{ model }} are pre-built using _Spack_.<br>
+To customise {{ model }}'s build (for example, to run {{ model }} with changes in the source code of one of its component), refer to [Modify and build an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
 ## Get Help
 
-If you have questions or need help regarding {{ model }}, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29).<br>
-For assistance on how to request help from ACCESS-NRI, follow the [guidelines on how to get help](/about/user_support/#still-need-help).
+For further {{ model }} assistance, have a look at [general guidance](/about/user_support/#still-need-help) on how to request help from ACCESS-NRI. Specifically, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29). In the case of a configuration bug, please file a [GitHub issue here](https://github.com/ACCESS-NRI/access-om3-configs/issues/new?assignees=&labels=External&projects=&template=blank.md&title=). <br>
 
 <custom-references>
 - [https://cosima.org.au](https://cosima.org.au)

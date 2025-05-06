@@ -18,10 +18,9 @@ There is a global configuration for **one spatial resolution**:
 
 - 0.25° or 25km horizontal resolution, 75 vertical levels.
 
-For each resolution there are **two options of JRA55-do atmospheric forcing**:
+For the above resolution there is **one option of JRA55-do atmospheric forcing**:
 
 - Repeat Year Forcing (RYF): repeated 1 May 1990 - 30 April 1991 forcing
-- Inter-Annual Forcing (IAF): 1958-2018 forcing
 
 Each configuration also has an optional biogeochemical (BGC) configuration that uses the [Biogeochemistry Ocean component](/models/model_components/bgc_ocean), if required.
 !!! warning
@@ -30,7 +29,7 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 ### Model Components {: #model-components-{{model}} }
 
 - **Ocean**: [MOM6](/models/model_components/ocean#mom6).<br>
-  Tripolar grid, 25 km spatial resolution, 75 vertical levels.
+  Tripolar grid.
 
 - **Sea ice**: [CICE6](/models/model_components/sea-ice#cice6).<br>
     Same grid as ocean.
