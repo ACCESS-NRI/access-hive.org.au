@@ -15,7 +15,7 @@ env:
   DOC_DIR: '.'
   BUILD_DIR: ${{ github.workspace }}/website-build
   WEBSITE_DIR: ${{ github.workspace }}/full-website
-  ROOT_DOMAIN: https://access-hive.org.au
+  ROOT_DOMAIN: https://access-hive.org.au/
   PR_PREVIEWS_DIR: pr-previews
 concurrency:
   group: documentation-build-deploy
@@ -33,14 +33,14 @@ jobs:
       - name: Set root url
         id: set-root-url
         run: |
-          if [[ ${{ env.ROOT_DOMAIN }} == https://access-nri.github.io ]]; then
+          root_domain=$(sed 's:/*$::' <<< '${{ env.ROOT_DOMAIN }}') # Remove trailing slash if present
+          if [[ "$root_domain" == https://access-nri.github.io ]]; then
             # If the domain is the default GitHub pages one (not a custom one), the website will be deployed 
-            # as a GitHub Pages Project Site with the URL in the format http://<username>.github.io/<repository>
-            root_url=${{ env.ROOT_DOMAIN }}/${{ github.event.repository.name }}
+            # as a GitHub Pages Project Site with the URL in the format http://<username>.github.io/<repository>/
+            root_url=${root_domain}/${{ github.event.repository.name }}/
           else
-            root_url=${{ env.ROOT_DOMAIN }}
+            root_url=${root_domain}/
           fi
-          root_url=${root_url%/} # Remove trailing slash if present
           echo "Root url set to ${root_url}"
           echo "root_url=${root_url}" >> $GITHUB_OUTPUT
   
@@ -128,7 +128,7 @@ jobs:
         if: ${{ ! env.SKIP_STEP }}
         run: |
             dir=
-            site_url=${{ env.ROOT_URL }}/${dir}
+            site_url="${{ env.ROOT_URL }}${dir:+${dir}/}"
             command="SITE_URL=${site_url} mkdocs build -f mkdocs.yml -d ${{env.BUILD_DIR}}"
             echo "$command"
             eval "$command"
@@ -184,7 +184,7 @@ jobs:
         if: ${{ ! env.SKIP_STEP }}
         run: |
             dir=development-website
-            site_url=${{ env.ROOT_URL }}/${dir}
+            site_url="${{ env.ROOT_URL }}${dir:+${dir}/}"
             command="SITE_URL=${site_url} mkdocs build -f mkdocs.yml -d ${{env.BUILD_DIR}}"
             echo "$command"
             eval "$command"
@@ -294,7 +294,7 @@ jobs:
         id: build
         run: |
           dir=$(sed 's|^${{ env.ROOT_URL }}/||' <<< ${{ matrix.pr_preview_url }})
-          site_url=${{ env.ROOT_URL }}/${dir}
+          site_url="${{ env.ROOT_URL }}${dir:+${dir}/}"
           command="SITE_URL=${site_url} mkdocs build -f mkdocs.yml -d ${{env.BUILD_DIR}}"
           echo "$command"
           eval "$command"
