@@ -53,7 +53,7 @@ theme:
   icon:
     edit: material/pencil
     view: material/eye
-copyright: Copyright &copy; 2024 ACCESS-NRI
+copyright: Copyright &copy; 2025 ACCESS-NRI
 
 plugins:
   - git-revision-date-localized:
@@ -195,9 +195,9 @@ nav:
 extra:
   generator: false
   social:
-    - icon: fontawesome/brands/twitter 
-      link: https://twitter.com/ACCESS_NRI
-      name: ACCESS-NRI on Twitter
+    - icon: bluesky
+      link: https://bsky.app/profile/access-nri.bsky.social
+      name: ACCESS-NRI on Bluesky
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/access-nri
       name: ACCESS-NRI on Linkedin
@@ -221,7 +221,7 @@ extra:
 
 extra_css:
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
-  - fontawesome-free-6.4.0-web/css/all.css
+  # - fontawesome-free-6.4.0-web/css/all.css
   - fontello/css/fontello-codes.css
   - fontello/css/fontello-ie7-codes.css
   - fontello/css/fontello-ie7.css
