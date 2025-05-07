@@ -293,7 +293,7 @@ jobs:
           ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
         id: build
         run: |
-          dir=$(sed 's|^${{ env.ROOT_URL }}/||' <<< ${{ matrix.pr_preview_url }})
+          dir=$(sed 's|^${{ env.ROOT_URL }}||' <<< ${{ matrix.pr_preview_url }})
           site_url="${{ env.ROOT_URL }}${dir:+${dir}/}"
           command="SITE_URL=${site_url} mkdocs build -f mkdocs.yml -d ${{env.BUILD_DIR}}"
           echo "$command"
