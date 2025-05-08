@@ -40,13 +40,13 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
             Run ACCESS-rAM
         </div>
     </a>
-        <!-- Run ACCESS-rAM -->
+        <!-- Run ACCESS-ISSM -->
     <a href="/models/run-a-model/run-access-issm" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_ram_model_visualisation.png" alt="ACCESS-ISSM">
         </div>
         <div class="card-text-container bold">   
-            Run ACCESS-rAM
+            Run ACCESS-ISSM
         </div>
     </a>
     <!-- Modify ACCESS model's source code -->
