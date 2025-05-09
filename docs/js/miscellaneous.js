@@ -302,7 +302,7 @@ function main() {
   hideTocItems();
   tabFunctionality();
   sortTables();
-  makeLinksExternal();
+  // makeLinksExternal();
   fitText();
   toggleTerminalAnimations();
   makeCitationLinks();
