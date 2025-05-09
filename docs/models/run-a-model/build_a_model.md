@@ -13,8 +13,12 @@
 
 ## About
 
-The following instructions below outline how to build an ACCESS model and its dependencies, using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
-This build workflow is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+The following instructions outline how to build an ACCESS model and its dependencies, using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
+
+These instructions may suit more advanced users who are making iterative changes and need to repeatedly modify the source code, recompile it and run tests. This option also requires setting up a Spack build environment.<br>
+If you want to modify and build a model, consider checking [Create Prereleases and Releases for an ACCESS Model](/models/run-a-mode/create-a=prerelease) first.
+
+The build workflow described in this page is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
 The following instructions outline how to trigger a prerelease build of [ACCESS-OM2][om2 config] after modifying its [MOM5 component]. All other components of the official [ACCESS-OM2 release][om2 repo] will remain unchanged.
 
