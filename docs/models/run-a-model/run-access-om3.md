@@ -8,7 +8,7 @@
 [model components]: /models/configurations/access-om/#model-components-{{model}}
 [model configurations]: /models/configurations/access-om/#access-om3
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
-[release notes]: https://forum.access-hive.org.au/t/draft-access-om3-release-information-alpha-release/4372
+[release notes]: https://forum.access-hive.org.au/t/access-om3-release-information/
 
 !!! release
     This is an **Alpha Release**.<br>
