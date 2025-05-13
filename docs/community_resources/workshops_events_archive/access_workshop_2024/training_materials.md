@@ -21,12 +21,12 @@ Setup instructions for each step can be found at the links provided. Note that m
  
 #### How to find and access datasets on NCI & handle large model output   
 
-- [NCI account](https://access-hive.org.au/getting_started/set_up_nci_account/#create-an-nci-user-account)
+- [NCI account](/getting_started/set_up_nci_account/#create-an-nci-user-account)
 
-- [NCI project memberships](https://access-hive.org.au/getting_started/set_up_nci_account/#join-relevant-nci-projects):
+- [NCI project memberships](/getting_started/set_up_nci_account/#join-relevant-nci-projects):
     - [nf33](https://my.nci.org.au/mancini/project/nf33), [xp65](https://my.nci.org.au/mancini/project/xp65), [hh5](https://my.nci.org.au/mancini/project/hh5), [dk92](https://my.nci.org.au/mancini/project/dk92), [fs38](https://my.nci.org.au/mancini/project/fs38), [p73](https://my.nci.org.au/mancini/project/p73), [ik11](https://my.nci.org.au/mancini/project/ik11), [oi10](https://my.nci.org.au/mancini/project/oi10) 
 
-- It is useful to have [logged on to Gadi and set up an SSH key](https://access-hive.org.au/getting_started/set_up_nci_account/#login-to-gadi) before, but it is not essential to participate in this session. 
+- It is useful to have [logged on to Gadi and set up an SSH key](/getting_started/set_up_nci_account/#login-to-gadi) before, but it is not essential to participate in this session. 
 
  
 #### Advanced git & GitHub best practices for software developers 
@@ -40,9 +40,9 @@ Setup instructions for each step can be found at the links provided.
  
 #### Running model experiments with Payu and Git 
 
-- [NCI account](https://access-hive.org.au/getting_started/set_up_nci_account/#create-an-nci-user-account)
+- [NCI account](/getting_started/set_up_nci_account/#create-an-nci-user-account)
 
-- [NCI project memberships](https://access-hive.org.au/getting_started/set_up_nci_account/#join-relevant-nci-projects):
+- [NCI project memberships](/getting_started/set_up_nci_account/#join-relevant-nci-projects):
     - [nf33](https://my.nci.org.au/mancini/project/nf33), [vk83](https://my.nci.org.au/mancini/project/vk83) 
 
 - [GitHub account](https://github.com)
@@ -51,9 +51,9 @@ In this session, you will have the option to run OM2 or ESM1.5 with Payu. Note t
  
 #### Running a high-resolution regional model using a two-level nest    
 
-- [NCI account](https://access-hive.org.au/getting_started/set_up_nci_account/#create-an-nci-user-account)
+- [NCI account](/getting_started/set_up_nci_account/#create-an-nci-user-account)
 
-- [NCI project memberships](https://access-hive.org.au/getting_started/set_up_nci_account/#join-relevant-nci-projects):
+- [NCI project memberships](/getting_started/set_up_nci_account/#join-relevant-nci-projects):
     - [nf33](https://my.nci.org.au/mancini/project/nf33), [hr22](https://my.nci.org.au/mancini/project/hr22), [ki32](https://my.nci.org.au/mancini/project/ki32), [kit32_mosrs](https://my.nci.org.au/mancini/project/kit32_mosrs), [rt52](https://my.nci.org.au/mancini/project/rt52), [hh5](https://my.nci.org.au/mancini/project/hh5), [zz93](https://my.nci.org.au/mancini/project/zz93), [ob53](https://my.nci.org.au/mancini/project/ob53)
 
 - MOSRS account 
@@ -64,9 +64,9 @@ In this session, you will have the option to run OM2 or ESM1.5 with Payu. Note t
 [Link to CMIP7 Evaluation Hackathon website](https://access-nri.github.io/CMIP7_MED_Hackathon/index.html)
 All setup instructions can be found [at this link](https://access-nri.github.io/CMIP7_MED_Hackathon/setup.html). A summary of the steps is provided below. 
 
-- [NCI account](https://access-hive.org.au/getting_started/set_up_nci_account/#create-an-nci-user-account)
+- [NCI account](/getting_started/set_up_nci_account/#create-an-nci-user-account)
 
-- [NCI project memberships](https://access-hive.org.au/getting_started/set_up_nci_account/#join-relevant-nci-projects):
+- [NCI project memberships](/getting_started/set_up_nci_account/#join-relevant-nci-projects):
     - [nf33](https://my.nci.org.au/mancini/project/nf33), [zv30](https://my.nci.org.au/mancini/project/zv30), [xp65](https://my.nci.org.au/mancini/project/xp65), [ct11](https://my.nci.org.au/mancini/project/ct11), [fs38](https://my.nci.org.au/mancini/project/fs38), [oi10](https://my.nci.org.au/mancini/project/oi10), [rr3](https://my.nci.org.au/mancini/project/rr3), [al33](https://my.nci.org.au/mancini/project/al33), [rt52](https://my.nci.org.au/mancini/project/rt52), [zz93](https://my.nci.org.au/mancini/project/zz93)
 
 - Set up your  to run ESMValTool 

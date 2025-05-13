@@ -2,7 +2,7 @@
 
 Thank you for submitting a pull request to the ACCESS-Hive Docs Project. 🎉
 
-More assistance is available in the [how to contribute section on ACCESS-Hive Docs](https://access-hive.org.au/about/contribute/)
+More assistance is available in the [how to contribute section on ACCESS-Hive Docs](https://docs.access-hive.org.au/about/contribute/)
 
 ## Description
 
@@ -30,7 +30,6 @@ Please delete options that are not relevant.
 - [ ] My changes do not break navigation and do not generate new warnings
 - [ ] I have checked that the links are valid and point to the intended content
 - [ ] I have checked my code/text and corrected any misspellings
-- [ ] I have chosen the correct tag for the level of [support provided](https://access-hive.org.au/#support)
 
 When your pull request is ready please [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review). 
 

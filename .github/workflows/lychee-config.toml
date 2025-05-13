@@ -32,7 +32,7 @@ cache = true
 max_cache_age = "1d"
 
 # Base URL or website root directory to check relative URLs.
-base = "https://access-hive.org.au/"
+base = "https://docs.access-hive.org.au/"
 
 # Check links inside `<code>` and `<pre>` blocks as well as Markdown code
 # blocks.
