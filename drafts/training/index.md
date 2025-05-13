@@ -17,4 +17,4 @@ ACCESS-NRI encourages the members of the community to [contact us](mailto:access
 
 Finally, you will also find [ACCESS-NRI's policies][policies] in this space.
 
-[policies]: https://access-hive.org.au/resources/policies
+[policies]: /resources/policies

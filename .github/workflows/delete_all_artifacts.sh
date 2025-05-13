@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # This script deletes all artifacts from the repo using Github CLI.
-# This will NOT break the deployment of ACCESS-Hive Docs (https://access-hive.org.au/)
+# This will NOT break the deployment of ACCESS-Hive Docs (https://docs.access-hive.org.au/)
 
 set -eu
 

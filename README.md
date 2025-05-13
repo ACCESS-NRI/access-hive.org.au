@@ -1,11 +1,14 @@
+[github-repo]: https://github.com/ACCESS-NRI/access-hive.org.au
+[forum]: https://forum.access-hive.org.au
+
 # ACCESS-Hive Docs
-[![ACCESS-Hive Docs Badge](docs/assets/assets_for_readme/badge_hive_docs.svg)][hive-docs-website]
+[![ACCESS-Hive Docs Badge](docs/assets/assets_for_readme/badge_hive_docs.svg)](https://docs.access-hive.org.au/)
 [![github-contributors](https://img.shields.io/github/contributors/ACCESS-NRI/access-hive.org.au?color=blue&style=plastic)][github-repo]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
 [![link-check](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml/badge.svg)](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml)
 
 This repository is the implementation of the ACCESS-Hive Docs website accessible at the following URL:<br>
-https://access-hive.org.au/
+https://docs.access-hive.org.au/
 
 The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting set up, running models and model evaluation.
 
@@ -32,7 +35,7 @@ The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting s
 ## How to Contribute
 ### For New Users
 
-If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
+If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://docs.access-hive.org.au/about/contribute/) for instructions.
 
 ### For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
 
@@ -85,7 +88,7 @@ Repeat these steps as many times as you want, until you are satisfied with all t
 
 #### 4. Deploy website preview
 
-During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
+During development, you can preview the changes made using [MkDocs live preview server](https://docs.access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
 
 #### 5. Keep your branch in sync with the `development` branch
 
@@ -116,7 +119,7 @@ Feel free to assign `ACCESS-NRI/WebOps` team as reviewers.
 Please follow the guidelines below to make the Hive Docs consistent among all the pages contributed by different people. 
 
 - Always prefer Markdown syntax to HTML when possible;
-- All internal URLs need to be ABSOLUTE links, starting with `/` which indicates the base website `https://access-hive.org.au/`. So, a reference to the page `https://access-hive.org.au/models/configurations/access-cm/` will be `/models/configurations/access-cm`. Also, all assets need to be linked starting with `/assets/...`. This because currently the link checker does not handle relative links properly.
+- All internal URLs need to be ABSOLUTE links, starting with `/` which indicates the base website `https://docs.access-hive.org.au/`. So, a reference to the page `https://docs.access-hive.org.au/models/configurations/access-cm/` will be `/models/configurations/access-cm`. Also, all assets need to be linked starting with `/assets/...`. This because currently the link checker does not handle relative links properly.
 - Titles/subtitles should NOT include: code lines/blocks, bold (titles are usually already bold), italic, links;
 - Code lines/blocks need to be used for lines/blocks of code, terminal commands and file/directory paths/names;
 - Italic needs to be used when referring to specific proper nouns (for example _Gadi_ or _payu_);
@@ -202,7 +205,3 @@ The following custom tags are available:
 The ACCESS-Hive Docs website is covered by the [CC-BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
 However, the material linked to from ACCESS-Hive Docs is covered by various licensing agreements. Our users should directly refer to the terms and conditions of any material they are using to understand their rights and responsibilities.
-
-[hive-docs-website]: https://access-hive.org.au
-[github-repo]: https://github.com/ACCESS-NRI/access-hive.org.au
-[forum]: https://forum.access-hive.org.au

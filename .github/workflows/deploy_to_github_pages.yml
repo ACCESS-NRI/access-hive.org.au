@@ -15,7 +15,7 @@ env:
   DOC_DIR: '.'
   BUILD_DIR: ${{ github.workspace }}/website-build
   WEBSITE_DIR: ${{ github.workspace }}/full-website
-  ROOT_DOMAIN: https://access-hive.org.au/
+  ROOT_DOMAIN: https://docs.access-hive.org.au/
   PR_PREVIEWS_DIR: pr-previews
 concurrency:
   group: documentation-build-deploy
