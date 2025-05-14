@@ -16,7 +16,7 @@ Join the [ACCESS-Hive Forum](https://forum.access-hive.org.au/) and find related
 
 :fontawesome-brands-github: [ACCESS-NRI GitHub](https://github.com/ACCESS-NRI/)
 
-:fontawesome-brands-twitter: [ACCESS-NRI Twitter](https://twitter.com/ACCESS_NRI)
+:fontawesome-brands-bluesky: [ACCESS-NRI Bluesky](https://bsky.app/profile/access-nri.bsky.social)
 
 :fontawesome-brands-linkedin: [ACCESS-NRI LinkedIn](https://www.linkedin.com/in/access-nri)
 
