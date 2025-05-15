@@ -15,33 +15,31 @@ env:
   DOC_DIR: '.'
   BUILD_DIR: ${{ github.workspace }}/website-build
   WEBSITE_DIR: ${{ github.workspace }}/full-website
-  ROOT_DOMAIN: https://docs.access-hive.org.au/
   PR_PREVIEWS_DIR: pr-previews
 concurrency:
   group: documentation-build-deploy
   cancel-in-progress: true
 
 jobs:
-  # Set the root url to be used at build time to set the SITE_URL env variable
+  # Get the root url to be used at build time to set the SITE_URL env variable
   # used in the mkdocs.yml file to construct the website map for links
-  set-root-url:
+  get-root-url:
     name: Set root URL
     runs-on: ubuntu-latest
     outputs:
-      root_url: ${{ steps.set-root-url.outputs.root_url }}
+      root_url: ${{ steps.get-root-url.outputs.root_url }}
+    env:
+      GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
-      - name: Set root url
-        id: set-root-url
+      - name: Get root url
+        id: get-root-url
         run: |
-          root_domain=$(sed 's:/*$::' <<< '${{ env.ROOT_DOMAIN }}') # Remove trailing slash if present
-          if [[ "$root_domain" == https://access-nri.github.io ]]; then
-            # If the domain is the default GitHub pages one (not a custom one), the website will be deployed 
-            # as a GitHub Pages Project Site with the URL in the format http://<username>.github.io/<repository>/
-            root_url=${root_domain}/${{ github.event.repository.name }}/
-          else
-            root_url=${root_domain}/
+          root_url=$(gh api repos/${{ github.repository }}/pages --jq '.html_url')
+          if [[ $? != 0 ]]; then
+            echo "::error::The repository '${{ github.repository }}' does not seem to gave a GitHub Pages deployment."
+            exit 1
           fi
-          echo "Root url set to ${root_url}"
+          echo "Root url set to '${root_url}'"
           echo "root_url=${root_url}" >> $GITHUB_OUTPUT
   
   # Get the date to be used in the PR preview comments
@@ -88,7 +86,7 @@ jobs:
   build-main:
     name: Build main website
     runs-on: ubuntu-latest
-    needs: set-root-url
+    needs: get-root-url
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
@@ -123,7 +121,7 @@ jobs:
         working-directory: ${{ env.DOC_DIR }}
         env:
           GH_TOKEN: ${{ github.token }} # Required for gh usage
-          ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
+          ROOT_URL: ${{ needs.get-root-url.outputs.root_url }}
         id: build
         if: ${{ ! env.SKIP_STEP }}
         run: |
@@ -144,7 +142,7 @@ jobs:
   build-development:
     name: Build development website
     runs-on: ubuntu-latest
-    needs: set-root-url
+    needs: get-root-url
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
@@ -179,7 +177,7 @@ jobs:
         working-directory: ${{ env.DOC_DIR }}
         env:
           GH_TOKEN: ${{ github.token }} # Required for gh usage
-          ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
+          ROOT_URL: ${{ needs.get-root-url.outputs.root_url }}
         id: build
         if: ${{ ! env.SKIP_STEP }}
         run: |
@@ -201,12 +199,12 @@ jobs:
   get-prs-info:
     name: Get PRs info
     runs-on: ubuntu-latest
-    needs: set-root-url
+    needs: get-root-url
     outputs:
       open_prs_info: ${{ steps.get-prs-info.outputs.open_prs_info }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
-      ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
+      ROOT_URL: ${{ needs.get-root-url.outputs.root_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -269,7 +267,7 @@ jobs:
   build-pr:
     name: Build PR ${{matrix.pr_number}}
     runs-on: ubuntu-latest
-    needs: [set-root-url, get-prs-info]
+    needs: [get-root-url, get-prs-info]
     # Run this job only if there are open PRs
     if: ${{ needs.get-prs-info.outputs.open_prs_info != '' }}
     env:
@@ -298,7 +296,7 @@ jobs:
         working-directory: ${{ env.DOC_DIR }}
         env:
           GH_TOKEN: ${{ github.token }} # Required for gh usage
-          ROOT_URL: ${{ needs.set-root-url.outputs.root_url }}
+          ROOT_URL: ${{ needs.get-root-url.outputs.root_url }}
         id: build
         run: |
           dir=$(sed 's|^${{ env.ROOT_URL }}||' <<< ${{ matrix.pr_preview_url }})
@@ -317,7 +315,7 @@ jobs:
   create-pr-previews-page:
     name: Create PR previews list page
     runs-on: ubuntu-latest
-    needs: [set-root-url, get-prs-info]
+    needs: [get-root-url, get-prs-info]
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
       FILE_NAME: index.html
