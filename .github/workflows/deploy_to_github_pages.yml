@@ -219,18 +219,26 @@ jobs:
           open_prs=$(
             gh pr list \
             --state open \
-            --json number,title,headRepositoryOwner,headRefOid \
+            --json number,title,headRepositoryOwner,headRefOid,body \
             --jq 'sort_by(.number) | .[] | select( .headRefName!="main" and .headRepositoryOwner.login=="ACCESS-NRI")' \
           )
           
           # If open PRs are found, filter them and output the desired json object
           if [[ -n "$open_prs" ]]; then
-            # Keep only PRs with a mkdocs.yml file in their head commit
-            prs_with_mkdocs=$(
-              while read pr; do
+            # Keep only PRs:
+            # - with a mkdocs.yml file in their head commit
+            # - whose body doesn't start with a "!no-preview" (case insensitive) line
+            regex='^!no-preview\b'
+            filtered_prs=$(
+              while IFS= read -r pr; do
                 sha=$(jq -r '.headRefOid' <<< $pr)
-                if gh api repos/${{ github.repository }}/git/trees/${sha}?recursive=1 | \
-                jq '.tree[].path' | grep 'mkdocs.ya\?ml' > /dev/null; then 
+                body=$(jq -r '.body' <<< $pr)
+                if (
+                  gh api repos/${{ github.repository }}/git/trees/${sha}?recursive=1 | \
+                  jq '.tree[].path' | grep 'mkdocs.ya\?ml' > /dev/null
+                ) && (
+                  ! grep -qi "$regex" <<< "$body"
+                ); then 
                   echo $pr
                 fi
               done <<< "$open_prs"
@@ -247,7 +255,7 @@ jobs:
               pr_title: .title, 
               pr_head_sha: .headRefOid, 
               pr_preview_url: ("${{ env.ROOT_URL }}${{ env.PR_PREVIEWS_DIR }}/" + (.number | tostring))
-              }]' <<< "$prs_with_mkdocs"
+              }]' <<< "$filtered_prs"
             )
             
             echo "Found the following open PRs:"
