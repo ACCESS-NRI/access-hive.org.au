@@ -8,11 +8,6 @@
 [model configurations]: /models/configurations/access-om/#access-om2
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
-<div class="text-card-group" markdown>
-
-[:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
-[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
-</div>
 
 # Run {{ model }}
 
