@@ -1,4 +1,4 @@
-{% set model = "ACCESS-CM" %}
+{% set model = "ACCESS-CM2" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 
 # Run {{ model }}
