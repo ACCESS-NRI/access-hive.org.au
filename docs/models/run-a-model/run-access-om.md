@@ -331,9 +331,9 @@ The run length is controlled by the `restart_period` field in the `&date_manager
         restart_period = 5, 0, 0
     &end
 
-The format is `restart_period = <number_of_years>, <number_of_months>, <number_of_days>`.
+The format is `restart_period = <number_of_years>, <number_of_months>, <number_of_seconds>`.
 
-For example, to make the model run for 1 year, 4 months and 10 days, change `restart_period` to:
+For example, to make the model run for 1 year, 4 months and 10 seconds, change `restart_period` to:
 
     restart_period = 1, 4, 10
 
