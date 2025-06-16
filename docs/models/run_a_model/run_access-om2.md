@@ -622,7 +622,7 @@ env:
     UCX_LOG_LEVEL: 'error'
 ```
 
-#### Using COSIMA restarts with an ACCESS-NRI ACCESS-OM2 JRA configuration 
+#### Using COSIMA restarts with an ACCESS-NRI configuration 
 !!! warning
     This workflow is only for advanced users and provided to help users use COSIMA restart files with ACCESS-NRI executables for two key configurations. This workflow will use a mix of restart files: a spun ocean and a sea-ice model that has started almost from rest. This is physically inconsistent and so the model requires an extended spin up and re-evaluation to produce scientifically credible results. 
 
@@ -645,18 +645,18 @@ Note: these instructions were tested using commit `83885a45017b3a34ea4fad15d1554
 
 Once the above run is complete. We use a mix of restart files. We use the restart file from a sea-ice model that goes almost from rest (the run you just did) and from the COSIMA restart file we take the ocean variables. This does the bulk of the spin up for us. We do this as follows:
 ```bash
-mkdir -p /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
-cd ~/USERNAME/access-om2/release-01deg_jra55_ryf/archive/restart000
-cp -r accessom2_restart.nml ice /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
+mkdir -p /scratch/tm70/$USER/access-om2/restart_hackom201ryf
+cd ~/access-om2/release-01deg_jra55_ryf/archive/restart000
+cp -r accessom2_restart.nml ice /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 
 cd /g/data/cj50/access-om2/raw-output/access-om2-01/01deg_jra55v13_ryf9091/restart795
-cp -r ocean /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
+cp -r ocean /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 ```
 
-We then need to modify the payu configuration to restart from this mix of restart files. Add the following two lines to `~/USERNAME/access-om2/release-01deg_jra55_ryf/config.yaml` (this is the same effect as adding a `--restart FILE_NAME` command to Payu discussed earlier -- [Start the run from a specific restart file](https://docs.access-hive.org.au/models/run-a-model/run-access-om/#specific-restart)):
+We then need to modify the payu configuration to restart from this mix of restart files. Add the following two lines to `~/$USER/access-om2/release-01deg_jra55_ryf/config.yaml` (this is the same effect as adding a `--restart FILE_NAME` command to Payu discussed earlier -- [Start the run from a specific restart file](https://docs.access-hive.org.au/models/run-a-model/run-access-om/#specific-restart)):
 ```bash
 restart: 
-  /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
+  /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 ```
 Then submit this new run with `payu run`.
 
