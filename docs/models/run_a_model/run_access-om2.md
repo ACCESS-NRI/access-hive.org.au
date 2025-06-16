@@ -622,15 +622,15 @@ env:
     UCX_LOG_LEVEL: 'error'
 ```
 
-#### Workflow for using high-resolution COSIMA restarts for ACCESS-NRI ACCESS-OM2 JRA configurations 
+#### Using COSIMA restarts with an ACCESS-NRI ACCESS-OM2 JRA configuration 
 !!! warning
-    This workflow is only for advanced users and provided to help users use COSIMA restart files with ACCESS-NRI executables for two key configurations. This workflow will use a mix of a spun ocean and restart files from a sea-ice model that goes from rest. This is physically inconsistent and so the model requires an extended spin up and re-evaluation to produce scientifically credible results. 
+    This workflow is only for advanced users and provided to help users use COSIMA restart files with ACCESS-NRI executables for two key configurations. This workflow will use a mix of restart files: a spun ocean and a sea-ice model that has started almost from rest. This is physically inconsistent and so the model requires an extended spin up and re-evaluation to produce scientifically credible results. 
 
-As highlighted above: `Start the run from a specific restart file`, there are situations where it is preferable to use an existing restart file rather than start the model from rest (particularly true when the configuration is very expensive to run). New ACCESS-NRI executables may be preferable to use because they contain bug fixes and a newer code base. However, in some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly. 
+As highlighted above ([Start the run from a specific restart file](https://docs.access-hive.org.au/models/run-a-model/run-access-om/#specific-restart)), there are situations where it is preferable to use an existing restart file rather than start the model from rest, e.g. when the configuration is very expensive to run. New ACCESS-NRI executables may be preferable to use because they contain bug fixes and a newer code base. However, in some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly. 
 
-Here we provide a workflow for doing these manual adjustments for two key configurations, namely i) `release-01deg_jra55_ryf` and ii) `release-01deg_jra55_iaf`. The below gives instructions for `ryf` but it is basically the same for `iaf`.
+Here we provide a workflow for doing these manual adjustments for two key configurations, namely i) `release-01deg_jra55_ryf` and ii) `release-01deg_jra55_iaf`. The below gives instructions for `ryf` but it is essentially the same for `iaf`.
 
-We need to identify the restart file we wish to use. For this example we will use `/g/data/cj50/access-om2/raw-output/access-om2-01/01deg_jra55v13_ryf9091/restart795`. It may be useful to [consult this thread](https://forum.access-hive.org.au/t/access-om2-control-experiments/258) for making this choice.
+We first need to identify the restart file we wish to use. For this example we will use `/g/data/cj50/access-om2/raw-output/access-om2-01/01deg_jra55v13_ryf9091/restart795`. It may be useful to [consult this thread](https://forum.access-hive.org.au/t/access-om2-control-experiments/258) for making this choice.
 
 We then need to make a template restart file that works, so we run the ACCESS-NRI configuration from rest. To start, one clones the relevant configuration and runs it:
 ```bash
@@ -641,8 +641,9 @@ payu clone -b expt -B release-01deg_jra55_ryf  https://github.com/ACCESS-NRI/acc
 cd release-01deg_jra55_ryf
 payu run
 ```
+Note: these instructions were tested using commit `83885a45017b3a34ea4fad15d155449c7217ad70`.
 
-Once the above run is complete. We use a mix of restart files. We use the restart file from a sea-ice model that goes from rest (the run you just did) and from the COSIMA restart file we take the ocean variables. This does the bulk of the spin up for us. We do this as follows:
+Once the above run is complete. We use a mix of restart files. We use the restart file from a sea-ice model that goes almost from rest (the run you just did) and from the COSIMA restart file we take the ocean variables. This does the bulk of the spin up for us. We do this as follows:
 ```bash
 mkdir -p /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
 cd ~/USERNAME/access-om2/release-01deg_jra55_ryf/archive/restart000
@@ -652,10 +653,10 @@ cd /g/data/cj50/access-om2/raw-output/access-om2-01/01deg_jra55v13_ryf9091/resta
 cp -r ocean /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
 ```
 
-We then need to modify the payu configuration to restart from this mix of restart files. Add the following two lines to `~/USERNAME/access-om2/release-01deg_jra55_ryf/config.yaml` (this is the same effect as adding a `--restart FILE_NAME` command to Payu discussed earlier `Start the run from a specific restart file`):
+We then need to modify the payu configuration to restart from this mix of restart files. Add the following two lines to `~/USERNAME/access-om2/release-01deg_jra55_ryf/config.yaml` (this is the same effect as adding a `--restart FILE_NAME` command to Payu discussed earlier -- [Start the run from a specific restart file](https://docs.access-hive.org.au/models/run-a-model/run-access-om/#specific-restart)):
 ```bash
 restart: 
-  /scratch/tm70/cyb561/access-om2/restart_hackom201ryf
+  /scratch/tm70/USERNAME/access-om2/restart_hackom201ryf
 ```
 Then submit this new run with `payu run`.
 
