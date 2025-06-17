@@ -647,18 +647,20 @@ Once the above run is complete. We use a mix of restart files. We use the restar
 ```bash
 mkdir -p /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 cd ~/access-om2/release-01deg_jra55_ryf/archive/restart000
-cp -r accessom2_restart.nml ice /scratch/tm70/$USER/access-om2/restart_hackom201ryf
+cp -r ice /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 
 cd /g/data/cj50/access-om2/raw-output/access-om2-01/01deg_jra55v13_ryf9091/restart795
-cp -r ocean /scratch/tm70/$USER/access-om2/restart_hackom201ryf
+cp -r accessom2_restart.nml ocean /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 ```
 
-We then need to modify the payu configuration to restart from this mix of restart files. Add the following two lines to `~/$USER/access-om2/release-01deg_jra55_ryf/config.yaml` (this is the same effect as adding a `--restart FILE_NAME` command to Payu discussed earlier -- [Start the run from a specific restart file](https://docs.access-hive.org.au/models/run-a-model/run-access-om/#specific-restart)):
+We then need to modify the payu configuration to restart from this mix of restart files, there are two steps:
+1. We tell CICE that it should not check the date of the restart file, this is because the `accessom2_restart.nml` file in the example above (folder `restart795`) is looking to start at `EXP_CUR_DATE    = 2100-01-01T00:00:00` which is not the start date the sea-ice model will have from the one we have just made above in `restart000`, it will have `1900-04-01T00:00:00`. For the first run you'll need to `set use_restart_time = .false.` in `ice/cice_in.nml`. After the first run, we suggest reverting `use_restart_time = .true.` in `ice/cice_in.nml` because having run the model once it will output correct dates on the new restart files. See `More complicated cases` [here](https://github.com/COSIMA/access-om2/wiki/Tutorials#updating-an-experiment) for further details.
+1. Add the following two lines to `~/$USER/access-om2/release-01deg_jra55_ryf/config.yaml` (this is the same effect as adding a `--restart FILE_NAME` command to Payu discussed earlier -- [Start the run from a specific restart file](https://docs.access-hive.org.au/models/run-a-model/run-access-om/#specific-restart)):
 ```bash
 restart: 
   /scratch/tm70/$USER/access-om2/restart_hackom201ryf
 ```
-Then submit this new run with `payu run`.
+Finally, submit this new run with `payu run`. Once complete, don't forget to swap back the `ice/cice_in.nml`!
 
 ### Edit a single {{ model }} component configuration
 
