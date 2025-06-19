@@ -1,7 +1,7 @@
 {% set model = "ACCESS-OM3" %}
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om3-configs" %}
 {% set example_branch = "release-MC_25km_jra_ryf" %}
-{% set example_folder = "25km_jra55_ryf" %}
+{% set example_folder = "25km_jra_ryf" %}
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
