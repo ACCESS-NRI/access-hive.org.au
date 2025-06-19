@@ -142,15 +142,28 @@ function tabFunctionality() {
   target="_blank" attribute, and add an external-link icon to them.
 */
 function makeLinksExternal() {
-  // Links to be opened in a new tab
-  document.querySelectorAll("a[href^='http']:not([href^='https://access-hive.org.au'])")
+  const externalLinkClass = "external-link";
+  const currentHost = location.hostname;
+  const excludedClasses = ['.vertical-card', '.horizontal-card', '.text-card'];
+  document.querySelectorAll("a[href^='http']")
     .forEach(link => {
+      const url = new URL(link.href);
+      // Skip internal links (same hostname)
+      if (url.hostname === currentHost) {
+        return;
+      }
+      // Make link external (open in new tab)
       link.setAttribute('target','_blank');
-    });
-  // Add external link icon only to some external links
-  document.querySelectorAll("article a[href^='http']:not([href^='https://access-hive.org.au']):not(:is(.vertical-card,.horizontal-card,.text-card))")
-    .forEach(link => {
-      link.classList.add('external-link');
+      link.setAttribute('rel','noopener');
+      
+      // Add external-link class only if inside the article element, and not inside 
+      // any element having one of the excluded classes
+      if (
+        link.closest('article') &&
+        !link.closest(excludedClasses.join(', '))
+      ) {
+        link.classList.add(externalLinkClass);
+      }
     });
 }
 

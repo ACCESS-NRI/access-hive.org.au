@@ -8,7 +8,7 @@ body:
       value: |
         Thank you for sharing your Workshop or Event with the ACCESS community.
 
-        If there is a new event you would like listed in the [ACCESS-Hive Docs events section](https://access-hive.org.au/events/) please include the following information:
+        If there is a new event you would like listed in the [ACCESS-Hive Docs events section](https://docs.access-hive.org.au/events/) please include the following information:
   - type: input
     id: title
     attributes:

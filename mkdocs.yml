@@ -5,7 +5,7 @@
 site_name: ACCESS-Hive Docs
 
 # Site URL
-site_url: !ENV [SITE_URL, "https://access-hive.org.au/"]
+site_url: !ENV [SITE_URL, "https://docs.access-hive.org.au/"]
 
 # Git repository (Adds a link to the GitHub repository at the top)
 # repo_url: https://github.com/ACCESS-NRI/access-hive.org.au
@@ -53,7 +53,7 @@ theme:
   icon:
     edit: material/pencil
     view: material/eye
-copyright: Copyright &copy; 2024 ACCESS-NRI
+copyright: Copyright &copy; 2025 ACCESS-NRI
 
 plugins:
   - git-revision-date-localized:
@@ -83,8 +83,8 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.highlight
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.keys
@@ -196,9 +196,9 @@ nav:
 extra:
   generator: false
   social:
-    - icon: fontawesome/brands/twitter 
-      link: https://twitter.com/ACCESS_NRI
-      name: ACCESS-NRI on Twitter
+    - icon: fontawesome/brands/bluesky 
+      link: https://bsky.app/profile/access-nri.bsky.social
+      name: ACCESS-NRI on Bluesky
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/access-nri
       name: ACCESS-NRI on Linkedin

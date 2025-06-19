@@ -106,7 +106,7 @@ A list of <i>ESMValTool</i> recipes available on <i>Gadi</i> can be found on the
 
 ## Support
 
-To get help running your ESMValTool recipe on <i>Gadi</i>, you can submit an issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> GitHub repository or ask for help on the <a href="https://access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
+To get help running your ESMValTool recipe on <i>Gadi</i>, you can submit an issue on the <a href="https://github.com/ACCESS-NRI/ESMValTool-workflow.git" target="_blank">ESMValTool-Workflow</a> GitHub repository or ask for help on the <a href="https://forum.access-hive.org.au" target="_blank">ACCESS-Hive Forum</a>.
 
 General ESMValTool support (i.e. non-specific to <i>Gadi</i>) can be found on the <a href="https://github.com/ESMValGroup/ESMValTool/discussions" target="_blank">ESMValTool Discussions</a> page, where users can also post technical questions on the ESMValTool installation, application and development.
 
@@ -125,11 +125,3 @@ The <i>ESMValTool</i> is released under the Apache License, version 2.0. Citatio
 Besides the above citation, users are asked to register any journal articles (or other scientific documents) that use the software at the ESMValTool webpage (http://www.esmvaltool.org/). Citing the Software Documentation Paper and registering your paper(s) will serve to document the scientific impact of the Software, which is important for securing future funding. You should consider this an obligation if you have taken advantage of the <i>ESMValTool</i>, which represents the end product of considerable effort by the development team.
 
 </table>
-<!-- 
-[esmvaltool-tutorial]: https://esmvalgroup.github.io/ESMValTool_Tutorial/index.html
-[esmvaltool-source]: https://github.com/ESMValGroup/ESMValTool#readme
-[esmvaltool-workflow-repository]: https://github.com/ACCESS-NRI/ESMValTool-workflow.git
-[esmvaltool-discussions]: https://github.com/ESMValGroup/ESMValTool/discussions
-[access-hive]: https://access-hive.org.au
-[esmvaltool-recipe-list]: https://docs.esmvaltool.org/en/latest/recipes/index.html#recipes
--->
