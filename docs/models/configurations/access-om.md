@@ -1,4 +1,4 @@
-[cosima]: http://cosima.org
+[cosima]: https://cosima.org.au/
 
 # ACCESS-OM
 
@@ -34,7 +34,7 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 - **Sea ice**: [CICE6](/models/model_components/sea-ice#cice6).<br>
     Same grid as ocean.
 
-- **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat).
+- **Ocean Biogeochemistry**: [WOMBAT](/models/model_components/bgc_ocean#wombat)  (optional).
 
 - **Coupler**: [NUOPC](/models/model_components/coupler#nuopc).
 
