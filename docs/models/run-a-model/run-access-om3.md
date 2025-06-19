@@ -16,7 +16,6 @@
 
 <div class="text-card-group" markdown>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
-[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes][release notes]{: class="text-card"}
 </div>
 
 # Run {{ model }}
