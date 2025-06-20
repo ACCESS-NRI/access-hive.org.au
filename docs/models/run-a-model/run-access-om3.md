@@ -368,7 +368,7 @@ project: ol01
 
 ### Syncing output data
 
-The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason, it is recommended to move climate model outputs to a location with long-term storage.<br>
+The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, files on `/scratch` storage [are regularly deleted once they have not been accessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason, it is recommended to move climate model outputs to a location with long-term storage.<br>
 On _Gadi_, this is typically in a folder under a project code on `/g/data`.  
 
 _Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory `git` history to another location.<br>
