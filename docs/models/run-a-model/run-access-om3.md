@@ -11,7 +11,7 @@
 
 !!! release
     This is an **Alpha Release**.<br>
-    This model configurations and source code might change before the full release.<br>
+    These model configurations and source code might change before the full release.<br>
     Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 <div class="text-card-group" markdown>
@@ -32,6 +32,9 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 
 ## Prerequisites
+
+!!! warning
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 - **NCI Account**<br> 
     Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
@@ -90,7 +93,7 @@ This design allows multiple self-resubmitting experiments that share common exec
 If you want to modify your configuration, refer to [Edit {{ model }} configuration](#edit-{{ model.lower() }}-configuration).
 
 !!! admonition warning
-    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
+    Files on the `/scratch` drive, such as the _laboratory_ directory, might get deleted if not accessed for several days and the `/scratch` drive is limited in space. For these reasons, we strongly recommend that all model runs which are to be kept should be moved to `/g/data/` by enabling the _sync_ step in _payu_. To know more refer to [Syncing output data](#syncing-output-data).
 
 
 ----------------------------------------------------------------------------------------
@@ -188,8 +191,7 @@ qstat
     <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
 
-The default name of your job is the name of the _payu_ _control_ directory (`25km_jra55do_ryf` in the example above).<br>
-This can be changed by altering the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file.
+The default name of your job is determined by the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file (for [this](https://github.com/ACCESS-NRI/access-om3-configs/blob/release-MC_25km_jra_ryf/config.yaml) configuration it is `025km_jra55do_ryf`).
 
 _S_ indicates the status of your run, where:
 
@@ -204,7 +206,7 @@ For more information, check [NCI documentation](https://opus.nci.org.au/display/
 !!! tip
     While the model is running, you can monitor its progress by running:
     ```
-    grep cur_exp-datetime work/atmosphere/log/matmxx.pe00000.log
+    tail -f work/log/med.log
     ```
 
 ### Stop a run
@@ -215,9 +217,6 @@ qdel <job-ID>
 ```
 which kills the specified job without waiting for it to complete.
 
-!!! tip
-    If you started an {{ model }} run using the `-n` option (e.g., to [run the model for more than 5 years](#run-configuration-for-more-than-5-years)), but subsequently decide not to keep running after the current process completes, you can create a file called `stop_run` in the _control_ directory.<br>
-    This will prevent _payu_ from submitting another job.
 
 ### Error and output log files
 
@@ -320,7 +319,7 @@ Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` p
 
 The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
 !!! tip
-    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values.
+    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. Having said this, sometimes it is sensible to have fewer restarts to save stroage space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -366,7 +365,6 @@ project: ol01
     If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Syncing output data
 
@@ -387,7 +385,7 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 
 ### Saving model restarts
 
-{{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
+By default, {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
 _Payu_ can be configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts from every fifth model run. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
