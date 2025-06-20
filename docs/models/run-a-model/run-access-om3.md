@@ -99,7 +99,7 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
 
-The first step is to choose a configuration from those available. For example, if the required configuration is an ocean and sea ice coarse-resolution coupled model, i.e.,  MOM6-CICE6 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), then the branch to select is [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
+The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6 at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
@@ -238,7 +238,7 @@ The contents of these files show the status of a run as it progresses (or after 
 !!! warning
     At the end of a successful run, these log files are archived to the `archive` directory and will no longer be found in the _control_ directory. If they remain in the _control_ directory after the PBS job for a run has completed, it means the run has failed.
 
-### Trouble-shooting
+### Troubleshooting
 
 If _payu_ doesn't run correctly for some reason, a good first step is to run the following command from within the _control_ directory:
 
@@ -295,7 +295,7 @@ Model components are separated into subdirectories within the output and restart
 This section describes how to modify {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.
 
-The `config.yaml` file located in the _control_ directory is the _Master Configuration_ file, which controls the general model configuration. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
+The `config.yaml` file located in the _control_ directory is the _payu_ configuration, which controls the configuration of the experimenter manager. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
@@ -370,7 +370,7 @@ project: ol01
 
 ### Syncing output data
 
-The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason climate model outputs need to be moved to a location with longer-term storage.<br>
+The _laboratory_ directory is typically under the `/scratch` storage on _Gadi_, where [files are regularly deleted once they have been unaccessed for a period of time](https://opus.nci.org.au/pages/viewpage.action?pageId=156434436). For this reason, it is recommended to move climate model outputs to a location with long-term storage.<br>
 On _Gadi_, this is typically in a folder under a project code on `/g/data`.  
 
 _Payu_ has built-in support to sync outputs, restarts and a copy of the _control_ directory `git` history to another location.<br>
