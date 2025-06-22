@@ -52,7 +52,7 @@ For instructions on how to build an ACCESS model using _Spack_, refer to [Modify
 ## Enable Spack
 
 !!! warning
-    This step needs to be carried out for any new login or new shell environment.
+    Use a new `bash` shell environment to ensure conflicting environment variables are avoided. Furthermore, this step needs to be carried out for any new login or new shell environment.
 
 ```
 cd /g/data/$PROJECT/$USER/spack/0.22
