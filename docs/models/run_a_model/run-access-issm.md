@@ -32,10 +32,8 @@ All configurations are hosted on MOSRS; direct links are provided above.
 ## Prerequisites
 
 * **NCI account & Gadi access** – see [Set Up your NCI Account](/getting_started/set_up_nci_account).
-* **MOSRS account** – request via your institutional sponsor if you do not already have one.
 * **Project membership** – minimum projects:
   * [access](https://my.nci.org.au/mancini/project/access/join)
-  * [ki32](https://my.nci.org.au/mancini/project/ki32/join) / [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join)
   * [vk83](https://my.nci.org.au/mancini/project/vk83/join) (build & binary cache)
 * **Modules for Cylc 7 and dependencies** – load these as needed.
 * Optional: [ARE VDI Desktop](/getting_started/are).
@@ -56,10 +54,7 @@ module use /g/data/hr22/modulefiles
 module load cylc7
 module load python/3.9  # or your preferred Python module
 
-# 5. Authenticate with MOSRS (if required)
-mosrs-auth
-
-# 6. Check out the ISSM suites (edit branch/IDs if needed)
+# 5. Check out the ISSM suites (edit branch/IDs if needed)
 git clone --branch {{ branch }} https://github.com/ACCESS-NRI/access-issm.git
 # Copy or link the PPS and RUN configurations into separate directories:
 mkdir ~/access-issm-pps
@@ -67,11 +62,11 @@ mkdir ~/access-issm-run
 cp -r access-issm/pps/* ~/access-issm-pps/
 cp -r access-issm/run/* ~/access-issm-run/
 
-# 7. Run the Pre‑Processing Suite (PPS)
+# 6. Run the Pre‑Processing Suite (PPS)
 cd ~/access-issm-pps
 ./run_pps.sh  # Use the provided script or your own batch submission script.
 
-# 8. Once PPS completes successfully, run the Run Suite (RUN)
+# 7. Once PPS completes successfully, run the Run Suite (RUN)
 cd ~/access-issm-run
 ./run_model.sh  # This submits the ISSM simulation.
 ```
