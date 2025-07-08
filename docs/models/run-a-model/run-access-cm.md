@@ -10,31 +10,25 @@
 
 ## Prerequisites
 
-- **NCI Account**<br> 
-    Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+### General prerequisites
+
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+
+If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
+
+### Model-specific prerequisites
 
 - **_MOSRS_ account**<br>
     The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
     To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
-    {: #mosrs-account}
 
-- **Join NCI projects**<br>
-    Join the following projects by requesting membership on their respective NCI project pages:
+- **Join the _access_, _hr22_, _ki32_ and _ki32\_mosrs_ projects at NCI**<br>
+    To join these projects, request membership on the respective [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
 
-    - [access](https://my.nci.org.au/mancini/project/access/join)
-    - [hr22](https://my.nci.org.au/mancini/project/hr22/join)
-    - [ki32](https://my.nci.org.au/mancini/project/ki32/join)
-    - [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join)
-    
     !!! tip
-        To request membership for the _ki32_mosrs_ subproject, you need to:
-        
-        - already be member of the _ki32_ project
-        {: style="list-style-type: disc"}
-        - have a [MOSRS account](#mosrs-account)
-        {: style="list-style-type: disc"}
-
-    For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
+        To request membership for the _ki32_mosrs_ subproject you need to have a MOSRS account and be member of the _ki32_ project.
+    
+    For more information on how to join specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
 - **Connection to an ARE VDI Desktop (optional)**<br>
     To run {{ model }}, start an [Australian Research Environment (ARE) VDI Desktop](https://are.nci.org.au/pun/sys/dashboard/batch_connect/sys/desktop_vnc/ncigadi/session_contexts/new) session.<br>
@@ -386,13 +380,13 @@ rose suite-gcontrol
 It is quite common, especially during the first few runs, to experience errors and job failures. Running an {{ model }} suite involves the execution of several tasks, and any of these tasks could fail. When a task fails, the suite is halted and a red icon appears next to the respective task name in the _Cylc_ GUI.<br>
 To investigate the cause of a failure, we need to look at the logs `job.err` and `job.out` from the suite run. There are two main ways to do so:
 
-#### Using the _Cylc_ GUI {: .no-toc }
+#### Using the _Cylc_ GUI
 Right-click on the task that failed and click on _View Job Logs (Viewer) &rarr; job.err_ (or _job.out_).<br>
 To access a specific task, click on the arrow next to the task to extend the drop-down menu with all the subtasks.
 
 ![Investigate Error GUI example](/assets/run_access_cm/investigate_error_gui_are.gif){: class="example-img" loading="lazy"}
     
-#### Through the suite directory {: .no-toc }
+#### Through the suite directory
 The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMESTAMP>`, and the latest set of logs are also symlinked in the `~/cylc-run/<suite-ID>/log` directory.<br>
 The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
 Logs are separated into simulation cycles according to their starting dates, then divided into subdirectories according to the task name. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
@@ -463,7 +457,7 @@ qdel <job-ID>
 ### RESTART a suite
 There are two main ways to restart a suite:
 
-#### _SOFT_ restart {: .no-toc }
+#### _SOFT_ restart
 To reinstall the suite and reopen _Cylc_ in the same state it was prior to being stopped, run the following command from within the suite directory:
 ```
 rose suite-run --restart
@@ -510,7 +504,7 @@ rose suite-run --restart
     <img src="/assets/run_access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
 </terminal-window>
 
-#### _HARD_ restart {: .no-toc }
+#### _HARD_ restart
 To overwrite any previous runs of the suite and start afresh, run the following command from within the suite directory:
 ```
 rose suite-run --new

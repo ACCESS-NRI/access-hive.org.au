@@ -20,5 +20,5 @@ There are two MOM versions currently used in ACCESS models: [MOM5](https://githu
 - [ACCESS-OM2](/models/configurations/access-om#access-om2)
 </div>
 <div tabcontentfor="mom6" markdown>
-- [ACCESS-OM3](/models/configurations/access-om#access-om3)
+MOM6 is not yet included in any ACCESS-NRI-supported configuration, but will be included in ACCESS-OM3, a configuration currently under development.
 </div>

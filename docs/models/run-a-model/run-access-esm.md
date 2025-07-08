@@ -19,7 +19,7 @@
 
 {{ model }} is a fully-coupled global climate model, combining  atmosphere, land, ocean, sea ice, ocean biogeochemistry and land biogeochemistry components. A description of the model and its components is available in the [{{ model }} overview][model configurations].
 
-The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
+The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
@@ -27,31 +27,23 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 {{ model }} release notes are [available on the ACCESS-Hive Forum]({{release_notes}}) and are updated when new releases are made available.
 
-
 ## Prerequisites
 
-- **NCI Account**<br> 
-    Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+### General prerequisites
+
+Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+
+### Model-specific prerequisites
 
 - **_MOSRS_ account**<br>
     The [Met Office Science Repository Service (MOSRS)](https://code.metoffice.gov.uk) is a server run by the UK Met Office (UKMO) to support collaborative development with other partners organisations. MOSRS contains the source code and configurations for some model components in {{ model }} (e.g., the [UM](/models/model_components/atmosphere/#unified-model-um)).<br>
     To apply for a _MOSRS_ account, please contact your [local institutional sponsor](https://opus.nci.org.au/display/DAE/Prerequisites).
-    {: #mosrs-account}
 
-- **Join NCI projects**<br>
-    Join the following projects by requesting membership on their respective NCI project pages:
-
-    - [vk83](https://my.nci.org.au/mancini/project/vk83/join)
-    - [ki32](https://my.nci.org.au/mancini/project/ki32/join)
-    - [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join)
+- **Join the _vk83_, _ki32_ and _ki32\_mosrs_ projects at NCI**<br>
+    To join these projects, request membership on the respective [vk83](https://my.nci.org.au/mancini/project/vk83/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join) and [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join) NCI project pages.
 
     !!! tip
-        To request membership for the _ki32_mosrs_ subproject, you need to:
-        
-        - already be member of the _ki32_ project
-        {: style="list-style-type: disc"}
-        - have a [MOSRS account](#mosrs-account)
-        {: style="list-style-type: disc"}
+        To request membership for the _ki32_mosrs_ subproject you need to have a MOSRS account and be member of the _ki32_ project.
 
     For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
 
@@ -181,7 +173,6 @@ This will submit a single job to the queue with a run length given by [`runtime`
 ----------------------------------------------------------------------------------------
 
 ## Monitor {{ model }} runs
-
 The `payu run` command prints out the PBS `job-ID` (formatted as `<9-digit-number>.gadi-pbs`), as the last line to the terminal.<br>
 To print out information on the status of a specific job, you can execute the following command:
 ```
@@ -189,9 +180,9 @@ qstat <job-ID>
 ```
 <terminal-window>
     <terminal-line data="input">qstat &lt;job-ID&gt;</terminal-line>
-    <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      pre-industrial   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
+    <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
@@ -201,11 +192,11 @@ qstat -u $USER
 
 <terminal-window>
     <terminal-line data="input">qstat -u $USER</terminal-line>
-    <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      pre-industrial   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=500>Job id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Use&nbsp;S Queue</terminal-line>
+    <terminal-line linedelay=0>---------------------  ---------------- ----------------  -------- - -----</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;pre-industrial&nbsp;&nbsp;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
+    <terminal-line linedelay=0>&lt;job-ID&gt;.gadi-pbs&nbsp;&nbsp;&nbsp;&lt;other-job-name&gt;&nbsp;&lt;$USER&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time&gt;&nbsp;R&nbsp;normal-exec</terminal-line>
 </terminal-window>
 
 The default name of your job is the name of the _payu_ _control_ directory (`preindustrial+concentrations` in the example above).<br>
@@ -235,7 +226,7 @@ which kills the specified job without waiting for it to complete.
 
 ### Error and output log files
 
-#### PBS output files {: .no-toc }
+#### PBS output files
 When the model completes a run, PBS writes the standard output and error streams to two files inside the _control_ directory: `<jobname>.o<job-ID>` and `<jobname>.e<job-ID>`, respectively.
 
 These files usually contain logs about _payu_ tasks, and give an overview of the resources used by the job.<br>
@@ -244,7 +235,7 @@ To move these files to the `archive` directory, use the following command:
 payu sweep
 ```
 
-#### Model log files {: .no-toc }
+#### Model log files
 
 While the model is running, _payu_ saves the model standard output and error streams in the `access.out` and `access.err` files inside the _control_ directory, respectively.<br>
 You can examine the contents of these files to check on the status of a run as it progresses (or after a failed run has completed).
@@ -325,7 +316,7 @@ The `config.yaml` file located in the _control_ directory is the _Master Configu
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Change run length {: #runtime .no-toc }
+### Change run length {: id="runtime"}
 
 One of the most common changes is to adjust the duration of the model run.<br> {{model}} simulations are split into smaller _run lengths_, each with the duration specified by the `runtime` settings in the `config.yaml` file:
 
@@ -488,7 +479,7 @@ For more information, check [_payu_ Configuration Settings documentation](https:
 !!! warning
     The following sections in the `config.yaml` file control configuration options that are rarely modified, and often require a deeper understanding of how {{ model }} is structured to be safely changed.
 
-#### Model configuration {: .no-toc }
+#### Model configuration
 
 This section tells _payu_ which driver to use for the main model (`access` refers to {{ model }}).  
 
@@ -497,7 +488,7 @@ model: access
 ```
 
 
-#### Submodels {: .no-toc }
+#### Submodels
 
 {{ model }} is a coupled model deploying multiple submodels (i.e. [model components]).
 
@@ -592,7 +583,7 @@ Each submodel contains additional configuration options that are read in when th
 
     ```
 
-#### Collate {: .no-toc }
+#### Collate
 
 Rather than outputting a single diagnostic file over the whole model horizontal grid, the ocean component [MOM](/models/model_components/ocean/#modular-ocean-model-mom) typically generates diagnostic outputs as tiles, each of which spans a portion of model grid.
 
@@ -609,7 +600,7 @@ collate:
 ```
 Restart files are typically tiled in the same way and will also be combined together if the `restart` field is set to `true`.
 
-#### Runlog {: .no-toc }
+#### Runlog
 
 ```yaml
 runlog: true
@@ -621,7 +612,7 @@ When running a new configuration, _payu_ automatically commits changes with `git
     _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts, and executables used in an experiment.
 
 
-#### Userscripts {: .no-toc }
+#### Userscripts
 ```yaml
 userscripts:
     # Apply land use changes after each run
@@ -633,7 +624,7 @@ Run scripts or subcommands at various stages of a _payu_ submission. The above e
 For more information about specific `userscripts` fields, check the relevant section of [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#postprocessing).
 
 
-#### Postscripts {: .no-toc }
+#### Postscripts
 Postprocessing scripts that run after _payu_ has completed all steps of each run (for example, with `payu run -n 10`, the postscript will run 10 times). Scripts that might alter the output directory, for example, can be run as postscripts. These run in PBS jobs separate from the main model simulation.
 
 ```yaml
@@ -653,7 +644,7 @@ to
 esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR # --delete-ff
 ```
 
-#### Miscellaneous {: .no-toc }
+#### Miscellaneous
 
 The following configuration settings should never require changing:
 

@@ -22,22 +22,13 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
             Run ACCESS-ESM
         </div>
     </a>
-    <!-- Run ACCESS-OM2 -->
-    <a href="/models/run-a-model/run-access-om2" class="vertical-card aspect-ratio1to1">
+    <!-- Run ACCESS-OM -->
+    <a href="/models/run-a-model/run-access-om" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_om2_model_visualisation.png" alt="ACCESS-OM2">
+            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_om_model_visualisation.png" alt="ACCESS-OM">
         </div>
         <div class="card-text-container bold">   
-            Run ACCESS-OM2
-        </div>
-    </a>
-    <!-- Run ACCESS-OM3 -->
-    <a href="/models/run-a-model/run-access-om3" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_om3_model_visualisation.png" alt="ACCESS-OM3">
-        </div>
-        <div class="card-text-container bold">   
-            Run ACCESS-OM3
+            Run ACCESS-OM
         </div>
     </a>
     <!-- Run ACCESS-rAM -->
