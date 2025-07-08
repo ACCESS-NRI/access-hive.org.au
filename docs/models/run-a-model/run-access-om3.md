@@ -10,7 +10,7 @@
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
 !!! release
-    This is an **Alpha Release**.<br>
+    This is a **Beta Release**.<br>
     These model configurations and source code might change before the full release.<br>
     Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
