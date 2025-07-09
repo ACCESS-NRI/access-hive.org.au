@@ -45,7 +45,8 @@ cd /g/data/$PROJECT/$USER/spack/0.22
 ## Enable spack
 
 !!! warning
-    This step needs to be carried out for any new login or new shell environment.
+    For this step, it is recommended to use a new login _Bash_ shell environment to avoid conflicting environment variables.
+    Additionally, this step must be repeated for every new login or new shell session.
 
 To add the `spack` command to your shell, as well as other settings, run:
 ```
