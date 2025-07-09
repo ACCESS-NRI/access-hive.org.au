@@ -90,18 +90,14 @@ In this example, we will change ACCESS-OM2's [MOM5 component] by replacing it wi
 To achieve this, the following steps will be carried out:
 
 1. Retrieve the _Git_ hash (_LONG\_HASH_) for the `development` head commit.
-   
+
     !!! warning
         Currently, only _Git_ tags and commit hashes are supported for specifying component versions.<br>
         To use a _Git_ branch, its corresponding commit hash should be retrieved and used instead.
 
 2. Update the [version of the `mom5` package](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L15) in the `spack.yaml` file with the new version (i.e., `@git.LONG_HASH`).
-3. Update the [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L53) to `{name}/development-{hash:7}`.<br>
 
-    !!! tip
-        The `{hash:7}` part is used so the module doesn't conflict with other versions.
-
-4. It is also recommended to update the [overall ACCESS-OM2 version](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L8) along with its [associated module projection](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L51).<br>
+3. It is also recommended to update the [overall ACCESS-OM2 version](https://github.com/ACCESS-NRI/ACCESS-OM2/blob/d907f3314a9956875baaaaf2b4d7b6be6fa81926/spack.yaml#L8).<br>
    This is particularly important before merging a PR as it will determine the version tag for the model new release. The format is `CALVER_YEAR.CALVER_MONTH.MINOR`.<br>
    In this example, the overall version will be updated to `git.2024.03.1`.
 
@@ -136,14 +132,6 @@ should look like the following:
     <terminal-line lineDelay=0 class="git-cyan">@@ -48,8 +48,8 @@ spack:</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks">        - libaccessom2</terminal-line>
     <terminal-line lineDelay=0 class="keep-blanks">        - oasis3-mct</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks">        projections:</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks git-red">-          access-om2: '{name}/2024.03.0'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks git-green">+          access-om2: '{name}/2024.03.1'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks">        cice5: '{name}/2023.10.19-{hash:7}'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks git-red">-          mom5: '{name}/2023.11.09-{hash:7}'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks git-green">+          mom5: '{name}/development-{hash:7}'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks">        libaccessom2: '{name}/2023.10.26-{hash:7}'</terminal-line>
-    <terminal-line lineDelay=0 class="keep-blanks">        oasis3-mct: '{name}/2023.11.09-{hash:7}'</terminal-line>
 </terminal-window>
 
 To stage and commit the changes, run:
