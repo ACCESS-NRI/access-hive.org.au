@@ -11,7 +11,19 @@ To use _Spack_, please familiarise yourself with the [Basic Usage instructions](
 We also recommend that you refer to the [Spack 101 Tutorial](https://spack-tutorial.readthedocs.io/en/latest/).
 
 ## Prerequisites
-These instructions are tailored specifically for _Gadi_. To use _Spack_ on _Gadi_, you must have an NCI account. For instructions on how to set up an account, refer to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+- **NCI Account**<br> 
+    These instructions are tailored specifically for _Gadi_. To use _Spack_ on _Gadi_, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+- **_Bash_ shell**<br>
+    The following instructions must be run in a _Bash_ shell, which is the default shell on _Gadi_.
+    To check if you are using _Bash_, run:
+    ```
+    echo "$BASH_VERSION"
+    ```
+    If you see output (i.e. the _Bash_ version), you are already in a Bash shell. If there is no output, start a _Bash_ shell by running:
+    ```
+    bash
+    ```
+{: #bash_shell }
 
 ## Set up Spack on Gadi
 
@@ -52,7 +64,8 @@ For instructions on how to build an ACCESS model using _Spack_, refer to [Modify
 ## Enable Spack
 
 !!! warning
-    This step needs to be carried out for any new login or new shell environment.
+    For this step, it is recommended to use a new login [_Bash_ shell environment](#bash_shell) to avoid conflicting environment variables. 
+    Additionally, this step must be repeated for every new login or new shell session.
 
 ```
 cd /g/data/$PROJECT/$USER/spack/0.22
