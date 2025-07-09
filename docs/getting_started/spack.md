@@ -19,7 +19,7 @@ We also recommend that you refer to the [Spack 101 Tutorial](https://spack-tutor
     ```
     echo "$BASH_VERSION"
     ```
-    If you see an output (i.e. the _Bash_ version), you are already in a Bash shell. If there is no output, start a _Bash_ shell by running:
+    If you see output (i.e. the _Bash_ version), you are already in a Bash shell. If there is no output, start a _Bash_ shell by running:
     ```
     bash
     ```
