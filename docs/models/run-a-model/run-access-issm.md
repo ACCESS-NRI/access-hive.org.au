@@ -27,8 +27,6 @@ A typical workflow is split into two suites:
 
 The example below reproduces the *MISMIP+* Antarctic benchmark. Adjust the variables to suit your experiment.
 
-All configurations are hosted on MOSRS; direct links are provided above.
-
 ## Prerequisites
 
 * **NCI account & Gadi access** – see [Set Up your NCI Account](/getting_started/set_up_nci_account).
@@ -81,7 +79,7 @@ Use persistent sessions to reserve compute nodes. This prevents requeueing and i
 
 ### Job submission
 
-The PPS and RUN suites now come with simplified submission scripts (e.g., `run_pps.sh` and `run_model.sh`) that do not require Rose. These scripts:
+The PPS and RUN suites now come with simplified submission scripts (e.g., `run_pps.sh` and `run_model.sh`). These scripts:
 - Set up the environment (load modules, source configuration files).
 - Launch Python or compiled ISSM executables.
 - Monitor execution and save outputs to NetCDF or binary files.
