@@ -1,0 +1,68 @@
+name: Documentation CI
+description: |
+  This is a master workflow to trigger the documentation build/deploy workflow based on the following
+  conditions:
+  - If the workflow is triggered by a push, it triggers the documentation 
+    build/deploy workflow
+  - If the workflow is triggered by a PR (opened, reopened, or synchronized):
+    - A message to the PR gets added but NO documentation build/deploy workflow
+      get triggered if:
+        - The PR comes from a fork
+        - The PR body starts with the `!no-preview` keyword line
+        - The `documentation` folder doesn't contain neither a `mkdocs.yaml` config file nor
+          a `stub` folder with a single `.md` or `.html` file in it.
+    - In all other cases the documentation build/deploy workflow gets triggered
+  - If the workflow is triggered by a closed PR:
+    Deletes the PR message from the PR, if it exists
+on:
+  push: #Action fires anytime there is a push to the following branches
+    branches:
+      - main
+      - development
+  pull_request: #Action also fires anytime a PR is (re)opened, closed or synchronized
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+# !!! IMPORTANT !!!
+# TODO: Change workflow versions to @main after testing
+# !!! IMPORTANT !!!
+jobs:
+  # Check if the documentation build/deploy workflow needs to be run
+  check-documetation-deployment:
+    name: Check if documentation deployment is needed
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    outputs:
+      needs_deployment: ${{ steps.set-output.outputs.needs_deployment }}
+    steps:
+      - name: Check if PR is from a fork
+        id: check-fork
+        uses: access-nri/access-hive.org.au/.github/actions/check-fork@davide/940-exclude_PRs_from_preview
+
+      - name: Check if PR body starts with !no-preview
+        id: check-no-preview
+        uses: access-nri/access-hive.org.au/.github/actions/check-no-preview@davide/940-exclude_PRs_from_preview
+
+      - name: Check if documentation folder contains mkdocs.yaml or stub folder
+        id: check-doc-folder
+        uses: access-nri/access-hive.org.au/.github/actions/check-doc-folder@davide/940-exclude_PRs_from_preview
+
+      - name: Set output for following jobs
+        id: set-output
+        run: echo "needs_deployment=$(if [[ '${{ steps.check-fork.outputs.is_fork }}' == 'true' || '${{ steps.check-no-preview.outputs.has_no_preview }}' == 'true' || '${{ steps.check-doc-folder.outputs.has_valid_docs }}' == 'false' ]]; then echo 'false'; else echo 'true'; fi)" >> $GITHUB_ENV
+
+
+  # Trigger the documentation build/deploy workflow
+  build-and-deploy:
+    name: Build and deploy documentation
+    if: github.event_name == 'push'
+    uses: access-nri/access-hive.org.au/.github/workflows/deploy_to_github_pages.yml@davide/940-exclude_PRs_from_preview
+
+  # Delete the PR preview comment if the PR was closed
+  delete-pr-preview-comment:
+    name: Set root URL
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    uses: access-nri/access-hive.org.au/.github/workflows/delete_pr_preview_comment.yml@davide/940-exclude_PRs_from_preview

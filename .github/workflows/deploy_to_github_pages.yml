@@ -1,15 +1,6 @@
 name: Deploy to GitHub Pages
 on:
-  push: #Action fires anytime there is a push to the following branches
-    branches:
-      - main
-      - development
-  pull_request: #Action also fires anytime a PR is (re)opened, closed or synchronized
-    types:
-      - opened
-      - reopened
-      - synchronize
-  workflow_dispatch: #Action can also be triggered manually
+  workflow_call # This workflow can be called by other workflows
 env:
   TZ: Australia/Canberra
   DOC_DIR: '.'
