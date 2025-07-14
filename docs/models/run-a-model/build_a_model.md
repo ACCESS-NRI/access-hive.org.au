@@ -390,18 +390,18 @@ The syntax for the version specifier varies depending whether the package source
 
 #### Specify the package _Spack_ version for a remote package source {: id='spack-version-remote-package'}
 If the development package's source code is to be cloned from _git_, the package _Spack_ version can be set by appending `=<package_version>` to the package specifier.<br>
-For example, to develop _mom5_ code from the the `development` branch and build it as _Spack_ version `access-om2`, run:
+For example, to develop _mom5_ code from the the `development` branch and build it as _Spack_ version `access-esm1.5`, run:
 ```
-spack develop mom5@git.development=access-om2
+spack develop mom5@git.development=access-esm1.5
 ```
 
 #### Specify the package _Spack_ version for a local package source {: id='spack-version-local-package'}
 When the development package's source code is local, no _git_ reference is provided.<br>
 In this case a package _Spack_ version can be added by appending `@<package_version>` to the package specifier.
 
-For example, to develop _mom5_ code from the `/path/to/mom5/new/source/code` folder and build it as _Spack_ version `access-om2`, run:
+For example, to develop _mom5_ code from the `/path/to/mom5/new/source/code` folder and build it as _Spack_ version `access-esm1.5`, run:
 ```
-spack develop --path /path/to/mom5/new/source/code mom5@access-om2
+spack develop --path /path/to/mom5/new/source/code mom5@access-esm1.5
 ```
 !!! tip
     When in doubt about which _Spack_ version to assign to a specific package, a useful command to retrieve the existing versions of a package is:
