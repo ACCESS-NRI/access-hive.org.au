@@ -65,7 +65,34 @@ Outputs:
 
 ---
 
-## 4  File structure
+## 4  Running from ARE Desktop
+
+> ARE provides a GUI VDI plus a terminal already SSH‑tunnelled to *gadi-login*.
+
+1. **Launch VDI** – open [https://are.nci.org.au](https://are.nci.org.au), choose **Gadi Desktop (x64)**, click **Launch**.
+2. **Gadi Terminal** – inside the desktop, open **Gadi Remote Terminal**.
+3. **Reserve nodes** (optional but recommended):
+   ```bash
+   persistent-sessions start issm
+   echo "issm.${USER}.au88.ps.gadi.nci.org.au" > \
+        ~/.persistent-sessions/cylc-session
+   ```
+4. **Load env + clone** – as in Quick‑start (`module …`, `git clone …`).
+5. **Pre‑process & Run** – submit the same `run_pps.sh` / `run_mismip_first.sh` with `qsub`.
+6. **Monitor** – `qstat -u $USER`, or `tail -f pps.o<jobid>` in a terminal; use ARE’s Paraview for quick looks.
+7. **Release nodes** when finished:
+   ```bash
+   persistent-sessions stop issm
+   ```
+
+*Tips*
+
+- Heavy solves **must** run on the reserved nodes, not on the VDI itself.
+- VDI sessions expire after 12 h; jobs keep running.
+
+---
+
+## 5  File structure
 
 ```
 experiments/mismip/
@@ -79,7 +106,7 @@ experiments/mismip/
 ```
 ---
 
-## 5  Editing job scripts
+## 6  Editing job scripts
 
 Both helper scripts are standard PBS batch files.  Typical tweaks:
 
@@ -109,7 +136,7 @@ Key configurable groups (edit the configuration files as needed):
 
 After editing configurations, simply re-run the corresponding suite’s script.
 
-## 6 Troubleshooting
+## 7 Troubleshooting
 
 * **NaNs in solver residuals** – try a smaller time‑step (`dt`) or increase the number of Picard iterations in the StressbalanceAnalysis.
 * **PETSc convergence errors** – confirm that `md.stressbalance.reltol` is properly set and not `NaN`; consider using hardware‑specific builds of PETSc ≥ 3.20.
