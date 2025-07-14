@@ -13,76 +13,87 @@
 
 # Run {{ model }}
 
-## About
+## 1 About
 
 {{ model }} couples the **Ice Sheet System Model (ISSM)** to the ACCESS infrastructure, enabling fully parallel Antarctic and Greenland ice‑sheet simulations on the [NCI _Gadi_ supercomputer][gadi].
 
 It is maintained and supported by **ACCESS‑NRI**.  
-A high‑level description of model components—including the ISSM core, pre‑processing utilities, climate forcings, and coupling hooks—is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
-
-A typical workflow is split into two suites:
-
-* **Pre‑Processing Suite (PPS)** – meshes the domain, downloads & interpolates datasets, and creates ISSM‑ready NetCDF/HDF5 input files.
-* **Run Suite (RUN)** – compiles the ISSM code (if needed) and executes the transient simulation, handling restart cycles and post‑processing.
+A high‑level description of model components—including the ISSM core, pre‑processing utilities, climate forcings, and coupling hooks—is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).ng.
 
 The example below reproduces the *MISMIP+* Antarctic benchmark. Adjust the variables to suit your experiment.
 
-## Prerequisites
+## 2 Prerequisites
 
-* **NCI account & Gadi access** – see [Set Up your NCI Account](/getting_started/set_up_nci_account).
-* **Project membership** – minimum projects:
-  * [access](https://my.nci.org.au/mancini/project/access/join)
-  * [vk83](https://my.nci.org.au/mancini/project/vk83/join) (build & binary cache)
-* **Modules for Cylc 7 and dependencies** – load these as needed.
-* Optional: [ARE VDI Desktop](/getting_started/are).
+1. **NCI login + Gadi project** – request `access` and `vk83` memberships if you do not already have them.
+2. **Spack ISSM environment** – follow the build recipe in [https://github.com/ACCESS-NRI/access-issm](https://github.com/ACCESS-NRI/access-issm).  You should end up with `ISSM_DIR` and a Spack `issm-env`.
+3. **Modules** – at minimum:
+   ```bash
+   module load python3/3.10.4   # matches the version used for ISSM Python API
+   module load git
+   ```
 
-## Quick‑start
+---
+
+## 3  Quick‑start (Gadi login node)
 
 ```bash
-# 1. (Optional) launch an ARE VDI or login to Gadi
+# 0. Choose a working directory for this test
+$ mkdir -p ~/experiments/mismip && cd ~/experiments/mismip
 
-# 2. Start a persistent session (replace <name> with your session name)
-persistent-sessions start <name>
+# 1. Clone the ACCESS‑ISSM repository (alpha branch)
+$ git clone --branch access_rel_1 \
+      https://github.com/ACCESS-NRI/access-issm.git
 
-# 3. Register the session for job submission (adjust hostname as needed)
-echo "<name>.${USER}.<project>.ps.gadi.nci.org.au" > ~/.persistent-sessions/cylc-session
+# 2. Activate ISSM Spack environment and point ISSM_DIR
+$ source /g/data/au88/$USER/spack/share/spack/setup-env.sh
+$ spack env activate issm-env
+$ export ISSM_DIR=$(spack location -i issm)
 
-# 4. Load required modules (e.g., for Python, MPI, etc.)
-module use /g/data/hr22/modulefiles
-module load cylc7
-module load python/3.9  # or your preferred Python module
+# 3. Pre‑process (mesh + inputs)
+$ cp access-issm/examples/mismip/run_pps.sh ./
+$ qsub run_pps.sh           # or `bash run_pps.sh` inside a pInteractive job
 
-# 5. Check out the ISSM suites (edit branch/IDs if needed)
-git clone --branch {{ branch }} https://github.com/ACCESS-NRI/access-issm.git
-# Copy or link the PPS and RUN configurations into separate directories:
-mkdir ~/access-issm-pps
-mkdir ~/access-issm-run
-cp -r access-issm/pps/* ~/access-issm-pps/
-cp -r access-issm/run/* ~/access-issm-run/
-
-# 6. Run the Pre‑Processing Suite (PPS)
-cd ~/access-issm-pps
-./run_pps.sh  # Use the provided script or your own batch submission script.
-
-# 7. Once PPS completes successfully, run the Run Suite (RUN)
-cd ~/access-issm-run
-./run_model.sh  # This submits the ISSM simulation.
+# 4. When PPS finishes, run the first experiment bundle
+$ cp access-issm/examples/mismip/run_mismip_first.sh ./
+$ qsub run_mismip_first.sh  # generates SSA vs ESTAR comparison plot
 ```
 
-For monitoring job progress, you can use standard NCI commands (e.g., `qstat`, `squeue`) depending on your scheduler and check log files in your working directories.
+Outputs:
 
-## Detailed guide
+- Mesh + forcing NetCDF/HDF5 → `scratch/$PROJECT/$USER/mismip_pps/inputs/`
+- ISSM state & plots → `scratch/$PROJECT/$USER/mismip_run/Models_*/*`
 
-### Persistent sessions
+---
 
-Use persistent sessions to reserve compute nodes. This prevents requeueing and improves interactive performance. Instructions vary slightly based on whether you’re using PBS, SLURM, or another scheduler—refer to the NCI documentation.
+## 4  File structure
 
-### Job submission
+```
+experiments/mismip/
+├── access-issm/                 # git clone (alpha branch)
+│   └── examples/mismip/
+│       ├── mismip_driver.py     # full driver script (all steps)
+│       ├── run_pps.sh           # helper: submits PPS job
+│       └── run_mismip_first.sh  # helper: submits early RUN job (steps 1‑7)
+├── run_pps.sh                   # copied helper – edit walltime/resources here
+└── run_mismip_first.sh          # copied helper – edit nodes/time as needed
+```
+---
 
-The PPS and RUN suites now come with simplified submission scripts (e.g., `run_pps.sh` and `run_model.sh`). These scripts:
-- Set up the environment (load modules, source configuration files).
-- Launch Python or compiled ISSM executables.
-- Monitor execution and save outputs to NetCDF or binary files.
+## 5  Editing job scripts
+
+Both helper scripts are standard PBS batch files.  Typical tweaks:
+
+| Directive          | Default    | Change when…                                                       |
+| ------------------ | ---------- | ------------------------------------------------------------------ |
+| `#PBS -P`          | `au88`     | Running under a different project code                             |
+| `#PBS -l ncpus`    | `32`       | Mesh resolution < 1 km → reduce to 8–16 ; very high‑res → increase |
+| `#PBS -l walltime` | `48:00:00` | Convergence problems: extend                                       |
+
+For quick interactive debugging you can run the driver directly inside an *ARE* Desktop or `qsub -I` session:
+
+```bash
+$ python mismip_driver.py  # uses default steps list
+```
 
 ### {{ model }} configuration
 
@@ -98,17 +109,7 @@ Key configurable groups (edit the configuration files as needed):
 
 After editing configurations, simply re-run the corresponding suite’s script.
 
-### Output locations
-
-* **PPS products** – typically located at  
-  `/scratch/$PROJECT/$USER/access-issm-pps/inputs/`  
-  (meshes, datasets, etc.).
-
-* **ISSM outputs** – typically located at  
-  `/scratch/$PROJECT/$USER/access-issm-run/results/`  
-  (NetCDF visualisation files and checkpoint dumps).
-
-## Troubleshooting
+## 6 Troubleshooting
 
 * **NaNs in solver residuals** – try a smaller time‑step (`dt`) or increase the number of Picard iterations in the StressbalanceAnalysis.
 * **PETSc convergence errors** – confirm that `md.stressbalance.reltol` is properly set and not `NaN`; consider using hardware‑specific builds of PETSc ≥ 3.20.
