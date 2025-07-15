@@ -273,7 +273,7 @@ For example, to run an {{ model }} suite under the `tm70` project (ACCESS-NRI), 
 ### Change run length and cycling frequency
 
 !!! warning
-    Note there is a [known issue](#issues-cycling-repro) related to changing the cycling frequency.
+    Note there is a [known issue](#issues-cycling-repro) related to changing the cycling frequency. {{ model }} does not give identical results with different cycling frequencies. For example, one cycle of 12 months will not produce identical output to 12 cycles of one month. When comparing multiple experiments, they should use the same cycling frequency.
 
 {{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen _Cycling frequency_ until the _Total Run length_ is reached. 
 
