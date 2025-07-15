@@ -609,7 +609,8 @@ grep -rl --exclude-dir=.svn "\-l\s*storage\s*=" . | xargs sed -i '/\-l\s*storage
 ## Known issues
 Below are listed some {{ model }} known issues which will not be fixed.
 
-- [Different cycling frequencies break reproducibility](https://forum.access-hive.org.au/t/different-cycling-frequencies-in-access-cm2-lead-to-different-solutions/4539) {: #issues-cycling-repro }
+- [Different cycling frequencies break reproducibility](https://forum.access-hive.org.au/t/different-cycling-frequencies-in-access-cm2-lead-to-different-solutions/4539)
+{: #issues-cycling-repro }
 
 <custom-references>
 - [https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc](https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc)
