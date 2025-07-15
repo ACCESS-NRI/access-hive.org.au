@@ -602,6 +602,11 @@ grep -rl --exclude-dir=.svn "\-l\s*storage\s*=" . | xargs sed -i '/\-l\s*storage
     Some suites might not be ported this way.<br>
     If you have a suite that was running on _accessdev_ and, even after following the steps above, the run submission fails, consider [getting help on the Hive Forum](/about/user_support/ask_on_forum).
 
+## Known issues
+Below are listed some {{ model }} known issues which will not be fixed.
+
+- [Different cycling frequencies break reproducibility](https://forum.access-hive.org.au/t/different-cycling-frequencies-in-access-cm2-lead-to-different-solutions/4539)
+
 <custom-references>
 - [https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc](https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc)
 - [https://confluence.csiro.au/display/ACCESS/Understanding+CM2+output](https://confluence.csiro.au/display/ACCESS/Understanding+CM2+output)
