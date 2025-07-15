@@ -271,6 +271,10 @@ For example, to run an {{ model }} suite under the `tm70` project (ACCESS-NRI), 
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Change run length and cycling frequency
+
+!!! warning
+    Note there is a [known issue](#issues-cycling-repro) related to changing the cycling frequency.
+
 {{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen _Cycling frequency_ until the _Total Run length_ is reached. 
 
 To modify these parameters, navigate to _suite conf &rarr; Run Initialisation and Cycling_, edit the respective fields (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
@@ -605,7 +609,7 @@ grep -rl --exclude-dir=.svn "\-l\s*storage\s*=" . | xargs sed -i '/\-l\s*storage
 ## Known issues
 Below are listed some {{ model }} known issues which will not be fixed.
 
-- [Different cycling frequencies break reproducibility](https://forum.access-hive.org.au/t/different-cycling-frequencies-in-access-cm2-lead-to-different-solutions/4539)
+- [Different cycling frequencies break reproducibility](https://forum.access-hive.org.au/t/different-cycling-frequencies-in-access-cm2-lead-to-different-solutions/4539) {: #issues-cycling-repro }
 
 <custom-references>
 - [https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc](https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc)
