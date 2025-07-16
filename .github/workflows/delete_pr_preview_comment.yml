@@ -1,9 +1,6 @@
 name: Delete PR preview comment
 on:
-  pull_request:
-    types:
-      - closed
-
+  workflow_call
 jobs:
   # Delete PR preview comment
   delete-pr-preview-comment:
