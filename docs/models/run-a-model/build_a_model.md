@@ -2,6 +2,8 @@
 {% set esm1_5_build_config = "https://github.com/ACCESS-NRI/ACCESS-ESM1.5" %}
 {% set spack_setup = "/getting_started/spack" %}
 [ACCESS models]: /models/configurations
+[esm1.5 config]: /models/configurations/access-esm/#access-esm15
+[mom5 component]: /models/model_components/ocean/#mom5
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [spack-configuration-scopes-documentation]: https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes
 
@@ -20,9 +22,9 @@ If you want to modify and build a model, while maintaining a clear record of you
 
 The build workflow described in this page is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
-The following instructions outline how to trigger a prerelease build of [ACCESS-OM2][om2 config] after modifying its [MOM5 component]. All other components of the official [ACCESS-OM2 release][om2 repo] will remain unchanged.
+The following instructions outline how to trigger a prerelease build of [ACCESS-ESM1.5][esm1.5 config] after modifying its [MOM5 component]. All other components of the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}) will remain unchanged.
 
-As an example, in the following instructions we will show how to modify [MOM5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15) and re-compile the relevant ACCESS-ESM1.5 dependencies. All other components and packages (i.e., dependencies) of the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}) will remain unchanged.
+As an example, in the following instructions we will show how to modify [MOM5 component] for [ACCESS-ESM1.5][esm1.5 config] and re-compile the relevant ACCESS-ESM1.5 dependencies. All other components and packages (i.e., dependencies) of the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}) will remain unchanged.
 
 !!! tip
     The following instructions are valid (with simple tweaks) for all [ACCESS models].
@@ -387,18 +389,18 @@ The syntax for the version specifier varies depending whether the package source
 
 #### Specify the package _Spack_ version for a remote package source {: id='spack-version-remote-package'}
 If the development package's source code is to be cloned from _git_, the package _Spack_ version can be set by appending `=<package_version>` to the package specifier.<br>
-For example, to develop _mom5_ code from the the `development` branch and build it as _Spack_ version `access-om2`, run:
+For example, to develop _mom5_ code from the the `development` branch and build it as _Spack_ version `access-esm1.5`, run:
 ```
-spack develop mom5@git.development=access-om2
+spack develop mom5@git.development=access-esm1.5
 ```
 
 #### Specify the package _Spack_ version for a local package source {: id='spack-version-local-package'}
 When the development package's source code is local, no _git_ reference is provided.<br>
 In this case a package _Spack_ version can be added by appending `@<package_version>` to the package specifier.
 
-For example, to develop _mom5_ code from the `/path/to/mom5/new/source/code` folder and build it as _Spack_ version `access-om2`, run:
+For example, to develop _mom5_ code from the `/path/to/mom5/new/source/code` folder and build it as _Spack_ version `access-esm1.5`, run:
 ```
-spack develop --path /path/to/mom5/new/source/code mom5@access-om2
+spack develop --path /path/to/mom5/new/source/code mom5@access-esm1.5
 ```
 !!! tip
     When in doubt about which _Spack_ version to assign to a specific package, a useful command to retrieve the existing versions of a package is:
