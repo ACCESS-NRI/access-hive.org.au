@@ -334,12 +334,12 @@ For example, to run a configuration for 2 months and write restart files at the 
 
 ### Configuring MOM6 diagnostics
 
-MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable yaml file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g. inclusion in Intake catalogs). 
+MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable yaml file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g., inclusion in Intake catalogs). 
 
-Preset `diag_table`s and the yaml files from which they are generated can be found in the `diagnostic_profiles` directory. To create and use a custom `diag_table`, follow the instructions in `diagnostic_profiles/README`.
+Preset `diag_table`s and the yaml files from which they are generated can be found in the `diagnostic_profiles` directory in the Payu _control_ directory. To create and use a custom `diag_table`, follow the instructions in `diagnostic_profiles/README`.
 
 !!! warning
-    MOM6 provides the ability to vertically remap diagnostics onto user-defined vertical coordinates, including density coordinates (see the [documentation here](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html#vertically-remapped-diagnostics)). Remapping to density coordinates can add substantially to the runtime of the model. The default `diag_table` used by {{ model }} configs includes diagnostics remapped to density coordinates. These should be removed for performance reasons if they are not needed.
+    MOM6 provides the ability to vertically remap diagnostics onto user-defined vertical coordinates, including density coordinates (check [MOM6 vertically remapped diagnostics documentation](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html#vertically-remapped-diagnostics) for more information). Remapping to density coordinates can add substantially to the runtime of the model. The default `diag_table` used by {{ model }} includes diagnostics remapped to density coordinates. These should be removed for performance reasons if they are not needed.
 
 ### Modify PBS resources
 
