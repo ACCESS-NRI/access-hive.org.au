@@ -71,6 +71,11 @@ When launching an [ARE VDI](/getting_started/are/#vdi) instance:
 
 1. Under _Storage_, add  `gdata/xp65`.<br>
     If you have other storage locations, use a plus sign (`+`) (e.g., `+gdata/xp65`).
+2. Under _PBS flags_, add `-v SINGULARITY_OVERLAYIMAGE=/g/data/xp65/public/apps/med_conda/envs/$(readlink /g/data/xp65/public/apps/med_conda/envs/analysis3).sqsh`
+    
+    !!! warning
+        This will only work if you load the latest `analysis3` environment using `module load conda/analysis3`.<br>
+        If you want to [load a specific version](#load-a-specific-environment-version), the `SINGULARITY_OVERLAYIMAGE` env variable will need to specify the exact version in the format: `/g/data/xp65/public/apps/med_conda/envs/analysis3-YY-MM.sqsh`.
 </div>
 
 
@@ -109,7 +114,7 @@ If you do not specify a version (e.g. using `conda/analysis3` rather than `conda
 !!! note 
     For _rose/cylc_ workflows, it is not recommended to specify a particular version of the environment (i.e. use `conda/analysis3` and not `conda/analysis3-YY.MM`).
 
-#### ARE
+#### ARE Jupyterlab
 
 When launching an [ARE Jupyterlab session](#are-jupyterlab), you only need to include `conda/analysis3`. If you would like to specify a particular environment version, you can do so for each notebook by switching kernels inside the ARE instance.
 
