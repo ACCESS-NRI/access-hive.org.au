@@ -47,4 +47,15 @@
             </span>
         </div>
     </a>
+        <a href="/models/configurations/access-issm/" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/assets/model-config-logos/model_visualisation/access_ram_model_visualisation.png" class="white-background img-contain"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >ACCESS-ISSM</span>
+            <span>
+                ACCESS-ISSM is an implementation of the global ice‑sheet and ice‑shelf model based on the ISSM framework.
+            </span>
+        </div>
+    </a>
 </div>
