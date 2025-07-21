@@ -1,3 +1,4 @@
+{% set om3_configs_docs = "https://access-om3-configs.access-hive.org.au" %}
 [cosima]: https://cosima.org.au/
 
 # ACCESS-OM
@@ -38,7 +39,10 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 - **Coupler**: [NUOPC](/models/model_components/coupler#nuopc).
 
+<div class="text-card-group" markdown>
+[![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{om3_configs_docs}}){: class="text-card"}
 [Run {{ model }}](/models/run-a-model/run-access-om3){: class="text-card"}
+</div>
 
 {% set model = "ACCESS-OM2" %}
 ## {{ model }}
