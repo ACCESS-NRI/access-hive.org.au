@@ -20,7 +20,7 @@
 It is maintained and supported by **ACCESS‑NRI**.  
 A high‑level description of model components—including the ISSM core, pre‑processing utilities, climate forcings, and coupling hooks—is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).ng.
 
-The example below reproduces the *MISMIP+* Antarctic benchmark. Adjust the variables to suit your experiment.
+The example below reproduces the *MISMIP+* benchmark. Adjust the variables to suit your experiment.
 
 ## 2 Prerequisites
 
