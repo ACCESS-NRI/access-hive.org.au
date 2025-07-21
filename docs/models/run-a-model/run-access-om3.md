@@ -1,5 +1,6 @@
 {% set model = "ACCESS-OM3" %}
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om3-configs" %}
+{% set configs_docs = "https://access-om3-configs.access-hive.org.au" %}
 {% set example_branch = "release-MC_25km_jra_ryf" %}
 {% set example_folder = "25km_jra_ryf" %}
 [cosima]: https://cosima.org.au
@@ -16,6 +17,7 @@
 
 <div class="text-card-group" markdown>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{configs_docs}}){: class="text-card"}
 </div>
 
 # Run {{ model }}
