@@ -30,6 +30,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
+Detailed documentation on the configurations is provided [here](https://access-om3-configs.access-hive.org.au/).
 
 ## Prerequisites
 
@@ -100,7 +101,7 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 ### Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [configuration documention](https://access-om3-configs.access-hive.org.au/), the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
 
 The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6 at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
 
