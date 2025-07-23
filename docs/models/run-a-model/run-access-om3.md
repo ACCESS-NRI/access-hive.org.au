@@ -301,6 +301,32 @@ The `config.yaml` file located in the _control_ directory is the _payu_ configur
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
+### Start from an existing restart
+
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+To extend or fork from an existing experiment, the model can be configured start from an existing restart file.
+
+To do this, add a `restart:` [entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous), with a path to the folder containing existing restart files, to the `config.yaml` file in the experiment.
+Or, to this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
+
+<terminal-window>
+    <terminal-line data="input">cd ~/access-om3</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/{{example_folder}}</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
+    <terminal-line>binary path:  /scratch/.../access-om3/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../access-om3/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../access-om3/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../access-om3/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../access-om3/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/{{example_folder}}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">cd {{example_folder}}</terminal-line>
+    <terminal-line data="input" directory="~/access-om3/{{example_folder}}"></terminal-line>
+</terminal-window>
+
+
 ### Change run length
 
 One of the most common changes is to adjust the duration of the model run.<br>
