@@ -65,7 +65,7 @@ Detailed documentation on the configurations is provided at [https://access-om3-
     
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
-        <terminal-line lineDelay="1000">1.1.6</terminal-line>
+        <terminal-line lineDelay="1000">1.1.7</terminal-line>
     </terminal-window>
 
 ----------------------------------------------------------------------------------------
@@ -322,7 +322,7 @@ Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` p
 
 The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
 !!! tip
-    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. Having said this, sometimes it is sensible to have fewer restarts to save stroage space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
+    To be able to continue an experiment run, writing restart files at the end of an experiment run is required. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. For long runs which are working well, some of these restarts can be automatically removed to save space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -399,7 +399,8 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 By default, {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
-_Payu_ can be configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts from every fifth model run. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+_Payu_ is configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts which match the frequency set in the `restart_freq` field of `config.yaml`. This is commonly set to `1YS` to keep one restart per year, or `5YS` for a restart every fifth year. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+
 ### Other configuration options
 
 !!! warning
