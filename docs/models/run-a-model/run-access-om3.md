@@ -105,7 +105,7 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [configuration documention](https://access-om3-configs.access-hive.org.au/), the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
 
-The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6) at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
+The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6) at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}). 
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
@@ -114,7 +114,7 @@ To clone this branch to a location on _Gadi_ and navigate to that directory, run
     payu clone -b expt -B {{ example_branch }} {{ github_configs }} {{example_folder}}
     cd {{example_folder}}
 
-In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`.
+In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`. This will clone the latest release of the branch. Each release has a corresponding [git tag](https://github.com/ACCESS-NRI/access-om3-configs/tags), and if it is prefereble to clone an older release (to compare against older model output, for example), it is possible to clone from the tag. See the [payu documentation on using the -s flag](https://payu.readthedocs.io/en/stable/usage.html#clone-experiment) for details.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -301,33 +301,6 @@ The `config.yaml` file located in the _control_ directory is the _payu_ configur
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Start from an existing restart
-
-By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
-
-To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
-
-To do this, add a `restart:` [entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous), with a path to the folder containing existing restart files, to the `config.yaml` file in the experiment.
-Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
-
-<terminal-window>
-    <terminal-line data="input">cd ~/access-om3</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}</terminal-line>
-    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/{{example_folder}}</terminal-line>
-    <terminal-line>Created and checked out new branch: expt</terminal-line>
-    <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
-    <terminal-line>binary path:  /scratch/.../access-om3/bin</terminal-line>
-    <terminal-line>input path:  /scratch/.../access-om3/input</terminal-line>
-    <terminal-line>work path:  /scratch/.../access-om3/work</terminal-line>
-    <terminal-line>archive path:  /scratch/.../access-om3/archive</terminal-line>
-    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
-    <terminal-line>Added 'restart: /scratch/.../access-om3/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
-    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/{{example_folder}}-expt-daeee7ff</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">cd {{example_folder}}</terminal-line>
-    <terminal-line data="input" directory="~/access-om3/{{example_folder}}"></terminal-line>
-</terminal-window>
-
-
 ### Change run length
 
 One of the most common changes is to adjust the duration of the model run.<br>
@@ -370,6 +343,37 @@ Preset `diag_table` files, along with the YAML configuration files used to gener
 
 !!! warning
     MOM6 provides the ability to vertically remap diagnostics onto user-defined vertical coordinates, including density coordinates (check [MOM6 vertically remapped diagnostics documentation](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html#vertically-remapped-diagnostics) for more information). Remapping to density coordinates can add substantially to the runtime of the model. The default `diag_table` used by {{ model }} includes diagnostics remapped to density coordinates. These should be removed for performance reasons if they are not needed.
+### Start the run from a specific restart file
+
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+
+To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
+
+To do this, add a `restart:` [entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous), with a path to the folder containing existing restart files, to the `config.yaml` file in the experiment.
+Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
+```
+cd ~/access-om3
+payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}
+```
+<terminal-window>
+    <terminal-line data="input">cd ~/access-om3</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/{{example_folder}}</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
+    <terminal-line>binary path:  /scratch/.../access-om3/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../access-om3/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../access-om3/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../access-om3/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../access-om3/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/{{example_folder}}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">cd {{example_folder}}</terminal-line>
+    <terminal-line data="input" directory="~/access-om3/{{example_folder}}"></terminal-line>
+</terminal-window>
+!!! warning
+    Note that the restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
+
 
 ### Modify PBS resources
 
