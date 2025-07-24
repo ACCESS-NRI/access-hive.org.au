@@ -402,7 +402,7 @@ project: ol01
 To use a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
 
 !!! warning
-    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).

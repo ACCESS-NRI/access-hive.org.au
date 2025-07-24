@@ -402,7 +402,7 @@ To use a `/scratch` storage allocation other than `project` (or your default if 
 
 
 !!! warning
-    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
 
