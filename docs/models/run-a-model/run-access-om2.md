@@ -381,7 +381,6 @@ payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/acces
 
 !!! warning
     The restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
-    <br><br>
 
 ### Modify PBS resources
 
