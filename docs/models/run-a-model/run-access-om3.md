@@ -12,7 +12,7 @@
 
 !!! release
     This is a **Beta Release**.<br>
-    These model configurations and source code might change before the full release.<br>
+    This model configuration and source code might change before the full release.<br>
     Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 <div class="text-card-group" markdown>
@@ -105,7 +105,7 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [configuration documention](https://access-om3-configs.access-hive.org.au/), the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
 
-The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6 at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
+The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6) at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
