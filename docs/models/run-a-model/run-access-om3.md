@@ -398,7 +398,7 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
-To use a `/scratch` storage allocation other than the default for `project` then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+To use a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
 
 
 !!! warning
