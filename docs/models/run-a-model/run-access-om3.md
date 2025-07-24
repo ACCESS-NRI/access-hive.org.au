@@ -304,7 +304,8 @@ To find out more about configuration settings for the `config.yaml` file, refer 
 ### Start from an existing restart
 
 By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
-To extend or fork from an existing experiment, the model can be configured to start from an existing restart file.
+
+To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
 
 To do this, add a `restart:` [entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous), with a path to the folder containing existing restart files, to the `config.yaml` file in the experiment.
 Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
