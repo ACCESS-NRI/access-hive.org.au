@@ -362,6 +362,8 @@ For example, to run a configuration for a total of 50 years with a `restart_peri
 
 ### Start the run from a specific restart file {: id='specific-restart'}
 
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+
 To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
 
 For example, to get the `1deg_jra55_ryf` configuration and set its initial condition to the  `/g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040` restart file, run:
@@ -372,6 +374,10 @@ payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/acces
 
 !!! warning
     In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
+
+!!! warning
+    The restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
+    <br><br>
 
 ### Modify PBS resources
 
