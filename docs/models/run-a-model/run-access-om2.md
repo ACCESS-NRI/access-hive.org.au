@@ -31,6 +31,10 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 ## Prerequisites
 
+!!! warning
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
+
+
 - **NCI Account**<br> 
     Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
@@ -410,7 +414,6 @@ To use a `/scratch` storage allocation other than `project` (or your default if 
 !!! warning
     If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
-    <br><br>
 
 ### Syncing output data
 
