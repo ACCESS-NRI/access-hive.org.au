@@ -5,7 +5,7 @@ If you are unsure which ACCESS model is the right choice for your experiment, ta
 
 <div class="card-container">
     <!-- Run ACCESS-CM -->
-    <a href="/models/run-a-model/run-access-cm" class="vertical-card aspect-ratio1to1">
+    <a href="/models/run-a-model/run-access-cm2" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_cm_model_visualisation.png" alt="ACCESS-CM">
         </div>

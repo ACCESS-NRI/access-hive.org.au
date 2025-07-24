@@ -33,4 +33,4 @@ Please delete options that are not relevant.
 
 When your pull request is ready please [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review). 
 
-Unless there is a specific person you want your PR to be reviewd by, please select the **WebOps team**: `ACCESS-NRI/WebOps`. This ensures the load for reviewing pull requests is shared equitably.
+Unless there is a specific person you want your PR to be reviewd by, please select the **Hive Docs Team**: `ACCESS-NRI/hivedocsteam`. This ensures the load for reviewing pull requests is shared equitably.

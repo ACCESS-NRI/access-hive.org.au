@@ -1,5 +1,7 @@
-{% set model = "ACCESS-CM2" %}
+{% set model = "ACCESS-CM" %}
+{% set suite_id = "u-cy339" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
+[model components]: /models/configurations/access-cm/#model-components
 
 # Run {{ model }}
 
@@ -148,37 +150,39 @@ persistent-sessions kill <persistent-session-uuid>
 !!! warning
     When you terminate a persistent session, any model running on that session will stop. Therefore, you should check whether you have any active model runs before terminating a persistent session.
 
+## Rose/Cylc/MOSRS setup
 
-## Get {{ model }} suite
-{{ model }} comprises the model components [UM](/models/model_components/atmosphere#unified-model-um), [MOM](/models/model_components/ocean#modular-ocean-model-mom), [CICE](/models/model_components/sea-ice#cice) and [CABLE](/models/model_components/land#cable), coupled through [OASIS](/models/model_components/coupler#oasis3-mct). These components, which have different model parameters, input data and computer-related information, need to be packaged together as a _suite_ in order to run.<br>
-Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
-For this example you can use `u-cy339`, which is a pre-industrial experiment suite.<br>
-Typically, an existing suite is copied and then edited as needed for a particular run.
+To run {{ model }}, access to multiple software and MOSRS authentication is needed.
 
-### Copy {{ model }} suite with Rosie
-[Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for {{ model }} suites.<br>
-To copy an existing suite on _Gadi_ you need to follow three main steps:
+### Cylc setup {: #cylc }
 
-#### Get Cylc7 setup
-To get the Cylc7 setup required to run {{ model }}, execute the following commands:
+[_Cylc_](https://cylc.github.io/cylc-doc/7.8.8/html/index.html) (pronounced ‘silk’) is a workflow manager that automatically executes tasks according to the model's main cycle script `suite.rc`. _Cylc_ controls how the job will be run and manages the time steps of each model component. It also monitors all tasks, reporting any errors that may occur.
+
+To get the _Cylc_ setup required to run {{ model }}, execute the following commands:
 ```
 module use /g/data/hr22/modulefiles
-module load cylc7/23.09
+module load cylc7
 ```
 <terminal-window data="input">
     <terminal-line>module use /g/data/hr22/modulefiles</terminal-line>
-    <terminal-line>module load cylc7/23.09</terminal-line>
+    <terminal-line>module load cylc7</terminal-line>
     <terminal-line data="output">Using the cylc session &lt;name&gt;.&lt;$USER&gt;.&lt;project&gt;.ps.gadi.nci.org.au</terminal-line>
     <terminal-line data="output"></terminal-line>
-    <terminal-line data="output">Loading cylc7/23.09</terminal-line>
-    <terminal-line data="output">&emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
+    <terminal-line data="output">Loading cylc7/24.03</terminal-line>
+    <terminal-line data="output">&emsp;Loading requirement: mosrs-setup/2.0.1</terminal-line>
 </terminal-window>
 
 !!! warning
-    Make sure to load _Cylc_ version `23.09` (or later), as earlier versions do not support the persistent sessions workflow.<br>
-    Also, before loading the _Cylc_ module, make sure to have started a persistent session and assigned it to the {{ model }} workflow. For more information about these steps, refer to instructions on how to [Set up {{ model }} persistent session]({{ '#set-up-%s-persistent-session'%model.lower() }}).
+    _Cylc_ version >= `cylc7/24.03` required.<br>
+    
+    Also, before loading the _Cylc_ module, make sure to have started a _persistent session_ and have assigned it to the {{ model }} workflow. For more information about these steps, refer to [Set up _persistent session_](#set-up-persistent-session).
 
-#### MOSRS authentication
+### Rose setup {: #rose }
+[Rose](http://metomi.github.io/rose/doc/html/index.html) is a toolkit that can be used to view, edit, or run an ACCESS modelling suite.
+
+By completing the [_Cylc_ setup](#cylc), also _Rose_ will be automatically available. Hence, no additional step is required.
+
+### MOSRS authentication
 To authenticate using your _MOSRS_ credentials, run:
 ```
 mosrs-auth
@@ -187,47 +191,33 @@ mosrs-auth
     <terminal-line data="input">mosrs-auth</terminal-line>
     <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: You need to enter your MOSRS credentials here so that GPG can cache your password.</terminal-line>
     <terminal-line>Please enter the MOSRS password for &lt;MOSRS-username&gt;:</terminal-line>
-    <terminal-line lineDelay=1500><span style="color: #559cd5;">INFO</span>: Checking your credentials using Subversion. Please wait.</terminal-line>
+    <terminal-line lineDelay=1500>Checking your credentials using Subversion. Please wait.</terminal-line>
     <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: Successfully accessed Subversion with your credentials.</terminal-line>
     <terminal-line lineDelay=100><span style="color: #559cd5;">INFO</span>: Checking your credentials using rosie. Please wait.</terminal-line>
     <terminal-line lineDelay=500><span style="color: #559cd5;">INFO</span>: Successfully accessed rosie with your credentials.</terminal-line>
 </terminal-window>
 
-#### Copy a suite
+!!! warning
+    This step needs to be done once for each new session (e.g., _Gadi_ login, _ARE_ terminal window)
 
-  - **Local-only copy**<br>
-      To create a _local copy_ of the `<suite-ID>` from the UKMO repository, run:
-      ```
-      rosie checkout <suite-ID>
-      ```
-      <terminal-window>
-          <terminal-line data="input">rosie checkout &lt;suite-ID&gt;</terminal-line>
-          <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
-          <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;</terminal-line>
-      </terminal-window>
-      This option is mostly used for testing and examining existing suites.
-      
-  - **Remote and local copy**<br> 
-      Alternatively, to create a new copy of an existing `<suite-ID>` both _locally_ and _remotely_ in the UKMO repository, run: 
-      ```
-      rosie copy <suite-ID>
-      ```
-      <terminal-window>
-          <terminal-line data="input">rosie copy &lt;suite-ID&gt;</terminal-line>
-          <terminal-line>Copy "&lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
-          <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
-          <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from &lt;suite-ID&gt;/trunk@&lt;trunk-ID&gt;</terminal-line>
-          <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
-      </terminal-window>
-      When a new suite is created in this way, a _unique_ `<suite-ID>` is generated within the repository and populated with descriptive information about the suite and its initial configuration.
+## Get {{ model }} suite
+{{ model }} comprises the model components [UM](/models/model_components/atmosphere#unified-model-um), [MOM](/models/model_components/ocean#modular-ocean-model-mom), [CICE](/models/model_components/sea-ice#cice) and [CABLE](/models/model_components/land#cable), coupled through [OASIS](/models/model_components/coupler#oasis3-mct). These components, which have different model parameters, input data and computer-related information, need to be packaged together as a _suite_ in order to run.<br>
+Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
+For this example you can use `{{ suite_id }}`, which is a pre-industrial experiment suite.
 
-For additional `rosie` options, run:
-```
-rosie help
-```
+Typically, an existing suite is copied using _Rosie_ and then edited as needed for a particular run.
+[Rosie](https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rosie) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for ACCESS modelling suites. It is automatically available within the [_Rose_ setup](#rose).
 
-Suites are created in the user's home directory on _Gadi_ under `~/roses/<suite-ID>`.
-Each suite directory usually contains two subdirectories and three files:
+{{ model }} configuration can be copied from the MOSRS repository in 2 ways:
+
+- [Local-only copy](#local-copy)
+- [Remote and local copy](#remote-copy)
+
+Suites are, by default, created in the user's _Gadi_ home directory under `~/roses/<suite-ID>`.
+This path will be referred to as the *suite directory*.
+{: #suitedir }
+
+The suite directory contains multiple subdirectories and files, including:
 
 - `app` &rarr; directory containing the configuration files for various tasks within the suite.
 - `meta` &rarr; directory containing the GUI metadata.
@@ -235,17 +225,50 @@ Each suite directory usually contains two subdirectories and three files:
 - `rose-suite.info` &rarr; suite information file.
 - `suite.rc` &rarr; _Cylc_ control script file (Jinja2 language).
 
+### Local-only copy {: #local-copy }
+To create a _local copy_ of {{ model }} suite from MOSRS repository, run:
+```
+rosie checkout {{ suite_id }}
+```
 <terminal-window>
-    <terminal-line data="input">ls ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line class="ls-output-format">app meta rose-suite.conf rose-suite.info suite.rc</terminal-line>
+    <terminal-line data="input">rosie checkout {{ suite_id }}</terminal-line>
+    <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/roses</terminal-line>
+    <terminal-line>[INFO] &lt;suite-ID&gt;: local copy created at /home/565/&lt;$USER&gt;/roses/{{ suite_id }}</terminal-line>
 </terminal-window>
+This option is mostly used for testing and examining suites.
+    
+### Remote and local copy {: #remote-copy }
+To create a new copy of {{ model }} suite both _locally_ and _remotely_ in the MOSRS repository, run: 
+```
+rosie copy {{ suite_id }}
+```
+<terminal-window>
+    <terminal-line data="input">rosie copy {{ suite_id }}</terminal-line>
+    <terminal-line>Copy "{{ suite_id }}/trunk@&lt;trunk-ID&gt;" to "u-?????"? [y or n (default)]</terminal-line> <terminal-line data="input">y</terminal-line>
+    <terminal-line>[INFO] &lt;new-suite-ID&gt;: created at https://code.metoffice.gov.uk/svn/roses-u/&lt;suite-n/a/m/e/&gt;</terminal-line>
+    <terminal-line>[INFO] &lt;new-suite-ID&gt;: copied items from {{ suite_id }}/trunk@&lt;trunk-ID&gt;</terminal-line>
+    <terminal-line>[INFO] {{ suite_id }}: local copy created at /home/565/&lt;$USER&gt;/roses/&lt;new-suite-ID&gt;</terminal-line>
+</terminal-window>
+When a new suite is created in this way, a _unique_ `<suite-ID>` folder is generated within the MOSRS repository and populated with descriptive information about the suite and its initial configuration.
+
+For additional `rosie` options, run:
+```
+rosie help
+```
 
 ## Edit {{ model }} suite configuration
 
-### Rose
-[Rose](http://metomi.github.io/rose/doc/html/index.html) is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
+This section describes how to modify the {{ model }} configuration.
 
-To edit a suite configuration, run the following command from within the suite directory (i.e., `~/roses/<suite-ID>`) to open the _Rose_ GUI:
+The modifications discussed in this section can change the way {{ model }} is run, or how specific [model components] are configured and coupled together.
+
+In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the suite directory, or by using the [_Rose_ GUI](#rosegui).
+
+!!! warning
+    Unless you are an experienced user, directly modifying configuration files is usually discouraged to avoid encountering errors.
+
+### Rose GUI {: #rosegui }
+To open the [_Rose_](#rose) GUI, run the following command from within the [suite directory](#suitedir): 
 ```
 rose edit &
 ```
@@ -271,6 +294,10 @@ For example, to run an {{ model }} suite under the `tm70` project (ACCESS-NRI), 
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Change run length and cycling frequency
+
+!!! warning
+    Note there is a [known issue](#issues-cycling-repro) related to changing the cycling frequency. {{ model }} does not give identical results with different cycling frequencies. For example, one cycle of 12 months will not produce identical output to 12 cycles of one month. When comparing multiple experiments, they should use the same cycling frequency.
+
 {{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen _Cycling frequency_ until the _Total Run length_ is reached. 
 
 To modify these parameters, navigate to _suite conf &rarr; Run Initialisation and Cycling_, edit the respective fields (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
@@ -546,7 +573,7 @@ This directory contains two subdirectories:
 
 For the atmospheric output data, the files are typically a [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) or netCDF file, formatted as `<suite-name>a.p<output-stream-identifier><year><month-string>`.
 
-For the `u-cy339` suite in this example, the `atm` directory contains:
+For the `{{ suite_id }}` suite in this example, the `atm` directory contains:
 <terminal-window>
     <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
     <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
@@ -562,7 +589,7 @@ For the `u-cy339` suite in this example, the `atm` directory contains:
 The restart files can be found in the `/scratch/$PROJECT/$USER/archive/<suite-name>/restart` directory, where they are categorised according to model components (similar to the `history` folder above).<br>
 The atmospheric restart files, which are [UM fieldsfiles](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf), are formatted as `<suite-name>a.da<year><month><day>_00`.
 
-For the `u-cy339` suite in this example, the `atm` directory contains:
+For the `{{ suite_id }}` suite in this example, the `atm` directory contains:
 <terminal-window>
     <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339/restart/atm</terminal-line>
     <terminal-line class="ls-output-format">cy339a.da09500201_00 cy339a.da09510101_00 cy339.xhist-09500131 cy339.xhist-09501231 </terminal-line>
@@ -601,6 +628,12 @@ grep -rl --exclude-dir=.svn "\-l\s*storage\s*=" . | xargs sed -i '/\-l\s*storage
 !!! warning
     Some suites might not be ported this way.<br>
     If you have a suite that was running on _accessdev_ and, even after following the steps above, the run submission fails, consider [getting help on the Hive Forum](/about/user_support/ask_on_forum).
+
+## Known issues
+Below are listed some {{ model }} known issues which will not be fixed.
+
+- [Different cycling frequencies break reproducibility](https://forum.access-hive.org.au/t/different-cycling-frequencies-in-access-cm2-lead-to-different-solutions/4539)
+{: #issues-cycling-repro }
 
 <custom-references>
 - [https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc](https://confluence.csiro.au/display/ACCESS/Using+CM2+suites+in+Rose+and+Cylc)
