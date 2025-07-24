@@ -398,8 +398,11 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
+To use a `/scratch` storage allocation other than the default for `project` then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+
+
 !!! warning
-    If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.<br>
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
 
@@ -418,7 +421,6 @@ sync:
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
-
 
 ### Saving model restarts
 
