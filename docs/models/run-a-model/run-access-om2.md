@@ -31,6 +31,10 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 ## Prerequisites
 
+!!! warning
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
+
+
 - **NCI Account**<br> 
     Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
@@ -362,6 +366,8 @@ For example, to run a configuration for a total of 50 years with a `restart_peri
 
 ### Start the run from a specific restart file {: id='specific-restart'}
 
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+
 To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
 
 For example, to get the `1deg_jra55_ryf` configuration and set its initial condition to the  `/g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040` restart file, run:
@@ -372,6 +378,9 @@ payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/acces
 
 !!! warning
     In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
+
+!!! warning
+    The restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
 
 ### Modify PBS resources
 
@@ -399,11 +408,11 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
+To use a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+
 !!! warning
-    If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
-    <br><br>
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Syncing output data
 

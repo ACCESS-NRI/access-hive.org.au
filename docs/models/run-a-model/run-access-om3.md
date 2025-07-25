@@ -1,5 +1,6 @@
 {% set model = "ACCESS-OM3" %}
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om3-configs" %}
+{% set configs_docs = "https://access-om3-configs.access-hive.org.au" %}
 {% set example_branch = "release-MC_25km_jra_ryf" %}
 {% set example_folder = "25km_jra_ryf" %}
 [cosima]: https://cosima.org.au
@@ -10,12 +11,13 @@
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
 !!! release
-    This is an **Alpha Release**.<br>
-    These model configurations and source code might change before the full release.<br>
+    This is a **Beta Release**.<br>
+    This model configuration and source code might change before the full release.<br>
     Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 <div class="text-card-group" markdown>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{configs_docs}}){: class="text-card"}
 </div>
 
 # Run {{ model }}
@@ -30,6 +32,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
+Detailed documentation on the configurations is provided at [https://access-om3-configs.access-hive.org.au](https://access-om3-configs.access-hive.org.au/).
 
 ## Prerequisites
 
@@ -62,7 +65,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
     
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
-        <terminal-line lineDelay="1000">1.1.6</terminal-line>
+        <terminal-line lineDelay="1000">1.1.7</terminal-line>
     </terminal-window>
 
 ----------------------------------------------------------------------------------------
@@ -100,9 +103,9 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 ### Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available configurations and the naming scheme of the branches can be found in the  [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
-The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6 at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
+The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6) at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}). 
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
@@ -111,7 +114,7 @@ To clone this branch to a location on _Gadi_ and navigate to that directory, run
     payu clone -b expt -B {{ example_branch }} {{ github_configs }} {{example_folder}}
     cd {{example_folder}}
 
-In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`.
+In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`. This will clone the latest release of the branch. Each release has a corresponding [git tag](https://github.com/ACCESS-NRI/access-om3-configs/tags), and if it is prefereble to clone an older release (to compare against older model output, for example), it is possible to clone from the tag. See the [payu documentation on using the -s flag](https://payu.readthedocs.io/en/stable/usage.html#clone-experiment) for details.
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -319,7 +322,7 @@ Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` p
 
 The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
 !!! tip
-    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. Having said this, sometimes it is sensible to have fewer restarts to save stroage space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
+    To be able to continue an experiment run, writing restart files at the end of an experiment run is required. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. For long runs which are working well, some of these restarts can be automatically removed to save space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -332,6 +335,7 @@ For example, to run a configuration for 2 months and write restart files at the 
          stop_option = nmonths
          ...
 
+
 ### Configuring MOM6 diagnostics
 
 MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable yaml file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g., inclusion in Intake catalogs). 
@@ -340,6 +344,39 @@ Preset `diag_table` files, along with the YAML configuration files used to gener
 
 !!! warning
     MOM6 provides the ability to vertically remap diagnostics onto user-defined vertical coordinates, including density coordinates (check [MOM6 vertically remapped diagnostics documentation](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html#vertically-remapped-diagnostics) for more information). Remapping to density coordinates can add substantially to the runtime of the model. The default `diag_table` used by {{ model }} includes diagnostics remapped to density coordinates. These should be removed for performance reasons if they are not needed.
+
+
+### Start the run from a specific restart file
+
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+
+To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
+
+To do this, add a `restart:` [entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous), with a path to the folder containing existing restart files, to the `config.yaml` file in the experiment.
+Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
+```
+cd ~/access-om3
+payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}
+```
+<terminal-window>
+    <terminal-line data="input">cd ~/access-om3</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/{{example_folder}}</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
+    <terminal-line>binary path:  /scratch/.../access-om3/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../access-om3/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../access-om3/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../access-om3/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../access-om3/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/{{example_folder}}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/access-om3">cd {{example_folder}}</terminal-line>
+    <terminal-line data="input" directory="~/access-om3/{{example_folder}}"></terminal-line>
+</terminal-window>
+!!! warning
+    Note that the restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
+
 
 ### Modify PBS resources
 
@@ -369,8 +406,11 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
+To use a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+
+
 !!! warning
-    If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
 
@@ -390,13 +430,13 @@ sync:
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
-
 ### Saving model restarts
 
 By default, {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
 
-_Payu_ can be configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts from every fifth model run. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+_Payu_ is configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts which match the frequency set in the `restart_freq` field of `config.yaml`. This is commonly set to `1YS` to keep one restart per year, or `5YS` for a restart every fifth year. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+
 ### Other configuration options
 
 !!! warning
