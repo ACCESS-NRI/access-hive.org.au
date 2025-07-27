@@ -380,7 +380,7 @@ payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/acces
     In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
 
 !!! warning
-    The restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
+    The restart option used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
 
 ### Modify PBS resources
 
@@ -408,7 +408,7 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
-To use a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+For model configurations and output to be saved to a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
 
 !!! warning
     If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.

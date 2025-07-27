@@ -12,7 +12,7 @@
 
 !!! release
     This is a **Beta Release**.<br>
-    This model configuration and source code might change before the full release.<br>
+    Any model configuration and related source code mentioned in this page might change before the full release.<br>
     Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 <div class="text-card-group" markdown>
@@ -32,7 +32,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
-Detailed documentation on the configurations is provided at [https://access-om3-configs.access-hive.org.au](https://access-om3-configs.access-hive.org.au/).
+Detailed documentation on the configurations can be found in the [{{ model }} configuration documention]({{configs_docs}}).
 
 ## Prerequisites
 
@@ -114,7 +114,9 @@ To clone this branch to a location on _Gadi_ and navigate to that directory, run
     payu clone -b expt -B {{ example_branch }} {{ github_configs }} {{example_folder}}
     cd {{example_folder}}
 
-In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`. This will clone the latest release of the branch. Each release has a corresponding [git tag](https://github.com/ACCESS-NRI/access-om3-configs/tags), and if it is prefereble to clone an older release (to compare against older model output, for example), it is possible to clone from the tag. See the [payu documentation on using the -s flag](https://payu.readthedocs.io/en/stable/usage.html#clone-experiment) for details.
+Each released configuration has a [git tag](https://github.com/ACCESS-NRI/access-om3-configs/tags) and a corresponding branch. The branch always reflects the latest configuration release.<br>
+In the example above, the `payu clone` command clones the latest release of the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) to a directory named `{{example_folder}}` and creates a new experiment branch (`-b expt`).<br>
+If you want work with an older release (for example to compare against older model output), you can clone directly from the corresponding tag using the `-s TAG_NAME` payu option instead. For further details, refer to [_payu_ documentation on cloning an experiment](https://payu.readthedocs.io/en/stable/usage.html#clone-experiment).
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -322,7 +324,7 @@ Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` p
 
 The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
 !!! tip
-    To be able to continue an experiment run, writing restart files at the end of an experiment run is required. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. For long runs which are working well, some of these restarts can be automatically removed to save space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
+    To allow for an experiment to be carried out in multiple runs, or to be started from a previous run, the model must write restart files at the end of each run. This can be achieved by setting the `restart_*` fields so that their corresponding time is a divisor of the time corresponding to the `stop_*` values. For long-running and stable experiments, some of these restarts can be automatically removed to save space. See [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts) for further details.
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -349,7 +351,7 @@ By default, the configuration will start from a "cold-start", where initial cond
 
 To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
 
-To do this, add a `restart:` [entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous), with a path to the folder containing existing restart files, to the `config.yaml` file in the experiment.
+To do this, add a [`restart:` entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous) to the `config.yaml` file, specifying the path to a folder containing existing restart files.
 Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
 ```
 cd ~/access-om3
