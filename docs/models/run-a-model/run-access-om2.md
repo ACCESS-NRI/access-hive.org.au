@@ -4,7 +4,7 @@
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
-[model components]: /models/configurations/access-om/#model-components-{{model}}
+[model components]: /models/configurations/access-om/#model-components-{{{ model }}}
 [model configurations]: /models/configurations/access-om/#access-om2
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
@@ -24,7 +24,7 @@ The instructions below outline how to run {{ model }} using ACCESS-NRI's softwar
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
+All {{{ model }}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
 {{ model }} release notes are [available on the ACCESS-Hive Forum]({{release_notes}}) and are updated when new releases are made available.
 
@@ -72,7 +72,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
 
-For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
+For more information on {{ model }} configurations, check [{{{ model }}}][model configurations] page.
 
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
@@ -368,13 +368,32 @@ For example, to run a configuration for a total of 50 years with a `restart_peri
 
 By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
 
-To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
+To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
+
+To do this, add a [`restart:` entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous) to the `config.yaml` file, specifying the path to a folder containing existing restart files.
+Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command.
 
 For example, to get the `1deg_jra55_ryf` configuration and set its initial condition to the  `/g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040` restart file, run:
 
 ```
-payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs 1deg_jra55_ryf --restart /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040
+payu clone -b expt -B release-1deg_jra55_ryf -r /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040 {{ github_configs }} {{example_folder}} 
 ```
+
+<terminal-window>
+    <terminal-line data="input" directory="~/{{ model }}">payu clone -b expt -B {{ example_branch }} -r /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040 {{ github_configs }} {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from {{ github_configs }} to directory: .../{{ model }}/{{example_folder}}</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../{{ model }}</terminal-line>
+    <terminal-line>binary path:  /scratch/.../{{ model }}/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../{{ model }}/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../{{ model }}/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../{{ model }}/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../{{ model }}/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../{{ model }}/archive/{{ example_folder }}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}">cd {{ example_folder }}</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}/{{ example_folder }}"></terminal-line>
+</terminal-window>
 
 !!! warning
     In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
@@ -431,10 +450,10 @@ sync:
       - '*.nc.*'
       - 'iceh.????-??-??.nc'
 ```
-To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
+To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{{ model }}}/experiment_name/`.
 
 !!! admonition tip
-    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
+    The {{{ model }}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
 
 ### Saving model restarts
 
