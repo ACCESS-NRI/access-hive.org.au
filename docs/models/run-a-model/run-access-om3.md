@@ -6,7 +6,7 @@
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
-[model components]: /models/configurations/access-om/#model-components-{{model}}
+[model components]: /models/configurations/access-om/#model-components-{{{ model }}}
 [model configurations]: /models/configurations/access-om/#access-om3
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
@@ -30,7 +30,7 @@ The instructions below outline how to run {{ model }} using ACCESS-NRI's deploye
 
 If you are unsure whether {{ model }} is the right choice for your experiment, take a look at the overview of [ACCESS Models](/models).
 
-All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
+All {{{ model }}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
 Detailed documentation on the configurations can be found in the [{{ model }} configuration documention]({{configs_docs}}).
 
@@ -345,7 +345,9 @@ Preset `diag_table` files, along with the YAML configuration files used to gener
 
 !!! warning
     MOM6 provides the ability to vertically remap diagnostics onto user-defined vertical coordinates, including density coordinates (check [MOM6 vertically remapped diagnostics documentation](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html#vertically-remapped-diagnostics) for more information). Remapping to density coordinates can add substantially to the runtime of the model. The default `diag_table` used by {{ model }} includes diagnostics remapped to density coordinates. These should be removed for performance reasons if they are not needed.
-### Start the run from a specific restart file
+
+
+### Start the run from a specific restart file {: id='specific-restart'}
 
 By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
 
@@ -353,26 +355,27 @@ To extend or branch off from an existing experiment, the model can be configured
 
 To do this, add a [`restart:` entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous) to the `config.yaml` file, specifying the path to a folder containing existing restart files.
 Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
+
 ```
-cd ~/access-om3
-payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}
+payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 {{ github_configs }} {{example_folder}}
 ```
+
 <terminal-window>
-    <terminal-line data="input">cd ~/access-om3</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 https://github.com/ACCESS-NRI/access-om3-configs.git {{example_folder}}</terminal-line>
-    <terminal-line lineDelay=1000>Cloned repository from https://github.com/ACCESS-NRI/access-om3-configs.git to directory: .../access-om/{{example_folder}}</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}">payu clone -b expt -B {{ example_branch }} -r ~/{{ model }}/prev_expt/archive/restart010 {{ github_configs }} {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from {{ github_configs }} to directory: .../{{ model }}/{{example_folder}}</terminal-line>
     <terminal-line>Created and checked out new branch: expt</terminal-line>
-    <terminal-line>laboratory path:  /scratch/.../access-om3</terminal-line>
-    <terminal-line>binary path:  /scratch/.../access-om3/bin</terminal-line>
-    <terminal-line>input path:  /scratch/.../access-om3/input</terminal-line>
-    <terminal-line>work path:  /scratch/.../access-om3/work</terminal-line>
-    <terminal-line>archive path:  /scratch/.../access-om3/archive</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../{{ model }}</terminal-line>
+    <terminal-line>binary path:  /scratch/.../{{ model }}/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../{{ model }}/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../{{ model }}/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../{{ model }}/archive</terminal-line>
     <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
-    <terminal-line>Added 'restart: /scratch/.../access-om3/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
-    <terminal-line>Added archive symlink to /scratch/.../access-om3/archive/{{example_folder}}-expt-daeee7ff</terminal-line>
-    <terminal-line data="input" directory="~/access-om3">cd {{example_folder}}</terminal-line>
-    <terminal-line data="input" directory="~/access-om3/{{example_folder}}"></terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../{{ model }}/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../{{ model }}/archive/{{ example_folder }}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}">cd {{ example_folder }}</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}/{{ example_folder }}"></terminal-line>
 </terminal-window>
+
 !!! warning
     Note that the restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
 
@@ -427,7 +430,7 @@ sync:
     enable: False # set path below and change to true
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
 ```
-To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
+To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{{ model }}}/experiment_name/`.
 
 ### Saving model restarts
 
