@@ -303,7 +303,7 @@ The `config.yaml` file located in the _control_ directory is the _payu_ configur
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Change run length
+### Change run length and restart period
 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
@@ -322,9 +322,9 @@ The run length and restart period are controlled by a set of parameters in the `
 The run length is controlled  by`stop_option` and `stop_n`.<br>
 Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
 
-The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
+The restart period is controlled by `restart_option` and `restart_n`, which set *how often* restart files are written.<br>
 !!! tip
-    To allow for an experiment to be carried out in multiple runs, or to be started from a previous run, the model must write restart files at the end of each run. This can be achieved by setting the `restart_*` fields so that their corresponding time is a divisor of the time corresponding to the `stop_*` values. For long-running and stable experiments, some of these restarts can be automatically removed to save space. See [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts) for further details.
+    To be able to continue an experiment run, writing restart files at the end of an experiment run is required. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. For long runs which are working well, as an additional post-processing step, it is possible to "prune" restart files using Payu, see: [Pruning model restarts](/models/run-a-model/run-access-om3/#pruning-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -432,7 +432,7 @@ sync:
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{ model }}/experiment_name/`.
 
-### Saving model restarts
+### Pruning model restarts
 
 By default, {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
 Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
