@@ -2,12 +2,14 @@
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om3-configs" %}
 {% set example_branch = "release-MC_25km_jra_ryf" %}
 {% set example_folder = "25km_jra_ryf" %}
+{% set release_notes = "https://forum.access-hive.org.au/t/access-om3-release-information/4494"}
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
 [model components]: /models/configurations/access-om/#model-components-{{model}}
 [model configurations]: /models/configurations/access-om/#access-om3
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
+
 
 !!! release
     This is an **Alpha Release**.<br>
@@ -16,7 +18,9 @@
 
 <div class="text-card-group" markdown>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
 </div>
+
 
 # Run {{ model }}
 
