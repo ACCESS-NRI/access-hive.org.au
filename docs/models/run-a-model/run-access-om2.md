@@ -1,4 +1,5 @@
 {% set model = "ACCESS-OM2" %}
+{% set example_folder = "1deg_jra55_ryf" %}
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-om2-release-information/1602/" %}
 [cosima]: https://cosima.org.au
