@@ -24,7 +24,7 @@
 
 ## About
 
-{{ model }} is an Ocean Sea Ice model. More information is available in the [{{ model }} overview][model configurations].
+{{ model }} is an ocean-sea ice model. More information is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's deployed software, on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 

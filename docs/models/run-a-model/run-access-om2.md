@@ -19,7 +19,7 @@
 
 ## About
 
-{{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview][model configurations].
+{{ model }} is an ocean-sea ice model. More information is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -454,7 +454,7 @@ sync:
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
 !!! admonition tip
-    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
+    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the sea ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
 
 ### Saving model restarts
 
