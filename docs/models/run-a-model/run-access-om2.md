@@ -367,7 +367,7 @@ For example, to run a configuration for a total of 50 years with a `restart_peri
 
 ### Start the run from a specific restart file {: id='specific-restart'}
 
-By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are zero.
 
 To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
 

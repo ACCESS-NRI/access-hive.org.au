@@ -349,7 +349,7 @@ Preset `diag_table` files, along with the YAML configuration files used to gener
 
 ### Start the run from a specific restart file {: id='specific-restart'}
 
-By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are 0.
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are zero.
 
 To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
 
