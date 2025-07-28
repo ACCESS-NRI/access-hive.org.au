@@ -72,7 +72,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
 
-For more information on {{ model }} configurations, check [{{{ model }}}][model configurations] page.
+For more information on {{ model }} configurations, check [{{ model }}][model configurations] page.
 
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
