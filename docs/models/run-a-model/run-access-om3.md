@@ -430,7 +430,7 @@ sync:
     enable: False # set path below and change to true
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
 ```
-To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{{ model }}}/experiment_name/`.
+To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{ model }}/experiment_name/`.
 
 ### Saving model restarts
 
