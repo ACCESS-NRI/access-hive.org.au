@@ -105,6 +105,13 @@ The `xp65` `conda/analysis3` environment follows the versioning format `conda/an
 
 When [manually loading the environment](#manually-load-the-environment) or [within a PBS job](#use-the-environment-within-a-pbs-job), you can load a particular version by explicitly specifying its release year and month (e.g., to load the April 2025 environment, specify `conda/analysis3-25.04`).<br>
 If you do not specify a version (e.g. using `conda/analysis3` rather than `conda/analysis3-YY.MM`) the latest (i.e., previous month's) frozen environment version will be loaded. We encourage those who want the newest features to help us test the current version by explicitly loading the current month’s environment. <br>
+ <terminal-window>
+    <terminal-line data="input">module use /g/data/xp65/public/modules</terminal-line>
+    <terminal-line data="input">module load conda/analysis3</terminal-line>
+    <terminal-line></terminal-line>
+    <terminal-line>Loading conda/analysis3-25.06</terminal-line>
+    <terminal-line>    Loading requirement: singularity</terminal-line>
+  </terminal-window>
 
 !!! note 
     For _rose/cylc_ workflows, it is not recommended to specify a particular version of the environment (i.e. use `conda/analysis3` and not `conda/analysis3-YY.MM`).
