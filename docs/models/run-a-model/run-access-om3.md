@@ -428,6 +428,7 @@ This feature is controlled by the following section in the `config.yaml` file:
 # longer term storage
 sync:
     enable: False # set path below and change to true
+    restart: True
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
 ```
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{ model }}/experiment_name/`.
@@ -437,7 +438,26 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
 However, restart files can occupy significant disk space, and keeping all of them at the end of a whole experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature. This allows you to keep all the restart files during an experiment (constituted by multiple runs) in case of a crash, while reducing disk usage after the whole experiment completes by automatically removing redundant restart files.
 
-_Payu_ is configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts which match the frequency set in the `restart_freq` field of `config.yaml`. This is commonly set to `1YS` to keep one restart per year, or `5YS` for a restart every fifth year. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+_Payu_ is configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts which match the frequency set in the `restart_freq` field of `config.yaml`. This is commonly set to `1YS` to keep one restart per year, or `5YS` for a restart every fifth year. 
+
+The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
+This can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
+
+- `YS` &rarr; start of the year
+- `MS` &rarr; start of the month
+- `D` &rarr; day
+- `H` &rarr; hour
+- `T` &rarr; minute
+- `S` &rarr; second
+
+For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
+```yaml
+restart_freq: '50YS'
+```
+
+The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
+
+For more information, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
 
 ### Other configuration options
 
