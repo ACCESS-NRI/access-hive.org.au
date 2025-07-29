@@ -181,7 +181,7 @@ qstat <job-ID>
     <terminal-line data="input">qstat &lt;job-ID&gt;</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}     &lt;$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
 </terminal-window>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
@@ -193,7 +193,7 @@ qstat
     <terminal-line data="input">qstat</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;\$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}     &lt;\$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
