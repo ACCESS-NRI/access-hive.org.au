@@ -193,9 +193,9 @@ qstat
     <terminal-line data="input">qstat</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;/$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;/$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;/$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
 
 The default name of your job is determined by the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file (for [this](https://github.com/ACCESS-NRI/access-om3-configs/blob/release-MC_25km_jra_ryf/config.yaml) configuration it is `025km_jra55do_ryf`).
