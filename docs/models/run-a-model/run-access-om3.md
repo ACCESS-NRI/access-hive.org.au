@@ -324,7 +324,7 @@ Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` p
 
 The restart period is controlled by `restart_option` and `restart_n`, which set *how often* restart files are written.<br>
 !!! tip
-    To be able to continue an experiment run, writing restart files at the end of an experiment run is required. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. For long runs which are working well, as an additional post-processing step, it is possible to "prune" restart files using Payu, see: [Pruning model restarts](/models/run-a-model/run-access-om3/#pruning-model-restarts).
+    To be able to resume each run from a previous state, the model must save restart files at the end of each run. To achieve this, the `restart_*` fields should be set as a divisor of the time period defined by the `stop_*` values. For long and stable runs, disk usage can be reduced by pruning older restart files as a _payu_ post-processing step. For details, see: [Pruning model restarts](/models/run-a-model/run-access-om3/#pruning-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -434,8 +434,8 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 
 ### Pruning model restarts
 
-By default, {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
-Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
+By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
+However, restart files can occupy significant disk space, and keeping all of them at the end of a whole experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature. This allows you to keep all the restart files during an experiment (constituted by multiple runs) in case of a crash, while reducing disk usage after the whole experiment completes by automatically removing redundant restart files.
 
 _Payu_ is configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts which match the frequency set in the `restart_freq` field of `config.yaml`. This is commonly set to `1YS` to keep one restart per year, or `5YS` for a restart every fifth year. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
 
