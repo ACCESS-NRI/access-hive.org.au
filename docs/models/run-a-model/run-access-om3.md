@@ -301,7 +301,7 @@ Model components are separated into subdirectories within the output and restart
 This section describes how to modify {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.
 
-The `config.yaml` file located in the _control_ directory is the _payu_ configuration, which controls the configuration of the experimenter manager. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
+The `config.yaml` file located in the _control_ directory is the _payu_ configuration, which controls the configuration of the experiment manager. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
@@ -326,7 +326,7 @@ Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` p
 
 The restart period is controlled by `restart_option` and `restart_n`, which set *how often* restart files are written.<br>
 !!! tip
-    To be able to resume each run from a previous state, the model must save restart files at the end of each run. To achieve this, the `restart_*` fields should be set as a divisor of the time period defined by the `stop_*` values. For long and stable runs, disk usage can be reduced by pruning older restart files as a _payu_ post-processing step. For details, see: [Pruning model restarts](/models/run-a-model/run-access-om3/#pruning-model-restarts).
+    To be able to resume each run from a previous state, the model must save restart files at the end of each run. To achieve this, the `restart_*` fields should be set as a divisor of the time period defined by the `stop_*` values. For long and stable runs, disk usage can be reduced by pruning older restart files as a _payu_ post-processing step. For details, see [Pruning model restarts](/models/run-a-model/run-access-om3/#pruning-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -341,7 +341,7 @@ For example, to run a configuration for 2 months and write restart files at the 
 
 ### Configuring MOM6 diagnostics
 
-MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable yaml file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g., inclusion in Intake catalogs). 
+MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable YAML file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g., inclusion in Intake catalogs). 
 
 Preset `diag_table` files, along with the YAML configuration files used to generate them, can be found in the `diagnostic_profiles` subdirectory of _payu_'s _control_ directory. To create and use a custom `diag_table`, follow the instructions in `diagnostic_profiles/README.md`.
 
