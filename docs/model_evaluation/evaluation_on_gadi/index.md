@@ -46,4 +46,10 @@ While evaluation and diagnostics can be described separately they often overlap 
         </div>
         <!-- <div class="card-text-container bold">METplus</div> -->
     </a>
+    <a href="/getting_started/environments" class="vertical-card aspect-ratio2to1">
+        <div class="card-image-container">
+            <img src="/assets/python_logo.png" alt="Python environment" class="img-contain white-background" ></img>
+        </div>
+        <div class="card-text-container bold">conda/analysis3 Environment</div>
+    </a>
 </div>

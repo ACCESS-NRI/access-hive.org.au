@@ -1,5 +1,7 @@
 # Data
 
+This sections describes some concepts and tools mainly around model output data. This is important to understand to help you find the information you are interested in. Data standards are also important for sharing, collaboration, cataloguing and enable the use of outputs. This will allow for model comparisons and evaluation of results
+
 
 <div class="card-container">
     <a href="/model_evaluation/data/data_format" class="vertical-card aspect-ratio1to1">
