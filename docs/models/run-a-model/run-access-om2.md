@@ -460,12 +460,15 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 ### Pruning model restarts
 
 By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
-However, restart files can occupy significant disk space, and keeping all of them at the end of a whole experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature. This allows you to keep all the restart files during an experiment (constituted by multiple runs) in case of a crash, while reducing disk usage after the whole experiment completes by automatically removing redundant restart files.
+However, restart files can occupy significant disk space, and keeping all of them throughout an entire experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature, controlled by the `restart_freq` field of the `config.yaml`.
+By default, every `restart_freq` _payu_ removes intermediate restart files, keeping only: 
+- the two most recent restarts
+- restarts corresponding to the `restart_freq` interval
+For example, a `restart_freq` set to `1YS` would keep the restart files at the end of each model year, whereas `restart_freq` set to `5YS` would keep those at the end of every fifth model year.
+This approach helps reduce disk space while maintaining useful restart points across long experiments, especially useful in case of unexpected crashes.
 
-_Payu_ is configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts which match the frequency set in the `restart_freq` field of `config.yaml`. This is commonly set to `1YS` to keep one restart per year, or `5YS` for a restart every fifth year. 
 
-The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
-This can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
+The `restart_freq` field in the `config.yaml` can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
 
 - `YS` &rarr; start of the year
 - `MS` &rarr; start of the month
