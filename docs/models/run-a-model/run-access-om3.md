@@ -1,28 +1,32 @@
 {% set model = "ACCESS-OM3" %}
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om3-configs" %}
+{% set configs_docs = "https://access-om3-configs.access-hive.org.au" %}
+{% set release_notes = "https://forum.access-hive.org.au/t/access-om2-release-information/4494/" %}
 {% set example_branch = "release-MC_25km_jra_ryf" %}
 {% set example_folder = "25km_jra_ryf" %}
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
-[model components]: /models/configurations/access-om/#model-components-{{model}}
+[model components]: /models/configurations/access-om/#model-components-{{ model }}
 [model configurations]: /models/configurations/access-om/#access-om3
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
 !!! release
-    This is an **Alpha Release**.<br>
-    These model configurations and source code might change before the full release.<br>
+    This is a **Beta Release**.<br>
+    Any model configuration and related source code mentioned in this page might change before the full release.<br>
     Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators. For a supported and validated model and configuration, see [Run ACCESS-OM2](/models/run-a-model/run-access-om2) instead.
 
 <div class="text-card-group" markdown>
 [:fontawesome-brands-github:{: class="twemoji icon-before-text"} {{ model }} configurations]({{github_configs}}){: class="text-card"}
+[![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{configs_docs}}){: class="text-card"}
+[:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
 </div>
 
 # Run {{ model }}
 
 ## About
 
-{{ model }} is an Ocean Sea Ice model. More information is available in the [{{ model }} overview][model configurations].
+{{ model }} is an ocean-sea ice model. More information is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's deployed software, on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -30,6 +34,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
+Detailed documentation on the configurations can be found in the [{{ model }} configuration documention]({{configs_docs}}).
 
 ## Prerequisites
 
@@ -62,7 +67,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
     
     <terminal-window>
         <terminal-line data="input">payu --version</terminal-line>
-        <terminal-line lineDelay="1000">1.1.6</terminal-line>
+        <terminal-line lineDelay="1000">1.1.7</terminal-line>
     </terminal-window>
 
 ----------------------------------------------------------------------------------------
@@ -100,9 +105,9 @@ If you want to modify your configuration, refer to [Edit {{ model }} configurati
 
 ### Get {{ model }} configuration
 
-All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository and the ACCESS-HIVE Docs [{{model}}][model configurations] page.
+All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository; released configurations (`release-` in the branch name) are tested and supported by ACCESS-NRI. More information about the available configurations and the naming scheme of the branches can be found in the  [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
-The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6 at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}).
+The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6) at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}). 
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
     
@@ -111,7 +116,9 @@ To clone this branch to a location on _Gadi_ and navigate to that directory, run
     payu clone -b expt -B {{ example_branch }} {{ github_configs }} {{example_folder}}
     cd {{example_folder}}
 
-In the example above the `payu clone` command clones the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) as a new experiment branch (`-b expt`) to a directory named `{{example_folder}}`.
+Each released configuration has a [git tag](https://github.com/ACCESS-NRI/access-om3-configs/tags) and a corresponding branch. The branch always reflects the latest configuration release.<br>
+In the example above, the `payu clone` command clones the latest release of the 25km repeat-year JRA55 MOM6 (`M`) CICE6 (`C`) configuration (` -B {{ example_branch }}`) to a directory named `{{example_folder}}` and creates a new experiment branch (`-b expt`).<br>
+If you want work with an older release (for example to compare against older model output), you can clone directly from the corresponding tag using the `-s TAG_NAME` payu option instead. For further details, refer to [_payu_ documentation on cloning an experiment](https://payu.readthedocs.io/en/stable/usage.html#clone-experiment).
 !!! admonition tip
     Anyone using a configuration is advised to clone only a single branch (as shown in the example above) and not the entire repository.
 
@@ -174,7 +181,7 @@ qstat <job-ID>
     <terminal-line data="input">qstat &lt;job-ID&gt;</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}     &lt;$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
 </terminal-window>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
@@ -186,9 +193,9 @@ qstat
     <terminal-line data="input">qstat</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      {{example_folder}}     &lt;\$USER&gt;           &lt;time&gt;   R normalsr-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
 
 The default name of your job is determined by the `jobname` in the [PBS resources section](#modify-pbs-resources) of the `config.yaml` file (for [this](https://github.com/ACCESS-NRI/access-om3-configs/blob/release-MC_25km_jra_ryf/config.yaml) configuration it is `025km_jra55do_ryf`).
@@ -294,11 +301,11 @@ Model components are separated into subdirectories within the output and restart
 This section describes how to modify {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.
 
-The `config.yaml` file located in the _control_ directory is the _payu_ configuration, which controls the configuration of the experimenter manager. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
+The `config.yaml` file located in the _control_ directory is the _payu_ configuration, which controls the configuration of the experiment manager. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
 
 To find out more about configuration settings for the `config.yaml` file, refer to [how to configure your experiment with payu](https://payu.readthedocs.io/en/latest/config.html).
 
-### Change run length
+### Change run length and restart period
 
 One of the most common changes is to adjust the duration of the model run.<br>
 For example, when debugging changes to a model, it is common to reduce the run length to minimise resource consumption and return faster feedback on changes.
@@ -317,9 +324,9 @@ The run length and restart period are controlled by a set of parameters in the `
 The run length is controlled  by`stop_option` and `stop_n`.<br>
 Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
 
-The restart period is controlled by `restart_option` and `restart_n`, which set how often restart files are written.<br>
+The restart period is controlled by `restart_option` and `restart_n`, which set *how often* restart files are written.<br>
 !!! tip
-    It is generally recommended to write restart files at the end of an experiment run. To achieve this, the `restart_*` fields should be set as a divisor of the corresponding `stop_*` values. Having said this, sometimes it is sensible to have fewer restarts to save stroage space, see: [Saving model restarts](/models/run-a-model/run-access-om3/#saving-model-restarts).
+    To be able to resume each run from a previous state, the model must save restart files at the end of each run. To achieve this, the `restart_*` fields should be set as a divisor of the time period defined by the `stop_*` values. For long and stable runs, disk usage can be reduced by pruning older restart files as a _payu_ post-processing step. For details, see [Pruning model restarts](/models/run-a-model/run-access-om3/#pruning-model-restarts).
 
 For example, to run a configuration for 2 months and write restart files at the end of the run, set the following in the `~/access-om3/{{example_folder}}/nuopc.runconfig` file:
 
@@ -334,12 +341,46 @@ For example, to run a configuration for 2 months and write restart files at the 
 
 ### Configuring MOM6 diagnostics
 
-MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable yaml file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g., inclusion in Intake catalogs). 
+MOM6 diagnostic output is configured using the `diag_table` file. However, users should not edit the `diag_table` file directly. Instead, a tool is provided to generate the `diag_table` from an easily editable YAML file. This tool ensures that the `diag_table` requests MOM6 output that is formatted consistently and is suitable for postprocessing (e.g., inclusion in Intake catalogs). 
 
 Preset `diag_table` files, along with the YAML configuration files used to generate them, can be found in the `diagnostic_profiles` subdirectory of _payu_'s _control_ directory. To create and use a custom `diag_table`, follow the instructions in `diagnostic_profiles/README.md`.
 
 !!! warning
     MOM6 provides the ability to vertically remap diagnostics onto user-defined vertical coordinates, including density coordinates (check [MOM6 vertically remapped diagnostics documentation](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html#vertically-remapped-diagnostics) for more information). Remapping to density coordinates can add substantially to the runtime of the model. The default `diag_table` used by {{ model }} includes diagnostics remapped to density coordinates. These should be removed for performance reasons if they are not needed.
+
+
+### Start the run from a specific restart file {: id='specific-restart'}
+
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are zero.
+
+To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
+
+To do this, add a [`restart:` entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous) to the `config.yaml` file, specifying the path to a folder containing existing restart files.
+Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command: 
+
+```
+payu clone -b expt -B {{ example_branch }} -r ~/access-om3/prev_expt/archive/restart010 {{ github_configs }} {{example_folder}}
+```
+
+<terminal-window>
+    <terminal-line data="input" directory="~/{{ model }}">payu clone -b expt -B {{ example_branch }} -r ~/{{ model }}/prev_expt/archive/restart010 {{ github_configs }} {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from {{ github_configs }} to directory: .../{{ model }}/{{example_folder}}</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../{{ model }}</terminal-line>
+    <terminal-line>binary path:  /scratch/.../{{ model }}/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../{{ model }}/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../{{ model }}/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../{{ model }}/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../{{ model }}/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../{{ model }}/archive/{{ example_folder }}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}">cd {{ example_folder }}</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}/{{ example_folder }}"></terminal-line>
+</terminal-window>
+
+!!! warning
+    Note that the restart flag used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
+
 
 ### Modify PBS resources
 
@@ -369,8 +410,11 @@ For example, to run {{ model }} under the `ol01` project (COSIMA Working Group),
 project: ol01
 ```
 
+To use a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+
+
 !!! warning
-    If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
     <br><br>
 
@@ -386,17 +430,41 @@ This feature is controlled by the following section in the `config.yaml` file:
 # longer term storage
 sync:
     enable: False # set path below and change to true
+    restart: True
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
 ```
-To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
+To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{ model }}/experiment_name/`.
+
+### Pruning model restarts
+
+By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
+However, restart files can occupy significant disk space, and keeping all of them throughout an entire experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature, controlled by the `restart_freq` field of the `config.yaml`.
+By default, every `restart_freq` _payu_ removes intermediate restart files, keeping only: 
+- the two most recent restarts
+- restarts corresponding to the `restart_freq` interval
+For example, a `restart_freq` set to `1YS` would keep the restart files at the end of each model year, whereas `restart_freq` set to `5YS` would keep those at the end of every fifth model year.
+This approach helps reduce disk space while maintaining useful restart points across long experiments, especially useful in case of unexpected crashes.
 
 
-### Saving model restarts
+The `restart_freq` field in the `config.yaml` can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
 
-By default, {{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
-Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
+- `YS` &rarr; start of the year
+- `MS` &rarr; start of the month
+- `D` &rarr; day
+- `H` &rarr; hour
+- `T` &rarr; minute
+- `S` &rarr; second
 
-_Payu_ can be configured to prune the number of restart files kept. By default, _payu_ will only keep most recent couple of restarts and the restarts from every fifth model run. For more information and to change this setting, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
+```yaml
+restart_freq: '50YS'
+```
+
+The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
+
+For more information, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
+
+
 ### Other configuration options
 
 !!! warning
