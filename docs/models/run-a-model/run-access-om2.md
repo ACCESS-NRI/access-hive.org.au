@@ -1,4 +1,5 @@
 {% set model = "ACCESS-OM2" %}
+{% set example_folder = "1deg_jra55_ryf" %}
 {% set github_configs = "https://github.com/ACCESS-NRI/access-om2-configs" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-om2-release-information/1602/" %}
 [cosima]: https://cosima.org.au
@@ -18,7 +19,7 @@
 
 ## About
 
-{{ model }} is an Ocean Sea-Ice model. More information is available in the [{{ model }} overview][model configurations].
+{{ model }} is an ocean-sea ice model. More information is available in the [{{ model }} overview][model configurations].
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's software deployment pipeline, specifically designed to run on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
@@ -30,6 +31,10 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 
 
 ## Prerequisites
+
+!!! warning
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
+
 
 - **NCI Account**<br> 
     Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
@@ -68,7 +73,7 @@ All {{model}} configurations are open source, licensed under [CC BY 4.0](https:/
 All released {{ model }} configurations are available from the [{{ model }} configs]({{ github_configs }}) GitHub repository.<br>
 Released configurations are tested and supported by ACCESS-NRI, as an adaptation of those originally developed by [COSIMA][cosima].
 
-For more information on {{ model }} configurations, check [{{model}}][model configurations] page.
+For more information on {{ model }} configurations, check [{{ model }}][model configurations] page.
 
 More information about the available experiments and the naming scheme of the branches can also be found in the [{{ model }} configs]({{ github_configs }}) GitHub repository.
 
@@ -186,16 +191,16 @@ qstat <job-ID>
 
 To show the status of all your submitted [PBS jobs][PBS job], you can execute the following command:
 ```
-qstat -u $USER
+qstat
 ```
 
 <terminal-window>
-    <terminal-line data="input">qstat -u $USER</terminal-line>
+    <terminal-line data="input">qstat</terminal-line>
     <terminal-line linedelay=500 class="keep-blanks">Job id                 Name             User              Time Use S Queue</terminal-line>
     <terminal-line linedelay=0 class="keep-blanks">---------------------  ---------------- ----------------  -------- - -----</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      1deg_jra55_ryf   &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
-    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      1deg_jra55_ryf   &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
+    <terminal-line linedelay=0 class="keep-blanks">&lt;job-ID&gt;.gadi-pbs      &lt;other-job-name&gt; &lt;\$USER&gt;           &lt;time&gt;   R normal-exec</terminal-line>
 </terminal-window>
 
 The default name of your job is the name of the _payu_ _control_ directory (`1deg_jra55_ryf` in the example above).<br>
@@ -362,16 +367,40 @@ For example, to run a configuration for a total of 50 years with a `restart_peri
 
 ### Start the run from a specific restart file {: id='specific-restart'}
 
-To start the run with the initial conditions coming from a specific restart file, you can add the `--restart` option when obtaining the model configuration through the `payu clone ...` command.
+By default, the configuration will start from a "cold-start", where initial conditions are set based on observations of salinity and temperature, but all other model variables are zero.
+
+To extend or branch off from an existing experiment, the model can be configured to start from an existing restart file.
+
+To do this, add a [`restart:` entry](https://payu.readthedocs.io/en/latest/config.html#miscellaneous) to the `config.yaml` file, specifying the path to a folder containing existing restart files.
+Or, to do this automatically when setting up an experiment, add the `-r` flag to the `payu clone` command.
 
 For example, to get the `1deg_jra55_ryf` configuration and set its initial condition to the  `/g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040` restart file, run:
 
 ```
-payu clone -b expt -B release-1deg_jra55_ryf https://github.com/ACCESS-NRI/access-om2-configs 1deg_jra55_ryf --restart /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040
+payu clone -b expt -B release-1deg_jra55_ryf -r /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040 {{ github_configs }} {{example_folder}} 
 ```
+
+<terminal-window>
+    <terminal-line data="input" directory="~/{{ model }}">payu clone -b expt -B {{ example_branch }} -r /g/data/ik11/outputs/access-om2/1deg_era5_iaf/restart040 {{ github_configs }} {{example_folder}}</terminal-line>
+    <terminal-line lineDelay=1000>Cloned repository from {{ github_configs }} to directory: .../{{ model }}/{{example_folder}}</terminal-line>
+    <terminal-line>Created and checked out new branch: expt</terminal-line>
+    <terminal-line>laboratory path:  /scratch/.../{{ model }}</terminal-line>
+    <terminal-line>binary path:  /scratch/.../{{ model }}/bin</terminal-line>
+    <terminal-line>input path:  /scratch/.../{{ model }}/input</terminal-line>
+    <terminal-line>work path:  /scratch/.../{{ model }}/work</terminal-line>
+    <terminal-line>archive path:  /scratch/.../{{ model }}/archive</terminal-line>
+    <terminal-line>Updated metadata. Experiment UUID: daeee7ff-07e4-4f93-823b-cb7c6e4bdb6e</terminal-line>
+    <terminal-line>Added 'restart: /scratch/.../{{ model }}/archive/prev_expt/restart010' to configuration file: config.yaml</terminal-line>
+    <terminal-line>Added archive symlink to /scratch/.../{{ model }}/archive/{{ example_folder }}-expt-daeee7ff</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}">cd {{ example_folder }}</terminal-line>
+    <terminal-line data="input" directory="~/{{ model }}/{{ example_folder }}"></terminal-line>
+</terminal-window>
 
 !!! warning
     In some cases, if the supplied restart file is not fully compatible with the model configuration, experiments using a custom restart file may require additional manual adjustments to run correctly.
+
+!!! warning
+    The restart option used here will only be applied if there is no restart directory in archive, and so does not have to be removed for subsequent submissions. See [Payu docs](https://payu.readthedocs.io/en/stable/config.html#miscellaneous) for further details.
 
 ### Modify PBS resources
 
@@ -393,17 +422,17 @@ mem: 1000GB
 
 These lines can be edited to change the [PBS directives](https://opus.nci.org.au/display/Help/PBS+Directives+Explained) for the [PBS job][PBS job].
 
-For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` wih `ol01`:
+For example, to run {{ model }} under the `ol01` project (COSIMA Working Group), uncomment the line beginning with `# project` by deleting the `#` symbol and replace `PROJECT_CODE` with `ol01`:
 
 ```yaml
 project: ol01
 ```
 
+For model configurations and output to be saved to a `/scratch` storage allocation other than `project` (or your default if `project` is not set) then also set `shortpath` (e.g. to the desired `/scratch/PROJECT_CODE`). 
+
 !!! warning
-    If projects other than `ol01` are used to run {{ model }} configuration, then the `shortpath` field also needs to be uncommented and the path to the desired `/scratch/PROJECT_CODE` added.<br>
+    If changing projects during an experiment, set the `shortpath` field so that it's consistent for all runs of an experiment.
     Doing this will make sure the same `/scratch` location is used for the _laboratory_, regardless of which project is used to run the experiment.
-    <br><br>
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
 
 ### Syncing output data
 
@@ -417,6 +446,7 @@ This feature is controlled by the following section in the `config.yaml` file:
 # longer term storage
 sync:
     enable: False # set path below and change to true
+    restart: True
     path: none # Set to location on /g/data or a remote server and path (rsync syntax)
     exclude:
       - '*.nc.*'
@@ -425,15 +455,20 @@ sync:
 To enable syncing, change `enable` to `True`, and set `path` to a location on `/g/data`, where _payu_ will copy output and restart folders. A sensible `path` could be: `/g/data/$PROJECT/$USER/{{model}}/experiment_name/`.
 
 !!! admonition tip
-    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the Sea-Ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
+    The {{model}} default configurations include a [userscript](#userscripts) in the _sync_ step that concatenates daily history/diagnostic output from the sea ice model (CICE5) into monthly files. This speeds up access and saves storage space, but will only run if _sync_ is enabled.
 
-### Saving model restarts
+### Pruning model restarts
 
-{{ model }} outputs restart files after every run to allow for subsequent runs to start from a previously saved model state.<br>
-Restart files can occupy a significant amount of disk space, and keeping a lot of them is often not necessary.
+By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
+However, restart files can occupy significant disk space, and keeping all of them throughout an entire experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature, controlled by the `restart_freq` field of the `config.yaml`.
+By default, every `restart_freq` _payu_ removes intermediate restart files, keeping only: 
+- the two most recent restarts
+- restarts corresponding to the `restart_freq` interval
+For example, a `restart_freq` set to `1YS` would keep the restart files at the end of each model year, whereas `restart_freq` set to `5YS` would keep those at the end of every fifth model year.
+This approach helps reduce disk space while maintaining useful restart points across long experiments, especially useful in case of unexpected crashes.
 
-The `restart_freq` field in the `config.yaml` file specifies a strategy for retaining restart files.<br>
-This can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
+
+The `restart_freq` field in the `config.yaml` can either be a number (in which case every _nth_ restart file is retained), or one of the following pandas-style datetime frequencies:
 
 - `YS` &rarr; start of the year
 - `MS` &rarr; start of the month
