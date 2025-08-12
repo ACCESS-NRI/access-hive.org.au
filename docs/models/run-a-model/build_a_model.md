@@ -701,7 +701,7 @@ Debugging is an important build of the development process. Using a debugger can
 To debug a model through the [linaro-forge](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...) debugger, some minor changes to the build are required. First, the version of OpenMPI must be changed to ```openmpi/4.1.3```. Second, the compilation options must be modified to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model ```specs``` in the ```spack.yaml```:
 
 * ```fflags=-0O -g -traceback```
-* ```cflag=-0O -g -fno-omit-frame-pointer```
+* ```cflags=-0O -g -fno-omit-frame-pointer```
 
 Once this change has been made, concretize the build again with ```spack concretize -f```. In a typical install, Spack will clean up the code used to compile the executables, so the debugger will not be able to locate the original source code during debugging. To prevent this, use ```spack install --keep-stage```, which will prevent clean up of the source code.
 
