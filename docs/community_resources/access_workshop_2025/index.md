@@ -21,7 +21,7 @@ Setup requirements for the Training Day can be found on the Training Materials p
             <img src="/assets/ACCESS_icon_training.png" class="img-contain"></img> 
         </div>
         <div class="card-text-container">
-            <span class="bold" >Training materials</span>
+            <span class="bold" >Training Day materials</span>
         </div>
     </a>
 </div>
