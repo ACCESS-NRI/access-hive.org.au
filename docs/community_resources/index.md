@@ -1,6 +1,12 @@
 # Community Resources
 
 <div class="card-container">
+    <a href="/community_resources/access_training_day_2025.md" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img class="white-background" src="/assets/community_resources_assets/access-training-day-2025.jpeg" alt="ACCESS Training Day 2025">
+        </div>
+        <div class="card-text-container bold">ACCESS Training Day 2025</div>
+    </a>
     <a href="/community_resources/workshops_events_archive" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="white-background" src="/assets/workshop_and_events.jpeg" alt="ACCESS Workshop 2023">
