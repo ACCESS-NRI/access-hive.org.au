@@ -4,6 +4,8 @@
 
 **Location:** Melbourne Connect
 
+[More information about the Workshop can be found here](https://www.access-nri.org.au/access-community-workshop-2025/)
+
 Setup requirements for the Training Day can be found on the Training Materials page linked below.
 
 ## Training Day
