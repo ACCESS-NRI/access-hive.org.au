@@ -6,6 +6,7 @@
 
 Setup requirements can be found on the Training Materials page linked below.
 
+## Training Day
 <div class="card-container">
     <a href="https://www.access-nri.org.au/access-community-workshop-2025/training-day-program/" class="horizontal-card small-card" target="_blank">
         <div class="card-image-container">
@@ -25,6 +26,8 @@ Setup requirements can be found on the Training Materials page linked below.
     </a>
 </div>
 <br>
+
+## Main Workshop 
 <div class="card-container">
     <a href="https://www.access-nri.org.au/access-community-workshop-2025/main-workshop-program/" class="horizontal-card small-card" target="_blank">
         <div class="card-image-container">
