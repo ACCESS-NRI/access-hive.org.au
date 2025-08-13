@@ -1,6 +1,6 @@
 ---
-name: Simple Issue Template
-about: Describe this issue template's purpose here.
+name: New Issue Template
+about: Simple template to help users get started.
 title: ''
 labels: ''
 assignees: ''
