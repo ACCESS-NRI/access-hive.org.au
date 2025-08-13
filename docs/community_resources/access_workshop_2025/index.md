@@ -4,7 +4,7 @@
 
 **Location:** Melbourne Connect
 
-Setup requirements can be found on the Training Materials page linked below.
+Setup requirements for the Training Day can be found on the Training Materials page linked below.
 
 ## Training Day
 <div class="card-container">
