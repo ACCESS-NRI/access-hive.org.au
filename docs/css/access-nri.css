@@ -1356,6 +1356,11 @@ img.intro-img {
   object-fit: contain !important;
 }
 
+/* Aligns the object to the left edge of the container */
+.align-left {
+  object-position: left 
+}
+
 .nri-link-color {
   color: var(--md-typeset-a-color);
 }
