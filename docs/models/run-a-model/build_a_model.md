@@ -704,13 +704,15 @@ Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model)
 ```
  spack:
    specs:
--    - access-esm1p5@git.2024.12.0
-+    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer"
+<span style="color:red">-    - access-esm1p5@git.2024.12.0</span>
+<span style="color:green">+    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer"</span>
+
 ...
-     openmpi:
+
+    openmpi:
        require:
--        - '@4.0.2'
-+        - '@4.1.3'
+<span style="color:red">-        - '@4.0.2'<\span>
+<span style="color:green">+        - '@4.1.3'<\span>
 ```
 
 Once this change has been made, concretize the environment by running:
