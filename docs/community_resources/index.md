@@ -3,7 +3,7 @@
 <div class="card-container">
     <a href="/community_resources/access_workshop_2025" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img class="white-background img-cover align-left" style="object-position: left;" src="/assets/community_resources_assets/access-training-day-2025.jpeg" alt="ACCESS Training Day 2025">
+            <img class="white-background img-cover align-left" style="object-position: left;" src="/assets/community_resources_assets/access-workshop-2025.jpeg" alt="ACCESS Training Day 2025">
         </div>
         <div class="card-text-container bold">ACCESS Community Workshop 2025</div>
     </a>
