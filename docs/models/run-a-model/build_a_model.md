@@ -697,21 +697,22 @@ To debug a model through the _Linaro_ debugger, the following changes to the bui
 
 1. Change the version of OpenMPI to `openmpi/4.1.3`.
 2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model `specs` field in the `spack.yaml`:
-    - `fflags=-0O -g -traceback`
-    - `cflags=-0O -g -fno-omit-frame-pointer`
-    - `build_type=Debug`
+    - `fflags="-0O -g -traceback"`
+    - `cflags="-0O -g -fno-omit-frame-pointer"`
+    - `build_type="Debug"`
 
 Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model), the changes to the `spack.yaml` are:
 
-<pre><code><spack class="spack-grey bold">...</spack>
- spack:
-   specs:
-    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer build_type=Debug"
-...
-    openmpi:
-       require:
-        - '@4.1.3'
-</code></pre>
+```yaml
+spack:
+  specs:
+    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer" build_type="Debug"
+packages:
+  ...
+  openmpi:
+    require:
+      - '@4.1.3'
+```
 
 Once this change has been made, concretize the environment by running:
 
@@ -756,24 +757,24 @@ Before running the model, set up the remote client for _Linaro Forge_ by followi
 !!! tip
     Alternatively, it is possible to debug from an interactive job following the [instructions from NCI](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...). While in an interactive job, call `payu-run` instead of `payu run`.
 
-In the above example, taking one of the release [_ACCESS_ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the changes are:
+In the above example, taking one of the release [_ACCESS ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the changes are:
 
 ```yaml
 submodels:
     name: atmosphere
     model: um
     ncpus: 240
-    exe: <path_to_UM7_build>/bin/um_hg3.exe
+    exe: <path_to_UM7_install>/bin/um_hg3.exe
 ...
     name: ocean
     model: mom
     ncpus: 180
-    exe: <path_to_MOM_build>/bin/fms_ACCESS-CM.x
+    exe: <path_to_MOM_install>/bin/fms_ACCESS-CM.x
 ...
     name: ice
     model: cice
     ncpus: 12
-    exe: <path_to_CICE_build>/bin/cice_access_360x300_12x1_12p.exe
+    exe: <path_to_CICE_install>/bin/cice_access_360x300_12x1_12p.exe
 ...
 manifest:
   reproduce:
