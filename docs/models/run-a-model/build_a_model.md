@@ -746,6 +746,7 @@ Before running the model, set up the remote client for _Linaro Forge_ by followi
     This commands lists the installation directories for each package in the environment. The generated executables will be located in the installation directories at `bin/<executable_name>`.
 2. In the configuration's `config.yaml`, specify the paths to these executables in the `exe` section for each submodel involved in the desired configuration. For ACCESS-ESM1.5, these would be `atmosphere`, `ocean` and `ice`.
 3. Add `linaro-forge/24.0.2` to `modules: load` in the configuration `config.yaml`.
+4. Turn off executable reproducibility, since adding debugging options modifies the executable, by setting `manifest: reproduce: exe: False`.
 4. Tell _payu_ to pipe the run through _Linaro DDT_ by adding the following to the configuration `config.yaml`:
 
     ```
@@ -757,7 +758,38 @@ Before running the model, set up the remote client for _Linaro Forge_ by followi
 !!! tip
     Alternatively, it is possible to debug from an interactive job following the [instructions from NCI](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...). While in an interactive job, call `payu-run` instead of `payu run`.
 
-While not strictly necessary, it is recommended to significantly reduce the core count and simulation time to e.g. 8 cores and 1 day of sim time.
+In the above example, taking one of the release [_ACCESS_ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the changes are:
+
+`config.yaml`
+```
+submodels:
+    name: atmosphere
+    model: um
+    ncpus: 240
+<span style="color:red">-    exe: um_hg3.exe<\span>
+<span style="color:green">+    exe: <path_to_UM7_build>/bin/um_hg3.exe<\span>
+...
+    name: ocean
+    model: mom
+    ncpus: 180
+<span style="color:red">-    exe: fms_ACCESS-CM.x<\span>
+<span style="color:green">+    exe: <path_to_MOM_build>/bin/fms_ACCESS-CM.x<\span>
+...
+    name: ice
+    model: cice
+    ncpus: 12
+<span style="color:red">-    exe: cice_access_360x300_12x1_12p.exe<\span>
+<span style="color:green">+    exe: <path_to_CICE_build>/bin/cice_access_360x300_12x1_12p.exe<\span>
+...
+manifest:
+  reproduce:
+<span style="color:red">-    exe: True</span>
+<span style="color:green">+    exe: False</span>
+
+<span style="color:green">
++mpi:
++  runcmd: ddt --connect mpirun
+<\span>
 
 <custom-references>
 - [https://spack.readthedocs.io/en/latest/](https://spack.readthedocs.io/en/latest/)
