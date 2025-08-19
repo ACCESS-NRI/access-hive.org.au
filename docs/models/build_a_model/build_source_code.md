@@ -699,21 +699,19 @@ To debug a model through the _Linaro_ debugger, the following changes to the bui
 2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model `specs` field in the `spack.yaml`:
     - `fflags=-0O -g -traceback`
     - `cflags=-0O -g -fno-omit-frame-pointer`
+    - `build_type=Debug`
 
 Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model), the changes to the `spack.yaml` are:
-```
+
+<pre><code><spack class="spack-grey bold">...</spack>
  spack:
    specs:
-<span style="color:red">-    - access-esm1p5@git.2024.12.0</span>
-<span style="color:green">+    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer"</span>
-
+    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer build_type=Debug"
 ...
-
     openmpi:
        require:
-<span style="color:red">-        - '@4.0.2'<\span>
-<span style="color:green">+        - '@4.1.3'<\span>
-```
+        - '@4.1.3'
+</code></pre>
 
 Once this change has been made, concretize the environment by running:
 
@@ -760,36 +758,30 @@ Before running the model, set up the remote client for _Linaro Forge_ by followi
 
 In the above example, taking one of the release [_ACCESS_ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the changes are:
 
-`config.yaml`
-```
+```yaml
 submodels:
     name: atmosphere
     model: um
     ncpus: 240
-<span style="color:red">-    exe: um_hg3.exe<\span>
-<span style="color:green">+    exe: <path_to_UM7_build>/bin/um_hg3.exe<\span>
+    exe: <path_to_UM7_build>/bin/um_hg3.exe
 ...
     name: ocean
     model: mom
     ncpus: 180
-<span style="color:red">-    exe: fms_ACCESS-CM.x<\span>
-<span style="color:green">+    exe: <path_to_MOM_build>/bin/fms_ACCESS-CM.x<\span>
+    exe: <path_to_MOM_build>/bin/fms_ACCESS-CM.x
 ...
     name: ice
     model: cice
     ncpus: 12
-<span style="color:red">-    exe: cice_access_360x300_12x1_12p.exe<\span>
-<span style="color:green">+    exe: <path_to_CICE_build>/bin/cice_access_360x300_12x1_12p.exe<\span>
+    exe: <path_to_CICE_build>/bin/cice_access_360x300_12x1_12p.exe
 ...
 manifest:
   reproduce:
-<span style="color:red">-    exe: True</span>
-<span style="color:green">+    exe: False</span>
+    exe: False
 
-<span style="color:green">
-+mpi:
-+  runcmd: ddt --connect mpirun
-<\span>
+mpi:
+  runcmd: ddt --connect mpirun
+```
 
 <custom-references>
 - [https://spack.readthedocs.io/en/latest/](https://spack.readthedocs.io/en/latest/)
