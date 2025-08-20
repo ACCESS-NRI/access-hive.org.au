@@ -4,9 +4,13 @@
 
 The ACCESS Ice Sheet–Shelf System Model (ACCESS‑ISSM) is a global ice‑sheet and ice‑shelf model based on the [ISSM](/models/model_components/ice-sheet) framework.  It supports standalone ice dynamics and optional coupling to ocean and atmospheric forcings.  This suite is in **alpha**: we welcome feedback and contributions via our GitHub repository.
 
-## Configurations & Resolutions
+## Configurations 
+ACCESS-ISSM provides the following released configurations:
 
-ACCESS‑ISSM alpha provides the **MISMIP suite** which reproduces the Marine Ice‑Sheet Model Intercomparison Project benchmark in ACCESS‑ISSM.  It is intended for code regression tests, parameter experiments and numerical‑scheme development
+- [Marine Ice-Sheet Model Intercomparison Project (MISMIP)](#mismip)
+
+### Marine Ice-Sheet Model Intercomparison Project (MISMIP) {: #mismip }
+The _MISMIP_ configuration reproduces the Marine Ice‑Sheet Model Intercomparison Project benchmark in ACCESS‑ISSM. It is intended for code regression tests, parameter experiments and numerical‑scheme development.
 
 ### 1.1 Domain & Physics
 
