@@ -12,10 +12,10 @@ function hideTocItems() {
 }
 
 // Add buttons at the top of each table column (when hovered) to sort it
-function sortTables() {
-    if (typeof Tablesort !== 'function') return;
-    document.querySelectorAll("article table:not([class])").forEach(table => new Tablesort(table));
-}
+// function sortTables() {
+//     if (typeof Tablesort !== 'function') return;
+//     document.querySelectorAll("article table:not([class])").forEach(table => new Tablesort(table));
+// }
 
 /*
   Add functionality to tabs 

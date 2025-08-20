@@ -43,6 +43,7 @@ theme:
     - content.code.copy         # for displaying copy icon at top right in code snippets  
     - content.code.annotate
     - content.tabs.link
+    - content.footnote.tooltips # added for footnotes in release table
     - search.suggest
     - search.highlight
     - search.share
@@ -190,6 +191,7 @@ nav:
   - About:
     - about/index.md
     - Contact: about/contact.md
+    - Releases: about/releases.md
     - User Support: 
       - about/user_support/index.md 
       - Using the Hive Forum: about/user_support/ask_on_forum.md
