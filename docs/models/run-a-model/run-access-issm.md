@@ -11,6 +11,11 @@
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [default project]: /getting_started/set_up_nci_account#change-default-project-on-gadi
 
+!!! release
+    This is a Beta Release.
+    Any model configuration and related source code mentioned in this page might change before the full release.
+    Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators.
+
 # Run {{ model }}
 
 ## 1 About
