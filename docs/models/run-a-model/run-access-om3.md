@@ -34,7 +34,7 @@ If you are unsure whether {{ model }} is the right choice for your experiment, t
 
 All {{model}} configurations are open source, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1")![CC icon](https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"}![BY icon](https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1){: style="height:1em;margin-left:0.2em;vertical-align:text-top;"} and available on [ACCESS-NRI GitHub]({{github_configs}}).
 
-Detailed documentation on the configurations can be found in the [{{ model }} configuration documention]({{configs_docs}}).
+Detailed documentation on the configurations can be found in the [{{ model }} configuration documentation]({{configs_docs}}).
 
 ## Prerequisites
 
