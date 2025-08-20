@@ -2,7 +2,7 @@
 
 ![ACCESS‑ISSM model](/assets/model-config-logos/configurations-without-titles/access-issm.png){: .img-contain .white-background .round-edges .with-padding .intro-img loading="lazy"}
 
-The ACCESS Ice Sheet–Shelf System Model (ACCESS‑ISSM) is a global ice‑sheet and ice‑shelf model based on the [ISSM](/models/model_components/ice-sheet) framework.  It supports standalone ice dynamics and optional coupling to ocean and atmospheric forcings.  This suite is in **alpha**: we welcome feedback and contributions via our GitHub repository.
+The ACCESS Ice Sheet–Shelf System Model (ACCESS‑ISSM) is a global ice‑sheet and ice‑shelf model based on the [ISSM](/models/model_components/ice-sheet) framework.  It supports standalone ice dynamics and optional coupling to ocean and atmospheric forcing.
 
 ## Configurations 
 ACCESS-ISSM provides the following released configurations:
