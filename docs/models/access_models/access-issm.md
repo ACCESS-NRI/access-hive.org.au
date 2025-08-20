@@ -1,4 +1,9 @@
-# ACCESS‑ISSM (ALPHA RELEASE)
+!!! release
+    This is a Beta Release.
+    Any model configuration and related source code mentioned in this page might change before the full release.
+    Limited support is currently provided for this model. Its usage is only recommended for testing by experienced users and collaborators.
+
+# ACCESS‑ISSM
 
 ![ACCESS‑ISSM model](/assets/model-config-logos/configurations-without-titles/access-issm.png){: .img-contain .white-background .round-edges .with-padding .intro-img loading="lazy"}
 
