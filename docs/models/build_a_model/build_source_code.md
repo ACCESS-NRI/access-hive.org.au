@@ -697,17 +697,24 @@ To debug a model through the _Linaro_ debugger, the following changes to the bui
 
 1. Change the version of OpenMPI to `openmpi/4.1.3`.
 2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model `specs` field in the `spack.yaml`:
-    - `fflags="-0O -g -traceback"`
-    - `cflags="-0O -g -fno-omit-frame-pointer"`
-    - `build_type="Debug"`
+    - `fflags=="-0O -g -traceback"`
+    - `cflags=="-0O -g -fno-omit-frame-pointer"`
+
+!!! warning
+    There is a bug in the way build flags are injected for packages which use CMake as the build system. To debug these packages, add `build_type="Debug"` to the package `require`. At time of writing, the components which use CMake are: MOM5, MOM6, CABLE, mocsy, WAVEWATCH III and ACCESS generic tracers.
 
 Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model), the changes to the `spack.yaml` are:
 
 ```yaml
 spack:
   specs:
-    - access-esm1p5@git.2024.12.0 fflags="-O0 -g -traceback" cflags="-O0 -g -fno-omit-frame-pointer" build_type="Debug"
+    - access-esm1p5@git.<GITREF> fflags=="-O0 -g -traceback" cflags=="-O0 -g -fno-omit-frame-pointer"
 packages:
+  ...
+  mom5:
+    require:
+      - '@git.<GITREF>=<version>
+      - 'build_type="Debug"'
   ...
   openmpi:
     require:
@@ -783,6 +790,8 @@ manifest:
 mpi:
   runcmd: ddt --connect mpirun
 ```
+
+Ideally, one would request a much fewer computational resources for a debugging run. Each model component has a very specific way of setting the number of CPU cores used, further than simply setting the relevant `ncpus`, which is why this is not recommended here.
 
 <custom-references>
 - [https://spack.readthedocs.io/en/latest/](https://spack.readthedocs.io/en/latest/)
