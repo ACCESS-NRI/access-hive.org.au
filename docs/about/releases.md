@@ -13,7 +13,7 @@ We develop and share our model configurations and tools in stages. Each stage ha
 
 - <span style="color:rgb(var(--success-color))"><b>Full Release:</b></span> Fully tested, verified and documented. Supported versions with maintenance. These are the stable versions we recommend for research publication. 
 
-Note that these release definitions will not be applied retroactively to any model or tool releases. 
+Note that these release definitions will not be applied retroactively to any model configurations or tool releases. 
 
 ## Release stages for model configurations[^1]
 The below table has some details for each release stage of ACCESS-NRI supported models.
