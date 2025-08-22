@@ -696,7 +696,7 @@ Debugging is an important part of the development process. Using a debugger can 
 To debug a model through the _Linaro_ debugger, the following changes to the build are required:
 
 1. Change the version of OpenMPI to `openmpi/4.1.3`.
-2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model `specs` field in the `spack.yaml`:
+2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model `specs` field in the `spack.yaml` (note the `==`; this propagates the flags to all the dependencies):
     - `fflags=="-0O -g -traceback"`
     - `cflags=="-0O -g -fno-omit-frame-pointer"`
 
@@ -708,12 +708,12 @@ Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model)
 ```yaml
 spack:
   specs:
-    - access-esm1p5@git.<GITREF> fflags=="-O0 -g -traceback" cflags=="-O0 -g -fno-omit-frame-pointer"
+    - access-esm1p5@git.2024.12.0 fflags=="-O0 -g -traceback" cflags=="-O0 -g -fno-omit-frame-pointer"
 packages:
   ...
   mom5:
     require:
-      - '@git.<GITREF>=<version>
+      - '@git.access-esm1.5_2024.08.23=access-esm1.5'
       - 'build_type="Debug"'
   ...
   openmpi:
@@ -762,7 +762,7 @@ Before running the model, set up the remote client for _Linaro Forge_ by followi
 5. Run the model with `payu run`.
 
 !!! tip
-    Alternatively, it is possible to debug from an interactive job following the [instructions from NCI](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...). While in an interactive job, call `payu-run` instead of `payu run`.
+    Alternatively, it is possible to debug from an interactive job following the [instructions from NCI](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...). While in an interactive job, call `payu-run` instead of `payu run`. If you choose this method, set `mpi: runcmd: ddt mpirun`, removing the `--connect`.
 
 In the above example, taking one of the release [_ACCESS ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the changes are:
 
@@ -791,7 +791,7 @@ mpi:
   runcmd: ddt --connect mpirun
 ```
 
-Ideally, one would request a much fewer computational resources for a debugging run. Each model component has a very specific way of setting the number of CPU cores used, further than simply setting the relevant `ncpus`, which is why this is not recommended here.
+Ideally, one would request a much fewer computational resources for a debugging run. Each model component has a very specific way of setting the number of CPU cores used, further than simply setting the relevant `ncpus`, which is why this is not detailed here.
 
 <custom-references>
 - [https://spack.readthedocs.io/en/latest/](https://spack.readthedocs.io/en/latest/)
