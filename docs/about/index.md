@@ -11,7 +11,7 @@
         <div class="card-image-container">
             <img src="/assets/rocket_release.svg" alt="Releases" class="img-contain white-background with-padding"></img>
         </div>
-        <div class="card-text-container bold">Releases</div>
+        <div class="card-text-container bold">Release stages</div>
     </a>
     <a href="/about/user_support" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">

@@ -20,7 +20,7 @@ th, td {
 .md-typeset__table th:nth-child(2) {
   background-color: var(--danger-bg);
   color: rgb(var(--danger-color));
-  font-size: 1rem !important;
+  font-size: 1rem;
 }
 
 .md-typeset__table th:nth-child(3) {
