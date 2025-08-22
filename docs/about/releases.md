@@ -3,7 +3,7 @@
 [Hive Forum]: https://forum.access-hive.org.au
 # ACCESS-NRI Release Stages
 
-We develop and share our models and tools in stages. Each stage has a different purpose and level of readiness: 
+We develop and share our model configurations and tools in stages. Each stage has a different purpose and level of readiness: 
 <!-- color text like table -->
 - **Prototype (not shown in table):**  Early versions shared with a small group of experts to explore new ideas. These are not polished or complete, and may change quickly. 
 
