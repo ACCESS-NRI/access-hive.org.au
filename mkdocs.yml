@@ -43,7 +43,6 @@ theme:
     - content.code.copy         # for displaying copy icon at top right in code snippets  
     - content.code.annotate
     - content.tabs.link
-    - content.footnote.tooltips # added for footnotes in release table
     - search.suggest
     - search.highlight
     - search.share

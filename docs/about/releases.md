@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/css/release-table.css">
 
 [Hive Forum]: https://forum.access-hive.org.au
 # ACCESS-NRI Release Stages
@@ -13,12 +12,13 @@ We develop and share our model configurations[^1] and tools in stages. Each stag
 
 - <span style="color:rgb(var(--success-color))"><b>Full Release:</b></span> Fully tested, verified and documented. Supported versions with maintenance. Bitwise reproducible.[^2] These are the stable versions we recommend for research publication. 
 
-Note that these release definitions will not be applied retroactively to any model configurations or tool releases. 
+!!! info
+    These release definitions will not be applied retroactively to any model configuration or tool release.
 
 ## Release stages for model configurations[^1]
 The below table has some details for each release stage of ACCESS-NRI supported model configurations.
 
-<!-- <div class="release-table" markdown="1"> -->
+<div class="release-table" markdown>
 
 |   | ALPHA | BETA | FULL RELEASE |
 |---| ----- | ---- | ------- |
@@ -32,7 +32,7 @@ The below table has some details for each release stage of ACCESS-NRI supported 
 |Optimisation & scaling |No guarantee |In progress |Complete |
 |DOI |None |None |DOI issued; any model updates receive new DOIs |
 |Announcements to the community |Direct contact with alpha testers. No formal announcement. |Public post on [Hive Forum]. |Public post on [Hive Forum]. On ACCESS-NRI website, newsletter, and social media. May include a media release.|
-<!-- </div> -->
+</div>
 
 [^1]: A model configuration is the entire setup for a model experiment run. It is the compiled model code, the parameters, and input files. It is essentially an experiment waiting to happen. 
 [^2]: By bitwise reproducible, we mean that a model configuration will produce the same answers if re-run on Gadi (with the same layout, number of processors, etc., all of which are specified in a model configuration). 
