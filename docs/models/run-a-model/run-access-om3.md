@@ -151,7 +151,7 @@ To run the cloned {{ model }} configuration, execute the following command from 
     payu run
 
 This will submit a single job to the supercomputer "queue" with the default run length (1 year) specified in the configuration.<br>
-For information about changing the run length, refer to [Change run length](#change-run-length).
+For information about changing the run length, refer to [Change run length and restart period](#change-run-length-and-restart-period).
 
 <terminal-window>
     <terminal-line data="input">cd ~/access-om3/{{example_folder}}</terminal-line>
