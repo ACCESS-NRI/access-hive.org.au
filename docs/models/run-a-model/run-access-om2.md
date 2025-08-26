@@ -459,7 +459,7 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 
 ### Pruning model restarts
 
-By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
+By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length](#change-run-length)).<br>
 However, restart files can occupy significant disk space, and keeping all of them throughout an entire experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature, controlled by the `restart_freq` field of the `config.yaml`.
 By default, every `restart_freq` _payu_ removes intermediate restart files, keeping only: 
 - the two most recent restarts
