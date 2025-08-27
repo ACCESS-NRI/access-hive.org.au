@@ -47,7 +47,6 @@ theme:
     - search.highlight
     - search.share
     - toc.follow                # the sidebar is automatically scrolled to the active anchor
-    - announce.dismiss          # render temporary announcements that could be marked read by the user.
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
