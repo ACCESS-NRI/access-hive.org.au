@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
 {% block announce %}
-    <b>&#x1F680 The 2025 ACCESS Workshop & Training Day is on its way! &#x1F4DA &#x2728 Everything you need for the ACCESS Training Day <a href="https://docs.access-hive.org.au/community_resources/access_workshop_2025/">will live right here!</a></b>
+    <div class="announce-bar">
+        <b>&#x1F680 <a href="https://docs.access-hive.org.au/community_resources/access_workshop_2025/">ACCESS Workshop & Training Day 2025</a> &#x1F4DA &#x2728 </b>
+    </div>
+
+    <style>
+        .announce-bar{ 
+            border: 1px solid var(--nri-orange);
+            border-radius: 0.35rem;
+            padding: 0.6rem;
+        }
+    </style>
 {% endblock %}
