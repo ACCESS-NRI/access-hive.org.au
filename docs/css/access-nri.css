@@ -1443,11 +1443,11 @@ div.release-table th:nth-child(2) {
 
 div.release-table th:nth-child(3) {
   background-color: var(--warning-bg);
-  color: rgb(var(--warning-color));
+  color: var(--warning);
 }
 div.release-table th:nth-child(4) {
   background-color: var(--success-bg);
-  color: rgb(var(--success-color));
+  color: var(--success);
 }
 
 div.release-table td:nth-child(1) {
