@@ -1,6 +1,12 @@
-Before attending the [2025 ACCESS Training Day](https://www.access-nri.org.au/access-community-workshop-2025/training-day-program/), please ensure you have completed the required setup for your chosen sessions. The table below lists the essential accounts, project memberships, and software access you will need.  
+The below table lists the required setup for each session. You must complete the requirements for your scheduled sessions **before** the Training Day in order to fully participate. 
 
 Full details about the program and session descriptions can be found in the [Training Day Program & Session Details PDF](https://www.access-nri.org.au/wp-content/uploads/2025/08/ACCESS-Training-Day-2025-Program-and-Session-Details-4.pdf).  
+
+!!! warning
+    Some NCI project membership approvals can take more than a day.
+
+!!! note
+    For those in sessions requiring MOSRS accounts, no action is required until you receive an email from the UK Met Office with further instructions. More information was shared in an email from the ACCESS-NRI User Training Team.
 
 
 | 📝 **Session Name** | ⚙️ **Setup Requirements** |
