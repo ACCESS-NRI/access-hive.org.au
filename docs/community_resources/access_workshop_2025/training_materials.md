@@ -1,2 +1,21 @@
-# ACCESS Training Day 2025
-Setup instructions and links to training materials coming soon!
+Before attending the [2025 ACCESS Training Day](https://www.access-nri.org.au/access-community-workshop-2025/training-day-program/), please ensure you have completed the required setup for your chosen sessions. The table below lists the essential accounts, project memberships, and software access you will need.  
+
+Full details about the program and session descriptions can be found in the [Training Day Program & Session Details PDF](https://www.access-nri.org.au/wp-content/uploads/2025/08/ACCESS-Training-Day-2025-Program-and-Session-Details-4.pdf).  
+
+
+| 📝 **Session Name** | ⚙️ **Setup Requirements** |
+| ------------------- | -------------------------- |
+| 📊 Xarray and Dask | 💻 NCI account <br> 📂 Join NCI projects: [nf33](https://my.nci.org.au/mancini/project/nf33/join), [xp65](https://my.nci.org.au/mancini/project/xp65/join), [rt52](https://my.nci.org.au/mancini/project/rt52/join), [fs38](https://my.nci.org.au/mancini/project/fs38/join) |
+| 🖥️ Advanced Git | 🔑 GitHub account |
+| 🌊 Evaluating ENSO | 💻 NCI account <br> 📂 Join NCI projects: [xp65](https://my.nci.org.au/mancini/project/xp65/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join), [ct11](https://my.nci.org.au/mancini/project/ct11/join), [fs38](https://my.nci.org.au/mancini/project/fs38/join), [oi10](https://my.nci.org.au/mancini/project/oi10/join) |
+| 🤖 Machine Learning | 💻 NCI account <br> 📂 Join NCI projects: [nf33](https://my.nci.org.au/mancini/project/nf33/join), [xp65](https://my.nci.org.au/mancini/project/xp65/join), [dk92](https://my.nci.org.au/mancini/project/dk92/join), [rt52](https://my.nci.org.au/mancini/project/rt52/join) <br> ⚡ OR install locally on GPU machine (email [training.access.nri@anu.edu.au](mailto:training.access.nri@anu.edu.au) for guidance) |
+| 🔄 Git Workflows | 🔑 GitHub account |
+| 🔬 ACCESS-AM3 | 🔑 MOSRS account <br> 💻 NCI account <br> 📧 Send GitHub handle to [claire.carouge@anu.edu.au](mailto:claire.carouge@anu.edu.au) <br> 📂 Join projects: [vk83](https://my.nci.org.au/mancini/project/vk83/join), [xp65](https://my.nci.org.au/mancini/project/xp65/join), [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+| 🌍 ACCESS-CM3 | 💻 NCI account <br> 🔑 MOSRS account <br> 📂 Join projects: [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+| 🌱 ACCESS-ESM1.5 | 💻 NCI account <br> 🔑 MOSRS account <br> 📂 Join projects: [vk83](https://my.nci.org.au/mancini/project/vk83/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+| 🌱 ACCESS-ESM1.6 | Same as 🌱 ACCESS-ESM1.5 |
+| 🌊 ACCESS-OM2 | 💻 NCI account <br> 📂 Join projects: [qv56](https://my.nci.org.au/mancini/project/qv56/join), [vk83](https://my.nci.org.au/mancini/project/vk83/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+| 🌊 ACCESS-OM3 | 💻 NCI account <br> 📂 Join projects: [qv56](https://my.nci.org.au/mancini/project/qv56/join), [vk83](https://my.nci.org.au/mancini/project/vk83/join), [xp65](https://my.nci.org.au/mancini/project/xp65/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+| 🔄 ACCESS-rAM3 | 💻 NCI account <br> 🔑 MOSRS account <br> 📂 Join projects: [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join), [rt52](https://my.nci.org.au/mancini/project/rt52/join), [zz93](https://my.nci.org.au/mancini/project/zz93/join), [vk83](https://my.nci.org.au/mancini/project/vk83/join), [ob53](https://my.nci.org.au/mancini/project/ob53/join), [cm45 (optional)](https://my.nci.org.au/mancini/project/cm45/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+| 🌿 CABLE | 💻 NCI account <br> 📂 Join projects: [ks32](https://my.nci.org.au/mancini/project/ks32/join), [rp23 (optional)](https://my.nci.org.au/mancini/project/rp23/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
+
