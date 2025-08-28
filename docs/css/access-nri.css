@@ -1420,6 +1420,51 @@ img.intro-img {
   font-size: 1.5rem;
   width: 1.5rem;
 }
+
+/* Styling for model release table */
+
+div.release-table table {
+  border-collapse: collapse;
+}
+
+div.release-table th, td {
+  border: 1px solid var(--info-bg);
+}
+
+div.release-table th {
+  width: 25%;
+  font-size: 1rem;
+}
+
+div.release-table th:nth-child(2) {
+  background-color: var(--danger-bg);
+  color: var(--danger);
+}
+
+div.release-table th:nth-child(3) {
+  background-color: var(--warning-bg);
+  color: rgb(var(--warning-color));
+}
+div.release-table th:nth-child(4) {
+  background-color: var(--success-bg);
+  color: rgb(var(--success-color));
+}
+
+div.release-table td:nth-child(1) {
+  font-weight: bold;
+}
+
+div.release-table td:nth-child(2) {
+  background-color: var(--danger-bg) 
+}
+
+div.release-table td:nth-child(3) {
+  background-color: var(--warning-bg) 
+}
+div.release-table td:nth-child(4) {
+  background-color: var(--success-bg) 
+}
+
 /* =============================================================== 
   Media queries for website responsiveness
 */
@@ -1540,54 +1585,4 @@ img.intro-img {
   .md-header__button.md-logo {
     display: flex;
   }
-}
-
-div.release-table table {
-  border-collapse: collapse;
-}
-
-
-div.release-table th, td {
-  border: 1px solid var(--info-bg);
-}
-
-div.release-table th {
-  width: 25%;
-  font-size: 1rem;
-}
-
-div.release-table th:nth-child(2) {
-  background-color: var(--danger-bg);
-  color: var(--danger);
-  font-size: 1rem;
-  width: 25%;
-}
-
-div.release-table th:nth-child(3) {
-  background-color: var(--warning-bg);
-  color: rgb(var(--warning-color));
-  font-size: 1rem;
-  width: 25%;
-}
-div.release-table th:nth-child(4) {
-  background-color: var(--success-bg);
-  color: rgb(var(--success-color));
-  font-size: 1rem ;
-  width: 25%;
-}
-
-div.release-table td:nth-child(1) {
-  font-weight: bold;
-  width: 25%;
-}
-
-div.release-table td:nth-child(2) {
-  background-color: var(--danger-bg) 
-}
-
-div.release-table td:nth-child(3) {
-  background-color: var(--warning-bg) 
-}
-div.release-table td:nth-child(4) {
-  background-color: var(--success-bg) 
 }
