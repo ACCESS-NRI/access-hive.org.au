@@ -16,7 +16,7 @@ We develop and share our model configurations[^1] and tools in stages. Each stag
     These release definitions will not be applied retroactively to any model configuration or tool release.
 
 ## Release stages for model configurations[^1]
-The below table has some details for each release stage of ACCESS-NRI supported model configurations. Note that this table is valid only for model configurations, and not for tools.
+The table below has some details for each release stage of ACCESS-NRI supported model configurations. Note that this table is valid only for model configurations, and not for tools.
 
 <div class="release-table" markdown>
 
