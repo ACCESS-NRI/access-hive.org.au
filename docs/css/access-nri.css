@@ -1544,24 +1544,21 @@ img.intro-img {
 
 div.release-table table {
   border-collapse: collapse;
-  width: 100%;
 }
 
-div.release-table thead {
-  padding: 0.1rem;
-  text-align: left;
-}
 
 div.release-table th, td {
   border: 1px solid var(--info-bg);
-  padding: 0.5rem;
-  text-align: left;
 }
 
+div.release-table th {
+  width: 25%;
+  font-size: 1rem;
+}
 
 div.release-table th:nth-child(2) {
   background-color: var(--danger-bg);
-  color: rgb(var(--danger-color));
+  color: var(--danger);
   font-size: 1rem;
   width: 25%;
 }
