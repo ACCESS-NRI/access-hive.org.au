@@ -190,6 +190,7 @@ nav:
   - About:
     - about/index.md
     - Contact: about/contact.md
+    - Release stages: about/releases.md
     - User Support: 
       - about/user_support/index.md 
       - Using the Hive Forum: about/user_support/ask_on_forum.md
@@ -237,7 +238,6 @@ extra_css:
 extra_javascript:
   - javascripts/mathjax.js # For pymdownx.arithmatex extension
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # For pymdownx.arithmatex extension
-  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
   - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js # Terminal animations
   - js/custom-tags.js
   - js/miscellaneous.js

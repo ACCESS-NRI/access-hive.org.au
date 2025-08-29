@@ -7,6 +7,12 @@
         </div>
         <div class="card-text-container bold">Contact</div>
     </a>
+    <a href="/about/releases" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="/assets/rocket_release.svg" alt="Releases" class="img-contain white-background with-padding"></img>
+        </div>
+        <div class="card-text-container bold">Release stages</div>
+    </a>
     <a href="/about/user_support" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="/assets/user_support_image.png" alt="ACCESS-NRI Support" class="img-contain white-background"></img>
@@ -32,3 +38,7 @@
         <div class="card-text-container bold">Code of conduct</div>
     </a>
 </div>
+
+<custom-references>
+Releases image by [catalyststuff](https://www.freepik.com/free-vector/rocket-flying-moon-cartoon-vector-icon-illustration-technology-transportation-icon-isolated_28070146.htm) on Freepik
+</custom-references>
