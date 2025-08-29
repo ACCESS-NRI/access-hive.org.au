@@ -1,6 +1,6 @@
 The below table lists the required setup for each session. You must complete the requirements for your scheduled sessions **before** the Training Day in order to fully participate. 
 
-Full details about the program and session descriptions can be found in the [Training Day Program & Session Details PDF](https://www.access-nri.org.au/wp-content/uploads/2025/08/ACCESS-Training-Day-2025-Program-and-Session-Details-4.pdf).  
+Full details about the program and session descriptions can be found on the [Training Day Program website](https://www.access-nri.org.au/access-community-workshop-2025/training-day-program/).  
 
 !!! warning
     Some NCI project membership approvals can take more than a day.
