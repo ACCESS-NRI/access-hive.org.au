@@ -25,3 +25,8 @@ Full details about the program and session descriptions can be found on the [Tra
 | 🔄 ACCESS-rAM3 | 💻 NCI account <br> 🔑 MOSRS account <br> 📂 Join projects: [access](https://my.nci.org.au/mancini/project/access/join), [hr22](https://my.nci.org.au/mancini/project/hr22/join), [ki32](https://my.nci.org.au/mancini/project/ki32/join), [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join), [rt52](https://my.nci.org.au/mancini/project/rt52/join), [zz93](https://my.nci.org.au/mancini/project/zz93/join), [vk83](https://my.nci.org.au/mancini/project/vk83/join), [ob53](https://my.nci.org.au/mancini/project/ob53/join), [cm45 (optional)](https://my.nci.org.au/mancini/project/cm45/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
 | 🌿 CABLE | 💻 NCI account <br> 📂 Join projects: [ks32](https://my.nci.org.au/mancini/project/ks32/join), [rp23 (optional)](https://my.nci.org.au/mancini/project/rp23/join), [nf33](https://my.nci.org.au/mancini/project/nf33/join) |
 
+**Useful Links for Account Setup:**
+
+📂 Create an **NCI account**: [https://my.nci.org.au/mancini/signup](https://my.nci.org.au/mancini/signup)  
+
+🔑 Create a **GitHub account**: [https://github.com/join](https://github.com/join)  
