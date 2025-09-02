@@ -4,8 +4,8 @@
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [payu]: https://github.com/payu-org/payu
-[model components]: /models/configurations/access-esm/#model-components
-[model configurations]: /models/configurations/access-esm/#access-esm15
+[model components]: /models/access-esm/#model-components
+[model configurations]: /models/access-esm/#access-esm15
 
 <div class="text-card-group" markdown>
 

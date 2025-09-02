@@ -1,6 +1,6 @@
-[ACCESS models]: /models/configurations
+[ACCESS models]: /models
 [om2 repo]: https://github.com/ACCESS-NRI/ACCESS-OM2
-[om2 config]: /models/configurations/access-om/#access-om2
+[om2 config]: /models/access-om/#access-om2
 [mom5 component]: /models/model_components/ocean/#mom5
 
 !!! danger

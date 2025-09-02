@@ -5,8 +5,8 @@
 [cosima]: https://cosima.org.au
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [payu]: https://github.com/payu-org/payu
-[model components]: /models/configurations/access-om/#model-components-{{model}}
-[model configurations]: /models/configurations/access-om/#access-om2
+[model components]: /models/access-om/#model-components-{{model}}
+[model configurations]: /models/access-om/#access-om2
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 
 <div class="text-card-group" markdown>
