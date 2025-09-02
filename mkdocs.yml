@@ -106,14 +106,13 @@ nav:
     - Set up Spack for building ACCESS models: getting_started/spack.md
 
   - Models: 
-    - Models: models/index.md
-    - Model Configurations: 
-      - Supported ACCESS Model Configurations: models/configurations/index.md
-      # - ACCESS-AM: models/configurations/access-am.md
-      - ACCESS-CM: models/configurations/access-cm.md
-      - ACCESS-ESM: models/configurations/access-esm.md
-      - ACCESS-OM: models/configurations/access-om.md
-      - ACCESS-rAM: models/configurations/access-ram.md
+    - models/index.md
+    # - Model Configurations: 
+      # - Supported ACCESS Model Configurations: models/configurations/index.md
+    - ACCESS-CM: models/access-cm.md
+    - ACCESS-ESM: models/access-esm.md
+    - ACCESS-OM: models/access-om.md
+    - ACCESS-rAM: models/access-ram.md
     - Model Components: 
       - Overview: models/model_components/index.md
       - Atmosphere: models/model_components/atmosphere.md
