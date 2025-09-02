@@ -4,10 +4,10 @@
 {% set branch = "access_rel_1" %}
 {% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/7/trunk" %}
 {% set mosrs_config_rns = "https://code.metoffice.gov.uk/trac/roses-u/browser/d/g/7/6/8/trunk" %}
-{% set model_configurations = "/models/configurations/access-ram" %}
+{% set model_configurations = "/models/access-ram" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-ram3-release-information/4308" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
-[model components]: /models/configurations/access-ram/#model-components
+[model components]: /models/access-ram/#model-components
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [default project]: /getting_started/set_up_nci_account#change-default-project-on-gadi
 

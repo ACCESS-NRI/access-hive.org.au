@@ -1,8 +1,8 @@
 
 {% set esm1_5_build_config = "https://github.com/ACCESS-NRI/ACCESS-ESM1.5" %}
 {% set spack_setup = "/getting_started/spack" %}
-[ACCESS models]: /models/configurations
-[esm1.5 config]: /models/configurations/access-esm/#access-esm15
+[ACCESS models]: /models
+[esm1.5 config]: /models/access-esm/#access-esm15
 [mom5 component]: /models/model_components/ocean/#mom5
 [gadi]: https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview
 [spack-configuration-scopes-documentation]: https://spack.readthedocs.io/en/latest/configuration.html#configuration-scopes
