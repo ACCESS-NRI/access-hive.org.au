@@ -26,6 +26,14 @@ Setup requirements for the Training Day can be found on the Training Materials p
             <span class="bold" >Training Day materials</span>
         </div>
     </a>
+    <a href="https://www.access-nri.org.au/access-community-workshop-2025/cosima-hackathon-program/" class="horizontal-card small-card">
+        <div class="card-image-container">
+            <img src="/assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" class="img-contain"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >COSIMA Hackathon</span>
+        </div>
+    </a>
 </div>
 <br>
 
@@ -37,6 +45,14 @@ Setup requirements for the Training Day can be found on the Training Materials p
         </div>
         <div class="card-text-container">
             <span class="bold" >Main Workshop Program<br>(10-11 Sep 2025)</span>
+        </div>
+    </a>
+    <a href="https://www.access-nri.org.au/access-community-workshop-2025/working-group-programs/" class="horizontal-card small-card">
+        <!-- <div class="card-image-container">
+            <img src="/assets/ACCESS_icon_training.png" class="img-contain"></img> 
+        </div> -->
+        <div class="card-text-container">
+            <span class="bold" >Working Group Programs</span>
         </div>
     </a>
 </div>
