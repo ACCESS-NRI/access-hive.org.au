@@ -191,7 +191,7 @@ nav:
     - Contact: about/contact.md
     - Release stages: about/releases.md
     - FAQ: about/faq.md
-    - User support on the Hive Forum: about/user_support.md
+    - User support: about/user_support.md
     - Contribute:
       - about/contribute/index.md
       - Contribute on GitHub: about/contribute/contribute_on_github.md
