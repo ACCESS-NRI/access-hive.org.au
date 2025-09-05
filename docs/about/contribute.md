@@ -1,4 +1,26 @@
-# Contribute on GitHub
+# How to Contribute?
+
+ACCESS-Hive Docs is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
+
+Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive Docs user portal. The easiest way to contribute is to raise a GitHub issue to suggest changes and highlight gaps.
+
+<div class="card-container">
+    <a href="https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?assignees=&labels=External&projects=&template=simple-issue-template.md&title=" class="horizontal-card" target="_blank">
+        <div class="card-image-container">
+            <img class="img-contain white-background" src="/assets/how-to-contribute-img.jpg">
+        </div>
+        <div class="card-text-container with-padding">
+            <div class="bold">
+                Raise a GitHub Issue!
+            </div>
+            <span class="with-padding">
+                Suggest an idea, propose bug fixes, or flag missing content by raising a GitHub issue. 
+            </span>
+        </div>
+    </a>
+</div>
+
+If you'd like to take a more hands-on approach, the following steps illustrate how to contribute directly on GitHub by adding content to the repository yourself.
 
 ## Prerequisites
 :fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} If you are new to GitHub, you will first need to [sign up](https://github.com) for a GitHub account.

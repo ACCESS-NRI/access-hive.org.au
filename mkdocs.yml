@@ -193,9 +193,7 @@ nav:
     - User Support: 
       - about/user_support/index.md 
       - Using the Hive Forum: about/user_support/ask_on_forum.md
-    - Contribute:
-      - about/contribute/index.md
-      - Contribute on GitHub: about/contribute/contribute_on_github.md
+    - Contribute: about/contribute.md
     - License: about/License.md
 # Footer
 extra:
