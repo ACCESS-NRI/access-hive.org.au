@@ -13,6 +13,12 @@
         </div>
         <div class="card-text-container bold">Release stages</div>
     </a>
+    <a href="/about/faq" class="vertical-card aspect-ratio1to1">
+        <div class="card-image-container">
+            <img src="/assets/FAQ_image.png" alt="Hive Docs FAQ" class="img-contain white-background"></img>
+        </div>
+        <div class="card-text-container bold">FAQ</div>
+    </a>
     <a href="/about/user_support" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img src="/assets/user_support_image.png" alt="ACCESS-NRI Support" class="img-contain white-background"></img>
