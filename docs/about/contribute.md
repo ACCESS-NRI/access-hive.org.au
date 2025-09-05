@@ -21,7 +21,10 @@ Contributions are encouraged from any member of the community regarding any aspe
 </div>
 
 If you'd like to take a more hands-on approach, the following steps illustrate how to contribute directly on GitHub by adding content to the repository yourself.
+## Write your own content
 
+### Prerequisites
+...
 ## Prerequisites
 :fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} If you are new to GitHub, you will first need to [sign up](https://github.com) for a GitHub account.
 
