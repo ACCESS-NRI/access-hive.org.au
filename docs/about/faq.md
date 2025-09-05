@@ -1,6 +1,6 @@
 #  Frequently Asked Questions (FAQ)
 
-Click on the questions to unfold the answers. If your question is not answered, read about how to ask your question on the ACCESS-Hive Forum via the [User Support page](/about/user_support.md).
+Click on the questions to unfold the answers. If your question is not answered, read about how to ask your question on the ACCESS-Hive Forum via the [User Support page](/about/user_support).
 
 ??? question "What is the difference between the ACCESS-Hive Docs and the ACCESS-Hive Forum?"
     The **ACCESS-Hive Docs** (also referred to as *Hive Docs*) is the website where ACCESS-NRI provides documentation for ACCESS users.
