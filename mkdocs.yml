@@ -9,7 +9,7 @@ site_url: !ENV [SITE_URL, "https://docs.access-hive.org.au/"]
 
 # Git repository (Adds a link to the GitHub repository at the top)
 repo_url: https://github.com/ACCESS-NRI/access-hive.org.au
-repo_name: ACCESS-NRI/access-hive.org.au
+repo_name: access-hive.org.au
 
 theme:
   name: material
@@ -40,8 +40,6 @@ theme:
     - navigation.indexes
     - navigation.footer
     - navigation.tracking       # The URL in the address bar is automatically updated with active anchor
-    - content.action.edit
-    - content.action.view
     - content.code.copy         # for displaying copy icon at top right in code snippets  
     - content.code.annotate
     - content.tabs.link
