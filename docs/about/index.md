@@ -15,7 +15,7 @@
     </a>
     <a href="/about/faq" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="/assets/FAQ_image.png" alt="Hive Docs FAQ" class="img-contain white-background"></img>
+            <img src="/assets/FAQ_image.png" alt="Hive Docs FAQ" class="img-cover"></img>
         </div>
         <div class="card-text-container bold">FAQ</div>
     </a>
