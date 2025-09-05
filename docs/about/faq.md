@@ -1,10 +1,6 @@
-#  User support 
+#  Frequently Asked Questions (FAQ)
 
-On this page we answer frequently asked questions (FAQs), and also give additional information for support, in case your question is not yet answered.
-
-## Frequently Asked Questions (FAQ)
-
-Click on the questions to unfold the answers.
+Click on the questions to unfold the answers. If your question is not answered, read about how to ask your question on the ACCESS-Hive Forum via the [User Support page](/about/user_support).
 
 ??? question "What is the difference between the ACCESS-Hive Docs and the ACCESS-Hive Forum?"
     The **ACCESS-Hive Docs** (also referred to as *Hive Docs*) is the website where ACCESS-NRI provides documentation for ACCESS users.
@@ -69,25 +65,3 @@ Click on the questions to unfold the answers.
 
     By contrast, we refer to **working groups** as the groups of the ACCESS community that work on specific ACCESS components, configurations or research topics. These working groups are formed by the scientific community itself, with ACCESS-NRI liaising between them.
 
-## Still need help?
-
-Consider asking for help on the [ACCESS-Hive Forum](https://forum.access-hive.org.au). For content supported by ACCESS-NRI, a team member will provide support. For other content, a fellow member of the community might be able to help.
-
-For further information on what assistance is available on the forum please visit the forum's [Help and Support Page](https://forum.access-hive.org.au/t/access-help-and-support/908). There is also a [Forum Support FAQ](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021) covering some of the more common questions you might have about what support is provided, how it is provided and what you can expect.
-
-<div class="card-container">
-    <a href="/about/user_support/ask_on_forum" class="horizontal-card">
-        <div class="card-image-container white-background">
-            <img class="img-cover" src="/assets/access-nri-support.png">
-        </div>
-        <div class="card-text-container with-padding">
-            <div class="bold">
-                <i class="fa-solid fa-circle-question"></i>
-                Have a question or need help?
-            </div>
-            <span class="with-padding">
-                Ask a question on the Forum and get in touch with our community!
-            </span>
-        </div>
-    </a>
-</div>
