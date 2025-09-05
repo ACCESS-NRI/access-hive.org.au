@@ -24,26 +24,24 @@ If you'd like to take a more hands-on approach, the following steps illustrate h
 ## Write your own content
 
 ### Prerequisites
-...
-## Prerequisites
 :fontawesome-regular-square-check:{: class="twemoji icon-before-text nri-green-color"} If you are new to GitHub, you will first need to [sign up](https://github.com) for a GitHub account.
 
 :material-head-lightbulb-outline:{: class="twemoji icon-before-text nri-orange-color"} We also encourage you to complete [self-paced GitHub learning courses](#additional-github-learning-resources) for brushing up on basic GitHub skills. 
 
-## Let's get started!
+### Let's get started!
 
 This documentation is written in Markdown format and is based on the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme, which is built on top of [MkDocs](https://www.mkdocs.org) static site generator.<br>
 For a quick reference on how to use Markdown syntax you can refer to the [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).
 
-## Raise a GitHub Issue
+### Raise a GitHub Issue
 
 All contributions need to have an associated [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution. If your contribution does not already have an associated issue, [create a new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) related to it. Feel free to assign the related issue to yourself if you intend to work on it.
 
-## Fork the ACCESS-Hive Docs GitHub repository
+### Fork the ACCESS-Hive Docs GitHub repository
 
 After raising a GitHub issue about your contribution, you need to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui) the [ACCESS-Hive Docs GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au).
 
-## Clone the forked ACCESS-Hive Docs GitHub repository locally
+### Clone the forked ACCESS-Hive Docs GitHub repository locally
 For cloning the forked repository onto your local computer, we encourage you to first add your local SSH keys to your GitHub profile. 
 
 To start with, if you have an [existing SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys), then simply [add this key to your github account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account), and you are all set to clone the repository. In case you don't have the SSH keys set up on your local computer, it's easy to [create a new SSH key locally](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and then [feel free to link this key to your github account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
@@ -60,7 +58,7 @@ To start with, if you have an [existing SSH key](https://docs.github.com/en/auth
     <terminal-line>Resolving deltas: 100% (28610/28610), done.</terminal-line>
 </terminal-window>
 
-## Make changes locally
+### Make changes locally
 After cloning the repository locally, create a new branch to make your local changes and then push it to GitHub: 
 
 <terminal-window>
@@ -112,7 +110,7 @@ While working on a local branch, please make sure to regularly pull changes from
 
 This would make sure that the local branch `spongebob/fix-hive-title-issue-234` is always in sync with the latest changes in the remote `main` branch.
 
-## Deploying Website Preview
+### Deploying Website Preview
 MkDocs includes a live preview server, so you can preview your changes as you write your documentation. The server will automatically rebuild the site upon saving. 
 
 To build the site locally, you need to install [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and other plugins. You can find a full list in the `requirements.txt` file (in the root of the [ACCESS-Hive Docs GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au)). Please use `pip` for the installation as some of the packages are not updated or not available on conda:
@@ -138,7 +136,7 @@ To start the server, open terminal and navigate to your ACCESS-Hive Docs local r
 
 Your documentation will be built on http://127.0.0.1:8000. Open this URL in your browser to see a preview of the documentation. The URL is given in the terminal when running the `mkdocs serve` command. Make sure you keep the command running so as to see live updates on saving your modifications. 
 
-## Create a Pull Request for the final changes
+### Create a Pull Request for the final changes
 
 Once the changes on your local branch `spongebob/fix-hive-title-issue-234` are ready to be integrated with the `development` branch, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) and GitHub will automatically build a preview of the documentation using [GitHub Actions](https://docs.github.com/en/actions). 
 
