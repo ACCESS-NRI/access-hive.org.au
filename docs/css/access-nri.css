@@ -987,7 +987,7 @@ details.code {
   justify-content: flex-end;
   align-items: stretch;
   gap: 0.8rem;
-  margin: 0.5rem;
+  margin: 0 .5rem;
 }
 
 .header-btn {
