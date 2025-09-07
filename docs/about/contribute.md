@@ -2,7 +2,7 @@
 
 ACCESS-Hive Docs is a website that hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
-Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive Docs user portal. The easiest way to contribute is to raise a GitHub issue to suggest changes and highlight gaps.
+Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive Docs. The easiest way to contribute is to raise a GitHub issue to suggest changes and highlight gaps.
 
 <div class="card-container">
     <a href="https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?assignees=&labels=External&projects=&template=simple-issue-template.md&title=" class="horizontal-card" target="_blank">
