@@ -1,6 +1,6 @@
 # How to Contribute?
 
-ACCESS-Hive Docs is an open user portal which hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
+ACCESS-Hive Docs is a website that hosts the documentation relevant to the Australian Community Climate and Earth System Simulator (ACCESS) community.
 
 Contributions are encouraged from any member of the community regarding any aspect of the ACCESS-Hive Docs user portal. The easiest way to contribute is to raise a GitHub issue to suggest changes and highlight gaps.
 
