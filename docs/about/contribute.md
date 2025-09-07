@@ -37,6 +37,10 @@ For a quick reference on how to use Markdown syntax you can refer to the [Markdo
 
 All contributions need to have an associated [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution. If your contribution does not already have an associated issue, [create a new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) related to it. Feel free to assign the related issue to yourself if you intend to work on it.
 
+### Quick fix 
+
+If you'd like to do a quick fix, such as fixing a typo or updating wording, you can do so by editing the markdown file directly in the GitHub repo. For instance, if you want to update something on this page, you can navigate to `docs/about/contribute.md' on the GitHub website and click the pencil icon in the top right to edit in the browser.
+
 ### Fork the ACCESS-Hive Docs GitHub repository
 
 After raising a GitHub issue about your contribution, you need to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo?platform=mac&tool=webui) the [ACCESS-Hive Docs GitHub repository](https://github.com/ACCESS-NRI/access-hive.org.au).
