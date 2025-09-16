@@ -172,9 +172,10 @@ nav:
     
   - Community Resources:
     - community_resources/index.md
-    - ACCESS Community Workshop 2025: 
-      - Overview: community_resources/access_workshop_2025/index.md
-      - Training Day materials: community_resources/access_workshop_2025/training_materials.md
+    # Keep this commented for future workshops
+    # - ACCESS Community Workshop 2025: 
+    #   - Overview: community_resources/access_workshop_2025/index.md
+    #   - Training Day materials: community_resources/access_workshop_2025/training_materials.md
     - Workshops and Events Archive:
       - community_resources/workshops_events_archive/index.md
       - ACCESS Community Workshop 2023: 
@@ -183,6 +184,9 @@ nav:
       - ACCESS Community Workshop 2024: 
         - Overview: community_resources/workshops_events_archive/access_workshop_2024/index.md
         - Training materials 2024: community_resources/workshops_events_archive/access_workshop_2024/training_materials.md
+      - ACCESS Community Workshop 2025:
+        - Overview: community_resources/workshops_events_archive/access_workshop_2025/index.md
+        - Training materials 2025: community_resources/workshops_events_archive/access_workshop_2025/training_materials.md
     - Working Groups: community_resources/community_working_groups.md
     - External Resources: community_resources/external_resources.md
     - Glossaries: community_resources/glossaries.md
