@@ -18,7 +18,7 @@ Setup requirements for the Training Day can be found on the Training Materials p
             <span class="bold" >Training Day Program<br>(9 Sep 2025)</span>
         </div>
     </a>
-    <a href="/community_resources/access_workshop_2025/training_materials" class="horizontal-card small-card">
+    <a href="/community_resources/workshops_events_archive/access_workshop_2025/training_materials" class="horizontal-card small-card">
         <div class="card-image-container">
             <img src="/assets/ACCESS_icon_training.png" class="img-contain"></img> 
         </div>
