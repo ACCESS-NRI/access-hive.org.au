@@ -1,7 +1,7 @@
 {% set model = "ACCESS-CM" %}
 {% set suite_id = "u-cy339" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
-[model components]: /models/access-cm/#model-components
+[model components]: /models/access_models/access-cm/#model-components
 
 # Run {{ model }}
 
