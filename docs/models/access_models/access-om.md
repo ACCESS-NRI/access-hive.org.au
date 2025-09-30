@@ -41,7 +41,7 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 <div class="text-card-group" markdown>
 [![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{om3_configs_docs}}){: class="text-card"}
-[Run {{ model }}](/models/run-a-model/run-access-om3){: class="text-card"}
+[Run {{ model }}](/models/run_a_model/run_access-om3){: class="text-card"}
 </div>
 
 {% set model = "ACCESS-OM2" %}
@@ -87,4 +87,4 @@ More details on the models can be found in [this ACCESS-Hive Forum post](https:/
 
 Full conditions of use for {{ model }} models and outputs can be viewed in the  [{{ model }}-configs README](https://github.com/ACCESS-NRI/access-om2-configs?tab=readme-ov-file#conditions-of-use).
 
-[Run {{ model }}](/models/run-a-model/run-access-om2){: class="text-card"}
+[Run {{ model }}](/models/run_a_model/run_access-om2){: class="text-card"}

@@ -1,115 +1,27 @@
-# ACCESS Models
-
-![Overview of models](/assets/models_flow_diagram.png){: class="intro-img round-edges" }
-
-ACCESS models are computer codes comprising complex mathematical representations of major Earth system components (atmosphere, land surface, ocean and sea ice) based on physical, biological and chemical principles or laws. Different ACCESS model components can be linked together via a coupler to form ACCESS models (e.g. ACCESS-ESM), which are then used to simulate realistic past or future conditions and idealised experiments.
-
-## Supported ACCESS Models
-
+# Models
 <div class="card-container">
-    <!-- ACCESS-CM -->
-    <a href="/models/access-cm/" class="horizontal-card">
+    <a href="access_models" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
+            <img class="img-contain white-background" src="/assets/access_models.png" alt="ACCESS Models">
         </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-CM</span>
-            <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
-            </span>
-        </div>
+        <div class="card-text-container bold">ACCESS Models</div>
     </a>
-    <!-- ACCESS-ESM -->
-    <a href="/models/access-esm/" class="horizontal-card">
+    <a href="run_a_model" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-contain"></img> 
+            <img class="img-contain white-background" src="/assets/run_a_model.png" alt="Run a Model">
         </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-ESM</span>
-            <span>
-                ACCESS-ESM is a global climate model with additional land and ocean biogeochemical components to simulate both the physical climate and global biogeochemical cycles.
-            </span>
-        </div>
+        <div class="card-text-container bold">Run a Model</div>
     </a>
-    <!-- ACCESS-OM -->
-    <a href="/models/access-om/" class="horizontal-card">
+    <a href="build_a_model" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
+            <img class="img-contain white-background" src="/assets/build_a_model.png" alt="Build a Model">
         </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-OM</span>
-            <span>
-                ACCESS-OM is a global coupled ocean and sea ice model used to understand both physical and biogeochemical processes in the ocean.
-            </span>
-        </div>
+        <div class="card-text-container bold">Build a Model</div>
     </a>
-    <a href="/models/access-ram/" class="horizontal-card">
+    <a href="model_components" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-ram.png" class="white-background img-contain"></img> 
+            <img class="img-contain white-background" src="/assets/ACCESS-MODEL.png" alt="Model Components">
         </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-rAM</span>
-            <span>
-                ACCESS-rAM is an implementation of the UKMO Regional Nesting Suite that allows high-resolution regional atmosphere modelling.
-            </span>
-        </div>
-    </a>
-</div>
-
-## ACCESS Model Components
-<div class="card-container">
-    <a href="/models/model_components/atmosphere" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERE.png" alt="Atmosphere"></img>
-        </div>
-        <div class="card-text-container bold">Atmosphere</div>
-    </a>
-    <a href="/models/model_components/land" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon LAND SURFACE.png" alt="Land"></img>
-        </div>
-        <div class="card-text-container bold">Land</div>
-    </a>
-    <a href="/models/model_components/ocean" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon OCEAN.png" alt="Ocean"></img>
-        </div>
-        <div class="card-text-container bold">Ocean</div>
-    </a>
-    <a href="/models/model_components/sea-ice" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon SEA ICE.png" alt="Sea Ice"></img>
-        </div>
-        <div class="card-text-container bold">Sea Ice</div>
-    </a>
-    <a href="/models/model_components/aerosols_atmospheric_chemistry" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon AEROSOLS.png" alt="Aerosols"></img>
-        </div>
-        <div class="card-text-container bold">Aerosols</div>
-    </a>
-    <a href="/models/model_components/aerosols_atmospheric_chemistry" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon ATMOSPHERIC CHEMISTRY.png" alt="Atmospheric Chemistry"></img>
-        </div>
-        <div class="card-text-container bold">Atmospheric Chemistry</div>
-    </a>
-    <a href="/models/model_components/bgc_land" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon BGC LAND.png" alt="Biogeochemistry Land"></img>
-        </div>
-        <div class="card-text-container bold">Biogeochemistry Land</div>
-    </a>
-    <a href="/models/model_components/bgc_ocean" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon BGC OCEAN.png" alt="Biogeochemistry Ocean"></img>
-        </div>
-        <div class="card-text-container bold">Biogeochemistry Ocean</div>
-    </a>
-    <a href="/models/model_components/coupler" class="vertical-card aspect-ratio1to1">
-        <div class="card-image-container">
-            <img class="img-contain" src="/assets/component-logos/components-without-titles/ACCESS icon COUPLER.png" alt="Coupler"></img>
-        </div>
-        <div class="card-text-container bold">Coupler</div>
+        <div class="card-text-container bold">Model Components</div>
     </a>
 </div>
