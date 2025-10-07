@@ -754,7 +754,6 @@ The recommended way to execute a debugging run is by using [_payu_](https://gith
     spack find --paths
     ```
     This commands lists the installation directories for each package in the environment. The generated executables will be located in the installation directories at `bin/<executable_name>`. Be careful to retrieve the correct executable for packages which build multiple executables e.g. CICE5.
-
     {: #exe_paths }
 2. Within the `submodels` section of the model configuration's `config.yaml` file, in the `exe` field, specify the [path to its executable](#exe_paths).
 3. In the `config.yaml` file, add `linaro-forge/24.0.2` to the `modules: load` section.
@@ -773,14 +772,15 @@ The recommended way to execute a debugging run is by using [_payu_](https://gith
 
 A limitation of the NCI's _Linaro Forge_ license is that the maximum number of processes permitted for a _DDT_ (or _Map_ for profiling) run is 256. For some models, this is sufficient to run with the default configuration, but for some e.g. ACCESS-ESM1.5, it is not. This means the MPI configuration of the components must be changed. This process is outlined below for the common model components used in ACCESS models:
 
-* UM7: In `atmosphere/um_env.yaml`, change `UM_ATM_NPROCX` and `UM_ATM_NPROCY`, which describe the number of chunks in the x and y directions, as well as `UM_NPES` to the product of `UM_ATM_NPROCX` and `UM_ATM_NPROCY`. In `config.yaml`, change the `atmosphere: ncpus` to be the same as `UM_NPES`.
-* MOM5: In `ocean/input.nml`, change `layout` in the `&ocean_model_nml` namelist, which describes the number of chunks in the x and y directions in `nx,ny` format. In `config.yaml`, change the `ocean: ncpus` to the product of `nx` and `ny`.
-* CICE4: Requires the user to have their own Spack installation. In the user's Spack installation, in `${SPACK_ROOT}/spack-packages/packages/cice4/package.py`, modify the entries in the `\_\_targets` dictionary to the desired number of processes. In the configuration's `ice/cice_in.nml`, change `nprocs` in the `&domain_nml` namelist to the desired number of processes. Finally, in the `config.yaml`, change the `ice: ncpus` to the desired number of processes.
-* CICE5: Requires the user to have their own Spack installation. In the user's Spack installation, in `${SPACK_ROOT}/spack-packages/packages/cice5/package.py`, modify the entries in the `self.\_\_targets` dictionary and `self.add_target` calls to the desired number of processes. In the configuration's `ice/cice_in.nml`, change `nprocs` in the `&domain_nml` namelist to the desired number of processes. Finally, in the `config.yaml`, change the `ice: ncpus` to the desired number of processes.
+* __UM7__: In `atmosphere/um_env.yaml`, change `UM_ATM_NPROCX` and `UM_ATM_NPROCY`, which describe the number of chunks in the x and y directions, as well as `UM_NPES` to the product of `UM_ATM_NPROCX` and `UM_ATM_NPROCY`. In `config.yaml`, change the `atmosphere: ncpus` to be the same as `UM_NPES`.
+* __MOM5__: In `ocean/input.nml`, change `layout` in the `&ocean_model_nml` namelist, which describes the number of chunks in the x and y directions in `nx,ny` format. In `config.yaml`, change the `ocean: ncpus` to the product of `nx` and `ny`.
+* __CICE4__: Requires the user to have their own Spack installation. In the user's Spack installation, in `${SPACK_ROOT}/spack-packages/packages/cice4/package.py`, modify the entries in the `__targets` dictionary to the desired number of processes. In the configuration's `ice/cice_in.nml`, change `nprocs` in the `&domain_nml` namelist to the desired number of processes. Finally, in the `config.yaml`, change the `ice: ncpus` to the desired number of processes.
+* __CICE5__: Requires the user to have their own Spack installation. In the user's Spack installation, in `${SPACK_ROOT}/spack-packages/packages/cice5/package.py`, modify the entries in the `self.__targets` dictionary and `self.add_target` calls to the desired number of processes. In the configuration's `ice/cice_in.nml`, change `nprocs` in the `&domain_nml` namelist to the desired number of processes. Finally, in the `config.yaml`, change the `ice: ncpus` to the desired number of processes.
 
-In the above example, taking one of the release [_ACCESS ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the number of processes requested is larger than the number allowed by _Linaro Forge_, so changes to the atmosphere and ocean decompositions are required. As CICE4 only requests 12 processes, this can remain as is. The required changes to the configuration are then:
+In the above example, taking one of the release [_ACCESS ESM1.5_ configurations](https://github.com/ACCESS-NRI/access-esm1.5-configs), the number of processes requested is larger than the number allowed by _Linaro Forge_, so changes to the atmosphere and ocean decompositions are required. As CICE4 only requests 12 processes, this can remain as is. The required changes to the configuration are:
 
-```config.yaml
+In `config.yaml`;
+```
 submodels:
     name: atmosphere
     model: um
@@ -805,7 +805,8 @@ mpi:
   runcmd: ddt --connect mpirun
 ```
 
-```atmosphere/um_env.yaml
+in `atmosphere/um_env.yaml`;
+```
 ...
 UM_ATM_NPROCX: '4'  # Decomposition that multiplies to 16
 UM_ATM_NPROCY: '4'
@@ -813,7 +814,8 @@ UM_NPES: '16'
 ...
 ```
 
-```ocean/input.nml
+in `ocean/input.nml`;
+```
 ...
 &ocean_model_nml
     layout = 4,3    # Decomposition that multiplies to 12
