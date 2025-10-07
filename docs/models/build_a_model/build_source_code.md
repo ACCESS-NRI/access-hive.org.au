@@ -733,7 +733,7 @@ spack install --keep-stage
 ```
 
 !!! tip
-    The `--keep-stage` option prevents _Spack_ from cleaning up the source code used to compile the executables, so it can be accessed by the debugger.
+    The `--keep-stage` option prevents _Spack_ from cleaning up the source code used to compile the executables, so it can be accessed by the debugger. Note that if you are iterating on a build, you may build up a large number of source files from successive building. These files are typically located at `/scratch/${GROUP}/${PROJECT}/tmp/spack-stage`, and should be cleaned up periodically.
 
 !!! warning
     If you have an existing build that was built without the `--keep-stage` option, the model will need to be uninstalled and re-installed again with this option for the debugger to work properly.
