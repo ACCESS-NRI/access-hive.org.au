@@ -696,35 +696,30 @@ Debugging is an important part of the development process. Using a debugger can 
 To debug a model through the _Linaro_ debugger, the following changes to the build's `spack.yaml` are required:
 
 1. Change the version of OpenMPI to `openmpi/4.1.3`.
-2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. This is done by appending the following to the model `specs` field:
-    - fflags=="-0O -g -traceback" cflags=="-0O -g -fno-omit-frame-pointer"
 
-!!! tip
-    The double equals sign (`==`) propagates the flag to all the dependencies.
+2. Modify the compilation options to include debug information and prevent the compiler from re-ordering the code for the purpose of optimisation. Add the following entries to the `require` section of the components you want to debug:
+    - `'fflags="-O0 -g -traceback"'`
+    - `'cflags="-O0 -g -fno-omit-frame-pointer"'`
 
-!!! warning
-    There is a bug in the way build flags are injected for packages which use CMake as the build system. To debug these packages, add `build_type="Debug"` to the package `require`. Examples of components which use CMake are: MOM5, MOM6, CABLE, mocsy, WAVEWATCH III and ACCESS generic tracers.
-
-For example, for the `mom5_dev` environment above above (i.e. to set up a debug build of the ACCESS-ESM1.5 model), the `spack.yaml` would look like:
+Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model), the changes to the `spack.yaml` are:
 
 ```yaml
-# ...
 spack:
   specs:
-    - access-esm1p5@git.2024.12.0 fflags=="-O0 -g -traceback" cflags=="-O0 -g -fno-omit-frame-pointer"
+    - access-esm1p5@git.2024.12.0
 packages:
-# ...
+  ...
   mom5:
     require:
       - '@git.access-esm1.5_2024.08.23=access-esm1.5'
-      - 'build_type="Debug"'
-# ...
+      - 'fflags="-O0 -g -traceback"'
+      - 'cflags="-O0 -g -fno-omit-frame-pointer"'
+  ...
   openmpi:
     require:
       - '@4.1.3'
-# ...
+  ...
 ```
-
 Once these changes have been made, concretize the environment by running:
 
 ```
