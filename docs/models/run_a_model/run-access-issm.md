@@ -45,16 +45,16 @@ The example below reproduces the *MISMIP+* benchmark. Adjust the variables to su
 # 0. Choose a working directory for this test
 $ mkdir -p ~/experiments/mismip && cd ~/experiments/mismip
 
-# 1. Clone the ACCESS‑ISSM repository (alpha branch)
-$ git clone --branch access_rel_1 \
+# 1. Clone the ACCESS-ISSM repository (alpha branch)
+$ git clone --branch justinh2002/configuration \
       https://github.com/ACCESS-NRI/access-issm.git
 
-# 2. Activate ISSM Spack environment and point ISSM_DIR
-$ source /g/data/au88/$USER/spack/share/spack/setup-env.sh
-$ spack env activate issm-env
-$ export ISSM_DIR=$(spack location -i issm)
+# 2. Load the ACCESS-ISSM module (vk83 deployment)
+$ module use /g/data/vk83/modules
+$ module avail access-issm
+$ module load access-issm
 
-# 3. Pre‑process (mesh + inputs)
+# 3. Pre-process (mesh + inputs)
 $ cp access-issm/examples/mismip/run_pps.sh ./
 $ qsub run_pps.sh           # or `bash run_pps.sh` inside a pInteractive job
 
