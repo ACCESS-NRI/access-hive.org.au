@@ -744,8 +744,8 @@ This will build executables compatible with the _Linaro_ debugger.
 
 !!! warning
     These steps assume you have already set up the _Linaro Forge_ remote client. If you haven't, follow the [Connecting remotely](https://docs.linaroforge.com/25.0.2/html/forge/forge/connecting_to_a_remote_system/connecting_remotely.html) instructions on their website, using the follow _Remote Launch Settings_ for _Gadi_:
-    * __Host Name__: `<username>@nci.org.au`
-    * __Remote Installation Directory__: `/apps/linaro-forge/24.0.2`
+        * __Host Name__: `<username>@nci.org.au`
+        * __Remote Installation Directory__: `/apps/linaro-forge/24.0.2`
 
 The recommended way to execute a debugging run is by using [_payu_](https://github.com/payu-org/payu) as follows:
 
