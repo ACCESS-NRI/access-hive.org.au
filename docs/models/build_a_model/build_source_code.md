@@ -744,8 +744,8 @@ This will build executables compatible with the _Linaro_ debugger.
 
 !!! warning
     These steps assume you have already set up the _Linaro Forge_ remote client. If you haven't, follow the [Connecting remotely](https://docs.linaroforge.com/25.0.2/html/forge/forge/connecting_to_a_remote_system/connecting_remotely.html) instructions on their website, using the follow _Remote Launch Settings_ for _Gadi_:
-        * __Host Name__: `<username>@nci.org.au`
-        * __Remote Installation Directory__: `/apps/linaro-forge/24.0.2`
+    - __Host Name__: `<username>@nci.org.au`
+    - __Remote Installation Directory__: `/apps/linaro-forge/24.0.2`
 
 The recommended way to execute a debugging run is by using [_payu_](https://github.com/payu-org/payu) as follows:
 
@@ -767,7 +767,7 @@ The recommended way to execute a debugging run is by using [_payu_](https://gith
 6. Run the model with `payu run`.
 
 !!! tip
-    Alternatively, it is possible to debug from an interactive job following the [instructions from NCI](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...). While in an interactive job, call `payu-run` instead of `payu run`. If you choose this method, set `mpi: runcmd: ddt mpirun` in the `config.yaml`, instead of .
+    Alternatively, it is possible to debug from an interactive job following the [instructions from NCI](https://opus.nci.org.au/spaces/Help/pages/363659856/Linaro+Forge+HPC+Tools...). While in an interactive job, call `payu-run` instead of `payu run`. If you choose this method, set `mpi: runcmd: ddt mpirun` in the `config.yaml`, instead of `mpi: runcmd: ddt --connect mpirun`.
 
 
 A limitation of the NCI's _Linaro Forge_ license is that the maximum number of processes permitted for a _DDT_ (or _Map_ for profiling) run is 256. For some models, this is sufficient to run with the default configuration, but for some e.g. ACCESS-ESM1.5, it is not. This means the MPI configuration of the components must be changed. This process is outlined below for the common model components used in ACCESS models:
