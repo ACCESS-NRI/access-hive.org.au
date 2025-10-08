@@ -1,9 +1,11 @@
 {% set model = "ACCESS-rAM3" %}
 {% set ras_id = "u-bu503" %}
+{% set oas_id = "u-dk517" %}
 {% set rns_id = "u-by395" %}
 {% set branch = "nci_access_ram3" %}
 {% set mosrs_config_ras = "https://code.metoffice.gov.uk/trac/roses-u/browser/b/u/5/0/3/{{ branch }}" %}
 {% set mosrs_config_rns = "https://code.metoffice.gov.uk/trac/roses-u/browser/b/y/3/9/5/{{ branch }}" %}
+{% set configs_docs = "https://access-ram3-configs.access-hive.org.au" %}
 {% set model_configurations = "/models/access-ram" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-ram3-release-information/4308" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
@@ -15,6 +17,7 @@
 
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RAS configuration]({{mosrs_config_ras}}){: class="text-card" style=""}
 [![Met Office](/assets/met_office_logo.png){: class="icon-before-text  white-background"} RNS configuration]({{mosrs_config_rns}}){: class="text-card"}
+[![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{configs_docs}}){: class="text-card"}
 [:notepad_spiral:{: class="twemoji icon-before-text"} Release notes]({{release_notes}}){: class="text-card"}
 </div>
 
@@ -54,7 +57,7 @@ All {{model}} configurations are and available on MOSRS via links at the top of 
     - [ki32](https://my.nci.org.au/mancini/project/ki32/join)
     - [ki32_mosrs](https://my.nci.org.au/mancini/project/ki32_mosrs/join)
     - [rt52](https://my.nci.org.au/mancini/project/rt52/join)
-    - [zz93](https://my.nci.org.au/mancini/project/zz93/join)
+    - [ob53](https://my.nci.org.au/mancini/project/ob53/join)
     - [vk83](https://my.nci.org.au/mancini/project/vk83/join)
 
     !!! tip
@@ -190,10 +193,15 @@ To open the terminal, click on the black terminal icon at the top of the window.
 
 ![Open ARE VDI terminal example](/assets/run_access_cm/open_are_vdi_terminal.gif){: class="example-img" loading="lazy"}
 
+
 ### Set up _persistent session_ 
 To support the use of long-running processes, such as ACCESS model runs, NCI provides a service on _Gadi_ called [_persistent sessions_](https://opus.nci.org.au/display/Help/Persistent+Sessions).
 
 To run {{ model }}, you need to start a _persistent session_ and set it as the target session for the model run.
+
+#### Set up SSH-keys (once-only) {: .no-toc }
+
+Follow the [initialization step](https://opus.nci.org.au/spaces/DAE/pages/249495793/Run+Cylc7+Suites#RunCylc7Suites-InitialisationStep(once-onlyforaccessdevcompatible-mode)) to accurately set up your ssh keys so you can run the model from outside of the persistent session.
 
 #### Start a new _persistent session_ {: .no-toc }
 To start a new _persistent session_, using either a _Gadi_ login node or an ARE terminal instance, run the following command:
@@ -231,6 +239,7 @@ persistent-sessions list
 
 The label of a newly-created _persistent session_ has the following format: <br>
 `<name>.<$USER>.<project>.ps.gadi.nci.org.au`.
+
 
 #### Specify target _persistent session_ {: .no-toc }
 
@@ -588,9 +597,9 @@ Logs for individual tasks are located in subfolders within the logs folder, foll
 ```
 ~/cylc-run/<suite-ID>/log/job/<cylc-cycle-point>/<task-name>/<retry-number>
 ```
-The `<retry-number>` indicates the number of retries for the same task, with the latest retry symlinked to `NN`.
+The `<retry-number>` indicates the number of retries for the same task, with the latest retry symlinked to `NN`.  For the RAS, the `<cylc-cycle-point>` is `1` (because the jobs are run in one cycle.  *(For the RNS the `<cylc-cycle-point>` is the date/time of the cycle)*.
 
-For example, logs for most recent retry of a task named `Lismore_d1000_GAL9_um_recon` at _Cylc_ cycle point `20220226T0000Z` can be found in the folder `~/cylc-run/<suite-ID>/log/job/20220226T0000Z/Lismore_d1000_GAL9_um_recon/NN`.
+For example, logs for most recent retry of a task named `Lismore_d1100_ancil_um_mean_orog` at _Cylc_ cycle point `1` can be found in the folder `~/cylc-run/<suite-ID>/log/job/1/Lismore_d1100_ancil_mean_orog/NN`.
 
 Within this directory, the `job.out` and `job.err` files (representing `STDOUT` and `STDERR`, respectively) can be found, along with other related log files.
 
@@ -674,15 +683,47 @@ rose suite-run --new
 The RAS output ancillary files can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils`.<br>
 Ancillaries are divided into folders according to each [nested region]({{ model_configurations }}/#nesting) name, and then further separated according to each nest (i.e., _Resolution_) name. The path of ancillaries for a specific nest (i.e., _Resolution_) is `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/<nested_region_name>/<nest_name>`.
 
-The example above has one `nested_region_name` called `Lismore`, 1 nest named `era5` (outer domain corresponding to _Resolution 1_), and 2 inner nests (_Resolution 2_ and _Resolution 3_) named `d1000` and `d0198`, respectively.<br>
+The example above has one `nested_region_name` called `Lismore`, 1 nest named `era5` (outer domain corresponding to _Resolution 1_), and 2 inner nests (_Resolution 2_ and _Resolution 3_) named `d1100` and `d0198`, respectively.<br>
 Thus, the ancillary files directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/data/ancils/` contains the following subdirectories:
 
-- `Lismore/d1000`
+- `Lismore/d1100`
 - `Lismore/d0198`
 - `Lismore/era5`
 
 Ancillary data files are typically output in the [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) format.
 
+### OSTIA Ancillary Suite (OAS) {: #oas }
+
+Archived Operational Sea Surface Temperature and Sea Ice Analysis (OSTIA) data can be packaged into ancillary files for use in the RNS.
+
+The `suite-ID` of the OAS is `{{ oas_id }}`.
+
+#### Get and run OAS configuration
+Steps to obtain and run the OAS, as well as monitor logs, are similar to those listed above for the [RAS](#ras).<br>
+The main difference is the `suite-ID`, which for the OAS is `{{ oas_id }}`.
+
+To get the OAS configuration, follow the steps listed in [Get the RAS configuration](#get-the-ras-configuration), making sure you use the correct OAS `suite-ID` `{{ oas_id }}` when copying the suite.
+
+To run the OAS configuration, follow the steps listed in [Run the suite](#run-the-ras).
+
+To check the OAS suite logs, follow the steps listed in [Check suite logs](#check-suite-logs).
+
+#### RNS output files
+
+All the RNS output files are available in the directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
+
+The RNS output data can be found in the directory `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle`, grouped for each [cycle](#change-start-date-andor-run-length).<br>
+Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format `<nested_region_name>/<science_configuration>/<nest_name>`, with `<nested_region_name>` and `<nest_name>` referring to the respective configurable options. The `<science_configuration>` is usually `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
+
+Each `<nest_name>` directory has the following subdirectories:
+
+- `ics` &rarr; initial conditions
+- `lbcs` &rarr; lateral boundary conditions
+- `um` &rarr; model output data
+
+The RNS output data files are in [UM NetCDF](https://code.metoffice.gov.uk/doc/um/vn13.8/papers/umdp_C11.pdf) format.
+
+For example, the model output data for the first cycle (`20220226T0000Z`) of the _Lismore_ experiment (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um/umnsaa_pa000.nc`.
 ### Regional Nesting Suite (RNS) {: #rns }
 
 The RNS uses the ancillary files produced by the RAS to run the regional forecast for the domain of interest.
@@ -704,8 +745,8 @@ To check the RNS suite logs, follow the steps listed in [Check suite logs](#chec
 
 All the RNS output files are available in the directory `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.
 
-The RNS output data can be found in the directory `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle`, grouped for each [cycle](#change-run-length).<br>
-Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format `<nested_region_name>/<science_configuration>/<nest_name>`, with [`<nested_region_name>`](#change-the-nested-region-name) and `<nest_name>` referring to the respective configurable options. The `<science_configuration>` is usually `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
+The RNS output data can be found in the directory `/scratch/$PROJECT/$USER/cycl-run/<suite-ID>/share/cycle`, grouped for each [cycle](#change-start-date-andor-run-length).<br>
+Within the `cycle` directory, outputs are divided into multiple nested subdirectories in the format `<nested_region_name>/<science_configuration>/<nest_name>`, with `<nested_region_name>` and `<nest_name>` referring to the respective configurable options. The `<science_configuration>` is usually `GAL9` or `RAL3.2`, depending on the [nest resolution]({{ model_configurations }}/#model-components).
 
 Each `<nest_name>` directory has the following subdirectories:
 
@@ -717,18 +758,10 @@ The RNS output data files are in [UM NetCDF](https://code.metoffice.gov.uk/doc/u
 
 For example, the model output data for the first cycle (`20220226T0000Z`) of the _Lismore_ experiment (`Lismore` `nested_region_name`, using a `RAL3P2` `science_configuration` and `d0198` as a `nest_name`) can be found in `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>/share/cycle/20220226T0000Z/Lismore/d0198/RAL3P2/um/umnsaa_pa000.nc`.
 
-!!! tip
-    The output data name format may vary depending on some configuration parameters.<br>
-    To change which output variables are produced, refer to [Change the output variables](#change-the-output-variables)
 
 ### Edit {{ model }} configuration
-!!! tip
-    Due to the presence of two distinct suites ([RAS](#ras) and [RNS](#rns)), specific modifications might be required in either one or both.<br>
-    For each of the following possible modifications, the relevant suite that needs editing is listed as a bullet point.
 
 This section describes how to modify the {{ model }} configuration.
-
-The modifications discussed in this section can change the way the RAS and RNS are run, or how specific [model components] are configured and coupled together.
 
 In general, ACCESS modelling suites can be edited either by directly modifying the configuration files within the suite directory, or by using the [_Rose_ GUI](#rosegui).
 
@@ -744,7 +777,28 @@ rose edit &
 !!! tip
     The `&` is optional. It allows the terminal prompt to remain active while running the `Rose` GUI as a separate process in the background.
 
-#### Change run length
+#### Change start date and/or run length
+!!! warning
+    `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` define all the [_Cylc_ cycle points](https://cylc.github.io/cylc-doc/7.9.3/html/terminology.html?highlight=cycle%20point#cycle-points) that are set within the experiment run.<br>
+    The model will always run for a full _cycling frequency_ (1 day) for each _Cylc_ cycle point.<br>
+    This means, for example, that with `INITIAL_CYCLE_POINT` set to `20220226T0000Z`, and `FINAL_CYCLE_POINT` set to `+P1D` (plus 1 day), 2 _Cylc_ cycle points will be set (`20220226T0000Z` and `20220227T0000Z`). Therefore, the model will run for a total of 2 days!<br>
+    To avoid running the model for longer that desired, we suggest adding `-PT1S` (minus 1 second) to the relative duration specified in the `FINAL_CYCLE_POINT` (refer to the example below).
+
+    The _run length_ is calculated using the `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` fields.<br>
+    Both these fields use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format, with `FINAL_CYCLE_POINT` also accepting relative [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+
+    For example, to run the experiment for 2 days starting on the 5th April 2000, set `INITIAL_CYCLE_POINT` to `20000405T0000Z` and `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)).
+
+    {: #run-length-mismatch }
+
+
+- **OAS**<br>
+    The RNS requires the global OSTIA ancillary files to be available on disk for each of day of the run.  If a date/time changes means that the global OSTIA ancillary files have not been previously created, the OAS must be run again.
+    The OAS runs in multiple [PBS jobs][PBS job] submissions with each job preparing global OSTIA ancillary information for one day.  The job scheduler automatically resubmits the suite every chosen _cycling frequency_ until the total _run length_ is reached.<br>
+    
+    To modify these parameters within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Ostia ancillary Generation Suite &rarr; Cycling options_. 
+    Edit the related field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
+
 - **RNS**<br>
     The RNS runs in multiple [PBS jobs][PBS job] submissions, each one constituting a _cycle_. The job scheduler automatically resubmits the suite every chosen _cycling frequency_ until the total _run length_ is reached.<br>
     
@@ -752,118 +806,8 @@ rose edit &
         The _cycling frequency_ is currently set to `24` hours (1 day) and should be left unchanged to avoid errors.<br>
         This also means the model will run for a minimum of 1 day.
       
-    The _run length_ is calculated using the `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` fields.<br>
-    Both these fields use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format, with `FINAL_CYCLE_POINT` also accepting relative [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-
-    !!! warning
-        `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` define all the [_Cylc_ cycle points](https://cylc.github.io/cylc-doc/7.9.3/html/terminology.html?highlight=cycle%20point#cycle-points) that are set within the experiment run.<br>
-        The model will always run for a full _cycling frequency_ (1 day) for each _Cylc_ cycle point.<br>
-        This means, for example, that with `INITIAL_CYCLE_POINT` set to `20220226T0000Z`, and `FINAL_CYCLE_POINT` set to `+P1D` (plus 1 day), 2 _Cylc_ cycle points will be set (`20220226T0000Z` and `20220227T0000Z`). Therefore, the model will run for a total of 2 days!<br>
-        To avoid running the model for longer that desired, we suggest adding `-PT1S` (minus 1 second) to the relative duration specified in the `FINAL_CYCLE_POINT` (refer to the example below).
-        {: #run-length-mismatch }
 
     To modify these parameters within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Cycling options_. Edit the related field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-    For example, to run the experiment for 2 days starting on the 5th April 2000, set `INITIAL_CYCLE_POINT` to `20000405T0000Z` and `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)).
-
-#### Change the land-surface initial conditions source
-- **RNS**<br>
-    To change the [land-surface initial conditions source]({{ model_configurations }}/#land-surface-initial-conditions-source) within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Driving model setup_. Edit the `NCI_HRES_ECCB` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
-
-    For example, to get the land-surface initial conditions from the `BARRA-R2` dataset, set the `NCI_HRES_ECCB` field to `BARRA2-R`.
-
-!!! warning
-    When changing the land-surface initial conditions source, it is important to ensure that the configuration of the nested region aligns with the [nest configuration requirements](#nest-configuration-requirements).
-
-#### Change the simulation region
-In {{ model }}, users can perform simulations for a particular region of the Earth by configuring specific parameters for each domain of interest (referred to as _nested region_).<br>
-
-In {{ model }}, the following parameters are supported to configure the nested regions:
-
-- [Nested region name](#change-the-nested-region-name)
-- [Nested region position](#change-the-nested-region-position)
-- [Nested region's nest configuration](#change-the-nested-regions-nest-configuration)
-
-!!! warning
-    Domain-specific changes need to be consistent between RAS and RNS. Therefore, for each of the configuration parameters listed above, consistent changes to both RAS and RNS will be required.
-
-##### Change the nested region name {: .no-toc }
-- **RAS**<br>
-    To change a nested region name within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_. Edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
-
-    For example, to set the name of the nested region to `Darwin`, set the `rg01_name` field to `Darwin`.
-
-- **RNS**<br>
-    Changing the RAS nested region name changes the [RAS output path](#ras-output-files). As a consequence, the following changes are required within the RNS:
-    
-    - **Ancillary directory**<br>
-        To change the first nest ancillary directory within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup_. Change the `rg01_rs01_ancil_dir` field by replacing `Lismore` with the chosen RAS nested region name, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-        The same step needs to be repeated for:
-        
-        - _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup_ `rg01_rs02_ancil_dir` field
-        - _suite conf &rarr; Nesting Suite &rarr; Driving model setup_ `dm_ec_lam_ancil_dir` field
-
-        For example, if the RAS nested region name was set to `Darwin`, replace `Lismore` in the `rg01_rs01_ancil_dir`, `rg01_rs02_ancil_dir` and `dm_ec_lam_ancil_dir` fields with `Darwin`.
-
-    - **RNS nested region name**<br>
-        To change the nested region name within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup_. Edit the `rg01_name` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
-
-        For example, to set the name of the nested region to `Darwin`, set the `rg01_name` field to `Darwin`.
-
-        !!! tip
-            Changing the RNS nested region name is not strictly necessary, but it affects the [RNS outputs path](#rns-output-files). Therefore, for consistency, it is strongly recommended for RAS and RNS to have the same nested region names.
-
-##### Change the nested region position {: .no-toc }
-The nested region position is usually defined by the latitude and longitude coordinates of the nested region centre.
-
-- **RAS**<br>
-    To change the nested region centre within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Regional Ancillary Suite &rarr; Nested region 1 setup_. Edit the `rg01_centre` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
-
-    For example, to set the centre of the nested region to `-12.4` / `130.8`, set the `rg01_centre` field to `-12.4` / `130.8`.
-
-!!! warning
-    When changing the land-surface initial conditions source, it is important to ensure that the configuration of the nested region aligns with the [nest configuration requirements](#nest-configuration-requirements).
-
-##### Change the nested region's nest configuration {: .no-toc }
-Each nested region can contain multiple [nests]({{model_configurations}}/#nesting) (referred to as _Resolutions_ within the RAS and RNS), each of them being a separate domain where the simulation experiment is carried out.<br>
-Typically, nests within the same nested region are arranged concentrically, with increasingly smaller dimensions and higher resolutions towards the innermost nests.
-
-<div markdown id='nest-configuration-requirements'>
-!!! warning
-    Currently, {{model}} only supports specific nest configurations that meet the following criteria:
-    
-    The grid points of the RAS first inner nest (i.e., _Resolution 2_, because _Resolution 1_ always corresponds to the outer ERA5 domain) must align with those of the [land-surface initial conditions dataset]({{model_configurations}}/#land-surface-initial-conditions-source). Thus, the configuration of the RAS first inner nest (_Resolution 2_), including its position, dimension and resolution, need to be modified accordingly. Note that the position of a nest is also influenced by the [nested region position](#change-the-nested-region-position).
-</div>
-
-#### Change the output variables
-[UM](/models/model_components/atmosphere/#unified-model-um) outputs are usually provided as a list of [STASH](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_C04.pdf) variables.<br>
-Manually specifying each STASH variable can be complex. To simplify the selection process for commonly used climate analysis variables, predefined groups of STASH variables are set up, known as _stashpacks_.
-
-- **RNS**<br>
-    To toggle a _stashpack_ within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 1 setup &rarr; Config 1 setup_. Toggle a specific _stashpack_ within the `rg01_rs01_m01_stashpack` field and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.<br>
-    Similar steps can be repeated for the _suite conf &rarr; Nesting Suite &rarr; Nested region 1 setup &rarr; Resolution 2 setup &rarr; Config 2 setup_ `rg01_rs02_m02_stashpack` field.<br>
-    For example, to enable `stashpack 6` (that includes variables such as wind gust, mean sea level pressure and rainfall amount, for every model timestep) in all nests, set the `6th` button of both `rg01_rs01_m01_stashpack` and `rg01_rs02_m02_stashpack` fields to `true`.
-
-
-<!-- ACCESS-rAM Troubleshooting-->
-<a href="/models/run-a-model/access-ram-troubleshooting" class="vertical-card aspect-ratio1to1">
-    <div class="card-image-container">
-        <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_ram_model_visualisation.png" alt="ACCESS-rAM">
-    </div>
-    <div class="card-text-container bold">
-        ACCESS-rAM troubleshooting
-    </div>
-</a>
-
-<!-- ACCESS-rAM Troubleshooting-->
-<a href="/models/run-a-model/access-ram-ostia" class="vertical-card aspect-ratio1to1">
-    <div class="card-image-container">
-        <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_ram_model_visualisation.png" alt="ACCESS-rAM">
-    </div>
-    <div class="card-text-container bold">
-        ACCESS-rAM with OSTIA
-    </div>
-</a>
-
 
 
 ## Get Help
