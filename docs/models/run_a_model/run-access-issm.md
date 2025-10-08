@@ -23,7 +23,7 @@
 {{ model }} couples the **Ice-Sheet and Sea-Level System Model (ISSM)** to the ACCESS infrastructure, enabling fully parallel Antarctic and Greenland ice‑sheet simulations on the [NCI _Gadi_ supercomputer][gadi].
 
 It is maintained and supported by **ACCESS‑NRI**.  
-A high‑level description of model components—including the ISSM core, pre‑processing utilities, climate forcings, and coupling hooks—is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).ng.
+A high‑level description of model components—including the ISSM core, pre‑processing utilities, climate forcings, and coupling hooks—is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
 The example below reproduces the *MISMIP+* benchmark. Adjust the variables to suit your experiment.
 
