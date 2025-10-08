@@ -712,7 +712,7 @@ To debug a model through the _Linaro_ debugger, the following changes to the bui
     - `'fflags="-O0 -g -traceback"'`
     - `'cflags="-O0 -g -fno-omit-frame-pointer"'`
 
-Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model), the changes to the `spack.yaml` are:
+Using the `mom5_dev` example above (in the context of the _ACCESS-ESM1.5_ model), to debug the MOM5 component specifically, the changes to the `spack.yaml` are:
 
 ```yaml
 spack:
