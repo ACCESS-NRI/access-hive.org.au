@@ -691,6 +691,17 @@ If the error is not obvious from the error message, see the build log for more i
 
 Debugging is an important part of the development process. Using a debugger can make this process significantly easier, allowing detailed inspection of the state of the code as it is running. The debugger used in this guide is [_Linaro DDT_](https://www.linaroforge.com/linaro-ddt/) from [Linaro Forge](https://www.linaroforge.com/).
 
+### Setting up the debugger
+
+To connect to the debugger remotely from your workstation, you will need to set up the _Linaro Forge_ client locally. Download the client from the [Linaro Forge download](https://www.linaroforge.com/download-documentation) page, taking care match the version of the client with the most up-to-date version on the compute cluster (to get older versions of the client, follow the [older versions](https://www.linaroforge.com/download-forge-old-version) link). Once installed, launch the client and follow the [connecting remotely](https://www.linaroforge.com/download-forge-old-version) instructions.
+
+!!! tip
+    To check which versions of _Linaro Forge_ are available on your compute cluster, use `module avail linaro-forge`.
+
+For Gadi, the current version of _Linaro Forge_ is `24.0` and the _Remote Launch Settings_ are:
+- __Host Name__: `<username>@nci.org.au`
+- __Remote Installation Directory__: `/apps/linaro-forge/24.0.2`
+
 ### Setting up the build
 
 To debug a model through the _Linaro_ debugger, the following changes to the build's `spack.yaml` are required:
@@ -743,9 +754,6 @@ This will build executables compatible with the _Linaro_ debugger.
 ### Running the model with the debugger enabled
 
 !!! warning
-    These steps assume you have already set up the _Linaro Forge_ remote client. If you haven't, follow the [Connecting remotely](https://docs.linaroforge.com/25.0.2/html/forge/forge/connecting_to_a_remote_system/connecting_remotely.html) instructions on their website, using the follow _Remote Launch Settings_ for _Gadi_:
-    - __Host Name__: `<username>@nci.org.au`
-    - __Remote Installation Directory__: `/apps/linaro-forge/24.0.2`
 
 The recommended way to execute a debugging run is by using [_payu_](https://github.com/payu-org/payu) as follows:
 
