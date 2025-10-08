@@ -231,6 +231,7 @@ extra_css:
   - fontello/css/fontello-ie7.css
   - fontello/css/fontello.css
   - css/access-nri.css
+  - css/responsiveness.css
 
 extra_javascript:
   - javascripts/mathjax.js # For pymdownx.arithmatex extension
