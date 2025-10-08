@@ -7,7 +7,7 @@
 
 ![ACCESS‑ISSM model](/assets/model-config-logos/configurations-without-titles/access-issm.png){: .img-contain .white-background .round-edges .with-padding .intro-img loading="lazy"}
 
-The ACCESS Ice Sheet Sea-Level Model (ACCESS‑ISSM) is a global ice‑sheet and ice‑shelf model based on the [ISSM](/models/model_components/ice-sheet) framework.  It supports standalone ice dynamics and optional coupling to ocean and atmospheric forcing.
+The ACCESS Ice-Sheet and Sea-Level System Model (ACCESS‑ISSM) is a global ice‑sheet and ice‑shelf model based on the [ISSM](/models/model_components/ice-sheet) framework.  It supports standalone ice dynamics and optional coupling to ocean and atmospheric forcing.
 
 ## Configurations 
 ACCESS-ISSM provides the following released configurations:
