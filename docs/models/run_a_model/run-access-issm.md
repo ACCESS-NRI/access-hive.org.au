@@ -20,26 +20,43 @@
 
 ## 1 About
 
-{{ model }} couples the **Ice-Sheet and Sea-Level System Model (ISSM)** to the ACCESS infrastructure, enabling fully parallel Antarctic and Greenland ice‑sheet simulations on the [NCI _Gadi_ supercomputer][gadi].
+{{ model }} integrates the **Ice-sheet and Sea-level System Model (ISSM)** to the ACCESS climate modelling framework, enabling fully parallel ice‑sheet simulations on the [NCI _Gadi_ supercomputer][gadi].
 
 It is maintained and supported by **ACCESS‑NRI**.  
-A high‑level description of model components—including the ISSM core, pre‑processing utilities, climate forcings, and coupling hooks—is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
+A high‑level description of model components including the ISSM core, pre‑processing utilities and forcing data are available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
-The example below reproduces the *MISMIP+* benchmark. Adjust the variables to suit your experiment.
+The example below reproduces the ISSM controbution to the third [Marine Ice Sheet Model Intercomparison Project](https://tc.copernicus.org/articles/14/2283/2020/) (MISMIP+) benchmark for ice flow models.
 
 ## 2 Prerequisites
 
-1. **NCI login + Gadi project** – request `access` and `vk83` memberships if you do not already have them.
-2. **Spack ISSM environment** – follow the build recipe in [https://github.com/ACCESS-NRI/access-issm](https://github.com/ACCESS-NRI/access-issm).  You should end up with `ISSM_DIR` and a Spack `issm-env`.
-3. **Modules** – at minimum:
+!!! warning
+    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check [how to join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
+
+- **NCI Account**<br>
+    Before running {{ model }}, you need to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+
+- **Join NCI projects**<br>
+    Join the following projects by requesting membership on their respective NCI project pages:
+
+    - [vk83](https://my.nci.org.au/mancini/project/vk83/join)
+    - [xp65](https://my.nci.org.au/mancini/project/xp65/join)
+
+  For more information on joining specific NCI projects, refer to [How to connect to a project](https://opus.nci.org.au/display/Help/How+to+connect+to+a+project).
+
+- **Modules**
+
+  Load the following modules:
+
    ```bash
-   module load python3/3.10.4   # matches the version used for ISSM Python API
+   module load python3/3.9.2 #3.10.4
    module load git
    ```
 
 ---
 
 ## 3  Quick‑start (Gadi login node)
+
+To run he model, a NCI project code with available compute allocation is required.
 
 ```bash
 # 0. Choose a working directory for this test
@@ -51,12 +68,13 @@ $ git clone --branch justinh2002/configuration \
 
 # 2. Load the ACCESS-ISSM module (vk83 deployment)
 $ module use /g/data/vk83/modules
-$ module avail access-issm
 $ module load access-issm
 
 # 3. Pre-process (mesh + inputs)
-$ cp access-issm/examples/mismip/run_pps.sh ./
-$ qsub run_pps.sh           # or `bash run_pps.sh` inside a pInteractive job
+$ cp access-issm/test/run_pps.sh ./
+$ qsub -P <NCI_PROJECT_CODE> run_pps.sh
+# Alternatively use `bash run_pps.sh` inside a pInteractive job.
+# Replace "<NCI_PROJECT_CODE>" with your active project code.
 
 # 4. When PPS finishes, run the first experiment bundle
 $ cp access-issm/examples/mismip/run_mismip_first.sh ./
@@ -131,7 +149,7 @@ $ python mismip_driver.py  # uses default steps list
 ### {{ model }} configuration
 
 Key configurable groups (edit the configuration files as needed):
-  
+
 | Suite | Section            | Purpose                                                              |
 |-------|--------------------|----------------------------------------------------------------------|
 | **PPS** | Domain setup      | Projection, bounds, resolution, MUA/SSA blend law, etc.             |
