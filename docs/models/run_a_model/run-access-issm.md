@@ -63,7 +63,7 @@ To run he model, a NCI project code with available compute allocation is require
 $ mkdir -p ~/experiments/mismip && cd ~/experiments/mismip
 
 # 1. Clone the ACCESS-ISSM repository (alpha branch)
-$ git clone --branch justinh2002/configuration \
+$ git clone --branch development \
       https://github.com/ACCESS-NRI/access-issm.git
 
 # 2. Load the ACCESS-ISSM module (vk83 deployment)
