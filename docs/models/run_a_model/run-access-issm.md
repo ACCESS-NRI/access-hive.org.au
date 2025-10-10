@@ -4,7 +4,7 @@
 {% set branch = "access_rel_1" %}
 {% set pps_config = "https://github.com/ACCESS-NRI/access-issm/tree/main/pps" %}
 {% set run_config = "https://github.com/ACCESS-NRI/access-issm/tree/main/run" %}
-{% set model_configurations = "/models/configurations/access-issm" %}
+{% set model_configurations = "/models/access-issm" %}
 {% set release_notes = "https://forum.access-hive.org.au/t/access-issm-release-information/XXXX" %}
 [Cluster job guide]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 [model components]: {{ model_configurations }}/#model-components
