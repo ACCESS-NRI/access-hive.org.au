@@ -28,7 +28,7 @@
 {{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite for high-resolution regional atmosphere modelling.<br>
 A description of the model and its components is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
-{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (i.e., input files), and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
+{{ model }} comprises multiple suites: the [Regional Ancillary Suite (RAS)](#ras) and [Ostia Ancillary Suite (OAS)](#oas) that generate ancillary files (i.e., input files), and the [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
 The example experiment within this page focuses on a flood event in Lismore, NSW, using `BARRA-R2` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-source). Its configuration is specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
