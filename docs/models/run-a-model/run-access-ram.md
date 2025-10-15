@@ -28,7 +28,7 @@
 {{ model }} is an ACCESS-NRI-supported configuration of the [UK Met Office (UKMO)](https://www.metoffice.gov.uk/) Regional Nesting Suite for high-resolution regional atmosphere modelling.<br>
 A description of the model and its components is available in the [{{ model }} overview]({{ model_configurations }}/#{{ model }}).
 
-{{ model }} comprises two suites: a [Regional Ancillary Suite (RAS)](#ras), which generates ancillary files (i.e., input files), and a [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
+{{ model }} comprises multiple suites: the [Regional Ancillary Suite (RAS)](#ras) and [Ostia Ancillary Suite (OAS)](#oas) that generate ancillary files (i.e., input files), and the [Regional Nesting Suite (RNS)](#rns) which runs the regional forecast.
 
 The instructions below outline how to run {{ model }} using ACCESS-NRI's supported configuration, specifically designed to run on the [National Computational Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].<br>
 The example experiment within this page focuses on a flood event in Lismore, NSW, using `BARRA-R2` [land-surface initial conditions]({{ model_configurations }}/#land-surface-initial-conditions-source). Its configuration is specified in [Nesting configuration]({{ model_configurations }}/#nesting-configuration).
@@ -135,7 +135,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rose suite-run
     ```
 
-    For further instructions on running the OAS configuration, refer to the [Detailed guide](#run-the-ras).
+    For further instructions on running the RAS configuration, refer to the [Detailed guide](#run-the-ras).
 
 
 ### Ostia Ancillary Suite (OAS) {: .no-toc }
@@ -144,7 +144,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rosie checkout {{ oas_id }}
     ```
 
-    For further instructions on getting the RNS configuration, refer to the [Detailed guide](#get-and-run-oas-configuration).
+    For further instructions on getting the OAS configuration, refer to the [Detailed guide](#get-and-run-oas-configuration).
 
 2. **Run the OAS**<br>
     ```
@@ -152,7 +152,7 @@ The following *Quick Start* guide is aimed at experienced users wanting to run {
     rose suite-run
     ```
 
-    For further instructions on running the RAS configuration, refer to the [Detailed guide](#get-and-run-oas-configuration).
+    For further instructions on running the OAS configuration, refer to the [Detailed guide](#get-and-run-oas-configuration).
 
 
 ### Regional Nesting Suite (RNS) {: .no-toc }
@@ -806,13 +806,12 @@ rose edit &
     The _run length_ is calculated using the `INITIAL_CYCLE_POINT` and `FINAL_CYCLE_POINT` fields.<br>
     Both these fields use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format, with `FINAL_CYCLE_POINT` also accepting relative [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations).
 
-    For example, to run the experiment for 2 days starting on the 5th April 2000, set `INITIAL_CYCLE_POINT` to `20000405T0000Z` and `FINAL_CYCLE_POINT` to `+P2D-PT1S` (due to the [run length mismatch](#run-length-mismatch)).
+    For example, to run the experiment for 2 days starting on the 5th April 2000, set `INITIAL_CYCLE_POINT` to `20000405T0000Z` and `FINAL_CYCLE_POINT` to `+P2D-PT1S`.
 
-    {: #run-length-mismatch }
 
 
 - **OAS**<br>
-    The RNS requires the global OSTIA ancillary files to be available on disk for each of day of the run.  If a date/time changes means that the global OSTIA ancillary files have not been previously created, the OAS must be run again.
+    The RNS requires the global OSTIA ancillary files to be available on disk for each day of the run. If a simulation date/time changes such that the required global OSTIA ancillary files are not already present, the OAS must be re-run with the new date/time.
     The OAS runs in multiple [PBS jobs][PBS job] submissions with each job preparing global OSTIA ancillary information for one day.  The job scheduler automatically resubmits the suite every chosen _cycling frequency_ until the total _run length_ is reached.<br>
     
     To modify these parameters within the [Rose GUI](#rosegui), navigate to _suite conf &rarr; Ostia ancillary Generation Suite &rarr; Cycling options_. 
