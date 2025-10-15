@@ -11,6 +11,8 @@ The atmospheric fields that drive the model are provided by a data source, usual
 {% set model = "ACCESS-OM3" %}
 ## {{ model }}
 
+[![Config docs](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{om3_configs_docs}}){: class="text-card"}
+
 {{ model }} is a suite of coupled ocean-sea ice models developed by ACCESS-NRI and the [Consortium for Ocean-Sea Ice Modelling in Australia (COSIMA)][cosima].
 
 ACCESS-NRI has released [{{ model }} configurations](https://github.com/ACCESS-NRI/access-om3-configs).
@@ -39,10 +41,7 @@ Each configuration also has an optional biogeochemical (BGC) configuration that 
 
 - **Coupler**: [NUOPC](/models/model_components/coupler#nuopc).
 
-<div class="text-card-group" markdown>
-[![Hive](/assets/ACCESS_icon_HIVE.png){: class="icon-before-text"} {{ model }} configs docs]({{om3_configs_docs}}){: class="text-card"}
 [Run {{ model }}](/models/run_a_model/run_access-om3){: class="text-card"}
-</div>
 
 {% set model = "ACCESS-OM2" %}
 ## {{ model }}
