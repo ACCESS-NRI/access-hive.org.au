@@ -1,7 +1,7 @@
 # Models
 <div class="card-container">
     <!-- ACCESS Models -->
-    <a href="access-cm/" class="horizontal-card">
+    <a href="access-models/" class="horizontal-card">
         <div class="card-image-container">
             <img class="img-contain white-background" src="/assets/access_models.png" alt="ACCESS Models">
         </div>
