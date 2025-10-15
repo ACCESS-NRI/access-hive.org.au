@@ -127,6 +127,7 @@ nav:
   - Run a Model: 
     - models/run-a-model/index.md
     # - Run ACCESS-AM: models/run-a-model/run-access-am.md
+    - ACCESS Workflow Managers: models/run-a-model/workflow-rose-cylc.md
     - Run ACCESS-CM2: models/run-a-model/run-access-cm2.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM2: models/run-a-model/run-access-om2.md
