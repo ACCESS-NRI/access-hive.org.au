@@ -8,7 +8,7 @@
         <div class="card-text-container">
             <span class="bold" >ACCESS Models</span>
             <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
+                ACCESS models are computer programs which can be used to simulate past or future conditions of the Earth System, as well as carrying out idealised experiments.
             </span>
         </div>
     </a>
@@ -20,7 +20,7 @@
         <div class="card-text-container">
             <span class="bold">Model Components</span>
             <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
+                ACCESS model components are computer programs representing different chemical, physical or biological parts of the Earth System. These components are interconnected together to form ACCESS models.
             </span>
         </div>
     </a>
@@ -32,7 +32,7 @@
         <div class="card-text-container">
             <span class="bold" >Run a Model</span>
             <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
+                Instructions to run specific ACCESS models.
             </span>
         </div>
     </a>
@@ -44,7 +44,7 @@
         <div class="card-text-container">
             <span class="bold" >Build a Model</span>
             <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
+                Instructions for modifying or developing an ACCESS model.
             </span>
         </div>
     </a>
