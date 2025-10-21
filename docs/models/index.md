@@ -3,7 +3,7 @@
     <!-- ACCESS Models -->
     <a href="access_models/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/access_models.png" alt="ACCESS Models">
+            <img class="img-contain white-background" src="/assets/ACCESS-MODEL.png" alt="ACCESS Models">
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS Models</span>
@@ -27,7 +27,7 @@
     <!-- Run a Model -->
     <a href="run_a_model/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/run_a_model.png" alt="Run a Model">
+            <img class="img-contain white-background" src="/assets/get_started_example.png" alt="Run a Model">
         </div>
         <div class="card-text-container">
             <span class="bold" >Run a Model</span>
