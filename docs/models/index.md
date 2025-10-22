@@ -15,7 +15,7 @@
     <!-- Model Components -->
     <a href="model_components/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/ACCESS-MODEL.png" alt="Model Components">
+            <img class="img-contain white-background" src="/assets/component-logos/all_components.png" style="padding: 0.2em;" alt="Model Components">
         </div>
         <div class="card-text-container">
             <span class="bold">Model Components</span>
@@ -27,7 +27,7 @@
     <!-- Run a Model -->
     <a href="run_a_model/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/get_started_example.png" alt="Run a Model">
+            <img class="img-cover white-background" src="/assets/get_started_example.png" alt="Run a Model">
         </div>
         <div class="card-text-container">
             <span class="bold" >Run a Model</span>
