@@ -63,8 +63,6 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - bibtex:
       bib_file: "references.bib"
-  - events:
-      events_dir: community_resources/events/events
   - resolve-absolute-urls
   - macros
 
