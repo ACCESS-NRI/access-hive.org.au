@@ -208,9 +208,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/access-nri
       name: ACCESS-NRI on Linkedin
-  # analytics:
-  #   provider: google
-  #   property: G-2T6SQEH2CX
+  analytics:
+    provider: google
+    property: G-JVWLTHSQWM
   #   feedback:
   #     title: Was this page helpful?
   #     ratings:
