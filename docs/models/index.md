@@ -27,7 +27,9 @@
     <!-- Run a Model -->
     <a href="run_a_model/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-cover white-background" src="/assets/get_started_example.png" alt="Run a Model">
+            <img class="white-background"
+            style="padding: 0.1rem"
+            src="/assets/models/run-a-model.svg" alt="Run a Model">
         </div>
         <div class="card-text-container">
             <span class="bold" >Run a Model</span>
@@ -39,7 +41,7 @@
     <!-- Build a Model -->
     <a href="build_a_model/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-contain white-background" src="/assets/build_a_model.png" alt="Build a Model">
+            <img class="img-contain white-background" src="/assets/model-config-logos/model_visualisation/build_a_model.png" alt="Build a Model">
         </div>
         <div class="card-text-container">
             <span class="bold" >Build a Model</span>
