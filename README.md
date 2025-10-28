@@ -1,11 +1,12 @@
-[github-repo]: https://github.com/ACCESS-NRI/access-hive.org.au
+[github-repo]: https://github.com/ACCESS-NRI/ACCESS-Hive-Docs
+[github-contributors]: https://github.com/ACCESS-NRI/ACCESS-Hive-Docs/graphs/contributors
 [forum]: https://forum.access-hive.org.au
+[hive-docs-url]: https://docs.access-hive.org.au/
 
 # ACCESS-Hive Docs
-[![ACCESS-Hive Docs Badge](docs/assets/assets_for_readme/badge_hive_docs.svg)](https://docs.access-hive.org.au/)
-[![github-contributors](https://img.shields.io/github/contributors/ACCESS-NRI/access-hive.org.au?color=blue&style=plastic)][github-repo]
+[![ACCESS-Hive Docs Badge](docs/assets/assets_for_readme/badge_hive_docs.svg)][hive-docs-url]
+[![github-contributors](https://img.shields.io/github/contributors/ACCESS-NRI/ACCESS-Hive-Docs?color=blue&style=plastic)][github-contributors]
 [![forum-users](https://img.shields.io/discourse/users?color=blue&label=forum&server=https%3A%2F%2Fforum.access-hive.org.au&style=plastic)][forum]
-[![link-check](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml/badge.svg)](https://github.com/ACCESS-NRI/access-hive.org.au/actions/workflows/link_check.yml)
 
 This repository is the implementation of the ACCESS-Hive Docs website accessible at the following URL:<br>
 https://docs.access-hive.org.au/
@@ -44,15 +45,15 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
 
 #### 1. Clone the ACCESS-Hive Docs GitHub repo
 
-To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/access-hive.org.au) GitHub repo, run the following command in your local terminal:
+To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/ACCESS-Hive-Docs) GitHub repo, run the following command in your local terminal:
 
 ```
-git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
+git clone git@github.com:ACCESS-NRI/ACCESS-Hive-Docs.git
 ```
 #### 2. Raise an issue about the contribution
 
 Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
-If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
+If not already present, open a [new issue](https://github.com/ACCESS-NRI/ACCESS-Hive-Docs/issues/new?template=simple-issue-template.md) about your contribution.
 
 #### 3. Create a new git branch
 
@@ -187,7 +188,7 @@ The following custom tags are available:
   - example
   - quote
   - supported
-  If you want a new admonition type to be created, please raise a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?assignees=&labels=&projects=&template=simple-issue-template.md&title=) about it.
+  If you want a new admonition type to be created, please raise a [new issue](https://github.com/ACCESS-NRI/ACCESS-Hive-Docs/issues/new?assignees=&labels=&projects=&template=simple-issue-template.md&title=) about it.
 
 ### HTML/Markdown Cheatsheet for the Hive Docs
 |Style|Markdown Syntax|HTML Syntax|Rendered example|
