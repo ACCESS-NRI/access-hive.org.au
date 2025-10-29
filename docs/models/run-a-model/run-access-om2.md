@@ -312,11 +312,10 @@ Model components are separated into subdirectories within the output and restart
     <terminal-line data="input" directory="~/access-om2/1deg_jra55_ryf">ls</terminal-line>
     <terminal-line class="ls-output-format">1deg_jra55_ry_c.e130364753  1deg_jra55_ryf.e130359345  accessom2.nml  atmosphere   doc  LICENSE    metadata.yaml  ocean      testing</terminal-line>
         <terminal-line class="ls-output-format">1deg_jra55_ry_c.o130364753  1deg_jra55_ryf.o130359345  archive        config.yaml  ice  manifests  namcouple      README.md  tools
-</terminal-line>
+    <terminal-line class="ls-output-format">&lt;jobname&gt;.e&lt;job-ID&gt; &lt;jobname&gt;.o&lt;job-ID&gt; archive config.yaml ice manifests namcouple README.md tools</terminal-line>
  
 </terminal-window>
 
-Note that `*.e*` and `*.o*` will depend on PBS job id.
 
 ----------------------------------------------------------------------------------------
 
