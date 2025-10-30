@@ -80,7 +80,7 @@ Detailed documentation on the configurations can be found in the [{{ model }} co
 The general layout of a _payu_ supported model run consists of two main directories:
 
 - The _control_ directory contains the model configuration and serves as the execution directory for running the model (in this example, the cloned directory `~/access-om3/{{example_folder}}`).
-- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om3`.
+- The _laboratory_ directory, where all the model components reside. For {{ model }}, it is typically `/scratch/$PROJECT/$USER/access-om3`. Payu automatically creates this directory when a model configuration is run.
 
 This separates the small text configuration files from the larger binary outputs and inputs. In this way, the _control_ directory can be in the `$HOME` directory (as it is the only filesystem actively backed-up on _Gadi_). The quotas for `$HOME` are low and strict, which limits what can be stored there, so it is not suitable for larger files.
 
@@ -110,7 +110,7 @@ All released {{ model }} configurations are available from the [{{ model }} conf
 The first step is to choose a configuration from those available. For example, to run an ocean and sea ice configuration (MOM6-CICE6) at 25km horizontal resolution with repeat-year _JRA55_ forcing (without BGC), one should select the branch [`{{example_branch}}`](https://github.com/ACCESS-NRI/access-om3-configs/tree/{{example_branch}}). 
 
 To clone this branch to a location on _Gadi_ and navigate to that directory, run:
-    
+
     mkdir -p ~/access-om3
     cd ~/access-om3
     payu clone -b expt -B {{ example_branch }} {{ github_configs }} {{example_folder}}
@@ -298,7 +298,7 @@ Model components are separated into subdirectories within the output and restart
 
 ## Edit {{ model }} configuration
 
-This section describes how to modify {{ model }} configuration.<br>
+This section describes how to modify an {{ model }} configuration.<br>
 The modifications discussed in this section can change the way {{ model }} is run by _payu_, or how its specific [model components] are configured and coupled together.
 
 The `config.yaml` file located in the _control_ directory is the _payu_ configuration, which controls the configuration of the experiment manager. It contains several parts, some of which it is more likely will need modification, and others which are rarely changed without having a deep understanding of how the model is configured.
@@ -320,8 +320,8 @@ The run length and restart period are controlled by a set of parameters in the `
          stop_n = 1
          stop_option = nyears
          ...
-         
-The run length is controlled  by`stop_option` and `stop_n`.<br>
+
+The run length is controlled  by `stop_option` and `stop_n`.<br>
 Common options for `stop_option` are `ndays`, `nmonths` and `nyears`. `stop_n` provides the numerical count for `stop_option`.
 
 The restart period is controlled by `restart_option` and `restart_n`, which set *how often* restart files are written.<br>
@@ -439,9 +439,12 @@ To enable syncing, change `enable` to `True`, and set `path` to a location on `/
 
 By default, {{ model }} saves restart files after each run, allowing subsequent simulations to resume from a previously saved model state. The default {{ model }} run length and restart period can be changed (see [Change run length and restart period](#change-run-length-and-restart-period)).<br>
 However, restart files can occupy significant disk space, and keeping all of them throughout an entire experiment is often not necessary. If disk space is limited, consider using _payu_'s restart files pruning feature, controlled by the `restart_freq` field of the `config.yaml`.
-By default, every `restart_freq` _payu_ removes intermediate restart files, keeping only: 
+
+Every `restart_freq` _payu_ removes intermediate restart files, keeping only: 
+
 - the two most recent restarts
 - restarts corresponding to the `restart_freq` interval
+
 For example, a `restart_freq` set to `1YS` would keep the restart files at the end of each model year, whereas `restart_freq` set to `5YS` would keep those at the end of every fifth model year.
 This approach helps reduce disk space while maintaining useful restart points across long experiments, especially useful in case of unexpected crashes.
 
@@ -455,24 +458,22 @@ The `restart_freq` field in the `config.yaml` can either be a number (in which c
 - `T` &rarr; minute
 - `S` &rarr; second
 
-For example, to preserve the ability to restart {{ model }} every 50 model-years, set:
+For example, to preserve the ability to restart {{ model }} every 5 model-years, set:
 ```yaml
-restart_freq: '50YS'
+restart_freq: '5YS'
 ```
 
-The most recent sequential restarts are retained, and only deleted after a permanently archived restart file has been produced.
+If the run length was unchanged (e.g. 1 year) then each individal run (and therefore submission to the job queue) would be 1 model year.
+If `restart_freq` is 5 model years then when these restart files are no longer needed to continue an experiment, payu will discard 4 out of 5 of the restart files to save space.
 
 For more information, check [_payu_ Configuration Settings documentation](https://payu.readthedocs.io/en/latest/config.html#model).
 
 
 ### Other configuration options
 
-!!! warning
-    The following sections in the `config.yaml` file control configuration options that are rarely modified, and often require a deeper understanding of how {{ model }} is structured to be safely changed.
-
 #### Model configuration {: .no-toc }
 
-This section tells _payu_ which driver to use for the main model configuration (`access-om3`) and the location of all input files.
+This section tells _payu_ which driver to use for the main model configuration (`access-om3`) and the location of the model executable and all input files. These input files capture data needed for the experiment to be run, including grids, bathymetry, land/sea masks, initial conditions and atmospheric forcing data. There is some information on how these files are generated in the [{{ model }} configuration documentation]({{configs_docs}}).
 
 ```yaml
 model: access-om3
@@ -493,16 +494,16 @@ input:
     - /g/data/vk83/experiments/inputs/JRA-55/RYF/v1-4/data
 ```
 
+Other options for runtime configuration, including parameter choices and coupler configuration are within the text files in the `control` directory. See [Configuration Overview]({{configs_docs}}/configurations/Overview/) for more detail.
+
 #### Runlog {: .no-toc }
 
 ```yaml
 runlog: true
 ```
 When running a new configuration, _payu_ automatically commits changes with `git` if `runlog` is set to `true`.
-
-!!! warning
-    This should not be changed as it is an essential part of the provenance of an experiment.<br>
-    _payu_ updates the manifest files for every run, and relies on `runlog` to save this information in the `git` history, so there is a record of all inputs, restarts and executables used in an experiment.
+_payu_ records all inputs, restarts and executables used in an experiment and updates the manifest files with the information for every run.
+The `runlog` then saves this information in the `git` history, so there is a permanent record of an experiment.
 
 #### Userscripts {: .no-toc }
 
@@ -521,7 +522,8 @@ For more information about specific `userscripts` fields, check the relevant sec
 
 ### Create a custom {{ model }} build
 All the executables needed to run {{ model }} are pre-built using _Spack_.<br>
-To customise {{ model }}'s build (for example, to run {{ model }} with changes in the source code of one of its component), refer to [Modify and build an ACCESS model's source code](/models/build_a_model/build_source_code#{{model|lower}}).
+To customise {{ model }}'s build (for example, to run {{ model }} with changes in the source code of one of its component), refer to [Modify and build an ACCESS model's source code](/models/run-a-model/build_a_model#{{model|lower}}).
+
 ## Get Help
 
 For further {{ model }} assistance, have a look at [general guidance](/about/user_support/#still-need-help) on how to request help from ACCESS-NRI. Specifically, consider creating a topic in the [COSIMA category of the ACCESS-Hive Forum](https://forum.access-hive.org.au/c/cosima/29). In the case of a configuration bug, please file a [GitHub issue here](https://github.com/ACCESS-NRI/access-om3-configs/issues/new?assignees=&labels=External&projects=&template=blank.md&title=). <br>
