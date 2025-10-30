@@ -1,0 +1,36 @@
+name: Check for Empty Labels
+
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    # Job 1: Check if labels are added for new issues
+    check-issue-labels:
+        runs-on: ubuntu-latest
+
+        # Workflow only has read permissions by default. Give write access.
+        permissions:
+          issues: write
+
+        steps:
+            # Clone the repository in the workflow runner environment.
+            - uses: actions/checkout@v4
+
+            # Use gh to check if labels are added or not.
+            - name: Check labels on new issues
+              id: check_labels
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token provides GitHub CLI with the authentication token to perform actions.
+                ISSUE_NO: ${{ github.event.issue.number }}
+              run: |
+                HAS_NO_LABELS=$(gh issue view "$ISSUE_NO" --json labels --jq '.labels | length == 0')
+                echo "has_no_labels=$HAS_NO_LABELS" >> "$GITHUB_OUTPUT"    # Save this variable to allow subsequent steps to access its value.
+
+            - name: Comment on issue
+              if: ${{ steps.check_labels.outputs.has_no_labels == 'true' }}
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                ISSUE_NO: ${{ github.event.issue.number }}
+              run: |
+                gh issue comment $ISSUE_NO --body "Whoops! This issue was opened with no labels. Make sure to add appropriate label for this issue."
