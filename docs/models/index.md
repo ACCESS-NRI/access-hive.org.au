@@ -20,7 +20,7 @@
         <div class="card-text-container">
             <span class="bold">Model Components</span>
             <span>
-                ACCESS model components are computer programs representing different chemical, physical or biological parts of the Earth System. These components are interconnected together to form ACCESS models.
+                Overview of the Earth system components that make up the ACCESS models
             </span>
         </div>
     </a>

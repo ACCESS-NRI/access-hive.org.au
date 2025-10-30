@@ -11,7 +11,7 @@ ACCESS models are computer programs that represent major components of the Earth
         <div class="card-text-container">
             <span class="bold" >ACCESS-CM</span>
             <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
+                A global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations
             </span>
         </div>
     </a>
@@ -23,7 +23,7 @@ ACCESS models are computer programs that represent major components of the Earth
         <div class="card-text-container">
             <span class="bold" >ACCESS-ESM</span>
             <span>
-                ACCESS-ESM is a global climate model with additional land and ocean biogeochemical components to simulate both the physical climate and global biogeochemical cycles.
+                A global climate model with additional land and ocean biogeochemical components to simulate both the physical climate and global biogeochemical cycles
             </span>
         </div>
     </a>
@@ -35,7 +35,7 @@ ACCESS models are computer programs that represent major components of the Earth
         <div class="card-text-container">
             <span class="bold" >ACCESS-OM</span>
             <span>
-                ACCESS-OM is a global coupled ocean and sea ice model used to understand both physical and biogeochemical processes in the ocean.
+                A global coupled ocean and sea ice model used to understand both physical and biogeochemical processes in the ocean.
             </span>
         </div>
     </a>
@@ -46,7 +46,7 @@ ACCESS models are computer programs that represent major components of the Earth
         <div class="card-text-container">
             <span class="bold" >ACCESS-rAM</span>
             <span>
-                ACCESS-rAM is an implementation of the UKMO Regional Nesting Suite that allows high-resolution regional atmosphere modelling.
+                A high resolution, regional atmosphere model that is an implementation of the UK Met Office Regional Nesting Suite
             </span>
         </div>
     </a>
