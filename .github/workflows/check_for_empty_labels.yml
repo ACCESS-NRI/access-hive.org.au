@@ -25,7 +25,7 @@ jobs:
                 ISSUE_NO: ${{ github.event.issue.number }}
               run: |
                 HAS_NO_LABELS=$(gh issue view "$ISSUE_NO" --json labels --jq '.labels | length == 0')
-                echo "has_no_labels=$HAS_NO_LABELS" >> "$GITHUB_OUTPUT"    # Save this variable to allow subsequent steps to access its value.
+                echo "has_no_labels=$HAS_NO_LABELS" >> "$GITHUB_OUTPUT"
 
             - name: Comment on issue
               if: ${{ steps.check_labels.outputs.has_no_labels == 'true' }}
