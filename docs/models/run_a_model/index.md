@@ -50,7 +50,7 @@ If you are unsure which ACCESS model is the best fit for your application, you c
         </div>
     </a>
     <!-- Run ACCESS-ISSM -->
-    <a href="/models/run-a-model/run-access-issm" class="vertical-card aspect-ratio1to1">
+    <a href="/models/run-a-model/run_access-issm" class="vertical-card aspect-ratio1to1">
         <div class="card-image-container">
             <img class="img-contain with-padding white-background" src="/assets/model-config-logos/model_visualisation/access_ram_model_visualisation.png" alt="ACCESS-ISSM">
         </div>

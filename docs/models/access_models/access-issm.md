@@ -63,4 +63,4 @@ qsub run_mismip_first.sh   # runs steps 1–7 and stops
 
 More details, examples and forcing files are available on the [ACCESS‑ISSM GitHub](https://github.com/ACCESS-NRI/access-issm).
 
-[Run ACCESS‑ISSM](/models/run-a-model/run-access-issm){: .text-card }
+[Run ACCESS‑ISSM](/models/run-a-model/run_access-issm){: .text-card }
