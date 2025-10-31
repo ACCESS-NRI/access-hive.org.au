@@ -8,7 +8,7 @@
         <div class="card-text-container">
             <span class="bold" >ACCESS Models</span>
             <span>
-                ACCESS models are computer programs which can be used to simulate past or future conditions of the Earth System, as well as carrying out idealised experiments.
+                Overview and descriptions of the ACCESS models supported by ACCESS-NRI
             </span>
         </div>
     </a>
