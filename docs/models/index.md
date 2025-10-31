@@ -27,9 +27,8 @@
     <!-- Run a Model -->
     <a href="run_a_model/" class="horizontal-card">
         <div class="card-image-container">
-            <img class="img-cover white-background"
-            style="padding: 0.4rem;"
-            src="/assets/run-a-model.png" alt="Run a Model">
+            <img class="img-cover white-background with-padding"
+            src="/assets/run-a-model_image.png" alt="Run a Model">
         </div>
         <div class="card-text-container">
             <span class="bold" >Run a Model</span>
