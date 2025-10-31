@@ -1,5 +1,5 @@
 # Run a Model
-If you are a new user of ACCESS climate models, please refer to how to [Set Up your NCI Account](/getting_started/set_up_nci_account).
+These instructions are for running the ACCESS models on the Australian National Computational Infrastructure (NCI). If you do not yet have an NCI account, please [Set Up your NCI Account](/getting_started/set_up_nci_account).
 
 If you are unsure which ACCESS model is the best fit for your application, you can read more about each model on the [ACCESS Models page](/models/access_models).
 
